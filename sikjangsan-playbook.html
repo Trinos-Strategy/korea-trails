@@ -1,1 +1,292 @@
-see_file_content
+<!DOCTYPE html>
+<html lang="ko" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>식장산 4봉 환종주 플레이북 — 한국의 산</title>
+<meta name="description" content="대전 최고봉 식장산 꾀꼬리봉·국사봉·독수리봉 4봉 환종주 완벽 가이드. 10.4km, 4시간 30분.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+<style>
+:root,[data-theme="light"]{
+  --bg:#f4f1ec;--surface:#f9f7f3;--surface2:#fff;--offset:#ede9e1;--dynamic:#e0dbd0;
+  --divider:#d8d4ca;--border:#ccc8be;
+  --text:#1e1b14;--muted:#6b6860;--faint:#b0ada6;
+  --primary:#2d6a4f;--primary-h:#1e4d38;--primary-a:#133626;--primary-hl:#c6ddd1;
+  --accent:#d4a24a;--peak:#e76f51;
+  --r-sm:.375rem;--r-md:.5rem;--r-lg:.75rem;--r-xl:1rem;--r-2xl:1.5rem;--r-full:9999px;
+  --sh-sm:0 1px 3px oklch(.15 .02 100/.08);--sh-md:0 4px 14px oklch(.15 .02 100/.1);--sh-lg:0 12px 40px oklch(.15 .02 100/.14);
+  --s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.25rem;--s6:1.5rem;--s8:2rem;--s10:2.5rem;--s12:3rem;--s16:4rem;
+  --xs:clamp(.75rem,.7rem + .25vw,.875rem);--sm:clamp(.875rem,.8rem + .35vw,1rem);
+  --base:clamp(1rem,.95rem + .25vw,1.125rem);--lg:clamp(1.125rem,1rem + .75vw,1.5rem);
+  --xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);--2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
+  --fd:'Noto Serif KR',Georgia,serif;--fb:'Noto Sans KR','Segoe UI',sans-serif;
+  --tr:200ms cubic-bezier(.16,1,.3,1);--cw:1100px;
+}
+[data-theme="dark"]{
+  --bg:#13120e;--surface:#1a1914;--surface2:#201f19;--offset:#1e1d18;--dynamic:#2a2922;
+  --divider:#2e2d26;--border:#3a3930;--text:#e8e4dc;--muted:#8a8880;--faint:#5a5952;
+  --primary:#52b788;--primary-h:#74caa0;--primary-a:#96dbb8;--primary-hl:#1e3a2e;
+  --accent:#e8b86d;--peak:#f4a07a;
+  --sh-sm:0 1px 3px oklch(0 0 0/.3);--sh-md:0 4px 14px oklch(0 0 0/.4);--sh-lg:0 12px 40px oklch(0 0 0/.5);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);font-size:var(--base);color:var(--text);background:var(--bg);min-height:100dvh;line-height:1.65;transition:background var(--tr),color var(--tr)}
+img,svg{display:block;max-width:100%}
+button{cursor:pointer;font:inherit;border:none;background:none}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--fd);text-wrap:balance;line-height:1.2}
+:focus-visible{outline:2px solid var(--primary);outline-offset:3px;border-radius:var(--r-sm)}
+nav{position:sticky;top:0;z-index:100;background:oklch(from var(--surface) l c h/.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--divider)}
+.nav-in{max-width:var(--cw);margin:0 auto;padding:0 var(--s6);height:64px;display:flex;align-items:center;justify-content:space-between;gap:var(--s4)}
+.nav-back{display:flex;align-items:center;gap:var(--s2);font-size:var(--sm);color:var(--muted);border-radius:var(--r-full);padding:var(--s2) var(--s4);transition:all var(--tr)}
+.nav-back:hover{color:var(--primary);background:var(--primary-hl)}
+.logo-t{font-family:var(--fd);font-size:var(--lg);font-weight:900;color:var(--primary);letter-spacing:-.02em}
+.nav-acts{display:flex;align-items:center;gap:var(--s2)}
+.theme-btn{width:40px;height:40px;display:flex;align-items:center;justify-content:center;border-radius:var(--r-full);color:var(--muted);transition:all var(--tr)}
+.theme-btn:hover{background:var(--offset);color:var(--text)}
+.hero{background:linear-gradient(155deg,var(--primary-a) 0%,var(--primary) 60%,#52b788 100%);padding:clamp(var(--s12),8vw,var(--s16)) var(--s6) clamp(var(--s10),6vw,var(--s12));position:relative;overflow:hidden}
+.hero-dots{position:absolute;inset:0;opacity:.05;background-image:radial-gradient(circle at 1px 1px,#fff 1px,transparent 0);background-size:28px 28px}
+.hero-in{position:relative;z-index:1;max-width:var(--cw);margin:0 auto}
+.pb-badge{display:inline-flex;align-items:center;gap:var(--s2);background:oklch(1 0 0/.15);border:1px solid oklch(1 0 0/.25);color:#fff;font-size:var(--xs);font-weight:700;padding:var(--s1) var(--s4);border-radius:var(--r-full);letter-spacing:.06em;text-transform:uppercase;margin-bottom:var(--s4)}
+.pb-title{font-size:var(--2xl);font-weight:900;color:#fff;letter-spacing:-.03em;margin-bottom:var(--s3)}
+.pb-sub{font-size:var(--lg);font-weight:400;color:oklch(1 0 0/.75);margin-bottom:var(--s8)}
+.stats-row{display:flex;flex-wrap:wrap;gap:var(--s3)}
+.stat-pill{display:flex;align-items:center;gap:var(--s2);background:oklch(1 0 0/.12);border:1px solid oklch(1 0 0/.2);border-radius:var(--r-full);padding:var(--s2) var(--s5);color:#fff;font-size:var(--sm);font-weight:600;backdrop-filter:blur(6px)}
+.stat-pill span{opacity:.7}
+.body-wrap{max-width:var(--cw);margin:0 auto;padding:var(--s12) var(--s6);display:grid;grid-template-columns:1fr 300px;gap:var(--s8);align-items:start}
+.main-col{display:flex;flex-direction:column;gap:var(--s8)}
+.aside-col{display:flex;flex-direction:column;gap:var(--s5);position:sticky;top:80px}
+.card{background:var(--surface2);border-radius:var(--r-2xl);padding:var(--s6) var(--s8);box-shadow:var(--sh-md);border:1px solid var(--border)}
+.card-sm{background:var(--surface2);border-radius:var(--r-xl);padding:var(--s5);box-shadow:var(--sh-sm);border:1px solid var(--border)}
+.sec-eyebrow{font-size:var(--xs);font-weight:700;color:var(--primary);letter-spacing:.1em;text-transform:uppercase;margin-bottom:var(--s2)}
+.sec-h2{font-size:var(--xl);font-weight:900;letter-spacing:-.02em;margin-bottom:var(--s5)}
+.elev-wrap{background:linear-gradient(to bottom,var(--primary-hl),var(--offset));border-radius:var(--r-xl);padding:var(--s5) var(--s6) var(--s4);margin-bottom:var(--s6);border:1px solid var(--divider)}
+.elev-svg{width:100%;height:120px}
+.cplist{display:flex;flex-direction:column;gap:0}
+.cprow{display:grid;grid-template-columns:32px 1fr auto;gap:var(--s4);align-items:start;padding:var(--s4) 0;border-bottom:1px solid var(--divider);position:relative}
+.cprow:last-child{border-bottom:none}
+.cprow::before{content:'';position:absolute;left:15px;top:52px;bottom:-16px;width:2px;background:linear-gradient(to bottom,var(--primary-hl),transparent);opacity:.6}
+.cprow:last-child::before{display:none}
+.cp-num{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:var(--xs);font-weight:800;flex-shrink:0;background:var(--primary);color:#fff;position:relative;z-index:1}
+.cp-num.park{background:var(--offset);color:var(--muted);border:1px solid var(--border)}
+.cp-num.peak{background:var(--peak);color:#fff}
+.cp-body{}
+.cp-name{font-weight:700;font-size:var(--base);line-height:1.3;margin-bottom:var(--s1)}
+.cp-note{font-size:var(--xs);color:var(--muted);line-height:1.6}
+.cp-meta{text-align:right;flex-shrink:0}
+.cp-alt{font-family:var(--fd);font-size:var(--sm);font-weight:700;color:var(--primary)}
+.cp-dist{font-size:var(--xs);color:var(--faint);margin-top:2px}
+.tips{display:flex;flex-direction:column;gap:var(--s3)}
+.tip-row{display:flex;gap:var(--s3);align-items:flex-start;padding:var(--s4);background:var(--offset);border-radius:var(--r-lg);border:1px solid var(--divider)}
+.tip-ico{width:32px;height:32px;border-radius:var(--r-md);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px}
+.tip-body{font-size:var(--sm);color:var(--muted);line-height:1.7}
+.tip-body strong{color:var(--text);display:block;margin-bottom:2px}
+.tip-row.warn{background:oklch(from var(--peak) l c h/.07);border-color:oklch(from var(--peak) l c h/.2)}
+.tip-row.warn .tip-ico{background:oklch(from var(--peak) l c h/.15);color:var(--peak)}
+.tip-row.ok .tip-ico{background:var(--primary-hl);color:var(--primary)}
+table{width:100%;border-collapse:collapse;font-size:var(--xs)}
+th{background:var(--offset);padding:var(--s2) var(--s3);text-align:left;font-weight:700;color:var(--muted);border-bottom:2px solid var(--divider)}
+td{padding:var(--s2) var(--s3);border-bottom:1px solid var(--divider);color:var(--text)}
+tr:last-child td{border-bottom:none}
+tr:hover td{background:var(--offset)}
+.view-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
+.view-card{background:linear-gradient(135deg,var(--primary-a),var(--primary));border-radius:var(--r-xl);padding:var(--s4);color:#fff}
+.view-loc{font-weight:800;font-size:var(--sm);margin-bottom:var(--s1)}
+.view-desc{font-size:var(--xs);color:oklch(1 0 0/.8);line-height:1.5}
+.aside-stat-row{display:flex;flex-direction:column;gap:var(--s3)}
+.aside-stat{display:flex;align-items:center;justify-content:space-between;padding:var(--s3) var(--s4);background:var(--offset);border-radius:var(--r-lg)}
+.aside-label{font-size:var(--xs);color:var(--muted)}
+.aside-val{font-weight:800;font-size:var(--sm);color:var(--primary)}
+.diff-bar{display:flex;gap:3px;margin-top:var(--s1)}
+.diff-pip{width:18px;height:6px;border-radius:2px}
+.btn-map{display:flex;align-items:center;justify-content:center;gap:var(--s2);width:100%;background:var(--primary);color:#fff;font-weight:700;font-size:var(--sm);padding:var(--s3) var(--s4);border-radius:var(--r-lg);border:none;cursor:pointer;transition:all var(--tr);text-decoration:none;box-shadow:var(--sh-sm)}
+.btn-map:hover{background:var(--primary-h);transform:translateY(-1px);box-shadow:var(--sh-md)}
+.btn-sec{background:var(--surface2);color:var(--text);border:1px solid var(--border)}
+.btn-sec:hover{background:var(--offset);transform:translateY(-1px)}
+footer{background:var(--surface);border-top:1px solid var(--divider);padding:var(--s8) var(--s6);text-align:center}
+.ft-t{font-size:var(--xs);color:var(--faint)}
+@media(max-width:900px){.body-wrap{grid-template-columns:1fr}.aside-col{position:static}}
+@media(max-width:600px){.body-wrap{padding:var(--s8) var(--s4)}.card{padding:var(--s5)}.view-grid{grid-template-columns:1fr}.stats-row .stat-pill span{display:none}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="nav-back"><i data-lucide="arrow-left" width="16" height="16"></i>전국 지도로</a>
+    <div class="logo-t">한국의 산</div>
+    <div class="nav-acts">
+      <button class="theme-btn" id="themeBtn" aria-label="테마 전환">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+    </div>
+  </div>
+</nav>
+<header class="hero">
+  <div class="hero-dots" aria-hidden="true"></div>
+  <div class="hero-in">
+    <div class="pb-badge">🏔 플레이북 · 충청 · 대전</div>
+    <h1 class="pb-title">식장산 4봉 환종주</h1>
+    <p class="pb-sub">꾀꼬리봉 · 국사봉 · 독수리봉 · 식장산 (598m)</p>
+    <div class="stats-row">
+      <div class="stat-pill"><i data-lucide="ruler" width="14" height="14"></i>10.4km <span>총 거리</span></div>
+      <div class="stat-pill"><i data-lucide="clock" width="14" height="14"></i>4~4.5h <span>소요시간</span></div>
+      <div class="stat-pill"><i data-lucide="trending-up" width="14" height="14"></i>493m <span>누적 고도</span></div>
+      <div class="stat-pill"><i data-lucide="star" width="14" height="14"></i>★★★★☆ <span>난이도</span></div>
+    </div>
+  </div>
+</header>
+<div class="body-wrap">
+<div class="main-col">
+  <div class="card">
+    <div class="sec-eyebrow">고도 프로필</div>
+    <h2 class="sec-h2">코스 고도 변화</h2>
+    <div class="elev-wrap">
+      <svg class="elev-svg" viewBox="0 0 700 120" preserveAspectRatio="none" aria-label="식장산 고도 프로필">
+        <defs>
+          <linearGradient id="eg" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="var(--primary)" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="var(--primary)" stop-opacity=".05"/>
+          </linearGradient>
+        </defs>
+        <path d="M0 108 L50 106 L130 100 L200 86 L280 46 L340 68 L420 38 L480 22 L520 29 L570 12 L610 10 L640 15 L680 22 L740 78 L790 99 L700 108 Z" fill="url(#eg)" stroke="none"/>
+        <path d="M0 108 L50 106 L130 100 L200 86 L280 46 L340 68 L420 38 L480 22 L520 29 L570 12 L610 10 L640 15 L680 22 L740 78 L790 99 L700 108" fill="none" stroke="var(--primary)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+        <g font-family="sans-serif" font-size="9" fill="var(--primary)" font-weight="700">
+          <text x="265" y="38">꾀꼬리봉</text>
+          <text x="405" y="30">국사봉</text>
+          <text x="462" y="14">독수리봉</text>
+          <text x="596" y="5">식장산</text>
+        </g>
+        <g font-family="sans-serif" font-size="8" fill="var(--faint)">
+          <text x="2" y="118">105m</text>
+          <text x="265" y="118">479m</text>
+          <text x="464" y="118">587m</text>
+          <text x="596" y="118">598m</text>
+        </g>
+      </svg>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3)">
+      <div style="text-align:center;padding:var(--s3);background:var(--offset);border-radius:var(--r-lg)"><div style="font-size:var(--sm);font-weight:800;color:var(--peak)">598m</div><div style="font-size:var(--xs);color:var(--faint)">최고봉</div></div>
+      <div style="text-align:center;padding:var(--s3);background:var(--offset);border-radius:var(--r-lg)"><div style="font-size:var(--sm);font-weight:800;color:var(--primary)">493m</div><div style="font-size:var(--xs);color:var(--faint)">누적 고도</div></div>
+      <div style="text-align:center;padding:var(--s3);background:var(--offset);border-radius:var(--r-lg)"><div style="font-size:var(--sm);font-weight:800;color:var(--primary)">10.4km</div><div style="font-size:var(--xs);color:var(--faint)">총 거리</div></div>
+      <div style="text-align:center;padding:var(--s3);background:var(--offset);border-radius:var(--r-lg)"><div style="font-size:var(--sm);font-weight:800;color:var(--accent)">환종주</div><div style="font-size:var(--xs);color:var(--faint)">코스 타입</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="sec-eyebrow">체크포인트</div>
+    <h2 class="sec-h2">구간별 가이드</h2>
+    <div class="cplist">
+      <div class="cprow"><div class="cp-num park">🅿</div><div class="cp-body"><div class="cp-name">세천공원 주차장</div><div class="cp-note">출발점 겸 귀환 지점. 무료 주차 가능. 화장실 완비. 등산 안내판 확인 후 출발.</div></div><div class="cp-meta"><div class="cp-alt">105m</div><div class="cp-dist">0 km</div></div></div>
+      <div class="cprow"><div class="cp-num park">↗</div><div class="cp-body"><div class="cp-name">세천저수지 데크길</div><div class="cp-note">저수지 옆 나무 데크 산책로. 평탄한 워밍업 구간. 생태공원 안내판 참고.</div></div><div class="cp-meta"><div class="cp-alt">130m</div><div class="cp-dist">0.3 km</div></div></div>
+      <div class="cprow"><div class="cp-num park" style="font-size:8px">철탑</div><div class="cp-body"><div class="cp-name">철탑삼거리</div><div class="cp-note">꾀꼬리봉·독수리봉 갈림. 화장실과 막걸리 포장마차. 본격 오름 시작.</div></div><div class="cp-meta"><div class="cp-alt">280m</div><div class="cp-dist">1.8 km</div></div></div>
+      <div class="cprow"><div class="cp-num peak">❶</div><div class="cp-body"><div class="cp-name">꾀꼬리봉 (일명 세천봉)</div><div class="cp-note">자연석 매직 정상석. 능선이 열리며 대전 동구 시가지 첫 조망. 이후 장고개까지 내리막.</div></div><div class="cp-meta"><div class="cp-alt">479m</div><div class="cp-dist">2.5 km</div></div></div>
+      <div class="cprow"><div class="cp-num park" style="font-size:8px">장↓</div><div class="cp-body"><div class="cp-name">장고개 (깔딱고개)</div><div class="cp-note">세천공원으로 빠지는 탈출로 삼거리. 이후 국사봉까지 3단 깔딱고개 오름. 무릎 주의.</div></div><div class="cp-meta"><div class="cp-alt">350m</div><div class="cp-dist">3.2 km</div></div></div>
+      <div class="cprow"><div class="cp-num">❷</div><div class="cp-body"><div class="cp-name">국사봉</div><div class="cp-note">정상석 없음. 나뭇가지 사이로 꾀꼬리봉·식장산 조망. 이후 독수리봉까지 능선 이동.</div></div><div class="cp-meta"><div class="cp-alt">511m</div><div class="cp-dist">4.2 km</div></div></div>
+      <div class="cprow"><div class="cp-num park" style="font-size:8px">쉼터</div><div class="cp-body"><div class="cp-name">독수리봉 아래 쉼터</div><div class="cp-note">벤치·음료 판매·화장실. 백제시대 석축산성 흔적. 서대산·대청호 조망 일품. 식사 최적 지점.</div></div><div class="cp-meta"><div class="cp-alt">550m</div><div class="cp-dist">5.3 km</div></div></div>
+      <div class="cprow"><div class="cp-num peak">❸</div><div class="cp-body"><div class="cp-name">독수리봉</div><div class="cp-note">서대산·대청호·금산 방향 조망. 구절사 0.5km 갈림길. 벤치 설치.</div></div><div class="cp-meta"><div class="cp-alt">587m</div><div class="cp-dist">5.8 km</div></div></div>
+      <div class="cprow"><div class="cp-num park" style="font-size:8px">삼각</div><div class="cp-body"><div class="cp-name">1등 삼각점봉 · 망경대</div><div class="cp-note">로프 급경사 직전. 서대산·만인산 전경 조망. 암릉 위 자연 전망대.</div></div><div class="cp-meta"><div class="cp-alt">581m</div><div class="cp-dist">6.7 km</div></div></div>
+      <div class="cprow"><div class="cp-num peak" style="background:var(--accent)">❹</div><div class="cp-body"><div class="cp-name">식장산 · 해돋이전망대 🏆</div><div class="cp-note">대전 최고봉 (598m). 군시설로 최정상 출입 통제. 해돋이전망대에서 대전 시가지 360° 일출·야경 조망.</div></div><div class="cp-meta"><div class="cp-alt">598m</div><div class="cp-dist">7.0 km</div></div></div>
+      <div class="cprow"><div class="cp-num park">🏯</div><div class="cp-body"><div class="cp-name">식장루</div><div class="cp-note">정상에서 10분. 2층 팔각 누각. 360° 대전·옥천·대청호 조망. 하산 임도 입구.</div></div><div class="cp-meta"><div class="cp-alt">580m</div><div class="cp-dist">7.4 km</div></div></div>
+      <div class="cprow"><div class="cp-num park" style="font-size:8px">임도</div><div class="cp-body"><div class="cp-name">활공장 (헬기장)</div><div class="cp-note">임도 합류 지점. 이후 계곡을 따라 세천공원으로 복귀.</div></div><div class="cp-meta"><div class="cp-alt">545m</div><div class="cp-dist">7.9 km</div></div></div>
+      <div class="cprow"><div class="cp-num park" style="font-size:8px">계곡</div><div class="cp-body"><div class="cp-name">함수지점 (계곡 합류)</div><div class="cp-note">세천공원 방향. 계곡 물 보충 가능. 낙석 주의 구간 시작.</div></div><div class="cp-meta"><div class="cp-alt">250m</div><div class="cp-dist">9.0 km</div></div></div>
+      <div class="cprow"><div class="cp-num park">🅿</div><div class="cp-body"><div class="cp-name">세천공원 주차장 귀환</div><div class="cp-note">환종주 완료! 세천소류지 인근 식당 및 편의시설 이용 가능.</div></div><div class="cp-meta"><div class="cp-alt">105m</div><div class="cp-dist">10.4 km</div></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="sec-eyebrow">조망 포인트</div>
+    <h2 class="sec-h2">이 산의 뷰포인트</h2>
+    <div class="view-grid">
+      <div class="view-card"><div class="view-loc">🌅 꾀꼬리봉 능선</div><div class="view-desc">대전 동구 시가지 방향. 코스 첫 조망 개방 구간.</div></div>
+      <div class="view-card" style="background:linear-gradient(135deg,#8d6748,#c17f48)"><div class="view-loc">🦅 독수리봉 (587m)</div><div class="view-desc">서대산, 대청호, 금산 방향. 벤치·음료 보급 가능.</div></div>
+      <div class="view-card" style="background:linear-gradient(135deg,#2c5364,#203a43)"><div class="view-loc">🔭 망경대</div><div class="view-desc">서대산·만인산 전경. 암릉 위 자연 전망대.</div></div>
+      <div class="view-card" style="background:linear-gradient(135deg,#c94b4b,#4b134f)"><div class="view-loc">🌇 해돋이전망대</div><div class="view-desc">대전 시가지·보만식계 능선 전체. 일출·야경 1번지.</div></div>
+      <div class="view-card" style="grid-column:1/-1;background:linear-gradient(135deg,#0f0c29,#302b63,#24243e)"><div class="view-loc">🏯 식장루 (정상+10분)</div><div class="view-desc">360° — 대전·옥천·대청호 파노라마. 2층 팔각 누각. 일몰 추천.</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="sec-eyebrow">팁 & 주의사항</div>
+    <h2 class="sec-h2">산행 전 체크리스트</h2>
+    <div class="tips">
+      <div class="tip-row warn"><div class="tip-ico">⚠️</div><div class="tip-body"><strong>군사시설 출입 통제</strong>최정상부는 군 시설로 출입 통제. 해돋이전망대(바로 아래)에서 조망 가능.</div></div>
+      <div class="tip-row warn"><div class="tip-ico">🦵</div><div class="tip-body"><strong>장고개 3단 깔딱고개</strong>꾀꼬리봉 이후 장고개까지 급경사 내리막 — 무릎 보호대 권장. 스틱 필수.</div></div>
+      <div class="tip-row warn"><div class="tip-ico">🪨</div><div class="tip-body"><strong>낙석 주의 구간</strong>세천소류지 인근 계곡 하산 구간. 우천 후 특히 주의.</div></div>
+      <div class="tip-row ok"><div class="tip-ico">💧</div><div class="tip-body"><strong>음수·보급 포인트</strong>철탑삼거리 막걸리, 독수리봉 아래 쉼터 음료 판매. 물 최소 1.5L 휴대 권장.</div></div>
+      <div class="tip-row ok"><div class="tip-ico">🌅</div><div class="tip-body"><strong>일출·야경 추천</strong>해돋이전망대·식장루는 일출·야경 명소. 새벽 출발 시 헤드랜턴 필수.</div></div>
+      <div class="tip-row ok"><div class="tip-ico">🅿</div><div class="tip-body"><strong>주차 & 접근</strong>세천공원 무료 주차장 이용. 대중교통 611번·63번 버스로 '세천공원 종점' 하차.</div></div>
+      <div class="tip-row ok"><div class="tip-ico">📅</div><div class="tip-body"><strong>최적 시즌</strong>봄 철쭉(4~5월), 가을 단풍(10~11월), 겨울 설경(12~2월). 여름은 해충 주의.</div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="sec-eyebrow">교통 정보</div>
+    <h2 class="sec-h2">대중교통으로 가는 법</h2>
+    <div style="overflow-x:auto;border-radius:var(--r-lg);overflow:hidden;border:1px solid var(--border)">
+    <table>
+      <thead><tr><th>출발지</th><th>노선</th><th>하차 정류장</th><th>소요 시간</th></tr></thead>
+      <tbody>
+        <tr><td>대전역</td><td><strong>611번</strong> 시내버스</td><td>세천공원 종점</td><td>약 30분</td></tr>
+        <tr><td>대전역</td><td><strong>63번</strong> 시내버스</td><td>세천공원</td><td>약 35분</td></tr>
+        <tr><td>대전 복합터미널</td><td><strong>611번</strong> 시내버스</td><td>세천공원 종점</td><td>약 40분</td></tr>
+        <tr><td>대전역 (급행)</td><td><strong>빨간 2번</strong></td><td>은어송초교 앞 → 도보</td><td>약 25분+도보</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p style="font-size:var(--xs);color:var(--faint);margin-top:var(--s3)">※ 자가용 이용 시 세천공원 무료 주차장 이용 가능 (네비: '세천공원' 또는 '대전 동구 세천동 산5-1')</p>
+  </div>
+</div>
+<aside class="aside-col" aria-label="산행 요약">
+  <div class="card-sm">
+    <div style="font-weight:800;font-size:var(--base);margin-bottom:var(--s4)">산행 요약</div>
+    <div class="aside-stat-row">
+      <div class="aside-stat"><span class="aside-label">총 거리</span><span class="aside-val">10.4 km</span></div>
+      <div class="aside-stat"><span class="aside-label">소요 시간</span><span class="aside-val">4 ~ 4.5h</span></div>
+      <div class="aside-stat"><span class="aside-label">최고 고도</span><span class="aside-val">598m</span></div>
+      <div class="aside-stat"><span class="aside-label">출발 고도</span><span class="aside-val">105m</span></div>
+      <div class="aside-stat"><span class="aside-label">누적 고도</span><span class="aside-val">493m</span></div>
+      <div class="aside-stat"><span class="aside-label">코스 타입</span><span class="aside-val">환종주</span></div>
+    </div>
+    <div style="margin-top:var(--s4)">
+      <div style="font-size:var(--xs);color:var(--muted);margin-bottom:var(--s2)">난이도</div>
+      <div class="diff-bar">
+        <div class="diff-pip" style="background:var(--peak)"></div>
+        <div class="diff-pip" style="background:var(--peak)"></div>
+        <div class="diff-pip" style="background:var(--peak)"></div>
+        <div class="diff-pip" style="background:var(--peak)"></div>
+        <div class="diff-pip" style="background:var(--dynamic)"></div>
+      </div>
+      <div style="font-size:var(--xs);color:var(--faint);margin-top:var(--s2)">중상급 (★★★★☆)</div>
+    </div>
+  </div>
+  <div class="card-sm">
+    <div style="font-weight:800;font-size:var(--base);margin-bottom:var(--s3)">4봉 순서</div>
+    <div style="display:flex;flex-direction:column;gap:var(--s2)">
+      <div style="display:flex;align-items:center;gap:var(--s3);padding:var(--s2) var(--s3);background:var(--offset);border-radius:var(--r-lg)"><span style="width:22px;height:22px;background:var(--peak);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">❶</span><span style="font-size:var(--xs)"><strong>꾀꼬리봉</strong> 479m</span></div>
+      <div style="display:flex;align-items:center;gap:var(--s3);padding:var(--s2) var(--s3);background:var(--offset);border-radius:var(--r-lg)"><span style="width:22px;height:22px;background:var(--peak);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">❷</span><span style="font-size:var(--xs)"><strong>국사봉</strong> 511m</span></div>
+      <div style="display:flex;align-items:center;gap:var(--s3);padding:var(--s2) var(--s3);background:var(--offset);border-radius:var(--r-lg)"><span style="width:22px;height:22px;background:var(--peak);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">❸</span><span style="font-size:var(--xs)"><strong>독수리봉</strong> 587m</span></div>
+      <div style="display:flex;align-items:center;gap:var(--s3);padding:var(--s2) var(--s3);background:linear-gradient(135deg,var(--primary-hl),var(--offset));border-radius:var(--r-lg);border:1px solid var(--primary-hl)"><span style="width:22px;height:22px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;flex-shrink:0">❹</span><span style="font-size:var(--xs)"><strong>식장산</strong> 598m 🏆</span></div>
+    </div>
+  </div>
+  <a href="https://map.kakao.com/link/to/식장산,36.3678,127.4916" target="_blank" rel="noopener noreferrer" class="btn-map"><i data-lucide="navigation" width="16" height="16"></i>카카오맵으로 열기</a>
+  <a href="index.html" class="btn-map btn-sec"><i data-lucide="map" width="16" height="16"></i>다른 산 찾기</a>
+</aside>
+</div>
+<footer>
+  <p class="ft-t">한국의 산 🏔 오픈소스 등산 플레이북 · <a href="https://github.com/CassianK/korea-trails" target="_blank" rel="noopener noreferrer" style="color:var(--primary)">GitHub</a></p>
+</footer>
+<script>
+(function(){
+  const btn=document.getElementById('themeBtn'),r=document.documentElement;
+  let d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  function upd(){btn.innerHTML=d==='dark'
+    ?'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>'
+    :'<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'}
+  upd();
+  btn.addEventListener('click',()=>{d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);upd()});
+})();
+lucide.createIcons();
+</script>
+</body>
+</html>
