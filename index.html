@@ -106,6 +106,7 @@ a,button,[role="button"]{transition:color var(--transition),background var(--tra
 .diff-medium{background:var(--color-gold-highlight);color:var(--color-gold);}
 .diff-hard{background:var(--color-warning-highlight);color:var(--color-warning);}
 .diff-expert{background:#f0d0e8;color:var(--color-error);}
+.section-divider{font-family:var(--font-display);font-size:var(--text-sm);font-weight:700;color:var(--color-text-muted);padding:var(--space-6) 0 var(--space-3);border-top:1px solid var(--color-divider);margin-top:var(--space-4);grid-column:1/-1;letter-spacing:0.05em;text-transform:uppercase;}
 @media(max-width:640px){
   .site-header{padding:var(--space-3) var(--space-4);}
   .grid-section{padding-left:var(--space-4);padding-right:var(--space-4);}
@@ -134,14 +135,14 @@ a,button,[role="button"]{transition:color var(--transition),background var(--tra
 <section class="hero">
   <div class="hero-badge">🏔 전국 등산 플레이북</div>
   <h1>한국의 명산을<br>정복하세요</h1>
-  <p>전국 18개 명산의 상세 등산 가이드. 초급부터 고급까지 단계별 코스, 체크포인트, 준비물을 한눈에.</p>
+  <p>전국 명산과 해외 명산의 상세 등산 가이드. 초급부터 고급까지 단계별 코스, 체크포인트, 준비물을 한눈에.</p>
   <div class="hero-stats">
     <div class="hero-stat">
-      <div class="hero-stat-value">18</div>
+      <div class="hero-stat-value">26</div>
       <div class="hero-stat-label">등록 명산</div>
     </div>
     <div class="hero-stat">
-      <div class="hero-stat-value">3</div>
+      <div class="hero-stat-value">16</div>
       <div class="hero-stat-label">플레이북 완성</div>
     </div>
     <div class="hero-stat">
@@ -161,30 +162,42 @@ a,button,[role="button"]{transition:color var(--transition),background var(--tra
 </footer>
 <script>
 const MOUNTAINS = [
-  {id:'seoraksan',  name:'설악산',  alt:'1,708m', region:'강원', dist:'10km', time:'7-9시간',  diff:'hard',   done:true,  url:'seoraksan-playbook.html',  desc:'설악산 대청봉. 공룡능선·대청봉 등 대한민국 최고의 암릉 산행지. 사계절 각기 다른 절경.'},
-  {id:'hallasan',   name:'한라산',  alt:'1,950m', region:'제주', dist:'9km',  time:'8-10시간', diff:'hard',   done:false, url:'',                         desc:'우리나라 최고봉. 성판악·관음사 코스로 분화구 백록담 조망. 연간 100만 탐방객.'},
-  {id:'jirisan',    name:'지리산',  alt:'1,915m', region:'전라', dist:'24km', time:'1박2일',   diff:'expert', done:true,  url:'jirisan-playbook.html',    desc:'남한 최대 산악지. 노고단~천왕봉 종주 25km. 4개 국립공원 탐방로.'},
-  {id:'bukhansan',  name:'북한산',  alt:'836m',   region:'경기', dist:'8km',  time:'4-5시간',  diff:'medium', done:false, url:'',                         desc:'서울 북쪽 국립공원. 백운대·인수봉 화강암 명봉. 도심 접근성 최고.'},
-  {id:'sobaeksan',  name:'소백산',  alt:'1,440m', region:'충청', dist:'12km', time:'6-7시간',  diff:'medium', done:false, url:'',                         desc:'연화봉~비로봉 능선. 봄철 철쭉 군락지로 유명. 죽령 고개 경유 코스.'},
-  {id:'gayasan',    name:'가야산',  alt:'1,433m', region:'경상', dist:'10km', time:'5-6시간',  diff:'medium', done:false, url:'',                         desc:'해인사 품은 명산. 상왕봉에서 고려 팔만대장경의 기운 느끼기.'},
-  {id:'odaesan',    name:'오대산',  alt:'1,563m', region:'강원', dist:'11km', time:'5-6시간',  diff:'medium', done:false, url:'',                         desc:'월정사·상원사 사찰 탐방과 연계. 비로봉 정상 고원 능선이 인상적.'},
-  {id:'naejangsan', name:'내장산',  alt:'763m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'easy',   done:false, url:'',                         desc:'가을 단풍 최고 명소. 내장사 단풍터널 전국 최고. 케이블카 운영.'},
-  {id:'chiaksan',   name:'치악산',  alt:'1,288m', region:'강원', dist:'9km',  time:'5-6시간',  diff:'hard',   done:false, url:'',                         desc:'원주 치악산. 비로봉 급경사 코스 강원도 최고 난이도 산행.'},
-  {id:'deogyusan',  name:'덕유산',  alt:'1,614m', region:'전라', dist:'12km', time:'6-7시간',  diff:'medium', done:false, url:'',                         desc:'향적봉 정상. 겨울 설경과 스키장으로 유명. 무주 리조트 연계.'},
-  {id:'gyeryongsan',name:'계룡산',  alt:'845m',   region:'충청', dist:'7km',  time:'4시간',    diff:'easy',   done:false, url:'',                         desc:'충청의 명산. 삼불봉·관음봉 암릉과 갑사·동학사 사찰 탐방.'},
-  {id:'wolchulsan', name:'월출산',  alt:'809m',   region:'전라', dist:'7km',  time:'4-5시간',  diff:'hard',   done:false, url:'',                         desc:'남도의 금강산. 천황봉 기암괴석 군락. 구름다리 포함 스릴 코스.'},
-  {id:'mudeungsan', name:'무등산',  alt:'1,187m', region:'전라', dist:'10km', time:'5-6시간',  diff:'medium', done:false, url:'',                         desc:'광주의 진산. 서석대·입석대 주상절리 절경. 국립공원 지정 2013년.'},
-  {id:'baekhaksan', name:'백학산',  alt:'876m',   region:'경기', dist:'7km',  time:'4시간',    diff:'easy',   done:false, url:'',                         desc:'경기도 연천 백학산. 아기자기한 능선과 조용한 산행 코스.'},
-  {id:'duryunsan',  name:'두륜산',  alt:'703m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'medium', done:false, url:'',                         desc:'해남 대흥사 배경 명산. 가련봉 정상 남해 조망. 케이블카 운영.'},
-  {id:'minjusan',   name:'민주지산',alt:'1,242m', region:'충청', dist:'9km',  time:'5시간',    diff:'medium', done:false, url:'',                         desc:'충북 영동 민주지산. 삼도봉 삼거리에서 충북·전북·경북 경계.'},
-  {id:'sikjangsan', name:'식장산',  alt:'598m',   region:'충청', dist:'6km',  time:'3시간',    diff:'easy',   done:true,  url:'sikjangsan-playbook.html', desc:'대전 동쪽 식장산. 도심 근교 당일 산행. 정상에서 대전 시내 전망.'},
-  {id:'woraksan',   name:'월악산',  alt:'1,097m', region:'충청', dist:'9km',  time:'5-6시간',  diff:'hard',   done:false, url:'',                         desc:'충주호 절경 품은 월악산. 영봉 암릉 코스 스릴 만점. 가을 단풍.'},
+  // ── 한국 명산 ──
+  {id:'seoraksan',     name:'설악산',     alt:'1,708m', region:'강원', dist:'10km', time:'7-9시간',  diff:'hard',   done:true,  url:'seoraksan-playbook.html',     desc:'설악산 대청봉. 공룡능선·대청봉 등 대한민국 최고의 암릉 산행지. 사계절 각기 다른 절경.'},
+  {id:'hallasan',      name:'한라산',     alt:'1,950m', region:'제주', dist:'9km',  time:'8-10시간', diff:'hard',   done:true,  url:'hallasan-playbook.html',      desc:'우리나라 최고봉. 성판악·관음사 코스로 분화구 백록담 조망. 연간 100만 탐방객.'},
+  {id:'jirisan',       name:'지리산',     alt:'1,915m', region:'전라', dist:'24km', time:'1박2일',   diff:'expert', done:true,  url:'jirisan-playbook.html',       desc:'남한 최대 산악지. 노고단~천왕봉 종주 25km. 4개 국립공원 탐방로.'},
+  {id:'bukhansan',     name:'북한산',     alt:'836m',   region:'경기', dist:'8km',  time:'4-5시간',  diff:'medium', done:true,  url:'bukhansan-playbook.html',     desc:'서울 북쪽 국립공원. 백운대·인수봉 화강암 명봉. 도심 접근성 최고.'},
+  {id:'sobaeksan',     name:'소백산',     alt:'1,440m', region:'충청', dist:'12km', time:'6-7시간',  diff:'medium', done:true,  url:'sobaeksan-playbook.html',     desc:'연화봉~비로봉 능선. 봄철 철쭉 군락지로 유명. 죽령 고개 경유 코스.'},
+  {id:'gayasan',       name:'가야산',     alt:'1,433m', region:'경상', dist:'10km', time:'5-6시간',  diff:'medium', done:true,  url:'gayasan-playbook.html',       desc:'해인사 품은 명산. 상왕봉에서 고려 팔만대장경의 기운 느끼기.'},
+  {id:'odaesan',       name:'오대산',     alt:'1,563m', region:'강원', dist:'11km', time:'5-6시간',  diff:'medium', done:true,  url:'odaesan-playbook.html',       desc:'월정사·상원사 사찰 탐방과 연계. 비로봉 정상 고원 능선이 인상적.'},
+  {id:'naejangsan',    name:'내장산',     alt:'763m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'easy',   done:true,  url:'naejangsan-playbook.html',    desc:'가을 단풍 최고 명소. 내장사 단풍터널 전국 최고. 케이블카 운영.'},
+  {id:'chiaksan',      name:'치악산',     alt:'1,288m', region:'강원', dist:'9km',  time:'5-6시간',  diff:'hard',   done:false, url:'',                            desc:'원주 치악산. 비로봉 급경사 코스 강원도 최고 난이도 산행.'},
+  {id:'deogyusan',     name:'덕유산',     alt:'1,614m', region:'전라', dist:'12km', time:'6-7시간',  diff:'medium', done:true,  url:'deogyusan-playbook.html',     desc:'향적봉 정상. 겨울 설경과 스키장으로 유명. 무주 리조트 연계.'},
+  {id:'gyeryongsan',   name:'계룡산',     alt:'845m',   region:'충청', dist:'7km',  time:'4시간',    diff:'easy',   done:true,  url:'gyeryongsan-playbook.html',   desc:'충청의 명산. 삼불봉·관음봉 암릉과 갑사·동학사 사찰 탐방.'},
+  {id:'wolchulsan',    name:'월출산',     alt:'809m',   region:'전라', dist:'7km',  time:'4-5시간',  diff:'hard',   done:true,  url:'wolchulsan-playbook.html',    desc:'남도의 금강산. 천황봉 기암괴석 군락. 구름다리 포함 스릴 코스.'},
+  {id:'mudeungsan',    name:'무등산',     alt:'1,187m', region:'전라', dist:'10km', time:'5-6시간',  diff:'medium', done:false, url:'',                            desc:'광주의 진산. 서석대·입석대 주상절리 절경. 국립공원 지정 2013년.'},
+  {id:'baekhaksan',    name:'백학산',     alt:'876m',   region:'경기', dist:'7km',  time:'4시간',    diff:'easy',   done:false, url:'',                            desc:'경기도 연천 백학산. 아기자기한 능선과 조용한 산행 코스.'},
+  {id:'duryunsan',     name:'두륜산',     alt:'703m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'medium', done:false, url:'',                            desc:'해남 대흥사 배경 명산. 가련봉 정상 남해 조망. 케이블카 운영.'},
+  {id:'minjusan',      name:'민주지산',   alt:'1,242m', region:'충청', dist:'9km',  time:'5시간',    diff:'medium', done:false, url:'',                            desc:'충북 영동 민주지산. 삼도봉 삼거리에서 충북·전북·경북 경계.'},
+  {id:'sikjangsan',    name:'식장산',     alt:'598m',   region:'충청', dist:'6km',  time:'3시간',    diff:'easy',   done:true,  url:'sikjangsan-playbook.html',    desc:'대전 동쪽 식장산. 도심 근교 당일 산행. 정상에서 대전 시내 전망.'},
+  {id:'woraksan',      name:'월악산',     alt:'1,097m', region:'충청', dist:'9km',  time:'5-6시간',  diff:'hard',   done:true,  url:'woraksan-playbook.html',      desc:'충주호 절경 품은 월악산. 영봉 암릉 코스 스릴 만점. 가을 단풍.'},
+  {id:'dobongsan',     name:'도봉산',     alt:'740m',   region:'경기', dist:'7km',  time:'3-4시간',  diff:'medium', done:true,  url:'dobongsan-playbook.html',     desc:'서울 도봉구 뒤편 암릉 명산. 자운봉·만장봉 기암. 북한산 국립공원 포함.'},
+  {id:'soyosan',       name:'소요산',     alt:'587m',   region:'경기', dist:'6km',  time:'3시간',    diff:'easy',   done:true,  url:'soyosan-playbook.html',       desc:'경기 동두천 소요산. 자재암 계곡과 단풍. 수도권 당일 산행 명소.'},
+  {id:'juwangsan',     name:'주왕산',     alt:'721m',   region:'경상', dist:'8km',  time:'4-5시간',  diff:'easy',   done:true,  url:'juwangsan-playbook.html',     desc:'청송 주왕산. 주방천 계곡과 폭포 연계 탐방. 주왕굴 신비로운 분위기.'},
+  {id:'myeongseongsan',name:'명성산',     alt:'922m',   region:'경기', dist:'8km',  time:'4-5시간',  diff:'medium', done:true,  url:'myeongseongsan-playbook.html',desc:'포천·철원 경계 명성산. 억새 군락 가을 산행 명소. 산정호수 연계.'},
+  {id:'taebaeksan',    name:'태백산',     alt:'1,567m', region:'강원', dist:'10km', time:'5-6시간',  diff:'medium', done:true,  url:'taebaeksan-playbook.html',    desc:'태백고원 천제단. 겨울 설경과 주목 군락지. 백두대간 핵심 구간.'},
+  // ── 대만 명산 ──
+  {id:'yushan',        name:'위산(玉山)', alt:'3,952m', region:'대만', dist:'11km', time:'1박2일',   diff:'expert', done:true,  url:'yushan-playbook.html',        desc:'대만 최고봉·동북아 최고점. 배운산장 숙박 후 일출 정상 도전. 사전 허가 필수.'},
+  {id:'xueshan',       name:'설산(雪山)', alt:'3,886m', region:'대만', dist:'11km', time:'1박2일',   diff:'expert', done:true,  url:'xueshan-playbook.html',       desc:'대만 제2봉. 칠성담(七星潭) 빙하 지형과 고산 식물대. 타이중·리산 접근.'},
+  {id:'yangmingshan',  name:'양명산(陽明山)',alt:'1,120m',region:'대만',dist:'8km', time:'4-5시간',  diff:'easy',   done:true,  url:'yangmingshan-playbook.html',  desc:'타이베이 근교 화산 국립공원. 치싱산 정상 분화구 조망. 연중 진달래·유황 온천.'},
 ];
 const DIFF_LABEL = {easy:'초급',medium:'중급',hard:'고급',expert:'전문가'};
 const DIFF_CLASS = {easy:'diff-easy',medium:'diff-medium',hard:'diff-hard',expert:'diff-expert'};
 function renderGrid(){
   const grid = document.getElementById('mountainGrid');
-  grid.innerHTML = MOUNTAINS.map(m => `
+  const korea = MOUNTAINS.filter(m => m.region !== '대만');
+  const taiwan = MOUNTAINS.filter(m => m.region === '대만');
+  const renderCard = m => `
     <div class="mountain-card">
       <div class="card-header">
         <div class="card-title-row">
@@ -217,7 +230,11 @@ function renderGrid(){
         }
       </div>
     </div>
-  `).join('');
+  `;
+  grid.innerHTML =
+    korea.map(renderCard).join('') +
+    `<div class="section-divider">🌏 해외 명산 — 대만</div>` +
+    taiwan.map(renderCard).join('');
 }
 const t = document.querySelector('[data-theme-toggle]');
 const r = document.documentElement;
