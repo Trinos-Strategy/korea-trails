@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>설산 등산 플레이북</title>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>설산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root,[data-theme="light"]{--bg:#f3f5f7;--surface:#fbfcfd;--surface2:#e9eef2;--border:#d4dde4;--text:#192129;--muted:#65707a;--faint:#a5afb9;--green:#5f7c8c;--greenbg:#deeaef;--blue:#496aa3;--bluebg:#dde7f5;--red:#8f5d57;--redbg:#f1e0dd;--ice:#6da4c8;--shadow:0 10px 24px rgba(20,28,38,.08);--r:18px;--r2:12px;--xs:clamp(.75rem,.7rem+.2vw,.87rem);--sm:clamp(.9rem,.84rem+.2vw,1rem);--base:clamp(1rem,.95rem+.25vw,1.1rem);--lg:clamp(1.15rem,1rem+.5vw,1.45rem);--xl:clamp(1.6rem,1.2rem+1.2vw,2.4rem);--xxl:clamp(2.2rem,1.3rem+2vw,3.6rem)}
     [data-theme="dark"]{--bg:#12161b;--surface:#1d232b;--surface2:#26303a;--border:#37414c;--text:#e1e8ef;--muted:#96a4b2;--faint:#66727d;--green:#87aabc;--greenbg:#20313a;--blue:#82a4df;--bluebg:#1f2a3e;--red:#ce9489;--redbg:#3b2724;--ice:#8cc4ea;--shadow:0 12px 28px rgba(0,0,0,.3)}
     *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:'Satoshi',sans-serif;line-height:1.6} h1,h2,h3,h4,p{margin:0} button{font:inherit} table{border-collapse:collapse;width:100%}
@@ -22,36 +23,653 @@
     .map svg{width:100%;height:auto;max-height:430px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)} th,td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:var(--xs);text-align:left} th{background:var(--surface2);color:var(--muted)} tr:last-child td{border-bottom:none}
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
-  </style>
+  
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg viewBox="0 0 48 48" width="26" height="26" fill="none"><path d="M8 34c4-5 8-10 13-10 4 0 6 3 8 6 2-2 5-5 9-5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 39h36" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M14 19l4-5M24 16l3-4M31 18l4-5" stroke="white" stroke-width="2.4" stroke-linecap="round"/></svg></div><div><h1>설산</h1><p>Xueshan · 대만 제2고봉 3,886m · 369산장 중심 대표 고산 코스</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
-<section class="hero"><div class="wrap"><span class="hero-badge">Snow Mountain · Shei-Pa National Park</span><h2>설산 3코스 등산 플레이북</h2><p>대만 제2고봉 설산을 초급, 중급, 고급 3개 코스로 나눈 인터랙티브 가이드입니다. 설산 등산구, 369산장, 설산 주봉을 중심으로 가장 널리 쓰이는 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">3,886m</div><div class="l">설산 주봉</div></div><div class="stat"><div class="v">3,100m</div><div class="l">369산장</div></div><div class="stat"><div class="v">10.9km</div><div class="l">등산구→정상</div></div><div class="stat"><div class="v">흑삼림</div><div class="l">대표 구간</div></div><div class="stat"><div class="v">허가·산장</div><div class="l">예약 필수</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 369산장 체험</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 1박 2일 주봉</button><button class="course-btn red" data-course="advanced">🏔 고급 — 홀리릿지급 확장</button></div></div></section>
+<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M8 34c4-5 8-10 13-10 4 0 6 3 8 6 2-2 5-5 9-5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M6 39h36" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M14 19l4-5M24 16l3-4M31 18l4-5" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>설산</h1><p>Xueshan · 대만 제2고봉 3,886m · 369산장 중심 대표 고산 코스</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/xueshan/hero-640.avif 640w, assets/img/xueshan/hero-1024.avif 1024w, assets/img/xueshan/hero-1600.avif 1600w, assets/img/xueshan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/xueshan/hero-640.webp 640w, assets/img/xueshan/hero-1024.webp 1024w, assets/img/xueshan/hero-1600.webp 1600w, assets/img/xueshan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="설산 국립공원의 대표 명소인 설산 주봉와 아름다운 산세 풍경 / Beautiful landscape of Xueshan Main Peak and majestic mountain ridges in Xueshan National Park" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/xueshan/hero-1600.jpg" srcset="assets/img/xueshan/hero-640.jpg 640w, assets/img/xueshan/hero-1024.jpg 1024w, assets/img/xueshan/hero-1600.jpg 1600w, assets/img/xueshan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="wrap"><span class="hero-badge">Snow Mountain · Shei-Pa National Park</span><h2>설산 3코스 등산 플레이북</h2><p>대만 제2고봉 설산을 초급, 중급, 고급 3개 코스로 나눈 인터랙티브 가이드입니다. 설산 등산구, 369산장, 설산 주봉을 중심으로 가장 널리 쓰이는 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">3,886m</div><div class="l">설산 주봉</div></div><div class="stat"><div class="v">3,100m</div><div class="l">369산장</div></div><div class="stat"><div class="v">10.9km</div><div class="l">등산구→정상</div></div><div class="stat"><div class="v">흑삼림</div><div class="l">대표 구간</div></div><div class="stat"><div class="v">허가·산장</div><div class="l">예약 필수</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 369산장 체험</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 1박 2일 주봉</button><button class="course-btn red" data-course="advanced">🏔 고급 — 홀리릿지급 확장</button></div></div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/photo/aerial-view-of-lush-mountain-ridge-in-taiwan-34434574/" rel="noopener" target="_blank">小小 兵</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">Pexels</a></span>
+</div>
+</section>
 <main class="wrap">
-<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">369산장 체험 코스</div><div class="panel-sub">설산 등산구 → 치카산장 → 369산장 왕복 · 약 13.8~14.2km · 7~9시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">14km 내외</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">7~9h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">3,100m</div><div class="txt">369산장</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">고산 적응</div><div class="txt">목적</div></div><div class="card kpi"><div class="num">치카산장</div><div class="txt">중간 거점</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">설산 등산구</span><span class="arr">→</span><span class="chip">치카산장</span><span class="arr">→</span><span class="chip">369산장</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#5f7c8c" stop-opacity=".34"/><stop offset="100%" stop-color="#5f7c8c" stop-opacity=".05"/></linearGradient></defs><path d="M20 188 C150 174, 282 152, 392 124 S590 78, 740 90 L740 210 L20 210 Z" fill="url(#g1)"/><path d="M20 188 C150 174, 282 152, 392 124 S590 78, 740 90" fill="none" stroke="#5f7c8c" stroke-width="4" stroke-linecap="round"/><circle cx="740" cy="90" r="6" fill="#5f7c8c"/><text x="606" y="80" font-size="12" fill="#5f7c8c">369산장 3,100m</text></svg></div><p class="desc">설산 등산구에서 369산장까지는 약 6.9km로 많이 안내되며, 왕복하면 13.8km 수준입니다 [web:573]. 정상 없이 369산장까지만 다녀오는 구성은 고산 적응과 코스 체험 목적의 보수적인 선택지로 볼 수 있습니다 [web:572][web:576].</p></div>
+<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">369산장 체험 코스</div><div class="panel-sub">설산 등산구 → 치카산장 → 369산장 왕복 · 약 13.8~14.2km · 7~9시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">14km 내외</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">7~9h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">3,100m</div><div class="txt">369산장</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">고산 적응</div><div class="txt">목적</div></div><div class="card kpi"><div class="num">치카산장</div><div class="txt">중간 거점</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">설산 등산구</span><span class="arr">→</span><span class="chip">치카산장</span><span class="arr">→</span><span class="chip">369산장</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#5f7c8c" stop-opacity=".34"></stop><stop offset="100%" stop-color="#5f7c8c" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 188 C150 174, 282 152, 392 124 S590 78, 740 90 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 188 C150 174, 282 152, 392 124 S590 78, 740 90" fill="none" stroke="#5f7c8c" stroke-linecap="round" stroke-width="4"></path><circle cx="740" cy="90" fill="#5f7c8c" r="6"></circle><text fill="#5f7c8c" font-size="12" x="606" y="80">369산장 3,100m</text></svg></div><p class="desc">설산 등산구에서 369산장까지는 약 6.9km로 많이 안내되며, 왕복하면 13.8km 수준입니다 [web:573]. 정상 없이 369산장까지만 다녀오는 구성은 고산 적응과 코스 체험 목적의 보수적인 선택지로 볼 수 있습니다 [web:572][web:576].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">설산 등산구 출발</div><div class="seg-meta">0km · 해발 약 2,140~2,180m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>설산의 공식 들머리에서 출발합니다. 고산 들머리지만 초반은 비교적 리듬을 찾기 좋은 편입니다.</p><div class="bar"><div class="fill" style="width:24%"></div></div><div class="tip">💡 이미 2,000m가 넘는 고도라 초반 속도 조절이 중요합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">등산구 → 치카산장</div><div class="seg-meta">약 2km 전후 · 1~1.5시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>첫 숙박/휴식 거점 성격의 치카산장을 지나 본격 고산 구간으로 들어갑니다. 등로는 비교적 뚜렷합니다.</p><div class="bar"><div class="fill" style="width:34%"></div></div><div class="tip">💡 짧게 쉬며 호흡과 장비 상태를 점검하기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">치카산장 → 369산장</div><div class="seg-meta">약 4.9km · 4~5시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>전망덱과 눈물고개 방향으로 이어지며 점차 고산 느낌이 강해집니다. 369산장까지는 꾸준한 상승이 이어집니다.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="warn">⚠ 호흡이 가빠지고 속도가 급격히 떨어질 수 있어 무리하지 않는 것이 중요합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">369산장 → 등산구 하산</div><div class="seg-meta">6.9km · 2.5~4시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>긴 하산 거리라 피로가 누적되기 쉽습니다. 날씨가 나빠지기 전 일찍 되돌아서는 편이 안전합니다.</p><div class="bar"><div class="fill" style="width:38%"></div></div><div class="tip">💡 이 코스만으로도 설산 기본 루트의 체력 요구를 충분히 체험할 수 있습니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M92 322 C180 286, 276 236, 372 186 S560 100, 706 92" stroke="#5f7c8c" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="92" cy="322" r="10" fill="#5f7c8c"/><circle cx="250" cy="250" r="9" fill="#5f7c8c"/><circle cx="706" cy="92" r="12" fill="#5f7c8c"/><text x="106" y="316" font-size="12">등산구</text><text x="262" y="244" font-size="12">치카산장</text><text x="566" y="84" font-size="12">369산장</text><text x="34" y="44" font-size="12" fill="var(--muted)">고산 적응·산장 체험형 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>설산 등산구</td><td>약 2,140~2,180m</td><td>0km</td><td>공식 시작점</td></tr><tr><td>치카산장</td><td>2,463m</td><td>약 2km</td><td>중간 거점</td></tr><tr><td>369산장</td><td>3,100m</td><td>6.9~7.1km</td><td>대표 산장</td></tr><tr><td>등산구 복귀</td><td>약 2,140~2,180m</td><td>13.8~14.2km</td><td>원점 회귀</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M92 322 C180 286, 276 236, 372 186 S560 100, 706 92" fill="none" stroke="#5f7c8c" stroke-linecap="round" stroke-width="6"></path><circle cx="92" cy="322" fill="#5f7c8c" r="10"></circle><circle cx="250" cy="250" fill="#5f7c8c" r="9"></circle><circle cx="706" cy="92" fill="#5f7c8c" r="12"></circle><text font-size="12" x="106" y="316">등산구</text><text font-size="12" x="262" y="244">치카산장</text><text font-size="12" x="566" y="84">369산장</text><text fill="var(--muted)" font-size="12" x="34" y="44">고산 적응·산장 체험형 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>설산 등산구</td><td>약 2,140~2,180m</td><td>0km</td><td>공식 시작점</td></tr><tr><td>치카산장</td><td>2,463m</td><td>약 2km</td><td>중간 거점</td></tr><tr><td>369산장</td><td>3,100m</td><td>6.9~7.1km</td><td>대표 산장</td></tr><tr><td>등산구 복귀</td><td>약 2,140~2,180m</td><td>13.8~14.2km</td><td>원점 회귀</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 준비물</h4><ul><li>방풍·방한 의류</li><li>물 1.5L 이상</li><li>행동식과 스틱</li></ul></div><div class="card tipcard"><h4>📍 포인트</h4><ul><li>전망덱</li><li>눈물고개 접근부</li><li>369산장 풍경</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>고산 적응</li><li>긴 하산 피로</li><li>기상 급변</li></ul></div></div></div></section>
-
-<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">1박 2일 설산 주봉 코스</div><div class="panel-sub">설산 등산구 → 치카산장 → 369산장 1박 → 흑삼림 → 설산 주봉(3,886m) → 하산 · 왕복 21.8km</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">21.8km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">1박 2일</div><div class="txt">기본 일정</div></div><div class="card kpi"><div class="num">10.9km</div><div class="txt">등산구→정상</div></div><div class="card kpi"><div class="num">4.0km</div><div class="txt">369→정상</div></div><div class="card kpi"><div class="num">3,886m</div><div class="txt">설산 주봉</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">등산구</span><span class="arr">→</span><span class="chip">치카산장</span><span class="arr">→</span><span class="chip">369산장 숙박</span><span class="arr">→</span><span class="chip">🌲 흑삼림</span><span class="arr">→</span><span class="chip">🏔 설산 주봉</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#496aa3" stop-opacity=".34"/><stop offset="100%" stop-color="#496aa3" stop-opacity=".05"/></linearGradient></defs><path d="M20 190 C130 180, 236 160, 338 138 S500 108, 592 94 S674 62, 740 40 L740 210 L20 210 Z" fill="url(#g2)"/><path d="M20 190 C130 180, 236 160, 338 138 S500 108, 592 94 S674 62, 740 40" fill="none" stroke="#496aa3" stroke-width="4" stroke-linecap="round"/><circle cx="492" cy="108" r="6" fill="#496aa3"/><circle cx="740" cy="40" r="6" fill="#496aa3"/><text x="432" y="98" font-size="12" fill="#496aa3">369산장</text><text x="612" y="30" font-size="12" fill="#496aa3">설산 3,886m</text></svg></div><p class="desc">설산의 가장 일반적인 코스는 등산구에서 치카산장과 동봉을 지나 369산장에서 1박한 뒤, 흑삼림을 거쳐 정상에 오르는 1박 2일 일정입니다 [web:572][web:581]. 등산구에서 정상까지 편도 거리는 10.9km, 왕복은 21.8km로 안내되며, 총 산행 시간은 보통 11~12시간 이상으로 잡습니다 [web:572][web:573].</p></div>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">1박 2일 설산 주봉 코스</div><div class="panel-sub">설산 등산구 → 치카산장 → 369산장 1박 → 흑삼림 → 설산 주봉(3,886m) → 하산 · 왕복 21.8km</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">21.8km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">1박 2일</div><div class="txt">기본 일정</div></div><div class="card kpi"><div class="num">10.9km</div><div class="txt">등산구→정상</div></div><div class="card kpi"><div class="num">4.0km</div><div class="txt">369→정상</div></div><div class="card kpi"><div class="num">3,886m</div><div class="txt">설산 주봉</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">등산구</span><span class="arr">→</span><span class="chip">치카산장</span><span class="arr">→</span><span class="chip">369산장 숙박</span><span class="arr">→</span><span class="chip">🌲 흑삼림</span><span class="arr">→</span><span class="chip">🏔 설산 주봉</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#496aa3" stop-opacity=".34"></stop><stop offset="100%" stop-color="#496aa3" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 190 C130 180, 236 160, 338 138 S500 108, 592 94 S674 62, 740 40 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 190 C130 180, 236 160, 338 138 S500 108, 592 94 S674 62, 740 40" fill="none" stroke="#496aa3" stroke-linecap="round" stroke-width="4"></path><circle cx="492" cy="108" fill="#496aa3" r="6"></circle><circle cx="740" cy="40" fill="#496aa3" r="6"></circle><text fill="#496aa3" font-size="12" x="432" y="98">369산장</text><text fill="#496aa3" font-size="12" x="612" y="30">설산 3,886m</text></svg></div><p class="desc">설산의 가장 일반적인 코스는 등산구에서 치카산장과 동봉을 지나 369산장에서 1박한 뒤, 흑삼림을 거쳐 정상에 오르는 1박 2일 일정입니다 [web:572][web:581]. 등산구에서 정상까지 편도 거리는 10.9km, 왕복은 21.8km로 안내되며, 총 산행 시간은 보통 11~12시간 이상으로 잡습니다 [web:572][web:573].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1일</div><div><div class="seg-title">등산구 → 369산장</div><div class="seg-meta">6.9~7.1km · 6~8시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>치카산장과 전망덱, 눈물고개, 설산동봉 인근을 지나 369산장에 도착합니다. 첫날부터 고도 상승이 커서 여유 있는 페이스가 중요합니다.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip">💡 산장 도착 후 다음 날 새벽 산행을 위해 일찍 휴식하는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2일</div><div><div class="seg-title">369산장 → 흑삼림 → 정상</div><div class="seg-meta">4km · 3.5~4.5시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>흑삼림 구간을 지나 권곡 지형과 함께 정상으로 이어집니다. 새벽 출발이 일반적이며, 고도와 기온 때문에 체감 난이도가 매우 높습니다.</p><div class="bar"><div class="fill" style="width:80%"></div></div><div class="warn">⚠ 흑삼림 이후 정상 접근부는 고산 환경과 강풍, 기온 저하를 특히 주의해야 합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">정상 → 369산장 → 등산구</div><div class="seg-meta">10.9km · 6~8시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상 이후 긴 하산이 남아 있기 때문에 체력 분배가 중요합니다. 동봉과 눈물고개 재통과 시 무릎 피로가 크게 쌓입니다.</p><div class="bar"><div class="fill" style="width:64%"></div></div><div class="tip">💡 정상 등정보다 하산 집중력이 마지막까지 더 중요할 때가 많습니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M86 324 C166 290, 252 250, 338 208 S466 142, 560 110 S650 70, 736 54" stroke="#496aa3" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="86" cy="324" r="10" fill="#496aa3"/><circle cx="220" cy="264" r="9" fill="#496aa3"/><circle cx="492" cy="136" r="9" fill="#496aa3"/><circle cx="736" cy="54" r="12" fill="#496aa3"/><text x="100" y="318" font-size="12">등산구</text><text x="232" y="258" font-size="12">치카산장</text><text x="456" y="128" font-size="12">369산장</text><text x="604" y="46" font-size="12">설산 주봉 3,886m</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>설산 등산구</td><td>약 2,140~2,180m</td><td>0km</td><td>시작점</td></tr><tr><td>치카산장</td><td>2,463m</td><td>약 2km</td><td>중간 거점</td></tr><tr><td>설산동봉</td><td>3,201m</td><td>중후반</td><td>정상 전 포인트</td></tr><tr><td>369산장</td><td>3,100m</td><td>6.9~7.1km</td><td>숙박 거점</td></tr><tr><td>흑삼림</td><td>3,200m대</td><td>정상 직전</td><td>대표 구간</td></tr><tr><td>설산 주봉</td><td>3,886m</td><td>10.9km</td><td>대만 제2고봉</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M86 324 C166 290, 252 250, 338 208 S466 142, 560 110 S650 70, 736 54" fill="none" stroke="#496aa3" stroke-linecap="round" stroke-width="6"></path><circle cx="86" cy="324" fill="#496aa3" r="10"></circle><circle cx="220" cy="264" fill="#496aa3" r="9"></circle><circle cx="492" cy="136" fill="#496aa3" r="9"></circle><circle cx="736" cy="54" fill="#496aa3" r="12"></circle><text font-size="12" x="100" y="318">등산구</text><text font-size="12" x="232" y="258">치카산장</text><text font-size="12" x="456" y="128">369산장</text><text font-size="12" x="604" y="46">설산 주봉 3,886m</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>설산 등산구</td><td>약 2,140~2,180m</td><td>0km</td><td>시작점</td></tr><tr><td>치카산장</td><td>2,463m</td><td>약 2km</td><td>중간 거점</td></tr><tr><td>설산동봉</td><td>3,201m</td><td>중후반</td><td>정상 전 포인트</td></tr><tr><td>369산장</td><td>3,100m</td><td>6.9~7.1km</td><td>숙박 거점</td></tr><tr><td>흑삼림</td><td>3,200m대</td><td>정상 직전</td><td>대표 구간</td></tr><tr><td>설산 주봉</td><td>3,886m</td><td>10.9km</td><td>대만 제2고봉</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>📝 필수 준비</h4><ul><li>입산 허가</li><li>369산장 예약</li><li>여권·신분 확인</li></ul></div><div class="card tipcard"><h4>🧥 장비</h4><ul><li>방풍·보온 레이어</li><li>헤드랜턴</li><li>장갑·모자·우비</li></ul></div><div class="card tipcard"><h4>⛔ 핵심 리스크</h4><ul><li>고산증</li><li>흑삼림 이후 저온</li><li>긴 하산 피로</li></ul></div></div></div></section>
-
-<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">확장 종주·홀리릿지급 코스</div><div class="panel-sub">설산 주봉 + 장거리 능선 확장형 · 3박 4일~5일 이상 · 무인산장 활용 가능</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3~5일+</div><div class="txt">일정 규모</div></div><div class="card kpi"><div class="num">능선 종주</div><div class="txt">코스 성격</div></div><div class="card kpi"><div class="num">무인산장</div><div class="txt">숙박 가능</div></div><div class="card kpi"><div class="num">상급</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">설산군</div><div class="txt">확장 탐방</div></div><div class="card kpi"><div class="num">장거리 운영</div><div class="txt">핵심 역량</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">설산 등산구</span><span class="arr">→</span><span class="chip">369산장</span><span class="arr">→</span><span class="chip">설산 주봉</span><span class="arr">→</span><span class="chip">능선 확장</span><span class="arr">→</span><span class="chip">무인산장/복귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#8f5d57" stop-opacity=".34"/><stop offset="100%" stop-color="#8f5d57" stop-opacity=".05"/></linearGradient></defs><path d="M20 192 C118 184, 204 170, 300 150 S454 118, 532 96 S634 64, 690 52 S720 56, 740 84 L740 210 L20 210 Z" fill="url(#g3)"/><path d="M20 192 C118 184, 204 170, 300 150 S454 118, 532 96 S634 64, 690 52 S720 56, 740 84" fill="none" stroke="#8f5d57" stroke-width="4" stroke-linecap="round"/><circle cx="690" cy="52" r="6" fill="#8f5d57"/><text x="556" y="42" font-size="12" fill="#8f5d57">설산 주봉 / 능선 확장</text></svg></div><p class="desc">설산은 기본 1박 2일 코스 외에도 장거리 능선 종주형 루트가 존재하며, 일부 홀리릿지 일정은 4~5일 동안 무인산장에서 숙박하는 형태로도 알려져 있습니다 [web:580]. 일반 여행자용 당일·1박 2일 코스와는 완전히 다른 수준의 상급 고산 종주로 보는 것이 맞습니다 [web:578][web:576].</p></div>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">확장 종주·홀리릿지급 코스</div><div class="panel-sub">설산 주봉 + 장거리 능선 확장형 · 3박 4일~5일 이상 · 무인산장 활용 가능</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3~5일+</div><div class="txt">일정 규모</div></div><div class="card kpi"><div class="num">능선 종주</div><div class="txt">코스 성격</div></div><div class="card kpi"><div class="num">무인산장</div><div class="txt">숙박 가능</div></div><div class="card kpi"><div class="num">상급</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">설산군</div><div class="txt">확장 탐방</div></div><div class="card kpi"><div class="num">장거리 운영</div><div class="txt">핵심 역량</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">설산 등산구</span><span class="arr">→</span><span class="chip">369산장</span><span class="arr">→</span><span class="chip">설산 주봉</span><span class="arr">→</span><span class="chip">능선 확장</span><span class="arr">→</span><span class="chip">무인산장/복귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#8f5d57" stop-opacity=".34"></stop><stop offset="100%" stop-color="#8f5d57" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 192 C118 184, 204 170, 300 150 S454 118, 532 96 S634 64, 690 52 S720 56, 740 84 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 192 C118 184, 204 170, 300 150 S454 118, 532 96 S634 64, 690 52 S720 56, 740 84" fill="none" stroke="#8f5d57" stroke-linecap="round" stroke-width="4"></path><circle cx="690" cy="52" fill="#8f5d57" r="6"></circle><text fill="#8f5d57" font-size="12" x="556" y="42">설산 주봉 / 능선 확장</text></svg></div><p class="desc">설산은 기본 1박 2일 코스 외에도 장거리 능선 종주형 루트가 존재하며, 일부 홀리릿지 일정은 4~5일 동안 무인산장에서 숙박하는 형태로도 알려져 있습니다 [web:580]. 일반 여행자용 당일·1박 2일 코스와는 완전히 다른 수준의 상급 고산 종주로 보는 것이 맞습니다 [web:578][web:576].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">기본 루트로 369산장 접근</div><div class="seg-meta">1일차 · 6.9~7.1km</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>일반 설산 코스와 동일하게 369산장까지 접근합니다. 이후부터가 확장 능선 종주의 시작입니다.</p><div class="bar"><div class="fill" style="width:52%"></div></div><div class="tip">💡 첫날부터 체력 과소비를 줄여야 이후 능선 구간 운영이 안정됩니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">설산 주봉 등정 후 능선 확장</div><div class="seg-meta">2일차 이후 · 장거리</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>주봉 이후 설산군 능선으로 연결되며, 코스에 따라 무인산장 활용과 긴 노출 능선 이동이 포함됩니다. 길찾기와 날씨 판단 역량이 중요합니다.</p><div class="bar"><div class="fill" style="width:84%"></div></div><div class="warn">⚠ 이 구간은 일반 정상 왕복과 달리 구조적 리스크와 회수 난도가 훨씬 큽니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">무인산장 경유 복귀</div><div class="seg-meta">3~5일차 · 코스별 상이</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>복귀 루트 역시 짧지 않으며, 날씨 변화에 따라 철수 판단이 필요합니다. 식량·수분·보온 장비 계획이 일반 코스보다 훨씬 중요합니다.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip">💡 사실상 원정형 계획으로 접근해야 안전합니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M84 326 C174 288, 266 246, 350 208 S474 136, 560 98 S664 60, 730 82" stroke="#8f5d57" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="84" cy="326" r="10" fill="#8f5d57"/><circle cx="420" cy="164" r="9" fill="#8f5d57"/><circle cx="620" cy="70" r="10" fill="#8f5d57"/><circle cx="730" cy="82" r="10" fill="#8f5d57"/><text x="98" y="320" font-size="12">등산구</text><text x="390" y="156" font-size="12">369산장</text><text x="564" y="62" font-size="12">설산 주봉</text><text x="622" y="102" font-size="12">확장 능선</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>일정</th><th>특징</th></tr></thead><tbody><tr><td>설산 등산구</td><td>약 2,140~2,180m</td><td>1일차</td><td>시작점</td></tr><tr><td>369산장</td><td>3,100m</td><td>1일차</td><td>기본 숙박 거점</td></tr><tr><td>설산 주봉</td><td>3,886m</td><td>2일차</td><td>대만 제2고봉</td></tr><tr><td>확장 능선</td><td>3,000m대</td><td>2~4일차</td><td>장거리 노출 구간</td></tr><tr><td>무인산장/복귀</td><td>코스별 상이</td><td>3~5일차</td><td>원정형 운영</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M84 326 C174 288, 266 246, 350 208 S474 136, 560 98 S664 60, 730 82" fill="none" stroke="#8f5d57" stroke-linecap="round" stroke-width="6"></path><circle cx="84" cy="326" fill="#8f5d57" r="10"></circle><circle cx="420" cy="164" fill="#8f5d57" r="9"></circle><circle cx="620" cy="70" fill="#8f5d57" r="10"></circle><circle cx="730" cy="82" fill="#8f5d57" r="10"></circle><text font-size="12" x="98" y="320">등산구</text><text font-size="12" x="390" y="156">369산장</text><text font-size="12" x="564" y="62">설산 주봉</text><text font-size="12" x="622" y="102">확장 능선</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>일정</th><th>특징</th></tr></thead><tbody><tr><td>설산 등산구</td><td>약 2,140~2,180m</td><td>1일차</td><td>시작점</td></tr><tr><td>369산장</td><td>3,100m</td><td>1일차</td><td>기본 숙박 거점</td></tr><tr><td>설산 주봉</td><td>3,886m</td><td>2일차</td><td>대만 제2고봉</td></tr><tr><td>확장 능선</td><td>3,000m대</td><td>2~4일차</td><td>장거리 노출 구간</td></tr><tr><td>무인산장/복귀</td><td>코스별 상이</td><td>3~5일차</td><td>원정형 운영</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🔥 요구 역량</h4><ul><li>고산 종주 경험</li><li>자체 장비 운영 능력</li><li>철수 판단 능력</li></ul></div><div class="card tipcard"><h4>🎒 추가 장비</h4><ul><li>식량 계획 강화</li><li>비상보온 장비</li><li>내비게이션·배터리</li></ul></div><div class="card tipcard"><h4>⛔ 핵심 리스크</h4><ul><li>장기 기상 노출</li><li>구조 접근 난도</li><li>무인산장 운영 부담</li></ul></div></div></div></section>
 </main>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 설산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Xueshan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/grass-on-hill-11893668/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/xueshan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/xueshan/g1.webp" type="image/webp"/>
+<img alt="설산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/xueshan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">설산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Scenic view of Xueshan Main Peak encountered during the Xueshan climb 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/golden-grass-on-hill-11893662/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/xueshan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/xueshan/g2.webp" type="image/webp"/>
+<img alt="설산 산행 중 마주하는 설산 주봉의 수려한 모습" class="gallery-img" decoding="async" loading="lazy" src="assets/img/xueshan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">설산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Xueshan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/scenic-view-of-mountains-and-hills-15612615/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/xueshan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/xueshan/g3.webp" type="image/webp"/>
+<img alt="설산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/xueshan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">설산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Xueshan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/view-of-mountains-and-trees-15612617/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/xueshan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/xueshan/g4.webp" type="image/webp"/>
+<img alt="설산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/xueshan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">설산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <footer><div class="wrap">실제 산행 전 설패국가공원 허가, 369산장 및 치카산장 운영, 기상, 교통, 고산증 대응 계획을 반드시 다시 확인하세요.</div></footer>
 <script>
 const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
 const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
