@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>명성산 등산 플레이북</title>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>명성산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root,[data-theme="light"]{--bg:#f5f4ef;--surface:#fbfaf7;--surface2:#efebe4;--border:#ddd7cd;--text:#1f1c17;--muted:#716b61;--faint:#b4ab9d;--green:#427b49;--greenbg:#dbe9dd;--blue:#2f6ba3;--bluebg:#dce8f5;--red:#b1423b;--redbg:#f2ddda;--amber:#c98a2a;--shadow:0 10px 24px rgba(26,22,15,.08);--r:18px;--r2:12px;--xs:clamp(.75rem,.7rem+.2vw,.87rem);--sm:clamp(.9rem,.84rem+.2vw,1rem);--base:clamp(1rem,.95rem+.25vw,1.1rem);--lg:clamp(1.15rem,1rem+.5vw,1.45rem);--xl:clamp(1.6rem,1.2rem+1.2vw,2.4rem);--xxl:clamp(2.2rem,1.3rem+2vw,3.6rem)}
     [data-theme="dark"]{--bg:#171511;--surface:#221e18;--surface2:#2b251f;--border:#3c352b;--text:#e6ddd0;--muted:#9d9488;--faint:#665d52;--green:#70b47a;--greenbg:#213425;--blue:#6ba7db;--bluebg:#18293a;--red:#e07d75;--redbg:#3b201d;--amber:#e0a447;--shadow:0 12px 28px rgba(0,0,0,.28)}
     *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:'Satoshi',sans-serif;line-height:1.6} h1,h2,h3,h4,p{margin:0} button{font:inherit} table{border-collapse:collapse;width:100%}
@@ -22,36 +23,653 @@
     .map svg{width:100%;height:auto;max-height:430px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)} th,td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:var(--xs);text-align:left} th{background:var(--surface2);color:var(--muted)} tr:last-child td{border-bottom:none}
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
-  </style>
+  
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg viewBox="0 0 48 48" width="26" height="26" fill="none"><path d="M6 34c6-10 11-16 18-16 4 0 8 2 10 7 2-1 4-2 8-2" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 39h34" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M16 17l4-7M23 15l4-8M31 15l5-6" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><div><h1>명성산</h1><p>산정호수 · 억새군락지 · 삼각봉 능선의 대표 가을 산행지</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
-<section class="hero"><div class="wrap"><span class="hero-badge">경기 포천 · 강원 철원 · 해발 923m</span><h2>명성산 3코스 등산 플레이북</h2><p>산정호수와 억새군락지, 삼각봉과 명성산 정상을 묶어 초급·중급·고급 3단계로 정리한 인터랙티브 가이드입니다.</p><div class="stats"><div class="stat"><div class="v">923m</div><div class="l">명성산 정상</div></div><div class="stat"><div class="v">903m</div><div class="l">삼각봉</div></div><div class="stat"><div class="v">14.1km</div><div class="l">최장 환종주</div></div><div class="stat"><div class="v">억새</div><div class="l">가을 대표 포인트</div></div><div class="stat"><div class="v">산정호수</div><div class="l">주요 들머리</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 억새밭 왕복</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 삼각봉 코스</button><button class="course-btn red" data-course="advanced">🏔 고급 — 정상 환종주</button></div></div></section>
+<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M6 34c6-10 11-16 18-16 4 0 8 2 10 7 2-1 4-2 8-2" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M7 39h34" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M16 17l4-7M23 15l4-8M31 15l5-6" stroke="white" stroke-linecap="round" stroke-width="2.5"></path></svg></div><div><h1>명성산</h1><p>산정호수 · 억새군락지 · 삼각봉 능선의 대표 가을 산행지</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/myeongseongsan/hero-640.avif 640w, assets/img/myeongseongsan/hero-1024.avif 1024w, assets/img/myeongseongsan/hero-1600.avif 1600w, assets/img/myeongseongsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/myeongseongsan/hero-640.webp 640w, assets/img/myeongseongsan/hero-1024.webp 1024w, assets/img/myeongseongsan/hero-1600.webp 1600w, assets/img/myeongseongsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="명성산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Myeongseongsan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/myeongseongsan/hero-1600.jpg" srcset="assets/img/myeongseongsan/hero-640.jpg 640w, assets/img/myeongseongsan/hero-1024.jpg 1024w, assets/img/myeongseongsan/hero-1600.jpg 1600w, assets/img/myeongseongsan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="wrap"><span class="hero-badge">경기 포천 · 강원 철원 · 해발 923m</span><h2>명성산 3코스 등산 플레이북</h2><p>산정호수와 억새군락지, 삼각봉과 명성산 정상을 묶어 초급·중급·고급 3단계로 정리한 인터랙티브 가이드입니다.</p><div class="stats"><div class="stat"><div class="v">923m</div><div class="l">명성산 정상</div></div><div class="stat"><div class="v">903m</div><div class="l">삼각봉</div></div><div class="stat"><div class="v">14.1km</div><div class="l">최장 환종주</div></div><div class="stat"><div class="v">억새</div><div class="l">가을 대표 포인트</div></div><div class="stat"><div class="v">산정호수</div><div class="l">주요 들머리</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 억새밭 왕복</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 삼각봉 코스</button><button class="course-btn red" data-course="advanced">🏔 고급 — 정상 환종주</button></div></div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://unsplash.com/@flvision_" rel="noopener" target="_blank">Flavio Mori</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
+</div>
+</section>
 <main class="wrap">
-<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">억새밭 왕복 코스</div><div class="panel-sub">산정호수 상동주차장 → 비선폭포 → 등룡폭포 → 억새밭 → 원점회귀 · 약 6.3km · 2시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">6.3km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">2h 30m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">중하</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">억새밭</div><div class="txt">핵심 목적지</div></div><div class="card kpi"><div class="num">폭포</div><div class="txt">볼거리</div></div><div class="card kpi"><div class="num">가을 추천</div><div class="txt">추천 시즌</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">🅿 상동주차장</span><span class="arr">→</span><span class="chip">비선폭포</span><span class="arr">→</span><span class="chip">등룡폭포</span><span class="arr">→</span><span class="chip">🌾 억새밭</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#427b49" stop-opacity=".34"/><stop offset="100%" stop-color="#427b49" stop-opacity=".05"/></linearGradient></defs><path d="M20 188 C120 175, 210 150, 300 118 S460 80, 560 92 S670 126, 740 150 L740 210 L20 210 Z" fill="url(#g1)"/><path d="M20 188 C120 175, 210 150, 300 118 S460 80, 560 92 S670 126, 740 150" fill="none" stroke="#427b49" stroke-width="4" stroke-linecap="round"/><circle cx="470" cy="82" r="6" fill="#427b49"/><text x="484" y="76" font-size="12" fill="#427b49">억새밭</text></svg></div><p class="desc">비선폭포와 등룡폭포를 지나 억새밭만 보고 돌아오는 코스로, 약 6.3km에 2시간 30분 정도가 널리 안내됩니다 [web:519][web:520]. 가을 억새 감상을 목적으로 할 때 가장 부담이 적고, 정상까지 오르지 않아도 명성산 대표 풍경을 충분히 볼 수 있습니다 [web:525][web:522].</p></div>
+<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">억새밭 왕복 코스</div><div class="panel-sub">산정호수 상동주차장 → 비선폭포 → 등룡폭포 → 억새밭 → 원점회귀 · 약 6.3km · 2시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">6.3km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">2h 30m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">중하</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">억새밭</div><div class="txt">핵심 목적지</div></div><div class="card kpi"><div class="num">폭포</div><div class="txt">볼거리</div></div><div class="card kpi"><div class="num">가을 추천</div><div class="txt">추천 시즌</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">🅿 상동주차장</span><span class="arr">→</span><span class="chip">비선폭포</span><span class="arr">→</span><span class="chip">등룡폭포</span><span class="arr">→</span><span class="chip">🌾 억새밭</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#427b49" stop-opacity=".34"></stop><stop offset="100%" stop-color="#427b49" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 188 C120 175, 210 150, 300 118 S460 80, 560 92 S670 126, 740 150 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 188 C120 175, 210 150, 300 118 S460 80, 560 92 S670 126, 740 150" fill="none" stroke="#427b49" stroke-linecap="round" stroke-width="4"></path><circle cx="470" cy="82" fill="#427b49" r="6"></circle><text fill="#427b49" font-size="12" x="484" y="76">억새밭</text></svg></div><p class="desc">비선폭포와 등룡폭포를 지나 억새밭만 보고 돌아오는 코스로, 약 6.3km에 2시간 30분 정도가 널리 안내됩니다 [web:519][web:520]. 가을 억새 감상을 목적으로 할 때 가장 부담이 적고, 정상까지 오르지 않아도 명성산 대표 풍경을 충분히 볼 수 있습니다 [web:525][web:522].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">상동주차장 출발</div><div class="seg-meta">0km · 산정호수 들머리</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>산정호수 상동주차장에서 출발해 등산로 가든 방향으로 이동합니다. 관광지형 들머리라 주말에는 이른 시간부터 혼잡합니다.</p><div class="bar"><div class="fill" style="width:12%"></div></div><div class="tip">💡 억새철 주말은 주차 대기 가능성이 커서 오전 8시 전 도착이 유리합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">비선폭포 → 등룡폭포</div><div class="seg-meta">1.8km · 40분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>계곡을 따라 완만하게 오르며 폭포 2곳을 차례로 지납니다. 탐방로 상태가 대체로 양호하지만 비 온 뒤 물기 많은 돌길을 주의해야 합니다.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip">💡 여름엔 폭포 구간이 시원하고, 가을엔 단풍과 함께 보기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">등룡폭포 → 억새밭</div><div class="seg-meta">1.3km · 35분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>억새군락지 직전부터 경사가 조금 살아납니다. 시야가 열리기 시작하면 넓은 분지형 억새밭이 나타납니다.</p><div class="bar"><div class="fill" style="width:46%"></div></div><div class="tip">💡 사진 촬영은 억새가 역광을 받는 늦은 오후보다 오전~정오가 선명합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">억새밭 감상 후 원점 하산</div><div class="seg-meta">3.2km · 1시간 15분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>같은 길로 되돌아옵니다. 내려갈 때는 자갈과 너덜길에 발목이 꺾이지 않도록 보폭을 짧게 유지하는 편이 좋습니다.</p><div class="bar"><div class="fill" style="width:24%"></div></div><div class="tip">💡 시간이 남으면 산정호수 둘레 산책까지 연결하기 좋습니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M85 330 C170 292, 250 250, 330 188 S470 96, 610 120" stroke="#427b49" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="85" cy="330" r="10" fill="#427b49"/><circle cx="200" cy="282" r="9" fill="#427b49"/><circle cx="320" cy="196" r="9" fill="#427b49"/><circle cx="610" cy="120" r="12" fill="#427b49"/><text x="98" y="326" font-size="12">상동주차장</text><text x="212" y="276" font-size="12">비선폭포</text><text x="332" y="190" font-size="12">등룡폭포</text><text x="624" y="116" font-size="12">억새밭</text><text x="32" y="44" font-size="12" fill="var(--muted)">폭포 + 억새 감상형 왕복 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동주차장</td><td>약 280m</td><td>0km</td><td>주차·식당</td></tr><tr><td>비선폭포</td><td>약 360m</td><td>1.0km</td><td>첫 폭포 포인트</td></tr><tr><td>등룡폭포</td><td>약 470m</td><td>1.8km</td><td>대표 폭포</td></tr><tr><td>억새밭</td><td>약 760m</td><td>3.15km</td><td>분지형 억새군락</td></tr><tr><td>상동주차장</td><td>약 280m</td><td>6.3km</td><td>원점 회귀</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M85 330 C170 292, 250 250, 330 188 S470 96, 610 120" fill="none" stroke="#427b49" stroke-linecap="round" stroke-width="6"></path><circle cx="85" cy="330" fill="#427b49" r="10"></circle><circle cx="200" cy="282" fill="#427b49" r="9"></circle><circle cx="320" cy="196" fill="#427b49" r="9"></circle><circle cx="610" cy="120" fill="#427b49" r="12"></circle><text font-size="12" x="98" y="326">상동주차장</text><text font-size="12" x="212" y="276">비선폭포</text><text font-size="12" x="332" y="190">등룡폭포</text><text font-size="12" x="624" y="116">억새밭</text><text fill="var(--muted)" font-size="12" x="32" y="44">폭포 + 억새 감상형 왕복 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동주차장</td><td>약 280m</td><td>0km</td><td>주차·식당</td></tr><tr><td>비선폭포</td><td>약 360m</td><td>1.0km</td><td>첫 폭포 포인트</td></tr><tr><td>등룡폭포</td><td>약 470m</td><td>1.8km</td><td>대표 폭포</td></tr><tr><td>억새밭</td><td>약 760m</td><td>3.15km</td><td>분지형 억새군락</td></tr><tr><td>상동주차장</td><td>약 280m</td><td>6.3km</td><td>원점 회귀</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>👟 준비물</h4><ul><li>접지 좋은 등산화</li><li>물 1L 안팎</li><li>가을엔 방풍 겉옷</li></ul></div><div class="card tipcard"><h4>📸 추천 포인트</h4><ul><li>등룡폭포</li><li>억새밭 중앙 탐방로</li><li>산정호수 배경 하산길</li></ul></div><div class="card tipcard"><h4>🚗 교통</h4><ul><li>산정호수 상동주차장 활용</li><li>가을 축제철 교통 혼잡 심함</li><li>포천 시내·동송 방면 차량 접근 가능</li></ul></div></div></div></section>
-
-<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">삼각봉 연계 코스</div><div class="panel-sub">상동주차장 → 비선폭포 → 등룡폭포 → 억새밭 → 삼각봉(903m) → 자인사 하산 · 약 7.9km · 3시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">7.9km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">3시간</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">903m</div><div class="txt">삼각봉</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">억새능선</div><div class="txt">핵심 매력</div></div><div class="card kpi"><div class="num">가을 대표</div><div class="txt">추천 코스</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">상동주차장</span><span class="arr">→</span><span class="chip">등룡폭포</span><span class="arr">→</span><span class="chip">억새밭</span><span class="arr">→</span><span class="chip">⛰ 삼각봉 903m</span><span class="arr">→</span><span class="chip">자인사</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2f6ba3" stop-opacity=".34"/><stop offset="100%" stop-color="#2f6ba3" stop-opacity=".05"/></linearGradient></defs><path d="M20 188 C120 172, 220 150, 320 118 S480 78, 590 56 S670 114, 740 176 L740 210 L20 210 Z" fill="url(#g2)"/><path d="M20 188 C120 172, 220 150, 320 118 S480 78, 590 56 S670 114, 740 176" fill="none" stroke="#2f6ba3" stroke-width="4" stroke-linecap="round"/><circle cx="590" cy="56" r="6" fill="#2f6ba3"/><text x="604" y="50" font-size="12" fill="#2f6ba3">삼각봉 903m</text></svg></div><p class="desc">폭포와 억새군락지를 지나 삼각봉까지 올라 자인사로 하산하는 코스는 약 7.9km, 3시간 전후로 자주 소개됩니다 [web:519][web:520]. 정상까지는 가지 않지만 억새능선 조망을 제대로 체험할 수 있어 명성산 대표 중급 코스로 보기 좋습니다 [web:522][web:521].</p></div>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">삼각봉 연계 코스</div><div class="panel-sub">상동주차장 → 비선폭포 → 등룡폭포 → 억새밭 → 삼각봉(903m) → 자인사 하산 · 약 7.9km · 3시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">7.9km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">3시간</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">903m</div><div class="txt">삼각봉</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">억새능선</div><div class="txt">핵심 매력</div></div><div class="card kpi"><div class="num">가을 대표</div><div class="txt">추천 코스</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">상동주차장</span><span class="arr">→</span><span class="chip">등룡폭포</span><span class="arr">→</span><span class="chip">억새밭</span><span class="arr">→</span><span class="chip">⛰ 삼각봉 903m</span><span class="arr">→</span><span class="chip">자인사</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2f6ba3" stop-opacity=".34"></stop><stop offset="100%" stop-color="#2f6ba3" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 188 C120 172, 220 150, 320 118 S480 78, 590 56 S670 114, 740 176 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 188 C120 172, 220 150, 320 118 S480 78, 590 56 S670 114, 740 176" fill="none" stroke="#2f6ba3" stroke-linecap="round" stroke-width="4"></path><circle cx="590" cy="56" fill="#2f6ba3" r="6"></circle><text fill="#2f6ba3" font-size="12" x="604" y="50">삼각봉 903m</text></svg></div><p class="desc">폭포와 억새군락지를 지나 삼각봉까지 올라 자인사로 하산하는 코스는 약 7.9km, 3시간 전후로 자주 소개됩니다 [web:519][web:520]. 정상까지는 가지 않지만 억새능선 조망을 제대로 체험할 수 있어 명성산 대표 중급 코스로 보기 좋습니다 [web:522][web:521].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">상동주차장 → 등룡폭포</div><div class="seg-meta">1.8km · 40분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초반은 초급 코스와 동일합니다. 폭포 구간까지는 비교적 편안하게 올라가며 몸을 풀 수 있습니다.</p><div class="bar"><div class="fill" style="width:24%"></div></div><div class="tip">💡 식당가를 지나면 간식 보충 지점이 거의 없으니 미리 챙기세요.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">등룡폭포 → 억새밭</div><div class="seg-meta">1.3km · 35분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>경사가 올라가지만 아직 체력적으로 감당 가능한 수준입니다. 억새밭 도착 직전 시야가 갑자기 열리며 명성산의 대표 풍경이 나타납니다.</p><div class="bar"><div class="fill" style="width:44%"></div></div><div class="tip">💡 억새군락지에서 짧은 휴식 후 능선 진입을 준비하세요.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">억새밭 → 삼각봉</div><div class="seg-meta">1.2km · 35분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>삼각봉까지는 억새능선과 오르막이 반복되는 하이라이트 구간입니다. 바람이 강하게 불 수 있어 체감 난이도가 올라갑니다.</p><div class="bar"><div class="fill" style="width:68%"></div></div><div class="warn">⚠ 정상부 억새능선은 강풍 노출이 크고 우천 시 미끄럽습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">삼각봉 → 자인사 하산</div><div class="seg-meta">3.6km · 1시간 10분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>자인사 방면은 급경사 구간이 있어 하산 집중력이 필요합니다. 하산 후 산정호수 방향으로 도보 연결하거나 차량 회수 동선을 준비해야 합니다.</p><div class="bar"><div class="fill" style="width:52%"></div></div><div class="tip">💡 자인사 코스는 해빙기·우천기에 특히 조심해야 하는 편입니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M84 330 C180 288, 262 238, 352 164 S500 86, 612 74 S676 148, 716 294" stroke="#2f6ba3" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="84" cy="330" r="10" fill="#2f6ba3"/><circle cx="205" cy="278" r="9" fill="#2f6ba3"/><circle cx="350" cy="166" r="9" fill="#2f6ba3"/><circle cx="612" cy="74" r="12" fill="#2f6ba3"/><circle cx="716" cy="294" r="10" fill="#2f6ba3"/><text x="98" y="324" font-size="12">상동주차장</text><text x="217" y="272" font-size="12">등룡폭포</text><text x="362" y="160" font-size="12">억새밭</text><text x="626" y="68" font-size="12">삼각봉 903m</text><text x="672" y="312" font-size="12">자인사 하산</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동주차장</td><td>약 280m</td><td>0km</td><td>들머리</td></tr><tr><td>비선폭포</td><td>약 360m</td><td>1.0km</td><td>계곡 포인트</td></tr><tr><td>등룡폭포</td><td>약 470m</td><td>1.8km</td><td>대표 폭포</td></tr><tr><td>억새밭</td><td>약 760m</td><td>3.15km</td><td>분지형 군락</td></tr><tr><td>삼각봉</td><td>903m</td><td>4.7km</td><td>전망 핵심</td></tr><tr><td>자인사</td><td>약 320m</td><td>7.9km</td><td>하산 종점</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M84 330 C180 288, 262 238, 352 164 S500 86, 612 74 S676 148, 716 294" fill="none" stroke="#2f6ba3" stroke-linecap="round" stroke-width="6"></path><circle cx="84" cy="330" fill="#2f6ba3" r="10"></circle><circle cx="205" cy="278" fill="#2f6ba3" r="9"></circle><circle cx="350" cy="166" fill="#2f6ba3" r="9"></circle><circle cx="612" cy="74" fill="#2f6ba3" r="12"></circle><circle cx="716" cy="294" fill="#2f6ba3" r="10"></circle><text font-size="12" x="98" y="324">상동주차장</text><text font-size="12" x="217" y="272">등룡폭포</text><text font-size="12" x="362" y="160">억새밭</text><text font-size="12" x="626" y="68">삼각봉 903m</text><text font-size="12" x="672" y="312">자인사 하산</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동주차장</td><td>약 280m</td><td>0km</td><td>들머리</td></tr><tr><td>비선폭포</td><td>약 360m</td><td>1.0km</td><td>계곡 포인트</td></tr><tr><td>등룡폭포</td><td>약 470m</td><td>1.8km</td><td>대표 폭포</td></tr><tr><td>억새밭</td><td>약 760m</td><td>3.15km</td><td>분지형 군락</td></tr><tr><td>삼각봉</td><td>903m</td><td>4.7km</td><td>전망 핵심</td></tr><tr><td>자인사</td><td>약 320m</td><td>7.9km</td><td>하산 종점</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🥾 장비</h4><ul><li>중등산화 권장</li><li>스틱 1개 이상</li><li>물 1~1.5L</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>자인사 하산 급경사</li><li>낙엽철 미끄러움</li><li>바람 강한 날 체감 난이도 상승</li></ul></div><div class="card tipcard"><h4>🚗 운영</h4><ul><li>원점 회귀가 아니므로 차량 동선 확인</li><li>택시 또는 산정호수 복귀 계획 필요</li><li>가을 성수기 교통 정체 심함</li></ul></div></div></div></section>
-
-<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">정상 환종주 코스</div><div class="panel-sub">상동주차장 → 비선폭포 → 등룡폭포 → 억새밭 → 삼각봉 → 명성산 정상(923m) → 산안고개 → 산정호수 · 약 14.1km · 6시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">14.1km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">6h 30m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">923m</div><div class="txt">명성산 정상</div></div><div class="card kpi"><div class="num">903m</div><div class="txt">삼각봉</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">환종주</div><div class="txt">코스 성격</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">상동주차장</span><span class="arr">→</span><span class="chip">등룡폭포</span><span class="arr">→</span><span class="chip">억새밭</span><span class="arr">→</span><span class="chip">삼각봉</span><span class="arr">→</span><span class="chip">🏔 명성산 923m</span><span class="arr">→</span><span class="chip">산안고개</span><span class="arr">→</span><span class="chip">산정호수 복귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b1423b" stop-opacity=".34"/><stop offset="100%" stop-color="#b1423b" stop-opacity=".05"/></linearGradient></defs><path d="M20 190 C120 172, 220 148, 320 120 S470 72, 580 56 S640 68, 700 122 S725 158, 740 178 L740 210 L20 210 Z" fill="url(#g3)"/><path d="M20 190 C120 172, 220 148, 320 120 S470 72, 580 56 S640 68, 700 122 S725 158, 740 178" fill="none" stroke="#b1423b" stroke-width="4" stroke-linecap="round"/><circle cx="586" cy="56" r="6" fill="#b1423b"/><text x="600" y="50" font-size="12" fill="#b1423b">명성산 923m</text></svg></div><p class="desc">상동주차장에서 비선폭포, 등룡폭포, 억새밭, 삼각봉을 거쳐 명성산 정상과 산안고개까지 도는 코스는 약 14.1km, 6시간 30분 전후로 안내됩니다 [web:519][web:518]. 억새, 능선, 정상, 하산 계곡을 모두 담는 사실상 대표 종주형 코스라 체력과 시간 계획이 모두 필요합니다 [web:523][web:526].</p></div>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">정상 환종주 코스</div><div class="panel-sub">상동주차장 → 비선폭포 → 등룡폭포 → 억새밭 → 삼각봉 → 명성산 정상(923m) → 산안고개 → 산정호수 · 약 14.1km · 6시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">14.1km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">6h 30m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">923m</div><div class="txt">명성산 정상</div></div><div class="card kpi"><div class="num">903m</div><div class="txt">삼각봉</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">환종주</div><div class="txt">코스 성격</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">상동주차장</span><span class="arr">→</span><span class="chip">등룡폭포</span><span class="arr">→</span><span class="chip">억새밭</span><span class="arr">→</span><span class="chip">삼각봉</span><span class="arr">→</span><span class="chip">🏔 명성산 923m</span><span class="arr">→</span><span class="chip">산안고개</span><span class="arr">→</span><span class="chip">산정호수 복귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b1423b" stop-opacity=".34"></stop><stop offset="100%" stop-color="#b1423b" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 190 C120 172, 220 148, 320 120 S470 72, 580 56 S640 68, 700 122 S725 158, 740 178 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 190 C120 172, 220 148, 320 120 S470 72, 580 56 S640 68, 700 122 S725 158, 740 178" fill="none" stroke="#b1423b" stroke-linecap="round" stroke-width="4"></path><circle cx="586" cy="56" fill="#b1423b" r="6"></circle><text fill="#b1423b" font-size="12" x="600" y="50">명성산 923m</text></svg></div><p class="desc">상동주차장에서 비선폭포, 등룡폭포, 억새밭, 삼각봉을 거쳐 명성산 정상과 산안고개까지 도는 코스는 약 14.1km, 6시간 30분 전후로 안내됩니다 [web:519][web:518]. 억새, 능선, 정상, 하산 계곡을 모두 담는 사실상 대표 종주형 코스라 체력과 시간 계획이 모두 필요합니다 [web:523][web:526].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">상동주차장 → 억새밭</div><div class="seg-meta">3.15km · 1시간 15분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>폭포 구간을 지나 억새분지까지 오르는 전반부입니다. 초반부터 속도를 내기보다 이후 삼각봉과 정상부를 위해 페이스를 아끼는 편이 좋습니다.</p><div class="bar"><div class="fill" style="width:40%"></div></div><div class="tip">💡 억새밭 도착 시점에 수분과 간식을 꼭 보충하세요.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">억새밭 → 삼각봉</div><div class="seg-meta">1.5km · 45분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>명성산의 상징적인 억새능선 구간입니다. 경치는 뛰어나지만 바람 노출이 큰 편이고, 계절에 따라 체온 저하가 빠를 수 있습니다.</p><div class="bar"><div class="fill" style="width:70%"></div></div><div class="warn">⚠ 억새능선은 날씨가 좋지 않으면 체감 난이도가 크게 올라갑니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">삼각봉 → 명성산 정상</div><div class="seg-meta">1.5km · 40분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>삼각봉 이후 주봉까지 이어지는 능선길입니다. 이 구간 역시 억새가 이어지고, 정상 직전의 오르내림이 제법 남아 있습니다.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip">💡 삼각봉에서 정상까지는 약 40분 안팎으로 보되 사진 시간은 별도로 잡는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">정상 → 산안고개</div><div class="seg-meta">2.0km · 1시간 20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상 북서릉을 따라 내려와 산안고개로 연결합니다. 조망은 뛰어나지만 피로 누적으로 발이 풀리기 쉬운 구간입니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="tip">💡 궁예의 침전 방면 암릉 조망이 열리는 구간이라 날씨 좋을 때 풍경이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">산안고개 → 산정호수 복귀</div><div class="seg-meta">6.0km · 2시간 30분 내외</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>고개에서 도로·계곡 연결 구간으로 산정호수 쪽으로 복귀합니다. 체력 소모가 큰 마무리 구간이라 전체 산행 시간을 넉넉히 잡아야 합니다.</p><div class="bar"><div class="fill" style="width:56%"></div></div><div class="warn">⚠ 산안고개 이후 도보 복귀는 지루하게 느껴질 수 있어 대중교통·차량 회수 계획이 있으면 더 편합니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M84 330 C170 294, 248 246, 336 170 S474 84, 585 72 S666 88, 700 146 S726 214, 712 286 S660 340, 612 356" stroke="#b1423b" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="84" cy="330" r="10" fill="#b1423b"/><circle cx="210" cy="278" r="9" fill="#b1423b"/><circle cx="352" cy="166" r="9" fill="#b1423b"/><circle cx="560" cy="82" r="10" fill="#b1423b"/><circle cx="612" cy="356" r="10" fill="#b1423b"/><text x="98" y="326" font-size="12">상동주차장</text><text x="222" y="272" font-size="12">등룡폭포</text><text x="364" y="160" font-size="12">억새밭</text><text x="574" y="76" font-size="12">명성산 정상</text><text x="626" y="350" font-size="12">산안고개</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동주차장</td><td>약 280m</td><td>0km</td><td>들머리</td></tr><tr><td>비선폭포</td><td>약 360m</td><td>1.0km</td><td>계곡 포인트</td></tr><tr><td>등룡폭포</td><td>약 470m</td><td>1.8km</td><td>폭포</td></tr><tr><td>억새밭</td><td>약 760m</td><td>3.15km</td><td>주요 억새군락</td></tr><tr><td>삼각봉</td><td>903m</td><td>4.7km</td><td>조망 포인트</td></tr><tr><td>명성산 정상</td><td>923m</td><td>6.2km</td><td>주봉</td></tr><tr><td>산안고개</td><td>약 520m</td><td>8.2km</td><td>하산 갈림길</td></tr><tr><td>산정호수 복귀</td><td>약 280m</td><td>14.1km</td><td>환종주 종료</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M84 330 C170 294, 248 246, 336 170 S474 84, 585 72 S666 88, 700 146 S726 214, 712 286 S660 340, 612 356" fill="none" stroke="#b1423b" stroke-linecap="round" stroke-width="6"></path><circle cx="84" cy="330" fill="#b1423b" r="10"></circle><circle cx="210" cy="278" fill="#b1423b" r="9"></circle><circle cx="352" cy="166" fill="#b1423b" r="9"></circle><circle cx="560" cy="82" fill="#b1423b" r="10"></circle><circle cx="612" cy="356" fill="#b1423b" r="10"></circle><text font-size="12" x="98" y="326">상동주차장</text><text font-size="12" x="222" y="272">등룡폭포</text><text font-size="12" x="364" y="160">억새밭</text><text font-size="12" x="574" y="76">명성산 정상</text><text font-size="12" x="626" y="350">산안고개</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동주차장</td><td>약 280m</td><td>0km</td><td>들머리</td></tr><tr><td>비선폭포</td><td>약 360m</td><td>1.0km</td><td>계곡 포인트</td></tr><tr><td>등룡폭포</td><td>약 470m</td><td>1.8km</td><td>폭포</td></tr><tr><td>억새밭</td><td>약 760m</td><td>3.15km</td><td>주요 억새군락</td></tr><tr><td>삼각봉</td><td>903m</td><td>4.7km</td><td>조망 포인트</td></tr><tr><td>명성산 정상</td><td>923m</td><td>6.2km</td><td>주봉</td></tr><tr><td>산안고개</td><td>약 520m</td><td>8.2km</td><td>하산 갈림길</td></tr><tr><td>산정호수 복귀</td><td>약 280m</td><td>14.1km</td><td>환종주 종료</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 필수 장비</h4><ul><li>중등산화, 스틱, 장갑</li><li>물 1.5~2L</li><li>행동식·점심 충분히</li><li>가을 방풍자켓</li></ul></div><div class="card tipcard"><h4>⏰ 산행 운영</h4><ul><li>오전 7시 전후 출발 권장</li><li>정상 도착 전 체력 분배 중요</li><li>일몰 전 산안고개 통과 목표</li></ul></div><div class="card tipcard"><h4>⛔ 주의사항</h4><ul><li>군부대 훈련에 따른 통제 여부 확인 필요</li><li>자인사·정상부 일부 구간은 시기별 통제 가능</li><li>강풍·결빙 시 위험도 상승</li></ul></div></div></div></section>
 </main>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 명성산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Myeongseongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/rocky-mountain-with-plants-18959280/' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on Pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/myeongseongsan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/myeongseongsan/g1.webp" type="image/webp"/>
+<img alt="명성산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">명성산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Scenic view of Sanjeong Lake encountered during the Myeongseongsan climb 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/hill-behind-lake-in-black-and-white-19207220/' target='_blank' rel='noopener'&gt;jia yi&lt;/a&gt; on Pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/myeongseongsan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/myeongseongsan/g2.webp" type="image/webp"/>
+<img alt="명성산 산행 중 마주하는 산정호수의 수려한 모습" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">명성산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Myeongseongsan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/serene-view-of-jara-island-south-korea-33268308/' target='_blank' rel='noopener'&gt;한기 장&lt;/a&gt; on Pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/myeongseongsan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/myeongseongsan/g3.webp" type="image/webp"/>
+<img alt="명성산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">명성산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Myeongseongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/red-temple-near-green-trees-under-blue-sky-5863417/' target='_blank' rel='noopener'&gt;Joel M B Marrinan&lt;/a&gt; on Pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/myeongseongsan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/myeongseongsan/g4.webp" type="image/webp"/>
+<img alt="명성산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">명성산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <footer><div class="wrap">실제 산행 전 명성산 억새축제 기간 혼잡, 군 훈련 통제, 산정호수 주차, 자인사 구간 개방 여부를 현장 안내로 재확인하세요.</div></footer>
 <script>
 const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
 const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
