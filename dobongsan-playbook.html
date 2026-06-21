@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>도봉산 등산 플레이북</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Noto+Serif+KR:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <style>
 :root,[data-theme="light"]{--color-bg:#f5f7f2;--color-surface:#fff;--color-surface-2:#f0f4ee;--color-surface-offset:#e8ede5;--color-border:#d4dbd0;--color-divider:#e2e8df;--color-text:#1e2b19;--color-text-muted:#5a6e54;--color-text-faint:#9aad93;--color-beginner:#2d7a3a;--color-beginner-light:#e6f4e8;--color-beginner-border:#b8dfc0;--color-inter:#b87000;--color-inter-light:#fff4e0;--color-inter-border:#f5c870;--color-adv:#c0392b;--color-adv-light:#fdecea;--color-adv-border:#f5a89e;--shadow-sm:0 1px 3px rgba(30,43,25,.08);--shadow-md:0 4px 16px rgba(30,43,25,.10);--radius-sm:6px;--radius-md:10px;--radius-lg:16px;--radius-xl:22px;--t:180ms cubic-bezier(.16,1,.3,1);--font-body:'Noto Sans KR',sans-serif;--font-display:'Noto Serif KR',sans-serif;}
 [data-theme="dark"]{--color-bg:#141a12;--color-surface:#1c2419;--color-surface-2:#222e1e;--color-surface-offset:#2a3826;--color-border:#3a4e35;--color-divider:#2e3f29;--color-text:#d4e8cc;--color-text-muted:#7aa370;--color-text-faint:#4a5e45;--color-beginner:#5abf6a;--color-beginner-light:#1a2e1c;--color-beginner-border:#2e5232;--color-inter:#f0a830;--color-inter-light:#2a2010;--color-inter-border:#5a3e0a;--color-adv:#f07060;--color-adv-light:#2e1210;--color-adv-border:#5e2218;--shadow-sm:0 1px 3px rgba(0,0,0,.3);--shadow-md:0 4px 16px rgba(0,0,0,.4);}
@@ -151,446 +152,935 @@ button{cursor:pointer;border:none;background:none;font:inherit;color:inherit;}
   .peak-grid{grid-template-columns:repeat(2,1fr);}
   .diff-label{width:90px;font-size:.72rem;}
 }
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
 </style>
 </head>
 <body>
 <header class="site-header">
-  <div class="header-logo">
-    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="도봉산 로고">
-      <rect width="36" height="36" rx="9" fill="#2d7a3a"/>
-      <path d="M5 27L11 14L18 21L23 12L31 27Z" fill="none" stroke="white" stroke-width="2.2" stroke-linejoin="round"/>
-      <circle cx="23" cy="12" r="2.8" fill="#a8e6af"/>
-      <line x1="5" y1="27" x2="31" y2="27" stroke="white" stroke-width="1.5" opacity="0.4"/>
-    </svg>
-    <div>
-      <div class="logo-text">도봉산 등산 플레이북</div>
-      <div class="logo-sub">북한산국립공원 · 서울 도봉구</div>
-    </div>
-  </div>
-  <button class="theme-btn" data-theme-toggle aria-label="다크모드 전환">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
-</header>
-
-<section class="hero">
-  <div class="hero-badge">🏔 북한산국립공원 · 서울 100대 명산</div>
-  <h1>도봉산 등산 플레이북</h1>
-  <p>자운봉(740m) · 신선대 · 오봉 — 서울 근교 대표 화강암 암릉 명산의 초·중·고급 3코스</p>
-  <div class="hero-stats">
-    <div class="hero-stat"><div class="hero-stat-val">740m</div><div class="hero-stat-lbl">최고봉(자운봉)</div></div>
-    <div class="hero-stat"><div class="hero-stat-val">3코스</div><div class="hero-stat-lbl">초·중·고급</div></div>
-    <div class="hero-stat"><div class="hero-stat-val">지하철</div><div class="hero-stat-lbl">직접 접근 가능</div></div>
-    <div class="hero-stat"><div class="hero-stat-val">1983</div><div class="hero-stat-lbl">국립공원 지정</div></div>
-  </div>
-</section>
-
-<div class="level-switcher">
-  <button class="level-btn active" data-level="beginner" onclick="switchLevel('beginner')"><span class="dot"></span>🌿 초급</button>
-  <button class="level-btn" data-level="inter" onclick="switchLevel('inter')"><span class="dot"></span>🦶 중급</button>
-  <button class="level-btn" data-level="adv" onclick="switchLevel('adv')"><span class="dot"></span>🏔 고급</button>
+<div class="header-logo">
+<svg aria-label="도봉산 로고" fill="none" height="36" viewbox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+<rect fill="#2d7a3a" height="36" rx="9" width="36"></rect>
+<path d="M5 27L11 14L18 21L23 12L31 27Z" fill="none" stroke="white" stroke-linejoin="round" stroke-width="2.2"></path>
+<circle cx="23" cy="12" fill="#a8e6af" r="2.8"></circle>
+<line opacity="0.4" stroke="white" stroke-width="1.5" x1="5" x2="31" y1="27" y2="27"></line>
+</svg>
+<div>
+<div class="logo-text">도봉산 등산 플레이북</div>
+<div class="logo-sub">북한산국립공원 · 서울 도봉구</div>
 </div>
-
+</div>
+<button aria-label="다크모드 전환" class="theme-btn" data-theme-toggle="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/dobongsan/hero-640.avif 640w, assets/img/dobongsan/hero-1024.avif 1024w, assets/img/dobongsan/hero-1600.avif 1600w, assets/img/dobongsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/dobongsan/hero-640.webp 640w, assets/img/dobongsan/hero-1024.webp 1024w, assets/img/dobongsan/hero-1600.webp 1600w, assets/img/dobongsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="도봉산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Dobongsan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/dobongsan/hero-1600.jpg" srcset="assets/img/dobongsan/hero-640.jpg 640w, assets/img/dobongsan/hero-1024.jpg 1024w, assets/img/dobongsan/hero-1600.jpg 1600w, assets/img/dobongsan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge">🏔 북한산국립공원 · 서울 100대 명산</div>
+<h1>도봉산 등산 플레이북</h1>
+<p>자운봉(740m) · 신선대 · 오봉 — 서울 근교 대표 화강암 암릉 명산의 초·중·고급 3코스</p>
+<div class="hero-stats">
+<div class="hero-stat"><div class="hero-stat-val">740m</div><div class="hero-stat-lbl">최고봉(자운봉)</div></div>
+<div class="hero-stat"><div class="hero-stat-val">3코스</div><div class="hero-stat-lbl">초·중·고급</div></div>
+<div class="hero-stat"><div class="hero-stat-val">지하철</div><div class="hero-stat-lbl">직접 접근 가능</div></div>
+<div class="hero-stat"><div class="hero-stat-val">1983</div><div class="hero-stat-lbl">국립공원 지정</div></div>
+</div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
+<div class="level-switcher">
+<button class="level-btn active" data-level="beginner" onclick="switchLevel('beginner')"><span class="dot"></span>🌿 초급</button>
+<button class="level-btn" data-level="inter" onclick="switchLevel('inter')"><span class="dot"></span>🦶 중급</button>
+<button class="level-btn" data-level="adv" onclick="switchLevel('adv')"><span class="dot"></span>🏔 고급</button>
+</div>
 <!-- 초급 -->
 <div class="course-panel active" id="panel-beginner">
 <div class="main-container">
 <div class="course-banner beginner">
-  <div><div class="banner-title">🌿 초급 — 오봉·여성봉 코스</div><div class="banner-subtitle">송추계곡 출발 · 여성봉(504m) → 오봉(660m) · 가족·입문자 추천 · 원점회귀</div></div>
-  <span class="banner-badge">초급</span>
+<div><div class="banner-title">🌿 초급 — 오봉·여성봉 코스</div><div class="banner-subtitle">송추계곡 출발 · 여성봉(504m) → 오봉(660m) · 가족·입문자 추천 · 원점회귀</div></div>
+<span class="banner-badge">초급</span>
 </div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('beginner','overview')">📋 개요</button>
-  <button class="tab-btn" onclick="switchTab('beginner','route')">🗺 경로 안내</button>
-  <button class="tab-btn" onclick="switchTab('beginner','map')">📍 지도</button>
-  <button class="tab-btn" onclick="switchTab('beginner','tips')">💡 팁 &amp; 주의</button>
+<button class="tab-btn active" onclick="switchTab('beginner','overview')">📋 개요</button>
+<button class="tab-btn" onclick="switchTab('beginner','route')">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('beginner','map')">📍 지도</button>
+<button class="tab-btn" onclick="switchTab('beginner','tips')">💡 팁 &amp; 주의</button>
 </div>
 <!-- overview -->
 <div class="tab-content active" id="tab-beginner-overview">
-  <div class="kpi-grid beginner">
-    <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">9.5km</div><div class="kpi-label">왕복 거리</div></div>
-    <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">소요 시간</div></div>
-    <div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">620m</div><div class="kpi-label">누적 상승</div></div>
-    <div class="kpi-card"><div class="kpi-icon">🏔</div><div class="kpi-val">660m</div><div class="kpi-label">최고점(오봉)</div></div>
-    <div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">중하</div><div class="kpi-label">체력 소모</div></div>
-    <div class="kpi-card"><div class="kpi-icon">🚌</div><div class="kpi-val">버스</div><div class="kpi-label">구파발역→송추</div></div>
-  </div>
-  <div class="elev-wrap beginner">
-    <h3>📈 고도 프로파일</h3>
-    <svg class="elev-svg" viewBox="0 0 700 145" preserveAspectRatio="none">
-      <defs><linearGradient id="gb" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".3"/><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".03"/></linearGradient></defs>
-      <path d="M0,135 L100,95 L160,80 L200,95 L350,30 L450,50 L500,80 L580,95 L700,135Z" fill="url(#gb)"/>
-      <path d="M0,135 L100,95 L160,80 L200,95 L350,30 L450,50 L500,80 L580,95 L700,135" fill="none" stroke="#2d7a3a" stroke-width="2.5" stroke-linejoin="round"/>
-      <circle cx="0" cy="135" r="4" fill="#2d7a3a"/><text x="4" y="145" font-size="10" fill="currentColor" opacity=".7">출발 160m</text>
-      <circle cx="160" cy="80" r="4" fill="#2d7a3a"/><text x="118" y="72" font-size="10" fill="currentColor" opacity=".7">여성봉 504m</text>
-      <circle cx="350" cy="30" r="5" fill="#2d7a3a"/><text x="315" y="22" font-size="10" fill="#2d7a3a" font-weight="700">오봉 660m</text>
-      <circle cx="700" cy="135" r="4" fill="#2d7a3a"/><text x="648" y="145" font-size="10" fill="currentColor" opacity=".7">원점 160m</text>
-      <line x1="0" y1="135" x2="700" y2="135" stroke="currentColor" stroke-opacity=".1"/>
-      <line x1="0" y1="90" x2="700" y2="90" stroke="currentColor" stroke-opacity=".07" stroke-dasharray="4,4"/>
-      <line x1="0" y1="50" x2="700" y2="50" stroke="currentColor" stroke-opacity=".07" stroke-dasharray="4,4"/>
-      <text x="2" y="88" font-size="9" fill="currentColor" opacity=".5">400m</text>
-      <text x="2" y="48" font-size="9" fill="currentColor" opacity=".5">580m</text>
-    </svg>
-  </div>
-  <div class="diff-wrap beginner">
-    <h3>⚡ 구간별 난이도</h3>
-    <div class="diff-row"><span class="diff-label">탐방센터→울대습지</span><div class="diff-bar"><div class="diff-fill" style="width:20%"></div></div><span class="diff-pct">20%</span></div>
-    <div class="diff-row"><span class="diff-label">울대습지→여성봉</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
-    <div class="diff-row"><span class="diff-label">여성봉→오봉</span><div class="diff-bar"><div class="diff-fill" style="width:65%"></div></div><span class="diff-pct">65%</span></div>
-    <div class="diff-row"><span class="diff-label">오봉→원점 하산</span><div class="diff-bar"><div class="diff-fill" style="width:30%"></div></div><span class="diff-pct">30%</span></div>
-  </div>
-  <div class="section-title">🏔 주요 포인트</div>
-  <div class="peak-grid">
-    <div class="peak-card"><div class="peak-icon">🌸</div><div class="peak-elev" style="color:var(--color-beginner)">504m</div><div class="peak-name">여성봉</div><div class="peak-desc">부드러운 암봉. 오봉 조망 최적지. 봄 철쭉 명소</div></div>
-    <div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-beginner)">660m</div><div class="peak-name">오봉</div><div class="peak-desc">5개 바위봉 도봉산 랜드마크. 서울 북서부 파노라마</div></div>
-    <div class="peak-card"><div class="peak-icon">💧</div><div class="peak-elev" style="color:var(--color-beginner)">—</div><div class="peak-name">송추폭포</div><div class="peak-desc">여름 피서 명소. 하산 후 계곡 휴식 최적</div></div>
-  </div>
+<div class="kpi-grid beginner">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">9.5km</div><div class="kpi-label">왕복 거리</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">소요 시간</div></div>
+<div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">620m</div><div class="kpi-label">누적 상승</div></div>
+<div class="kpi-card"><div class="kpi-icon">🏔</div><div class="kpi-val">660m</div><div class="kpi-label">최고점(오봉)</div></div>
+<div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">중하</div><div class="kpi-label">체력 소모</div></div>
+<div class="kpi-card"><div class="kpi-icon">🚌</div><div class="kpi-val">버스</div><div class="kpi-label">구파발역→송추</div></div>
+</div>
+<div class="elev-wrap beginner">
+<h3>📈 고도 프로파일</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
+<defs><lineargradient id="gb" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".3"></stop><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".03"></stop></lineargradient></defs>
+<path d="M0,135 L100,95 L160,80 L200,95 L350,30 L450,50 L500,80 L580,95 L700,135Z" fill="url(#gb)"></path>
+<path d="M0,135 L100,95 L160,80 L200,95 L350,30 L450,50 L500,80 L580,95 L700,135" fill="none" stroke="#2d7a3a" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="135" fill="#2d7a3a" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="4" y="145">출발 160m</text>
+<circle cx="160" cy="80" fill="#2d7a3a" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="118" y="72">여성봉 504m</text>
+<circle cx="350" cy="30" fill="#2d7a3a" r="5"></circle><text fill="#2d7a3a" font-size="10" font-weight="700" x="315" y="22">오봉 660m</text>
+<circle cx="700" cy="135" fill="#2d7a3a" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="648" y="145">원점 160m</text>
+<line stroke="currentColor" stroke-opacity=".1" x1="0" x2="700" y1="135" y2="135"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="90" y2="90"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="50" y2="50"></line>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="88">400m</text>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="48">580m</text>
+</svg>
+</div>
+<div class="diff-wrap beginner">
+<h3>⚡ 구간별 난이도</h3>
+<div class="diff-row"><span class="diff-label">탐방센터→울대습지</span><div class="diff-bar"><div class="diff-fill" style="width:20%"></div></div><span class="diff-pct">20%</span></div>
+<div class="diff-row"><span class="diff-label">울대습지→여성봉</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
+<div class="diff-row"><span class="diff-label">여성봉→오봉</span><div class="diff-bar"><div class="diff-fill" style="width:65%"></div></div><span class="diff-pct">65%</span></div>
+<div class="diff-row"><span class="diff-label">오봉→원점 하산</span><div class="diff-bar"><div class="diff-fill" style="width:30%"></div></div><span class="diff-pct">30%</span></div>
+</div>
+<div class="section-title">🏔 주요 포인트</div>
+<div class="peak-grid">
+<div class="peak-card"><div class="peak-icon">🌸</div><div class="peak-elev" style="color:var(--color-beginner)">504m</div><div class="peak-name">여성봉</div><div class="peak-desc">부드러운 암봉. 오봉 조망 최적지. 봄 철쭉 명소</div></div>
+<div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-beginner)">660m</div><div class="peak-name">오봉</div><div class="peak-desc">5개 바위봉 도봉산 랜드마크. 서울 북서부 파노라마</div></div>
+<div class="peak-card"><div class="peak-icon">💧</div><div class="peak-elev" style="color:var(--color-beginner)">—</div><div class="peak-name">송추폭포</div><div class="peak-desc">여름 피서 명소. 하산 후 계곡 휴식 최적</div></div>
+</div>
 </div>
 <!-- route -->
 <div class="tab-content" id="tab-beginner-route">
-  <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">총 왕복 약 9.5km · 4~5시간 · 송추계곡 원점회귀</p>
-  <div class="accordion beginner">
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">송추제2주차장 출발</div><div class="acc-meta">고도 160m · 버스 하차 도보 5분</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">3호선 구파발역 → 34번 버스 → 송추계곡 하차(약 30분). 오봉탐방지원센터까지 도보 5분. 탐방센터에서 화장실·안내도 확인.</p><div class="tip-box">🅿 주말 오전 8시 전 도착 권장. 자가 이용 시 송추 1·2주차장</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">오봉탐방센터 → 울대습지</div><div class="acc-meta">1.2km · 25분 · ★☆☆☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">완만한 계곡길. 울대습지 나무데크 경유. 이정표 잘 정비되어 있어 안전.</p><div class="tip-box">🌿 울대습지에서 스트레칭·준비운동 권장. 여름 매우 시원함</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">울대습지 → 여성봉(504m)</div><div class="acc-meta">1.5km · 50분 · ★★★☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">경사 점차 증가. 암릉 전 로프 구간. 정상에서 오봉 5개 봉우리 파노라마 최고.</p><div class="tip-box">📸 여성봉 = 오봉 전경 촬영 명소. 충분한 휴식 후 출발 권장</div><div class="warn-box">⚠️ 암릉 구간 미끄럼 주의. 어린이는 손잡고 통과</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">여성봉 → 오봉(660m)</div><div class="acc-meta">0.8km · 40분 · ★★★★☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">능선 따라 5개 오봉 이동. 밧줄 등반 구간. 각 봉우리 서울·북한산 파노라마.</p><div class="tip-box">🪨 오봉: 안전 로프 잡고 천천히 이동. 제3봉이 가장 높음</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">오봉 → 송추폭포 → 원점</div><div class="acc-meta">3.5km · 70분 · ★★☆☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">급경사 내리막 후 송추폭포 경유. 계곡 따라 원점 귀환.</p><div class="tip-box">💧 하산 후 송추계곡 식당가 파전·막걸리 강추!</div></div></div></div>
-  </div>
+<p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">총 왕복 약 9.5km · 4~5시간 · 송추계곡 원점회귀</p>
+<div class="accordion beginner">
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">송추제2주차장 출발</div><div class="acc-meta">고도 160m · 버스 하차 도보 5분</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">3호선 구파발역 → 34번 버스 → 송추계곡 하차(약 30분). 오봉탐방지원센터까지 도보 5분. 탐방센터에서 화장실·안내도 확인.</p><div class="tip-box">🅿 주말 오전 8시 전 도착 권장. 자가 이용 시 송추 1·2주차장</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">오봉탐방센터 → 울대습지</div><div class="acc-meta">1.2km · 25분 · ★☆☆☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">완만한 계곡길. 울대습지 나무데크 경유. 이정표 잘 정비되어 있어 안전.</p><div class="tip-box">🌿 울대습지에서 스트레칭·준비운동 권장. 여름 매우 시원함</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">울대습지 → 여성봉(504m)</div><div class="acc-meta">1.5km · 50분 · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">경사 점차 증가. 암릉 전 로프 구간. 정상에서 오봉 5개 봉우리 파노라마 최고.</p><div class="tip-box">📸 여성봉 = 오봉 전경 촬영 명소. 충분한 휴식 후 출발 권장</div><div class="warn-box">⚠️ 암릉 구간 미끄럼 주의. 어린이는 손잡고 통과</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">여성봉 → 오봉(660m)</div><div class="acc-meta">0.8km · 40분 · ★★★★☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">능선 따라 5개 오봉 이동. 밧줄 등반 구간. 각 봉우리 서울·북한산 파노라마.</p><div class="tip-box">🪨 오봉: 안전 로프 잡고 천천히 이동. 제3봉이 가장 높음</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">오봉 → 송추폭포 → 원점</div><div class="acc-meta">3.5km · 70분 · ★★☆☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">급경사 내리막 후 송추폭포 경유. 계곡 따라 원점 귀환.</p><div class="tip-box">💧 하산 후 송추계곡 식당가 파전·막걸리 강추!</div></div></div></div>
+</div>
 </div>
 <!-- map -->
 <div class="tab-content" id="tab-beginner-map">
-  <div class="map-wrap">
-    <h3>🗺 초급 오봉·여성봉 코스 개념도</h3>
-    <div class="map-svg-wrap">
-      <svg viewBox="0 0 520 355" width="100%" style="max-height:370px;min-width:280px;">
-        <rect width="520" height="355" fill="var(--color-surface-2)" rx="10"/>
-        <path d="M232,342 L230,305 L227,268 L225,235 L229,202 L235,172 L241,145 L247,119" fill="none" stroke="#2d7a3a" stroke-width="2.5" stroke-dasharray="7,4"/>
-        <path d="M247,119 L261,109 L278,105 L295,109 L313,103 L331,107 L345,117" fill="none" stroke="#2d7a3a" stroke-width="2.5" stroke-dasharray="7,4"/>
-        <path d="M345,117 L352,145 L355,175 L351,207 L345,242 L341,277 L335,312 L329,342" fill="none" stroke="#2d7a3a" stroke-width="2.5" stroke-dasharray="7,4" opacity=".7"/>
-        <circle cx="232" cy="345" r="12" fill="#2d7a3a"/><text x="232" y="350" text-anchor="middle" font-size="10" fill="white" font-weight="bold">P</text>
-        <text x="174" y="343" font-size="11" fill="var(--color-text)" font-weight="600">송추주차장</text>
-        <text x="174" y="355" font-size="9" fill="var(--color-text-muted)">160m</text>
-        <ellipse cx="230" cy="215" rx="22" ry="10" fill="#c5e8f0" opacity=".8"/>
-        <text x="230" y="219" text-anchor="middle" font-size="9" fill="#1a6a8a">울대습지</text>
-        <circle cx="247" cy="117" r="9" fill="#5abf6a"/>
-        <text x="247" y="121" text-anchor="middle" font-size="8" fill="white" font-weight="700">여성봉</text>
-        <text x="247" y="105" text-anchor="middle" font-size="10" fill="var(--color-text-muted)">504m</text>
-        <circle cx="278" cy="105" r="6" fill="#2d7a3a"/><text x="278" y="109" text-anchor="middle" font-size="7" fill="white">1</text>
-        <circle cx="295" cy="101" r="7" fill="#2d7a3a"/><text x="295" y="105" text-anchor="middle" font-size="7" fill="white">2</text>
-        <circle cx="313" cy="97" r="9" fill="#1a5a28"/><text x="313" y="101" text-anchor="middle" font-size="8" fill="white" font-weight="700">3</text>
-        <circle cx="331" cy="101" r="7" fill="#2d7a3a"/><text x="331" y="105" text-anchor="middle" font-size="7" fill="white">4</text>
-        <circle cx="345" cy="107" r="6" fill="#2d7a3a"/><text x="345" y="111" text-anchor="middle" font-size="7" fill="white">5</text>
-        <text x="313" y="86" text-anchor="middle" font-size="13" fill="var(--color-text)" font-weight="700">오봉</text>
-        <text x="313" y="75" text-anchor="middle" font-size="10" fill="#2d7a3a">660m</text>
-        <text x="385" y="208" font-size="10" fill="#5a9ac8">💧 송추폭포</text>
-        <circle cx="329" cy="345" r="8" fill="none" stroke="#2d7a3a" stroke-width="2" stroke-dasharray="3,2"/>
-        <text x="342" y="347" font-size="9" fill="var(--color-text-muted)">원점회귀</text>
-        <text x="474" y="22" font-size="13" fill="var(--color-text-muted)">N↑</text>
-        <rect x="12" y="12" width="145" height="72" rx="7" fill="var(--color-surface)" opacity=".92"/>
-        <text x="22" y="28" font-size="10" font-weight="700" fill="var(--color-text)">범례</text>
-        <line x1="22" y1="38" x2="50" y2="38" stroke="#2d7a3a" stroke-width="2" stroke-dasharray="5,3"/><text x="57" y="42" font-size="9" fill="var(--color-text-muted)">등산로</text>
-        <circle cx="36" cy="54" r="6" fill="#2d7a3a"/><text x="48" y="58" font-size="9" fill="var(--color-text-muted)">봉우리</text>
-        <ellipse cx="36" cy="70" rx="12" ry="6" fill="#c5e8f0"/><text x="54" y="74" font-size="9" fill="var(--color-text-muted)">습지·계곡</text>
-      </svg>
-    </div>
-  </div>
-  <div class="cp-table-wrap">
-    <table class="cp-table"><thead><tr><th>#</th><th>지점</th><th>고도</th><th>거리</th><th>특이사항</th></tr></thead><tbody>
-      <tr><td>P</td><td>송추주차장</td><td>160m</td><td>0km</td><td><span class="cp-badge br">출발</span></td></tr>
-      <tr><td>1</td><td>오봉탐방지원센터</td><td>165m</td><td>0.3km</td><td><span class="cp-badge bw">화장실·안내</span></td></tr>
-      <tr><td>2</td><td>울대습지</td><td>230m</td><td>1.5km</td><td><span class="cp-badge bv">생태보전</span></td></tr>
-      <tr><td>3</td><td>여성봉 분기점</td><td>420m</td><td>2.5km</td><td><span class="cp-badge br">이정표</span></td></tr>
-      <tr><td>4</td><td>여성봉</td><td>504m</td><td>3.0km</td><td><span class="cp-badge bv">오봉 조망</span></td></tr>
-      <tr><td>5</td><td>오봉(제3봉)</td><td>660m</td><td>3.8km</td><td><span class="cp-badge bs">최고점·파노라마</span></td></tr>
-      <tr><td>6</td><td>송추폭포</td><td>260m</td><td>6.2km</td><td><span class="cp-badge bw">계곡·휴식</span></td></tr>
-      <tr><td>P</td><td>원점회귀</td><td>160m</td><td>9.5km</td><td><span class="cp-badge br">종료</span></td></tr>
-    </tbody></table>
-  </div>
+<div class="map-wrap">
+<h3>🗺 초급 오봉·여성봉 코스 개념도</h3>
+<div class="map-svg-wrap">
+<svg style="max-height:370px;min-width:280px;" viewbox="0 0 520 355" width="100%">
+<rect fill="var(--color-surface-2)" height="355" rx="10" width="520"></rect>
+<path d="M232,342 L230,305 L227,268 L225,235 L229,202 L235,172 L241,145 L247,119" fill="none" stroke="#2d7a3a" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<path d="M247,119 L261,109 L278,105 L295,109 L313,103 L331,107 L345,117" fill="none" stroke="#2d7a3a" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<path d="M345,117 L352,145 L355,175 L351,207 L345,242 L341,277 L335,312 L329,342" fill="none" opacity=".7" stroke="#2d7a3a" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<circle cx="232" cy="345" fill="#2d7a3a" r="12"></circle><text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="232" y="350">P</text>
+<text fill="var(--color-text)" font-size="11" font-weight="600" x="174" y="343">송추주차장</text>
+<text fill="var(--color-text-muted)" font-size="9" x="174" y="355">160m</text>
+<ellipse cx="230" cy="215" fill="#c5e8f0" opacity=".8" rx="22" ry="10"></ellipse>
+<text fill="#1a6a8a" font-size="9" text-anchor="middle" x="230" y="219">울대습지</text>
+<circle cx="247" cy="117" fill="#5abf6a" r="9"></circle>
+<text fill="white" font-size="8" font-weight="700" text-anchor="middle" x="247" y="121">여성봉</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="247" y="105">504m</text>
+<circle cx="278" cy="105" fill="#2d7a3a" r="6"></circle><text fill="white" font-size="7" text-anchor="middle" x="278" y="109">1</text>
+<circle cx="295" cy="101" fill="#2d7a3a" r="7"></circle><text fill="white" font-size="7" text-anchor="middle" x="295" y="105">2</text>
+<circle cx="313" cy="97" fill="#1a5a28" r="9"></circle><text fill="white" font-size="8" font-weight="700" text-anchor="middle" x="313" y="101">3</text>
+<circle cx="331" cy="101" fill="#2d7a3a" r="7"></circle><text fill="white" font-size="7" text-anchor="middle" x="331" y="105">4</text>
+<circle cx="345" cy="107" fill="#2d7a3a" r="6"></circle><text fill="white" font-size="7" text-anchor="middle" x="345" y="111">5</text>
+<text fill="var(--color-text)" font-size="13" font-weight="700" text-anchor="middle" x="313" y="86">오봉</text>
+<text fill="#2d7a3a" font-size="10" text-anchor="middle" x="313" y="75">660m</text>
+<text fill="#5a9ac8" font-size="10" x="385" y="208">💧 송추폭포</text>
+<circle cx="329" cy="345" fill="none" r="8" stroke="#2d7a3a" stroke-dasharray="3,2" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="342" y="347">원점회귀</text>
+<text fill="var(--color-text-muted)" font-size="13" x="474" y="22">N↑</text>
+<rect fill="var(--color-surface)" height="72" opacity=".92" rx="7" width="145" x="12" y="12"></rect>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="22" y="28">범례</text>
+<line stroke="#2d7a3a" stroke-dasharray="5,3" stroke-width="2" x1="22" x2="50" y1="38" y2="38"></line><text fill="var(--color-text-muted)" font-size="9" x="57" y="42">등산로</text>
+<circle cx="36" cy="54" fill="#2d7a3a" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="48" y="58">봉우리</text>
+<ellipse cx="36" cy="70" fill="#c5e8f0" rx="12" ry="6"></ellipse><text fill="var(--color-text-muted)" font-size="9" x="54" y="74">습지·계곡</text>
+</svg>
+</div>
+</div>
+<div class="cp-table-wrap">
+<table class="cp-table"><thead><tr><th>#</th><th>지점</th><th>고도</th><th>거리</th><th>특이사항</th></tr></thead><tbody>
+<tr><td>P</td><td>송추주차장</td><td>160m</td><td>0km</td><td><span class="cp-badge br">출발</span></td></tr>
+<tr><td>1</td><td>오봉탐방지원센터</td><td>165m</td><td>0.3km</td><td><span class="cp-badge bw">화장실·안내</span></td></tr>
+<tr><td>2</td><td>울대습지</td><td>230m</td><td>1.5km</td><td><span class="cp-badge bv">생태보전</span></td></tr>
+<tr><td>3</td><td>여성봉 분기점</td><td>420m</td><td>2.5km</td><td><span class="cp-badge br">이정표</span></td></tr>
+<tr><td>4</td><td>여성봉</td><td>504m</td><td>3.0km</td><td><span class="cp-badge bv">오봉 조망</span></td></tr>
+<tr><td>5</td><td>오봉(제3봉)</td><td>660m</td><td>3.8km</td><td><span class="cp-badge bs">최고점·파노라마</span></td></tr>
+<tr><td>6</td><td>송추폭포</td><td>260m</td><td>6.2km</td><td><span class="cp-badge bw">계곡·휴식</span></td></tr>
+<tr><td>P</td><td>원점회귀</td><td>160m</td><td>9.5km</td><td><span class="cp-badge br">종료</span></td></tr>
+</tbody></table>
+</div>
 </div>
 <!-- tips -->
 <div class="tab-content" id="tab-beginner-tips">
-  <div class="tips-grid">
-    <div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>등산화(접지력)</li><li>스틱 1~2개</li><li>물 1L 이상</li><li>간식·에너지 바</li><li>자외선 차단제</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">🍱</div><div class="tip-card-title">식사·음료</div><ul><li>탐방센터 입구 매점</li><li>하산 후 송추계곡 식당가</li><li>파전·막걸리·순두부 유명</li><li>여름: 냉면 추천</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">🚌</div><div class="tip-card-title">교통 안내</div><ul><li>3호선 구파발역 → 34번 버스</li><li>1호선 망월사역 → 택시 10분</li><li>자가: 송추계곡 내비</li><li>주말 8시 전 도착 권장</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">최적 시즌</div><ul><li>봄(4~5월): 철쭉 개화 절정</li><li>가을(10~11월): 단풍 명소</li><li>여름: 계곡 시원</li><li>겨울: 아이젠 필수</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">⚠️</div><div class="tip-card-title">안전 주의</div><ul><li>오봉 암릉 어린이 손잡이</li><li>하산 내리막 무릎 주의</li><li>야생동물 먹이 금지</li><li>일몰 전 하산 완료</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">유용한 앱</div><ul><li>트랭글: GPS 트랙</li><li>국립공원공단 앱</li><li>산림청 산행지도</li><li>기상청 앱</li></ul></div>
-  </div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>등산화(접지력)</li><li>스틱 1~2개</li><li>물 1L 이상</li><li>간식·에너지 바</li><li>자외선 차단제</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🍱</div><div class="tip-card-title">식사·음료</div><ul><li>탐방센터 입구 매점</li><li>하산 후 송추계곡 식당가</li><li>파전·막걸리·순두부 유명</li><li>여름: 냉면 추천</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><div class="tip-card-title">교통 안내</div><ul><li>3호선 구파발역 → 34번 버스</li><li>1호선 망월사역 → 택시 10분</li><li>자가: 송추계곡 내비</li><li>주말 8시 전 도착 권장</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">최적 시즌</div><ul><li>봄(4~5월): 철쭉 개화 절정</li><li>가을(10~11월): 단풍 명소</li><li>여름: 계곡 시원</li><li>겨울: 아이젠 필수</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><div class="tip-card-title">안전 주의</div><ul><li>오봉 암릉 어린이 손잡이</li><li>하산 내리막 무릎 주의</li><li>야생동물 먹이 금지</li><li>일몰 전 하산 완료</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">유용한 앱</div><ul><li>트랭글: GPS 트랙</li><li>국립공원공단 앱</li><li>산림청 산행지도</li><li>기상청 앱</li></ul></div>
+</div>
 </div>
 </div></div>
-
 <!-- 중급 -->
 <div class="course-panel" id="panel-inter">
 <div class="main-container">
 <div class="course-banner inter">
-  <div><div class="banner-title">🦶 중급 — 도봉탐방센터→신선대 왕복</div><div class="banner-subtitle">도봉산역 출발 · 천축사·마당바위 → 신선대(714m) · 도봉산 대표 코스</div></div>
-  <span class="banner-badge">중급</span>
+<div><div class="banner-title">🦶 중급 — 도봉탐방센터→신선대 왕복</div><div class="banner-subtitle">도봉산역 출발 · 천축사·마당바위 → 신선대(714m) · 도봉산 대표 코스</div></div>
+<span class="banner-badge">중급</span>
 </div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('inter','overview')">📋 개요</button>
-  <button class="tab-btn" onclick="switchTab('inter','route')">🗺 경로 안내</button>
-  <button class="tab-btn" onclick="switchTab('inter','map')">📍 지도</button>
-  <button class="tab-btn" onclick="switchTab('inter','tips')">💡 팁 &amp; 주의</button>
+<button class="tab-btn active" onclick="switchTab('inter','overview')">📋 개요</button>
+<button class="tab-btn" onclick="switchTab('inter','route')">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('inter','map')">📍 지도</button>
+<button class="tab-btn" onclick="switchTab('inter','tips')">💡 팁 &amp; 주의</button>
 </div>
 <div class="tab-content active" id="tab-inter-overview">
-  <div class="kpi-grid inter">
-    <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.0km</div><div class="kpi-label">왕복 거리</div></div>
-    <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">3~4h</div><div class="kpi-label">소요 시간</div></div>
-    <div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">660m</div><div class="kpi-label">누적 상승</div></div>
-    <div class="kpi-card"><div class="kpi-icon">🏔</div><div class="kpi-val">714m</div><div class="kpi-label">최고점(신선대)</div></div>
-    <div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">중</div><div class="kpi-label">체력 소모</div></div>
-    <div class="kpi-card"><div class="kpi-icon">🚇</div><div class="kpi-val">1·7호선</div><div class="kpi-label">도봉산역 바로</div></div>
-  </div>
-  <div class="elev-wrap inter">
-    <h3>📈 고도 프로파일</h3>
-    <svg class="elev-svg" viewBox="0 0 700 145" preserveAspectRatio="none">
-      <defs><linearGradient id="gi" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b87000" stop-opacity=".3"/><stop offset="100%" stop-color="#b87000" stop-opacity=".03"/></linearGradient></defs>
-      <path d="M0,135 L80,118 L140,100 L190,85 L240,70 L285,56 L320,44 L348,28 L400,45 L450,60 L500,75 L560,95 L630,116 L700,135Z" fill="url(#gi)"/>
-      <path d="M0,135 L80,118 L140,100 L190,85 L240,70 L285,56 L320,44 L348,28 L400,45 L450,60 L500,75 L560,95 L630,116 L700,135" fill="none" stroke="#b87000" stroke-width="2.5" stroke-linejoin="round"/>
-      <circle cx="0" cy="135" r="4" fill="#b87000"/><text x="4" y="145" font-size="10" fill="currentColor" opacity=".7">도봉산역 75m</text>
-      <circle cx="320" cy="44" r="4" fill="#b87000"/><text x="285" y="36" font-size="10" fill="currentColor" opacity=".7">마당바위 450m</text>
-      <circle cx="348" cy="28" r="5" fill="#b87000"/><text x="316" y="20" font-size="10" fill="#b87000" font-weight="700">신선대 714m</text>
-      <circle cx="700" cy="135" r="4" fill="#b87000"/><text x="645" y="145" font-size="10" fill="currentColor" opacity=".7">원점 75m</text>
-      <line x1="0" y1="135" x2="700" y2="135" stroke="currentColor" stroke-opacity=".1"/>
-      <line x1="0" y1="90" x2="700" y2="90" stroke="currentColor" stroke-opacity=".07" stroke-dasharray="4,4"/>
-      <line x1="0" y1="50" x2="700" y2="50" stroke="currentColor" stroke-opacity=".07" stroke-dasharray="4,4"/>
-      <text x="2" y="88" font-size="9" fill="currentColor" opacity=".5">400m</text>
-      <text x="2" y="48" font-size="9" fill="currentColor" opacity=".5">600m</text>
-    </svg>
-  </div>
-  <div class="diff-wrap inter">
-    <h3>⚡ 구간별 난이도</h3>
-    <div class="diff-row"><span class="diff-label">도봉산역→도봉서원</span><div class="diff-bar"><div class="diff-fill" style="width:25%"></div></div><span class="diff-pct">25%</span></div>
-    <div class="diff-row"><span class="diff-label">도봉서원→마당바위</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
-    <div class="diff-row"><span class="diff-label">마당바위→분기점</span><div class="diff-bar"><div class="diff-fill" style="width:75%"></div></div><span class="diff-pct">75%</span></div>
-    <div class="diff-row"><span class="diff-label">분기점→신선대</span><div class="diff-bar"><div class="diff-fill" style="width:80%"></div></div><span class="diff-pct">80%</span></div>
-    <div class="diff-row"><span class="diff-label">하산 전구간</span><div class="diff-bar"><div class="diff-fill" style="width:50%"></div></div><span class="diff-pct">50%</span></div>
-  </div>
-  <div class="section-title">🏔 주요 포인트</div>
-  <div class="peak-grid">
-    <div class="peak-card"><div class="peak-icon">⛪</div><div class="peak-elev" style="color:var(--color-inter)">320m</div><div class="peak-name">천축사</div><div class="peak-desc">도봉산 중턱 천년 고찰. 약수터 보급 가능</div></div>
-    <div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-inter)">450m</div><div class="peak-name">마당바위</div><div class="peak-desc">수십 명 쉴 수 있는 평탄 암반. 서울 도심 조망</div></div>
-    <div class="peak-card"><div class="peak-icon">🏔</div><div class="peak-elev" style="color:var(--color-inter)">714m</div><div class="peak-name">신선대</div><div class="peak-desc">도봉산 정상석. 360도 조망. 삼봉 파노라마</div></div>
-    <div class="peak-card"><div class="peak-icon">🌫</div><div class="peak-elev" style="color:var(--color-inter)">740m</div><div class="peak-name">자운봉(조망)</div><div class="peak-desc">도봉산 최고봉. 등반 금지. 신선대에서 절경</div></div>
-  </div>
+<div class="kpi-grid inter">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.0km</div><div class="kpi-label">왕복 거리</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">3~4h</div><div class="kpi-label">소요 시간</div></div>
+<div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">660m</div><div class="kpi-label">누적 상승</div></div>
+<div class="kpi-card"><div class="kpi-icon">🏔</div><div class="kpi-val">714m</div><div class="kpi-label">최고점(신선대)</div></div>
+<div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">중</div><div class="kpi-label">체력 소모</div></div>
+<div class="kpi-card"><div class="kpi-icon">🚇</div><div class="kpi-val">1·7호선</div><div class="kpi-label">도봉산역 바로</div></div>
+</div>
+<div class="elev-wrap inter">
+<h3>📈 고도 프로파일</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
+<defs><lineargradient id="gi" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b87000" stop-opacity=".3"></stop><stop offset="100%" stop-color="#b87000" stop-opacity=".03"></stop></lineargradient></defs>
+<path d="M0,135 L80,118 L140,100 L190,85 L240,70 L285,56 L320,44 L348,28 L400,45 L450,60 L500,75 L560,95 L630,116 L700,135Z" fill="url(#gi)"></path>
+<path d="M0,135 L80,118 L140,100 L190,85 L240,70 L285,56 L320,44 L348,28 L400,45 L450,60 L500,75 L560,95 L630,116 L700,135" fill="none" stroke="#b87000" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="135" fill="#b87000" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="4" y="145">도봉산역 75m</text>
+<circle cx="320" cy="44" fill="#b87000" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="285" y="36">마당바위 450m</text>
+<circle cx="348" cy="28" fill="#b87000" r="5"></circle><text fill="#b87000" font-size="10" font-weight="700" x="316" y="20">신선대 714m</text>
+<circle cx="700" cy="135" fill="#b87000" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="645" y="145">원점 75m</text>
+<line stroke="currentColor" stroke-opacity=".1" x1="0" x2="700" y1="135" y2="135"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="90" y2="90"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="50" y2="50"></line>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="88">400m</text>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="48">600m</text>
+</svg>
+</div>
+<div class="diff-wrap inter">
+<h3>⚡ 구간별 난이도</h3>
+<div class="diff-row"><span class="diff-label">도봉산역→도봉서원</span><div class="diff-bar"><div class="diff-fill" style="width:25%"></div></div><span class="diff-pct">25%</span></div>
+<div class="diff-row"><span class="diff-label">도봉서원→마당바위</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
+<div class="diff-row"><span class="diff-label">마당바위→분기점</span><div class="diff-bar"><div class="diff-fill" style="width:75%"></div></div><span class="diff-pct">75%</span></div>
+<div class="diff-row"><span class="diff-label">분기점→신선대</span><div class="diff-bar"><div class="diff-fill" style="width:80%"></div></div><span class="diff-pct">80%</span></div>
+<div class="diff-row"><span class="diff-label">하산 전구간</span><div class="diff-bar"><div class="diff-fill" style="width:50%"></div></div><span class="diff-pct">50%</span></div>
+</div>
+<div class="section-title">🏔 주요 포인트</div>
+<div class="peak-grid">
+<div class="peak-card"><div class="peak-icon">⛪</div><div class="peak-elev" style="color:var(--color-inter)">320m</div><div class="peak-name">천축사</div><div class="peak-desc">도봉산 중턱 천년 고찰. 약수터 보급 가능</div></div>
+<div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-inter)">450m</div><div class="peak-name">마당바위</div><div class="peak-desc">수십 명 쉴 수 있는 평탄 암반. 서울 도심 조망</div></div>
+<div class="peak-card"><div class="peak-icon">🏔</div><div class="peak-elev" style="color:var(--color-inter)">714m</div><div class="peak-name">신선대</div><div class="peak-desc">도봉산 정상석. 360도 조망. 삼봉 파노라마</div></div>
+<div class="peak-card"><div class="peak-icon">🌫</div><div class="peak-elev" style="color:var(--color-inter)">740m</div><div class="peak-name">자운봉(조망)</div><div class="peak-desc">도봉산 최고봉. 등반 금지. 신선대에서 절경</div></div>
+</div>
 </div>
 <div class="tab-content" id="tab-inter-route">
-  <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">총 왕복 약 7km · 3~4시간 · 도봉산역 원점회귀</p>
-  <div class="accordion inter">
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">도봉산역 출발</div><div class="acc-meta">고도 75m · 1·7호선 1번 출구</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1·7호선 도봉산역 1번 출구 → 아웃도어 특화거리 통과 → 도봉탐방지원센터 도보 15분.</p><div class="tip-box">🛒 출발 전 특화거리 편의점에서 물·간식 최종 구비</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">탐방센터 → 도봉서원 터</div><div class="acc-meta">0.8km · 20분 · ★☆☆☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">계곡 따라 완만. 도봉서원 터는 조선 성리학자 조광조 배향 서원 흔적.</p><div class="tip-box">📜 바위 암각화 남아있어 역사 명소. 잠깐 감상 권장</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">도봉서원 → 천축사 → 마당바위</div><div class="acc-meta">1.5km · 50분 · ★★★☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">천축사 경유. 화강암 노출 구간 시작. 마당바위 서울 도심 조망 탁월.</p><div class="tip-box">⛪ 천축사 약수터 물 보충 가능. 마당바위에서 점심 최적</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">마당바위 → 자운봉 분기점</div><div class="acc-meta">0.6km · 30분 · ★★★★☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">철제 계단·난간 급경사. 자운봉·만장봉 눈앞. 분기점에서 신선대 방향 선택.</p><div class="warn-box">⚠️ 주말 철계단 정체. 내려오는 등산객 양보 후 통과</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">분기점 → 신선대(714m)</div><div class="acc-meta">0.3km · 15분 · ★★★★☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">최후 암릉. 정상석에서 360도 조망. 자운봉·만장봉·선인봉 삼봉 파노라마.</p><div class="tip-box">📸 신선대에서 자운봉 바라보는 사진 = 도봉산 최고 포토 스팟</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">신선대 → 도봉산역 원점</div><div class="acc-meta">3.5km · 80분 · ★★★☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">올라온 길 하산. 도봉계곡 따라 탐방센터 귀환.</p><div class="tip-box">🍺 도봉산역 특화거리 막걸리·도토리묵·파전 강추!</div></div></div></div>
-  </div>
+<p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">총 왕복 약 7km · 3~4시간 · 도봉산역 원점회귀</p>
+<div class="accordion inter">
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">도봉산역 출발</div><div class="acc-meta">고도 75m · 1·7호선 1번 출구</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1·7호선 도봉산역 1번 출구 → 아웃도어 특화거리 통과 → 도봉탐방지원센터 도보 15분.</p><div class="tip-box">🛒 출발 전 특화거리 편의점에서 물·간식 최종 구비</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">탐방센터 → 도봉서원 터</div><div class="acc-meta">0.8km · 20분 · ★☆☆☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">계곡 따라 완만. 도봉서원 터는 조선 성리학자 조광조 배향 서원 흔적.</p><div class="tip-box">📜 바위 암각화 남아있어 역사 명소. 잠깐 감상 권장</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">도봉서원 → 천축사 → 마당바위</div><div class="acc-meta">1.5km · 50분 · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">천축사 경유. 화강암 노출 구간 시작. 마당바위 서울 도심 조망 탁월.</p><div class="tip-box">⛪ 천축사 약수터 물 보충 가능. 마당바위에서 점심 최적</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">마당바위 → 자운봉 분기점</div><div class="acc-meta">0.6km · 30분 · ★★★★☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">철제 계단·난간 급경사. 자운봉·만장봉 눈앞. 분기점에서 신선대 방향 선택.</p><div class="warn-box">⚠️ 주말 철계단 정체. 내려오는 등산객 양보 후 통과</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">분기점 → 신선대(714m)</div><div class="acc-meta">0.3km · 15분 · ★★★★☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">최후 암릉. 정상석에서 360도 조망. 자운봉·만장봉·선인봉 삼봉 파노라마.</p><div class="tip-box">📸 신선대에서 자운봉 바라보는 사진 = 도봉산 최고 포토 스팟</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">신선대 → 도봉산역 원점</div><div class="acc-meta">3.5km · 80분 · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">올라온 길 하산. 도봉계곡 따라 탐방센터 귀환.</p><div class="tip-box">🍺 도봉산역 특화거리 막걸리·도토리묵·파전 강추!</div></div></div></div>
+</div>
 </div>
 <div class="tab-content" id="tab-inter-map">
-  <div class="map-wrap">
-    <h3>🗺 중급 신선대 코스 개념도</h3>
-    <div class="map-svg-wrap">
-      <svg viewBox="0 0 520 395" width="100%" style="max-height:415px;min-width:280px;">
-        <rect width="520" height="395" fill="var(--color-surface-2)" rx="10"/>
-        <path d="M263,380 L261,342 L256,302 L252,262 L247,225 L242,188 L238,155 L236,125 L238,102" fill="none" stroke="#b87000" stroke-width="2.5" stroke-dasharray="7,4"/>
-        <circle cx="263" cy="383" r="12" fill="#b87000"/><text x="263" y="388" text-anchor="middle" font-size="10" fill="white" font-weight="bold">P</text>
-        <text x="206" y="381" font-size="11" fill="var(--color-text)" font-weight="600">도봉산역</text>
-        <text x="206" y="393" font-size="9" fill="var(--color-text-muted)">75m · 1·7호선</text>
-        <rect x="240" y="338" width="46" height="16" rx="4" fill="#fff4e0"/><text x="263" y="350" text-anchor="middle" font-size="9" fill="#8a5200" font-weight="600">탐방센터</text>
-        <rect x="241" y="298" width="44" height="16" rx="4" fill="#f5eefb"/><text x="263" y="310" text-anchor="middle" font-size="9" fill="#6a2a8a" font-weight="600">도봉서원터</text>
-        <rect x="242" y="262" width="38" height="16" rx="4" fill="#f5eefb"/><text x="261" y="274" text-anchor="middle" font-size="9" fill="#6a2a8a" font-weight="600">천축사</text>
-        <ellipse cx="240" cy="238" rx="22" ry="11" fill="#e8d8b8" opacity=".9"/>
-        <text x="240" y="242" text-anchor="middle" font-size="9" fill="#7a5a20" font-weight="600">마당바위</text>
-        <text x="240" y="226" text-anchor="middle" font-size="9" fill="var(--color-text-muted)">450m</text>
-        <circle cx="238" cy="135" r="7" fill="white" stroke="#b87000" stroke-width="2"/>
-        <text x="222" y="129" font-size="9" fill="var(--color-text-muted)">분기점</text>
-        <polygon points="238,102 228,125 248,125" fill="#b87000"/>
-        <circle cx="238" cy="97" r="12" fill="#b87000"/>
-        <text x="238" y="101" text-anchor="middle" font-size="8" fill="white" font-weight="bold">신선대</text>
-        <text x="238" y="85" text-anchor="middle" font-size="11" fill="#b87000" font-weight="700">714m</text>
-        <polygon points="294,86 284,110 304,110" fill="#888"/><circle cx="294" cy="82" r="12" fill="#888"/>
-        <text x="294" y="86" text-anchor="middle" font-size="8" fill="white" font-weight="bold">자운봉</text>
-        <text x="294" y="70" text-anchor="middle" font-size="10" fill="#666">740m</text>
-        <text x="294" y="60" text-anchor="middle" font-size="8" fill="var(--color-text-muted)">(등반금지)</text>
-        <polygon points="326,96 318,113 334,113" fill="#aaa"/><circle cx="326" cy="92" r="8" fill="#aaa"/>
-        <text x="326" y="96" text-anchor="middle" font-size="7" fill="white">만장봉</text>
-        <text x="326" y="82" text-anchor="middle" font-size="9" fill="#888">716m</text>
-        <polygon points="352,104 345,118 359,118" fill="#aaa"/><circle cx="352" cy="100" r="7" fill="#aaa"/>
-        <text x="352" y="104" text-anchor="middle" font-size="7" fill="white">선인봉</text>
-        <text x="352" y="90" text-anchor="middle" font-size="9" fill="#888">708m</text>
-        <text x="476" y="24" font-size="13" fill="var(--color-text-muted)">N↑</text>
-        <rect x="12" y="12" width="148" height="72" rx="7" fill="var(--color-surface)" opacity=".93"/>
-        <text x="22" y="28" font-size="10" font-weight="700" fill="var(--color-text)">범례</text>
-        <line x1="22" y1="38" x2="50" y2="38" stroke="#b87000" stroke-width="2" stroke-dasharray="5,3"/><text x="57" y="42" font-size="9" fill="var(--color-text-muted)">등산로</text>
-        <circle cx="36" cy="54" r="6" fill="#b87000"/><text x="48" y="58" font-size="9" fill="var(--color-text-muted)">출발·정상</text>
-        <rect x="28" y="66" width="14" height="9" rx="2" fill="#f5eefb"/><text x="48" y="74" font-size="9" fill="var(--color-text-muted)">사찰·유적</text>
-      </svg>
-    </div>
-  </div>
-  <div class="cp-table-wrap">
-    <table class="cp-table"><thead><tr><th>#</th><th>지점</th><th>고도</th><th>거리</th><th>특이사항</th></tr></thead><tbody>
-      <tr><td>P</td><td>도봉산역 1번 출구</td><td>75m</td><td>0km</td><td><span class="cp-badge br">지하철·출발</span></td></tr>
-      <tr><td>1</td><td>도봉탐방지원센터</td><td>90m</td><td>0.9km</td><td><span class="cp-badge bw">화장실·안내</span></td></tr>
-      <tr><td>2</td><td>도봉서원 터</td><td>210m</td><td>1.7km</td><td><span class="cp-badge bt">역사 유적</span></td></tr>
-      <tr><td>3</td><td>천축사</td><td>320m</td><td>2.3km</td><td><span class="cp-badge bt">고찰·식수</span></td></tr>
-      <tr><td>4</td><td>마당바위</td><td>450m</td><td>2.8km</td><td><span class="cp-badge bv">전망·휴식</span></td></tr>
-      <tr><td>5</td><td>자운봉 분기점</td><td>620m</td><td>3.1km</td><td><span class="cp-badge br">이정표</span></td></tr>
-      <tr><td>6</td><td>신선대</td><td>714m</td><td>3.5km</td><td><span class="cp-badge bs">정상·360도</span></td></tr>
-      <tr><td>P</td><td>도봉산역 원점</td><td>75m</td><td>7.0km</td><td><span class="cp-badge br">종료</span></td></tr>
-    </tbody></table>
-  </div>
+<div class="map-wrap">
+<h3>🗺 중급 신선대 코스 개념도</h3>
+<div class="map-svg-wrap">
+<svg style="max-height:415px;min-width:280px;" viewbox="0 0 520 395" width="100%">
+<rect fill="var(--color-surface-2)" height="395" rx="10" width="520"></rect>
+<path d="M263,380 L261,342 L256,302 L252,262 L247,225 L242,188 L238,155 L236,125 L238,102" fill="none" stroke="#b87000" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<circle cx="263" cy="383" fill="#b87000" r="12"></circle><text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="263" y="388">P</text>
+<text fill="var(--color-text)" font-size="11" font-weight="600" x="206" y="381">도봉산역</text>
+<text fill="var(--color-text-muted)" font-size="9" x="206" y="393">75m · 1·7호선</text>
+<rect fill="#fff4e0" height="16" rx="4" width="46" x="240" y="338"></rect><text fill="#8a5200" font-size="9" font-weight="600" text-anchor="middle" x="263" y="350">탐방센터</text>
+<rect fill="#f5eefb" height="16" rx="4" width="44" x="241" y="298"></rect><text fill="#6a2a8a" font-size="9" font-weight="600" text-anchor="middle" x="263" y="310">도봉서원터</text>
+<rect fill="#f5eefb" height="16" rx="4" width="38" x="242" y="262"></rect><text fill="#6a2a8a" font-size="9" font-weight="600" text-anchor="middle" x="261" y="274">천축사</text>
+<ellipse cx="240" cy="238" fill="#e8d8b8" opacity=".9" rx="22" ry="11"></ellipse>
+<text fill="#7a5a20" font-size="9" font-weight="600" text-anchor="middle" x="240" y="242">마당바위</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="240" y="226">450m</text>
+<circle cx="238" cy="135" fill="white" r="7" stroke="#b87000" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="222" y="129">분기점</text>
+<polygon fill="#b87000" points="238,102 228,125 248,125"></polygon>
+<circle cx="238" cy="97" fill="#b87000" r="12"></circle>
+<text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="238" y="101">신선대</text>
+<text fill="#b87000" font-size="11" font-weight="700" text-anchor="middle" x="238" y="85">714m</text>
+<polygon fill="#888" points="294,86 284,110 304,110"></polygon><circle cx="294" cy="82" fill="#888" r="12"></circle>
+<text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="294" y="86">자운봉</text>
+<text fill="#666" font-size="10" text-anchor="middle" x="294" y="70">740m</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="294" y="60">(등반금지)</text>
+<polygon fill="#aaa" points="326,96 318,113 334,113"></polygon><circle cx="326" cy="92" fill="#aaa" r="8"></circle>
+<text fill="white" font-size="7" text-anchor="middle" x="326" y="96">만장봉</text>
+<text fill="#888" font-size="9" text-anchor="middle" x="326" y="82">716m</text>
+<polygon fill="#aaa" points="352,104 345,118 359,118"></polygon><circle cx="352" cy="100" fill="#aaa" r="7"></circle>
+<text fill="white" font-size="7" text-anchor="middle" x="352" y="104">선인봉</text>
+<text fill="#888" font-size="9" text-anchor="middle" x="352" y="90">708m</text>
+<text fill="var(--color-text-muted)" font-size="13" x="476" y="24">N↑</text>
+<rect fill="var(--color-surface)" height="72" opacity=".93" rx="7" width="148" x="12" y="12"></rect>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="22" y="28">범례</text>
+<line stroke="#b87000" stroke-dasharray="5,3" stroke-width="2" x1="22" x2="50" y1="38" y2="38"></line><text fill="var(--color-text-muted)" font-size="9" x="57" y="42">등산로</text>
+<circle cx="36" cy="54" fill="#b87000" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="48" y="58">출발·정상</text>
+<rect fill="#f5eefb" height="9" rx="2" width="14" x="28" y="66"></rect><text fill="var(--color-text-muted)" font-size="9" x="48" y="74">사찰·유적</text>
+</svg>
+</div>
+</div>
+<div class="cp-table-wrap">
+<table class="cp-table"><thead><tr><th>#</th><th>지점</th><th>고도</th><th>거리</th><th>특이사항</th></tr></thead><tbody>
+<tr><td>P</td><td>도봉산역 1번 출구</td><td>75m</td><td>0km</td><td><span class="cp-badge br">지하철·출발</span></td></tr>
+<tr><td>1</td><td>도봉탐방지원센터</td><td>90m</td><td>0.9km</td><td><span class="cp-badge bw">화장실·안내</span></td></tr>
+<tr><td>2</td><td>도봉서원 터</td><td>210m</td><td>1.7km</td><td><span class="cp-badge bt">역사 유적</span></td></tr>
+<tr><td>3</td><td>천축사</td><td>320m</td><td>2.3km</td><td><span class="cp-badge bt">고찰·식수</span></td></tr>
+<tr><td>4</td><td>마당바위</td><td>450m</td><td>2.8km</td><td><span class="cp-badge bv">전망·휴식</span></td></tr>
+<tr><td>5</td><td>자운봉 분기점</td><td>620m</td><td>3.1km</td><td><span class="cp-badge br">이정표</span></td></tr>
+<tr><td>6</td><td>신선대</td><td>714m</td><td>3.5km</td><td><span class="cp-badge bs">정상·360도</span></td></tr>
+<tr><td>P</td><td>도봉산역 원점</td><td>75m</td><td>7.0km</td><td><span class="cp-badge br">종료</span></td></tr>
+</tbody></table>
+</div>
 </div>
 <div class="tab-content" id="tab-inter-tips">
-  <div class="tips-grid">
-    <div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>암릉용 등산화</li><li>스틱(철계단 구간)</li><li>물 1.5L 이상</li><li>장갑(바위 잡기)</li><li>무릎 보호대</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">🍱</div><div class="tip-card-title">식사·음료</div><ul><li>마당바위 간식 휴식</li><li>천축사 약수터 보충</li><li>하산 후 도봉산역 식당가</li><li>순두부·삼겹살 유명</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">🚌</div><div class="tip-card-title">교통 안내</div><ul><li>1·7호선 도봉산역 1번 출구</li><li>역~탐방센터 도보 15분</li><li>자가: 도봉동 주차장</li><li>주말 주차 매우 혼잡</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">최적 시즌</div><ul><li>봄·가을(4~5월,10월) 최적</li><li>여름: 조기 출발 필수</li><li>겨울: 아이젠 필수</li><li>단풍철 이른 출발 권장</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">⚠️</div><div class="tip-card-title">안전 주의</div><ul><li>자운봉 등반 절대 금지</li><li>철계단 상하행 교차 양보</li><li>신선대 정상 강풍 주의</li><li>야간 산행 금지</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">유용한 앱</div><ul><li>트랭글: GPS 트랙</li><li>산림청 산행지도</li><li>국립공원공단 앱</li><li>기상청 앱</li></ul></div>
-  </div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>암릉용 등산화</li><li>스틱(철계단 구간)</li><li>물 1.5L 이상</li><li>장갑(바위 잡기)</li><li>무릎 보호대</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🍱</div><div class="tip-card-title">식사·음료</div><ul><li>마당바위 간식 휴식</li><li>천축사 약수터 보충</li><li>하산 후 도봉산역 식당가</li><li>순두부·삼겹살 유명</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><div class="tip-card-title">교통 안내</div><ul><li>1·7호선 도봉산역 1번 출구</li><li>역~탐방센터 도보 15분</li><li>자가: 도봉동 주차장</li><li>주말 주차 매우 혼잡</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">최적 시즌</div><ul><li>봄·가을(4~5월,10월) 최적</li><li>여름: 조기 출발 필수</li><li>겨울: 아이젠 필수</li><li>단풍철 이른 출발 권장</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><div class="tip-card-title">안전 주의</div><ul><li>자운봉 등반 절대 금지</li><li>철계단 상하행 교차 양보</li><li>신선대 정상 강풍 주의</li><li>야간 산행 금지</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">유용한 앱</div><ul><li>트랭글: GPS 트랙</li><li>산림청 산행지도</li><li>국립공원공단 앱</li><li>기상청 앱</li></ul></div>
+</div>
 </div>
 </div></div>
-
 <!-- 고급 -->
 <div class="course-panel" id="panel-adv">
 <div class="main-container">
 <div class="course-banner adv">
-  <div><div class="banner-title">🏔 고급 — 다락능선 Y계곡 종주</div><div class="banner-subtitle">망월사역 → 다락능선 → Y계곡 → 신선대 → 도봉산역 (편도 종주형)</div></div>
-  <span class="banner-badge">고급</span>
+<div><div class="banner-title">🏔 고급 — 다락능선 Y계곡 종주</div><div class="banner-subtitle">망월사역 → 다락능선 → Y계곡 → 신선대 → 도봉산역 (편도 종주형)</div></div>
+<span class="banner-badge">고급</span>
 </div>
 <div class="tab-bar">
-  <button class="tab-btn active" onclick="switchTab('adv','overview')">📋 개요</button>
-  <button class="tab-btn" onclick="switchTab('adv','route')">🗺 경로 안내</button>
-  <button class="tab-btn" onclick="switchTab('adv','map')">📍 지도</button>
-  <button class="tab-btn" onclick="switchTab('adv','tips')">💡 팁 &amp; 주의</button>
+<button class="tab-btn active" onclick="switchTab('adv','overview')">📋 개요</button>
+<button class="tab-btn" onclick="switchTab('adv','route')">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('adv','map')">📍 지도</button>
+<button class="tab-btn" onclick="switchTab('adv','tips')">💡 팁 &amp; 주의</button>
 </div>
 <div class="tab-content active" id="tab-adv-overview">
-  <div class="kpi-grid adv">
-    <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.2km</div><div class="kpi-label">편도(종주)</div></div>
-    <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">소요 시간</div></div>
-    <div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">700m</div><div class="kpi-label">누적 상승</div></div>
-    <div class="kpi-card"><div class="kpi-icon">🏔</div><div class="kpi-val">714m</div><div class="kpi-label">최고점(신선대)</div></div>
-    <div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">상</div><div class="kpi-label">체력 소모</div></div>
-    <div class="kpi-card"><div class="kpi-icon">🚇</div><div class="kpi-val">종주형</div><div class="kpi-label">망월사→도봉산역</div></div>
-  </div>
-  <div class="elev-wrap adv">
-    <h3>📈 고도 프로파일</h3>
-    <svg class="elev-svg" viewBox="0 0 700 145" preserveAspectRatio="none">
-      <defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#c0392b" stop-opacity=".3"/><stop offset="100%" stop-color="#c0392b" stop-opacity=".03"/></linearGradient></defs>
-      <path d="M0,133 L60,115 L110,97 L150,82 L178,69 L208,57 L238,49 L258,45 L278,52 L298,37 L328,29 L353,25 L378,35 L400,45 L428,52 L458,65 L498,87 L558,112 L618,127 L700,135Z" fill="url(#ga)"/>
-      <path d="M0,133 L60,115 L110,97 L150,82 L178,69 L208,57 L238,49 L258,45 L278,52 L298,37 L328,29 L353,25 L378,35 L400,45 L428,52 L458,65 L498,87 L558,112 L618,127 L700,135" fill="none" stroke="#c0392b" stroke-width="2.5" stroke-linejoin="round"/>
-      <circle cx="0" cy="133" r="4" fill="#c0392b"/><text x="4" y="144" font-size="10" fill="currentColor" opacity=".7">망월사역 85m</text>
-      <circle cx="208" cy="57" r="4" fill="#c0392b"/><text x="175" y="49" font-size="10" fill="currentColor" opacity=".7">포대전망 600m</text>
-      <rect x="238" y="37" width="42" height="16" rx="3" fill="#fdecea" opacity=".95"/>
-      <text x="259" y="49" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="700">Y계곡</text>
-      <circle cx="353" cy="25" r="5" fill="#c0392b"/><text x="320" y="17" font-size="10" fill="#c0392b" font-weight="700">신선대 714m</text>
-      <circle cx="700" cy="135" r="4" fill="#c0392b"/><text x="645" y="145" font-size="10" fill="currentColor" opacity=".7">도봉산역 75m</text>
-      <line x1="0" y1="135" x2="700" y2="135" stroke="currentColor" stroke-opacity=".1"/>
-      <line x1="0" y1="90" x2="700" y2="90" stroke="currentColor" stroke-opacity=".07" stroke-dasharray="4,4"/>
-      <line x1="0" y1="50" x2="700" y2="50" stroke="currentColor" stroke-opacity=".07" stroke-dasharray="4,4"/>
-      <text x="2" y="88" font-size="9" fill="currentColor" opacity=".5">400m</text>
-      <text x="2" y="48" font-size="9" fill="currentColor" opacity=".5">600m</text>
-    </svg>
-  </div>
-  <div class="diff-wrap adv">
-    <h3>⚡ 구간별 난이도</h3>
-    <div class="diff-row"><span class="diff-label">망월사역→다락능선</span><div class="diff-bar"><div class="diff-fill" style="width:60%"></div></div><span class="diff-pct">60%</span></div>
-    <div class="diff-row"><span class="diff-label">다락능선 암릉</span><div class="diff-bar"><div class="diff-fill" style="width:85%"></div></div><span class="diff-pct">85%</span></div>
-    <div class="diff-row"><span class="diff-label">포대전망대</span><div class="diff-bar"><div class="diff-fill" style="width:70%"></div></div><span class="diff-pct">70%</span></div>
-    <div class="diff-row"><span class="diff-label">Y계곡 통과</span><div class="diff-bar"><div class="diff-fill" style="width:98%"></div></div><span class="diff-pct">98%</span></div>
-    <div class="diff-row"><span class="diff-label">신선대→도봉산역</span><div class="diff-bar"><div class="diff-fill" style="width:45%"></div></div><span class="diff-pct">45%</span></div>
-  </div>
-  <div class="section-title">🔥 핵심 포인트</div>
-  <div class="peak-grid">
-    <div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-adv)">다락능선</div><div class="peak-name">도봉 최고 암릉</div><div class="peak-desc">연속 화강암 스크램블링. 서울 360도 조망</div></div>
-    <div class="peak-card"><div class="peak-icon">🗼</div><div class="peak-elev" style="color:var(--color-adv)">600m</div><div class="peak-name">포대전망대</div><div class="peak-desc">구 군사시설 포대 자리. 의정부·사패산 조망</div></div>
-    <div class="peak-card"><div class="peak-icon">🆘</div><div class="peak-elev" style="color:var(--color-adv)">핵심</div><div class="peak-name">Y계곡</div><div class="peak-desc">도봉산 최고 난이도. Y자 바위 틈 통과. 초보 금지</div></div>
-    <div class="peak-card"><div class="peak-icon">🏔</div><div class="peak-elev" style="color:var(--color-adv)">714m</div><div class="peak-name">신선대</div><div class="peak-desc">종주 종착점. Y계곡 통과 후 성취감 최고조</div></div>
-  </div>
+<div class="kpi-grid adv">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.2km</div><div class="kpi-label">편도(종주)</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">소요 시간</div></div>
+<div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">700m</div><div class="kpi-label">누적 상승</div></div>
+<div class="kpi-card"><div class="kpi-icon">🏔</div><div class="kpi-val">714m</div><div class="kpi-label">최고점(신선대)</div></div>
+<div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">상</div><div class="kpi-label">체력 소모</div></div>
+<div class="kpi-card"><div class="kpi-icon">🚇</div><div class="kpi-val">종주형</div><div class="kpi-label">망월사→도봉산역</div></div>
+</div>
+<div class="elev-wrap adv">
+<h3>📈 고도 프로파일</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
+<defs><lineargradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#c0392b" stop-opacity=".3"></stop><stop offset="100%" stop-color="#c0392b" stop-opacity=".03"></stop></lineargradient></defs>
+<path d="M0,133 L60,115 L110,97 L150,82 L178,69 L208,57 L238,49 L258,45 L278,52 L298,37 L328,29 L353,25 L378,35 L400,45 L428,52 L458,65 L498,87 L558,112 L618,127 L700,135Z" fill="url(#ga)"></path>
+<path d="M0,133 L60,115 L110,97 L150,82 L178,69 L208,57 L238,49 L258,45 L278,52 L298,37 L328,29 L353,25 L378,35 L400,45 L428,52 L458,65 L498,87 L558,112 L618,127 L700,135" fill="none" stroke="#c0392b" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="133" fill="#c0392b" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="4" y="144">망월사역 85m</text>
+<circle cx="208" cy="57" fill="#c0392b" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="175" y="49">포대전망 600m</text>
+<rect fill="#fdecea" height="16" opacity=".95" rx="3" width="42" x="238" y="37"></rect>
+<text fill="#c0392b" font-size="9" font-weight="700" text-anchor="middle" x="259" y="49">Y계곡</text>
+<circle cx="353" cy="25" fill="#c0392b" r="5"></circle><text fill="#c0392b" font-size="10" font-weight="700" x="320" y="17">신선대 714m</text>
+<circle cx="700" cy="135" fill="#c0392b" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="645" y="145">도봉산역 75m</text>
+<line stroke="currentColor" stroke-opacity=".1" x1="0" x2="700" y1="135" y2="135"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="90" y2="90"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="50" y2="50"></line>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="88">400m</text>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="48">600m</text>
+</svg>
+</div>
+<div class="diff-wrap adv">
+<h3>⚡ 구간별 난이도</h3>
+<div class="diff-row"><span class="diff-label">망월사역→다락능선</span><div class="diff-bar"><div class="diff-fill" style="width:60%"></div></div><span class="diff-pct">60%</span></div>
+<div class="diff-row"><span class="diff-label">다락능선 암릉</span><div class="diff-bar"><div class="diff-fill" style="width:85%"></div></div><span class="diff-pct">85%</span></div>
+<div class="diff-row"><span class="diff-label">포대전망대</span><div class="diff-bar"><div class="diff-fill" style="width:70%"></div></div><span class="diff-pct">70%</span></div>
+<div class="diff-row"><span class="diff-label">Y계곡 통과</span><div class="diff-bar"><div class="diff-fill" style="width:98%"></div></div><span class="diff-pct">98%</span></div>
+<div class="diff-row"><span class="diff-label">신선대→도봉산역</span><div class="diff-bar"><div class="diff-fill" style="width:45%"></div></div><span class="diff-pct">45%</span></div>
+</div>
+<div class="section-title">🔥 핵심 포인트</div>
+<div class="peak-grid">
+<div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-adv)">다락능선</div><div class="peak-name">도봉 최고 암릉</div><div class="peak-desc">연속 화강암 스크램블링. 서울 360도 조망</div></div>
+<div class="peak-card"><div class="peak-icon">🗼</div><div class="peak-elev" style="color:var(--color-adv)">600m</div><div class="peak-name">포대전망대</div><div class="peak-desc">구 군사시설 포대 자리. 의정부·사패산 조망</div></div>
+<div class="peak-card"><div class="peak-icon">🆘</div><div class="peak-elev" style="color:var(--color-adv)">핵심</div><div class="peak-name">Y계곡</div><div class="peak-desc">도봉산 최고 난이도. Y자 바위 틈 통과. 초보 금지</div></div>
+<div class="peak-card"><div class="peak-icon">🏔</div><div class="peak-elev" style="color:var(--color-adv)">714m</div><div class="peak-name">신선대</div><div class="peak-desc">종주 종착점. Y계곡 통과 후 성취감 최고조</div></div>
+</div>
 </div>
 <div class="tab-content" id="tab-adv-route">
-  <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:.75rem;">총 편도 약 7.2km · 4~5시간 · 망월사역 → 도봉산역 종주</p>
-  <div class="warn-box" style="margin-bottom:1rem;"><strong>🚨 고급 코스 주의:</strong> Y계곡 초보자·어린이·고소공포증 절대 금지. 암릉 경험 필수. 우천·결빙 시 운행 중단.</div>
-  <div class="accordion adv">
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">망월사역 출발</div><div class="acc-meta">고도 85m · 1호선 망월사역</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1호선 망월사역 → 심원사 방향 도보 15분. 편의점 최종 보급. 장비 점검 철저히.</p><div class="tip-box">🎯 출발 체크: 등산화·물 2L·장갑·무릎보호대·헤드램프(지연 대비)</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">망월사역 → 다락능선 진입</div><div class="acc-meta">1.5km · 45분 · ★★★☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">심원사 입구 지나 다락능선 급사면. 능선 올라서면 화강암 바위 연속. 처음부터 경사 상당.</p><div class="tip-box">💪 초반이 가장 힘듦. 천천히 페이스 유지 필수</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">다락능선 암릉 구간</div><div class="acc-meta">1.5km · 60분 · ★★★★★</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 최고 암릉. 연속 화강암 손발 스크램블링. 서울 전역 조망 연속 펼쳐짐.</p><div class="warn-box">⚠️ 배낭 바위 걸림 주의. 앞사람 충분한 거리. 미끄러운 날 우회 필수</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">포대전망대(600m)</div><div class="acc-meta">0.5km · 20분 · ★★★☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">포대능선 전망대. 의정부·사패산 한눈에. Y계곡 또는 우회로 선택 지점.</p><div class="tip-box">🔋 충분한 휴식·행동식 보충 후 Y계곡 진입. 우회로 선택도 가능</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">Y계곡 통과 🔥</div><div class="acc-meta">0.5km · 30~40분 · ★★★★★</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 하이라이트. Y자 형태 좁은 바위 틈 배낭 벗고 통과 구간 포함. 로프·철봉 이용. 한 명씩 순서 통과.</p><div class="warn-box">🚨 초보자 절대 금지. 배낭 먼저 분리 후 통과. 젖은 날씨 우회 필수. 우회로: 신선대 방향 좌측</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">Y계곡 → 신선대(714m)</div><div class="acc-meta">0.4km · 15분 · ★★★☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Y계곡 통과 후 능선 따라 신선대 200m. 성취감 최고조. 360도 파노라마.</p><div class="tip-box">🏆 신선대 = 도봉산 고급 배지 완성! 정상 인증샷 필수</div></div></div></div>
-    <div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">6</div><div><div class="acc-title">신선대 → 도봉산역 하산</div><div class="acc-meta">3.5km · 75분 · ★★★☆☆</div></div><svg class="acc-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">마당바위·천축사·도봉서원터 경유 하산. 도봉산역까지 도보. 종주 완성!</p><div class="tip-box">🍺 도봉산역 특화거리 종주 뒷풀이 강추!</div></div></div></div>
-  </div>
+<p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:.75rem;">총 편도 약 7.2km · 4~5시간 · 망월사역 → 도봉산역 종주</p>
+<div class="warn-box" style="margin-bottom:1rem;"><strong>🚨 고급 코스 주의:</strong> Y계곡 초보자·어린이·고소공포증 절대 금지. 암릉 경험 필수. 우천·결빙 시 운행 중단.</div>
+<div class="accordion adv">
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">망월사역 출발</div><div class="acc-meta">고도 85m · 1호선 망월사역</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1호선 망월사역 → 심원사 방향 도보 15분. 편의점 최종 보급. 장비 점검 철저히.</p><div class="tip-box">🎯 출발 체크: 등산화·물 2L·장갑·무릎보호대·헤드램프(지연 대비)</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">망월사역 → 다락능선 진입</div><div class="acc-meta">1.5km · 45분 · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">심원사 입구 지나 다락능선 급사면. 능선 올라서면 화강암 바위 연속. 처음부터 경사 상당.</p><div class="tip-box">💪 초반이 가장 힘듦. 천천히 페이스 유지 필수</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">다락능선 암릉 구간</div><div class="acc-meta">1.5km · 60분 · ★★★★★</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 최고 암릉. 연속 화강암 손발 스크램블링. 서울 전역 조망 연속 펼쳐짐.</p><div class="warn-box">⚠️ 배낭 바위 걸림 주의. 앞사람 충분한 거리. 미끄러운 날 우회 필수</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">포대전망대(600m)</div><div class="acc-meta">0.5km · 20분 · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">포대능선 전망대. 의정부·사패산 한눈에. Y계곡 또는 우회로 선택 지점.</p><div class="tip-box">🔋 충분한 휴식·행동식 보충 후 Y계곡 진입. 우회로 선택도 가능</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">Y계곡 통과 🔥</div><div class="acc-meta">0.5km · 30~40분 · ★★★★★</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 하이라이트. Y자 형태 좁은 바위 틈 배낭 벗고 통과 구간 포함. 로프·철봉 이용. 한 명씩 순서 통과.</p><div class="warn-box">🚨 초보자 절대 금지. 배낭 먼저 분리 후 통과. 젖은 날씨 우회 필수. 우회로: 신선대 방향 좌측</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">Y계곡 → 신선대(714m)</div><div class="acc-meta">0.4km · 15분 · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Y계곡 통과 후 능선 따라 신선대 200m. 성취감 최고조. 360도 파노라마.</p><div class="tip-box">🏆 신선대 = 도봉산 고급 배지 완성! 정상 인증샷 필수</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">6</div><div><div class="acc-title">신선대 → 도봉산역 하산</div><div class="acc-meta">3.5km · 75분 · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">마당바위·천축사·도봉서원터 경유 하산. 도봉산역까지 도보. 종주 완성!</p><div class="tip-box">🍺 도봉산역 특화거리 종주 뒷풀이 강추!</div></div></div></div>
+</div>
 </div>
 <div class="tab-content" id="tab-adv-map">
-  <div class="map-wrap">
-    <h3>🗺 고급 Y계곡 종주 코스 개념도</h3>
-    <div class="map-svg-wrap">
-      <svg viewBox="0 0 560 415" width="100%" style="max-height:435px;min-width:280px;">
-        <rect width="560" height="415" fill="var(--color-surface-2)" rx="10"/>
-        <path d="M90,398 Q113,373 131,346 Q150,316 159,280 Q168,243 173,208 Q178,176 182,146 Q188,116 197,93 Q207,73 220,63 Q235,53 253,51 Q267,50 280,56 Q293,62 303,72 Q315,84 330,86 Q343,88 357,82 Q369,74 377,66 Q393,53 413,60 Q433,70 439,88 Q443,108 439,133 Q433,163 427,193 Q419,226 415,258 Q410,293 415,328 Q421,363 423,398" fill="none" stroke="#c0392b" stroke-width="3" stroke-dasharray="8,4"/>
-        <circle cx="90" cy="400" r="13" fill="#c0392b"/><text x="90" y="405" text-anchor="middle" font-size="10" fill="white" font-weight="bold">P</text>
-        <text x="43" y="398" font-size="11" fill="var(--color-text)" font-weight="600">망월사역</text>
-        <text x="43" y="410" font-size="9" fill="var(--color-text-muted)">85m</text>
-        <text x="88" y="265" font-size="11" fill="#c0392b" font-weight="700">다락능선</text>
-        <circle cx="186" cy="118" r="9" fill="#c0392b"/>
-        <rect x="196" y="111" width="72" height="16" rx="4" fill="#fdecea"/>
-        <text x="232" y="122" text-anchor="middle" font-size="9" fill="#c0392b" font-weight="600">포대전망대 600m</text>
-        <ellipse cx="265" cy="53" rx="28" ry="16" fill="#c0392b" opacity=".2"/>
-        <ellipse cx="265" cy="53" rx="28" ry="16" fill="none" stroke="#c0392b" stroke-width="2.5"/>
-        <text x="265" y="49" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="800">Y계곡</text>
-        <text x="265" y="61" text-anchor="middle" font-size="8" fill="#c0392b">⚠ 고급 전용</text>
-        <path d="M237,68 Q233,88 233,106 Q235,116 247,120" fill="none" stroke="#999" stroke-width="1.5" stroke-dasharray="3,3"/>
-        <text x="194" y="106" font-size="9" fill="var(--color-text-muted)">우회로</text>
-        <polygon points="377,66 367,86 387,86" fill="#c0392b"/>
-        <circle cx="377" cy="62" r="13" fill="#c0392b"/>
-        <text x="377" y="66" text-anchor="middle" font-size="8" fill="white" font-weight="bold">신선대</text>
-        <text x="377" y="50" text-anchor="middle" font-size="11" fill="#c0392b" font-weight="700">714m</text>
-        <polygon points="423,60 413,80 433,80" fill="#888"/><circle cx="423" cy="56" r="10" fill="#888"/>
-        <text x="423" y="60" text-anchor="middle" font-size="7" fill="white">자운봉</text>
-        <text x="423" y="46" text-anchor="middle" font-size="9" fill="#666">740m</text>
-        <circle cx="423" cy="398" r="11" fill="none" stroke="#c0392b" stroke-width="2.5"/>
-        <text x="423" y="402" text-anchor="middle" font-size="9" fill="var(--color-text)" font-weight="700">도봉산역</text>
-        <text x="423" y="414" text-anchor="middle" font-size="8" fill="var(--color-text-muted)">종료 75m</text>
-        <text x="518" y="26" font-size="13" fill="var(--color-text-muted)">N↑</text>
-        <rect x="12" y="12" width="158" height="88" rx="7" fill="var(--color-surface)" opacity=".93"/>
-        <text x="22" y="28" font-size="10" font-weight="700" fill="var(--color-text)">범례</text>
-        <line x1="22" y1="38" x2="52" y2="38" stroke="#c0392b" stroke-width="2" stroke-dasharray="6,3"/><text x="59" y="42" font-size="9" fill="var(--color-text-muted)">등산로(종주)</text>
-        <ellipse cx="37" cy="56" rx="12" ry="7" fill="#c0392b" opacity=".2"/>
-        <ellipse cx="37" cy="56" rx="12" ry="7" fill="none" stroke="#c0392b" stroke-width="1.5"/>
-        <text x="54" y="60" font-size="9" fill="var(--color-text-muted)">Y계곡(위험)</text>
-        <circle cx="37" cy="72" r="6" fill="#c0392b"/><text x="49" y="76" font-size="9" fill="var(--color-text-muted)">봉우리·출발</text>
-        <line x1="22" y1="88" x2="52" y2="88" stroke="#999" stroke-width="1.5" stroke-dasharray="3,2"/><text x="59" y="92" font-size="9" fill="var(--color-text-muted)">우회로</text>
-      </svg>
-    </div>
-  </div>
-  <div class="cp-table-wrap">
-    <table class="cp-table"><thead><tr><th>#</th><th>지점</th><th>고도</th><th>거리</th><th>특이사항</th></tr></thead><tbody>
-      <tr><td>P</td><td>망월사역</td><td>85m</td><td>0km</td><td><span class="cp-badge br">출발·1호선</span></td></tr>
-      <tr><td>1</td><td>심원사 입구</td><td>150m</td><td>0.8km</td><td><span class="cp-badge bt">사찰</span></td></tr>
-      <tr><td>2</td><td>다락능선 진입</td><td>320m</td><td>1.5km</td><td><span class="cp-badge bv">암릉 시작</span></td></tr>
-      <tr><td>3</td><td>포대전망대</td><td>600m</td><td>3.0km</td><td><span class="cp-badge bv">전망·우회갈림</span></td></tr>
-      <tr><td>4</td><td>Y계곡 입구</td><td>630m</td><td>3.5km</td><td><span class="cp-badge bs">🔥 초보금지</span></td></tr>
-      <tr><td>5</td><td>Y계곡 통과 완료</td><td>680m</td><td>4.0km</td><td><span class="cp-badge bs">최고 난이도</span></td></tr>
-      <tr><td>6</td><td>신선대</td><td>714m</td><td>4.5km</td><td><span class="cp-badge bs">정상·360도</span></td></tr>
-      <tr><td>7</td><td>마당바위</td><td>450m</td><td>5.3km</td><td><span class="cp-badge br">휴식</span></td></tr>
-      <tr><td>8</td><td>천축사</td><td>320m</td><td>5.9km</td><td><span class="cp-badge bt">식수</span></td></tr>
-      <tr><td>9</td><td>도봉탐방지원센터</td><td>90m</td><td>6.8km</td><td><span class="cp-badge bw">화장실</span></td></tr>
-      <tr><td>E</td><td>도봉산역</td><td>75m</td><td>7.2km</td><td><span class="cp-badge br">종료·지하철</span></td></tr>
-    </tbody></table>
-  </div>
+<div class="map-wrap">
+<h3>🗺 고급 Y계곡 종주 코스 개념도</h3>
+<div class="map-svg-wrap">
+<svg style="max-height:435px;min-width:280px;" viewbox="0 0 560 415" width="100%">
+<rect fill="var(--color-surface-2)" height="415" rx="10" width="560"></rect>
+<path d="M90,398 Q113,373 131,346 Q150,316 159,280 Q168,243 173,208 Q178,176 182,146 Q188,116 197,93 Q207,73 220,63 Q235,53 253,51 Q267,50 280,56 Q293,62 303,72 Q315,84 330,86 Q343,88 357,82 Q369,74 377,66 Q393,53 413,60 Q433,70 439,88 Q443,108 439,133 Q433,163 427,193 Q419,226 415,258 Q410,293 415,328 Q421,363 423,398" fill="none" stroke="#c0392b" stroke-dasharray="8,4" stroke-width="3"></path>
+<circle cx="90" cy="400" fill="#c0392b" r="13"></circle><text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="90" y="405">P</text>
+<text fill="var(--color-text)" font-size="11" font-weight="600" x="43" y="398">망월사역</text>
+<text fill="var(--color-text-muted)" font-size="9" x="43" y="410">85m</text>
+<text fill="#c0392b" font-size="11" font-weight="700" x="88" y="265">다락능선</text>
+<circle cx="186" cy="118" fill="#c0392b" r="9"></circle>
+<rect fill="#fdecea" height="16" rx="4" width="72" x="196" y="111"></rect>
+<text fill="#c0392b" font-size="9" font-weight="600" text-anchor="middle" x="232" y="122">포대전망대 600m</text>
+<ellipse cx="265" cy="53" fill="#c0392b" opacity=".2" rx="28" ry="16"></ellipse>
+<ellipse cx="265" cy="53" fill="none" rx="28" ry="16" stroke="#c0392b" stroke-width="2.5"></ellipse>
+<text fill="#c0392b" font-size="11" font-weight="800" text-anchor="middle" x="265" y="49">Y계곡</text>
+<text fill="#c0392b" font-size="8" text-anchor="middle" x="265" y="61">⚠ 고급 전용</text>
+<path d="M237,68 Q233,88 233,106 Q235,116 247,120" fill="none" stroke="#999" stroke-dasharray="3,3" stroke-width="1.5"></path>
+<text fill="var(--color-text-muted)" font-size="9" x="194" y="106">우회로</text>
+<polygon fill="#c0392b" points="377,66 367,86 387,86"></polygon>
+<circle cx="377" cy="62" fill="#c0392b" r="13"></circle>
+<text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="377" y="66">신선대</text>
+<text fill="#c0392b" font-size="11" font-weight="700" text-anchor="middle" x="377" y="50">714m</text>
+<polygon fill="#888" points="423,60 413,80 433,80"></polygon><circle cx="423" cy="56" fill="#888" r="10"></circle>
+<text fill="white" font-size="7" text-anchor="middle" x="423" y="60">자운봉</text>
+<text fill="#666" font-size="9" text-anchor="middle" x="423" y="46">740m</text>
+<circle cx="423" cy="398" fill="none" r="11" stroke="#c0392b" stroke-width="2.5"></circle>
+<text fill="var(--color-text)" font-size="9" font-weight="700" text-anchor="middle" x="423" y="402">도봉산역</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="423" y="414">종료 75m</text>
+<text fill="var(--color-text-muted)" font-size="13" x="518" y="26">N↑</text>
+<rect fill="var(--color-surface)" height="88" opacity=".93" rx="7" width="158" x="12" y="12"></rect>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="22" y="28">범례</text>
+<line stroke="#c0392b" stroke-dasharray="6,3" stroke-width="2" x1="22" x2="52" y1="38" y2="38"></line><text fill="var(--color-text-muted)" font-size="9" x="59" y="42">등산로(종주)</text>
+<ellipse cx="37" cy="56" fill="#c0392b" opacity=".2" rx="12" ry="7"></ellipse>
+<ellipse cx="37" cy="56" fill="none" rx="12" ry="7" stroke="#c0392b" stroke-width="1.5"></ellipse>
+<text fill="var(--color-text-muted)" font-size="9" x="54" y="60">Y계곡(위험)</text>
+<circle cx="37" cy="72" fill="#c0392b" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="49" y="76">봉우리·출발</text>
+<line stroke="#999" stroke-dasharray="3,2" stroke-width="1.5" x1="22" x2="52" y1="88" y2="88"></line><text fill="var(--color-text-muted)" font-size="9" x="59" y="92">우회로</text>
+</svg>
+</div>
+</div>
+<div class="cp-table-wrap">
+<table class="cp-table"><thead><tr><th>#</th><th>지점</th><th>고도</th><th>거리</th><th>특이사항</th></tr></thead><tbody>
+<tr><td>P</td><td>망월사역</td><td>85m</td><td>0km</td><td><span class="cp-badge br">출발·1호선</span></td></tr>
+<tr><td>1</td><td>심원사 입구</td><td>150m</td><td>0.8km</td><td><span class="cp-badge bt">사찰</span></td></tr>
+<tr><td>2</td><td>다락능선 진입</td><td>320m</td><td>1.5km</td><td><span class="cp-badge bv">암릉 시작</span></td></tr>
+<tr><td>3</td><td>포대전망대</td><td>600m</td><td>3.0km</td><td><span class="cp-badge bv">전망·우회갈림</span></td></tr>
+<tr><td>4</td><td>Y계곡 입구</td><td>630m</td><td>3.5km</td><td><span class="cp-badge bs">🔥 초보금지</span></td></tr>
+<tr><td>5</td><td>Y계곡 통과 완료</td><td>680m</td><td>4.0km</td><td><span class="cp-badge bs">최고 난이도</span></td></tr>
+<tr><td>6</td><td>신선대</td><td>714m</td><td>4.5km</td><td><span class="cp-badge bs">정상·360도</span></td></tr>
+<tr><td>7</td><td>마당바위</td><td>450m</td><td>5.3km</td><td><span class="cp-badge br">휴식</span></td></tr>
+<tr><td>8</td><td>천축사</td><td>320m</td><td>5.9km</td><td><span class="cp-badge bt">식수</span></td></tr>
+<tr><td>9</td><td>도봉탐방지원센터</td><td>90m</td><td>6.8km</td><td><span class="cp-badge bw">화장실</span></td></tr>
+<tr><td>E</td><td>도봉산역</td><td>75m</td><td>7.2km</td><td><span class="cp-badge br">종료·지하철</span></td></tr>
+</tbody></table>
+</div>
 </div>
 <div class="tab-content" id="tab-adv-tips">
-  <div class="warn-box" style="margin-bottom:1.25rem;"><strong>🚨 고급 코스 필수 안전:</strong> Y계곡 초보자·어린이 절대 금지. 암릉 경험자 동행 필수. 우천·결빙 시 중단. 단독 산행 지양.</div>
-  <div class="tips-grid">
-    <div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>암릉용 등산화(고마찰)</li><li>장갑 필수</li><li>물 2L 이상</li><li>무릎·발목 보호대</li><li>헤드램프(지연 대비)</li><li>긴 바지(무릎 보호)</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">⛑</div><div class="tip-card-title">Y계곡 통과법</div><ul><li>배낭 먼저 분리 후 통과</li><li>앞사람 충분한 거리</li><li>발 디딤 확인 후 이동</li><li>한 명씩 순서 준수</li><li>우회로: 좌측 선택 가능</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">🚌</div><div class="tip-card-title">종주 교통</div><ul><li>출발: 1호선 망월사역</li><li>도착: 1·7호선 도봉산역</li><li>두 역 사이 1호선 환승</li><li>종주형 — 대중교통 추천</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">최적 시즌</div><ul><li>봄·가을(4~5월,10월)</li><li>여름 장마 기간 금지</li><li>겨울: 아이젠·스패츠 필수</li><li>우천 다음날 암릉 매우 미끄러움</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">⚠️</div><div class="tip-card-title">안전 주의</div><ul><li>Y계곡 초보자 절대 금지</li><li>암릉 배낭 걸림 주의</li><li>겨울 결빙 매우 위험</li><li>도봉사무소 02-954-2566</li></ul></div>
-    <div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">유용한 앱</div><ul><li>트랭글·가민: GPS 트랙</li><li>국립공원공단 앱</li><li>산림청 산행지도</li><li>기상청 앱(출발 전 필수)</li></ul></div>
-  </div>
+<div class="warn-box" style="margin-bottom:1.25rem;"><strong>🚨 고급 코스 필수 안전:</strong> Y계곡 초보자·어린이 절대 금지. 암릉 경험자 동행 필수. 우천·결빙 시 중단. 단독 산행 지양.</div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🎒</div><div class="tip-card-title">필수 장비</div><ul><li>암릉용 등산화(고마찰)</li><li>장갑 필수</li><li>물 2L 이상</li><li>무릎·발목 보호대</li><li>헤드램프(지연 대비)</li><li>긴 바지(무릎 보호)</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">⛑</div><div class="tip-card-title">Y계곡 통과법</div><ul><li>배낭 먼저 분리 후 통과</li><li>앞사람 충분한 거리</li><li>발 디딤 확인 후 이동</li><li>한 명씩 순서 준수</li><li>우회로: 좌측 선택 가능</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🚌</div><div class="tip-card-title">종주 교통</div><ul><li>출발: 1호선 망월사역</li><li>도착: 1·7호선 도봉산역</li><li>두 역 사이 1호선 환승</li><li>종주형 — 대중교통 추천</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">최적 시즌</div><ul><li>봄·가을(4~5월,10월)</li><li>여름 장마 기간 금지</li><li>겨울: 아이젠·스패츠 필수</li><li>우천 다음날 암릉 매우 미끄러움</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><div class="tip-card-title">안전 주의</div><ul><li>Y계곡 초보자 절대 금지</li><li>암릉 배낭 걸림 주의</li><li>겨울 결빙 매우 위험</li><li>도봉사무소 02-954-2566</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">유용한 앱</div><ul><li>트랭글·가민: GPS 트랙</li><li>국립공원공단 앱</li><li>산림청 산행지도</li><li>기상청 앱(출발 전 필수)</li></ul></div>
+</div>
 </div>
 </div></div>
-
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 도봉산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Dobongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/dobongsan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/dobongsan/g1.webp" type="image/webp"/>
+<img alt="도봉산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">도봉산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Dobongsan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/dobongsan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/dobongsan/g2.webp" type="image/webp"/>
+<img alt="도봉산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">도봉산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Dobongsan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/dobongsan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/dobongsan/g3.webp" type="image/webp"/>
+<img alt="도봉산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">도봉산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Dobongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@1605595076' target='_blank' rel='noopener'&gt;영화 정&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/dobongsan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/dobongsan/g4.webp" type="image/webp"/>
+<img alt="도봉산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">도봉산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <script>
 (function(){
   var t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
@@ -621,6 +1111,128 @@ function toggleAcc(item){
   item.closest('.accordion').querySelectorAll('.acc-item').forEach(function(a){a.classList.remove('open');});
   if(!isOpen)item.classList.add('open');
 }
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
