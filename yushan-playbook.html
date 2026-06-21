@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>위산 등산 플레이북</title>
-  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>위산 등산 플레이북</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root,[data-theme="light"]{--bg:#f6f3ee;--surface:#fcfaf7;--surface2:#eee8e0;--border:#ddd4c8;--text:#211d18;--muted:#72685b;--faint:#afa394;--green:#6a7d4c;--greenbg:#e5eadc;--blue:#456e96;--bluebg:#dce8f4;--red:#9f5845;--redbg:#f2e1db;--gold:#a8863a;--shadow:0 10px 24px rgba(32,24,16,.08);--r:18px;--r2:12px;--xs:clamp(.75rem,.7rem+.2vw,.87rem);--sm:clamp(.9rem,.84rem+.2vw,1rem);--base:clamp(1rem,.95rem+.25vw,1.1rem);--lg:clamp(1.15rem,1rem+.5vw,1.45rem);--xl:clamp(1.6rem,1.2rem+1.2vw,2.4rem);--xxl:clamp(2.2rem,1.3rem+2vw,3.6rem)}
     [data-theme="dark"]{--bg:#161411;--surface:#221d18;--surface2:#2a241e;--border:#3d352c;--text:#e7ddd0;--muted:#9f9488;--faint:#6d6257;--green:#93ab73;--greenbg:#2a3222;--blue:#7eafd8;--bluebg:#1f2f3b;--red:#d28d78;--redbg:#3e251f;--gold:#d0b26d;--shadow:0 12px 28px rgba(0,0,0,.3)}
     *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:'Satoshi',sans-serif;line-height:1.6} h1,h2,h3,h4,p{margin:0} button{font:inherit} table{border-collapse:collapse;width:100%}
@@ -22,36 +23,653 @@
     .map svg{width:100%;height:auto;max-height:430px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)} th,td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:var(--xs);text-align:left} th{background:var(--surface2);color:var(--muted)} tr:last-child td{border-bottom:none}
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
-  </style>
+  
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg viewBox="0 0 48 48" width="26" height="26" fill="none"><path d="M7 34c4-6 8-12 13-12 3 0 5 2 7 5 2-3 4-6 8-6 3 0 5 2 6 4" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 39h36" stroke="white" stroke-width="3" stroke-linecap="round"/><path d="M19 21l3-9M28 19l4-8" stroke="white" stroke-width="2.5" stroke-linecap="round"/></svg></div><div><h1>위산</h1><p>Yushan · 대만 최고봉 3,952m · 배운산장 중심 고산 코스</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
-<section class="hero"><div class="wrap"><span class="hero-badge">Yushan National Park · Jade Mountain</span><h2>위산 3코스 등산 플레이북</h2><p>대만 최고봉 위산을 초급, 중급, 고급 3개 코스로 나눈 인터랙티브 가이드입니다. 타타카 들머리, 배운산장, 위산 주봉을 중심으로 가장 일반적인 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">3,952m</div><div class="l">위산 주봉</div></div><div class="stat"><div class="v">3,402m</div><div class="l">배운산장</div></div><div class="stat"><div class="v">8.5km</div><div class="l">타타카→배운산장</div></div><div class="stat"><div class="v">2.4km</div><div class="l">배운산장→주봉</div></div><div class="stat"><div class="v">허가 필수</div><div class="l">입산·숙박 신청</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 배운산장 체험</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 1박 2일 주봉</button><button class="course-btn red" data-course="advanced">🏔 고급 — 당일 장거리</button></div></div></section>
+<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M7 34c4-6 8-12 13-12 3 0 5 2 7 5 2-3 4-6 8-6 3 0 5 2 6 4" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M6 39h36" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M19 21l3-9M28 19l4-8" stroke="white" stroke-linecap="round" stroke-width="2.5"></path></svg></div><div><h1>위산</h1><p>Yushan · 대만 최고봉 3,952m · 배운산장 중심 고산 코스</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/yushan/hero-640.avif 640w, assets/img/yushan/hero-1024.avif 1024w, assets/img/yushan/hero-1600.avif 1600w, assets/img/yushan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/yushan/hero-640.webp 640w, assets/img/yushan/hero-1024.webp 1024w, assets/img/yushan/hero-1600.webp 1600w, assets/img/yushan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="위산 국립공원의 대표 명소인 위산 주봉와 아름다운 산세 풍경 / Beautiful landscape of Yushan Main Peak and majestic mountain ridges in Yushan National Park" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/yushan/hero-1600.jpg" srcset="assets/img/yushan/hero-640.jpg 640w, assets/img/yushan/hero-1024.jpg 1024w, assets/img/yushan/hero-1600.jpg 1600w, assets/img/yushan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="wrap"><span class="hero-badge">Yushan National Park · Jade Mountain</span><h2>위산 3코스 등산 플레이북</h2><p>대만 최고봉 위산을 초급, 중급, 고급 3개 코스로 나눈 인터랙티브 가이드입니다. 타타카 들머리, 배운산장, 위산 주봉을 중심으로 가장 일반적인 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">3,952m</div><div class="l">위산 주봉</div></div><div class="stat"><div class="v">3,402m</div><div class="l">배운산장</div></div><div class="stat"><div class="v">8.5km</div><div class="l">타타카→배운산장</div></div><div class="stat"><div class="v">2.4km</div><div class="l">배운산장→주봉</div></div><div class="stat"><div class="v">허가 필수</div><div class="l">입산·숙박 신청</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 배운산장 체험</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 1박 2일 주봉</button><button class="course-btn red" data-course="advanced">🏔 고급 — 당일 장거리</button></div></div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/photo/breathtaking-mountain-view-above-clouds-in-taiwan-34434573/" rel="noopener" target="_blank">小小 兵</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">Pexels</a></span>
+</div>
+</section>
 <main class="wrap">
-<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">배운산장 체험 코스</div><div class="panel-sub">타타카 등산구 → 배운산장 왕복 · 약 17km · 8~10시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">17km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">8~10h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">3,402m</div><div class="txt">배운산장</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">고산 적응</div><div class="txt">목적</div></div><div class="card kpi"><div class="num">허가 필요</div><div class="txt">입산 신청</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">타타카 등산구</span><span class="arr">→</span><span class="chip">배운산장 3,402m</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#6a7d4c" stop-opacity=".34"/><stop offset="100%" stop-color="#6a7d4c" stop-opacity=".05"/></linearGradient></defs><path d="M20 184 C180 160, 300 134, 420 108 S590 74, 740 68 L740 210 L20 210 Z" fill="url(#g1)"/><path d="M20 184 C180 160, 300 134, 420 108 S590 74, 740 68" fill="none" stroke="#6a7d4c" stroke-width="4" stroke-linecap="round"/><circle cx="740" cy="68" r="6" fill="#6a7d4c"/><text x="592" y="58" font-size="12" fill="#6a7d4c">배운산장 3,402m</text></svg></div><p class="desc">타타카 등산구에서 배운산장까지는 편도 8.5km로 가장 널리 알려진 기본 접근 구간입니다 [web:561][web:564]. 왕복만 해도 17km 수준이라 짧지는 않지만, 정상 공략 없이 고산 적응과 위산 분위기 체험에 집중하는 비교적 보수적인 코스로 볼 수 있습니다 [web:568][web:570].</p></div>
+<section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">배운산장 체험 코스</div><div class="panel-sub">타타카 등산구 → 배운산장 왕복 · 약 17km · 8~10시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">17km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">8~10h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">3,402m</div><div class="txt">배운산장</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">고산 적응</div><div class="txt">목적</div></div><div class="card kpi"><div class="num">허가 필요</div><div class="txt">입산 신청</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">타타카 등산구</span><span class="arr">→</span><span class="chip">배운산장 3,402m</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#6a7d4c" stop-opacity=".34"></stop><stop offset="100%" stop-color="#6a7d4c" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 184 C180 160, 300 134, 420 108 S590 74, 740 68 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 184 C180 160, 300 134, 420 108 S590 74, 740 68" fill="none" stroke="#6a7d4c" stroke-linecap="round" stroke-width="4"></path><circle cx="740" cy="68" fill="#6a7d4c" r="6"></circle><text fill="#6a7d4c" font-size="12" x="592" y="58">배운산장 3,402m</text></svg></div><p class="desc">타타카 등산구에서 배운산장까지는 편도 8.5km로 가장 널리 알려진 기본 접근 구간입니다 [web:561][web:564]. 왕복만 해도 17km 수준이라 짧지는 않지만, 정상 공략 없이 고산 적응과 위산 분위기 체험에 집중하는 비교적 보수적인 코스로 볼 수 있습니다 [web:568][web:570].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">타타카 등산구 출발</div><div class="seg-meta">0km · 해발 약 2,560m</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>위산의 가장 일반적인 들머리입니다. 이미 고도가 높아 출발 직후부터 속도를 조절해야 합니다.</p><div class="bar"><div class="fill" style="width:26%"></div></div><div class="tip">💡 시작점 고도가 높아 평지 체력과 다르게 숨이 찰 수 있습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">타타카 → 중간 전망 구간</div><div class="seg-meta">약 4km · 2~3시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>완만하게 시작하지만 꾸준한 오르막이 이어집니다. 날씨가 좋으면 초원과 절벽 지형이 시원하게 열립니다.</p><div class="bar"><div class="fill" style="width:38%"></div></div><div class="tip">💡 고소 증상이 느껴지면 속도를 줄이고 수분 섭취를 자주 하세요.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">전망 구간 → 배운산장</div><div class="seg-meta">4.5km · 2~3시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>산장까지는 8.5km, 보통 5~6시간 전후가 많이 언급됩니다. 산장 주변에서 휴식 후 같은 길로 하산합니다.</p><div class="bar"><div class="fill" style="width:54%"></div></div><div class="warn">⚠ 고산증 반응이 있으면 정상 욕심 없이 바로 하산 판단이 중요합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">배운산장 → 타타카 하산</div><div class="seg-meta">8.5km · 3~4시간 30분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>긴 거리의 하산이라 체력 소모가 적지 않습니다. 오후 기상 변화에 대비해 너무 늦지 않게 되돌아서는 것이 좋습니다.</p><div class="bar"><div class="fill" style="width:36%"></div></div><div class="tip">💡 이 코스는 장거리 걷기 능력과 고산 적응력을 동시에 점검하기 좋습니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M92 316 C206 272, 320 214, 430 162 S590 98, 696 86" stroke="#6a7d4c" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="92" cy="316" r="10" fill="#6a7d4c"/><circle cx="696" cy="86" r="12" fill="#6a7d4c"/><text x="106" y="310" font-size="12">타타카 등산구</text><text x="560" y="78" font-size="12">배운산장 3,402m</text><text x="34" y="44" font-size="12" fill="var(--muted)">고산 적응·산장 체험형 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>타타카 등산구</td><td>약 2,560m</td><td>0km</td><td>위산 주 등산구</td></tr><tr><td>중간 전망 구간</td><td>약 3,000m</td><td>4.0km</td><td>고산 경관 시작</td></tr><tr><td>배운산장</td><td>3,402m</td><td>8.5km</td><td>대표 숙박 산장</td></tr><tr><td>타타카 복귀</td><td>약 2,560m</td><td>17km</td><td>원점 회귀</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M92 316 C206 272, 320 214, 430 162 S590 98, 696 86" fill="none" stroke="#6a7d4c" stroke-linecap="round" stroke-width="6"></path><circle cx="92" cy="316" fill="#6a7d4c" r="10"></circle><circle cx="696" cy="86" fill="#6a7d4c" r="12"></circle><text font-size="12" x="106" y="310">타타카 등산구</text><text font-size="12" x="560" y="78">배운산장 3,402m</text><text fill="var(--muted)" font-size="12" x="34" y="44">고산 적응·산장 체험형 코스</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>타타카 등산구</td><td>약 2,560m</td><td>0km</td><td>위산 주 등산구</td></tr><tr><td>중간 전망 구간</td><td>약 3,000m</td><td>4.0km</td><td>고산 경관 시작</td></tr><tr><td>배운산장</td><td>3,402m</td><td>8.5km</td><td>대표 숙박 산장</td></tr><tr><td>타타카 복귀</td><td>약 2,560m</td><td>17km</td><td>원점 회귀</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 준비물</h4><ul><li>방풍·방한 의류</li><li>헤드랜턴 예비용 포함</li><li>고칼로리 간식과 물</li></ul></div><div class="card tipcard"><h4>📄 허가</h4><ul><li>입산 허가 확인</li><li>숙박 없이도 공원 규정 확인</li><li>신분증·여권 지참</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>고소 증상</li><li>오후 기상 급변</li><li>장거리 하산 피로</li></ul></div></div></div></section>
-
-<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">1박 2일 위산 주봉 코스</div><div class="panel-sub">타타카 → 배운산장 1박 → 위산 주봉(3,952m) → 하산 · 약 21.8km · 1박 2일</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">21.8km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">1박 2일</div><div class="txt">기본 일정</div></div><div class="card kpi"><div class="num">8.5km</div><div class="txt">타타카→산장</div></div><div class="card kpi"><div class="num">2.4km</div><div class="txt">산장→주봉</div></div><div class="card kpi"><div class="num">3,952m</div><div class="txt">정상</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">타타카</span><span class="arr">→</span><span class="chip">배운산장 숙박</span><span class="arr">→</span><span class="chip">🏔 위산 주봉</span><span class="arr">→</span><span class="chip">타타카 하산</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#456e96" stop-opacity=".34"/><stop offset="100%" stop-color="#456e96" stop-opacity=".05"/></linearGradient></defs><path d="M20 184 C170 160, 300 136, 438 108 S610 74, 660 66 S704 50, 740 40 L740 210 L20 210 Z" fill="url(#g2)"/><path d="M20 184 C170 160, 300 136, 438 108 S610 74, 660 66 S704 50, 740 40" fill="none" stroke="#456e96" stroke-width="4" stroke-linecap="round"/><circle cx="612" cy="74" r="6" fill="#456e96"/><circle cx="740" cy="40" r="6" fill="#456e96"/><text x="496" y="64" font-size="12" fill="#456e96">배운산장</text><text x="612" y="30" font-size="12" fill="#456e96">위산 3,952m</text></svg></div><p class="desc">위산의 가장 표준적인 루트는 타타카에서 배운산장까지 8.5km를 올라 1박한 뒤, 다음 날 새벽 2.4km를 추가해 주봉을 등정하는 방식입니다 [web:562][web:568]. 타타카에서 산장까지는 약 5~6시간, 산장에서 정상까지는 1.5~2.5시간 전후가 널리 안내됩니다 [web:564][web:569].</p></div>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">1박 2일 위산 주봉 코스</div><div class="panel-sub">타타카 → 배운산장 1박 → 위산 주봉(3,952m) → 하산 · 약 21.8km · 1박 2일</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">21.8km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">1박 2일</div><div class="txt">기본 일정</div></div><div class="card kpi"><div class="num">8.5km</div><div class="txt">타타카→산장</div></div><div class="card kpi"><div class="num">2.4km</div><div class="txt">산장→주봉</div></div><div class="card kpi"><div class="num">3,952m</div><div class="txt">정상</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">타타카</span><span class="arr">→</span><span class="chip">배운산장 숙박</span><span class="arr">→</span><span class="chip">🏔 위산 주봉</span><span class="arr">→</span><span class="chip">타타카 하산</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#456e96" stop-opacity=".34"></stop><stop offset="100%" stop-color="#456e96" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 184 C170 160, 300 136, 438 108 S610 74, 660 66 S704 50, 740 40 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 184 C170 160, 300 136, 438 108 S610 74, 660 66 S704 50, 740 40" fill="none" stroke="#456e96" stroke-linecap="round" stroke-width="4"></path><circle cx="612" cy="74" fill="#456e96" r="6"></circle><circle cx="740" cy="40" fill="#456e96" r="6"></circle><text fill="#456e96" font-size="12" x="496" y="64">배운산장</text><text fill="#456e96" font-size="12" x="612" y="30">위산 3,952m</text></svg></div><p class="desc">위산의 가장 표준적인 루트는 타타카에서 배운산장까지 8.5km를 올라 1박한 뒤, 다음 날 새벽 2.4km를 추가해 주봉을 등정하는 방식입니다 [web:562][web:568]. 타타카에서 산장까지는 약 5~6시간, 산장에서 정상까지는 1.5~2.5시간 전후가 널리 안내됩니다 [web:564][web:569].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1일</div><div><div class="seg-title">타타카 → 배운산장</div><div class="seg-meta">8.5km · 5~6시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>첫날은 꾸준한 오르막을 걸어 배운산장에 도착합니다. 산장 체크인 후 휴식하며 고소 적응 시간을 충분히 가지는 것이 핵심입니다.</p><div class="bar"><div class="fill" style="width:56%"></div></div><div class="tip">💡 첫날 무리하면 둘째 날 새벽 정상 등정 때 고소 증상이 더 심해질 수 있습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2일</div><div><div class="seg-title">배운산장 → 위산 주봉</div><div class="seg-meta">2.4km · 1.5~2.5시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>보통 새벽에 출발해 일출 시간대 정상에 맞추는 경우가 많습니다. 거리 자체는 짧지만 3,400m 이상 고도에서 시작하므로 훨씬 힘들게 느껴집니다.</p><div class="bar"><div class="fill" style="width:76%"></div></div><div class="warn">⚠ 정상 직전 암릉과 강풍, 저온 환경에 대비해야 합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">정상 → 배운산장 → 타타카</div><div class="seg-meta">약 10.9km · 5~6시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상에서 산장으로 되돌아와 정비 후 장거리 하산을 진행합니다. 하산 시간이 길고 무릎 부담이 커서 끝까지 집중해야 합니다.</p><div class="bar"><div class="fill" style="width:60%"></div></div><div class="tip">💡 정상 인증 후 너무 오래 머물기보다 체온 유지와 귀환 시간을 우선하세요.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M86 322 C190 282, 300 226, 420 164 S576 94, 644 90 S702 64, 736 56" stroke="#456e96" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="86" cy="322" r="10" fill="#456e96"/><circle cx="620" cy="94" r="10" fill="#456e96"/><circle cx="736" cy="56" r="12" fill="#456e96"/><text x="100" y="316" font-size="12">타타카</text><text x="506" y="86" font-size="12">배운산장 3,402m</text><text x="610" y="48" font-size="12">위산 주봉 3,952m</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>타타카 등산구</td><td>약 2,560m</td><td>0km</td><td>시작점</td></tr><tr><td>배운산장</td><td>3,402m</td><td>8.5km</td><td>숙박 거점</td></tr><tr><td>위산 주봉</td><td>3,952m</td><td>10.9km</td><td>대만 최고봉</td></tr><tr><td>타타카 복귀</td><td>약 2,560m</td><td>21.8km</td><td>하산 종료</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M86 322 C190 282, 300 226, 420 164 S576 94, 644 90 S702 64, 736 56" fill="none" stroke="#456e96" stroke-linecap="round" stroke-width="6"></path><circle cx="86" cy="322" fill="#456e96" r="10"></circle><circle cx="620" cy="94" fill="#456e96" r="10"></circle><circle cx="736" cy="56" fill="#456e96" r="12"></circle><text font-size="12" x="100" y="316">타타카</text><text font-size="12" x="506" y="86">배운산장 3,402m</text><text font-size="12" x="610" y="48">위산 주봉 3,952m</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>타타카 등산구</td><td>약 2,560m</td><td>0km</td><td>시작점</td></tr><tr><td>배운산장</td><td>3,402m</td><td>8.5km</td><td>숙박 거점</td></tr><tr><td>위산 주봉</td><td>3,952m</td><td>10.9km</td><td>대만 최고봉</td></tr><tr><td>타타카 복귀</td><td>약 2,560m</td><td>21.8km</td><td>하산 종료</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>📝 필수 준비</h4><ul><li>배운산장 예약</li><li>입산 허가 승인</li><li>여권·신분 확인</li></ul></div><div class="card tipcard"><h4>🧥 장비</h4><ul><li>방풍·보온 레이어</li><li>헤드랜턴</li><li>장갑·모자</li><li>고산약은 개인 판단</li></ul></div><div class="card tipcard"><h4>⛔ 리스크</h4><ul><li>고소증</li><li>새벽 강풍과 저온</li><li>허가 경쟁률 높음</li></ul></div></div></div></section>
-
-<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">위산 당일 장거리 코스</div><div class="panel-sub">상동푸 주차장 접근 → 타타카 → 배운산장 → 위산 주봉 → 원점 복귀 · 20km+ · 10~14시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 & 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">20km+</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">10~14h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">2.4km</div><div class="txt">산장→정상</div></div><div class="card kpi"><div class="num">새벽 출발</div><div class="txt">운영 핵심</div></div><div class="card kpi"><div class="num">상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">고산 장거리</div><div class="txt">코스 성격</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">상동푸 주차장 접근</span><span class="arr">→</span><span class="chip">타타카</span><span class="arr">→</span><span class="chip">배운산장</span><span class="arr">→</span><span class="chip">🏔 위산 주봉</span><span class="arr">→</span><span class="chip">원점 복귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewBox="0 0 760 220"><defs><linearGradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9f5845" stop-opacity=".34"/><stop offset="100%" stop-color="#9f5845" stop-opacity=".05"/></linearGradient></defs><path d="M20 194 C140 190, 220 182, 280 176 S340 158, 408 118 S582 74, 648 64 S712 52, 740 40 L740 210 L20 210 Z" fill="url(#g3)"/><path d="M20 194 C140 190, 220 182, 280 176 S340 158, 408 118 S582 74, 648 64 S712 52, 740 40" fill="none" stroke="#9f5845" stroke-width="4" stroke-linecap="round"/><circle cx="408" cy="118" r="6" fill="#9f5845"/><circle cx="740" cy="40" r="6" fill="#9f5845"/><text x="290" y="108" font-size="12" fill="#9f5845">배운산장</text><text x="614" y="30" font-size="12" fill="#9f5845">위산 주봉</text></svg></div><p class="desc">일부 숙련자는 위산을 하루에 오르내리기도 하며, 실제 사례에서는 타타카에서 새벽 출발 후 배운산장 8.5km, 이어 정상 2.4km를 당일에 모두 소화합니다 [web:565]. 거리와 고도를 고려하면 공식적으로는 1박 2일이 표준이지만, 당일 코스는 체력과 고산 적응력, 운영 경험이 충분한 경우에만 고려할 만한 상급 선택지입니다 [web:562][web:564].</p></div>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">위산 당일 장거리 코스</div><div class="panel-sub">상동푸 주차장 접근 → 타타카 → 배운산장 → 위산 주봉 → 원점 복귀 · 20km+ · 10~14시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
+<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">20km+</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">10~14h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">2.4km</div><div class="txt">산장→정상</div></div><div class="card kpi"><div class="num">새벽 출발</div><div class="txt">운영 핵심</div></div><div class="card kpi"><div class="num">상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">고산 장거리</div><div class="txt">코스 성격</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">상동푸 주차장 접근</span><span class="arr">→</span><span class="chip">타타카</span><span class="arr">→</span><span class="chip">배운산장</span><span class="arr">→</span><span class="chip">🏔 위산 주봉</span><span class="arr">→</span><span class="chip">원점 복귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9f5845" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9f5845" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 194 C140 190, 220 182, 280 176 S340 158, 408 118 S582 74, 648 64 S712 52, 740 40 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 194 C140 190, 220 182, 280 176 S340 158, 408 118 S582 74, 648 64 S712 52, 740 40" fill="none" stroke="#9f5845" stroke-linecap="round" stroke-width="4"></path><circle cx="408" cy="118" fill="#9f5845" r="6"></circle><circle cx="740" cy="40" fill="#9f5845" r="6"></circle><text fill="#9f5845" font-size="12" x="290" y="108">배운산장</text><text fill="#9f5845" font-size="12" x="614" y="30">위산 주봉</text></svg></div><p class="desc">일부 숙련자는 위산을 하루에 오르내리기도 하며, 실제 사례에서는 타타카에서 새벽 출발 후 배운산장 8.5km, 이어 정상 2.4km를 당일에 모두 소화합니다 [web:565]. 거리와 고도를 고려하면 공식적으로는 1박 2일이 표준이지만, 당일 코스는 체력과 고산 적응력, 운영 경험이 충분한 경우에만 고려할 만한 상급 선택지입니다 [web:562][web:564].</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">새벽 접근 및 타타카 출발</div><div class="seg-meta">0km · 심야~새벽</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>상동푸 주차장 또는 주변 거점에서 이동 후 매우 이른 시간에 타타카에서 출발합니다. 해뜨기 전 어두운 시간 이동과 저온 적응이 필수입니다.</p><div class="bar"><div class="fill" style="width:44%"></div></div><div class="warn">⚠ 헤드랜턴과 배터리, 비상 보온 장비가 반드시 필요합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">타타카 → 배운산장</div><div class="seg-meta">8.5km · 약 3.5~5시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>숙련자는 비교적 빠르게 산장까지 접근하지만, 일반 산행보다 훨씬 강한 체력 소모가 발생합니다. 이후 정상 공략 전 짧은 휴식만 가능할 수 있습니다.</p><div class="bar"><div class="fill" style="width:66%"></div></div><div class="tip">💡 산장에 도착해도 정상부까지 핵심 체력을 남겨야 합니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">배운산장 → 위산 주봉</div><div class="seg-meta">2.4km · 1.5~2시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>당일 장거리의 핵심 고비입니다. 정상 등정 후 다시 장거리 하산이 남아 있으므로 정점에서 체온과 체력을 빠르게 회복해야 합니다.</p><div class="bar"><div class="fill" style="width:84%"></div></div><div class="warn">⚠ 고산에서의 무리한 속도전은 탈진과 고소 문제를 크게 키울 수 있습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">정상 → 타타카 원점 복귀</div><div class="seg-meta">10.9km · 5~7시간</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상 이후에도 실질적으로 산행의 절반 이상이 남아 있습니다. 하산 집중력과 무릎 체력, 시간 관리가 모두 중요합니다.</p><div class="bar"><div class="fill" style="width:72%"></div></div><div class="tip">💡 일몰 전 타타카 복귀를 목표로 보수적으로 움직이는 편이 안전합니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewBox="0 0 760 420"><rect x="10" y="10" width="740" height="400" rx="22" fill="var(--surface2)"/><path d="M70 336 L150 330 L216 318 L286 304 L344 252 L422 180 L544 112 L646 84 L730 62" stroke="#9f5845" stroke-width="6" fill="none" stroke-linecap="round"/><circle cx="70" cy="336" r="10" fill="#9f5845"/><circle cx="286" cy="304" r="10" fill="#9f5845"/><circle cx="646" cy="84" r="10" fill="#9f5845"/><circle cx="730" cy="62" r="12" fill="#9f5845"/><text x="84" y="330" font-size="12">상동푸 접근</text><text x="214" y="296" font-size="12">타타카</text><text x="520" y="104" font-size="12">배운산장</text><text x="604" y="54" font-size="12">위산 주봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동푸 주차장 접근</td><td>약 2,100m대</td><td>접근</td><td>새벽 이동 거점</td></tr><tr><td>타타카 등산구</td><td>약 2,560m</td><td>0km</td><td>공식 시작점</td></tr><tr><td>배운산장</td><td>3,402m</td><td>8.5km</td><td>핵심 중간 거점</td></tr><tr><td>위산 주봉</td><td>3,952m</td><td>10.9km</td><td>정상</td></tr><tr><td>타타카 복귀</td><td>약 2,560m</td><td>21.8km+</td><td>당일 종료</td></tr></tbody></table></div></div>
+<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M70 336 L150 330 L216 318 L286 304 L344 252 L422 180 L544 112 L646 84 L730 62" fill="none" stroke="#9f5845" stroke-linecap="round" stroke-width="6"></path><circle cx="70" cy="336" fill="#9f5845" r="10"></circle><circle cx="286" cy="304" fill="#9f5845" r="10"></circle><circle cx="646" cy="84" fill="#9f5845" r="10"></circle><circle cx="730" cy="62" fill="#9f5845" r="12"></circle><text font-size="12" x="84" y="330">상동푸 접근</text><text font-size="12" x="214" y="296">타타카</text><text font-size="12" x="520" y="104">배운산장</text><text font-size="12" x="604" y="54">위산 주봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동푸 주차장 접근</td><td>약 2,100m대</td><td>접근</td><td>새벽 이동 거점</td></tr><tr><td>타타카 등산구</td><td>약 2,560m</td><td>0km</td><td>공식 시작점</td></tr><tr><td>배운산장</td><td>3,402m</td><td>8.5km</td><td>핵심 중간 거점</td></tr><tr><td>위산 주봉</td><td>3,952m</td><td>10.9km</td><td>정상</td></tr><tr><td>타타카 복귀</td><td>약 2,560m</td><td>21.8km+</td><td>당일 종료</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🔥 요구 조건</h4><ul><li>장거리 산행 경험</li><li>고산 적응 경험</li><li>빠른 페이스 운영 능력</li></ul></div><div class="card tipcard"><h4>🧭 운영 포인트</h4><ul><li>아주 이른 출발</li><li>기상창 확인</li><li>중도 철수 기준 설정</li></ul></div><div class="card tipcard"><h4>⛔ 핵심 리스크</h4><ul><li>고소증 악화</li><li>탈진</li><li>강풍·우천 시 위험 급증</li></ul></div></div></div></section>
 </main>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 위산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Yushan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/tents-pitched-on-a-mountaintop-12279808/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/yushan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/yushan/g1.webp" type="image/webp"/>
+<img alt="위산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yushan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">위산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Scenic view of Yushan Main Peak encountered during the Yushan climb 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/landscape-from-a-mountain-peak-above-clouds-12279810/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/yushan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/yushan/g2.webp" type="image/webp"/>
+<img alt="위산 산행 중 마주하는 위산 주봉의 수려한 모습" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yushan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">위산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Yushan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/people-on-a-mountain-peak-above-clouds-12279813/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/yushan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/yushan/g3.webp" type="image/webp"/>
+<img alt="위산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yushan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">위산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Yushan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/group-of-backpackers-in-mountains-12247773/' target='_blank' rel='noopener'&gt;P Hsuan Wang&lt;/a&gt; on Pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/yushan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/yushan/g4.webp" type="image/webp"/>
+<img alt="위산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yushan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">위산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <footer><div class="wrap">실제 산행 전 위산 국립공원 입산 허가, 배운산장 예약, 기상, 교통, 고산병 대응 계획을 반드시 다시 확인하세요.</div></footer>
 <script>
 const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
 const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
