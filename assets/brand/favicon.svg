@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-label="Korea Trails Icon" role="img">
+  <title>Korea Trails Icon</title>
+  <desc>A minimalist icon showing mountain peaks and a rising sun.</desc>
+  <path d="M4 24 L10 13 L14 18 L19 9 L24 17 L28 8" stroke="var(--color-primary, #01696f)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <circle cx="28" cy="8" r="2.5" fill="var(--color-orange, #da7101)"/>
+</svg>

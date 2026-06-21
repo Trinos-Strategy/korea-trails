@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none" aria-label="Korea Trails Logo" role="img">
+  <title>Korea Trails Logo</title>
+  <desc>A dynamic logo featuring mountain ridges and the rising sun, representing hiking trails in Korea.</desc>
+  <rect width="36" height="36" rx="8" fill="var(--color-primary, #01696f)"/>
+  <!-- Mountain Silhouette (Shaded Back Layer) -->
+  <path d="M4 28 L10 16 L15 22 L20 12 L25 20 L30 10 L32 28Z" fill="rgba(255, 255, 255, 0.15)" stroke="none"/>
+  <!-- Mountain Peaks (Front Stroke) -->
+  <path d="M4 28 L10 16 L15 22 L20 12 L25 20 L30 10" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <!-- Sun / Peak Summit Circle -->
+  <circle cx="30" cy="10" r="2.5" fill="white"/>
+</svg>

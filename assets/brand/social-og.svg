@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" fill="none" aria-label="Korea Trails Social Share Template" role="img">
+  <title>Korea Trails Share Card Template</title>
+  <desc>A template for creating premium open-graph sharing cards for Korea Trails playbooks.</desc>
+  <defs>
+    <!-- Background Gradient representing a mountain range atmosphere -->
+    <linearGradient id="bg-grad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#14211A"/>
+      <stop offset="50%" stop-color="#0F1814"/>
+      <stop offset="100%" stop-color="#080D0B"/>
+    </linearGradient>
+    
+    <!-- Accent Gradient -->
+    <linearGradient id="brand-grad" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0%" stop-color="#4f98a3"/>
+      <stop offset="100%" stop-color="#01696f"/>
+    </linearGradient>
+
+    <!-- Overlay Gradient to fade out photos on the left for text readability -->
+    <linearGradient id="overlay-grad" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#0f0e0d" stop-opacity="0.95"/>
+      <stop offset="40%" stop-color="#0f0e0d" stop-opacity="0.85"/>
+      <stop offset="70%" stop-color="#0f0e0d" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0f0e0d" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Base background (acting as a placeholder for a mountain photo) -->
+  <rect width="1200" height="630" fill="url(#bg-grad)"/>
+  
+  <!-- Illustrative Mountain Outline in the background (placeholder for photo context) -->
+  <path d="M500 630 L750 320 L900 480 L1050 250 L1200 420 L1200 630 Z" fill="#1b2e25" opacity="0.4"/>
+  <path d="M200 630 L450 220 L680 490 L850 180 L1100 500 L1200 380 L1200 630 Z" fill="#243f32" opacity="0.25"/>
+
+  <!-- Left Content Overlay -->
+  <rect width="800" height="630" fill="url(#overlay-grad)"/>
+
+  <!-- Brand Section (Top Left) -->
+  <g transform="translate(80, 70)">
+    <!-- Logo Icon -->
+    <rect width="50" height="50" rx="12" fill="url(#brand-grad)"/>
+    <path d="M6 38 L14 22 L21 30 L28 16 L35 28 L42 14 L44 38 Z" fill="rgba(255, 255, 255, 0.15)"/>
+    <path d="M6 38 L14 22 L21 30 L28 16 L35 28 L42 14" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="42" cy="14" r="3.5" fill="#e8af34"/>
+    
+    <!-- Logo Text -->
+    <text x="68" y="34" fill="#CDCCCA" font-family="'Cabinet Grotesk', system-ui, sans-serif" font-size="28" font-weight="800" letter-spacing="-0.02em">Korea Trails</text>
+  </g>
+
+  <!-- Core Content Area (Left-aligned) -->
+  <g transform="translate(80, 240)">
+    <!-- Category Badge -->
+    <rect width="160" height="36" rx="18" fill="var(--color-primary-highlight, #1e3234)"/>
+    <text x="80" y="22" fill="#4f98a3" font-family="'Satoshi', system-ui, sans-serif" font-size="14" font-weight="700" text-anchor="middle" letter-spacing="0.05em">PLAYBOOK</text>
+    
+    <!-- Mountain Name (H1) -->
+    <text x="0" y="110" fill="#FFFFFF" font-family="'Cabinet Grotesk', system-ui, sans-serif" font-size="76" font-weight="800" letter-spacing="-0.03em">설악산 국립공원</text>
+    
+    <!-- Subtitle / Route Description -->
+    <text x="0" y="170" fill="#cdccca" font-family="'Satoshi', system-ui, sans-serif" font-size="24" font-weight="500">대청봉 · 공룡능선 · 울산바위 코스 완전 가이드</text>
+  </g>
+
+  <!-- Statistics Grid (Bottom Left) -->
+  <g transform="translate(80, 480)">
+    <!-- Stat 1: Altitude -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="24" fill="#Bab9b4" font-family="'Satoshi', system-ui, sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em">ALTITUDE</text>
+      <text x="0" y="60" fill="#FFFFFF" font-family="'Cabinet Grotesk', system-ui, sans-serif" font-size="32" font-weight="800">1,708m</text>
+    </g>
+    
+    <!-- Stat 2: Distance -->
+    <g transform="translate(200, 0)">
+      <text x="0" y="24" fill="#Bab9b4" font-family="'Satoshi', system-ui, sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em">DISTANCE</text>
+      <text x="0" y="60" fill="#FFFFFF" font-family="'Cabinet Grotesk', system-ui, sans-serif" font-size="32" font-weight="800">15.0km</text>
+    </g>
+
+    <!-- Stat 3: Duration -->
+    <g transform="translate(400, 0)">
+      <text x="0" y="24" fill="#Bab9b4" font-family="'Satoshi', system-ui, sans-serif" font-size="14" font-weight="500" letter-spacing="0.05em">DURATION</text>
+      <text x="0" y="60" fill="#FFFFFF" font-family="'Cabinet Grotesk', system-ui, sans-serif" font-size="32" font-weight="800">9-11 Hours</text>
+    </g>
+  </g>
+
+  <!-- Premium Bottom Border Accent -->
+  <rect y="622" width="1200" height="8" fill="url(#brand-grad)"/>
+</svg>
