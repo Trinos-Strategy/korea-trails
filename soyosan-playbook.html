@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>소요산 등산 플레이북</title>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Black+Han+Sans&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&amp;family=Black+Han+Sans&amp;display=swap" rel="stylesheet"/>
 <style>
 :root,[data-theme="light"]{
 --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;
@@ -204,877 +205,1314 @@ a{color:inherit;text-decoration:none}
 .tab-btn{padding:var(--space-2) var(--space-3)}
 .stats-grid{grid-template-columns:repeat(3,1fr)}
 }
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
 </style>
 </head>
 <body>
-
 <!-- HERO -->
-<section class="hero">
-  <button class="theme-btn" data-theme-toggle aria-label="다크모드 전환">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
-  <div class="hero-logo">
-    <svg class="logo-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="소요산 로고">
-      <circle cx="24" cy="24" r="22" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"/>
-      <path d="M8 34 L18 16 L24 26 L30 18 L40 34 Z" fill="rgba(125,217,160,0.4)" stroke="#7dd9a0" stroke-width="1.5" stroke-linejoin="round"/>
-      <path d="M18 16 L24 10 L30 18" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>
-      <circle cx="24" cy="10" r="2.5" fill="#7dd9a0"/>
-    </svg>
-  </div>
-  <h1 class="hero-title">소요산 <span>등산 플레이북</span></h1>
-  <p class="hero-subtitle">경기도 동두천 · 경기의 소금강 · 100대 명산 · 해발 587m</p>
-  <div class="hero-badges">
-    <span class="hero-badge">🌿 초급 · 1코스</span>
-    <span class="hero-badge">🦶 중급 · 2코스</span>
-    <span class="hero-badge">🏔 고급 · 3코스</span>
-    <span class="hero-badge">🍁 단풍 명소</span>
-    <span class="hero-badge">🚇 지하철 접근</span>
-  </div>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/soyosan/hero-640.avif 640w, assets/img/soyosan/hero-1024.avif 1024w, assets/img/soyosan/hero-1600.avif 1600w, assets/img/soyosan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/soyosan/hero-640.webp 640w, assets/img/soyosan/hero-1024.webp 1024w, assets/img/soyosan/hero-1600.webp 1600w, assets/img/soyosan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="소요산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Soyosan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/soyosan/hero-1600.jpg" srcset="assets/img/soyosan/hero-640.jpg 640w, assets/img/soyosan/hero-1024.jpg 1024w, assets/img/soyosan/hero-1600.jpg 1600w, assets/img/soyosan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<button aria-label="다크모드 전환" class="theme-btn" data-theme-toggle="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+<div class="hero-logo">
+<svg aria-label="소요산 로고" class="logo-icon" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<circle cx="24" cy="24" fill="rgba(255,255,255,0.1)" r="22" stroke="rgba(255,255,255,0.3)" stroke-width="1.5"></circle>
+<path d="M8 34 L18 16 L24 26 L30 18 L40 34 Z" fill="rgba(125,217,160,0.4)" stroke="#7dd9a0" stroke-linejoin="round" stroke-width="1.5"></path>
+<path d="M18 16 L24 10 L30 18" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-linejoin="round" stroke-width="1.5"></path>
+<circle cx="24" cy="10" fill="#7dd9a0" r="2.5"></circle>
+</svg>
+</div>
+<h1 class="hero-title">소요산 <span>등산 플레이북</span></h1>
+<p class="hero-subtitle">경기도 동두천 · 경기의 소금강 · 100대 명산 · 해발 587m</p>
+<div class="hero-badges">
+<span class="hero-badge">🌿 초급 · 1코스</span>
+<span class="hero-badge">🦶 중급 · 2코스</span>
+<span class="hero-badge">🏔 고급 · 3코스</span>
+<span class="hero-badge">🍁 단풍 명소</span>
+<span class="hero-badge">🚇 지하철 접근</span>
+</div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@rfniza" rel="noopener" target="_blank">Nizar Firmansyah</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
 </section>
-
 <!-- COURSE SELECTOR -->
 <div class="course-selector">
-  <button class="course-btn beginner active" onclick="selectCourse('beginner')">🌿 초급 · 계곡 산책코스</button>
-  <button class="course-btn intermediate" onclick="selectCourse('intermediate')">🦶 중급 · 백운대 능선코스</button>
-  <button class="course-btn advanced" onclick="selectCourse('advanced')">🏔 고급 · 의상대 완주코스</button>
+<button class="course-btn beginner active" onclick="selectCourse('beginner')">🌿 초급 · 계곡 산책코스</button>
+<button class="course-btn intermediate" onclick="selectCourse('intermediate')">🦶 중급 · 백운대 능선코스</button>
+<button class="course-btn advanced" onclick="selectCourse('advanced')">🏔 고급 · 의상대 완주코스</button>
 </div>
-
 <!-- ════ BEGINNER ════ -->
-<div id="panel-beginner" class="course-panel active">
+<div class="course-panel active" id="panel-beginner">
 <div class="container">
-
-  <!-- STATS -->
-  <div class="stats-grid">
-    <div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">5.7km</div><div class="stat-label">총 거리</div></div>
-    <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">1.5h</div><div class="stat-label">소요시간</div></div>
-    <div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">430m</div><div class="stat-label">최고지점</div></div>
-    <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">280m</div><div class="stat-label">누적상승</div></div>
-    <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~320</div><div class="stat-label">칼로리(kcal)</div></div>
-    <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">쉬움</div><div class="stat-label">난이도</div></div>
-  </div>
-
-  <!-- DESC -->
-  <div class="course-desc">
-    <div class="course-desc-header">
-      <span class="course-level-badge badge-beginner">🌿 초급</span>
-      <h2>계곡 산책코스 — 자재암·하백운대·선녀탕</h2>
-    </div>
-    <p>일주문에서 자재암을 거쳐 하백운대·중백운대에 오른 뒤 선녀탕 계곡으로 되돌아오는 원점회귀 코스입니다. 계곡을 따라 걷는 구간이 많아 여름에도 시원하고, 가을 단풍이 특히 아름답습니다. 등산 초보자·어린이·어르신 모두 부담 없이 즐길 수 있는 소요산의 대표 입문 코스입니다.</p>
-  </div>
-
-  <!-- ELEVATION -->
-  <div class="elevation-section">
-    <div class="section-title">📊 고도 프로파일</div>
-    <div class="elevation-wrap">
-      <svg viewBox="0 0 700 160" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="grad-b" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#437a22" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#437a22" stop-opacity="0.05"/>
-          </linearGradient>
-        </defs>
-        <path d="M0,150 L0,130 C60,128 100,125 130,110 C160,95 175,80 200,70 C225,60 240,55 260,50 C280,45 300,48 320,55 C340,62 370,75 400,85 C430,95 460,100 500,105 C540,110 580,115 620,125 C650,130 680,140 700,145 L700,150 Z" fill="url(#grad-b)" stroke="#437a22" stroke-width="2.5" fill-opacity="1"/>
-        <!-- Waypoints -->
-        <circle cx="0" cy="130" r="5" fill="#437a22"/>
-        <circle cx="130" cy="110" r="5" fill="#437a22"/>
-        <circle cx="200" cy="70" r="6" fill="#437a22"/>
-        <circle cx="260" cy="50" r="7" fill="#2d5217"/>
-        <circle cx="400" cy="85" r="5" fill="#437a22"/>
-        <circle cx="700" cy="145" r="5" fill="#437a22"/>
-        <!-- Labels -->
-        <text x="0" y="125" font-size="9" fill="currentColor" text-anchor="start" opacity="0.8">매표소</text>
-        <text x="130" y="105" font-size="9" fill="currentColor" text-anchor="middle" opacity="0.8">자재암</text>
-        <text x="200" y="65" font-size="9" fill="currentColor" text-anchor="middle" opacity="0.8">하백운대</text>
-        <text x="260" y="44" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">중백운대</text>
-        <text x="260" y="55" font-size="7" fill="currentColor" text-anchor="middle" opacity="0.7">430m</text>
-        <text x="400" y="80" font-size="9" fill="currentColor" text-anchor="middle" opacity="0.8">선녀탕</text>
-        <text x="700" y="140" font-size="9" fill="currentColor" text-anchor="end" opacity="0.8">일주문</text>
-      </svg>
-    </div>
-  </div>
-
-  <!-- TABS -->
-  <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('b','route',this)">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="switchTab('b','map',this)">📍 코스 지도</button>
-    <button class="tab-btn" onclick="switchTab('b','peaks',this)">⛰ 주요 명소</button>
-    <button class="tab-btn" onclick="switchTab('b','tips',this)">💡 팁 & 안전</button>
-  </div>
-
-  <!-- ROUTE TAB -->
-  <div id="b-route" class="tab-panel active">
-    <!-- Segment 1 -->
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-beginner">1</div>
-        <div class="route-card-title">
-          <strong>소요산역 → 매표소·일주문</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 1.0km</span><span class="route-meta-item">⏱ 15분</span><span class="route-meta-item">📈 평지</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:15%"></div></div></div>
-        <p class="route-desc">소요산역 1번 출구 → 평화로를 따라 북쪽으로 직진 → 소요산 관광지 안내센터 → 일주문 통과. 아스팔트·포장도로로 유모차도 가능. 좌우로 식당가와 기념품 가게가 늘어서 있음.</p>
-        <div class="tip-box">💡 주차장(하루 2,000원)은 일주문 바로 앞. 단풍철 주말은 오전 7시 이전 도착 추천.</div>
-      </div>
-    </div>
-    <!-- Segment 2 -->
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-beginner">2</div>
-        <div class="route-card-title">
-          <strong>일주문 → 백운암 → 자재암</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 0.8km</span><span class="route-meta-item">⏱ 20분</span><span class="route-meta-item">📈 완만</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:25%"></div></div></div>
-        <p class="route-desc">일주문 통과 후 계곡을 따라 걷는 평탄한 산길. 원효폭포·현충폭포 관람 가능. 자재암은 신라 원효대사가 창건한 고찰로 경내 산신각·삼성각 참배 후 잠시 쉬어가기 좋음.</p>
-        <div class="tip-box">💡 자재암 화장실 이용 가능 — 이후 선녀탕까지 화장실 없음.</div>
-      </div>
-    </div>
-    <!-- Segment 3 -->
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-beginner">3</div>
-        <div class="route-card-title">
-          <strong>자재암 → 하백운대</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 0.65km</span><span class="route-meta-item">⏱ 35~40분</span><span class="route-meta-item">📈 급경사</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:55%"></div></div></div>
-        <p class="route-desc">자재암 뒤 108계단부터 본격 산길 시작. 돌계단과 암반 구간이 이어짐. 하백운대(約350m)에서 계곡과 소요산 입구 방향 조망이 열림.</p>
-        <div class="warn-box">⚠️ 108계단 이후 로프 구간 있음 — 장갑 착용 권장.</div>
-      </div>
-    </div>
-    <!-- Segment 4 -->
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-beginner">4</div>
-        <div class="route-card-title">
-          <strong>하백운대 → 중백운대 (초급 정상)</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 0.4km</span><span class="route-meta-item">⏱ 15분</span><span class="route-meta-item">📈 보통</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:40%"></div></div></div>
-        <p class="route-desc">하백운대에서 능선을 따라 완만하게 중백운대(約430m)까지. 초급 코스의 최고 지점. 소요산 계곡 방향 전경이 시원하게 펼쳐짐. 기념 사진 포인트.</p>
-        <div class="tip-box">💡 중백운대에서 선녀탕으로 하산하면 초급 코스 완주. 체력이 남으면 상백운대(중급 진입)까지 연장 가능.</div>
-      </div>
-    </div>
-    <!-- Segment 5 -->
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-beginner">5</div>
-        <div class="route-card-title">
-          <strong>중백운대 → 선녀탕 → 자재암 → 일주문 (하산)</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 2.85km</span><span class="route-meta-item">⏱ 30분</span><span class="route-meta-item">📉 하산</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:40%"></div></div></div>
-        <p class="route-desc">선녀탕 하산로는 계곡 옆 비탈길 — 가파르고 낙엽에 미끄러울 수 있음. 선녀탕(자연 소(沼)) 잠시 감상 후 자재암으로 복귀, 원점 하산.</p>
-        <div class="warn-box">⚠️ 선녀탕 구간은 소요산에서 가장 미끄러운 구간. 비 온 뒤 특히 주의.</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- MAP TAB -->
-  <div id="b-map" class="tab-panel">
-    <div class="map-section">
-      <div class="section-title">📍 초급 코스 개념도 (일주문 기점 원점회귀)</div>
-      <div class="map-wrap">
-        <svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
-          <!-- Background -->
-          <rect width="500" height="375" fill="var(--color-surface-offset)" rx="12"/>
-          <!-- Forest area -->
-          <ellipse cx="250" cy="160" rx="200" ry="150" fill="rgba(67,122,34,0.08)"/>
-          <!-- Route path -->
-          <path d="M80,330 L100,300 L130,270 L160,240 L180,210 L200,185 C210,170 215,158 220,148 L230,132 C238,120 245,112 250,105" fill="none" stroke="#437a22" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0"/>
-          <path d="M250,105 L255,115 L265,130 C272,143 278,155 282,165" fill="none" stroke="#437a22" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- Return path (선녀탕) -->
-          <path d="M282,165 C290,180 295,200 295,220 L290,250 L275,275 L255,300 L230,320 L200,335 L160,345 L120,345 L80,340" fill="none" stroke="#437a22" stroke-width="3" stroke-dasharray="8,4" stroke-linecap="round"/>
-          <!-- Waypoint markers -->
-          <circle cx="80" cy="335" r="12" fill="#437a22"/>
-          <text x="80" y="339" font-size="10" fill="white" text-anchor="middle" font-weight="bold">P</text>
-          <text x="80" y="355" font-size="10" fill="var(--color-text)" text-anchor="middle">매표소</text>
-          <text x="80" y="366" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">일주문</text>
-
-          <circle cx="160" cy="240" r="8" fill="#437a22"/>
-          <text x="178" y="244" font-size="10" fill="var(--color-text)">자재암</text>
-
-          <circle cx="200" cy="185" r="8" fill="#437a22"/>
-          <text x="215" y="189" font-size="10" fill="var(--color-text)">하백운대</text>
-
-          <!-- 중백운대 = 초급 정상 -->
-          <circle cx="250" cy="105" r="12" fill="#2d5217" stroke="white" stroke-width="2"/>
-          <text x="250" y="109" font-size="9" fill="white" text-anchor="middle" font-weight="bold">⛰</text>
-          <text x="265" y="100" font-size="11" fill="var(--color-text)" font-weight="bold">중백운대</text>
-          <text x="265" y="112" font-size="10" fill="var(--color-text-muted)">430m (초급↩)</text>
-
-          <!-- 선녀탕 -->
-          <circle cx="282" cy="165" r="8" fill="#437a22"/>
-          <text x="297" y="169" font-size="10" fill="var(--color-text)">선녀탕</text>
-
-          <!-- Compass -->
-          <g transform="translate(450,40)">
-            <circle r="20" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="0" y="-8" font-size="10" fill="var(--color-primary)" text-anchor="middle" font-weight="bold">N</text>
-            <text x="0" y="14" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">S</text>
-            <text x="-14" y="4" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">W</text>
-            <text x="14" y="4" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">E</text>
-          </g>
-
-          <!-- Arrow direction -->
-          <text x="250" y="30" font-size="11" fill="var(--color-text-muted)" text-anchor="middle">▶ 소요산역 방향 (남)</text>
-          <text x="30" y="200" font-size="10" fill="var(--color-text-faint)" transform="rotate(-90,30,200)">포천 방면</text>
-        </svg>
-      </div>
-      <div class="map-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#437a22"></div>등산로(실선)</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#437a22;opacity:0.5"></div>하산로(점선)</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#2d5217"></div>초급 정상</div>
-      </div>
-    </div>
-    <!-- Checkpoint Table -->
-    <div class="map-section">
-      <div class="section-title">📋 체크포인트 표</div>
-      <table class="checkpoint-table">
-        <thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>시설</th></tr></thead>
-        <tbody>
-          <tr><td>P</td><td>소요산역 (출발)</td><td>80m</td><td>0km</td><td>🚇 전철 1호선</td></tr>
-          <tr><td>1</td><td>매표소·일주문</td><td>95m</td><td>1.0km</td><td>🚻 화장실 · 🅿 주차</td></tr>
-          <tr><td>2</td><td>백운암</td><td>130m</td><td>1.5km</td><td>—</td></tr>
-          <tr><td>3</td><td>자재암</td><td>180m</td><td>1.8km</td><td>🚻 화장실 · 🍵 약수</td></tr>
-          <tr><td>4</td><td>하백운대</td><td>350m</td><td>2.45km</td><td>🪑 벤치</td></tr>
-          <tr><td>5</td><td>중백운대 ★초급정상</td><td>430m</td><td>2.85km</td><td>📸 전망</td></tr>
-          <tr><td>6</td><td>선녀탕</td><td>250m</td><td>3.5km</td><td>💧 계곡</td></tr>
-          <tr><td>7</td><td>자재암 (복귀)</td><td>180m</td><td>4.3km</td><td>🚻</td></tr>
-          <tr><td>P</td><td>일주문 · 매표소</td><td>95m</td><td>5.7km</td><td>🚻 · 🍽 식당가</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- PEAKS TAB -->
-  <div id="b-peaks" class="tab-panel">
-    <div class="peaks-grid">
-      <div class="peak-card">
-        <div class="peak-alt">180m</div>
-        <div class="peak-name">🏛 자재암 (自在庵)</div>
-        <div class="peak-desc">신라 원효대사가 661년 창건한 사찰. 요석공주와의 설화가 전해지는 소요산의 핵심 문화유적. 경내에 삼성각·산신각·약수터가 있어 잠시 쉬어가기 좋은 곳.</div>
-        <div class="peak-features"><span class="peak-tag">역사유적</span><span class="peak-tag">약수터</span><span class="peak-tag">화장실</span></div>
-      </div>
-      <div class="peak-card">
-        <div class="peak-alt">350m</div>
-        <div class="peak-name">⛰ 하백운대</div>
-        <div class="peak-desc">소요산 백운대 3봉 중 첫 번째 봉우리. 자재암에서 108계단을 올라 처음 만나는 조망 지점으로 계곡 전경이 펼쳐짐. 단풍철 사진 명소.</div>
-        <div class="peak-features"><span class="peak-tag">조망</span><span class="peak-tag">단풍</span></div>
-      </div>
-      <div class="peak-card">
-        <div class="peak-alt">430m</div>
-        <div class="peak-name">⛰ 중백운대 (초급 정상)</div>
-        <div class="peak-desc">초급 코스의 최고 지점. 동두천 시내와 소요산 계곡을 한눈에 볼 수 있는 전망대. 날씨 맑을 때 북쪽 포천 방향 능선도 조망.</div>
-        <div class="peak-features"><span class="peak-tag">전망대</span><span class="peak-tag">인증샷</span></div>
-      </div>
-      <div class="peak-card">
-        <div class="peak-alt">250m</div>
-        <div class="peak-name">💧 선녀탕</div>
-        <div class="peak-desc">맑은 계곡물이 모여 만든 자연 소(沼). 전설에 따르면 선녀들이 목욕하던 곳. 물소리가 시원해 여름 산행의 청량감 포인트. 미끄러운 바위 주의.</div>
-        <div class="peak-features"><span class="peak-tag">계곡</span><span class="peak-tag">여름명소</span><span class="peak-tag">⚠ 미끄럼주의</span></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- TIPS TAB -->
-  <div id="b-tips" class="tab-panel">
-    <div class="tips-grid">
-      <div class="tip-card"><div class="tip-card-icon">🚇</div><h3>대중교통 안내</h3>
-        <ul>
-          <li>수도권 전철 1호선 <strong>소요산역</strong> 1번 출구</li>
-          <li>서울역 기준 약 70분 소요</li>
-          <li>도착 후 도보 15분이면 일주문</li>
-        </ul>
-        <table class="transport-table"><thead><tr><th>수단</th><th>경로</th></tr></thead><tbody>
-          <tr><td>전철</td><td>1호선 소요산역 1번출구</td></tr>
-          <tr><td>버스</td><td>36번(수유역), 39번(도봉산역), 53번(전곡-덕정)</td></tr>
-          <tr><td>승용차</td><td>3호선 소요산IC → 소요산 사거리 우회전</td></tr>
-        </tbody></table>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🎒</div><h3>초급 필수 장비</h3>
-        <ul>
-          <li>등산화 또는 트레킹화 (슬리퍼·샌들 금지)</li>
-          <li>물 500ml 이상 (자재암 약수 가능)</li>
-          <li>간식·에너지바</li>
-          <li>스틱(선택, 하산 시 도움)</li>
-        </ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🍁</div><h3>시즌 & 날씨</h3>
-        <ul>
-          <li><strong>단풍 절정</strong>: 10월 하순 ~ 11월 초</li>
-          <li>봄(4~5월): 철쭉·산벚꽃</li>
-          <li>여름(6~8월): 계곡 시원 but 폭우 주의</li>
-          <li>겨울: 설경 아름다움, 아이젠 필수</li>
-        </ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>안전 주의사항</h3>
-        <ul>
-          <li>108계단 이후 로프 구간 장갑 착용</li>
-          <li>선녀탕 하산로 가장 미끄러운 구간</li>
-          <li>단풍철 주말 혼잡 — 평일·이른 아침 추천</li>
-          <li>일몰 이후 산행 금지</li>
-        </ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🅿</div><h3>주차 & 입장</h3>
-        <ul>
-          <li>소요산 주차장 하루 2,000원</li>
-          <li>입장료: 2023년 5월부터 무료</li>
-          <li>단풍철 주말 주차 만차 → 전철 이용 추천</li>
-        </ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🍽</div><h3>식당 & 편의시설</h3>
-        <ul>
-          <li>일주문 앞 식당가 — 순두부·파전·막걸리</li>
-          <li>화장실: 매표소·자재암</li>
-          <li>약수터: 자재암 경내</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-
+<!-- STATS -->
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">5.7km</div><div class="stat-label">총 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">1.5h</div><div class="stat-label">소요시간</div></div>
+<div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">430m</div><div class="stat-label">최고지점</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">280m</div><div class="stat-label">누적상승</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~320</div><div class="stat-label">칼로리(kcal)</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">쉬움</div><div class="stat-label">난이도</div></div>
+</div>
+<!-- DESC -->
+<div class="course-desc">
+<div class="course-desc-header">
+<span class="course-level-badge badge-beginner">🌿 초급</span>
+<h2>계곡 산책코스 — 자재암·하백운대·선녀탕</h2>
+</div>
+<p>일주문에서 자재암을 거쳐 하백운대·중백운대에 오른 뒤 선녀탕 계곡으로 되돌아오는 원점회귀 코스입니다. 계곡을 따라 걷는 구간이 많아 여름에도 시원하고, 가을 단풍이 특히 아름답습니다. 등산 초보자·어린이·어르신 모두 부담 없이 즐길 수 있는 소요산의 대표 입문 코스입니다.</p>
+</div>
+<!-- ELEVATION -->
+<div class="elevation-section">
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg preserveaspectratio="none" viewbox="0 0 700 160">
+<defs>
+<lineargradient id="grad-b" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#437a22" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#437a22" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<path d="M0,150 L0,130 C60,128 100,125 130,110 C160,95 175,80 200,70 C225,60 240,55 260,50 C280,45 300,48 320,55 C340,62 370,75 400,85 C430,95 460,100 500,105 C540,110 580,115 620,125 C650,130 680,140 700,145 L700,150 Z" fill="url(#grad-b)" fill-opacity="1" stroke="#437a22" stroke-width="2.5"></path>
+<!-- Waypoints -->
+<circle cx="0" cy="130" fill="#437a22" r="5"></circle>
+<circle cx="130" cy="110" fill="#437a22" r="5"></circle>
+<circle cx="200" cy="70" fill="#437a22" r="6"></circle>
+<circle cx="260" cy="50" fill="#2d5217" r="7"></circle>
+<circle cx="400" cy="85" fill="#437a22" r="5"></circle>
+<circle cx="700" cy="145" fill="#437a22" r="5"></circle>
+<!-- Labels -->
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="start" x="0" y="125">매표소</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="middle" x="130" y="105">자재암</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="middle" x="200" y="65">하백운대</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="260" y="44">중백운대</text>
+<text fill="currentColor" font-size="7" opacity="0.7" text-anchor="middle" x="260" y="55">430m</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="middle" x="400" y="80">선녀탕</text>
+<text fill="currentColor" font-size="9" opacity="0.8" text-anchor="end" x="700" y="140">일주문</text>
+</svg>
+</div>
+</div>
+<!-- TABS -->
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab('b','route',this)">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('b','map',this)">📍 코스 지도</button>
+<button class="tab-btn" onclick="switchTab('b','peaks',this)">⛰ 주요 명소</button>
+<button class="tab-btn" onclick="switchTab('b','tips',this)">💡 팁 &amp; 안전</button>
+</div>
+<!-- ROUTE TAB -->
+<div class="tab-panel active" id="b-route">
+<!-- Segment 1 -->
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-beginner">1</div>
+<div class="route-card-title">
+<strong>소요산역 → 매표소·일주문</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 1.0km</span><span class="route-meta-item">⏱ 15분</span><span class="route-meta-item">📈 평지</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:15%"></div></div></div>
+<p class="route-desc">소요산역 1번 출구 → 평화로를 따라 북쪽으로 직진 → 소요산 관광지 안내센터 → 일주문 통과. 아스팔트·포장도로로 유모차도 가능. 좌우로 식당가와 기념품 가게가 늘어서 있음.</p>
+<div class="tip-box">💡 주차장(하루 2,000원)은 일주문 바로 앞. 단풍철 주말은 오전 7시 이전 도착 추천.</div>
+</div>
+</div>
+<!-- Segment 2 -->
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-beginner">2</div>
+<div class="route-card-title">
+<strong>일주문 → 백운암 → 자재암</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 0.8km</span><span class="route-meta-item">⏱ 20분</span><span class="route-meta-item">📈 완만</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:25%"></div></div></div>
+<p class="route-desc">일주문 통과 후 계곡을 따라 걷는 평탄한 산길. 원효폭포·현충폭포 관람 가능. 자재암은 신라 원효대사가 창건한 고찰로 경내 산신각·삼성각 참배 후 잠시 쉬어가기 좋음.</p>
+<div class="tip-box">💡 자재암 화장실 이용 가능 — 이후 선녀탕까지 화장실 없음.</div>
+</div>
+</div>
+<!-- Segment 3 -->
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-beginner">3</div>
+<div class="route-card-title">
+<strong>자재암 → 하백운대</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 0.65km</span><span class="route-meta-item">⏱ 35~40분</span><span class="route-meta-item">📈 급경사</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:55%"></div></div></div>
+<p class="route-desc">자재암 뒤 108계단부터 본격 산길 시작. 돌계단과 암반 구간이 이어짐. 하백운대(約350m)에서 계곡과 소요산 입구 방향 조망이 열림.</p>
+<div class="warn-box">⚠️ 108계단 이후 로프 구간 있음 — 장갑 착용 권장.</div>
+</div>
+</div>
+<!-- Segment 4 -->
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-beginner">4</div>
+<div class="route-card-title">
+<strong>하백운대 → 중백운대 (초급 정상)</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 0.4km</span><span class="route-meta-item">⏱ 15분</span><span class="route-meta-item">📈 보통</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:40%"></div></div></div>
+<p class="route-desc">하백운대에서 능선을 따라 완만하게 중백운대(約430m)까지. 초급 코스의 최고 지점. 소요산 계곡 방향 전경이 시원하게 펼쳐짐. 기념 사진 포인트.</p>
+<div class="tip-box">💡 중백운대에서 선녀탕으로 하산하면 초급 코스 완주. 체력이 남으면 상백운대(중급 진입)까지 연장 가능.</div>
+</div>
+</div>
+<!-- Segment 5 -->
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-beginner">5</div>
+<div class="route-card-title">
+<strong>중백운대 → 선녀탕 → 자재암 → 일주문 (하산)</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 2.85km</span><span class="route-meta-item">⏱ 30분</span><span class="route-meta-item">📉 하산</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:40%"></div></div></div>
+<p class="route-desc">선녀탕 하산로는 계곡 옆 비탈길 — 가파르고 낙엽에 미끄러울 수 있음. 선녀탕(자연 소(沼)) 잠시 감상 후 자재암으로 복귀, 원점 하산.</p>
+<div class="warn-box">⚠️ 선녀탕 구간은 소요산에서 가장 미끄러운 구간. 비 온 뒤 특히 주의.</div>
+</div>
+</div>
+</div>
+<!-- MAP TAB -->
+<div class="tab-panel" id="b-map">
+<div class="map-section">
+<div class="section-title">📍 초급 코스 개념도 (일주문 기점 원점회귀)</div>
+<div class="map-wrap">
+<svg viewbox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
+<!-- Background -->
+<rect fill="var(--color-surface-offset)" height="375" rx="12" width="500"></rect>
+<!-- Forest area -->
+<ellipse cx="250" cy="160" fill="rgba(67,122,34,0.08)" rx="200" ry="150"></ellipse>
+<!-- Route path -->
+<path d="M80,330 L100,300 L130,270 L160,240 L180,210 L200,185 C210,170 215,158 220,148 L230,132 C238,120 245,112 250,105" fill="none" stroke="#437a22" stroke-dasharray="0" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<path d="M250,105 L255,115 L265,130 C272,143 278,155 282,165" fill="none" stroke="#437a22" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<!-- Return path (선녀탕) -->
+<path d="M282,165 C290,180 295,200 295,220 L290,250 L275,275 L255,300 L230,320 L200,335 L160,345 L120,345 L80,340" fill="none" stroke="#437a22" stroke-dasharray="8,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- Waypoint markers -->
+<circle cx="80" cy="335" fill="#437a22" r="12"></circle>
+<text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="80" y="339">P</text>
+<text fill="var(--color-text)" font-size="10" text-anchor="middle" x="80" y="355">매표소</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="80" y="366">일주문</text>
+<circle cx="160" cy="240" fill="#437a22" r="8"></circle>
+<text fill="var(--color-text)" font-size="10" x="178" y="244">자재암</text>
+<circle cx="200" cy="185" fill="#437a22" r="8"></circle>
+<text fill="var(--color-text)" font-size="10" x="215" y="189">하백운대</text>
+<!-- 중백운대 = 초급 정상 -->
+<circle cx="250" cy="105" fill="#2d5217" r="12" stroke="white" stroke-width="2"></circle>
+<text fill="white" font-size="9" font-weight="bold" text-anchor="middle" x="250" y="109">⛰</text>
+<text fill="var(--color-text)" font-size="11" font-weight="bold" x="265" y="100">중백운대</text>
+<text fill="var(--color-text-muted)" font-size="10" x="265" y="112">430m (초급↩)</text>
+<!-- 선녀탕 -->
+<circle cx="282" cy="165" fill="#437a22" r="8"></circle>
+<text fill="var(--color-text)" font-size="10" x="297" y="169">선녀탕</text>
+<!-- Compass -->
+<g transform="translate(450,40)">
+<circle fill="var(--color-surface)" r="20" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-primary)" font-size="10" font-weight="bold" text-anchor="middle" x="0" y="-8">N</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="0" y="14">S</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="-14" y="4">W</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="14" y="4">E</text>
+</g>
+<!-- Arrow direction -->
+<text fill="var(--color-text-muted)" font-size="11" text-anchor="middle" x="250" y="30">▶ 소요산역 방향 (남)</text>
+<text fill="var(--color-text-faint)" font-size="10" transform="rotate(-90,30,200)" x="30" y="200">포천 방면</text>
+</svg>
+</div>
+<div class="map-legend">
+<div class="legend-item"><div class="legend-dot" style="background:#437a22"></div>등산로(실선)</div>
+<div class="legend-item"><div class="legend-dot" style="background:#437a22;opacity:0.5"></div>하산로(점선)</div>
+<div class="legend-item"><div class="legend-dot" style="background:#2d5217"></div>초급 정상</div>
+</div>
+</div>
+<!-- Checkpoint Table -->
+<div class="map-section">
+<div class="section-title">📋 체크포인트 표</div>
+<table class="checkpoint-table">
+<thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>시설</th></tr></thead>
+<tbody>
+<tr><td>P</td><td>소요산역 (출발)</td><td>80m</td><td>0km</td><td>🚇 전철 1호선</td></tr>
+<tr><td>1</td><td>매표소·일주문</td><td>95m</td><td>1.0km</td><td>🚻 화장실 · 🅿 주차</td></tr>
+<tr><td>2</td><td>백운암</td><td>130m</td><td>1.5km</td><td>—</td></tr>
+<tr><td>3</td><td>자재암</td><td>180m</td><td>1.8km</td><td>🚻 화장실 · 🍵 약수</td></tr>
+<tr><td>4</td><td>하백운대</td><td>350m</td><td>2.45km</td><td>🪑 벤치</td></tr>
+<tr><td>5</td><td>중백운대 ★초급정상</td><td>430m</td><td>2.85km</td><td>📸 전망</td></tr>
+<tr><td>6</td><td>선녀탕</td><td>250m</td><td>3.5km</td><td>💧 계곡</td></tr>
+<tr><td>7</td><td>자재암 (복귀)</td><td>180m</td><td>4.3km</td><td>🚻</td></tr>
+<tr><td>P</td><td>일주문 · 매표소</td><td>95m</td><td>5.7km</td><td>🚻 · 🍽 식당가</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- PEAKS TAB -->
+<div class="tab-panel" id="b-peaks">
+<div class="peaks-grid">
+<div class="peak-card">
+<div class="peak-alt">180m</div>
+<div class="peak-name">🏛 자재암 (自在庵)</div>
+<div class="peak-desc">신라 원효대사가 661년 창건한 사찰. 요석공주와의 설화가 전해지는 소요산의 핵심 문화유적. 경내에 삼성각·산신각·약수터가 있어 잠시 쉬어가기 좋은 곳.</div>
+<div class="peak-features"><span class="peak-tag">역사유적</span><span class="peak-tag">약수터</span><span class="peak-tag">화장실</span></div>
+</div>
+<div class="peak-card">
+<div class="peak-alt">350m</div>
+<div class="peak-name">⛰ 하백운대</div>
+<div class="peak-desc">소요산 백운대 3봉 중 첫 번째 봉우리. 자재암에서 108계단을 올라 처음 만나는 조망 지점으로 계곡 전경이 펼쳐짐. 단풍철 사진 명소.</div>
+<div class="peak-features"><span class="peak-tag">조망</span><span class="peak-tag">단풍</span></div>
+</div>
+<div class="peak-card">
+<div class="peak-alt">430m</div>
+<div class="peak-name">⛰ 중백운대 (초급 정상)</div>
+<div class="peak-desc">초급 코스의 최고 지점. 동두천 시내와 소요산 계곡을 한눈에 볼 수 있는 전망대. 날씨 맑을 때 북쪽 포천 방향 능선도 조망.</div>
+<div class="peak-features"><span class="peak-tag">전망대</span><span class="peak-tag">인증샷</span></div>
+</div>
+<div class="peak-card">
+<div class="peak-alt">250m</div>
+<div class="peak-name">💧 선녀탕</div>
+<div class="peak-desc">맑은 계곡물이 모여 만든 자연 소(沼). 전설에 따르면 선녀들이 목욕하던 곳. 물소리가 시원해 여름 산행의 청량감 포인트. 미끄러운 바위 주의.</div>
+<div class="peak-features"><span class="peak-tag">계곡</span><span class="peak-tag">여름명소</span><span class="peak-tag">⚠ 미끄럼주의</span></div>
+</div>
+</div>
+</div>
+<!-- TIPS TAB -->
+<div class="tab-panel" id="b-tips">
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🚇</div><h3>대중교통 안내</h3>
+<ul>
+<li>수도권 전철 1호선 <strong>소요산역</strong> 1번 출구</li>
+<li>서울역 기준 약 70분 소요</li>
+<li>도착 후 도보 15분이면 일주문</li>
+</ul>
+<table class="transport-table"><thead><tr><th>수단</th><th>경로</th></tr></thead><tbody>
+<tr><td>전철</td><td>1호선 소요산역 1번출구</td></tr>
+<tr><td>버스</td><td>36번(수유역), 39번(도봉산역), 53번(전곡-덕정)</td></tr>
+<tr><td>승용차</td><td>3호선 소요산IC → 소요산 사거리 우회전</td></tr>
+</tbody></table>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h3>초급 필수 장비</h3>
+<ul>
+<li>등산화 또는 트레킹화 (슬리퍼·샌들 금지)</li>
+<li>물 500ml 이상 (자재암 약수 가능)</li>
+<li>간식·에너지바</li>
+<li>스틱(선택, 하산 시 도움)</li>
+</ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🍁</div><h3>시즌 &amp; 날씨</h3>
+<ul>
+<li><strong>단풍 절정</strong>: 10월 하순 ~ 11월 초</li>
+<li>봄(4~5월): 철쭉·산벚꽃</li>
+<li>여름(6~8월): 계곡 시원 but 폭우 주의</li>
+<li>겨울: 설경 아름다움, 아이젠 필수</li>
+</ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>안전 주의사항</h3>
+<ul>
+<li>108계단 이후 로프 구간 장갑 착용</li>
+<li>선녀탕 하산로 가장 미끄러운 구간</li>
+<li>단풍철 주말 혼잡 — 평일·이른 아침 추천</li>
+<li>일몰 이후 산행 금지</li>
+</ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🅿</div><h3>주차 &amp; 입장</h3>
+<ul>
+<li>소요산 주차장 하루 2,000원</li>
+<li>입장료: 2023년 5월부터 무료</li>
+<li>단풍철 주말 주차 만차 → 전철 이용 추천</li>
+</ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🍽</div><h3>식당 &amp; 편의시설</h3>
+<ul>
+<li>일주문 앞 식당가 — 순두부·파전·막걸리</li>
+<li>화장실: 매표소·자재암</li>
+<li>약수터: 자재암 경내</li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <!-- ════ END BEGINNER ════ -->
-
 <!-- ════ INTERMEDIATE ════ -->
-<div id="panel-intermediate" class="course-panel">
+<div class="course-panel" id="panel-intermediate">
 <div class="container">
-  <div class="stats-grid">
-    <div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">6.5km</div><div class="stat-label">총 거리</div></div>
-    <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">2~3h</div><div class="stat-label">소요시간</div></div>
-    <div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">500m</div><div class="stat-label">최고지점</div></div>
-    <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">460m</div><div class="stat-label">누적상승</div></div>
-    <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~550</div><div class="stat-label">칼로리(kcal)</div></div>
-    <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">보통</div><div class="stat-label">난이도</div></div>
-  </div>
-
-  <div class="course-desc">
-    <div class="course-desc-header">
-      <span class="course-level-badge badge-intermediate">🦶 중급</span>
-      <h2>백운대 능선코스 — 3백운대 + 칼바위</h2>
-    </div>
-    <p>일주문 → 자재암 → 하·중·상백운대 → 칼바위 → 선녀탕으로 하산하는 원점회귀 코스(약 6.5km, 2~3시간). 소요산의 백미인 칼바위 능선 암릉을 경험할 수 있는 코스로, 하백·중·상백운대를 모두 밟고 칼바위의 짜릿한 조망을 즐길 수 있습니다. 단, 칼바위 구간은 아찔한 암릉이므로 등산화와 장갑은 필수입니다.</p>
-  </div>
-
-  <div class="elevation-section">
-    <div class="section-title">📊 고도 프로파일</div>
-    <div class="elevation-wrap">
-      <svg viewBox="0 0 700 160" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="grad-i" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#da7101" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#da7101" stop-opacity="0.05"/>
-          </linearGradient>
-        </defs>
-        <path d="M0,148 L0,130 C50,128 90,125 120,112 C145,100 165,85 185,72 C200,62 215,55 235,47 C250,40 262,36 275,32 C285,29 298,30 310,38 C325,47 345,58 370,72 C400,88 440,100 490,115 C530,125 580,132 640,138 L700,142 L700,150 Z" fill="url(#grad-i)" stroke="#da7101" stroke-width="2.5"/>
-        <circle cx="0" cy="130" r="5" fill="#da7101"/>
-        <circle cx="120" cy="112" r="5" fill="#da7101"/>
-        <circle cx="185" cy="72" r="5" fill="#da7101"/>
-        <circle cx="235" cy="47" r="5" fill="#da7101"/>
-        <circle cx="275" cy="32" r="7" fill="#b05700"/>
-        <circle cx="370" cy="72" r="6" fill="#c05500"/>
-        <circle cx="490" cy="115" r="5" fill="#da7101"/>
-        <circle cx="700" cy="142" r="5" fill="#da7101"/>
-        <text x="0" y="126" font-size="9" fill="currentColor">매표소</text>
-        <text x="120" y="108" font-size="9" fill="currentColor" text-anchor="middle">자재암</text>
-        <text x="185" y="68" font-size="9" fill="currentColor" text-anchor="middle">하백운대</text>
-        <text x="235" y="43" font-size="9" fill="currentColor" text-anchor="middle">중백운대</text>
-        <text x="275" y="27" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">상백운대</text>
-        <text x="275" y="38" font-size="7" fill="currentColor" text-anchor="middle" opacity="0.7">500m</text>
-        <text x="370" y="67" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">칼바위</text>
-        <text x="490" y="110" font-size="9" fill="currentColor" text-anchor="middle">선녀탕</text>
-        <text x="700" y="138" font-size="9" fill="currentColor" text-anchor="end">일주문</text>
-      </svg>
-    </div>
-  </div>
-
-  <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('i','route',this)">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="switchTab('i','map',this)">📍 코스 지도</button>
-    <button class="tab-btn" onclick="switchTab('i','peaks',this)">⛰ 주요 명소</button>
-    <button class="tab-btn" onclick="switchTab('i','tips',this)">💡 팁 & 안전</button>
-  </div>
-
-  <div id="i-route" class="tab-panel active">
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-intermediate">1</div>
-        <div class="route-card-title"><strong>소요산역 → 일주문 → 자재암</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 1.8km</span><span class="route-meta-item">⏱ 35분</span><span class="route-meta-item">📈 완만</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:20%"></div></div></div>
-        <p class="route-desc">초급 코스와 동일. 소요산역 1번출구 → 평화로 직진 → 매표소 → 일주문 → 원효폭포 → 자재암. 자재암에서 화장실·약수 이용 후 출발 준비.</p>
-        <div class="tip-box">💡 자재암 경내 약수터에서 물 보충 필수 — 이후 칼바위까지 물 보급 없음.</div>
-      </div>
-    </div>
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-intermediate">2</div>
-        <div class="route-card-title"><strong>자재암 → 하백운대 → 중백운대 → 상백운대</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 1.3km</span><span class="route-meta-item">⏱ 50분</span><span class="route-meta-item">📈 급경사</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:60%"></div></div></div>
-        <p class="route-desc">108계단 이후 암반·돌계단 급경사가 이어짐. 하·중·상 3개 백운대를 순서대로 오르며 각 지점에서 전망 포인트를 즐김. 상백운대(500m)는 소요산 서쪽 능선이 한눈에.</p>
-        <div class="warn-box">⚠️ 비 온 다음 날 바위가 매우 미끄러움 — 날씨 확인 필수.</div>
-      </div>
-    </div>
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-intermediate">3</div>
-        <div class="route-card-title"><strong>상백운대 → 칼바위 능선 ★하이라이트</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 0.5km</span><span class="route-meta-item">⏱ 25분</span><span class="route-meta-item">📈 암릉</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-hard" style="width:80%"></div></div></div>
-        <p class="route-desc">소요산 최고의 하이라이트 구간. 날카로운 암릉 칼바위를 로프와 발 디딤으로 통과. 좌우로 아찔한 절벽이지만 로프 잘 설치되어 있어 침착하게 진행하면 안전. 동두천 시내와 포천 방향 360도 조망.</p>
-        <div class="warn-box">⚠️ 칼바위 구간: 장갑 필수·고소공포증 주의·무게중심 낮게 유지. 절대 서두르지 말 것.</div>
-        <div class="tip-box">💡 중급 코스의 최대 볼거리. 아찔한 능선에서 인증 사진 필수!</div>
-      </div>
-    </div>
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-intermediate">4</div>
-        <div class="route-card-title"><strong>칼바위 → 선녀탕 → 자재암 → 일주문 (하산)</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 2.9km</span><span class="route-meta-item">⏱ 40분</span><span class="route-meta-item">📉 하산</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:45%"></div></div></div>
-        <p class="route-desc">칼바위에서 선녀탕 방향으로 하산. 경사가 가파르고 낙엽·습기 시 미끄러움. 선녀탕 감상 후 자재암 복귀 → 일주문 → 주차장/소요산역.</p>
-        <div class="warn-box">⚠️ 선녀탕 하산로 — 소요산에서 가장 미끄러운 구간. 무릎 보호대 권장.</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="i-map" class="tab-panel">
-    <div class="map-section">
-      <div class="section-title">📍 중급 코스 개념도 (백운대 능선 + 칼바위)</div>
-      <div class="map-wrap">
-        <svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
-          <rect width="500" height="375" fill="var(--color-surface-offset)" rx="12"/>
-          <ellipse cx="250" cy="160" rx="200" ry="150" fill="rgba(218,113,1,0.06)"/>
-          <!-- 등산로 -->
-          <path d="M80,330 L100,300 L130,270 L160,240 L180,210 L200,185 C210,170 215,158 220,148 L230,132 C238,120 245,112 250,105 L258,95 C264,85 270,78 278,70" fill="none" stroke="#da7101" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- 칼바위 -->
-          <path d="M278,70 L285,80 L295,90 L308,100" fill="none" stroke="#da7101" stroke-width="4" stroke-linecap="round"/>
-          <!-- 하산 -->
-          <path d="M308,100 C320,120 330,145 335,170 L330,200 L315,230 L295,260 L265,290 L230,315 L190,330 L140,338 L80,338" fill="none" stroke="#da7101" stroke-width="3" stroke-dasharray="8,4"/>
-
-          <circle cx="80" cy="334" r="12" fill="#da7101"/>
-          <text x="80" y="338" font-size="10" fill="white" text-anchor="middle" font-weight="bold">P</text>
-          <text x="80" y="354" font-size="10" fill="var(--color-text)" text-anchor="middle">매표소</text>
-
-          <circle cx="160" cy="240" r="8" fill="#da7101"/>
-          <text x="176" y="244" font-size="10" fill="var(--color-text)">자재암</text>
-
-          <circle cx="200" cy="185" r="7" fill="#da7101"/>
-          <text x="215" y="189" font-size="9" fill="var(--color-text)">하백운대</text>
-
-          <circle cx="250" cy="105" r="7" fill="#da7101"/>
-          <text x="262" y="109" font-size="9" fill="var(--color-text)">중백운대</text>
-
-          <circle cx="278" cy="70" r="9" fill="#b05700" stroke="white" stroke-width="2"/>
-          <text x="293" y="64" font-size="10" fill="var(--color-text)" font-weight="bold">상백운대 500m</text>
-
-          <!-- 칼바위 강조 -->
-          <path d="M308,100 L298,88 L310,92 L300,82 L312,86" fill="none" stroke="#c05500" stroke-width="1.5"/>
-          <circle cx="308" cy="100" r="10" fill="#c05500" stroke="white" stroke-width="2"/>
-          <text x="308" y="104" font-size="9" fill="white" text-anchor="middle" font-weight="bold">⚔</text>
-          <text x="326" y="98" font-size="11" fill="var(--color-text)" font-weight="bold">칼바위</text>
-          <text x="326" y="110" font-size="9" fill="var(--color-text-muted)">⚠ 암릉주의</text>
-
-          <circle cx="335" cy="170" r="7" fill="#da7101"/>
-          <text x="348" y="174" font-size="9" fill="var(--color-text)">선녀탕</text>
-
-          <g transform="translate(450,40)">
-            <circle r="20" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="0" y="-8" font-size="10" fill="var(--color-primary)" text-anchor="middle" font-weight="bold">N</text>
-            <text x="0" y="14" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">S</text>
-            <text x="-14" y="4" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">W</text>
-            <text x="14" y="4" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">E</text>
-          </g>
-        </svg>
-      </div>
-      <div class="map-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#da7101"></div>등산로</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#da7101;opacity:0.5"></div>하산로(점선)</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#c05500"></div>칼바위 ⚠</div>
-      </div>
-    </div>
-    <div class="map-section">
-      <div class="section-title">📋 체크포인트 표</div>
-      <table class="checkpoint-table">
-        <thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>시설/특이사항</th></tr></thead>
-        <tbody>
-          <tr><td>P</td><td>소요산역</td><td>80m</td><td>0km</td><td>🚇 1호선</td></tr>
-          <tr><td>1</td><td>매표소·일주문</td><td>95m</td><td>1.0km</td><td>🅿 🚻</td></tr>
-          <tr><td>2</td><td>자재암</td><td>180m</td><td>1.8km</td><td>🚻 🍵 약수</td></tr>
-          <tr><td>3</td><td>하백운대</td><td>350m</td><td>2.45km</td><td>📸 조망</td></tr>
-          <tr><td>4</td><td>중백운대</td><td>430m</td><td>2.85km</td><td>📸 전망대</td></tr>
-          <tr><td>5</td><td>상백운대 ★</td><td>500m</td><td>3.1km</td><td>📸 절경</td></tr>
-          <tr><td>6</td><td>칼바위 ⚠</td><td>490m</td><td>3.6km</td><td>🧤 장갑필수·로프</td></tr>
-          <tr><td>7</td><td>선녀탕 분기점</td><td>300m</td><td>4.0km</td><td>💧 계곡</td></tr>
-          <tr><td>P</td><td>일주문</td><td>95m</td><td>6.5km</td><td>🚻 🍽</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div id="i-peaks" class="tab-panel">
-    <div class="peaks-grid">
-      <div class="peak-card">
-        <div class="peak-alt">500m</div>
-        <div class="peak-name">⛰ 상백운대 (중급 정상)</div>
-        <div class="peak-desc">하·중·상 백운대 중 가장 높은 봉우리. 소요산 서쪽 능선과 동두천 시내, 맑은 날에는 북한산까지 조망. 칼바위 직전 마지막 평탄 전망 포인트.</div>
-        <div class="peak-features"><span class="peak-tag">360도조망</span><span class="peak-tag">인증샷</span></div>
-      </div>
-      <div class="peak-card">
-        <div class="peak-alt">490m</div>
-        <div class="peak-name">⚔ 칼바위 (소요산 명물)</div>
-        <div class="peak-desc">칼날처럼 날카로운 암릉 구간. 소요산에서 가장 아찔한 곳이자 최고의 포토 스팟. 로프가 잘 설치되어 있어 침착하게 통과하면 안전하지만 고소공포증이 있으면 우회로 이용 가능.</div>
-        <div class="peak-features"><span class="peak-tag">암릉</span><span class="peak-tag">포토스팟</span><span class="peak-tag">⚠고소주의</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="i-tips" class="tab-panel">
-    <div class="tips-grid">
-      <div class="tip-card"><div class="tip-card-icon">🧤</div><h3>중급 필수 장비</h3>
-        <ul><li>등산화 (발목 지지 필수)</li><li>장갑 (칼바위 로프 구간)</li><li>무릎 보호대 (하산 시 유용)</li><li>물 1L 이상 (중간 보급 없음)</li><li>등산 스틱 (하산 안전)</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>칼바위 안전수칙</h3>
-        <ul><li>장갑 필수 착용</li><li>무게중심을 낮게 유지</li><li>배낭 너무 크면 통과 어려움</li><li>앞사람과 충분한 간격 유지</li><li>비·안개·결빙 시 우회로 이용</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🍁</div><h3>추천 시즌</h3>
-        <ul><li>단풍 절정: 10월 하순~11월 초</li><li>봄(4~5월): 철쭉 군락</li><li>겨울 암릉 설경 장관 — 아이젠 필수</li><li>여름 장마철·폭우 후 산행 자제</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🚇</div><h3>교통 안내</h3>
-        <ul><li>1호선 소요산역 1번출구 → 도보 15분</li><li>단풍철 주말 극심한 혼잡</li><li>오전 7시 이전 입산 추천</li></ul>
-      </div>
-    </div>
-  </div>
-
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">6.5km</div><div class="stat-label">총 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">2~3h</div><div class="stat-label">소요시간</div></div>
+<div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">500m</div><div class="stat-label">최고지점</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">460m</div><div class="stat-label">누적상승</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~550</div><div class="stat-label">칼로리(kcal)</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">보통</div><div class="stat-label">난이도</div></div>
+</div>
+<div class="course-desc">
+<div class="course-desc-header">
+<span class="course-level-badge badge-intermediate">🦶 중급</span>
+<h2>백운대 능선코스 — 3백운대 + 칼바위</h2>
+</div>
+<p>일주문 → 자재암 → 하·중·상백운대 → 칼바위 → 선녀탕으로 하산하는 원점회귀 코스(약 6.5km, 2~3시간). 소요산의 백미인 칼바위 능선 암릉을 경험할 수 있는 코스로, 하백·중·상백운대를 모두 밟고 칼바위의 짜릿한 조망을 즐길 수 있습니다. 단, 칼바위 구간은 아찔한 암릉이므로 등산화와 장갑은 필수입니다.</p>
+</div>
+<div class="elevation-section">
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg preserveaspectratio="none" viewbox="0 0 700 160">
+<defs>
+<lineargradient id="grad-i" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#da7101" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#da7101" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<path d="M0,148 L0,130 C50,128 90,125 120,112 C145,100 165,85 185,72 C200,62 215,55 235,47 C250,40 262,36 275,32 C285,29 298,30 310,38 C325,47 345,58 370,72 C400,88 440,100 490,115 C530,125 580,132 640,138 L700,142 L700,150 Z" fill="url(#grad-i)" stroke="#da7101" stroke-width="2.5"></path>
+<circle cx="0" cy="130" fill="#da7101" r="5"></circle>
+<circle cx="120" cy="112" fill="#da7101" r="5"></circle>
+<circle cx="185" cy="72" fill="#da7101" r="5"></circle>
+<circle cx="235" cy="47" fill="#da7101" r="5"></circle>
+<circle cx="275" cy="32" fill="#b05700" r="7"></circle>
+<circle cx="370" cy="72" fill="#c05500" r="6"></circle>
+<circle cx="490" cy="115" fill="#da7101" r="5"></circle>
+<circle cx="700" cy="142" fill="#da7101" r="5"></circle>
+<text fill="currentColor" font-size="9" x="0" y="126">매표소</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="120" y="108">자재암</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="185" y="68">하백운대</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="235" y="43">중백운대</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="275" y="27">상백운대</text>
+<text fill="currentColor" font-size="7" opacity="0.7" text-anchor="middle" x="275" y="38">500m</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="370" y="67">칼바위</text>
+<text fill="currentColor" font-size="9" text-anchor="middle" x="490" y="110">선녀탕</text>
+<text fill="currentColor" font-size="9" text-anchor="end" x="700" y="138">일주문</text>
+</svg>
+</div>
+</div>
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab('i','route',this)">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('i','map',this)">📍 코스 지도</button>
+<button class="tab-btn" onclick="switchTab('i','peaks',this)">⛰ 주요 명소</button>
+<button class="tab-btn" onclick="switchTab('i','tips',this)">💡 팁 &amp; 안전</button>
+</div>
+<div class="tab-panel active" id="i-route">
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-intermediate">1</div>
+<div class="route-card-title"><strong>소요산역 → 일주문 → 자재암</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 1.8km</span><span class="route-meta-item">⏱ 35분</span><span class="route-meta-item">📈 완만</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:20%"></div></div></div>
+<p class="route-desc">초급 코스와 동일. 소요산역 1번출구 → 평화로 직진 → 매표소 → 일주문 → 원효폭포 → 자재암. 자재암에서 화장실·약수 이용 후 출발 준비.</p>
+<div class="tip-box">💡 자재암 경내 약수터에서 물 보충 필수 — 이후 칼바위까지 물 보급 없음.</div>
+</div>
+</div>
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-intermediate">2</div>
+<div class="route-card-title"><strong>자재암 → 하백운대 → 중백운대 → 상백운대</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 1.3km</span><span class="route-meta-item">⏱ 50분</span><span class="route-meta-item">📈 급경사</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:60%"></div></div></div>
+<p class="route-desc">108계단 이후 암반·돌계단 급경사가 이어짐. 하·중·상 3개 백운대를 순서대로 오르며 각 지점에서 전망 포인트를 즐김. 상백운대(500m)는 소요산 서쪽 능선이 한눈에.</p>
+<div class="warn-box">⚠️ 비 온 다음 날 바위가 매우 미끄러움 — 날씨 확인 필수.</div>
+</div>
+</div>
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-intermediate">3</div>
+<div class="route-card-title"><strong>상백운대 → 칼바위 능선 ★하이라이트</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 0.5km</span><span class="route-meta-item">⏱ 25분</span><span class="route-meta-item">📈 암릉</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-hard" style="width:80%"></div></div></div>
+<p class="route-desc">소요산 최고의 하이라이트 구간. 날카로운 암릉 칼바위를 로프와 발 디딤으로 통과. 좌우로 아찔한 절벽이지만 로프 잘 설치되어 있어 침착하게 진행하면 안전. 동두천 시내와 포천 방향 360도 조망.</p>
+<div class="warn-box">⚠️ 칼바위 구간: 장갑 필수·고소공포증 주의·무게중심 낮게 유지. 절대 서두르지 말 것.</div>
+<div class="tip-box">💡 중급 코스의 최대 볼거리. 아찔한 능선에서 인증 사진 필수!</div>
+</div>
+</div>
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-intermediate">4</div>
+<div class="route-card-title"><strong>칼바위 → 선녀탕 → 자재암 → 일주문 (하산)</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 2.9km</span><span class="route-meta-item">⏱ 40분</span><span class="route-meta-item">📉 하산</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:45%"></div></div></div>
+<p class="route-desc">칼바위에서 선녀탕 방향으로 하산. 경사가 가파르고 낙엽·습기 시 미끄러움. 선녀탕 감상 후 자재암 복귀 → 일주문 → 주차장/소요산역.</p>
+<div class="warn-box">⚠️ 선녀탕 하산로 — 소요산에서 가장 미끄러운 구간. 무릎 보호대 권장.</div>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="i-map">
+<div class="map-section">
+<div class="section-title">📍 중급 코스 개념도 (백운대 능선 + 칼바위)</div>
+<div class="map-wrap">
+<svg viewbox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
+<rect fill="var(--color-surface-offset)" height="375" rx="12" width="500"></rect>
+<ellipse cx="250" cy="160" fill="rgba(218,113,1,0.06)" rx="200" ry="150"></ellipse>
+<!-- 등산로 -->
+<path d="M80,330 L100,300 L130,270 L160,240 L180,210 L200,185 C210,170 215,158 220,148 L230,132 C238,120 245,112 250,105 L258,95 C264,85 270,78 278,70" fill="none" stroke="#da7101" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<!-- 칼바위 -->
+<path d="M278,70 L285,80 L295,90 L308,100" fill="none" stroke="#da7101" stroke-linecap="round" stroke-width="4"></path>
+<!-- 하산 -->
+<path d="M308,100 C320,120 330,145 335,170 L330,200 L315,230 L295,260 L265,290 L230,315 L190,330 L140,338 L80,338" fill="none" stroke="#da7101" stroke-dasharray="8,4" stroke-width="3"></path>
+<circle cx="80" cy="334" fill="#da7101" r="12"></circle>
+<text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="80" y="338">P</text>
+<text fill="var(--color-text)" font-size="10" text-anchor="middle" x="80" y="354">매표소</text>
+<circle cx="160" cy="240" fill="#da7101" r="8"></circle>
+<text fill="var(--color-text)" font-size="10" x="176" y="244">자재암</text>
+<circle cx="200" cy="185" fill="#da7101" r="7"></circle>
+<text fill="var(--color-text)" font-size="9" x="215" y="189">하백운대</text>
+<circle cx="250" cy="105" fill="#da7101" r="7"></circle>
+<text fill="var(--color-text)" font-size="9" x="262" y="109">중백운대</text>
+<circle cx="278" cy="70" fill="#b05700" r="9" stroke="white" stroke-width="2"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="bold" x="293" y="64">상백운대 500m</text>
+<!-- 칼바위 강조 -->
+<path d="M308,100 L298,88 L310,92 L300,82 L312,86" fill="none" stroke="#c05500" stroke-width="1.5"></path>
+<circle cx="308" cy="100" fill="#c05500" r="10" stroke="white" stroke-width="2"></circle>
+<text fill="white" font-size="9" font-weight="bold" text-anchor="middle" x="308" y="104">⚔</text>
+<text fill="var(--color-text)" font-size="11" font-weight="bold" x="326" y="98">칼바위</text>
+<text fill="var(--color-text-muted)" font-size="9" x="326" y="110">⚠ 암릉주의</text>
+<circle cx="335" cy="170" fill="#da7101" r="7"></circle>
+<text fill="var(--color-text)" font-size="9" x="348" y="174">선녀탕</text>
+<g transform="translate(450,40)">
+<circle fill="var(--color-surface)" r="20" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-primary)" font-size="10" font-weight="bold" text-anchor="middle" x="0" y="-8">N</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="0" y="14">S</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="-14" y="4">W</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="14" y="4">E</text>
+</g>
+</svg>
+</div>
+<div class="map-legend">
+<div class="legend-item"><div class="legend-dot" style="background:#da7101"></div>등산로</div>
+<div class="legend-item"><div class="legend-dot" style="background:#da7101;opacity:0.5"></div>하산로(점선)</div>
+<div class="legend-item"><div class="legend-dot" style="background:#c05500"></div>칼바위 ⚠</div>
+</div>
+</div>
+<div class="map-section">
+<div class="section-title">📋 체크포인트 표</div>
+<table class="checkpoint-table">
+<thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>시설/특이사항</th></tr></thead>
+<tbody>
+<tr><td>P</td><td>소요산역</td><td>80m</td><td>0km</td><td>🚇 1호선</td></tr>
+<tr><td>1</td><td>매표소·일주문</td><td>95m</td><td>1.0km</td><td>🅿 🚻</td></tr>
+<tr><td>2</td><td>자재암</td><td>180m</td><td>1.8km</td><td>🚻 🍵 약수</td></tr>
+<tr><td>3</td><td>하백운대</td><td>350m</td><td>2.45km</td><td>📸 조망</td></tr>
+<tr><td>4</td><td>중백운대</td><td>430m</td><td>2.85km</td><td>📸 전망대</td></tr>
+<tr><td>5</td><td>상백운대 ★</td><td>500m</td><td>3.1km</td><td>📸 절경</td></tr>
+<tr><td>6</td><td>칼바위 ⚠</td><td>490m</td><td>3.6km</td><td>🧤 장갑필수·로프</td></tr>
+<tr><td>7</td><td>선녀탕 분기점</td><td>300m</td><td>4.0km</td><td>💧 계곡</td></tr>
+<tr><td>P</td><td>일주문</td><td>95m</td><td>6.5km</td><td>🚻 🍽</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab-panel" id="i-peaks">
+<div class="peaks-grid">
+<div class="peak-card">
+<div class="peak-alt">500m</div>
+<div class="peak-name">⛰ 상백운대 (중급 정상)</div>
+<div class="peak-desc">하·중·상 백운대 중 가장 높은 봉우리. 소요산 서쪽 능선과 동두천 시내, 맑은 날에는 북한산까지 조망. 칼바위 직전 마지막 평탄 전망 포인트.</div>
+<div class="peak-features"><span class="peak-tag">360도조망</span><span class="peak-tag">인증샷</span></div>
+</div>
+<div class="peak-card">
+<div class="peak-alt">490m</div>
+<div class="peak-name">⚔ 칼바위 (소요산 명물)</div>
+<div class="peak-desc">칼날처럼 날카로운 암릉 구간. 소요산에서 가장 아찔한 곳이자 최고의 포토 스팟. 로프가 잘 설치되어 있어 침착하게 통과하면 안전하지만 고소공포증이 있으면 우회로 이용 가능.</div>
+<div class="peak-features"><span class="peak-tag">암릉</span><span class="peak-tag">포토스팟</span><span class="peak-tag">⚠고소주의</span></div>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="i-tips">
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🧤</div><h3>중급 필수 장비</h3>
+<ul><li>등산화 (발목 지지 필수)</li><li>장갑 (칼바위 로프 구간)</li><li>무릎 보호대 (하산 시 유용)</li><li>물 1L 이상 (중간 보급 없음)</li><li>등산 스틱 (하산 안전)</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>칼바위 안전수칙</h3>
+<ul><li>장갑 필수 착용</li><li>무게중심을 낮게 유지</li><li>배낭 너무 크면 통과 어려움</li><li>앞사람과 충분한 간격 유지</li><li>비·안개·결빙 시 우회로 이용</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🍁</div><h3>추천 시즌</h3>
+<ul><li>단풍 절정: 10월 하순~11월 초</li><li>봄(4~5월): 철쭉 군락</li><li>겨울 암릉 설경 장관 — 아이젠 필수</li><li>여름 장마철·폭우 후 산행 자제</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🚇</div><h3>교통 안내</h3>
+<ul><li>1호선 소요산역 1번출구 → 도보 15분</li><li>단풍철 주말 극심한 혼잡</li><li>오전 7시 이전 입산 추천</li></ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <!-- ════ END INTERMEDIATE ════ -->
-
 <!-- ════ ADVANCED ════ -->
-<div id="panel-advanced" class="course-panel">
+<div class="course-panel" id="panel-advanced">
 <div class="container">
-  <div class="stats-grid">
-    <div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">8.1km</div><div class="stat-label">총 거리</div></div>
-    <div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">4~5h</div><div class="stat-label">소요시간</div></div>
-    <div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">587m</div><div class="stat-label">최고지점</div></div>
-    <div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">650m</div><div class="stat-label">누적상승</div></div>
-    <div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~1020</div><div class="stat-label">칼로리(kcal)</div></div>
-    <div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">어려움</div><div class="stat-label">난이도</div></div>
-  </div>
-
-  <div class="course-desc">
-    <div class="course-desc-header">
-      <span class="course-level-badge badge-advanced">🏔 고급</span>
-      <h2>의상대 완주코스 — 전봉우리 일주 (8.1km)</h2>
-    </div>
-    <p>소요산의 모든 주요 봉우리를 한 번에 밟는 완전 일주 코스(약 8.1km, 4~5시간). 일주문 → 자재암 → 하·중·상백운대 → 칼바위 → 나한대 → 의상대(정상 587m) → 공주봉 → 구절터 → 일주문의 말굽형 순환 코스입니다. 산악투어·블랙야크 100대 명산 인증 코스로, 소요산의 모든 조망과 암릉을 경험할 수 있는 최고급 코스입니다.</p>
-  </div>
-
-  <div class="elevation-section">
-    <div class="section-title">📊 고도 프로파일</div>
-    <div class="elevation-wrap">
-      <svg viewBox="0 0 700 160" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="grad-a" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="#a12c7b" stop-opacity="0.4"/>
-            <stop offset="100%" stop-color="#a12c7b" stop-opacity="0.05"/>
-          </linearGradient>
-        </defs>
-        <path d="M0,148 L0,132 C40,130 70,127 95,118 C115,110 130,100 148,88 C163,78 175,69 190,61 C202,53 212,47 222,42 C230,37 240,34 248,30 C256,27 264,27 272,29 C282,32 295,38 308,30 C318,23 326,16 336,10 C342,6 348,5 355,4 C360,3 366,4 372,8 C382,15 392,26 405,40 C420,56 437,70 455,82 C472,92 490,100 510,108 C535,118 560,124 590,132 L640,138 L700,142 L700,150 Z" fill="url(#grad-a)" stroke="#a12c7b" stroke-width="2.5"/>
-        <!-- Points -->
-        <circle cx="0" cy="132" r="4" fill="#a12c7b"/>
-        <circle cx="95" cy="118" r="4" fill="#a12c7b"/>
-        <circle cx="190" cy="61" r="5" fill="#a12c7b"/>
-        <circle cx="248" cy="30" r="5" fill="#a12c7b"/>
-        <circle cx="272" cy="29" r="5" fill="#a12c7b"/>
-        <circle cx="308" cy="30" r="6" fill="#7b1a5c"/>
-        <circle cx="355" cy="4" r="8" fill="#7b1a5c" stroke="white" stroke-width="2"/>
-        <circle cx="405" cy="40" r="6" fill="#7b1a5c"/>
-        <circle cx="510" cy="108" r="5" fill="#a12c7b"/>
-        <circle cx="700" cy="142" r="4" fill="#a12c7b"/>
-        <text x="0" y="128" font-size="8" fill="currentColor">매표소</text>
-        <text x="95" y="114" font-size="8" fill="currentColor" text-anchor="middle">자재암</text>
-        <text x="190" y="57" font-size="8" fill="currentColor" text-anchor="middle">하백운대</text>
-        <text x="248" y="25" font-size="8" fill="currentColor" text-anchor="middle">상백운대</text>
-        <text x="308" y="25" font-size="8" fill="currentColor" text-anchor="middle" font-weight="bold">칼바위</text>
-        <text x="355" y="-2" font-size="9" fill="currentColor" text-anchor="middle" font-weight="bold">의상대</text>
-        <text x="355" y="9" font-size="7" fill="currentColor" text-anchor="middle" opacity="0.8">587m ★</text>
-        <text x="405" y="35" font-size="8" fill="currentColor" text-anchor="middle" font-weight="bold">공주봉</text>
-        <text x="510" y="103" font-size="8" fill="currentColor" text-anchor="middle">구절터</text>
-        <text x="700" y="138" font-size="8" fill="currentColor" text-anchor="end">일주문</text>
-      </svg>
-    </div>
-  </div>
-
-  <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('a','route',this)">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="switchTab('a','map',this)">📍 코스 지도</button>
-    <button class="tab-btn" onclick="switchTab('a','peaks',this)">⛰ 주요 명소</button>
-    <button class="tab-btn" onclick="switchTab('a','tips',this)">💡 팁 & 안전</button>
-  </div>
-
-  <div id="a-route" class="tab-panel active">
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-advanced">1</div>
-        <div class="route-card-title"><strong>일주문 → 자재암 → 하·중·상백운대</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 3.1km</span><span class="route-meta-item">⏱ 80분</span><span class="route-meta-item">📈 급경사</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:55%"></div></div></div>
-        <p class="route-desc">일주문 → 원효폭포 → 자재암(화장실·약수) → 108계단 → 하백운대(350m) → 중백운대(430m) → 상백운대(500m). 본격 산행 시작. 각 백운대에서 잠시 호흡 고르며 조망 감상.</p>
-        <div class="tip-box">💡 자재암이 마지막 화장실·약수. 출발 전 반드시 물 1.5L 이상 보충.</div>
-      </div>
-    </div>
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-advanced">2</div>
-        <div class="route-card-title"><strong>상백운대 → 칼바위 → 나한대</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 1.3km</span><span class="route-meta-item">⏱ 60분</span><span class="route-meta-item">📈 암릉</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-hard" style="width:85%"></div></div></div>
-        <p class="route-desc">소요산 최고 난이도 구간. 칼바위 암릉 통과(로프 이용) 후 능선을 따라 나한대까지. 양쪽 절벽 조망이 압도적. 나한대에서 의상대 방향 전망이 탁 트임.</p>
-        <div class="warn-box">⚠️ 칼바위: 장갑·집중·천천히. 나한대까지 1시간 — 체력 안배 필수.</div>
-      </div>
-    </div>
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-advanced">3</div>
-        <div class="route-card-title"><strong>나한대 → 의상대 (정상 587m) ★</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 0.5km</span><span class="route-meta-item">⏱ 20분</span><span class="route-meta-item">📈 급경사</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-hard" style="width:75%"></div></div></div>
-        <p class="route-desc">소요산 최고봉 의상대(587m). 원효대사와 함께 수행한 의상대사를 기려 붙인 이름. 정상에서 동두천·포천·연천 방향 파노라마. 블랙야크 100대 명산 인증 지점.</p>
-        <div class="tip-box">💡 정상 인증샷 + 100대명산 스탬프 확인. 맑은 날 북한산까지 조망 가능!</div>
-      </div>
-    </div>
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-advanced">4</div>
-        <div class="route-card-title"><strong>의상대 → 공주봉 → 구절터</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 1.5km</span><span class="route-meta-item">⏱ 45분</span><span class="route-meta-item">📉 능선 하산</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:55%"></div></div></div>
-        <p class="route-desc">의상대 정상에서 동쪽 능선 따라 공주봉(526m) 방향으로. 요석공주와 원효대사 설화의 배경이 된 공주봉. 이후 구절터로 내려서며 계곡 옆 흙길 이어짐.</p>
-        <div class="tip-box">💡 공주봉 전망바위에서 소요산 전경 사진 명소. 구절터는 요석공주 별궁지 전설이 있는 유서 깊은 곳.</div>
-      </div>
-    </div>
-    <div class="route-card" onclick="toggleCard(this)">
-      <div class="route-card-header">
-        <div class="route-step step-advanced">5</div>
-        <div class="route-card-title"><strong>구절터 → 속리교 → 일주문 (최종 하산)</strong>
-          <div class="route-card-meta"><span class="route-meta-item">🚶 1.7km</span><span class="route-meta-item">⏱ 30분</span><span class="route-meta-item">📉 완만 하산</span></div>
-        </div>
-        <svg class="route-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-      </div>
-      <div class="route-card-body">
-        <div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:25%"></div></div></div>
-        <p class="route-desc">구절터에서 계곡 옆 완만한 흙길로 속리교 → 일주문 방향 하산. 평탄하고 넓어 피로한 무릎을 쉬게 할 수 있는 마무리 구간. 일주문 앞 식당가에서 막걸리·파전으로 마무리.</p>
-        <div class="tip-box">💡 총 8.1km, 약 1,020kcal 소모. 완주를 축하합니다! 🎉</div>
-      </div>
-    </div>
-  </div>
-
-  <div id="a-map" class="tab-panel">
-    <div class="map-section">
-      <div class="section-title">📍 고급 코스 개념도 — 말굽형 완전 일주</div>
-      <div class="map-wrap">
-        <svg viewBox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
-          <rect width="500" height="375" fill="var(--color-surface-offset)" rx="12"/>
-          <ellipse cx="250" cy="170" rx="210" ry="160" fill="rgba(161,44,123,0.05)"/>
-          <!-- 등산로 (시계 반대방향 말굽) -->
-          <path d="M80,330 L100,300 L130,268 L155,238 L175,210 L195,185 L215,162 L232,140 L248,120 L262,103 L278,88 L292,76 L306,65" fill="none" stroke="#a12c7b" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-          <!-- 칼바위→나한대→의상대 -->
-          <path d="M306,65 L318,55 L332,48 L348,44 L362,42" fill="none" stroke="#a12c7b" stroke-width="4" stroke-linecap="round"/>
-          <!-- 의상대→공주봉→구절터 -->
-          <path d="M362,42 L375,55 L388,72 L398,92 L408,115 L415,140 L420,168 L420,195 L415,220 L405,248 L390,272 L370,295 L345,312 L315,325 L285,333 L250,338 L210,340 L170,338 L130,332 L80,330" fill="none" stroke="#a12c7b" stroke-width="3.5" stroke-linecap="round"/>
-
-          <!-- START -->
-          <circle cx="80" cy="330" r="12" fill="#a12c7b"/>
-          <text x="80" y="334" font-size="10" fill="white" text-anchor="middle" font-weight="bold">P</text>
-          <text x="80" y="350" font-size="9" fill="var(--color-text)" text-anchor="middle">일주문</text>
-
-          <circle cx="155" cy="238" r="7" fill="#a12c7b"/>
-          <text x="168" y="242" font-size="9" fill="var(--color-text)">자재암</text>
-
-          <circle cx="215" cy="162" r="7" fill="#a12c7b"/>
-          <text x="228" y="162" font-size="9" fill="var(--color-text)">하백운대</text>
-
-          <circle cx="262" cy="103" r="7" fill="#a12c7b"/>
-          <text x="272" y="103" font-size="8" fill="var(--color-text)">중백운대</text>
-
-          <circle cx="292" cy="76" r="7" fill="#7b1a5c"/>
-          <text x="300" y="73" font-size="8" fill="var(--color-text)">상백운대</text>
-          <text x="300" y="83" font-size="7" fill="var(--color-text-muted)">500m</text>
-
-          <!-- 칼바위 -->
-          <circle cx="320" cy="54" r="9" fill="#7b1a5c" stroke="white" stroke-width="2"/>
-          <text x="320" y="58" font-size="9" fill="white" text-anchor="middle">⚔</text>
-          <text x="334" y="52" font-size="9" fill="var(--color-text)" font-weight="bold">칼바위</text>
-
-          <circle cx="348" cy="44" r="7" fill="#7b1a5c"/>
-          <text x="360" y="44" font-size="8" fill="var(--color-text)">나한대</text>
-
-          <!-- 의상대 정상 -->
-          <circle cx="362" cy="42" r="13" fill="#5a0f43" stroke="#fff" stroke-width="2.5"/>
-          <text x="362" y="46" font-size="10" fill="white" text-anchor="middle" font-weight="bold">★</text>
-          <text x="380" y="36" font-size="11" fill="var(--color-text)" font-weight="bold">의상대</text>
-          <text x="380" y="48" font-size="10" fill="var(--color-text-muted)">587m ★정상</text>
-
-          <!-- 공주봉 -->
-          <circle cx="408" cy="115" r="9" fill="#7b1a5c" stroke="white" stroke-width="1.5"/>
-          <text x="420" y="119" font-size="10" fill="var(--color-text)" font-weight="bold">공주봉</text>
-          <text x="420" y="130" font-size="9" fill="var(--color-text-muted)">526m</text>
-
-          <circle cx="405" cy="248" r="7" fill="#a12c7b"/>
-          <text x="416" y="252" font-size="9" fill="var(--color-text)">구절터</text>
-
-          <!-- 방향 화살표 -->
-          <path d="M215,175 L210,165" stroke="#a12c7b" stroke-width="2" marker-end="url(#arr)"/>
-          <defs><marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#a12c7b"/></marker></defs>
-
-          <g transform="translate(450,40)">
-            <circle r="20" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-            <text x="0" y="-8" font-size="10" fill="var(--color-primary)" text-anchor="middle" font-weight="bold">N</text>
-            <text x="0" y="14" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">S</text>
-            <text x="-14" y="4" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">W</text>
-            <text x="14" y="4" font-size="8" fill="var(--color-text-muted)" text-anchor="middle">E</text>
-          </g>
-
-          <text x="250" y="22" font-size="11" fill="var(--color-text-muted)" text-anchor="middle">말굽형 시계방향 일주 코스 8.1km</text>
-        </svg>
-      </div>
-      <div class="map-legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#a12c7b"></div>전체 등산로</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#5a0f43"></div>정상 의상대 587m ★</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#7b1a5c"></div>주요 봉우리</div>
-      </div>
-    </div>
-    <div class="map-section">
-      <div class="section-title">📋 전체 체크포인트 (8.1km)</div>
-      <table class="checkpoint-table">
-        <thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>시설/특이사항</th></tr></thead>
-        <tbody>
-          <tr><td>P</td><td>소요산역 출발</td><td>80m</td><td>0km</td><td>🚇 1호선</td></tr>
-          <tr><td>1</td><td>매표소·일주문</td><td>95m</td><td>1.0km</td><td>🅿 🚻 마지막 식당가</td></tr>
-          <tr><td>2</td><td>원효폭포</td><td>130m</td><td>1.3km</td><td>📸 폭포</td></tr>
-          <tr><td>3</td><td>자재암 ★물보충</td><td>180m</td><td>1.8km</td><td>🚻 🍵 약수(마지막 물 보급)</td></tr>
-          <tr><td>4</td><td>108계단 시작</td><td>220m</td><td>2.0km</td><td>⚠ 본격 급경사</td></tr>
-          <tr><td>5</td><td>하백운대</td><td>350m</td><td>2.45km</td><td>📸 조망</td></tr>
-          <tr><td>6</td><td>중백운대</td><td>430m</td><td>2.85km</td><td>📸</td></tr>
-          <tr><td>7</td><td>상백운대</td><td>500m</td><td>3.1km</td><td>📸 절경</td></tr>
-          <tr><td>8</td><td>칼바위 ⚠</td><td>490m</td><td>3.6km</td><td>🧤 장갑필수·암릉</td></tr>
-          <tr><td>9</td><td>나한대</td><td>550m</td><td>4.2km</td><td>📸 중간 쉬터</td></tr>
-          <tr><td>10</td><td>의상대 ★정상</td><td>587m</td><td>4.7km</td><td>📸 100대명산 인증</td></tr>
-          <tr><td>11</td><td>공주봉</td><td>526m</td><td>5.4km</td><td>📸 전망바위</td></tr>
-          <tr><td>12</td><td>구절터</td><td>200m</td><td>6.3km</td><td>🏛 요석공주 전설지</td></tr>
-          <tr><td>13</td><td>속리교</td><td>120m</td><td>7.1km</td><td>💧 계곡</td></tr>
-          <tr><td>P</td><td>일주문 원점 회귀</td><td>95m</td><td>8.1km</td><td>🍽 식당가 · 🚻</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div id="a-peaks" class="tab-panel">
-    <div class="peaks-grid">
-      <div class="peak-card">
-        <div class="peak-alt">587m</div>
-        <div class="peak-name">⛰ 의상대 — 소요산 정상</div>
-        <div class="peak-desc">소요산 최고봉(587m). 원효대사와 수행한 의상대사의 이름에서 유래. 정상에서 동두천·포천·연천 방향 파노라마. 블랙야크 100대 명산 인증 스탬프 지점. 날씨 맑으면 북한산까지 조망 가능.</div>
-        <div class="peak-features"><span class="peak-tag">소요산 정상</span><span class="peak-tag">100대명산</span><span class="peak-tag">파노라마</span></div>
-      </div>
-      <div class="peak-card">
-        <div class="peak-alt">526m</div>
-        <div class="peak-name">⛰ 공주봉</div>
-        <div class="peak-desc">요석공주와 원효대사의 사랑 이야기가 깃든 봉우리. 의상대 정상에서 동쪽 능선으로 약 700m. 전망바위에서 소요산 전체 실루엣 조망. 하산로(구절터 방향)의 분기점.</div>
-        <div class="peak-features"><span class="peak-tag">설화명소</span><span class="peak-tag">전망바위</span></div>
-      </div>
-      <div class="peak-card">
-        <div class="peak-alt">550m</div>
-        <div class="peak-name">⛰ 나한대</div>
-        <div class="peak-desc">칼바위와 의상대 사이 능선의 전망 지점. 상백운대에서 이어지는 능선길의 중간 기착지. 동쪽으로 포천 방향 능선 조망이 탁 트임.</div>
-        <div class="peak-features"><span class="peak-tag">능선중간</span><span class="peak-tag">조망</span></div>
-      </div>
-      <div class="peak-card">
-        <div class="peak-alt">~180m</div>
-        <div class="peak-name">🏛 구절터</div>
-        <div class="peak-desc">공주봉에서 하산하면 만나는 유서 깊은 터. 요석공주의 별궁지가 있었다는 전설. 소요산 계곡의 물소리가 아름다운 하산 휴식 포인트.</div>
-        <div class="peak-features"><span class="peak-tag">역사유적</span><span class="peak-tag">계곡</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div id="a-tips" class="tab-panel">
-    <div class="tips-grid">
-      <div class="tip-card"><div class="tip-card-icon">🎒</div><h3>고급 필수 장비</h3>
-        <ul><li>등산화 (발목 지지형 필수)</li><li>장갑 (칼바위 필수)</li><li>무릎 보호대 (긴 하산 대비)</li><li>물 1.5~2L (중간 보급 없음)</li><li>간식·에너지바 충분히</li><li>등산 스틱 (하산 안전)</li><li>100대명산 스탬프북</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">⏰</div><h3>일정 계획</h3>
-        <ul><li>오전 7~8시 출발 추천 (4~5시간 소요)</li><li>단풍철 주말은 오전 6시 이전 입산</li><li>일몰 전 하산 완료 필수</li><li>점심 도시락 지참 (정상 부근 취식)</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>안전 수칙</h3>
-        <ul><li>칼바위: 고소공포증 있으면 우회로</li><li>결빙·폭우 시 칼바위 진입 금지</li><li>나홀로 산행 시 위치 공유</li><li>체력 70% 이하면 의상대에서 샘터하산로 이용</li><li>긴급: 동두천 소방서 119</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">📱</div><h3>유용한 앱·정보</h3>
-        <ul><li>산림청 안전산행 앱</li><li>블랙야크 100대 명산 앱 (스탬프)</li><li>기상청 동네예보 (산 날씨)</li><li>소요산 관리소: 031-865-5043</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🍁</div><h3>시즌 & 베스트타임</h3>
-        <ul><li>단풍 절정: 10월 20일~11월 5일</li><li>철쭉: 4월 하순~5월 초</li><li>설경: 12~2월 (아이젠 필수)</li><li>비추천: 장마철(7~8월 중 폭우 직후)</li></ul>
-      </div>
-      <div class="tip-card"><div class="tip-card-icon">🚇</div><h3>교통 & 주차</h3>
-        <ul><li>전철 1호선 소요산역 1번출구</li><li>주차: 하루 2,000원 (단풍철 혼잡)</li><li>입장료 무료 (2023년 5월부터)</li><li>전철 이용 강력 추천 (단풍철 주말)</li></ul>
-      </div>
-    </div>
-  </div>
-
+<div class="stats-grid">
+<div class="stat-card"><div class="stat-icon">📏</div><div class="stat-value">8.1km</div><div class="stat-label">총 거리</div></div>
+<div class="stat-card"><div class="stat-icon">⏱</div><div class="stat-value">4~5h</div><div class="stat-label">소요시간</div></div>
+<div class="stat-card"><div class="stat-icon">⛰</div><div class="stat-value">587m</div><div class="stat-label">최고지점</div></div>
+<div class="stat-card"><div class="stat-icon">📈</div><div class="stat-value">650m</div><div class="stat-label">누적상승</div></div>
+<div class="stat-card"><div class="stat-icon">🔥</div><div class="stat-value">~1020</div><div class="stat-label">칼로리(kcal)</div></div>
+<div class="stat-card"><div class="stat-icon">⭐</div><div class="stat-value">어려움</div><div class="stat-label">난이도</div></div>
+</div>
+<div class="course-desc">
+<div class="course-desc-header">
+<span class="course-level-badge badge-advanced">🏔 고급</span>
+<h2>의상대 완주코스 — 전봉우리 일주 (8.1km)</h2>
+</div>
+<p>소요산의 모든 주요 봉우리를 한 번에 밟는 완전 일주 코스(약 8.1km, 4~5시간). 일주문 → 자재암 → 하·중·상백운대 → 칼바위 → 나한대 → 의상대(정상 587m) → 공주봉 → 구절터 → 일주문의 말굽형 순환 코스입니다. 산악투어·블랙야크 100대 명산 인증 코스로, 소요산의 모든 조망과 암릉을 경험할 수 있는 최고급 코스입니다.</p>
+</div>
+<div class="elevation-section">
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg preserveaspectratio="none" viewbox="0 0 700 160">
+<defs>
+<lineargradient id="grad-a" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="#a12c7b" stop-opacity="0.4"></stop>
+<stop offset="100%" stop-color="#a12c7b" stop-opacity="0.05"></stop>
+</lineargradient>
+</defs>
+<path d="M0,148 L0,132 C40,130 70,127 95,118 C115,110 130,100 148,88 C163,78 175,69 190,61 C202,53 212,47 222,42 C230,37 240,34 248,30 C256,27 264,27 272,29 C282,32 295,38 308,30 C318,23 326,16 336,10 C342,6 348,5 355,4 C360,3 366,4 372,8 C382,15 392,26 405,40 C420,56 437,70 455,82 C472,92 490,100 510,108 C535,118 560,124 590,132 L640,138 L700,142 L700,150 Z" fill="url(#grad-a)" stroke="#a12c7b" stroke-width="2.5"></path>
+<!-- Points -->
+<circle cx="0" cy="132" fill="#a12c7b" r="4"></circle>
+<circle cx="95" cy="118" fill="#a12c7b" r="4"></circle>
+<circle cx="190" cy="61" fill="#a12c7b" r="5"></circle>
+<circle cx="248" cy="30" fill="#a12c7b" r="5"></circle>
+<circle cx="272" cy="29" fill="#a12c7b" r="5"></circle>
+<circle cx="308" cy="30" fill="#7b1a5c" r="6"></circle>
+<circle cx="355" cy="4" fill="#7b1a5c" r="8" stroke="white" stroke-width="2"></circle>
+<circle cx="405" cy="40" fill="#7b1a5c" r="6"></circle>
+<circle cx="510" cy="108" fill="#a12c7b" r="5"></circle>
+<circle cx="700" cy="142" fill="#a12c7b" r="4"></circle>
+<text fill="currentColor" font-size="8" x="0" y="128">매표소</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="95" y="114">자재암</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="190" y="57">하백운대</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="248" y="25">상백운대</text>
+<text fill="currentColor" font-size="8" font-weight="bold" text-anchor="middle" x="308" y="25">칼바위</text>
+<text fill="currentColor" font-size="9" font-weight="bold" text-anchor="middle" x="355" y="-2">의상대</text>
+<text fill="currentColor" font-size="7" opacity="0.8" text-anchor="middle" x="355" y="9">587m ★</text>
+<text fill="currentColor" font-size="8" font-weight="bold" text-anchor="middle" x="405" y="35">공주봉</text>
+<text fill="currentColor" font-size="8" text-anchor="middle" x="510" y="103">구절터</text>
+<text fill="currentColor" font-size="8" text-anchor="end" x="700" y="138">일주문</text>
+</svg>
+</div>
+</div>
+<div class="tabs">
+<button class="tab-btn active" onclick="switchTab('a','route',this)">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('a','map',this)">📍 코스 지도</button>
+<button class="tab-btn" onclick="switchTab('a','peaks',this)">⛰ 주요 명소</button>
+<button class="tab-btn" onclick="switchTab('a','tips',this)">💡 팁 &amp; 안전</button>
+</div>
+<div class="tab-panel active" id="a-route">
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-advanced">1</div>
+<div class="route-card-title"><strong>일주문 → 자재암 → 하·중·상백운대</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 3.1km</span><span class="route-meta-item">⏱ 80분</span><span class="route-meta-item">📈 급경사</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:55%"></div></div></div>
+<p class="route-desc">일주문 → 원효폭포 → 자재암(화장실·약수) → 108계단 → 하백운대(350m) → 중백운대(430m) → 상백운대(500m). 본격 산행 시작. 각 백운대에서 잠시 호흡 고르며 조망 감상.</p>
+<div class="tip-box">💡 자재암이 마지막 화장실·약수. 출발 전 반드시 물 1.5L 이상 보충.</div>
+</div>
+</div>
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-advanced">2</div>
+<div class="route-card-title"><strong>상백운대 → 칼바위 → 나한대</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 1.3km</span><span class="route-meta-item">⏱ 60분</span><span class="route-meta-item">📈 암릉</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-hard" style="width:85%"></div></div></div>
+<p class="route-desc">소요산 최고 난이도 구간. 칼바위 암릉 통과(로프 이용) 후 능선을 따라 나한대까지. 양쪽 절벽 조망이 압도적. 나한대에서 의상대 방향 전망이 탁 트임.</p>
+<div class="warn-box">⚠️ 칼바위: 장갑·집중·천천히. 나한대까지 1시간 — 체력 안배 필수.</div>
+</div>
+</div>
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-advanced">3</div>
+<div class="route-card-title"><strong>나한대 → 의상대 (정상 587m) ★</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 0.5km</span><span class="route-meta-item">⏱ 20분</span><span class="route-meta-item">📈 급경사</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-hard" style="width:75%"></div></div></div>
+<p class="route-desc">소요산 최고봉 의상대(587m). 원효대사와 함께 수행한 의상대사를 기려 붙인 이름. 정상에서 동두천·포천·연천 방향 파노라마. 블랙야크 100대 명산 인증 지점.</p>
+<div class="tip-box">💡 정상 인증샷 + 100대명산 스탬프 확인. 맑은 날 북한산까지 조망 가능!</div>
+</div>
+</div>
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-advanced">4</div>
+<div class="route-card-title"><strong>의상대 → 공주봉 → 구절터</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 1.5km</span><span class="route-meta-item">⏱ 45분</span><span class="route-meta-item">📉 능선 하산</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-medium" style="width:55%"></div></div></div>
+<p class="route-desc">의상대 정상에서 동쪽 능선 따라 공주봉(526m) 방향으로. 요석공주와 원효대사 설화의 배경이 된 공주봉. 이후 구절터로 내려서며 계곡 옆 흙길 이어짐.</p>
+<div class="tip-box">💡 공주봉 전망바위에서 소요산 전경 사진 명소. 구절터는 요석공주 별궁지 전설이 있는 유서 깊은 곳.</div>
+</div>
+</div>
+<div class="route-card" onclick="toggleCard(this)">
+<div class="route-card-header">
+<div class="route-step step-advanced">5</div>
+<div class="route-card-title"><strong>구절터 → 속리교 → 일주문 (최종 하산)</strong>
+<div class="route-card-meta"><span class="route-meta-item">🚶 1.7km</span><span class="route-meta-item">⏱ 30분</span><span class="route-meta-item">📉 완만 하산</span></div>
+</div>
+<svg class="route-arrow" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="route-card-body">
+<div class="diff-bar-wrap"><span class="diff-label">난이도</span><div class="diff-bar"><div class="diff-fill diff-easy" style="width:25%"></div></div></div>
+<p class="route-desc">구절터에서 계곡 옆 완만한 흙길로 속리교 → 일주문 방향 하산. 평탄하고 넓어 피로한 무릎을 쉬게 할 수 있는 마무리 구간. 일주문 앞 식당가에서 막걸리·파전으로 마무리.</p>
+<div class="tip-box">💡 총 8.1km, 약 1,020kcal 소모. 완주를 축하합니다! 🎉</div>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="a-map">
+<div class="map-section">
+<div class="section-title">📍 고급 코스 개념도 — 말굽형 완전 일주</div>
+<div class="map-wrap">
+<svg viewbox="0 0 500 375" xmlns="http://www.w3.org/2000/svg">
+<rect fill="var(--color-surface-offset)" height="375" rx="12" width="500"></rect>
+<ellipse cx="250" cy="170" fill="rgba(161,44,123,0.05)" rx="210" ry="160"></ellipse>
+<!-- 등산로 (시계 반대방향 말굽) -->
+<path d="M80,330 L100,300 L130,268 L155,238 L175,210 L195,185 L215,162 L232,140 L248,120 L262,103 L278,88 L292,76 L306,65" fill="none" stroke="#a12c7b" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"></path>
+<!-- 칼바위→나한대→의상대 -->
+<path d="M306,65 L318,55 L332,48 L348,44 L362,42" fill="none" stroke="#a12c7b" stroke-linecap="round" stroke-width="4"></path>
+<!-- 의상대→공주봉→구절터 -->
+<path d="M362,42 L375,55 L388,72 L398,92 L408,115 L415,140 L420,168 L420,195 L415,220 L405,248 L390,272 L370,295 L345,312 L315,325 L285,333 L250,338 L210,340 L170,338 L130,332 L80,330" fill="none" stroke="#a12c7b" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- START -->
+<circle cx="80" cy="330" fill="#a12c7b" r="12"></circle>
+<text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="80" y="334">P</text>
+<text fill="var(--color-text)" font-size="9" text-anchor="middle" x="80" y="350">일주문</text>
+<circle cx="155" cy="238" fill="#a12c7b" r="7"></circle>
+<text fill="var(--color-text)" font-size="9" x="168" y="242">자재암</text>
+<circle cx="215" cy="162" fill="#a12c7b" r="7"></circle>
+<text fill="var(--color-text)" font-size="9" x="228" y="162">하백운대</text>
+<circle cx="262" cy="103" fill="#a12c7b" r="7"></circle>
+<text fill="var(--color-text)" font-size="8" x="272" y="103">중백운대</text>
+<circle cx="292" cy="76" fill="#7b1a5c" r="7"></circle>
+<text fill="var(--color-text)" font-size="8" x="300" y="73">상백운대</text>
+<text fill="var(--color-text-muted)" font-size="7" x="300" y="83">500m</text>
+<!-- 칼바위 -->
+<circle cx="320" cy="54" fill="#7b1a5c" r="9" stroke="white" stroke-width="2"></circle>
+<text fill="white" font-size="9" text-anchor="middle" x="320" y="58">⚔</text>
+<text fill="var(--color-text)" font-size="9" font-weight="bold" x="334" y="52">칼바위</text>
+<circle cx="348" cy="44" fill="#7b1a5c" r="7"></circle>
+<text fill="var(--color-text)" font-size="8" x="360" y="44">나한대</text>
+<!-- 의상대 정상 -->
+<circle cx="362" cy="42" fill="#5a0f43" r="13" stroke="#fff" stroke-width="2.5"></circle>
+<text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="362" y="46">★</text>
+<text fill="var(--color-text)" font-size="11" font-weight="bold" x="380" y="36">의상대</text>
+<text fill="var(--color-text-muted)" font-size="10" x="380" y="48">587m ★정상</text>
+<!-- 공주봉 -->
+<circle cx="408" cy="115" fill="#7b1a5c" r="9" stroke="white" stroke-width="1.5"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="bold" x="420" y="119">공주봉</text>
+<text fill="var(--color-text-muted)" font-size="9" x="420" y="130">526m</text>
+<circle cx="405" cy="248" fill="#a12c7b" r="7"></circle>
+<text fill="var(--color-text)" font-size="9" x="416" y="252">구절터</text>
+<!-- 방향 화살표 -->
+<path d="M215,175 L210,165" marker-end="url(#arr)" stroke="#a12c7b" stroke-width="2"></path>
+<defs><marker id="arr" markerheight="6" markerwidth="6" orient="auto" refx="3" refy="3"><path d="M0,0 L6,3 L0,6 Z" fill="#a12c7b"></path></marker></defs>
+<g transform="translate(450,40)">
+<circle fill="var(--color-surface)" r="20" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-primary)" font-size="10" font-weight="bold" text-anchor="middle" x="0" y="-8">N</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="0" y="14">S</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="-14" y="4">W</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="14" y="4">E</text>
+</g>
+<text fill="var(--color-text-muted)" font-size="11" text-anchor="middle" x="250" y="22">말굽형 시계방향 일주 코스 8.1km</text>
+</svg>
+</div>
+<div class="map-legend">
+<div class="legend-item"><div class="legend-dot" style="background:#a12c7b"></div>전체 등산로</div>
+<div class="legend-item"><div class="legend-dot" style="background:#5a0f43"></div>정상 의상대 587m ★</div>
+<div class="legend-item"><div class="legend-dot" style="background:#7b1a5c"></div>주요 봉우리</div>
+</div>
+</div>
+<div class="map-section">
+<div class="section-title">📋 전체 체크포인트 (8.1km)</div>
+<table class="checkpoint-table">
+<thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>시설/특이사항</th></tr></thead>
+<tbody>
+<tr><td>P</td><td>소요산역 출발</td><td>80m</td><td>0km</td><td>🚇 1호선</td></tr>
+<tr><td>1</td><td>매표소·일주문</td><td>95m</td><td>1.0km</td><td>🅿 🚻 마지막 식당가</td></tr>
+<tr><td>2</td><td>원효폭포</td><td>130m</td><td>1.3km</td><td>📸 폭포</td></tr>
+<tr><td>3</td><td>자재암 ★물보충</td><td>180m</td><td>1.8km</td><td>🚻 🍵 약수(마지막 물 보급)</td></tr>
+<tr><td>4</td><td>108계단 시작</td><td>220m</td><td>2.0km</td><td>⚠ 본격 급경사</td></tr>
+<tr><td>5</td><td>하백운대</td><td>350m</td><td>2.45km</td><td>📸 조망</td></tr>
+<tr><td>6</td><td>중백운대</td><td>430m</td><td>2.85km</td><td>📸</td></tr>
+<tr><td>7</td><td>상백운대</td><td>500m</td><td>3.1km</td><td>📸 절경</td></tr>
+<tr><td>8</td><td>칼바위 ⚠</td><td>490m</td><td>3.6km</td><td>🧤 장갑필수·암릉</td></tr>
+<tr><td>9</td><td>나한대</td><td>550m</td><td>4.2km</td><td>📸 중간 쉬터</td></tr>
+<tr><td>10</td><td>의상대 ★정상</td><td>587m</td><td>4.7km</td><td>📸 100대명산 인증</td></tr>
+<tr><td>11</td><td>공주봉</td><td>526m</td><td>5.4km</td><td>📸 전망바위</td></tr>
+<tr><td>12</td><td>구절터</td><td>200m</td><td>6.3km</td><td>🏛 요석공주 전설지</td></tr>
+<tr><td>13</td><td>속리교</td><td>120m</td><td>7.1km</td><td>💧 계곡</td></tr>
+<tr><td>P</td><td>일주문 원점 회귀</td><td>95m</td><td>8.1km</td><td>🍽 식당가 · 🚻</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tab-panel" id="a-peaks">
+<div class="peaks-grid">
+<div class="peak-card">
+<div class="peak-alt">587m</div>
+<div class="peak-name">⛰ 의상대 — 소요산 정상</div>
+<div class="peak-desc">소요산 최고봉(587m). 원효대사와 수행한 의상대사의 이름에서 유래. 정상에서 동두천·포천·연천 방향 파노라마. 블랙야크 100대 명산 인증 스탬프 지점. 날씨 맑으면 북한산까지 조망 가능.</div>
+<div class="peak-features"><span class="peak-tag">소요산 정상</span><span class="peak-tag">100대명산</span><span class="peak-tag">파노라마</span></div>
+</div>
+<div class="peak-card">
+<div class="peak-alt">526m</div>
+<div class="peak-name">⛰ 공주봉</div>
+<div class="peak-desc">요석공주와 원효대사의 사랑 이야기가 깃든 봉우리. 의상대 정상에서 동쪽 능선으로 약 700m. 전망바위에서 소요산 전체 실루엣 조망. 하산로(구절터 방향)의 분기점.</div>
+<div class="peak-features"><span class="peak-tag">설화명소</span><span class="peak-tag">전망바위</span></div>
+</div>
+<div class="peak-card">
+<div class="peak-alt">550m</div>
+<div class="peak-name">⛰ 나한대</div>
+<div class="peak-desc">칼바위와 의상대 사이 능선의 전망 지점. 상백운대에서 이어지는 능선길의 중간 기착지. 동쪽으로 포천 방향 능선 조망이 탁 트임.</div>
+<div class="peak-features"><span class="peak-tag">능선중간</span><span class="peak-tag">조망</span></div>
+</div>
+<div class="peak-card">
+<div class="peak-alt">~180m</div>
+<div class="peak-name">🏛 구절터</div>
+<div class="peak-desc">공주봉에서 하산하면 만나는 유서 깊은 터. 요석공주의 별궁지가 있었다는 전설. 소요산 계곡의 물소리가 아름다운 하산 휴식 포인트.</div>
+<div class="peak-features"><span class="peak-tag">역사유적</span><span class="peak-tag">계곡</span></div>
+</div>
+</div>
+</div>
+<div class="tab-panel" id="a-tips">
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon">🎒</div><h3>고급 필수 장비</h3>
+<ul><li>등산화 (발목 지지형 필수)</li><li>장갑 (칼바위 필수)</li><li>무릎 보호대 (긴 하산 대비)</li><li>물 1.5~2L (중간 보급 없음)</li><li>간식·에너지바 충분히</li><li>등산 스틱 (하산 안전)</li><li>100대명산 스탬프북</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">⏰</div><h3>일정 계획</h3>
+<ul><li>오전 7~8시 출발 추천 (4~5시간 소요)</li><li>단풍철 주말은 오전 6시 이전 입산</li><li>일몰 전 하산 완료 필수</li><li>점심 도시락 지참 (정상 부근 취식)</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">⚠️</div><h3>안전 수칙</h3>
+<ul><li>칼바위: 고소공포증 있으면 우회로</li><li>결빙·폭우 시 칼바위 진입 금지</li><li>나홀로 산행 시 위치 공유</li><li>체력 70% 이하면 의상대에서 샘터하산로 이용</li><li>긴급: 동두천 소방서 119</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><h3>유용한 앱·정보</h3>
+<ul><li>산림청 안전산행 앱</li><li>블랙야크 100대 명산 앱 (스탬프)</li><li>기상청 동네예보 (산 날씨)</li><li>소요산 관리소: 031-865-5043</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🍁</div><h3>시즌 &amp; 베스트타임</h3>
+<ul><li>단풍 절정: 10월 20일~11월 5일</li><li>철쭉: 4월 하순~5월 초</li><li>설경: 12~2월 (아이젠 필수)</li><li>비추천: 장마철(7~8월 중 폭우 직후)</li></ul>
+</div>
+<div class="tip-card"><div class="tip-card-icon">🚇</div><h3>교통 &amp; 주차</h3>
+<ul><li>전철 1호선 소요산역 1번출구</li><li>주차: 하루 2,000원 (단풍철 혼잡)</li><li>입장료 무료 (2023년 5월부터)</li><li>전철 이용 강력 추천 (단풍철 주말)</li></ul>
+</div>
+</div>
+</div>
 </div>
 </div>
 <!-- ════ END ADVANCED ════ -->
-
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 소요산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Soyosan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@dimafromcrimea' target='_blank' rel='noopener'&gt;Dmitriy Ryndin&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/soyosan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/soyosan/g1.webp" type="image/webp"/>
+<img alt="소요산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소요산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Soyosan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/soyosan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/soyosan/g2.webp" type="image/webp"/>
+<img alt="소요산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소요산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Soyosan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@daddysky' target='_blank' rel='noopener'&gt;pipop kunachon&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/soyosan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/soyosan/g3.webp" type="image/webp"/>
+<img alt="소요산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소요산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Soyosan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@hokusai-509091422' target='_blank' rel='noopener'&gt;Hokusai&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/soyosan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/soyosan/g4.webp" type="image/webp"/>
+<img alt="소요산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">소요산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <script>
 (function(){
   const t=document.querySelector('[data-theme-toggle]');
@@ -1105,6 +1543,128 @@ function switchTab(prefix,id,btn){
 function toggleCard(card){
   card.classList.toggle('open');
 }
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
