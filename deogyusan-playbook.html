@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="dark">
+
+<html data-theme="dark" lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>덕유산 등산 플레이북</title>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
 <style>
 :root,[data-theme="light"]{
   --bg:#f4f3f0;--surface:#f8f7f4;--surface2:#fafaf8;--surfaceoff:#ece6de;--surfdyn:#dfd8cc;
@@ -151,664 +152,1143 @@ a,button,[role=button]{transition:color var(--tx),background var(--tx),border-co
   .stat-grid{grid-template-columns:repeat(2,1fr)}
   .cs-btn{padding:var(--s2) var(--s4);font-size:var(--xs)}
 }
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
 </style>
 </head>
 <body>
-
 <header class="hdr">
-  <div class="logo">
-    <svg class="logo-svg" viewBox="0 0 36 36" fill="none" aria-label="덕유산 플레이북">
-      <rect width="36" height="36" rx="8" fill="var(--pri)"/>
-      <path d="M3 28 C8 26 12 22 16 18 C18 16 19 10 22 6 C24 10 26 14 28 16 C30 14 32 18 33 28" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-      <circle cx="22" cy="6" r="2.5" fill="white"/>
-      <path d="M3 28 Q6 24 9 20" stroke="rgba(255,255,255,.45)" stroke-width="1.2" stroke-linecap="round" fill="none"/>
-    </svg>
-    <span class="logo-txt">덕유산 플레이북</span>
-  </div>
-  <button class="thm-btn" data-thm aria-label="테마 전환">
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-  </button>
+<div class="logo">
+<svg aria-label="덕유산 플레이북" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<rect fill="var(--pri)" height="36" rx="8" width="36"></rect>
+<path d="M3 28 C8 26 12 22 16 18 C18 16 19 10 22 6 C24 10 26 14 28 16 C30 14 32 18 33 28" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.2"></path>
+<circle cx="22" cy="6" fill="white" r="2.5"></circle>
+<path d="M3 28 Q6 24 9 20" fill="none" stroke="rgba(255,255,255,.45)" stroke-linecap="round" stroke-width="1.2"></path>
+</svg>
+<span class="logo-txt">덕유산 플레이북</span>
+</div>
+<button aria-label="테마 전환" class="thm-btn" data-thm="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
 </header>
-
-<section class="hero">
-  <div class="badge">🌿 덕이 많고 너그러운 산 · 전북 무주 · 해발 1,614m</div>
-  <h1>덕유산 등산 코스 가이드</h1>
-  <p>구천동 33경 계곡, 겨울 눈꽃 능선, 남덕유 종주까지 — 곤돌라 초급 코스부터 육구종주 고급 코스까지 수준별 완벽 가이드.</p>
-  <div class="cs-wrap">
-    <button class="cs-btn ab" onclick="selC('beginner',this)">🌿 초급 — 곤돌라·구천동 왕복</button>
-    <button class="cs-btn" onclick="selC('intermediate',this)">🦶 중급 — 구천동 환종주</button>
-    <button class="cs-btn" onclick="selC('advanced',this)">🏔 고급 — 향적봉·남덕유 종주</button>
-  </div>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/deogyusan/hero-640.avif 640w, assets/img/deogyusan/hero-1024.avif 1024w, assets/img/deogyusan/hero-1600.avif 1600w, assets/img/deogyusan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/deogyusan/hero-640.webp 640w, assets/img/deogyusan/hero-1024.webp 1024w, assets/img/deogyusan/hero-1600.webp 1600w, assets/img/deogyusan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="덕유산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Deogyusan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/deogyusan/hero-1600.jpg" srcset="assets/img/deogyusan/hero-640.jpg 640w, assets/img/deogyusan/hero-1024.jpg 1024w, assets/img/deogyusan/hero-1600.jpg 1600w, assets/img/deogyusan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="badge">🌿 덕이 많고 너그러운 산 · 전북 무주 · 해발 1,614m</div>
+<h1>덕유산 등산 코스 가이드</h1>
+<p>구천동 33경 계곡, 겨울 눈꽃 능선, 남덕유 종주까지 — 곤돌라 초급 코스부터 육구종주 고급 코스까지 수준별 완벽 가이드.</p>
+<div class="cs-wrap">
+<button class="cs-btn ab" onclick="selC('beginner',this)">🌿 초급 — 곤돌라·구천동 왕복</button>
+<button class="cs-btn" onclick="selC('intermediate',this)">🦶 중급 — 구천동 환종주</button>
+<button class="cs-btn" onclick="selC('advanced',this)">🏔 고급 — 향적봉·남덕유 종주</button>
+</div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@anthony-taewan-kim-1326772885" rel="noopener" target="_blank">Anthony Taewan Kim</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
 </section>
-
 <!-- ═══ 초급 ═══ -->
-<div id="course-beginner" class="panel active beginner">
-  <nav class="tabs">
-    <button class="tab active" onclick="selT('beginner','ov',this)">📋 개요</button>
-    <button class="tab" onclick="selT('beginner','rt',this)">🗺 경로 안내</button>
-    <button class="tab" onclick="selT('beginner','mp',this)">📍 지도</button>
-    <button class="tab" onclick="selT('beginner','tp',this)">💡 팁 &amp; 주의</button>
-  </nav>
-  <main class="main">
-    <div id="beginner-ov" class="tc active">
-      <div class="stitle"><div class="sico">🌿</div><span>초급 코스 개요</span></div>
-      <div class="stat-grid">
-        <div class="stat-card"><div class="si">🚡</div><div class="sv">왕복 3.2km</div><div class="sl">곤돌라+향적봉</div></div>
-        <div class="stat-card"><div class="si">⏱</div><div class="sv">1.5~2h</div><div class="sl">소요 시간</div></div>
-        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,614m</div><div class="sl">향적봉 정상</div></div>
-        <div class="stat-card"><div class="si">📈</div><div class="sv">±160m</div><div class="sl">도보 고도차</div></div>
-        <div class="stat-card"><div class="si">🔥</div><div class="sv">~300</div><div class="sl">예상 칼로리</div></div>
-        <div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
-      </div>
-      <div class="elev-wrap">
-        <h3>📊 고도 프로파일 — 곤돌라 이용 향적봉 왕복</h3>
-        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
-          <defs><linearGradient id="bg1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="var(--sky)" stop-opacity=".3"/>
-            <stop offset="100%" stop-color="var(--sky)" stop-opacity="0"/>
-          </linearGradient></defs>
-          <rect x="0" y="0" width="900" height="180" fill="none"/>
-          <!-- 곤돌라 점선 구간 -->
-          <line x1="0" y1="155" x2="320" y2="45" stroke="var(--sky)" stroke-width="2" stroke-dasharray="10,5" stroke-opacity=".5"/>
-          <!-- 도보 구간 -->
-          <path d="M320 45 C360 38 400 28 450 24 L450 24 C500 28 540 38 580 45" fill="none" stroke="var(--sky)" stroke-width="3" stroke-linecap="round"/>
-          <!-- 곤돌라 하강 점선 -->
-          <line x1="580" y1="45" x2="900" y2="155" stroke="var(--sky)" stroke-width="2" stroke-dasharray="10,5" stroke-opacity=".5"/>
-          <!-- fill area (walk only) -->
-          <path d="M320 45 C360 38 400 28 450 24 L450 24 C500 28 540 38 580 45 L580 180 L320 180Z" fill="url(#bg1)"/>
-          <text x="5" y="172" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">무주리조트 680m</text>
-          <text x="320" y="60" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">설천봉 1,520m</text>
-          <text x="420" y="18" font-size="12" fill="var(--sky)" font-weight="700" font-family="Satoshi,sans-serif">향적봉 1,614m</text>
-          <circle cx="450" cy="24" r="5" fill="var(--sky)"/>
-          <text x="130" y="100" font-size="10" fill="var(--sky)" font-family="Satoshi,sans-serif">━━ 곤돌라</text>
-          <text x="380" y="165" font-size="10" fill="var(--pri)" font-family="Satoshi,sans-serif">도보 구간</text>
-        </svg>
-      </div>
-      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
-      <div class="flow">
-        <span class="fn sk">🅿 무주리조트</span><span class="fa">→</span>
-        <span class="fn sh">🚡 곤돌라 탑승 (20분)</span><span class="fa">→</span>
-        <span class="fn">설천봉 1,520m</span><span class="fa">→</span>
-        <span class="fn pk">향적봉 1,614m ★</span><span class="fa">→</span>
-        <span class="fn sh">🚡 곤돌라 하산</span><span class="fa">→</span>
-        <span class="fn sk">🅿 무주리조트 귀환</span>
-      </div>
-      <div class="ic"><h3>코스 특징</h3><ul>
-        <li>🚡 곤돌라로 설천봉(1,520m)까지 올라 도보 0.6km만 걷는 가장 쉬운 코스</li>
-        <li>✅ 어린이·노약자·장애인도 도전 가능한 덕유산 최대 접근 코스</li>
-        <li>✅ 향적봉 정상에서 중봉·남덕유산으로 이어지는 주능선 파노라마 조망</li>
-        <li>✅ 겨울 눈꽃 관람 최고 코스 — 설천봉~향적봉 상고대 절경</li>
-        <li>⚠ 곤돌라 요금 성인 17,000원(왕복) 사전 확인 · 주말 대기 긴 편</li>
-        <li>⚠ 겨울 강풍 시 곤돌라 운행 중단 가능 — 날씨 사전 확인 필수</li>
-      </ul></div>
-    </div>
-
-    <div id="beginner-rt" class="tc">
-      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
-      <div class="acc-wrap">
-        <div class="acc-item open">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">출</span>
-            <div class="acc-tw"><div class="acc-t">무주리조트 곤돌라 탑승장 출발</div><div class="acc-m">해발 680m · 전북 무주군 설천면</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <p class="acc-desc">무주덕유산리조트 스키장 내 곤돌라 탑승장에서 출발합니다. 탑승권 구매(왕복 성인 약 17,000원) 후 줄 서서 탑승 대기. 소요 약 20분으로 설천봉(1,520m)에 도달합니다.</p>
-            <div class="tip">💡 주말·연휴·눈꽃 시즌(1~2월)에는 탑승 대기 1시간 이상. 오전 9시 이전 도착 권장. 곤돌라 운행시간 확인(동절기 08:30~16:30 기준).</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">1</span>
-            <div class="acc-tw"><div class="acc-t">설천봉 → 향적봉 정상</div><div class="acc-m">편도 0.6km · 20분 · 고도 ↑94m</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
-            <p class="acc-desc">설천봉에서 잘 정비된 데크 탐방로를 따라 향적봉까지 오릅니다. 경사는 완만하며 계단이 잘 설치되어 있어 누구나 걸을 수 있습니다. 겨울에는 탐방로 양쪽에 상고대(나무에 서리가 얼어붙은 눈꽃)가 장관을 이룹니다.</p>
-            <div class="tip">💡 향적봉 정상 기온은 무주 시내보다 약 5~8°C 낮습니다. 체감온도 대비 방한복 반드시 지참.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">2</span>
-            <div class="acc-tw"><div class="acc-t">향적봉 정상 탐방 및 조망</div><div class="acc-m">정상 1,614m · 조망 30분</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:10%"></div></div></div>
-            <p class="acc-desc">향적봉(1,614m)은 덕유산 최고봉이자 남한에서 네 번째로 높은 봉우리입니다. 정상에서 중봉(1,594m)→남덕유산으로 이어지는 주능선, 적상산 등 사방 파노라마 조망이 펼쳐집니다. 향적봉 대피소 내부에서 따뜻하게 쉬며 음식 구매 가능.</p>
-            <div class="tip">💡 향적봉 대피소에서 라면·음료 판매. 겨울 정상 체감온도는 -20°C 이하가 될 수 있으니 장갑·모자 필수.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">3</span>
-            <div class="acc-tw"><div class="acc-t">향적봉 → 설천봉 → 곤돌라 하산</div><div class="acc-m">0.6km · 15분 · 하산</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div>
-            <p class="acc-desc">올라온 길로 설천봉으로 돌아와 곤돌라를 이용해 하산합니다. 곤돌라 내에서도 설천봉~리조트 구간 경관 감상 가능.</p>
-            <div class="wrn">⚠ 하산 곤돌라도 성수기 대기가 길 수 있습니다. 막차 시간(동절기 16:30) 전 설천봉 도착 필수.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="beginner-mp" class="tc">
-      <div class="map-wrap">
-        <h3>📍 곤돌라·향적봉 코스 개념도</h3>
-        <svg viewBox="0 0 660 400" style="width:100%;height:auto;max-height:420px">
-          <rect width="660" height="400" fill="var(--surfaceoff)" rx="12"/>
-          <!-- mountain bg -->
-          <path d="M100 320 Q220 160 330 100 Q440 160 560 320" fill="var(--surfdyn)" fill-opacity=".25" stroke="none"/>
-          <!-- gondola cable line -->
-          <line x1="100" y1="340" x2="260" y2="160" stroke="var(--sky)" stroke-width="2.5" stroke-dasharray="10,5"/>
-          <!-- walk trail -->
-          <path d="M260 160 Q280 145 310 128 Q320 118 330 110" fill="none" stroke="var(--sky)" stroke-width="4" stroke-linecap="round"/>
-          <!-- down gondola -->
-          <line x1="260" y1="160" x2="100" y2="340" stroke="var(--sky)" stroke-width="1.5" stroke-dasharray="8,5" stroke-opacity=".4"/>
-          <!-- nodes -->
-          <rect x="60" y="328" width="80" height="30" rx="8" fill="var(--sky)" fill-opacity=".15" stroke="var(--sky)" stroke-width="1.5"/>
-          <text x="70" y="349" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">무주리조트 P</text>
-          <circle cx="260" cy="160" r="11" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="275" y="155" font-size="12" fill="var(--muted)" font-family="Satoshi,sans-serif">설천봉 1,520m</text>
-          <circle cx="330" cy="110" r="18" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="355" y="103" font-size="13" font-weight="800" fill="var(--sky)" font-family="Cabinet Grotesk,Satoshi,sans-serif">향적봉</text>
-          <text x="355" y="118" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">1,614m ★</text>
-          <!-- gondola car icon -->
-          <rect x="165" y="236" width="22" height="16" rx="4" fill="var(--sky)" fill-opacity=".8"/>
-          <text x="170" y="248" font-size="9" fill="white" font-family="Satoshi,sans-serif">🚡</text>
-          <!-- daepiho -->
-          <circle cx="350" cy="125" r="7" fill="var(--gold)" fill-opacity=".8" stroke="var(--bg)" stroke-width="2"/>
-          <text x="363" y="130" font-size="10" fill="var(--gold)" font-family="Satoshi,sans-serif">향적봉대피소</text>
-          <!-- compass -->
-          <circle cx="618" cy="48" r="25" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
-          <text x="615" y="34" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
-          <line x1="618" y1="38" x2="618" y2="47" stroke="var(--txt)" stroke-width="1.5"/>
-          <!-- legend -->
-          <rect x="16" y="348" width="220" height="42" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
-          <line x1="30" y1="364" x2="52" y2="364" stroke="var(--sky)" stroke-width="3"/>
-          <text x="60" y="368" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">도보 탐방로</text>
-          <line x1="30" y1="381" x2="52" y2="381" stroke="var(--sky)" stroke-width="2" stroke-dasharray="6,3"/>
-          <text x="60" y="385" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">곤돌라 케이블</text>
-        </svg>
-      </div>
-      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
-      <div class="cp-wrap">
-        <table class="cpt">
-          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>무주리조트 곤돌라 탑승장</td><td>680m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·매표소·화장실</td></tr>
-            <tr><td>2</td><td>설천봉 (곤돌라 하차)</td><td>1,520m</td><td>—</td><td><span class="bdg b-sk">곤돌라 도착</span></td><td>전망·식당</td></tr>
-            <tr><td>3</td><td>향적봉 정상</td><td>1,614m</td><td>0.6km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·대피소·라면</td></tr>
-            <tr><td>4</td><td>설천봉 (복귀)</td><td>1,520m</td><td>1.2km</td><td><span class="bdg b-sk">곤돌라 탑승</span></td><td>화장실</td></tr>
-            <tr><td>5</td><td>무주리조트 (하산)</td><td>680m</td><td>3.2km</td><td><span class="bdg b-st">종점</span></td><td>식당가·스키 시설</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="beginner-tp" class="tc">
-      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-      <div class="tg">
-        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>방한복·패딩 (정상 기온 낮음)</li><li>장갑·목도리·모자</li><li>겨울: 미끄럼 방지 아이젠</li><li>선크림 (눈 반사 자외선)</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🚡</div><h4>곤돌라 이용</h4><ul><li>왕복 성인 약 17,000원</li><li>운행시간 08:30~16:30 (동절기)</li><li>강풍·폭설 시 운행 중단</li><li>출발 전 운행 여부 전화 확인</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🌨</div><h4>눈꽃 시즌</h4><ul><li>1~2월 상고대 최절정</li><li>설천봉~향적봉 구간 환상 눈꽃</li><li>아이젠 착용 필수 (빙판)</li><li>주말 대기 2시간 이상 가능</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🚌</div><h4>교통 정보</h4><ul><li>서울 → 동서울터미널 → 무주 버스</li><li>무주 → 무주리조트 셔틀버스</li><li>대전 → 무주 고속버스</li><li>리조트 주차료 5,000원</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🍂</div><h4>계절별 매력</h4><ul><li>봄: 철쭉 5월 중순 절정</li><li>여름: 서늘한 능선 피서</li><li>가을: 단풍 10월 중~하순</li><li>겨울: 눈꽃·상고대 최고</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">📱</div><h4>유용한 정보</h4><ul><li>덕유산국립공원 063-322-3174</li><li>무주리조트 곤돌라 063-320-7000</li><li>블랙야크 100대명산 인증 가능</li><li>향적봉 일출 시각 앱 확인 권장</li></ul></div>
-      </div>
-    </div>
-  </main>
+<div class="panel active beginner" id="course-beginner">
+<nav class="tabs">
+<button class="tab active" onclick="selT('beginner','ov',this)">📋 개요</button>
+<button class="tab" onclick="selT('beginner','rt',this)">🗺 경로 안내</button>
+<button class="tab" onclick="selT('beginner','mp',this)">📍 지도</button>
+<button class="tab" onclick="selT('beginner','tp',this)">💡 팁 &amp; 주의</button>
+</nav>
+<main class="main">
+<div class="tc active" id="beginner-ov">
+<div class="stitle"><div class="sico">🌿</div><span>초급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">🚡</div><div class="sv">왕복 3.2km</div><div class="sl">곤돌라+향적봉</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">1.5~2h</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si">⛰</div><div class="sv">1,614m</div><div class="sl">향적봉 정상</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±160m</div><div class="sl">도보 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~300</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
 </div>
-
+<div class="elev-wrap">
+<h3>📊 고도 프로파일 — 곤돌라 이용 향적봉 왕복</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="bg1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--sky)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--sky)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<rect fill="none" height="180" width="900" x="0" y="0"></rect>
+<!-- 곤돌라 점선 구간 -->
+<line stroke="var(--sky)" stroke-dasharray="10,5" stroke-opacity=".5" stroke-width="2" x1="0" x2="320" y1="155" y2="45"></line>
+<!-- 도보 구간 -->
+<path d="M320 45 C360 38 400 28 450 24 L450 24 C500 28 540 38 580 45" fill="none" stroke="var(--sky)" stroke-linecap="round" stroke-width="3"></path>
+<!-- 곤돌라 하강 점선 -->
+<line stroke="var(--sky)" stroke-dasharray="10,5" stroke-opacity=".5" stroke-width="2" x1="580" x2="900" y1="45" y2="155"></line>
+<!-- fill area (walk only) -->
+<path d="M320 45 C360 38 400 28 450 24 L450 24 C500 28 540 38 580 45 L580 180 L320 180Z" fill="url(#bg1)"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="172">무주리조트 680m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="320" y="60">설천봉 1,520m</text>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="420" y="18">향적봉 1,614m</text>
+<circle cx="450" cy="24" fill="var(--sky)" r="5"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="10" x="130" y="100">━━ 곤돌라</text>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="10" x="380" y="165">도보 구간</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="flow">
+<span class="fn sk">🅿 무주리조트</span><span class="fa">→</span>
+<span class="fn sh">🚡 곤돌라 탑승 (20분)</span><span class="fa">→</span>
+<span class="fn">설천봉 1,520m</span><span class="fa">→</span>
+<span class="fn pk">향적봉 1,614m ★</span><span class="fa">→</span>
+<span class="fn sh">🚡 곤돌라 하산</span><span class="fa">→</span>
+<span class="fn sk">🅿 무주리조트 귀환</span>
+</div>
+<div class="ic"><h3>코스 특징</h3><ul>
+<li>🚡 곤돌라로 설천봉(1,520m)까지 올라 도보 0.6km만 걷는 가장 쉬운 코스</li>
+<li>✅ 어린이·노약자·장애인도 도전 가능한 덕유산 최대 접근 코스</li>
+<li>✅ 향적봉 정상에서 중봉·남덕유산으로 이어지는 주능선 파노라마 조망</li>
+<li>✅ 겨울 눈꽃 관람 최고 코스 — 설천봉~향적봉 상고대 절경</li>
+<li>⚠ 곤돌라 요금 성인 17,000원(왕복) 사전 확인 · 주말 대기 긴 편</li>
+<li>⚠ 겨울 강풍 시 곤돌라 운행 중단 가능 — 날씨 사전 확인 필수</li>
+</ul></div>
+</div>
+<div class="tc" id="beginner-rt">
+<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap">
+<div class="acc-item open">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">출</span>
+<div class="acc-tw"><div class="acc-t">무주리조트 곤돌라 탑승장 출발</div><div class="acc-m">해발 680m · 전북 무주군 설천면</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">무주덕유산리조트 스키장 내 곤돌라 탑승장에서 출발합니다. 탑승권 구매(왕복 성인 약 17,000원) 후 줄 서서 탑승 대기. 소요 약 20분으로 설천봉(1,520m)에 도달합니다.</p>
+<div class="tip">💡 주말·연휴·눈꽃 시즌(1~2월)에는 탑승 대기 1시간 이상. 오전 9시 이전 도착 권장. 곤돌라 운행시간 확인(동절기 08:30~16:30 기준).</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-t">설천봉 → 향적봉 정상</div><div class="acc-m">편도 0.6km · 20분 · 고도 ↑94m</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
+<p class="acc-desc">설천봉에서 잘 정비된 데크 탐방로를 따라 향적봉까지 오릅니다. 경사는 완만하며 계단이 잘 설치되어 있어 누구나 걸을 수 있습니다. 겨울에는 탐방로 양쪽에 상고대(나무에 서리가 얼어붙은 눈꽃)가 장관을 이룹니다.</p>
+<div class="tip">💡 향적봉 정상 기온은 무주 시내보다 약 5~8°C 낮습니다. 체감온도 대비 방한복 반드시 지참.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-t">향적봉 정상 탐방 및 조망</div><div class="acc-m">정상 1,614m · 조망 30분</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:10%"></div></div></div>
+<p class="acc-desc">향적봉(1,614m)은 덕유산 최고봉이자 남한에서 네 번째로 높은 봉우리입니다. 정상에서 중봉(1,594m)→남덕유산으로 이어지는 주능선, 적상산 등 사방 파노라마 조망이 펼쳐집니다. 향적봉 대피소 내부에서 따뜻하게 쉬며 음식 구매 가능.</p>
+<div class="tip">💡 향적봉 대피소에서 라면·음료 판매. 겨울 정상 체감온도는 -20°C 이하가 될 수 있으니 장갑·모자 필수.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-t">향적봉 → 설천봉 → 곤돌라 하산</div><div class="acc-m">0.6km · 15분 · 하산</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div>
+<p class="acc-desc">올라온 길로 설천봉으로 돌아와 곤돌라를 이용해 하산합니다. 곤돌라 내에서도 설천봉~리조트 구간 경관 감상 가능.</p>
+<div class="wrn">⚠ 하산 곤돌라도 성수기 대기가 길 수 있습니다. 막차 시간(동절기 16:30) 전 설천봉 도착 필수.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tc" id="beginner-mp">
+<div class="map-wrap">
+<h3>📍 곤돌라·향적봉 코스 개념도</h3>
+<svg style="width:100%;height:auto;max-height:420px" viewbox="0 0 660 400">
+<rect fill="var(--surfaceoff)" height="400" rx="12" width="660"></rect>
+<!-- mountain bg -->
+<path d="M100 320 Q220 160 330 100 Q440 160 560 320" fill="var(--surfdyn)" fill-opacity=".25" stroke="none"></path>
+<!-- gondola cable line -->
+<line stroke="var(--sky)" stroke-dasharray="10,5" stroke-width="2.5" x1="100" x2="260" y1="340" y2="160"></line>
+<!-- walk trail -->
+<path d="M260 160 Q280 145 310 128 Q320 118 330 110" fill="none" stroke="var(--sky)" stroke-linecap="round" stroke-width="4"></path>
+<!-- down gondola -->
+<line stroke="var(--sky)" stroke-dasharray="8,5" stroke-opacity=".4" stroke-width="1.5" x1="260" x2="100" y1="160" y2="340"></line>
+<!-- nodes -->
+<rect fill="var(--sky)" fill-opacity=".15" height="30" rx="8" stroke="var(--sky)" stroke-width="1.5" width="80" x="60" y="328"></rect>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="70" y="349">무주리조트 P</text>
+<circle cx="260" cy="160" fill="var(--surfdyn)" r="11" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="12" x="275" y="155">설천봉 1,520m</text>
+<circle cx="330" cy="110" fill="var(--sky)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="355" y="103">향적봉</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="355" y="118">1,614m ★</text>
+<!-- gondola car icon -->
+<rect fill="var(--sky)" fill-opacity=".8" height="16" rx="4" width="22" x="165" y="236"></rect>
+<text fill="white" font-family="Satoshi,sans-serif" font-size="9" x="170" y="248">🚡</text>
+<!-- daepiho -->
+<circle cx="350" cy="125" fill="var(--gold)" fill-opacity=".8" r="7" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--gold)" font-family="Satoshi,sans-serif" font-size="10" x="363" y="130">향적봉대피소</text>
+<!-- compass -->
+<circle cx="618" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="615" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="618" x2="618" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="42" rx="7" stroke="var(--bor)" stroke-width="1" width="220" x="16" y="348"></rect>
+<line stroke="var(--sky)" stroke-width="3" x1="30" x2="52" y1="364" y2="364"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="368">도보 탐방로</text>
+<line stroke="var(--sky)" stroke-dasharray="6,3" stroke-width="2" x1="30" x2="52" y1="381" y2="381"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="385">곤돌라 케이블</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>무주리조트 곤돌라 탑승장</td><td>680m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·매표소·화장실</td></tr>
+<tr><td>2</td><td>설천봉 (곤돌라 하차)</td><td>1,520m</td><td>—</td><td><span class="bdg b-sk">곤돌라 도착</span></td><td>전망·식당</td></tr>
+<tr><td>3</td><td>향적봉 정상</td><td>1,614m</td><td>0.6km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·대피소·라면</td></tr>
+<tr><td>4</td><td>설천봉 (복귀)</td><td>1,520m</td><td>1.2km</td><td><span class="bdg b-sk">곤돌라 탑승</span></td><td>화장실</td></tr>
+<tr><td>5</td><td>무주리조트 (하산)</td><td>680m</td><td>3.2km</td><td><span class="bdg b-st">종점</span></td><td>식당가·스키 시설</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tc" id="beginner-tp">
+<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>방한복·패딩 (정상 기온 낮음)</li><li>장갑·목도리·모자</li><li>겨울: 미끄럼 방지 아이젠</li><li>선크림 (눈 반사 자외선)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚡</div><h4>곤돌라 이용</h4><ul><li>왕복 성인 약 17,000원</li><li>운행시간 08:30~16:30 (동절기)</li><li>강풍·폭설 시 운행 중단</li><li>출발 전 운행 여부 전화 확인</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌨</div><h4>눈꽃 시즌</h4><ul><li>1~2월 상고대 최절정</li><li>설천봉~향적봉 구간 환상 눈꽃</li><li>아이젠 착용 필수 (빙판)</li><li>주말 대기 2시간 이상 가능</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚌</div><h4>교통 정보</h4><ul><li>서울 → 동서울터미널 → 무주 버스</li><li>무주 → 무주리조트 셔틀버스</li><li>대전 → 무주 고속버스</li><li>리조트 주차료 5,000원</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🍂</div><h4>계절별 매력</h4><ul><li>봄: 철쭉 5월 중순 절정</li><li>여름: 서늘한 능선 피서</li><li>가을: 단풍 10월 중~하순</li><li>겨울: 눈꽃·상고대 최고</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📱</div><h4>유용한 정보</h4><ul><li>덕유산국립공원 063-322-3174</li><li>무주리조트 곤돌라 063-320-7000</li><li>블랙야크 100대명산 인증 가능</li><li>향적봉 일출 시각 앱 확인 권장</li></ul></div>
+</div>
+</div>
+</main>
+</div>
 <!-- ═══ 중급 ═══ -->
-<div id="course-intermediate" class="panel intermediate">
-  <nav class="tabs">
-    <button class="tab active" onclick="selT('intermediate','ov',this)">📋 개요</button>
-    <button class="tab" onclick="selT('intermediate','rt',this)">🗺 경로 안내</button>
-    <button class="tab" onclick="selT('intermediate','mp',this)">📍 지도</button>
-    <button class="tab" onclick="selT('intermediate','tp',this)">💡 팁 &amp; 주의</button>
-  </nav>
-  <main class="main">
-    <div id="intermediate-ov" class="tc active">
-      <div class="stitle"><div class="sico">🦶</div><span>중급 코스 개요</span></div>
-      <div class="stat-grid">
-        <div class="stat-card"><div class="si">📏</div><div class="sv">18km</div><div class="sl">구천동 환종주</div></div>
-        <div class="stat-card"><div class="si">⏱</div><div class="sv">6~7h</div><div class="sl">소요 시간</div></div>
-        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,614m</div><div class="sl">향적봉 정상</div></div>
-        <div class="stat-card"><div class="si">📈</div><div class="sv">±900m</div><div class="sl">누적 고도차</div></div>
-        <div class="stat-card"><div class="si">🔥</div><div class="sv">~2,000</div><div class="sl">예상 칼로리</div></div>
-        <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
-      </div>
-      <div class="elev-wrap">
-        <h3>📊 고도 프로파일 — 구천동 칠봉 환종주</h3>
-        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
-          <defs><linearGradient id="ig1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="var(--pri)" stop-opacity=".3"/>
-            <stop offset="100%" stop-color="var(--pri)" stop-opacity="0"/>
-          </linearGradient></defs>
-          <path d="M0 160 L0 155 C60 150 120 142 180 128 C220 118 256 105 290 88 C320 74 345 58 368 42 C382 30 392 18 400 12 L408 18 C416 28 425 42 438 60 C455 82 470 100 492 118 C525 140 575 152 650 156 C700 158 750 160 800 160 C835 160 865 159 900 158 L900 160Z" fill="url(#ig1)"/>
-          <path d="M0 155 C60 150 120 142 180 128 C220 118 256 105 290 88 C320 74 345 58 368 42 C382 30 392 18 400 12 L408 18 C416 28 425 42 438 60 C455 82 470 100 492 118 C525 140 575 152 650 156 C700 158 750 160 800 160" fill="none" stroke="var(--pri)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="5" y="158" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">구천동 600m</text>
-          <text x="170" y="122" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">칠봉</text>
-          <text x="275" y="82" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">백련사 970m</text>
-          <text x="370" y="36" font-size="11" fill="var(--pri)" font-weight="700" font-family="Satoshi,sans-serif">향적봉 1,614m</text>
-          <text x="480" y="112" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">중봉 1,594m</text>
-          <text x="640" y="150" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">동엽령 1,320m</text>
-          <text x="860" y="155" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif" text-anchor="end">구천동</text>
-          <circle cx="400" cy="12" r="4" fill="var(--pri)"/>
-        </svg>
-      </div>
-      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
-      <div class="flow">
-        <span class="fn pk">🅿 구천동탐방센터</span><span class="fa">→</span>
-        <span class="fn">인월담</span><span class="fa">→</span>
-        <span class="fn">칠봉</span><span class="fa">→</span>
-        <span class="fn">설천봉</span><span class="fa">→</span>
-        <span class="fn pk">향적봉 1,614m ★</span><span class="fa">→</span>
-        <span class="fn">중봉 1,594m</span><span class="fa">→</span>
-        <span class="fn sh">동엽령</span><span class="fa">→</span>
-        <span class="fn">구천동계곡</span><span class="fa">→</span>
-        <span class="fn pk">🅿 구천동 귀환</span>
-      </div>
-      <div class="ic"><h3>코스 특징</h3><ul>
-        <li>✅ 덕유산 구천동 33경(비파담·구월담·이속대 등) 계곡 전체 통과</li>
-        <li>✅ 칠봉 능선에서 구천동 계곡과 향적봉 능선의 이중 경관</li>
-        <li>✅ 구천동탐방지원센터 출발·도착 환종주 — 차량 이동 불필요</li>
-        <li>✅ 중봉(1,594m)~동엽령 능선에서 남덕유 방면 조망 빼어남</li>
-        <li>⚠ 18km 장거리 — 오전 8시 이전 출발 권장</li>
-        <li>⚠ 칠봉 능선 급경사 구간 주의 / 겨울 전구간 아이젠 필수</li>
-      </ul></div>
-    </div>
-
-    <div id="intermediate-rt" class="tc">
-      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
-      <div class="acc-wrap">
-        <div class="acc-item open">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">출</span>
-            <div class="acc-tw"><div class="acc-t">구천동탐방지원센터 출발</div><div class="acc-m">해발 600m · 전북 무주군 안성면</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <p class="acc-desc">무주 구천동 탐방지원센터에서 출발합니다. 탐방안내소에서 코스 확인 및 화장실 이용 후 입산. 주차장 이용 가능(유료).</p>
-            <div class="tip">💡 구천동은 무주군 설천면 구천동계곡으로 무주에서 버스 이용 가능. 삼공리 일대 민박·펜션 밀집.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">1</span>
-            <div class="acc-tw"><div class="acc-t">구천동 → 인월담 → 칠봉</div><div class="acc-m">약 5.0km · 2시간 · 33경 계곡 구간</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
-            <p class="acc-desc">구천동계곡을 따라 인월담·비파담 등 구천동 33경을 감상하며 완만하게 오릅니다. 칠봉 분기점에서 칠봉 능선으로 올라서면 경사가 급격히 높아집니다.</p>
-            <div class="tip">💡 구천동 33경 안내판이 설치되어 있어 계곡 경관을 하나하나 확인하며 걷는 재미가 있습니다. 계절에 따라 단풍·눈꽃·신록 경관이 다채롭습니다.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">2</span>
-            <div class="acc-tw"><div class="acc-t">칠봉 → 설천봉 → 향적봉 정상</div><div class="acc-m">약 4.5km · 2시간 · 주능선 접근</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:60%"></div></div></div>
-            <p class="acc-desc">칠봉 능선에서 설천봉까지 이어지는 구간은 덕유산 주능선 접근 구간으로 경사가 상당합니다. 설천봉에서 곤돌라 내리는 관광객들과 합류하며 향적봉까지 0.6km 마지막 오르막.</p>
-            <div class="tip">💡 설천봉에서 향적봉대피소에서 식사 가능. 중봉으로 이어지는 하산 전 충분한 에너지 보충 권장.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">3</span>
-            <div class="acc-tw"><div class="acc-t">향적봉 → 중봉 → 동엽령</div><div class="acc-m">약 4.5km · 1시간 30분 · 주능선 하산</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
-            <p class="acc-desc">향적봉에서 중봉(1,594m)을 거쳐 동엽령까지 주능선을 따라 이동합니다. 중봉에서 남덕유산 방향 능선 조망이 압도적입니다. 동엽령에서 구천동계곡 방향으로 하산.</p>
-            <div class="tip">💡 중봉 조망이 향적봉보다 오히려 뛰어나다는 평도 있습니다. 날씨가 맑으면 지리산·가야산까지 조망 가능.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">4</span>
-            <div class="acc-tw"><div class="acc-t">동엽령 → 구천동계곡 → 구천동 귀환</div><div class="acc-m">약 4.0km · 1시간 30분 · 계곡 하산</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:35%"></div></div></div>
-            <p class="acc-desc">동엽령에서 안성지구 방향 또는 구천동 방향으로 하산합니다. 구천동계곡 방향 하산 시 백련사를 들러 볼 수 있습니다. 백련사(신라 흥덕왕 창건)는 국내 최고 高 비구니 사찰(970m).</p>
-            <div class="tip">💡 백련사에서 구천동탐방센터까지 약 4km 계곡길. 시간 여유가 있으면 계곡 33경을 천천히 즐기며 하산하세요.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="intermediate-mp" class="tc">
-      <div class="map-wrap">
-        <h3>📍 구천동 환종주 코스 개념도</h3>
-        <svg viewBox="0 0 700 500" style="width:100%;height:auto;max-height:520px">
-          <rect width="700" height="500" fill="var(--surfaceoff)" rx="12"/>
-          <ellipse cx="340" cy="250" rx="270" ry="210" fill="var(--pri)" fill-opacity=".03"/>
-          <!-- up: left arc (gyeokdong valley + chilbong) -->
-          <path d="M140 440 Q135 405 138 368 Q142 330 152 295 Q164 258 182 225 Q200 195 222 168 Q244 142 268 118 Q290 96 310 78" stroke="var(--pri)" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <!-- summit -->
-          <circle cx="310" cy="78" r="18" fill="var(--pri)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="332" y="70" font-size="13" font-weight="800" fill="var(--pri)" font-family="Cabinet Grotesk,Satoshi,sans-serif">향적봉</text>
-          <text x="332" y="85" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">1,614m ★</text>
-          <!-- down: right arc (jungbong, dongyeop, valley) -->
-          <path d="M310 78 Q325 85 342 95 Q358 108 372 128 Q388 152 395 180 Q402 210 400 240 Q398 272 390 302 Q378 338 362 372 Q348 402 338 438" stroke="var(--pri)" stroke-width="3" stroke-dasharray="7,4" fill="none" stroke-linecap="round"/>
-          <!-- key nodes left -->
-          <circle cx="140" cy="440" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="160" y="445" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">구천동탐방센터 P</text>
-          <circle cx="167" cy="362" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="80" y="366" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">인월담·33경</text>
-          <circle cx="195" cy="250" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="108" y="254" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">칠봉 능선</text>
-          <circle cx="258" cy="135" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="175" y="130" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">설천봉 1,520m</text>
-          <!-- key nodes right -->
-          <circle cx="360" cy="100" r="9" fill="var(--gold)" fill-opacity=".8" stroke="var(--bg)" stroke-width="2"/>
-          <text x="340" y="108" font-size="10" fill="var(--gold)" font-family="Satoshi,sans-serif" text-anchor="end">대피소</text>
-          <circle cx="390" cy="178" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="404" y="182" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">중봉 1,594m</text>
-          <circle cx="395" cy="272" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="410" y="276" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">동엽령 1,320m</text>
-          <circle cx="366" cy="368" r="8" fill="var(--pri)" fill-opacity=".7" stroke="var(--bg)" stroke-width="2"/>
-          <text x="380" y="372" font-size="11" fill="var(--pri)" font-family="Satoshi,sans-serif">백련사 970m</text>
-          <circle cx="338" cy="438" r="13" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="268" y="462" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">구천동 귀환 P</text>
-          <!-- compass -->
-          <circle cx="648" cy="48" r="25" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
-          <text x="645" y="34" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
-          <line x1="648" y1="38" x2="648" y2="47" stroke="var(--txt)" stroke-width="1.5"/>
-          <!-- legend -->
-          <rect x="16" y="450" width="238" height="42" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
-          <line x1="30" y1="466" x2="52" y2="466" stroke="var(--pri)" stroke-width="3.5"/>
-          <text x="60" y="470" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">등정로 (칠봉 능선)</text>
-          <line x1="30" y1="483" x2="52" y2="483" stroke="var(--pri)" stroke-width="2.5" stroke-dasharray="6,3"/>
-          <text x="60" y="487" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">하산로 (중봉·동엽령)</text>
-        </svg>
-      </div>
-      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
-      <div class="cp-wrap">
-        <table class="cpt">
-          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>구천동탐방지원센터</td><td>600m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·안내소</td></tr>
-            <tr><td>2</td><td>인월담 (구천동 33경)</td><td>680m</td><td>2.0km</td><td><span class="bdg b-gl">명소</span></td><td>안내판</td></tr>
-            <tr><td>3</td><td>칠봉 분기점</td><td>870m</td><td>5.0km</td><td><span class="bdg b-sk">갈림길</span></td><td>이정표</td></tr>
-            <tr><td>4</td><td>설천봉</td><td>1,520m</td><td>8.5km</td><td><span class="bdg b-sk">봉우리</span></td><td>곤돌라 스테이션</td></tr>
-            <tr><td>5</td><td>향적봉 정상</td><td>1,614m</td><td>9.1km</td><td><span class="bdg b-pk">정상</span></td><td>대피소·라면</td></tr>
-            <tr><td>6</td><td>중봉</td><td>1,594m</td><td>10.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>조망·쉼터</td></tr>
-            <tr><td>7</td><td>동엽령</td><td>1,320m</td><td>13.0km</td><td><span class="bdg b-sk">안부</span></td><td>갈림길 이정표</td></tr>
-            <tr><td>8</td><td>백련사</td><td>970m</td><td>15.0km</td><td><span class="bdg b-te">사찰</span></td><td>화장실·탐방</td></tr>
-            <tr><td>9</td><td>구천동탐방센터 귀환</td><td>600m</td><td>18.0km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당가</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="intermediate-tp" class="tc">
-      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-      <div class="tg">
-        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>겨울: 아이젠+장갑</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 1.5L 이상</li><li>향적봉대피소 라면 구매 가능</li><li>도시락·에너지바</li><li>백련사 약수 이용 가능</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 7~8시 출발 (18km 대비)</li><li>동엽령~백련사 하산 길 미끄럼</li><li>일몰 전 하산 완료 계획</li><li>입산 통제 시간 확인</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🌊</div><h4>구천동 33경</h4><ul><li>나제통문·인월담·비파담</li><li>구월담·이속대·안심대</li><li>백련사 앞 구천폭포</li><li>계곡물 음용 금지</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🌸</div><h4>계절별 특색</h4><ul><li>봄: 구천동 신록+철쭉</li><li>여름: 계곡 청량감 최고</li><li>가을: 단풍 10월 최절정</li><li>겨울: 눈꽃 능선 압도적</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🚌</div><h4>교통 정보</h4><ul><li>무주에서 구천동 버스 운행</li><li>삼공리(구천동입구) 주차 가능</li><li>서울→동서울터미널→무주</li><li>무주군 관광 063-320-5643</li></ul></div>
-      </div>
-    </div>
-  </main>
+<div class="panel intermediate" id="course-intermediate">
+<nav class="tabs">
+<button class="tab active" onclick="selT('intermediate','ov',this)">📋 개요</button>
+<button class="tab" onclick="selT('intermediate','rt',this)">🗺 경로 안내</button>
+<button class="tab" onclick="selT('intermediate','mp',this)">📍 지도</button>
+<button class="tab" onclick="selT('intermediate','tp',this)">💡 팁 &amp; 주의</button>
+</nav>
+<main class="main">
+<div class="tc active" id="intermediate-ov">
+<div class="stitle"><div class="sico">🦶</div><span>중급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">18km</div><div class="sl">구천동 환종주</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">6~7h</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si">⛰</div><div class="sv">1,614m</div><div class="sl">향적봉 정상</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±900m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~2,000</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
 </div>
-
+<div class="elev-wrap">
+<h3>📊 고도 프로파일 — 구천동 칠봉 환종주</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ig1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--pri)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--pri)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 155 C60 150 120 142 180 128 C220 118 256 105 290 88 C320 74 345 58 368 42 C382 30 392 18 400 12 L408 18 C416 28 425 42 438 60 C455 82 470 100 492 118 C525 140 575 152 650 156 C700 158 750 160 800 160 C835 160 865 159 900 158 L900 160Z" fill="url(#ig1)"></path>
+<path d="M0 155 C60 150 120 142 180 128 C220 118 256 105 290 88 C320 74 345 58 368 42 C382 30 392 18 400 12 L408 18 C416 28 425 42 438 60 C455 82 470 100 492 118 C525 140 575 152 650 156 C700 158 750 160 800 160" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="5" y="158">구천동 600m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="170" y="122">칠봉</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="275" y="82">백련사 970m</text>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="370" y="36">향적봉 1,614m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="480" y="112">중봉 1,594m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="640" y="150">동엽령 1,320m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="860" y="155">구천동</text>
+<circle cx="400" cy="12" fill="var(--pri)" r="4"></circle>
+</svg>
+</div>
+<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="flow">
+<span class="fn pk">🅿 구천동탐방센터</span><span class="fa">→</span>
+<span class="fn">인월담</span><span class="fa">→</span>
+<span class="fn">칠봉</span><span class="fa">→</span>
+<span class="fn">설천봉</span><span class="fa">→</span>
+<span class="fn pk">향적봉 1,614m ★</span><span class="fa">→</span>
+<span class="fn">중봉 1,594m</span><span class="fa">→</span>
+<span class="fn sh">동엽령</span><span class="fa">→</span>
+<span class="fn">구천동계곡</span><span class="fa">→</span>
+<span class="fn pk">🅿 구천동 귀환</span>
+</div>
+<div class="ic"><h3>코스 특징</h3><ul>
+<li>✅ 덕유산 구천동 33경(비파담·구월담·이속대 등) 계곡 전체 통과</li>
+<li>✅ 칠봉 능선에서 구천동 계곡과 향적봉 능선의 이중 경관</li>
+<li>✅ 구천동탐방지원센터 출발·도착 환종주 — 차량 이동 불필요</li>
+<li>✅ 중봉(1,594m)~동엽령 능선에서 남덕유 방면 조망 빼어남</li>
+<li>⚠ 18km 장거리 — 오전 8시 이전 출발 권장</li>
+<li>⚠ 칠봉 능선 급경사 구간 주의 / 겨울 전구간 아이젠 필수</li>
+</ul></div>
+</div>
+<div class="tc" id="intermediate-rt">
+<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap">
+<div class="acc-item open">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">출</span>
+<div class="acc-tw"><div class="acc-t">구천동탐방지원센터 출발</div><div class="acc-m">해발 600m · 전북 무주군 안성면</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">무주 구천동 탐방지원센터에서 출발합니다. 탐방안내소에서 코스 확인 및 화장실 이용 후 입산. 주차장 이용 가능(유료).</p>
+<div class="tip">💡 구천동은 무주군 설천면 구천동계곡으로 무주에서 버스 이용 가능. 삼공리 일대 민박·펜션 밀집.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-t">구천동 → 인월담 → 칠봉</div><div class="acc-m">약 5.0km · 2시간 · 33경 계곡 구간</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
+<p class="acc-desc">구천동계곡을 따라 인월담·비파담 등 구천동 33경을 감상하며 완만하게 오릅니다. 칠봉 분기점에서 칠봉 능선으로 올라서면 경사가 급격히 높아집니다.</p>
+<div class="tip">💡 구천동 33경 안내판이 설치되어 있어 계곡 경관을 하나하나 확인하며 걷는 재미가 있습니다. 계절에 따라 단풍·눈꽃·신록 경관이 다채롭습니다.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-t">칠봉 → 설천봉 → 향적봉 정상</div><div class="acc-m">약 4.5km · 2시간 · 주능선 접근</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:60%"></div></div></div>
+<p class="acc-desc">칠봉 능선에서 설천봉까지 이어지는 구간은 덕유산 주능선 접근 구간으로 경사가 상당합니다. 설천봉에서 곤돌라 내리는 관광객들과 합류하며 향적봉까지 0.6km 마지막 오르막.</p>
+<div class="tip">💡 설천봉에서 향적봉대피소에서 식사 가능. 중봉으로 이어지는 하산 전 충분한 에너지 보충 권장.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-t">향적봉 → 중봉 → 동엽령</div><div class="acc-m">약 4.5km · 1시간 30분 · 주능선 하산</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
+<p class="acc-desc">향적봉에서 중봉(1,594m)을 거쳐 동엽령까지 주능선을 따라 이동합니다. 중봉에서 남덕유산 방향 능선 조망이 압도적입니다. 동엽령에서 구천동계곡 방향으로 하산.</p>
+<div class="tip">💡 중봉 조망이 향적봉보다 오히려 뛰어나다는 평도 있습니다. 날씨가 맑으면 지리산·가야산까지 조망 가능.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">4</span>
+<div class="acc-tw"><div class="acc-t">동엽령 → 구천동계곡 → 구천동 귀환</div><div class="acc-m">약 4.0km · 1시간 30분 · 계곡 하산</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:35%"></div></div></div>
+<p class="acc-desc">동엽령에서 안성지구 방향 또는 구천동 방향으로 하산합니다. 구천동계곡 방향 하산 시 백련사를 들러 볼 수 있습니다. 백련사(신라 흥덕왕 창건)는 국내 최고 高 비구니 사찰(970m).</p>
+<div class="tip">💡 백련사에서 구천동탐방센터까지 약 4km 계곡길. 시간 여유가 있으면 계곡 33경을 천천히 즐기며 하산하세요.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tc" id="intermediate-mp">
+<div class="map-wrap">
+<h3>📍 구천동 환종주 코스 개념도</h3>
+<svg style="width:100%;height:auto;max-height:520px" viewbox="0 0 700 500">
+<rect fill="var(--surfaceoff)" height="500" rx="12" width="700"></rect>
+<ellipse cx="340" cy="250" fill="var(--pri)" fill-opacity=".03" rx="270" ry="210"></ellipse>
+<!-- up: left arc (gyeokdong valley + chilbong) -->
+<path d="M140 440 Q135 405 138 368 Q142 330 152 295 Q164 258 182 225 Q200 195 222 168 Q244 142 268 118 Q290 96 310 78" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="4"></path>
+<!-- summit -->
+<circle cx="310" cy="78" fill="var(--pri)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="332" y="70">향적봉</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="332" y="85">1,614m ★</text>
+<!-- down: right arc (jungbong, dongyeop, valley) -->
+<path d="M310 78 Q325 85 342 95 Q358 108 372 128 Q388 152 395 180 Q402 210 400 240 Q398 272 390 302 Q378 338 362 372 Q348 402 338 438" fill="none" stroke="var(--pri)" stroke-dasharray="7,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- key nodes left -->
+<circle cx="140" cy="440" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="160" y="445">구천동탐방센터 P</text>
+<circle cx="167" cy="362" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="80" y="366">인월담·33경</text>
+<circle cx="195" cy="250" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="108" y="254">칠봉 능선</text>
+<circle cx="258" cy="135" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="175" y="130">설천봉 1,520m</text>
+<!-- key nodes right -->
+<circle cx="360" cy="100" fill="var(--gold)" fill-opacity=".8" r="9" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--gold)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="340" y="108">대피소</text>
+<circle cx="390" cy="178" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="404" y="182">중봉 1,594m</text>
+<circle cx="395" cy="272" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="410" y="276">동엽령 1,320m</text>
+<circle cx="366" cy="368" fill="var(--pri)" fill-opacity=".7" r="8" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" x="380" y="372">백련사 970m</text>
+<circle cx="338" cy="438" fill="var(--sky)" r="13" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="268" y="462">구천동 귀환 P</text>
+<!-- compass -->
+<circle cx="648" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="645" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="648" x2="648" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="42" rx="7" stroke="var(--bor)" stroke-width="1" width="238" x="16" y="450"></rect>
+<line stroke="var(--pri)" stroke-width="3.5" x1="30" x2="52" y1="466" y2="466"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="470">등정로 (칠봉 능선)</text>
+<line stroke="var(--pri)" stroke-dasharray="6,3" stroke-width="2.5" x1="30" x2="52" y1="483" y2="483"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="487">하산로 (중봉·동엽령)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>구천동탐방지원센터</td><td>600m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·안내소</td></tr>
+<tr><td>2</td><td>인월담 (구천동 33경)</td><td>680m</td><td>2.0km</td><td><span class="bdg b-gl">명소</span></td><td>안내판</td></tr>
+<tr><td>3</td><td>칠봉 분기점</td><td>870m</td><td>5.0km</td><td><span class="bdg b-sk">갈림길</span></td><td>이정표</td></tr>
+<tr><td>4</td><td>설천봉</td><td>1,520m</td><td>8.5km</td><td><span class="bdg b-sk">봉우리</span></td><td>곤돌라 스테이션</td></tr>
+<tr><td>5</td><td>향적봉 정상</td><td>1,614m</td><td>9.1km</td><td><span class="bdg b-pk">정상</span></td><td>대피소·라면</td></tr>
+<tr><td>6</td><td>중봉</td><td>1,594m</td><td>10.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>조망·쉼터</td></tr>
+<tr><td>7</td><td>동엽령</td><td>1,320m</td><td>13.0km</td><td><span class="bdg b-sk">안부</span></td><td>갈림길 이정표</td></tr>
+<tr><td>8</td><td>백련사</td><td>970m</td><td>15.0km</td><td><span class="bdg b-te">사찰</span></td><td>화장실·탐방</td></tr>
+<tr><td>9</td><td>구천동탐방센터 귀환</td><td>600m</td><td>18.0km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당가</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tc" id="intermediate-tp">
+<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수)</li><li>트레킹 스틱 2개</li><li>방풍·방수 재킷</li><li>겨울: 아이젠+장갑</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 1.5L 이상</li><li>향적봉대피소 라면 구매 가능</li><li>도시락·에너지바</li><li>백련사 약수 이용 가능</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h4>안전 수칙</h4><ul><li>오전 7~8시 출발 (18km 대비)</li><li>동엽령~백련사 하산 길 미끄럼</li><li>일몰 전 하산 완료 계획</li><li>입산 통제 시간 확인</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌊</div><h4>구천동 33경</h4><ul><li>나제통문·인월담·비파담</li><li>구월담·이속대·안심대</li><li>백련사 앞 구천폭포</li><li>계곡물 음용 금지</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h4>계절별 특색</h4><ul><li>봄: 구천동 신록+철쭉</li><li>여름: 계곡 청량감 최고</li><li>가을: 단풍 10월 최절정</li><li>겨울: 눈꽃 능선 압도적</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚌</div><h4>교통 정보</h4><ul><li>무주에서 구천동 버스 운행</li><li>삼공리(구천동입구) 주차 가능</li><li>서울→동서울터미널→무주</li><li>무주군 관광 063-320-5643</li></ul></div>
+</div>
+</div>
+</main>
+</div>
 <!-- ═══ 고급 ═══ -->
-<div id="course-advanced" class="panel advanced">
-  <nav class="tabs">
-    <button class="tab active" onclick="selT('advanced','ov',this)">📋 개요</button>
-    <button class="tab" onclick="selT('advanced','rt',this)">🗺 경로 안내</button>
-    <button class="tab" onclick="selT('advanced','mp',this)">📍 지도</button>
-    <button class="tab" onclick="selT('advanced','tp',this)">💡 팁 &amp; 주의</button>
-  </nav>
-  <main class="main">
-    <div id="advanced-ov" class="tc active">
-      <div class="stitle"><div class="sico">🏔</div><span>고급 코스 개요</span></div>
-      <div class="stat-grid">
-        <div class="stat-card"><div class="si">📏</div><div class="sv">~27km</div><div class="sl">향적봉·남덕유 종주</div></div>
-        <div class="stat-card"><div class="si">⏱</div><div class="sv">10~12h</div><div class="sl">소요 시간</div></div>
-        <div class="stat-card"><div class="si">⛰</div><div class="sv">1,614m</div><div class="sl">향적봉 정상</div></div>
-        <div class="stat-card"><div class="si">📈</div><div class="sv">1,500m</div><div class="sl">누적 고도차</div></div>
-        <div class="stat-card"><div class="si">🔥</div><div class="sv">~3,500</div><div class="sl">예상 칼로리</div></div>
-        <div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★★</div><div class="sl">난이도</div></div>
-      </div>
-      <div class="elev-wrap">
-        <h3>📊 고도 프로파일 — 육구종주 (구천동 → 육십령)</h3>
-        <svg class="elev-svg" viewBox="0 0 900 180" preserveAspectRatio="none">
-          <defs><linearGradient id="ag1" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0%" stop-color="var(--warn)" stop-opacity=".3"/>
-            <stop offset="100%" stop-color="var(--warn)" stop-opacity="0"/>
-          </linearGradient></defs>
-          <path d="M0 160 L0 155 C40 150 80 142 120 128 C150 118 170 105 195 85 C215 68 228 48 240 30 L248 20 C260 30 272 48 285 65 C300 84 318 100 338 115 C355 126 372 135 390 142 C408 148 428 152 445 155 C460 156 474 155 490 150 C504 144 515 134 530 120 C546 106 558 95 572 82 C585 70 595 60 608 48 L618 38 C628 50 638 68 652 88 C668 112 684 135 700 148 C720 158 750 162 800 162 L900 160 L900 160Z" fill="url(#ag1)"/>
-          <path d="M0 155 C40 150 80 142 120 128 C150 118 170 105 195 85 C215 68 228 48 240 30 L248 20 C260 30 272 48 285 65 C300 84 318 100 338 115 C355 126 372 135 390 142 C408 148 428 152 445 155 C460 156 474 155 490 150 C504 144 515 134 530 120 C546 106 558 95 572 82 C585 70 595 60 608 48 L618 38 C628 50 638 68 652 88 C668 112 684 135 700 148" fill="none" stroke="var(--warn)" stroke-width="2.5" stroke-linecap="round"/>
-          <text x="5" y="158" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif">구천동 600m</text>
-          <text x="225" y="16" font-size="11" fill="var(--warn)" font-weight="700" font-family="Satoshi,sans-serif">향적봉 1,614m</text>
-          <text x="340" y="108" font-size="9" fill="var(--muted)" font-family="Satoshi,sans-serif">백암봉</text>
-          <text x="430" y="148" font-size="9" fill="var(--muted)" font-family="Satoshi,sans-serif">동엽령</text>
-          <text x="495" y="144" font-size="9" fill="var(--muted)" font-family="Satoshi,sans-serif">무룡산</text>
-          <text x="578" y="76" font-size="9" fill="var(--muted)" font-family="Satoshi,sans-serif">삿갓봉</text>
-          <text x="600" y="33" font-size="11" fill="var(--warn)" font-weight="700" font-family="Satoshi,sans-serif">남덕유산 1,507m</text>
-          <text x="870" y="156" font-size="10" fill="var(--muted)" font-family="Satoshi,sans-serif" text-anchor="end">육십령</text>
-          <circle cx="248" cy="20" r="4" fill="var(--warn)"/>
-          <circle cx="618" cy="38" r="4" fill="var(--warn)"/>
-          <line x1="445" y1="10" x2="445" y2="170" stroke="var(--faint)" stroke-width="1" stroke-dasharray="4,4"/>
-          <text x="350" y="12" font-size="9" fill="var(--faint)" font-family="Satoshi,sans-serif">향적봉↑ 구간</text>
-          <text x="455" y="12" font-size="9" fill="var(--faint)" font-family="Satoshi,sans-serif">↑남덕유 구간</text>
-        </svg>
-      </div>
-      <div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
-      <div class="flow">
-        <span class="fn pk">🅿 구천동</span><span class="fa">→</span>
-        <span class="fn">백련사</span><span class="fa">→</span>
-        <span class="fn pk">향적봉 1,614m</span><span class="fa">→</span>
-        <span class="fn">중봉</span><span class="fa">→</span>
-        <span class="fn">백암봉</span><span class="fa">→</span>
-        <span class="fn sh">동엽령</span><span class="fa">→</span>
-        <span class="fn">무룡산 1,491m</span><span class="fa">→</span>
-        <span class="fn sh">삿갓재대피소</span><span class="fa">→</span>
-        <span class="fn">삿갓봉</span><span class="fa">→</span>
-        <span class="fn pk">남덕유산 1,507m</span><span class="fa">→</span>
-        <span class="fn pk">🏁 육십령</span>
-      </div>
-      <div class="ic"><h3>코스 특징</h3><ul>
-        <li>🏆 덕유산 전 능선 종주 — 구천동(구쪽)→육십령(육쪽) 이름처럼 '육구종주'</li>
-        <li>✅ 향적봉(1,614m)·중봉(1,594m)·백암봉(1,503m)·무룡산(1,491m)·삿갓봉(1,418m)·남덕유산(1,507m) 6개 봉우리 통과</li>
-        <li>✅ 삿갓재 대피소(1,280m) 숙박 1박 2일 코스로 분할 가능</li>
-        <li>✅ 백두대간 핵심 구간 관통 — 동엽령~남덕유산 구간</li>
-        <li>⚠ 편도 약 27km 장거리 — 종점 육십령 교통편 사전 준비 필수</li>
-        <li>⚠ 체력 충분한 고급 등산객 대상 — 중급 경험 충분 후 도전 권장</li>
-      </ul></div>
-    </div>
-
-    <div id="advanced-rt" class="tc">
-      <div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
-      <div class="acc-wrap">
-        <div class="acc-item open">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">출</span>
-            <div class="acc-tw"><div class="acc-t">구천동탐방센터 출발 (새벽)</div><div class="acc-m">해발 600m · 전북 무주군</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <p class="acc-desc">육구종주 당일 완주 시 오전 4~5시 새벽 출발이 필수입니다. 종점 육십령에서 장수·전주 방향 교통편을 반드시 사전에 예약하거나 차량 셔틀을 계획하세요.</p>
-            <div class="tip">💡 1박 2일 추천: 1일차 구천동→삿갓재대피소, 2일차 삿갓재→남덕유→육십령. 삿갓재대피소 예약 063-322-4536.</div>
-            <div class="wrn">⚠ 단독 산행 절대 금지. 27km 능선 구간 조난 시 구조 어려움. 3인 이상 팀 산행 권장.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">1</span>
-            <div class="acc-tw"><div class="acc-t">구천동 → 백련사 → 향적봉</div><div class="acc-m">약 9km · 3시간 30분 · 중급 구간</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:55%"></div></div></div>
-            <p class="acc-desc">구천동 33경 계곡을 따라 백련사, 향적봉대피소를 거쳐 향적봉 정상까지 오릅니다. 향적봉에서 중봉을 향해 백두대간 주능선 종주를 시작합니다.</p>
-            <div class="tip">💡 향적봉 정상에서 충분한 식사·에너지 보충. 이후 삿갓재까지 약 13km 긴 능선 산행이 이어집니다.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">2</span>
-            <div class="acc-tw"><div class="acc-t">향적봉 → 중봉 → 백암봉 → 동엽령</div><div class="acc-m">약 6km · 2시간 30분 · 백두대간 능선</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:65%"></div></div></div>
-            <p class="acc-desc">향적봉에서 중봉(1,594m)·백암봉(1,503m)을 거쳐 동엽령까지 능선을 이어갑니다. 탁 트인 능선에서 지리산·가야산·적상산까지 광활한 조망. 동엽령은 안성과 구천동을 잇는 주요 안부.</p>
-            <div class="tip">💡 동엽령에서 안성 방향 하산 탈출로 존재. 체력 이상 시 탈출 고려. 칠연계곡으로 내려가 안성탐방지원센터까지 약 4km.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">3</span>
-            <div class="acc-tw"><div class="acc-t">동엽령 → 무룡산 → 삿갓재 대피소</div><div class="acc-m">약 6km · 2시간 30분 · 고원 능선</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:72%"></div></div></div>
-            <p class="acc-desc">동엽령에서 무룡산(1,491m)을 넘어 삿갓재 대피소(1,280m)까지 고원 능선을 따라 이동합니다. 무룡산 일대 능선은 유난히 넓고 탁 트여 덕유 능선의 진수를 맛볼 수 있습니다.</p>
-            <div class="tip">💡 삿갓재 대피소에서 1박하는 경우 이곳까지만 1일차. 대피소 예약 필수. 2일차에 남덕유→육십령 하산.</div>
-          </div>
-        </div>
-        <div class="acc-item">
-          <div class="acc-hdr" onclick="togAcc(this)">
-            <span class="acc-num">4</span>
-            <div class="acc-tw"><div class="acc-t">삿갓재 → 삿갓봉 → 남덕유산 → 서봉 → 육십령</div><div class="acc-m">약 8km · 3시간 30분 · 최종 구간</div></div>
-            <svg class="acc-chev" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
-          </div>
-          <div class="acc-body">
-            <div class="dw"><div class="dlb">난이도</div><div class="dbg xh"><div class="df" style="width:85%"></div></div></div>
-            <p class="acc-desc">삿갓봉(1,418m)을 넘어 남덕유산(1,507m) 정상 도달. 남덕유산은 덕유산 제2봉으로 향적봉과는 다른 독립된 경관 제공. 서봉(1,492m)을 넘어 육십령(700m)으로 급하산하며 종주를 마무리합니다.</p>
-            <div class="tip">💡 육십령에서 장수·전주·대전 방향 버스 있으나 배차 간격이 깁니다. 택시 사전 예약 강력 권장. 육십령 바로 옆 장수군·함양군 경계.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="advanced-mp" class="tc">
-      <div class="map-wrap">
-        <h3>📍 육구종주 코스 개념도 (구천동 → 육십령)</h3>
-        <svg viewBox="0 0 820 520" style="width:100%;height:auto;max-height:540px">
-          <rect width="820" height="520" fill="var(--surfaceoff)" rx="12"/>
-          <ellipse cx="300" cy="280" rx="260" ry="200" fill="var(--warn)" fill-opacity=".03"/>
-          <ellipse cx="580" cy="280" rx="200" ry="160" fill="var(--warn)" fill-opacity=".02"/>
-          <!-- route line: gucheondong to hyangjeokbong -->
-          <path d="M100 460 Q105 425 112 390 Q122 355 140 320 Q160 285 184 255 Q208 226 232 200 Q255 175 276 152 Q293 132 304 108" stroke="var(--warn)" stroke-width="4" fill="none" stroke-linecap="round"/>
-          <!-- summit hyangjeok -->
-          <circle cx="304" cy="108" r="18" fill="var(--warn)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="325" y="100" font-size="13" font-weight="800" fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif">향적봉</text>
-          <text x="325" y="115" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">1,614m ★</text>
-          <!-- route: hyangjeok to jungbong/baekam/dongyeop -->
-          <path d="M304 108 Q320 115 335 128 Q350 145 360 165 Q370 185 376 205 Q380 222 380 240" stroke="var(--warn)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- dongyeop -->
-          <circle cx="380" cy="240" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="394" y="244" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">동엽령 1,320m</text>
-          <!-- route: dongyeop to muryong to satgat -->
-          <path d="M380 240 Q388 258 400 278 Q416 302 434 322 Q450 340 462 360 Q472 378 478 398 Q482 415 480 435" stroke="var(--warn)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- muryong -->
-          <circle cx="416" cy="302" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="430" y="306" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">무룡산 1,491m</text>
-          <!-- satgat daepiso -->
-          <circle cx="480" cy="435" r="11" fill="var(--gold)" fill-opacity=".8" stroke="var(--bg)" stroke-width="2"/>
-          <text x="496" y="440" font-size="12" fill="var(--gold)" font-weight="700" font-family="Satoshi,sans-serif">삿갓재대피소 1,280m</text>
-          <!-- route: satgat to satgatbong to namdeokyusan -->
-          <path d="M480 435 Q498 415 516 392 Q534 368 552 345 Q565 326 580 308 Q592 292 600 274 Q606 258 608 240" stroke="var(--warn)" stroke-width="3.5" fill="none" stroke-linecap="round"/>
-          <!-- satgatbong -->
-          <circle cx="552" cy="345" r="9" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="566" y="349" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">삿갓봉 1,418m</text>
-          <!-- namdeokyusan -->
-          <circle cx="608" cy="240" r="17" fill="var(--warn)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="628" y="233" font-size="13" font-weight="800" fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif">남덕유산</text>
-          <text x="628" y="248" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">1,507m</text>
-          <!-- route: namdeokyusan to yuksipreong -->
-          <path d="M608 240 Q614 262 620 286 Q628 315 636 348 Q642 378 644 412 L645 450" stroke="var(--warn)" stroke-width="3" fill="none" stroke-linecap="round"/>
-          <!-- seobong -->
-          <circle cx="622" cy="290" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="636" y="294" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">서봉 1,492m</text>
-          <!-- yuksipreong -->
-          <circle cx="645" cy="450" r="14" fill="var(--pri)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="580" y="472" font-size="12" font-weight="700" fill="var(--pri)" font-family="Satoshi,sans-serif">육십령 🏁 700m</text>
-          <!-- start node -->
-          <circle cx="100" cy="460" r="14" fill="var(--sky)" stroke="var(--bg)" stroke-width="3"/>
-          <text x="118" y="465" font-size="12" font-weight="700" fill="var(--sky)" font-family="Satoshi,sans-serif">구천동탐방센터 P</text>
-          <!-- baengnyeonsa -->
-          <circle cx="220" cy="228" r="8" fill="var(--pri)" fill-opacity=".7" stroke="var(--bg)" stroke-width="2"/>
-          <text x="145" y="224" font-size="11" fill="var(--pri)" font-family="Satoshi,sans-serif">백련사 970m</text>
-          <!-- jungbong -->
-          <circle cx="330" cy="148" r="8" fill="var(--surfdyn)" stroke="var(--bor)" stroke-width="2"/>
-          <text x="344" y="152" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">중봉 1,594m</text>
-          <!-- compass -->
-          <circle cx="770" cy="48" r="25" fill="var(--surface)" stroke="var(--bor)" stroke-width="1.5"/>
-          <text x="767" y="34" font-size="10" font-weight="700" fill="var(--txt)" font-family="Satoshi,sans-serif">N</text>
-          <line x1="770" y1="38" x2="770" y2="47" stroke="var(--txt)" stroke-width="1.5"/>
-          <!-- divider -->
-          <line x1="406" y1="30" x2="406" y2="490" stroke="var(--faint)" stroke-width="1" stroke-dasharray="5,5"/>
-          <text x="245" y="500" font-size="10" fill="var(--faint)" text-anchor="middle" font-family="Satoshi,sans-serif">← 구천동·향적봉 구간</text>
-          <text x="560" y="500" font-size="10" fill="var(--faint)" text-anchor="middle" font-family="Satoshi,sans-serif">남덕유·육십령 구간 →</text>
-          <!-- legend -->
-          <rect x="16" y="464" width="200" height="42" rx="7" fill="var(--surface)" stroke="var(--bor)" stroke-width="1"/>
-          <line x1="30" y1="480" x2="52" y2="480" stroke="var(--warn)" stroke-width="3.5"/>
-          <text x="60" y="484" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">육구종주 전체 경로</text>
-          <circle cx="38" cy="497" r="5" fill="var(--gold)" fill-opacity=".8"/>
-          <text x="52" y="501" font-size="11" fill="var(--muted)" font-family="Satoshi,sans-serif">대피소 (숙박)</text>
-        </svg>
-      </div>
-      <div class="stitle"><div class="sico">📋</div><span>전체 체크포인트 (종주)</span></div>
-      <div class="cp-wrap">
-        <table class="cpt">
-          <thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td>구천동탐방지원센터</td><td>600m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실</td></tr>
-            <tr><td>2</td><td>백련사</td><td>970m</td><td>5.0km</td><td><span class="bdg b-te">사찰</span></td><td>화장실·약수</td></tr>
-            <tr><td>3</td><td>향적봉 정상</td><td>1,614m</td><td>9.0km</td><td><span class="bdg b-pk">정상</span></td><td>대피소·라면</td></tr>
-            <tr><td>4</td><td>중봉</td><td>1,594m</td><td>10.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
-            <tr><td>5</td><td>백암봉</td><td>1,503m</td><td>12.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
-            <tr><td>6</td><td>동엽령</td><td>1,320m</td><td>15.0km</td><td><span class="bdg b-sk">안부·갈림길</span></td><td>탈출로 존재</td></tr>
-            <tr><td>7</td><td>무룡산</td><td>1,491m</td><td>17.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
-            <tr><td>8</td><td>삿갓재 대피소</td><td>1,280m</td><td>19.0km</td><td><span class="bdg b-gl">대피소</span></td><td>숙박·식사·화장실</td></tr>
-            <tr><td>9</td><td>삿갓봉</td><td>1,418m</td><td>21.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
-            <tr><td>10</td><td>남덕유산</td><td>1,507m</td><td>23.0km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·전망</td></tr>
-            <tr><td>11</td><td>서봉</td><td>1,492m</td><td>24.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
-            <tr><td>12</td><td>육십령</td><td>700m</td><td>~27km</td><td><span class="bdg b-st">종점</span></td><td>주차·화장실·버스</td></tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-
-    <div id="advanced-tp" class="tc">
-      <div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
-      <div class="tg">
-        <div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱 2개</li><li>무릎 보호대 (양쪽)</li><li>헤드램프+여분 배터리</li><li>겨울: 아이젠+스패츠</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2.5L 이상</li><li>향적봉대피소 라면·음료</li><li>삿갓재대피소 식사 가능</li><li>2끼 분량 도시락 준비</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🛖</div><h4>삿갓재 대피소</h4><ul><li>전화: 063-322-4536</li><li>예약: 국립공원 예약시스템</li><li>수용 인원 제한·사전 예약</li><li>1박 1인 13,000원 (성인)</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🚗</div><h4>교통 계획</h4><ul><li>구천동 출발→육십령 도착</li><li>육십령→장수·전주 버스 (희박)</li><li>육십령 택시 사전 예약 필수</li><li>차량팀 육십령에 주차 권장</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">💪</div><h4>체력 준비</h4><ul><li>중급 코스 10회 이상 선행</li><li>25km 이상 장거리 훈련</li><li>무릎·발목 강화 운동</li><li>전날 충분한 수면·수분</li></ul></div>
-        <div class="tc-card"><div class="tc-icon">🏔</div><h4>볼거리 정보</h4><ul><li>구천동 33경 계곡 경관</li><li>중봉·백암봉 능선 조망</li><li>무룡산 넓은 고원 능선</li><li>남덕유산~서봉 절경</li></ul></div>
-      </div>
-    </div>
-  </main>
+<div class="panel advanced" id="course-advanced">
+<nav class="tabs">
+<button class="tab active" onclick="selT('advanced','ov',this)">📋 개요</button>
+<button class="tab" onclick="selT('advanced','rt',this)">🗺 경로 안내</button>
+<button class="tab" onclick="selT('advanced','mp',this)">📍 지도</button>
+<button class="tab" onclick="selT('advanced','tp',this)">💡 팁 &amp; 주의</button>
+</nav>
+<main class="main">
+<div class="tc active" id="advanced-ov">
+<div class="stitle"><div class="sico">🏔</div><span>고급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">~27km</div><div class="sl">향적봉·남덕유 종주</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">10~12h</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si">⛰</div><div class="sv">1,614m</div><div class="sl">향적봉 정상</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">1,500m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~3,500</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★★</div><div class="sl">난이도</div></div>
 </div>
-
+<div class="elev-wrap">
+<h3>📊 고도 프로파일 — 육구종주 (구천동 → 육십령)</h3>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ag1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--warn)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--warn)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 155 C40 150 80 142 120 128 C150 118 170 105 195 85 C215 68 228 48 240 30 L248 20 C260 30 272 48 285 65 C300 84 318 100 338 115 C355 126 372 135 390 142 C408 148 428 152 445 155 C460 156 474 155 490 150 C504 144 515 134 530 120 C546 106 558 95 572 82 C585 70 595 60 608 48 L618 38 C628 50 638 68 652 88 C668 112 684 135 700 148 C720 158 750 162 800 162 L900 160 L900 160Z" fill="url(#ag1)"></path>
+<path d="M0 155 C40 150 80 142 120 128 C150 118 170 105 195 85 C215 68 228 48 240 30 L248 20 C260 30 272 48 285 65 C300 84 318 100 338 115 C355 126 372 135 390 142 C408 148 428 152 445 155 C460 156 474 155 490 150 C504 144 515 134 530 120 C546 106 558 95 572 82 C585 70 595 60 608 48 L618 38 C628 50 638 68 652 88 C668 112 684 135 700 148" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="5" y="158">구천동 600m</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="225" y="16">향적봉 1,614m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="340" y="108">백암봉</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="430" y="148">동엽령</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="495" y="144">무룡산</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="578" y="76">삿갓봉</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="600" y="33">남덕유산 1,507m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="870" y="156">육십령</text>
+<circle cx="248" cy="20" fill="var(--warn)" r="4"></circle>
+<circle cx="618" cy="38" fill="var(--warn)" r="4"></circle>
+<line stroke="var(--faint)" stroke-dasharray="4,4" stroke-width="1" x1="445" x2="445" y1="10" y2="170"></line>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="9" x="350" y="12">향적봉↑ 구간</text>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="9" x="455" y="12">↑남덕유 구간</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico">🗺</div><span>전체 코스 흐름</span></div>
+<div class="flow">
+<span class="fn pk">🅿 구천동</span><span class="fa">→</span>
+<span class="fn">백련사</span><span class="fa">→</span>
+<span class="fn pk">향적봉 1,614m</span><span class="fa">→</span>
+<span class="fn">중봉</span><span class="fa">→</span>
+<span class="fn">백암봉</span><span class="fa">→</span>
+<span class="fn sh">동엽령</span><span class="fa">→</span>
+<span class="fn">무룡산 1,491m</span><span class="fa">→</span>
+<span class="fn sh">삿갓재대피소</span><span class="fa">→</span>
+<span class="fn">삿갓봉</span><span class="fa">→</span>
+<span class="fn pk">남덕유산 1,507m</span><span class="fa">→</span>
+<span class="fn pk">🏁 육십령</span>
+</div>
+<div class="ic"><h3>코스 특징</h3><ul>
+<li>🏆 덕유산 전 능선 종주 — 구천동(구쪽)→육십령(육쪽) 이름처럼 '육구종주'</li>
+<li>✅ 향적봉(1,614m)·중봉(1,594m)·백암봉(1,503m)·무룡산(1,491m)·삿갓봉(1,418m)·남덕유산(1,507m) 6개 봉우리 통과</li>
+<li>✅ 삿갓재 대피소(1,280m) 숙박 1박 2일 코스로 분할 가능</li>
+<li>✅ 백두대간 핵심 구간 관통 — 동엽령~남덕유산 구간</li>
+<li>⚠ 편도 약 27km 장거리 — 종점 육십령 교통편 사전 준비 필수</li>
+<li>⚠ 체력 충분한 고급 등산객 대상 — 중급 경험 충분 후 도전 권장</li>
+</ul></div>
+</div>
+<div class="tc" id="advanced-rt">
+<div class="stitle"><div class="sico">🗺</div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap">
+<div class="acc-item open">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">출</span>
+<div class="acc-tw"><div class="acc-t">구천동탐방센터 출발 (새벽)</div><div class="acc-m">해발 600m · 전북 무주군</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">육구종주 당일 완주 시 오전 4~5시 새벽 출발이 필수입니다. 종점 육십령에서 장수·전주 방향 교통편을 반드시 사전에 예약하거나 차량 셔틀을 계획하세요.</p>
+<div class="tip">💡 1박 2일 추천: 1일차 구천동→삿갓재대피소, 2일차 삿갓재→남덕유→육십령. 삿갓재대피소 예약 063-322-4536.</div>
+<div class="wrn">⚠ 단독 산행 절대 금지. 27km 능선 구간 조난 시 구조 어려움. 3인 이상 팀 산행 권장.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-t">구천동 → 백련사 → 향적봉</div><div class="acc-m">약 9km · 3시간 30분 · 중급 구간</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:55%"></div></div></div>
+<p class="acc-desc">구천동 33경 계곡을 따라 백련사, 향적봉대피소를 거쳐 향적봉 정상까지 오릅니다. 향적봉에서 중봉을 향해 백두대간 주능선 종주를 시작합니다.</p>
+<div class="tip">💡 향적봉 정상에서 충분한 식사·에너지 보충. 이후 삿갓재까지 약 13km 긴 능선 산행이 이어집니다.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-t">향적봉 → 중봉 → 백암봉 → 동엽령</div><div class="acc-m">약 6km · 2시간 30분 · 백두대간 능선</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:65%"></div></div></div>
+<p class="acc-desc">향적봉에서 중봉(1,594m)·백암봉(1,503m)을 거쳐 동엽령까지 능선을 이어갑니다. 탁 트인 능선에서 지리산·가야산·적상산까지 광활한 조망. 동엽령은 안성과 구천동을 잇는 주요 안부.</p>
+<div class="tip">💡 동엽령에서 안성 방향 하산 탈출로 존재. 체력 이상 시 탈출 고려. 칠연계곡으로 내려가 안성탐방지원센터까지 약 4km.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-t">동엽령 → 무룡산 → 삿갓재 대피소</div><div class="acc-m">약 6km · 2시간 30분 · 고원 능선</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:72%"></div></div></div>
+<p class="acc-desc">동엽령에서 무룡산(1,491m)을 넘어 삿갓재 대피소(1,280m)까지 고원 능선을 따라 이동합니다. 무룡산 일대 능선은 유난히 넓고 탁 트여 덕유 능선의 진수를 맛볼 수 있습니다.</p>
+<div class="tip">💡 삿갓재 대피소에서 1박하는 경우 이곳까지만 1일차. 대피소 예약 필수. 2일차에 남덕유→육십령 하산.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">4</span>
+<div class="acc-tw"><div class="acc-t">삿갓재 → 삿갓봉 → 남덕유산 → 서봉 → 육십령</div><div class="acc-m">약 8km · 3시간 30분 · 최종 구간</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">난이도</div><div class="dbg xh"><div class="df" style="width:85%"></div></div></div>
+<p class="acc-desc">삿갓봉(1,418m)을 넘어 남덕유산(1,507m) 정상 도달. 남덕유산은 덕유산 제2봉으로 향적봉과는 다른 독립된 경관 제공. 서봉(1,492m)을 넘어 육십령(700m)으로 급하산하며 종주를 마무리합니다.</p>
+<div class="tip">💡 육십령에서 장수·전주·대전 방향 버스 있으나 배차 간격이 깁니다. 택시 사전 예약 강력 권장. 육십령 바로 옆 장수군·함양군 경계.</div>
+</div>
+</div>
+</div>
+</div>
+<div class="tc" id="advanced-mp">
+<div class="map-wrap">
+<h3>📍 육구종주 코스 개념도 (구천동 → 육십령)</h3>
+<svg style="width:100%;height:auto;max-height:540px" viewbox="0 0 820 520">
+<rect fill="var(--surfaceoff)" height="520" rx="12" width="820"></rect>
+<ellipse cx="300" cy="280" fill="var(--warn)" fill-opacity=".03" rx="260" ry="200"></ellipse>
+<ellipse cx="580" cy="280" fill="var(--warn)" fill-opacity=".02" rx="200" ry="160"></ellipse>
+<!-- route line: gucheondong to hyangjeokbong -->
+<path d="M100 460 Q105 425 112 390 Q122 355 140 320 Q160 285 184 255 Q208 226 232 200 Q255 175 276 152 Q293 132 304 108" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="4"></path>
+<!-- summit hyangjeok -->
+<circle cx="304" cy="108" fill="var(--warn)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="325" y="100">향적봉</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="325" y="115">1,614m ★</text>
+<!-- route: hyangjeok to jungbong/baekam/dongyeop -->
+<path d="M304 108 Q320 115 335 128 Q350 145 360 165 Q370 185 376 205 Q380 222 380 240" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- dongyeop -->
+<circle cx="380" cy="240" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="394" y="244">동엽령 1,320m</text>
+<!-- route: dongyeop to muryong to satgat -->
+<path d="M380 240 Q388 258 400 278 Q416 302 434 322 Q450 340 462 360 Q472 378 478 398 Q482 415 480 435" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- muryong -->
+<circle cx="416" cy="302" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="430" y="306">무룡산 1,491m</text>
+<!-- satgat daepiso -->
+<circle cx="480" cy="435" fill="var(--gold)" fill-opacity=".8" r="11" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--gold)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="496" y="440">삿갓재대피소 1,280m</text>
+<!-- route: satgat to satgatbong to namdeokyusan -->
+<path d="M480 435 Q498 415 516 392 Q534 368 552 345 Q565 326 580 308 Q592 292 600 274 Q606 258 608 240" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- satgatbong -->
+<circle cx="552" cy="345" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="566" y="349">삿갓봉 1,418m</text>
+<!-- namdeokyusan -->
+<circle cx="608" cy="240" fill="var(--warn)" r="17" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="628" y="233">남덕유산</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="628" y="248">1,507m</text>
+<!-- route: namdeokyusan to yuksipreong -->
+<path d="M608 240 Q614 262 620 286 Q628 315 636 348 Q642 378 644 412 L645 450" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3"></path>
+<!-- seobong -->
+<circle cx="622" cy="290" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="636" y="294">서봉 1,492m</text>
+<!-- yuksipreong -->
+<circle cx="645" cy="450" fill="var(--pri)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="580" y="472">육십령 🏁 700m</text>
+<!-- start node -->
+<circle cx="100" cy="460" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="118" y="465">구천동탐방센터 P</text>
+<!-- baengnyeonsa -->
+<circle cx="220" cy="228" fill="var(--pri)" fill-opacity=".7" r="8" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" x="145" y="224">백련사 970m</text>
+<!-- jungbong -->
+<circle cx="330" cy="148" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="344" y="152">중봉 1,594m</text>
+<!-- compass -->
+<circle cx="770" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="767" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="770" x2="770" y1="38" y2="47"></line>
+<!-- divider -->
+<line stroke="var(--faint)" stroke-dasharray="5,5" stroke-width="1" x1="406" x2="406" y1="30" y2="490"></line>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="middle" x="245" y="500">← 구천동·향적봉 구간</text>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="middle" x="560" y="500">남덕유·육십령 구간 →</text>
+<!-- legend -->
+<rect fill="var(--surface)" height="42" rx="7" stroke="var(--bor)" stroke-width="1" width="200" x="16" y="464"></rect>
+<line stroke="var(--warn)" stroke-width="3.5" x1="30" x2="52" y1="480" y2="480"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="484">육구종주 전체 경로</text>
+<circle cx="38" cy="497" fill="var(--gold)" fill-opacity=".8" r="5"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="52" y="501">대피소 (숙박)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico">📋</div><span>전체 체크포인트 (종주)</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>구천동탐방지원센터</td><td>600m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실</td></tr>
+<tr><td>2</td><td>백련사</td><td>970m</td><td>5.0km</td><td><span class="bdg b-te">사찰</span></td><td>화장실·약수</td></tr>
+<tr><td>3</td><td>향적봉 정상</td><td>1,614m</td><td>9.0km</td><td><span class="bdg b-pk">정상</span></td><td>대피소·라면</td></tr>
+<tr><td>4</td><td>중봉</td><td>1,594m</td><td>10.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
+<tr><td>5</td><td>백암봉</td><td>1,503m</td><td>12.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
+<tr><td>6</td><td>동엽령</td><td>1,320m</td><td>15.0km</td><td><span class="bdg b-sk">안부·갈림길</span></td><td>탈출로 존재</td></tr>
+<tr><td>7</td><td>무룡산</td><td>1,491m</td><td>17.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
+<tr><td>8</td><td>삿갓재 대피소</td><td>1,280m</td><td>19.0km</td><td><span class="bdg b-gl">대피소</span></td><td>숙박·식사·화장실</td></tr>
+<tr><td>9</td><td>삿갓봉</td><td>1,418m</td><td>21.0km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
+<tr><td>10</td><td>남덕유산</td><td>1,507m</td><td>23.0km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·전망</td></tr>
+<tr><td>11</td><td>서봉</td><td>1,492m</td><td>24.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>—</td></tr>
+<tr><td>12</td><td>육십령</td><td>700m</td><td>~27km</td><td><span class="bdg b-st">종점</span></td><td>주차·화장실·버스</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="tc" id="advanced-tp">
+<div class="stitle"><div class="sico">💡</div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon">🎒</div><h4>필수 장비</h4><ul><li>등산화 (방수·발목 지지)</li><li>트레킹 스틱 2개</li><li>무릎 보호대 (양쪽)</li><li>헤드램프+여분 배터리</li><li>겨울: 아이젠+스패츠</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h4>음식 &amp; 수분</h4><ul><li>물 2.5L 이상</li><li>향적봉대피소 라면·음료</li><li>삿갓재대피소 식사 가능</li><li>2끼 분량 도시락 준비</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛖</div><h4>삿갓재 대피소</h4><ul><li>전화: 063-322-4536</li><li>예약: 국립공원 예약시스템</li><li>수용 인원 제한·사전 예약</li><li>1박 1인 13,000원 (성인)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚗</div><h4>교통 계획</h4><ul><li>구천동 출발→육십령 도착</li><li>육십령→장수·전주 버스 (희박)</li><li>육십령 택시 사전 예약 필수</li><li>차량팀 육십령에 주차 권장</li></ul></div>
+<div class="tc-card"><div class="tc-icon">💪</div><h4>체력 준비</h4><ul><li>중급 코스 10회 이상 선행</li><li>25km 이상 장거리 훈련</li><li>무릎·발목 강화 운동</li><li>전날 충분한 수면·수분</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🏔</div><h4>볼거리 정보</h4><ul><li>구천동 33경 계곡 경관</li><li>중봉·백암봉 능선 조망</li><li>무룡산 넓은 고원 능선</li><li>남덕유산~서봉 절경</li></ul></div>
+</div>
+</div>
+</main>
+</div>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 덕유산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Deogyusan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/deogyusan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/deogyusan/g1.webp" type="image/webp"/>
+<img alt="덕유산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/deogyusan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">덕유산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Deogyusan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/deogyusan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/deogyusan/g2.webp" type="image/webp"/>
+<img alt="덕유산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/deogyusan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">덕유산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Deogyusan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/deogyusan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/deogyusan/g3.webp" type="image/webp"/>
+<img alt="덕유산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/deogyusan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">덕유산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Deogyusan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@kevin-yung-2152346613' target='_blank' rel='noopener'&gt;kevin yung&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/deogyusan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/deogyusan/g4.webp" type="image/webp"/>
+<img alt="덕유산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/deogyusan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">덕유산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
-  <p style="font-size:var(--xs);color:var(--faint)">덕유산국립공원 공식 정보 기준. 산행 전 국립공원공단 예약시스템(reservation.knps.or.kr)과 기상 정보를 반드시 확인하세요. 덕유산국립공원 063-322-3174</p>
+<p style="font-size:var(--xs);color:var(--faint)">덕유산국립공원 공식 정보 기준. 산행 전 국립공원공단 예약시스템(reservation.knps.or.kr)과 기상 정보를 반드시 확인하세요. 덕유산국립공원 063-322-3174</p>
 </footer>
-
 <script>
 (function(){
   const t=document.querySelector("[data-thm]"),r=document.documentElement;
@@ -835,6 +1315,128 @@ function selT(c,t,btn){
 }
 function togAcc(h){h.parentElement.classList.toggle("open")}
 document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
