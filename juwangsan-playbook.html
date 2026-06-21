@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-<html lang="ko" data-theme="light">
+
+<html data-theme="light" lang="ko">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>주왕산 등산 플레이북</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Noto+Serif+KR:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Noto+Serif+KR:wght@400;700&amp;display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -155,436 +156,923 @@ button{cursor:pointer;background:none;border:none;font:inherit;color:inherit}
   .kpi-grid{grid-template-columns:repeat(2,1fr)}
   .course-banner{padding:var(--space-4) var(--space-5)}
 }
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
 </style>
 </head>
 <body>
 <header class="site-header">
-  <div class="header-inner">
-    <a href="#" class="logo">
-      <svg class="logo-svg" viewBox="0 0 36 36" fill="none" aria-label="주왕산 로고">
-        <polygon points="18,3 34,30 2,30" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/>
-        <polygon points="18,9 28,27 8,27" fill="currentColor" opacity="0.12"/>
-        <line x1="12" y1="27" x2="18" y2="16" stroke="currentColor" stroke-width="1.5"/>
-        <line x1="24" y1="27" x2="18" y2="16" stroke="currentColor" stroke-width="1.5"/>
-        <circle cx="18" cy="9" r="2.2" fill="var(--color-accent)"/>
-      </svg>
-      <div>
-        <div class="logo-text">주왕산 국립공원</div>
-        <div class="logo-sub">경상북도 청송군 · 722m · 3대 암산</div>
-      </div>
-    </a>
-    <div style="display:flex;align-items:center;gap:var(--space-2)">
-      <button class="theme-toggle" data-theme-toggle aria-label="다크모드 전환">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      </button>
-    </div>
-  </div>
-</header>
-
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-badge">🏔 국립공원 12호 · 유네스코 세계지질공원</div>
-    <h1>주왕산 등산 플레이북</h1>
-    <p class="hero-desc">설악산·월출산과 함께 대한민국 3대 암산. 용추협곡의 수직 기암절벽, 3대 폭포, 전설의 주왕굴까지 — 초급부터 고급까지 3가지 코스를 완벽 안내합니다.</p>
-    <div class="hero-stats">
-      <div class="hero-stat"><span>📍</span><strong>경북 청송군 주왕산면</strong></div>
-      <div class="hero-stat"><span>⛰</span>주봉 <strong>722m</strong> / 가메봉 <strong>882m</strong></div>
-      <div class="hero-stat"><span>📅</span>국립공원 지정 <strong>1976. 3. 30</strong></div>
-      <div class="hero-stat"><span>🗺</span>면적 <strong>107.4km²</strong></div>
-    </div>
-  </div>
-</section>
-
-<div class="level-selector">
-  <div class="level-selector-label">코스 난이도를 선택하세요</div>
-  <div class="level-btns">
-    <button class="level-btn active" data-level="easy" onclick="selectLevel('easy')">
-      <span class="level-icon">🌿</span>
-      <div>
-        <div class="level-name">초급 — 주방계곡 산책 코스</div>
-        <div class="level-meta">왕복 10.6km · 4시간 20분 · 난이도 하</div>
-      </div>
-    </button>
-    <button class="level-btn" data-level="mid" onclick="selectLevel('mid')">
-      <span class="level-icon">🦶</span>
-      <div>
-        <div class="level-name">중급 — 주봉 정상 환종주 코스</div>
-        <div class="level-meta">10.1km · 4시간 40분 · 난이도 중</div>
-      </div>
-    </button>
-    <button class="level-btn" data-level="hard" onclick="selectLevel('hard')">
-      <span class="level-icon">🏔</span>
-      <div>
-        <div class="level-name">고급 — 절골·가메봉 종주 코스</div>
-        <div class="level-meta">13.5km · 7시간 5분 · 난이도 중상</div>
-      </div>
-    </button>
-  </div>
+<div class="header-inner">
+<a class="logo" href="#">
+<svg aria-label="주왕산 로고" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<polygon fill="none" points="18,3 34,30 2,30" stroke="currentColor" stroke-linejoin="round" stroke-width="2.2"></polygon>
+<polygon fill="currentColor" opacity="0.12" points="18,9 28,27 8,27"></polygon>
+<line stroke="currentColor" stroke-width="1.5" x1="12" x2="18" y1="27" y2="16"></line>
+<line stroke="currentColor" stroke-width="1.5" x1="24" x2="18" y1="27" y2="16"></line>
+<circle cx="18" cy="9" fill="var(--color-accent)" r="2.2"></circle>
+</svg>
+<div>
+<div class="logo-text">주왕산 국립공원</div>
+<div class="logo-sub">경상북도 청송군 · 722m · 3대 암산</div>
 </div>
-
+</a>
+<div style="display:flex;align-items:center;gap:var(--space-2)">
+<button aria-label="다크모드 전환" class="theme-toggle" data-theme-toggle="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</div>
+</div>
+</header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture">
+<source sizes="100vw" srcset="assets/img/juwangsan/hero-640.avif 640w, assets/img/juwangsan/hero-1024.avif 1024w, assets/img/juwangsan/hero-1600.avif 1600w, assets/img/juwangsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/juwangsan/hero-640.webp 640w, assets/img/juwangsan/hero-1024.webp 1024w, assets/img/juwangsan/hero-1600.webp 1600w, assets/img/juwangsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="주왕산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Juwangsan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/juwangsan/hero-1600.jpg" srcset="assets/img/juwangsan/hero-640.jpg 640w, assets/img/juwangsan/hero-1024.jpg 1024w, assets/img/juwangsan/hero-1600.jpg 1600w, assets/img/juwangsan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-inner">
+<div class="hero-badge">🏔 국립공원 12호 · 유네스코 세계지질공원</div>
+<h1>주왕산 등산 플레이북</h1>
+<p class="hero-desc">설악산·월출산과 함께 대한민국 3대 암산. 용추협곡의 수직 기암절벽, 3대 폭포, 전설의 주왕굴까지 — 초급부터 고급까지 3가지 코스를 완벽 안내합니다.</p>
+<div class="hero-stats">
+<div class="hero-stat"><span>📍</span><strong>경북 청송군 주왕산면</strong></div>
+<div class="hero-stat"><span>⛰</span>주봉 <strong>722m</strong> / 가메봉 <strong>882m</strong></div>
+<div class="hero-stat"><span>📅</span>국립공원 지정 <strong>1976. 3. 30</strong></div>
+<div class="hero-stat"><span>🗺</span>면적 <strong>107.4km²</strong></div>
+</div>
+</div>
+</div>
+<!-- Hero Credit Overlay -->
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
+<div class="level-selector">
+<div class="level-selector-label">코스 난이도를 선택하세요</div>
+<div class="level-btns">
+<button class="level-btn active" data-level="easy" onclick="selectLevel('easy')">
+<span class="level-icon">🌿</span>
+<div>
+<div class="level-name">초급 — 주방계곡 산책 코스</div>
+<div class="level-meta">왕복 10.6km · 4시간 20분 · 난이도 하</div>
+</div>
+</button>
+<button class="level-btn" data-level="mid" onclick="selectLevel('mid')">
+<span class="level-icon">🦶</span>
+<div>
+<div class="level-name">중급 — 주봉 정상 환종주 코스</div>
+<div class="level-meta">10.1km · 4시간 40분 · 난이도 중</div>
+</div>
+</button>
+<button class="level-btn" data-level="hard" onclick="selectLevel('hard')">
+<span class="level-icon">🏔</span>
+<div>
+<div class="level-name">고급 — 절골·가메봉 종주 코스</div>
+<div class="level-meta">13.5km · 7시간 5분 · 난이도 중상</div>
+</div>
+</button>
+</div>
+</div>
 <div class="main-content">
-
 <!-- ===== 초급 ===== -->
 <div class="course-panel active easy" id="panel-easy">
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('easy','overview')">📋 개요</button>
-    <button class="tab-btn" onclick="switchTab('easy','route')">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="switchTab('easy','map')">📍 지도</button>
-    <button class="tab-btn" onclick="switchTab('easy','tips')">💡 팁 &amp; 주의</button>
-  </div>
-  <div class="tab-content active" id="easy-overview">
-    <div class="course-banner">
-      <span class="banner-emoji">🌿</span>
-      <div>
-        <div class="banner-title">초급 — 주방계곡 산책 코스</div>
-        <div class="banner-sub">주왕산의 정수, 3대 폭포와 주왕굴을 따라 걷는 평탄한 계곡 트레킹. 가파른 오르막 없이 남녀노소 누구나 즐길 수 있는 국립공원 대표 코스입니다.</div>
-      </div>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-value">10.6<span style="font-size:.8em">km</span></div><div class="kpi-label">총 거리 (왕복)</div></div>
-      <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-value">4h<span style="font-size:.8em">20m</span></div><div class="kpi-label">예상 소요시간</div></div>
-      <div class="kpi-card"><div class="kpi-icon">📈</div><div class="kpi-value">+200<span style="font-size:.8em">m</span></div><div class="kpi-label">누적 상승고도</div></div>
-      <div class="kpi-card"><div class="kpi-icon">⛰</div><div class="kpi-value">350<span style="font-size:.8em">m</span></div><div class="kpi-label">최고 고도</div></div>
-      <div class="kpi-card"><div class="kpi-icon">🔥</div><div class="kpi-value">~750<span style="font-size:.8em">kcal</span></div><div class="kpi-label">칼로리 소모</div></div>
-      <div class="kpi-card"><div class="kpi-icon">🅿️</div><div class="kpi-value">상의<span style="font-size:.8em">주차장</span></div><div class="kpi-label">출·도착지</div></div>
-    </div>
-    <div class="section-title">📊 고도 프로파일</div>
-    <div class="elevation-wrap">
-      <svg class="elevation-svg" viewBox="0 0 700 160" preserveAspectRatio="none">
-        <defs><linearGradient id="eg-easy" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".35"/><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".05"/></linearGradient></defs>
-        <line x1="0" y1="40" x2="700" y2="40" stroke="var(--color-divider)" stroke-width="1"/>
-        <line x1="0" y1="80" x2="700" y2="80" stroke="var(--color-divider)" stroke-width="1"/>
-        <line x1="0" y1="120" x2="700" y2="120" stroke="var(--color-divider)" stroke-width="1"/>
-        <text x="4" y="38" font-size="10" fill="var(--color-text-faint)">350m</text>
-        <text x="4" y="78" font-size="10" fill="var(--color-text-faint)">300m</text>
-        <text x="4" y="118" font-size="10" fill="var(--color-text-faint)">250m</text>
-        <path d="M0,125 L80,120 L160,105 L240,102 L320,94 L400,88 L440,94 L480,94 L560,105 L640,120 L700,125 L700,148 L0,148 Z" fill="url(#eg-easy)" stroke="none"/>
-        <polyline points="0,125 80,120 160,105 240,102 320,94 400,88 440,94 480,94 560,105 640,120 700,125" fill="none" stroke="#2d7a3a" stroke-width="2.5" stroke-linejoin="round"/>
-        <circle cx="400" cy="88" r="5" fill="#2d7a3a"/>
-        <text x="0" y="140" font-size="9" fill="var(--color-text-muted)">상의주차장</text>
-        <text x="80" y="115" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">대전사</text>
-        <text x="160" y="100" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">용추폭포</text>
-        <text x="400" y="82" font-size="9" fill="#2d7a3a" text-anchor="middle" font-weight="700">내원동▲</text>
-        <text x="700" y="140" font-size="9" fill="var(--color-text-muted)" text-anchor="end">귀환</text>
-      </svg>
-    </div>
-  </div>
-  <div class="tab-content" id="easy-route">
-    <div class="segment-list">
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">P</div><div class="seg-info"><div class="seg-title">상의주차장 → 대전사</div><div class="seg-meta">⏱ 10분 · 📏 0.9km · 평탄 포장로</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:10%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">경북 청송군 주왕산면 공원길 146에서 출발. 포장된 평탄한 공원길을 따라 대전사까지. 주차비 평일 4,000원 / 주말 5,000원. 대전사는 신라 문무왕 12년 의상대사가 창건한 사찰입니다.</p><div class="tip-box"><strong>💡 Tip</strong> 대전사 경내가 마지막 화장실입니다. 반드시 이용 후 출발하세요.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">1</div><div class="seg-info"><div class="seg-title">대전사 → 용추폭포 (제1폭포)</div><div class="seg-meta">⏱ 25분 · 📏 1.4km · 계곡길</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:20%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">대전사를 지나 주방천 계곡을 따라 걷습니다. 기암괴석 절벽이 좌우로 펼쳐지는 용추협곡이 시작됩니다. 자하성 터를 지나 주왕굴 갈림길에서 직진하면 용추폭포(제1폭포, 낙차 약 4m)입니다.</p><div class="tip-box"><strong>💡 Tip</strong> 주왕굴 갈림길에서 좌측 지선으로 15분이면 주왕굴 방문 가능. 신라시대 주왕이 은거했다는 전설의 천연 동굴.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">2</div><div class="seg-info"><div class="seg-title">용추폭포 → 절구폭포(제3) → 용연폭포(제2)</div><div class="seg-meta">⏱ 35분 · 📏 1.4km · 완만한 오르막</div></div><span class="seg-diff diff-easy">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:30%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">상류 방향으로 이동하며 절구폭포(제3폭포, 2단 약 6m)와 용연폭포(제2폭포, 낙차 약 10m)를 만납니다. 용연폭포는 주왕산 3대 폭포 중 가장 아름다운 곳으로 알려져 있습니다.</p><div class="warn-box"><strong>⚠ 주의</strong> 폭우 직후에는 계곡 수위 상승으로 탐방로가 통제됩니다. 출발 전 knps.or.kr에서 확인 필수.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">3</div><div class="seg-info"><div class="seg-title">용연폭포 → 내원동 (반환점)</div><div class="seg-meta">⏱ 20분 · 📏 1.1km · 완만</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:15%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">용연폭포에서 조금 더 올라가면 내원동(350m)입니다. 과거 내원마을이 있던 터로, 이곳이 초급 코스의 최북단 반환점. 잠시 쉬다가 동일 경로로 하산합니다.</p></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">🏁</div><div class="seg-info"><div class="seg-title">내원동 → 상의주차장 귀환</div><div class="seg-meta">⏱ 65분 · 📏 4.8km · 하산</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:10%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">왔던 길을 되돌아 하산합니다. 하산 시 폭포들을 다시 감상할 수 있으며, 올라갈 때 미처 못 본 기암절벽의 디테일을 발견하는 재미가 있습니다.</p></div></div>
-    </div>
-  </div>
-  <div class="tab-content" id="easy-map">
-    <div class="map-wrap">
-      <svg class="map-svg" viewBox="0 0 600 400" style="max-height:400px">
-        <rect width="600" height="400" rx="12" fill="var(--color-surface-offset)"/>
-        <path d="M100,370 Q140,300 190,250 Q240,205 280,175 Q310,155 345,135" fill="none" stroke="#6bb8c7" stroke-width="8" stroke-linecap="round" opacity=".65"/>
-        <polyline points="100,370 190,250 265,195 300,165 345,135 380,110" fill="none" stroke="#2d7a3a" stroke-width="3" stroke-dasharray="7,3"/>
-        <polyline points="380,110 345,135 300,165 265,195 190,250 100,370" fill="none" stroke="#2d7a3a" stroke-width="2" stroke-dasharray="4,4" opacity=".35"/>
-        <circle cx="100" cy="370" r="10" fill="#2d7a3a"/>
-        <text x="114" y="368" font-size="12" fill="var(--color-text)" font-weight="700">P 상의주차장 250m</text>
-        <circle cx="190" cy="250" r="7" fill="#2d7a3a"/>
-        <text x="202" y="248" font-size="11" fill="var(--color-text)" font-weight="700">대전사 260m</text>
-        <circle cx="245" cy="218" r="5" fill="#c75a1a"/>
-        <text x="180" y="214" font-size="10" fill="var(--color-accent)">🕳 주왕굴 지선</text>
-        <circle cx="265" cy="195" r="6" fill="#3a9a50"/>
-        <text x="277" y="193" font-size="10" fill="var(--color-text)" font-weight="700">용추폭포 300m</text>
-        <circle cx="300" cy="165" r="6" fill="#3a9a50"/>
-        <text x="312" y="163" font-size="10" fill="var(--color-text)" font-weight="700">절구폭포 310m</text>
-        <circle cx="345" cy="135" r="6" fill="#3a9a50"/>
-        <text x="357" y="133" font-size="10" fill="var(--color-text)" font-weight="700">용연폭포 330m</text>
-        <circle cx="380" cy="110" r="9" fill="#1a6e2a"/>
-        <text x="392" y="108" font-size="11" fill="#2d7a3a" font-weight="800">내원동 ▲ 반환점 350m</text>
-        <circle cx="555" cy="38" r="20" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-        <text x="555" y="27" font-size="10" fill="var(--color-text)" text-anchor="middle" font-weight="700">N</text>
-        <text x="555" y="53" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">S</text>
-        <text x="537" y="42" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">W</text>
-        <text x="573" y="42" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">E</text>
-        <rect x="8" y="8" width="188" height="26" rx="5" fill="var(--color-easy-light)" stroke="var(--color-easy)" stroke-width="1"/>
-        <text x="14" y="25" font-size="11" fill="var(--color-easy)" font-weight="800">🌿 초급 · 주방계곡 코스</text>
-      </svg>
-      <div class="map-legend">
-        <div class="map-legend-item"><div class="legend-dot" style="background:#2d7a3a"></div>탐방로 (왕복)</div>
-        <div class="map-legend-item"><div class="legend-dot" style="background:#6bb8c7"></div>주방천 계곡</div>
-        <div class="map-legend-item"><div class="legend-dot" style="background:#c75a1a"></div>지선 (주왕굴)</div>
-      </div>
-    </div>
-    <div class="section-title">📋 체크포인트</div>
-    <div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
-      <tr><td><span class="cp-badge" style="background:var(--color-easy-light);color:var(--color-easy)">P</span></td><td class="cp-name">상의주차장</td><td>250m</td><td>0km</td><td>🅿️ 화장실·매점</td></tr>
-      <tr><td>1</td><td class="cp-name">대전사</td><td>260m</td><td>0.9km</td><td>⛩ 신라시대 고찰, 화장실</td></tr>
-      <tr><td>2</td><td class="cp-name">주왕굴 갈림길</td><td>280m</td><td>1.6km</td><td>🕳 주왕굴 지선 분기</td></tr>
-      <tr><td>3</td><td class="cp-name">용추폭포 (제1)</td><td>300m</td><td>2.3km</td><td>💧 낙차 4m</td></tr>
-      <tr><td>4</td><td class="cp-name">절구폭포 (제3)</td><td>310m</td><td>3.0km</td><td>💧 2단 낙차 6m</td></tr>
-      <tr><td>5</td><td class="cp-name">용연폭포 (제2)</td><td>330m</td><td>3.7km</td><td>💧 최고 절경 낙차 10m</td></tr>
-      <tr><td>🏁</td><td class="cp-name">내원동 반환점</td><td>350m</td><td>4.8km</td><td>🔄 벤치, 귀환 지점</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="tab-content" id="easy-tips">
-    <div class="tips-grid">
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">👟</span><span class="tips-card-title">추천 장비</span></div><ul class="tips-list"><li>가벼운 트레킹화 또는 운동화</li><li>1.5L 이상 충분한 물</li><li>우의 또는 방수 재킷</li><li>모자·자외선 차단제</li><li>보조 스틱 (선택)</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🍱</span><span class="tips-card-title">식·음료</span></div><ul class="tips-list"><li>대전사 매점 음료·간식 구매 가능</li><li>계곡 내부 매점 없음 — 물 충분히 지참</li><li>내원동 반환점에서 도시락 적합</li><li>하산 후 청송 닭불고기·찰보리빵 추천</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🚌</span><span class="tips-card-title">교통 안내</span></div><ul class="tips-list"><li>안동→청송 직행버스 (약 1시간 30분)</li><li>청송버스터미널→주왕산 군내버스 20분</li><li>네비: 주왕산국립공원 상의주차장</li><li>주소: 경북 청송군 주왕산면 공원길 146</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📅</span><span class="tips-card-title">최적 방문 시기</span></div><ul class="tips-list"><li>단풍 절정: 10월 말~11월 초</li><li>신록: 5~6월 (한적, 청명)</li><li>여름: 계곡 피서, 오전 이용 권장</li><li>겨울: 빙폭 장관, 아이젠 필수</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⚠️</span><span class="tips-card-title">안전 주의</span></div><ul class="tips-list"><li>폭우 후 계곡 수위 상승 시 통제</li><li>미끄러운 바위 — 우천 시 주의</li><li>일몰 2시간 전 반환 권장</li><li>탐방로 이탈 금지</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📞</span><span class="tips-card-title">비상 연락처</span></div><ul class="tips-list"><li>주왕산국립공원사무소: 054-870-5300</li><li>산악 구조대: 119</li><li>청송군청: 054-870-6000</li><li>실시간 탐방 정보: knps.or.kr</li></ul></div>
-    </div>
-  </div>
+<div class="tab-nav">
+<button class="tab-btn active" onclick="switchTab('easy','overview')">📋 개요</button>
+<button class="tab-btn" onclick="switchTab('easy','route')">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('easy','map')">📍 지도</button>
+<button class="tab-btn" onclick="switchTab('easy','tips')">💡 팁 &amp; 주의</button>
 </div>
-
+<div class="tab-content active" id="easy-overview">
+<div class="course-banner">
+<span class="banner-emoji">🌿</span>
+<div>
+<div class="banner-title">초급 — 주방계곡 산책 코스</div>
+<div class="banner-sub">주왕산의 정수, 3대 폭포와 주왕굴을 따라 걷는 평탄한 계곡 트레킹. 가파른 오르막 없이 남녀노소 누구나 즐길 수 있는 국립공원 대표 코스입니다.</div>
+</div>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-value">10.6<span style="font-size:.8em">km</span></div><div class="kpi-label">총 거리 (왕복)</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-value">4h<span style="font-size:.8em">20m</span></div><div class="kpi-label">예상 소요시간</div></div>
+<div class="kpi-card"><div class="kpi-icon">📈</div><div class="kpi-value">+200<span style="font-size:.8em">m</span></div><div class="kpi-label">누적 상승고도</div></div>
+<div class="kpi-card"><div class="kpi-icon">⛰</div><div class="kpi-value">350<span style="font-size:.8em">m</span></div><div class="kpi-label">최고 고도</div></div>
+<div class="kpi-card"><div class="kpi-icon">🔥</div><div class="kpi-value">~750<span style="font-size:.8em">kcal</span></div><div class="kpi-label">칼로리 소모</div></div>
+<div class="kpi-card"><div class="kpi-icon">🅿️</div><div class="kpi-value">상의<span style="font-size:.8em">주차장</span></div><div class="kpi-label">출·도착지</div></div>
+</div>
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg class="elevation-svg" preserveaspectratio="none" viewbox="0 0 700 160">
+<defs><lineargradient id="eg-easy" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".35"></stop><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".05"></stop></lineargradient></defs>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="40" y2="40"></line>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="80" y2="80"></line>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="120" y2="120"></line>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="38">350m</text>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="78">300m</text>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="118">250m</text>
+<path d="M0,125 L80,120 L160,105 L240,102 L320,94 L400,88 L440,94 L480,94 L560,105 L640,120 L700,125 L700,148 L0,148 Z" fill="url(#eg-easy)" stroke="none"></path>
+<polyline fill="none" points="0,125 80,120 160,105 240,102 320,94 400,88 440,94 480,94 560,105 640,120 700,125" stroke="#2d7a3a" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="400" cy="88" fill="#2d7a3a" r="5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="0" y="140">상의주차장</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="80" y="115">대전사</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="160" y="100">용추폭포</text>
+<text fill="#2d7a3a" font-size="9" font-weight="700" text-anchor="middle" x="400" y="82">내원동▲</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="end" x="700" y="140">귀환</text>
+</svg>
+</div>
+</div>
+<div class="tab-content" id="easy-route">
+<div class="segment-list">
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">P</div><div class="seg-info"><div class="seg-title">상의주차장 → 대전사</div><div class="seg-meta">⏱ 10분 · 📏 0.9km · 평탄 포장로</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:10%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">경북 청송군 주왕산면 공원길 146에서 출발. 포장된 평탄한 공원길을 따라 대전사까지. 주차비 평일 4,000원 / 주말 5,000원. 대전사는 신라 문무왕 12년 의상대사가 창건한 사찰입니다.</p><div class="tip-box"><strong>💡 Tip</strong> 대전사 경내가 마지막 화장실입니다. 반드시 이용 후 출발하세요.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">1</div><div class="seg-info"><div class="seg-title">대전사 → 용추폭포 (제1폭포)</div><div class="seg-meta">⏱ 25분 · 📏 1.4km · 계곡길</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:20%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">대전사를 지나 주방천 계곡을 따라 걷습니다. 기암괴석 절벽이 좌우로 펼쳐지는 용추협곡이 시작됩니다. 자하성 터를 지나 주왕굴 갈림길에서 직진하면 용추폭포(제1폭포, 낙차 약 4m)입니다.</p><div class="tip-box"><strong>💡 Tip</strong> 주왕굴 갈림길에서 좌측 지선으로 15분이면 주왕굴 방문 가능. 신라시대 주왕이 은거했다는 전설의 천연 동굴.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">2</div><div class="seg-info"><div class="seg-title">용추폭포 → 절구폭포(제3) → 용연폭포(제2)</div><div class="seg-meta">⏱ 35분 · 📏 1.4km · 완만한 오르막</div></div><span class="seg-diff diff-easy">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:30%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">상류 방향으로 이동하며 절구폭포(제3폭포, 2단 약 6m)와 용연폭포(제2폭포, 낙차 약 10m)를 만납니다. 용연폭포는 주왕산 3대 폭포 중 가장 아름다운 곳으로 알려져 있습니다.</p><div class="warn-box"><strong>⚠ 주의</strong> 폭우 직후에는 계곡 수위 상승으로 탐방로가 통제됩니다. 출발 전 knps.or.kr에서 확인 필수.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">3</div><div class="seg-info"><div class="seg-title">용연폭포 → 내원동 (반환점)</div><div class="seg-meta">⏱ 20분 · 📏 1.1km · 완만</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:15%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">용연폭포에서 조금 더 올라가면 내원동(350m)입니다. 과거 내원마을이 있던 터로, 이곳이 초급 코스의 최북단 반환점. 잠시 쉬다가 동일 경로로 하산합니다.</p></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">🏁</div><div class="seg-info"><div class="seg-title">내원동 → 상의주차장 귀환</div><div class="seg-meta">⏱ 65분 · 📏 4.8km · 하산</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:10%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">왔던 길을 되돌아 하산합니다. 하산 시 폭포들을 다시 감상할 수 있으며, 올라갈 때 미처 못 본 기암절벽의 디테일을 발견하는 재미가 있습니다.</p></div></div>
+</div>
+</div>
+<div class="tab-content" id="easy-map">
+<div class="map-wrap">
+<svg class="map-svg" style="max-height:400px" viewbox="0 0 600 400">
+<rect fill="var(--color-surface-offset)" height="400" rx="12" width="600"></rect>
+<path d="M100,370 Q140,300 190,250 Q240,205 280,175 Q310,155 345,135" fill="none" opacity=".65" stroke="#6bb8c7" stroke-linecap="round" stroke-width="8"></path>
+<polyline fill="none" points="100,370 190,250 265,195 300,165 345,135 380,110" stroke="#2d7a3a" stroke-dasharray="7,3" stroke-width="3"></polyline>
+<polyline fill="none" opacity=".35" points="380,110 345,135 300,165 265,195 190,250 100,370" stroke="#2d7a3a" stroke-dasharray="4,4" stroke-width="2"></polyline>
+<circle cx="100" cy="370" fill="#2d7a3a" r="10"></circle>
+<text fill="var(--color-text)" font-size="12" font-weight="700" x="114" y="368">P 상의주차장 250m</text>
+<circle cx="190" cy="250" fill="#2d7a3a" r="7"></circle>
+<text fill="var(--color-text)" font-size="11" font-weight="700" x="202" y="248">대전사 260m</text>
+<circle cx="245" cy="218" fill="#c75a1a" r="5"></circle>
+<text fill="var(--color-accent)" font-size="10" x="180" y="214">🕳 주왕굴 지선</text>
+<circle cx="265" cy="195" fill="#3a9a50" r="6"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="277" y="193">용추폭포 300m</text>
+<circle cx="300" cy="165" fill="#3a9a50" r="6"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="312" y="163">절구폭포 310m</text>
+<circle cx="345" cy="135" fill="#3a9a50" r="6"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="357" y="133">용연폭포 330m</text>
+<circle cx="380" cy="110" fill="#1a6e2a" r="9"></circle>
+<text fill="#2d7a3a" font-size="11" font-weight="800" x="392" y="108">내원동 ▲ 반환점 350m</text>
+<circle cx="555" cy="38" fill="var(--color-surface)" r="20" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" text-anchor="middle" x="555" y="27">N</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="555" y="53">S</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="537" y="42">W</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="573" y="42">E</text>
+<rect fill="var(--color-easy-light)" height="26" rx="5" stroke="var(--color-easy)" stroke-width="1" width="188" x="8" y="8"></rect>
+<text fill="var(--color-easy)" font-size="11" font-weight="800" x="14" y="25">🌿 초급 · 주방계곡 코스</text>
+</svg>
+<div class="map-legend">
+<div class="map-legend-item"><div class="legend-dot" style="background:#2d7a3a"></div>탐방로 (왕복)</div>
+<div class="map-legend-item"><div class="legend-dot" style="background:#6bb8c7"></div>주방천 계곡</div>
+<div class="map-legend-item"><div class="legend-dot" style="background:#c75a1a"></div>지선 (주왕굴)</div>
+</div>
+</div>
+<div class="section-title">📋 체크포인트</div>
+<div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
+<tr><td><span class="cp-badge" style="background:var(--color-easy-light);color:var(--color-easy)">P</span></td><td class="cp-name">상의주차장</td><td>250m</td><td>0km</td><td>🅿️ 화장실·매점</td></tr>
+<tr><td>1</td><td class="cp-name">대전사</td><td>260m</td><td>0.9km</td><td>⛩ 신라시대 고찰, 화장실</td></tr>
+<tr><td>2</td><td class="cp-name">주왕굴 갈림길</td><td>280m</td><td>1.6km</td><td>🕳 주왕굴 지선 분기</td></tr>
+<tr><td>3</td><td class="cp-name">용추폭포 (제1)</td><td>300m</td><td>2.3km</td><td>💧 낙차 4m</td></tr>
+<tr><td>4</td><td class="cp-name">절구폭포 (제3)</td><td>310m</td><td>3.0km</td><td>💧 2단 낙차 6m</td></tr>
+<tr><td>5</td><td class="cp-name">용연폭포 (제2)</td><td>330m</td><td>3.7km</td><td>💧 최고 절경 낙차 10m</td></tr>
+<tr><td>🏁</td><td class="cp-name">내원동 반환점</td><td>350m</td><td>4.8km</td><td>🔄 벤치, 귀환 지점</td></tr>
+</tbody></table></div>
+</div>
+<div class="tab-content" id="easy-tips">
+<div class="tips-grid">
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">👟</span><span class="tips-card-title">추천 장비</span></div><ul class="tips-list"><li>가벼운 트레킹화 또는 운동화</li><li>1.5L 이상 충분한 물</li><li>우의 또는 방수 재킷</li><li>모자·자외선 차단제</li><li>보조 스틱 (선택)</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🍱</span><span class="tips-card-title">식·음료</span></div><ul class="tips-list"><li>대전사 매점 음료·간식 구매 가능</li><li>계곡 내부 매점 없음 — 물 충분히 지참</li><li>내원동 반환점에서 도시락 적합</li><li>하산 후 청송 닭불고기·찰보리빵 추천</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🚌</span><span class="tips-card-title">교통 안내</span></div><ul class="tips-list"><li>안동→청송 직행버스 (약 1시간 30분)</li><li>청송버스터미널→주왕산 군내버스 20분</li><li>네비: 주왕산국립공원 상의주차장</li><li>주소: 경북 청송군 주왕산면 공원길 146</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📅</span><span class="tips-card-title">최적 방문 시기</span></div><ul class="tips-list"><li>단풍 절정: 10월 말~11월 초</li><li>신록: 5~6월 (한적, 청명)</li><li>여름: 계곡 피서, 오전 이용 권장</li><li>겨울: 빙폭 장관, 아이젠 필수</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⚠️</span><span class="tips-card-title">안전 주의</span></div><ul class="tips-list"><li>폭우 후 계곡 수위 상승 시 통제</li><li>미끄러운 바위 — 우천 시 주의</li><li>일몰 2시간 전 반환 권장</li><li>탐방로 이탈 금지</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📞</span><span class="tips-card-title">비상 연락처</span></div><ul class="tips-list"><li>주왕산국립공원사무소: 054-870-5300</li><li>산악 구조대: 119</li><li>청송군청: 054-870-6000</li><li>실시간 탐방 정보: knps.or.kr</li></ul></div>
+</div>
+</div>
+</div>
 <!-- ===== 중급 ===== -->
 <div class="course-panel mid" id="panel-mid">
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('mid','overview')">📋 개요</button>
-    <button class="tab-btn" onclick="switchTab('mid','route')">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="switchTab('mid','map')">📍 지도</button>
-    <button class="tab-btn" onclick="switchTab('mid','tips')">💡 팁 &amp; 주의</button>
-  </div>
-  <div class="tab-content active" id="mid-overview">
-    <div class="course-banner">
-      <span class="banner-emoji">🦶</span>
-      <div>
-        <div class="banner-title">중급 — 주봉 정상 환종주 코스</div>
-        <div class="banner-sub">100대 명산 주봉(722m)을 정복하고 협곡·폭포를 모두 즐기는 환종주. 경사도 평균 20.7%의 급경사를 극복하면 웅장한 기암절벽 조망이 보상으로 기다립니다.</div>
-      </div>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-value">10.1<span style="font-size:.8em">km</span></div><div class="kpi-label">총 거리</div></div>
-      <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-value">4h<span style="font-size:.8em">40m</span></div><div class="kpi-label">예상 소요시간</div></div>
-      <div class="kpi-card"><div class="kpi-icon">📈</div><div class="kpi-value">+625<span style="font-size:.8em">m</span></div><div class="kpi-label">누적 상승고도</div></div>
-      <div class="kpi-card"><div class="kpi-icon">⛰</div><div class="kpi-value">722<span style="font-size:.8em">m</span></div><div class="kpi-label">최고 고도 (주봉)</div></div>
-      <div class="kpi-card"><div class="kpi-icon">🔥</div><div class="kpi-value">~1,400<span style="font-size:.8em">kcal</span></div><div class="kpi-label">칼로리 소모</div></div>
-      <div class="kpi-card"><div class="kpi-icon">🅿️</div><div class="kpi-value">상의<span style="font-size:.8em">주차장</span></div><div class="kpi-label">출·도착지</div></div>
-    </div>
-    <div class="section-title">📊 고도 프로파일</div>
-    <div class="elevation-wrap">
-      <svg class="elevation-svg" viewBox="0 0 700 160" preserveAspectRatio="none">
-        <defs><linearGradient id="eg-mid" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1a5e9e" stop-opacity=".35"/><stop offset="100%" stop-color="#1a5e9e" stop-opacity=".05"/></linearGradient></defs>
-        <line x1="0" y1="30" x2="700" y2="30" stroke="var(--color-divider)" stroke-width="1"/>
-        <line x1="0" y1="70" x2="700" y2="70" stroke="var(--color-divider)" stroke-width="1"/>
-        <line x1="0" y1="110" x2="700" y2="110" stroke="var(--color-divider)" stroke-width="1"/>
-        <text x="4" y="28" font-size="10" fill="var(--color-text-faint)">722m</text>
-        <text x="4" y="68" font-size="10" fill="var(--color-text-faint)">500m</text>
-        <text x="4" y="108" font-size="10" fill="var(--color-text-faint)">250m</text>
-        <path d="M0,108 L60,105 L200,70 L340,37 L400,30 L450,42 L520,80 L580,100 L640,105 L700,108 L700,145 L0,145 Z" fill="url(#eg-mid)" stroke="none"/>
-        <polyline points="0,108 60,105 200,70 340,37 400,30 450,42 520,80 580,100 640,105 700,108" fill="none" stroke="#1a5e9e" stroke-width="2.5" stroke-linejoin="round"/>
-        <circle cx="400" cy="30" r="6" fill="#1a5e9e"/>
-        <text x="0" y="125" font-size="9" fill="var(--color-text-muted)">상의주차장</text>
-        <text x="60" y="120" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">대전사</text>
-        <text x="400" y="23" font-size="9" fill="#1a5e9e" text-anchor="middle" font-weight="700">주봉▲722m</text>
-        <text x="450" y="57" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">칼등고개</text>
-        <text x="520" y="95" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">후리메기</text>
-        <text x="700" y="125" font-size="9" fill="var(--color-text-muted)" text-anchor="end">귀환</text>
-      </svg>
-    </div>
-  </div>
-  <div class="tab-content" id="mid-route">
-    <div class="segment-list">
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">P</div><div class="seg-info"><div class="seg-title">상의주차장 → 대전사</div><div class="seg-meta">⏱ 10분 · 📏 0.9km</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:10%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">평탄한 포장로로 대전사까지. 출발 전 준비운동 철저히 하고, 화장실·물 보충 완료 후 주봉 방향 진입.</p></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">1</div><div class="seg-info"><div class="seg-title">대전사 → 전망대 구간 (급경사)</div><div class="seg-meta">⏱ 80분 · 📏 2.3km · 급경사 계단</div></div><span class="seg-diff diff-hard">어려움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:85%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">대전사 뒤편 오른쪽 주봉 방향으로 진입. 계단형 급경사가 연속으로 이어지며 이 코스의 핵심 난구간입니다. 전망대 3곳에서 주방계곡과 기암절벽 전경을 즐기며 호흡을 고릅니다. 경사도 평균 20.7%.</p><div class="warn-box"><strong>⚠ 주의</strong> 경사도 20.7% — 스틱 2개 강력 권장. 무릎 보호대 착용 시 하산 부상 예방.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">2</div><div class="seg-info"><div class="seg-title">전망대 → 주봉 정상 722m</div><div class="seg-meta">⏱ 30분 · 📏 0.9km · 능선</div></div><span class="seg-diff diff-mid">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:55%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">전망대를 지나 능선부로 올라서며 경사가 완만해집니다. 주봉 정상(722m)에서 사방으로 트인 조망 — 북서로 청송 시가지, 남동으로 가메봉(882m), 맑은 날 울진 해안까지 보입니다.</p><div class="tip-box"><strong>💡 Tip</strong> 정상 체류 시간을 충분히 확보하세요. 점심·간식을 정상에서 즐기는 것을 권장합니다.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">3</div><div class="seg-info"><div class="seg-title">주봉 → 칼등고개 → 후리메기삼거리</div><div class="seg-meta">⏱ 70분 · 📏 2.5km · 능선 하강</div></div><span class="seg-diff diff-mid">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:50%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">주봉에서 서쪽으로 능선을 따라 칼등고개(갈림길)를 지나 후리메기삼거리로 내려옵니다. 능선 하강 구간으로 조망을 즐기며 계곡으로 합류합니다.</p></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">4</div><div class="seg-info"><div class="seg-title">후리메기삼거리 → 용추폭포 → 상의주차장</div><div class="seg-meta">⏱ 60분 · 📏 4.3km · 계곡 하산</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:20%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">주방천 계곡을 따라 하류로 이동. 용연폭포→용추폭포를 순서대로 다시 만나며 계곡의 아름다움을 즐깁니다. 대전사→상의주차장 0.9km로 환종주 완료.</p></div></div>
-    </div>
-  </div>
-  <div class="tab-content" id="mid-map">
-    <div class="map-wrap">
-      <svg class="map-svg" viewBox="0 0 600 400" style="max-height:400px">
-        <rect width="600" height="400" rx="12" fill="var(--color-surface-offset)"/>
-        <path d="M90,370 Q130,305 180,255 Q220,215 260,182" fill="none" stroke="#6bb8c7" stroke-width="7" stroke-linecap="round" opacity=".6"/>
-        <polyline points="180,255 240,220 290,180 340,140 370,100 290,58" fill="none" stroke="#1a5e9e" stroke-width="3" stroke-dasharray="6,3"/>
-        <polyline points="290,58 350,90 400,125 430,155 455,185" fill="none" stroke="#3479be" stroke-width="2.5" stroke-dasharray="5,3"/>
-        <polyline points="455,185 430,215 395,250 355,280 310,305 265,325 200,355 145,375 90,370" fill="none" stroke="#1a5e9e" stroke-width="2" stroke-dasharray="4,4" opacity=".5"/>
-        <circle cx="90" cy="370" r="10" fill="#1a5e9e"/>
-        <text x="104" y="368" font-size="12" fill="var(--color-text)" font-weight="700">P 상의주차장 250m</text>
-        <circle cx="180" cy="255" r="7" fill="#1a5e9e"/>
-        <text x="192" y="253" font-size="11" fill="var(--color-text)" font-weight="700">대전사 260m</text>
-        <circle cx="290" cy="58" r="12" fill="#1a5e9e"/>
-        <text x="306" y="54" font-size="12" fill="#1a5e9e" font-weight="800">주봉 ▲ 722m</text>
-        <circle cx="350" cy="90" r="7" fill="#3479be"/>
-        <text x="362" y="88" font-size="10" fill="var(--color-text)" font-weight="700">칼등고개 580m</text>
-        <circle cx="430" cy="155" r="7" fill="#3479be"/>
-        <text x="442" y="153" font-size="10" fill="var(--color-text)" font-weight="700">후리메기삼거리 370m</text>
-        <circle cx="310" cy="158" r="5" fill="#56b000"/>
-        <text x="310" y="146" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">용연폭포</text>
-        <circle cx="265" cy="182" r="5" fill="#56b000"/>
-        <text x="265" y="170" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">용추폭포</text>
-        <text x="225" y="138" font-size="10" fill="#1a5e9e" font-style="italic">① 급경사 오르막</text>
-        <text x="360" y="115" font-size="10" fill="#3479be" font-style="italic">② 능선</text>
-        <text x="360" y="290" font-size="10" fill="#1a5e9e" font-style="italic" opacity=".7">③ 계곡 하산</text>
-        <circle cx="555" cy="38" r="20" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-        <text x="555" y="27" font-size="10" fill="var(--color-text)" text-anchor="middle" font-weight="700">N</text>
-        <text x="555" y="53" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">S</text>
-        <text x="537" y="42" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">W</text>
-        <text x="573" y="42" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">E</text>
-        <rect x="8" y="8" width="205" height="26" rx="5" fill="var(--color-mid-light)" stroke="var(--color-mid)" stroke-width="1"/>
-        <text x="14" y="25" font-size="11" fill="var(--color-mid)" font-weight="800">🦶 중급 · 주봉 환종주 코스</text>
-      </svg>
-      <div class="map-legend">
-        <div class="map-legend-item"><div class="legend-dot" style="background:#1a5e9e"></div>오르막 탐방로</div>
-        <div class="map-legend-item"><div class="legend-dot" style="background:#3479be"></div>능선·하산로</div>
-        <div class="map-legend-item"><div class="legend-dot" style="background:#6bb8c7"></div>주방천 계곡</div>
-      </div>
-    </div>
-    <div class="section-title">📋 체크포인트</div>
-    <div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
-      <tr><td><span class="cp-badge" style="background:var(--color-mid-light);color:var(--color-mid)">P</span></td><td class="cp-name">상의주차장</td><td>250m</td><td>0km</td><td>🅿️ 출발지</td></tr>
-      <tr><td>1</td><td class="cp-name">대전사</td><td>260m</td><td>0.9km</td><td>⛩ 화장실·물 보충</td></tr>
-      <tr><td>2</td><td class="cp-name">제1전망대</td><td>450m</td><td>2.2km</td><td>🔭 용추협곡 조망</td></tr>
-      <tr><td>3</td><td class="cp-name">제2·3전망대</td><td>600m</td><td>2.8km</td><td>🔭 능선 파노라마</td></tr>
-      <tr><td>🏔</td><td class="cp-name">주봉 정상</td><td>722m</td><td>3.2km</td><td>🏔 정상석, 360° 조망</td></tr>
-      <tr><td>4</td><td class="cp-name">칼등고개</td><td>580m</td><td>4.2km</td><td>⛰ 능선 갈림길</td></tr>
-      <tr><td>5</td><td class="cp-name">후리메기삼거리</td><td>370m</td><td>5.7km</td><td>🔀 계곡 합류</td></tr>
-      <tr><td>6</td><td class="cp-name">용연폭포</td><td>330m</td><td>7.2km</td><td>💧 제2폭포</td></tr>
-      <tr><td>🏁</td><td class="cp-name">상의주차장 귀환</td><td>250m</td><td>10.1km</td><td>✅ 종료</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="tab-content" id="mid-tips">
-    <div class="tips-grid">
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">👟</span><span class="tips-card-title">필수 장비</span></div><ul class="tips-list"><li>발목 지지 가능한 등산화 (필수)</li><li>등산 스틱 2개 — 급경사 하산</li><li>무릎 보호대 (경사도 20.7%)</li><li>2L 이상 물 + 에너지 간식</li><li>방수 재킷·여벌 양말</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⏰</span><span class="tips-card-title">시간 계획</span></div><ul class="tips-list"><li>오전 9시 이전 출발 권장</li><li>주봉 정상에서 30분 이상 여유</li><li>일몰 3시간 전 하산 시작</li><li>우천 시 탐방로 폐쇄 가능 — 사전 확인</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📸</span><span class="tips-card-title">포토 스폿</span></div><ul class="tips-list"><li>제1·2·3 전망대 — 협곡 전경</li><li>주봉 정상 정상석</li><li>용연폭포 상단 바위</li><li>대전사와 기암절벽 프레임샷</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⚠️</span><span class="tips-card-title">안전 주의</span></div><ul class="tips-list"><li>대전사~주봉 급경사 — 천천히 이동</li><li>하산 시 무릎 통증 유발 — 스틱 필수</li><li>정상부 강풍 주의</li><li>낙석 위험: 전망대 직하 바위 지대</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🏕</span><span class="tips-card-title">주변 명소</span></div><ul class="tips-list"><li>주산지 — 왕버들 연못, 영화 촬영지</li><li>달기약수 — 철분 함유 약수</li><li>청송민속박물관</li><li>주왕산 온천</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🍽</span><span class="tips-card-title">주변 맛집</span></div><ul class="tips-list"><li>닭불고기 (청송 향토 음식)</li><li>청송 사과 (10~11월 수확)</li><li>찰보리빵 (주왕산 입구 직판장)</li><li>산채비빔밥 (공원 입구 식당가)</li></ul></div>
-    </div>
-  </div>
+<div class="tab-nav">
+<button class="tab-btn active" onclick="switchTab('mid','overview')">📋 개요</button>
+<button class="tab-btn" onclick="switchTab('mid','route')">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('mid','map')">📍 지도</button>
+<button class="tab-btn" onclick="switchTab('mid','tips')">💡 팁 &amp; 주의</button>
 </div>
-
+<div class="tab-content active" id="mid-overview">
+<div class="course-banner">
+<span class="banner-emoji">🦶</span>
+<div>
+<div class="banner-title">중급 — 주봉 정상 환종주 코스</div>
+<div class="banner-sub">100대 명산 주봉(722m)을 정복하고 협곡·폭포를 모두 즐기는 환종주. 경사도 평균 20.7%의 급경사를 극복하면 웅장한 기암절벽 조망이 보상으로 기다립니다.</div>
+</div>
+</div>
+<div class="kpi-grid">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-value">10.1<span style="font-size:.8em">km</span></div><div class="kpi-label">총 거리</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-value">4h<span style="font-size:.8em">40m</span></div><div class="kpi-label">예상 소요시간</div></div>
+<div class="kpi-card"><div class="kpi-icon">📈</div><div class="kpi-value">+625<span style="font-size:.8em">m</span></div><div class="kpi-label">누적 상승고도</div></div>
+<div class="kpi-card"><div class="kpi-icon">⛰</div><div class="kpi-value">722<span style="font-size:.8em">m</span></div><div class="kpi-label">최고 고도 (주봉)</div></div>
+<div class="kpi-card"><div class="kpi-icon">🔥</div><div class="kpi-value">~1,400<span style="font-size:.8em">kcal</span></div><div class="kpi-label">칼로리 소모</div></div>
+<div class="kpi-card"><div class="kpi-icon">🅿️</div><div class="kpi-value">상의<span style="font-size:.8em">주차장</span></div><div class="kpi-label">출·도착지</div></div>
+</div>
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg class="elevation-svg" preserveaspectratio="none" viewbox="0 0 700 160">
+<defs><lineargradient id="eg-mid" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#1a5e9e" stop-opacity=".35"></stop><stop offset="100%" stop-color="#1a5e9e" stop-opacity=".05"></stop></lineargradient></defs>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="30" y2="30"></line>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="70" y2="70"></line>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="110" y2="110"></line>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="28">722m</text>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="68">500m</text>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="108">250m</text>
+<path d="M0,108 L60,105 L200,70 L340,37 L400,30 L450,42 L520,80 L580,100 L640,105 L700,108 L700,145 L0,145 Z" fill="url(#eg-mid)" stroke="none"></path>
+<polyline fill="none" points="0,108 60,105 200,70 340,37 400,30 450,42 520,80 580,100 640,105 700,108" stroke="#1a5e9e" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="400" cy="30" fill="#1a5e9e" r="6"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="0" y="125">상의주차장</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="60" y="120">대전사</text>
+<text fill="#1a5e9e" font-size="9" font-weight="700" text-anchor="middle" x="400" y="23">주봉▲722m</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="450" y="57">칼등고개</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="520" y="95">후리메기</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="end" x="700" y="125">귀환</text>
+</svg>
+</div>
+</div>
+<div class="tab-content" id="mid-route">
+<div class="segment-list">
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">P</div><div class="seg-info"><div class="seg-title">상의주차장 → 대전사</div><div class="seg-meta">⏱ 10분 · 📏 0.9km</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:10%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">평탄한 포장로로 대전사까지. 출발 전 준비운동 철저히 하고, 화장실·물 보충 완료 후 주봉 방향 진입.</p></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">1</div><div class="seg-info"><div class="seg-title">대전사 → 전망대 구간 (급경사)</div><div class="seg-meta">⏱ 80분 · 📏 2.3km · 급경사 계단</div></div><span class="seg-diff diff-hard">어려움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:85%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">대전사 뒤편 오른쪽 주봉 방향으로 진입. 계단형 급경사가 연속으로 이어지며 이 코스의 핵심 난구간입니다. 전망대 3곳에서 주방계곡과 기암절벽 전경을 즐기며 호흡을 고릅니다. 경사도 평균 20.7%.</p><div class="warn-box"><strong>⚠ 주의</strong> 경사도 20.7% — 스틱 2개 강력 권장. 무릎 보호대 착용 시 하산 부상 예방.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">2</div><div class="seg-info"><div class="seg-title">전망대 → 주봉 정상 722m</div><div class="seg-meta">⏱ 30분 · 📏 0.9km · 능선</div></div><span class="seg-diff diff-mid">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:55%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">전망대를 지나 능선부로 올라서며 경사가 완만해집니다. 주봉 정상(722m)에서 사방으로 트인 조망 — 북서로 청송 시가지, 남동으로 가메봉(882m), 맑은 날 울진 해안까지 보입니다.</p><div class="tip-box"><strong>💡 Tip</strong> 정상 체류 시간을 충분히 확보하세요. 점심·간식을 정상에서 즐기는 것을 권장합니다.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">3</div><div class="seg-info"><div class="seg-title">주봉 → 칼등고개 → 후리메기삼거리</div><div class="seg-meta">⏱ 70분 · 📏 2.5km · 능선 하강</div></div><span class="seg-diff diff-mid">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:50%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">주봉에서 서쪽으로 능선을 따라 칼등고개(갈림길)를 지나 후리메기삼거리로 내려옵니다. 능선 하강 구간으로 조망을 즐기며 계곡으로 합류합니다.</p></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">4</div><div class="seg-info"><div class="seg-title">후리메기삼거리 → 용추폭포 → 상의주차장</div><div class="seg-meta">⏱ 60분 · 📏 4.3km · 계곡 하산</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:20%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">주방천 계곡을 따라 하류로 이동. 용연폭포→용추폭포를 순서대로 다시 만나며 계곡의 아름다움을 즐깁니다. 대전사→상의주차장 0.9km로 환종주 완료.</p></div></div>
+</div>
+</div>
+<div class="tab-content" id="mid-map">
+<div class="map-wrap">
+<svg class="map-svg" style="max-height:400px" viewbox="0 0 600 400">
+<rect fill="var(--color-surface-offset)" height="400" rx="12" width="600"></rect>
+<path d="M90,370 Q130,305 180,255 Q220,215 260,182" fill="none" opacity=".6" stroke="#6bb8c7" stroke-linecap="round" stroke-width="7"></path>
+<polyline fill="none" points="180,255 240,220 290,180 340,140 370,100 290,58" stroke="#1a5e9e" stroke-dasharray="6,3" stroke-width="3"></polyline>
+<polyline fill="none" points="290,58 350,90 400,125 430,155 455,185" stroke="#3479be" stroke-dasharray="5,3" stroke-width="2.5"></polyline>
+<polyline fill="none" opacity=".5" points="455,185 430,215 395,250 355,280 310,305 265,325 200,355 145,375 90,370" stroke="#1a5e9e" stroke-dasharray="4,4" stroke-width="2"></polyline>
+<circle cx="90" cy="370" fill="#1a5e9e" r="10"></circle>
+<text fill="var(--color-text)" font-size="12" font-weight="700" x="104" y="368">P 상의주차장 250m</text>
+<circle cx="180" cy="255" fill="#1a5e9e" r="7"></circle>
+<text fill="var(--color-text)" font-size="11" font-weight="700" x="192" y="253">대전사 260m</text>
+<circle cx="290" cy="58" fill="#1a5e9e" r="12"></circle>
+<text fill="#1a5e9e" font-size="12" font-weight="800" x="306" y="54">주봉 ▲ 722m</text>
+<circle cx="350" cy="90" fill="#3479be" r="7"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="362" y="88">칼등고개 580m</text>
+<circle cx="430" cy="155" fill="#3479be" r="7"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="442" y="153">후리메기삼거리 370m</text>
+<circle cx="310" cy="158" fill="#56b000" r="5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="310" y="146">용연폭포</text>
+<circle cx="265" cy="182" fill="#56b000" r="5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="265" y="170">용추폭포</text>
+<text fill="#1a5e9e" font-size="10" font-style="italic" x="225" y="138">① 급경사 오르막</text>
+<text fill="#3479be" font-size="10" font-style="italic" x="360" y="115">② 능선</text>
+<text fill="#1a5e9e" font-size="10" font-style="italic" opacity=".7" x="360" y="290">③ 계곡 하산</text>
+<circle cx="555" cy="38" fill="var(--color-surface)" r="20" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" text-anchor="middle" x="555" y="27">N</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="555" y="53">S</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="537" y="42">W</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="573" y="42">E</text>
+<rect fill="var(--color-mid-light)" height="26" rx="5" stroke="var(--color-mid)" stroke-width="1" width="205" x="8" y="8"></rect>
+<text fill="var(--color-mid)" font-size="11" font-weight="800" x="14" y="25">🦶 중급 · 주봉 환종주 코스</text>
+</svg>
+<div class="map-legend">
+<div class="map-legend-item"><div class="legend-dot" style="background:#1a5e9e"></div>오르막 탐방로</div>
+<div class="map-legend-item"><div class="legend-dot" style="background:#3479be"></div>능선·하산로</div>
+<div class="map-legend-item"><div class="legend-dot" style="background:#6bb8c7"></div>주방천 계곡</div>
+</div>
+</div>
+<div class="section-title">📋 체크포인트</div>
+<div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
+<tr><td><span class="cp-badge" style="background:var(--color-mid-light);color:var(--color-mid)">P</span></td><td class="cp-name">상의주차장</td><td>250m</td><td>0km</td><td>🅿️ 출발지</td></tr>
+<tr><td>1</td><td class="cp-name">대전사</td><td>260m</td><td>0.9km</td><td>⛩ 화장실·물 보충</td></tr>
+<tr><td>2</td><td class="cp-name">제1전망대</td><td>450m</td><td>2.2km</td><td>🔭 용추협곡 조망</td></tr>
+<tr><td>3</td><td class="cp-name">제2·3전망대</td><td>600m</td><td>2.8km</td><td>🔭 능선 파노라마</td></tr>
+<tr><td>🏔</td><td class="cp-name">주봉 정상</td><td>722m</td><td>3.2km</td><td>🏔 정상석, 360° 조망</td></tr>
+<tr><td>4</td><td class="cp-name">칼등고개</td><td>580m</td><td>4.2km</td><td>⛰ 능선 갈림길</td></tr>
+<tr><td>5</td><td class="cp-name">후리메기삼거리</td><td>370m</td><td>5.7km</td><td>🔀 계곡 합류</td></tr>
+<tr><td>6</td><td class="cp-name">용연폭포</td><td>330m</td><td>7.2km</td><td>💧 제2폭포</td></tr>
+<tr><td>🏁</td><td class="cp-name">상의주차장 귀환</td><td>250m</td><td>10.1km</td><td>✅ 종료</td></tr>
+</tbody></table></div>
+</div>
+<div class="tab-content" id="mid-tips">
+<div class="tips-grid">
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">👟</span><span class="tips-card-title">필수 장비</span></div><ul class="tips-list"><li>발목 지지 가능한 등산화 (필수)</li><li>등산 스틱 2개 — 급경사 하산</li><li>무릎 보호대 (경사도 20.7%)</li><li>2L 이상 물 + 에너지 간식</li><li>방수 재킷·여벌 양말</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⏰</span><span class="tips-card-title">시간 계획</span></div><ul class="tips-list"><li>오전 9시 이전 출발 권장</li><li>주봉 정상에서 30분 이상 여유</li><li>일몰 3시간 전 하산 시작</li><li>우천 시 탐방로 폐쇄 가능 — 사전 확인</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📸</span><span class="tips-card-title">포토 스폿</span></div><ul class="tips-list"><li>제1·2·3 전망대 — 협곡 전경</li><li>주봉 정상 정상석</li><li>용연폭포 상단 바위</li><li>대전사와 기암절벽 프레임샷</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⚠️</span><span class="tips-card-title">안전 주의</span></div><ul class="tips-list"><li>대전사~주봉 급경사 — 천천히 이동</li><li>하산 시 무릎 통증 유발 — 스틱 필수</li><li>정상부 강풍 주의</li><li>낙석 위험: 전망대 직하 바위 지대</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🏕</span><span class="tips-card-title">주변 명소</span></div><ul class="tips-list"><li>주산지 — 왕버들 연못, 영화 촬영지</li><li>달기약수 — 철분 함유 약수</li><li>청송민속박물관</li><li>주왕산 온천</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🍽</span><span class="tips-card-title">주변 맛집</span></div><ul class="tips-list"><li>닭불고기 (청송 향토 음식)</li><li>청송 사과 (10~11월 수확)</li><li>찰보리빵 (주왕산 입구 직판장)</li><li>산채비빔밥 (공원 입구 식당가)</li></ul></div>
+</div>
+</div>
+</div>
 <!-- ===== 고급 ===== -->
 <div class="course-panel hard" id="panel-hard">
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('hard','overview')">📋 개요</button>
-    <button class="tab-btn" onclick="switchTab('hard','route')">🗺 경로 안내</button>
-    <button class="tab-btn" onclick="switchTab('hard','map')">📍 지도</button>
-    <button class="tab-btn" onclick="switchTab('hard','tips')">💡 팁 &amp; 주의</button>
-  </div>
-  <div class="tab-content active" id="hard-overview">
-    <div class="course-banner">
-      <span class="banner-emoji">🏔</span>
-      <div>
-        <div class="banner-title">고급 — 절골·가메봉 종주 코스</div>
-        <div class="banner-sub">주왕산 최고봉 가메봉(882m)을 절골 계곡에서 직등하는 전구간 종주 코스. 절골협곡 비경, 가파른 정상 직전 급경사, 용연·용추폭포로 이어지는 완벽한 하산. 체력과 경험이 충분한 등산인을 위한 코스입니다.</div>
-      </div>
-    </div>
-    <div class="kpi-grid">
-      <div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-value">13.5<span style="font-size:.8em">km</span></div><div class="kpi-label">총 거리</div></div>
-      <div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-value">7h<span style="font-size:.8em">5m</span></div><div class="kpi-label">예상 소요시간</div></div>
-      <div class="kpi-card"><div class="kpi-icon">📈</div><div class="kpi-value">+770<span style="font-size:.8em">m</span></div><div class="kpi-label">누적 상승고도</div></div>
-      <div class="kpi-card"><div class="kpi-icon">⛰</div><div class="kpi-value">882<span style="font-size:.8em">m</span></div><div class="kpi-label">최고 고도 (가메봉)</div></div>
-      <div class="kpi-card"><div class="kpi-icon">🔥</div><div class="kpi-value">~2,200<span style="font-size:.8em">kcal</span></div><div class="kpi-label">칼로리 소모</div></div>
-      <div class="kpi-card"><div class="kpi-icon">🚗</div><div class="kpi-value">A→B<span style="font-size:.8em">종주</span></div><div class="kpi-label">절골→상의 (차량 회수)</div></div>
-    </div>
-    <div class="section-title">📊 고도 프로파일</div>
-    <div class="elevation-wrap">
-      <svg class="elevation-svg" viewBox="0 0 700 160" preserveAspectRatio="none">
-        <defs><linearGradient id="eg-hard" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b83232" stop-opacity=".35"/><stop offset="100%" stop-color="#b83232" stop-opacity=".05"/></linearGradient></defs>
-        <line x1="0" y1="18" x2="700" y2="18" stroke="var(--color-divider)" stroke-width="1"/>
-        <line x1="0" y1="60" x2="700" y2="60" stroke="var(--color-divider)" stroke-width="1"/>
-        <line x1="0" y1="100" x2="700" y2="100" stroke="var(--color-divider)" stroke-width="1"/>
-        <text x="4" y="16" font-size="10" fill="var(--color-text-faint)">882m</text>
-        <text x="4" y="58" font-size="10" fill="var(--color-text-faint)">600m</text>
-        <text x="4" y="98" font-size="10" fill="var(--color-text-faint)">320m</text>
-        <path d="M0,100 L120,90 L180,87 L220,84 L380,18 L450,82 L520,92 L590,96 L660,100 L700,102 L700,148 L0,148 Z" fill="url(#eg-hard)" stroke="none"/>
-        <polyline points="0,100 120,90 180,87 220,84 380,18 450,82 520,92 590,96 660,100 700,102" fill="none" stroke="#b83232" stroke-width="2.5" stroke-linejoin="round"/>
-        <circle cx="380" cy="18" r="7" fill="#b83232"/>
-        <text x="0" y="118" font-size="9" fill="var(--color-text-muted)">절골분소</text>
-        <text x="120" y="106" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">대문다리</text>
-        <text x="380" y="11" font-size="9" fill="#b83232" text-anchor="middle" font-weight="700">가메봉▲882m</text>
-        <text x="450" y="97" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">후리메기</text>
-        <text x="520" y="108" font-size="9" fill="var(--color-text-muted)" text-anchor="middle">용연폭포</text>
-        <text x="700" y="118" font-size="9" fill="var(--color-text-muted)" text-anchor="end">상의주차장</text>
-      </svg>
-    </div>
-  </div>
-  <div class="tab-content" id="hard-route">
-    <div class="segment-list">
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">P</div><div class="seg-info"><div class="seg-title">절골분소 출발 (320m)</div><div class="seg-meta">📍 경북 청송군 주왕산면 주산지길 121-170</div></div><span class="seg-diff diff-easy">준비</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:5%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">절골분소는 상의주차장에서 차량으로 약 20분 거리. A→B 종주 코스이므로 상의주차장에 차량을 사전 배치하거나 택시를 이용합니다.</p><div class="warn-box"><strong>⚠ 차량 회수 필수</strong> 상의주차장에 셔틀 차량 배치 또는 택시(청송: 054-874-2222) 이용. 대중교통: 청송버스터미널→주산지 버스 (20분, 1,300원).</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">1</div><div class="seg-info"><div class="seg-title">절골분소 → 대문다리 광장</div><div class="seg-meta">⏱ 70분 · 📏 3.5km · 계곡 임도</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:20%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">절골 계곡의 시원한 물소리를 따라 평탄한 임도. 절골협곡 깎아지른 암벽이 양옆으로 펼쳐지며, 징검다리를 여러 번 건넙니다. 대문다리 광장에서 충분히 휴식하고 물 보충.</p><div class="tip-box"><strong>💡 Tip</strong> 초반 3.5km가 완만하므로 체력을 아껴두는 것이 핵심. 이후 가메봉 직전 1.5km가 이 코스 최대 난관입니다.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">2</div><div class="seg-info"><div class="seg-title">대문다리 → 가메봉 정상 882m (급경사 직등)</div><div class="seg-meta">⏱ 88분 · 📏 2.2km · 급경사</div></div><span class="seg-diff diff-hard">어려움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:95%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">대문다리에서 0.2km 완만한 구간 후 이 코스 최대 난구간. 바위와 나무뿌리 혼합 지형의 급경사 1.5km. 가메봉 정상(882m)은 주왕산 최고봉으로 사방 조망이 탁 트입니다.</p><div class="warn-box"><strong>⚠ 위험 구간</strong> 정상 직전 바위+나무뿌리 혼합 급경사 — 비 오는 날 극히 위험. 반드시 건조한 날 등산 권장. 스틱 2개 필수.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">3</div><div class="seg-info"><div class="seg-title">가메봉 → 후리메기삼거리 (급경사 하산)</div><div class="seg-meta">⏱ 110분 · 📏 3.9km · 급경사 내리막</div></div><span class="seg-diff diff-hard">어려움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:80%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">가메봉에서 후리메기삼거리까지 계속 내리막. 특히 삼거리까지 급경사에 돌길이 많아 무릎에 큰 부담. 발 디딤에 집중하며 천천히 이동합니다.</p><div class="tip-box"><strong>💡 Tip</strong> 가메봉 정상에서 북서쪽으로 주봉(722m)이 보입니다. 맑은 날 울진 해안 조망 가능. 충분히 쉬다 하산하세요.</div></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">4</div><div class="seg-info"><div class="seg-title">후리메기삼거리 → 용연폭포 → 용추폭포 → 대전사</div><div class="seg-meta">⏱ 80분 · 📏 4.8km · 계곡길</div></div><span class="seg-diff diff-mid">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:30%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">주방천 계곡을 따라 하류로 이동. 용연폭포(제2)→용추폭포(제1)를 순서대로 감상합니다. 대전사에서 상의주차장까지 0.9km로 종주 완료.</p></div></div>
-      <div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">🏁</div><div class="seg-info"><div class="seg-title">대전사 → 상의주차장 종주 완료</div><div class="seg-meta">⏱ 10분 · 📏 0.9km</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:5%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">종주 완료! 하산 후 스트레칭과 충분한 수분 보충. 달기약수 닭백숙 또는 청송 온천으로 피로 회복을 권장합니다.</p></div></div>
-    </div>
-  </div>
-  <div class="tab-content" id="hard-map">
-    <div class="map-wrap">
-      <svg class="map-svg" viewBox="0 0 640 420" style="max-height:420px">
-        <rect width="640" height="420" rx="12" fill="var(--color-surface-offset)"/>
-        <path d="M75,395 Q105,355 135,315 Q165,278 200,248" fill="none" stroke="#6bb8c7" stroke-width="7" stroke-linecap="round" opacity=".65"/>
-        <polyline points="200,248 235,220 270,188 310,150 350,108 380,70 390,50" fill="none" stroke="#b83232" stroke-width="3" stroke-dasharray="7,3"/>
-        <polyline points="390,50 420,88 445,125 462,162" fill="none" stroke="#d04444" stroke-width="2.5" stroke-dasharray="5,3"/>
-        <polyline points="462,162 480,195 500,230 525,265 550,295 575,320 600,348 615,375" fill="none" stroke="#b83232" stroke-width="2" stroke-dasharray="4,4" opacity=".55"/>
-        <path d="M500,230 Q535,265 555,295 Q575,318 595,340" fill="none" stroke="#6bb8c7" stroke-width="5" opacity=".5"/>
-        <circle cx="75" cy="395" r="9" fill="#b83232"/>
-        <text x="88" y="393" font-size="11" fill="var(--color-text)" font-weight="700">P 절골분소 320m</text>
-        <circle cx="200" cy="248" r="7" fill="#b83232"/>
-        <text x="212" y="246" font-size="10" fill="var(--color-text)" font-weight="700">대문다리 430m</text>
-        <circle cx="390" cy="50" r="12" fill="#b83232"/>
-        <text x="406" y="46" font-size="12" fill="#b83232" font-weight="800">가메봉 ▲ 882m</text>
-        <circle cx="445" cy="125" r="6" fill="#d04444"/>
-        <text x="457" y="123" font-size="10" fill="var(--color-text)" font-weight="700">칼등고개 안부 680m</text>
-        <circle cx="462" cy="162" r="7" fill="#d04444"/>
-        <text x="474" y="160" font-size="10" fill="var(--color-text)" font-weight="700">후리메기삼거리 370m</text>
-        <circle cx="500" cy="230" r="5" fill="#56b000"/>
-        <text x="455" y="235" font-size="9" fill="var(--color-text-muted)">용연폭포</text>
-        <circle cx="525" cy="265" r="5" fill="#56b000"/>
-        <text x="480" y="270" font-size="9" fill="var(--color-text-muted)">용추폭포</text>
-        <circle cx="595" cy="340" r="7" fill="#b83232"/>
-        <text x="540" y="345" font-size="10" fill="var(--color-text)" font-weight="700">대전사</text>
-        <circle cx="615" cy="375" r="9" fill="#b83232"/>
-        <text x="540" y="380" font-size="11" fill="#b83232" font-weight="800">🏁 상의주차장</text>
-        <text x="130" y="285" font-size="10" fill="#b83232" font-style="italic">① 절골계곡길</text>
-        <text x="270" y="128" font-size="10" fill="#b83232" font-style="italic">② 급경사 직등</text>
-        <text x="428" y="102" font-size="10" fill="#d04444" font-style="italic">③ 능선 하산</text>
-        <text x="510" y="300" font-size="10" fill="#b83232" font-style="italic" opacity=".7">④ 계곡 하산</text>
-        <circle cx="615" cy="38" r="20" fill="var(--color-surface)" stroke="var(--color-border)" stroke-width="1.5"/>
-        <text x="615" y="27" font-size="10" fill="var(--color-text)" text-anchor="middle" font-weight="700">N</text>
-        <text x="615" y="53" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">S</text>
-        <text x="597" y="42" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">W</text>
-        <text x="633" y="42" font-size="10" fill="var(--color-text-muted)" text-anchor="middle">E</text>
-        <rect x="8" y="8" width="218" height="26" rx="5" fill="var(--color-hard-light)" stroke="var(--color-hard)" stroke-width="1"/>
-        <text x="14" y="25" font-size="11" fill="var(--color-hard)" font-weight="800">🏔 고급 · 절골~가메봉 종주</text>
-      </svg>
-      <div class="map-legend">
-        <div class="map-legend-item"><div class="legend-dot" style="background:#b83232"></div>종주로 (절골→가메봉)</div>
-        <div class="map-legend-item"><div class="legend-dot" style="background:#d04444"></div>하산 능선·계곡길</div>
-        <div class="map-legend-item"><div class="legend-dot" style="background:#6bb8c7"></div>절골·주방천 계곡</div>
-      </div>
-    </div>
-    <div class="section-title">📋 체크포인트</div>
-    <div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
-      <tr><td><span class="cp-badge" style="background:var(--color-hard-light);color:var(--color-hard)">P</span></td><td class="cp-name">절골분소</td><td>320m</td><td>0km</td><td>🅿️ 종주 시작점</td></tr>
-      <tr><td>1</td><td class="cp-name">데크쉼터</td><td>360m</td><td>1.2km</td><td>🪵 벤치, 첫 휴식</td></tr>
-      <tr><td>2</td><td class="cp-name">대문다리 광장</td><td>420m</td><td>3.5km</td><td>🌉 급경사 전 대형 쉼터</td></tr>
-      <tr><td>3</td><td class="cp-name">대문다리</td><td>430m</td><td>3.7km</td><td>🌉 급경사 시작</td></tr>
-      <tr><td>4</td><td class="cp-name">오르막 시작점</td><td>450m</td><td>4.4km</td><td>⛰ 이후 1.5km 급경사</td></tr>
-      <tr><td>🏔</td><td class="cp-name">가메봉 정상</td><td>882m</td><td>5.9km</td><td>🏔 최고봉, 360° 조망</td></tr>
-      <tr><td>5</td><td class="cp-name">후리메기삼거리</td><td>370m</td><td>8.5km</td><td>🔀 계곡 합류, 급경사 종료</td></tr>
-      <tr><td>6</td><td class="cp-name">용연폭포 (제2)</td><td>330m</td><td>9.9km</td><td>💧 낙차 10m</td></tr>
-      <tr><td>7</td><td class="cp-name">용추폭포 (제1)</td><td>300m</td><td>10.8km</td><td>💧 협곡 절경</td></tr>
-      <tr><td>8</td><td class="cp-name">대전사</td><td>260m</td><td>12.6km</td><td>⛩ 음료 구매 가능</td></tr>
-      <tr><td>🏁</td><td class="cp-name">상의주차장</td><td>250m</td><td>13.5km</td><td>✅ 종주 완료</td></tr>
-    </tbody></table></div>
-  </div>
-  <div class="tab-content" id="hard-tips">
-    <div class="tips-grid">
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🎒</span><span class="tips-card-title">필수 장비</span></div><ul class="tips-list"><li>고어텍스 등산화 (방수·발목 지지)</li><li>등산 스틱 2개 — 필수</li><li>무릎 보호대 (하산 급경사)</li><li>3L 이상 물 (계곡 내 보충 불가)</li><li>헤드랜턴 (지연 시 대비)</li><li>비상식량·에너지바 충분히</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🚗</span><span class="tips-card-title">차량 회수 방법</span></div><ul class="tips-list"><li>방법①: 상의주차장 주차 후 택시로 절골</li><li>방법②: 2대 이상 차량 분산 주차</li><li>방법③: 청송버스(주산지행) 역방향 이용</li><li>청송 택시: 054-874-2222</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⏰</span><span class="tips-card-title">시간 계획</span></div><ul class="tips-list"><li>오전 7~8시 절골분소 출발 권장</li><li>가메봉 도착 목표: 오전 11~12시</li><li>정상 후 오후 1시 이전 하산 시작</li><li>오후 4시 상의주차장 도착 목표</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⚠️</span><span class="tips-card-title">고급 안전 주의</span></div><ul class="tips-list"><li>가메봉 직전: 빗길 극히 위험</li><li>후리메기 하산: 무릎 부상 최다 발생</li><li>절골 코스 폭우 시 즉시 통제</li><li>단독 산행 자제 — 2인 이상 권장</li><li>119 안내판 번호 확인 필수</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🏕</span><span class="tips-card-title">주변 명소</span></div><ul class="tips-list"><li>주산지 — 왕버들 새벽 물안개</li><li>달기약수 — 철분 약수·닭백숙</li><li>청송 얼음골 — 여름 빙하</li><li>방호정 — 주왕산 인근 정자</li></ul></div>
-      <div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📲</span><span class="tips-card-title">앱 &amp; 정보</span></div><ul class="tips-list"><li>국립공원공단 앱 (실시간 탐방로)</li><li>절골 성수기 탐방로 예약제 운영</li><li>knps.or.kr 사전 예약 필수</li><li>기상청 확인 후 출발</li></ul></div>
-    </div>
-  </div>
+<div class="tab-nav">
+<button class="tab-btn active" onclick="switchTab('hard','overview')">📋 개요</button>
+<button class="tab-btn" onclick="switchTab('hard','route')">🗺 경로 안내</button>
+<button class="tab-btn" onclick="switchTab('hard','map')">📍 지도</button>
+<button class="tab-btn" onclick="switchTab('hard','tips')">💡 팁 &amp; 주의</button>
 </div>
-
+<div class="tab-content active" id="hard-overview">
+<div class="course-banner">
+<span class="banner-emoji">🏔</span>
+<div>
+<div class="banner-title">고급 — 절골·가메봉 종주 코스</div>
+<div class="banner-sub">주왕산 최고봉 가메봉(882m)을 절골 계곡에서 직등하는 전구간 종주 코스. 절골협곡 비경, 가파른 정상 직전 급경사, 용연·용추폭포로 이어지는 완벽한 하산. 체력과 경험이 충분한 등산인을 위한 코스입니다.</div>
 </div>
-
+</div>
+<div class="kpi-grid">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-value">13.5<span style="font-size:.8em">km</span></div><div class="kpi-label">총 거리</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-value">7h<span style="font-size:.8em">5m</span></div><div class="kpi-label">예상 소요시간</div></div>
+<div class="kpi-card"><div class="kpi-icon">📈</div><div class="kpi-value">+770<span style="font-size:.8em">m</span></div><div class="kpi-label">누적 상승고도</div></div>
+<div class="kpi-card"><div class="kpi-icon">⛰</div><div class="kpi-value">882<span style="font-size:.8em">m</span></div><div class="kpi-label">최고 고도 (가메봉)</div></div>
+<div class="kpi-card"><div class="kpi-icon">🔥</div><div class="kpi-value">~2,200<span style="font-size:.8em">kcal</span></div><div class="kpi-label">칼로리 소모</div></div>
+<div class="kpi-card"><div class="kpi-icon">🚗</div><div class="kpi-value">A→B<span style="font-size:.8em">종주</span></div><div class="kpi-label">절골→상의 (차량 회수)</div></div>
+</div>
+<div class="section-title">📊 고도 프로파일</div>
+<div class="elevation-wrap">
+<svg class="elevation-svg" preserveaspectratio="none" viewbox="0 0 700 160">
+<defs><lineargradient id="eg-hard" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b83232" stop-opacity=".35"></stop><stop offset="100%" stop-color="#b83232" stop-opacity=".05"></stop></lineargradient></defs>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="18" y2="18"></line>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="60" y2="60"></line>
+<line stroke="var(--color-divider)" stroke-width="1" x1="0" x2="700" y1="100" y2="100"></line>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="16">882m</text>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="58">600m</text>
+<text fill="var(--color-text-faint)" font-size="10" x="4" y="98">320m</text>
+<path d="M0,100 L120,90 L180,87 L220,84 L380,18 L450,82 L520,92 L590,96 L660,100 L700,102 L700,148 L0,148 Z" fill="url(#eg-hard)" stroke="none"></path>
+<polyline fill="none" points="0,100 120,90 180,87 220,84 380,18 450,82 520,92 590,96 660,100 700,102" stroke="#b83232" stroke-linejoin="round" stroke-width="2.5"></polyline>
+<circle cx="380" cy="18" fill="#b83232" r="7"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="0" y="118">절골분소</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="120" y="106">대문다리</text>
+<text fill="#b83232" font-size="9" font-weight="700" text-anchor="middle" x="380" y="11">가메봉▲882m</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="450" y="97">후리메기</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="520" y="108">용연폭포</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="end" x="700" y="118">상의주차장</text>
+</svg>
+</div>
+</div>
+<div class="tab-content" id="hard-route">
+<div class="segment-list">
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">P</div><div class="seg-info"><div class="seg-title">절골분소 출발 (320m)</div><div class="seg-meta">📍 경북 청송군 주왕산면 주산지길 121-170</div></div><span class="seg-diff diff-easy">준비</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:5%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">절골분소는 상의주차장에서 차량으로 약 20분 거리. A→B 종주 코스이므로 상의주차장에 차량을 사전 배치하거나 택시를 이용합니다.</p><div class="warn-box"><strong>⚠ 차량 회수 필수</strong> 상의주차장에 셔틀 차량 배치 또는 택시(청송: 054-874-2222) 이용. 대중교통: 청송버스터미널→주산지 버스 (20분, 1,300원).</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">1</div><div class="seg-info"><div class="seg-title">절골분소 → 대문다리 광장</div><div class="seg-meta">⏱ 70분 · 📏 3.5km · 계곡 임도</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:20%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">절골 계곡의 시원한 물소리를 따라 평탄한 임도. 절골협곡 깎아지른 암벽이 양옆으로 펼쳐지며, 징검다리를 여러 번 건넙니다. 대문다리 광장에서 충분히 휴식하고 물 보충.</p><div class="tip-box"><strong>💡 Tip</strong> 초반 3.5km가 완만하므로 체력을 아껴두는 것이 핵심. 이후 가메봉 직전 1.5km가 이 코스 최대 난관입니다.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">2</div><div class="seg-info"><div class="seg-title">대문다리 → 가메봉 정상 882m (급경사 직등)</div><div class="seg-meta">⏱ 88분 · 📏 2.2km · 급경사</div></div><span class="seg-diff diff-hard">어려움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:95%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">대문다리에서 0.2km 완만한 구간 후 이 코스 최대 난구간. 바위와 나무뿌리 혼합 지형의 급경사 1.5km. 가메봉 정상(882m)은 주왕산 최고봉으로 사방 조망이 탁 트입니다.</p><div class="warn-box"><strong>⚠ 위험 구간</strong> 정상 직전 바위+나무뿌리 혼합 급경사 — 비 오는 날 극히 위험. 반드시 건조한 날 등산 권장. 스틱 2개 필수.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">3</div><div class="seg-info"><div class="seg-title">가메봉 → 후리메기삼거리 (급경사 하산)</div><div class="seg-meta">⏱ 110분 · 📏 3.9km · 급경사 내리막</div></div><span class="seg-diff diff-hard">어려움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:80%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">가메봉에서 후리메기삼거리까지 계속 내리막. 특히 삼거리까지 급경사에 돌길이 많아 무릎에 큰 부담. 발 디딤에 집중하며 천천히 이동합니다.</p><div class="tip-box"><strong>💡 Tip</strong> 가메봉 정상에서 북서쪽으로 주봉(722m)이 보입니다. 맑은 날 울진 해안 조망 가능. 충분히 쉬다 하산하세요.</div></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">4</div><div class="seg-info"><div class="seg-title">후리메기삼거리 → 용연폭포 → 용추폭포 → 대전사</div><div class="seg-meta">⏱ 80분 · 📏 4.8km · 계곡길</div></div><span class="seg-diff diff-mid">보통</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:30%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">주방천 계곡을 따라 하류로 이동. 용연폭포(제2)→용추폭포(제1)를 순서대로 감상합니다. 대전사에서 상의주차장까지 0.9km로 종주 완료.</p></div></div>
+<div class="segment-card"><div class="segment-header" onclick="toggleSeg(this)"><div class="seg-num">🏁</div><div class="seg-info"><div class="seg-title">대전사 → 상의주차장 종주 완료</div><div class="seg-meta">⏱ 10분 · 📏 0.9km</div></div><span class="seg-diff diff-easy">쉬움</span><span class="seg-chevron">▾</span></div><div class="segment-body"><div class="diff-bar"><div class="diff-bar-fill" style="width:5%"></div></div><p class="seg-desc" style="margin-top:var(--space-3)">종주 완료! 하산 후 스트레칭과 충분한 수분 보충. 달기약수 닭백숙 또는 청송 온천으로 피로 회복을 권장합니다.</p></div></div>
+</div>
+</div>
+<div class="tab-content" id="hard-map">
+<div class="map-wrap">
+<svg class="map-svg" style="max-height:420px" viewbox="0 0 640 420">
+<rect fill="var(--color-surface-offset)" height="420" rx="12" width="640"></rect>
+<path d="M75,395 Q105,355 135,315 Q165,278 200,248" fill="none" opacity=".65" stroke="#6bb8c7" stroke-linecap="round" stroke-width="7"></path>
+<polyline fill="none" points="200,248 235,220 270,188 310,150 350,108 380,70 390,50" stroke="#b83232" stroke-dasharray="7,3" stroke-width="3"></polyline>
+<polyline fill="none" points="390,50 420,88 445,125 462,162" stroke="#d04444" stroke-dasharray="5,3" stroke-width="2.5"></polyline>
+<polyline fill="none" opacity=".55" points="462,162 480,195 500,230 525,265 550,295 575,320 600,348 615,375" stroke="#b83232" stroke-dasharray="4,4" stroke-width="2"></polyline>
+<path d="M500,230 Q535,265 555,295 Q575,318 595,340" fill="none" opacity=".5" stroke="#6bb8c7" stroke-width="5"></path>
+<circle cx="75" cy="395" fill="#b83232" r="9"></circle>
+<text fill="var(--color-text)" font-size="11" font-weight="700" x="88" y="393">P 절골분소 320m</text>
+<circle cx="200" cy="248" fill="#b83232" r="7"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="212" y="246">대문다리 430m</text>
+<circle cx="390" cy="50" fill="#b83232" r="12"></circle>
+<text fill="#b83232" font-size="12" font-weight="800" x="406" y="46">가메봉 ▲ 882m</text>
+<circle cx="445" cy="125" fill="#d04444" r="6"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="457" y="123">칼등고개 안부 680m</text>
+<circle cx="462" cy="162" fill="#d04444" r="7"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="474" y="160">후리메기삼거리 370m</text>
+<circle cx="500" cy="230" fill="#56b000" r="5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="455" y="235">용연폭포</text>
+<circle cx="525" cy="265" fill="#56b000" r="5"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="480" y="270">용추폭포</text>
+<circle cx="595" cy="340" fill="#b83232" r="7"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="540" y="345">대전사</text>
+<circle cx="615" cy="375" fill="#b83232" r="9"></circle>
+<text fill="#b83232" font-size="11" font-weight="800" x="540" y="380">🏁 상의주차장</text>
+<text fill="#b83232" font-size="10" font-style="italic" x="130" y="285">① 절골계곡길</text>
+<text fill="#b83232" font-size="10" font-style="italic" x="270" y="128">② 급경사 직등</text>
+<text fill="#d04444" font-size="10" font-style="italic" x="428" y="102">③ 능선 하산</text>
+<text fill="#b83232" font-size="10" font-style="italic" opacity=".7" x="510" y="300">④ 계곡 하산</text>
+<circle cx="615" cy="38" fill="var(--color-surface)" r="20" stroke="var(--color-border)" stroke-width="1.5"></circle>
+<text fill="var(--color-text)" font-size="10" font-weight="700" text-anchor="middle" x="615" y="27">N</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="615" y="53">S</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="597" y="42">W</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="633" y="42">E</text>
+<rect fill="var(--color-hard-light)" height="26" rx="5" stroke="var(--color-hard)" stroke-width="1" width="218" x="8" y="8"></rect>
+<text fill="var(--color-hard)" font-size="11" font-weight="800" x="14" y="25">🏔 고급 · 절골~가메봉 종주</text>
+</svg>
+<div class="map-legend">
+<div class="map-legend-item"><div class="legend-dot" style="background:#b83232"></div>종주로 (절골→가메봉)</div>
+<div class="map-legend-item"><div class="legend-dot" style="background:#d04444"></div>하산 능선·계곡길</div>
+<div class="map-legend-item"><div class="legend-dot" style="background:#6bb8c7"></div>절골·주방천 계곡</div>
+</div>
+</div>
+<div class="section-title">📋 체크포인트</div>
+<div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
+<tr><td><span class="cp-badge" style="background:var(--color-hard-light);color:var(--color-hard)">P</span></td><td class="cp-name">절골분소</td><td>320m</td><td>0km</td><td>🅿️ 종주 시작점</td></tr>
+<tr><td>1</td><td class="cp-name">데크쉼터</td><td>360m</td><td>1.2km</td><td>🪵 벤치, 첫 휴식</td></tr>
+<tr><td>2</td><td class="cp-name">대문다리 광장</td><td>420m</td><td>3.5km</td><td>🌉 급경사 전 대형 쉼터</td></tr>
+<tr><td>3</td><td class="cp-name">대문다리</td><td>430m</td><td>3.7km</td><td>🌉 급경사 시작</td></tr>
+<tr><td>4</td><td class="cp-name">오르막 시작점</td><td>450m</td><td>4.4km</td><td>⛰ 이후 1.5km 급경사</td></tr>
+<tr><td>🏔</td><td class="cp-name">가메봉 정상</td><td>882m</td><td>5.9km</td><td>🏔 최고봉, 360° 조망</td></tr>
+<tr><td>5</td><td class="cp-name">후리메기삼거리</td><td>370m</td><td>8.5km</td><td>🔀 계곡 합류, 급경사 종료</td></tr>
+<tr><td>6</td><td class="cp-name">용연폭포 (제2)</td><td>330m</td><td>9.9km</td><td>💧 낙차 10m</td></tr>
+<tr><td>7</td><td class="cp-name">용추폭포 (제1)</td><td>300m</td><td>10.8km</td><td>💧 협곡 절경</td></tr>
+<tr><td>8</td><td class="cp-name">대전사</td><td>260m</td><td>12.6km</td><td>⛩ 음료 구매 가능</td></tr>
+<tr><td>🏁</td><td class="cp-name">상의주차장</td><td>250m</td><td>13.5km</td><td>✅ 종주 완료</td></tr>
+</tbody></table></div>
+</div>
+<div class="tab-content" id="hard-tips">
+<div class="tips-grid">
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🎒</span><span class="tips-card-title">필수 장비</span></div><ul class="tips-list"><li>고어텍스 등산화 (방수·발목 지지)</li><li>등산 스틱 2개 — 필수</li><li>무릎 보호대 (하산 급경사)</li><li>3L 이상 물 (계곡 내 보충 불가)</li><li>헤드랜턴 (지연 시 대비)</li><li>비상식량·에너지바 충분히</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🚗</span><span class="tips-card-title">차량 회수 방법</span></div><ul class="tips-list"><li>방법①: 상의주차장 주차 후 택시로 절골</li><li>방법②: 2대 이상 차량 분산 주차</li><li>방법③: 청송버스(주산지행) 역방향 이용</li><li>청송 택시: 054-874-2222</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⏰</span><span class="tips-card-title">시간 계획</span></div><ul class="tips-list"><li>오전 7~8시 절골분소 출발 권장</li><li>가메봉 도착 목표: 오전 11~12시</li><li>정상 후 오후 1시 이전 하산 시작</li><li>오후 4시 상의주차장 도착 목표</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">⚠️</span><span class="tips-card-title">고급 안전 주의</span></div><ul class="tips-list"><li>가메봉 직전: 빗길 극히 위험</li><li>후리메기 하산: 무릎 부상 최다 발생</li><li>절골 코스 폭우 시 즉시 통제</li><li>단독 산행 자제 — 2인 이상 권장</li><li>119 안내판 번호 확인 필수</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">🏕</span><span class="tips-card-title">주변 명소</span></div><ul class="tips-list"><li>주산지 — 왕버들 새벽 물안개</li><li>달기약수 — 철분 약수·닭백숙</li><li>청송 얼음골 — 여름 빙하</li><li>방호정 — 주왕산 인근 정자</li></ul></div>
+<div class="tips-card"><div class="tips-card-header"><span class="tips-card-icon">📲</span><span class="tips-card-title">앱 &amp; 정보</span></div><ul class="tips-list"><li>국립공원공단 앱 (실시간 탐방로)</li><li>절골 성수기 탐방로 예약제 운영</li><li>knps.or.kr 사전 예약 필수</li><li>기상청 확인 후 출발</li></ul></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon">📸</span> 주왕산의 사계 &amp; 명소
+  </h3>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Juwangsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/juwangsan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/juwangsan/g1.webp" type="image/webp"/>
+<img alt="주왕산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/juwangsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">주왕산 등산코스</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Juwangsan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/juwangsan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/juwangsan/g2.webp" type="image/webp"/>
+<img alt="주왕산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/juwangsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">주왕산 절경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="Harmonious view of Juwangsan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/juwangsan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/juwangsan/g3.webp" type="image/webp"/>
+<img alt="주왕산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/juwangsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">주왕산 풍경</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Juwangsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@1605595076' target='_blank' rel='noopener'&gt;영화 정&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/juwangsan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/juwangsan/g4.webp" type="image/webp"/>
+<img alt="주왕산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/juwangsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">주왕산 탐방로</span>
+</div>
+</button>
+</div>
+</section>
 <script>
 (function(){
   const t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
@@ -612,6 +1100,128 @@ function switchTab(panel,tab){
   document.getElementById(`${panel}-${tab}`).classList.add('active');
 }
 function toggleSeg(h){h.parentElement.classList.toggle('open')}
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
 </script>
 </body>
 </html>
