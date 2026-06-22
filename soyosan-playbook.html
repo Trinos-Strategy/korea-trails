@@ -206,6 +206,8 @@ a{color:inherit;text-decoration:none}
 .stats-grid{grid-template-columns:repeat(3,1fr)}
 }
 
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -638,14 +640,17 @@ a{color:inherit;text-decoration:none}
 <body>
 <!-- HERO -->
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/soyosan/hero-640.avif 640w, assets/img/soyosan/hero-1024.avif 1024w, assets/img/soyosan/hero-1600.avif 1600w, assets/img/soyosan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/soyosan/hero-640.webp 640w, assets/img/soyosan/hero-1024.webp 1024w, assets/img/soyosan/hero-1600.webp 1600w, assets/img/soyosan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="소요산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Soyosan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/soyosan/hero-1600.jpg" srcset="assets/img/soyosan/hero-640.jpg 640w, assets/img/soyosan/hero-1024.jpg 1024w, assets/img/soyosan/hero-1600.jpg 1600w, assets/img/soyosan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/soyosan/hero-640.avif 640w, assets/img/soyosan/hero-1024.avif 1024w, assets/img/soyosan/hero-1600.avif 1600w, assets/img/soyosan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/soyosan/hero-640.webp 640w, assets/img/soyosan/hero-1024.webp 1024w, assets/img/soyosan/hero-1600.webp 1600w, assets/img/soyosan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/soyosan/hero-1600.jpg" srcset="assets/img/soyosan/hero-640.jpg 640w, assets/img/soyosan/hero-1024.jpg 1024w, assets/img/soyosan/hero-1600.jpg 1600w, assets/img/soyosan/hero-2400.jpg 2400w" sizes="100vw" alt="소요산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Soyosan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
 <button aria-label="다크모드 전환" class="theme-btn" data-theme-toggle="">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
@@ -656,23 +661,16 @@ a{color:inherit;text-decoration:none}
 <path d="M18 16 L24 10 L30 18" fill="rgba(255,255,255,0.15)" stroke="#fff" stroke-linejoin="round" stroke-width="1.5"></path>
 <circle cx="24" cy="10" fill="#7dd9a0" r="2.5"></circle>
 </svg>
-</div>
-<h1 class="hero-title">소요산 <span>등산 플레이북</span></h1>
-<p class="hero-subtitle">경기도 동두천 · 경기의 소금강 · 100대 명산 · 해발 587m</p>
-<div class="hero-badges">
-<span class="hero-badge">🌿 초급 · 1코스</span>
-<span class="hero-badge">🦶 중급 · 2코스</span>
-<span class="hero-badge">🏔 고급 · 3코스</span>
-<span class="hero-badge">🍁 단풍 명소</span>
-<span class="hero-badge">🚇 지하철 접근</span>
-</div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://www.pexels.com/@rfniza" rel="noopener" target="_blank">Nizar Firmansyah</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
-</div>
+
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by Dokyung Kim</span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source">Local</span>
+  </div>
+
 </section>
 <!-- COURSE SELECTOR -->
 <div class="course-selector">
@@ -1461,57 +1459,124 @@ a{color:inherit;text-decoration:none}
 </div>
 </div>
 <!-- ════ END ADVANCED ════ -->
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 소요산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 소요산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Soyosan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@dimafromcrimea' target='_blank' rel='noopener'&gt;Dmitriy Ryndin&lt;/a&gt; on pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/soyosan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/soyosan/g1.webp" type="image/webp"/>
-<img alt="소요산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">소요산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Soyosan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/soyosan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/soyosan/g2.webp" type="image/webp"/>
-<img alt="소요산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">소요산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Soyosan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@daddysky' target='_blank' rel='noopener'&gt;pipop kunachon&lt;/a&gt; on pexels" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/soyosan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/soyosan/g3.webp" type="image/webp"/>
-<img alt="소요산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">소요산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Soyosan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@hokusai-509091422' target='_blank' rel='noopener'&gt;Hokusai&lt;/a&gt; on pexels" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/soyosan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/soyosan/g4.webp" type="image/webp"/>
-<img alt="소요산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/soyosan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">소요산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 1) 크게 보기" data-index="0" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g1.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g1.webp">
+        <img src="assets/img/soyosan/g1.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 1)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 2) 크게 보기" data-index="1" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g2.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g2.webp">
+        <img src="assets/img/soyosan/g2.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 2)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 3) 크게 보기" data-index="2" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g3.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g3.webp">
+        <img src="assets/img/soyosan/g3.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 3)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 4) 크게 보기" data-index="3" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g4.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g4.webp">
+        <img src="assets/img/soyosan/g4.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 4)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 탐방로</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 5 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 5) 크게 보기" data-index="4" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g5.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g5.webp">
+        <img src="assets/img/soyosan/g5.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 5)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 6 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 6) 크게 보기" data-index="5" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g6.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g6.webp">
+        <img src="assets/img/soyosan/g6.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 6)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 7 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 7) 크게 보기" data-index="6" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g7.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g7.webp">
+        <img src="assets/img/soyosan/g7.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 7)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 8 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 8) 크게 보기" data-index="7" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g8.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g8.webp">
+        <img src="assets/img/soyosan/g8.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 8)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 9 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Soyosan hike (Photo 9) 크게 보기" data-index="8" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/soyosan/g9.avif">
+        <source type="image/webp" srcset="assets/img/soyosan/g9.webp">
+        <img src="assets/img/soyosan/g9.jpg" alt="소요산 산행 중에 촬영한 자연 풍경 (사진 9)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">소요산 전경</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <script>
 (function(){
@@ -1544,18 +1609,21 @@ function toggleCard(card){
   card.classList.toggle('open');
 }
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
