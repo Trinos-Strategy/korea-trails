@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <!-- Mountain Icon (🏔) -->
+  <symbol id="icon-mountain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m8 3-7 18h22L16 7l-4 7-4-11Z"/>
+  </symbol>
+  
+  <!-- Location Pin Icon (📍) -->
+  <symbol id="icon-location" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+    <circle cx="12" cy="10" r="3"/>
+  </symbol>
+  
+  <!-- Lightning Bolt Icon (⚡) -->
+  <symbol id="icon-lightning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M13 2 L3 14 h9 L11 22 L21 10 h-9 Z"/>
+  </symbol>
+  
+  <!-- Book Icon (📖) -->
+  <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+  </symbol>
+  
+  <!-- Bus Icon (🚌) -->
+  <symbol id="icon-bus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="4" y="4" width="16" height="12" rx="2"/>
+    <path d="M6 16v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2"/>
+    <path d="M15 16v2a1 1 0 0 0 1 1h1a1 1 0 0 0 1-1v-2"/>
+    <path d="M4 10h16"/>
+    <path d="M9 16v-2"/>
+    <path d="M15 16v-2"/>
+    <circle cx="7" cy="13" r="1"/>
+    <circle cx="17" cy="13" r="1"/>
+  </symbol>
+  
+  <!-- Backpack Icon (🎒) -->
+  <symbol id="icon-backpack" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4 10a4 4 0 0 1 8 0v10H4V10Z"/>
+    <path d="M12 10a4 4 0 0 1 8 0v10h-8V10Z"/>
+    <path d="M9 6V4a2 2 0 0 1 4 0v2"/>
+    <rect x="7" y="12" width="10" height="6" rx="1"/>
+  </symbol>
+  
+  <!-- Food Icon (🥗) -->
+  <symbol id="icon-food" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 2a10 10 0 0 0-10 10c0 5.523 4.477 10 10 10s10-4.477 10-10a10 10 0 0 0-10-10z"/>
+    <path d="M12 6v12"/>
+    <path d="M6 12h12"/>
+    <path d="M7.75 7.75l8.5 8.5"/>
+    <path d="M7.75 16.25l8.5-8.5"/>
+  </symbol>
+  
+  <!-- Shield Icon (🛡) -->
+  <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+  </symbol>
+  
+  <!-- Warning Icon (⚠️) -->
+  <symbol id="icon-warning" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/>
+    <line x1="12" y1="9" x2="12" y2="13"/>
+    <line x1="12" y1="17" x2="12.01" y2="17"/>
+  </symbol>
+  
+  <!-- Season/Leaf Icon (🍂) -->
+  <symbol id="icon-season" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 3.5 1 8.5C19 16 16 20 11 20z"/>
+    <path d="M19 2c-2.26 4.33-5.27 7.14-8 10"/>
+  </symbol>
+  
+  <!-- Thermometer Icon (🌡) -->
+  <symbol id="icon-temp" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/>
+  </symbol>
+  
+  <!-- Phone/App Icon (📱) -->
+  <symbol id="icon-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="2" width="14" height="20" rx="2" ry="2"/>
+    <line x1="12" y1="18" x2="12.01" y2="18"/>
+  </symbol>
+  
+  <!-- Clipboard/Prep Icon (📋) -->
+  <symbol id="icon-prep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/>
+    <rect x="8" y="2" width="8" height="4" rx="1" ry="1"/>
+  </symbol>
+  
+  <!-- Tent/Campsite Icon (🏕) -->
+  <symbol id="icon-tent" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 21 12 3l10 18H2Z"/>
+    <path d="m12 3 5 18H7l5-18Z"/>
+    <path d="M10 12h4"/>
+  </symbol>
+  
+  <!-- Chart Icon (📊) -->
+  <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="18" y1="20" x2="18" y2="10"/>
+    <line x1="12" y1="20" x2="12" y2="4"/>
+    <line x1="6" y1="20" x2="6" y2="14"/>
+  </symbol>
+  
+  <!-- Camera/Gallery Icon (📸) -->
+  <symbol id="icon-camera" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/>
+    <circle cx="12" cy="13" r="4"/>
+  </symbol>
+  
+  <!-- Help/Tip Icon (💡) -->
+  <symbol id="icon-tip" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 14c.2-1 .7-1.7 1.5-2.5 1-.9 1.5-2.2 1.5-3.5A6 6 0 0 0 6 8c0 1 .6 2.2 1.5 3.5.7.7 1.3 1.5 1.5 2.5"/>
+    <path d="M9 18h6"/>
+    <path d="M10 22h4"/>
+  </symbol>
+</svg>

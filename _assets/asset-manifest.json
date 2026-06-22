@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "assets": [
+    {
+      "id": "icons-sprite",
+      "path": "assets/icons/icons.svg",
+      "type": "svg-sprite",
+      "purpose": "Global branding and contextual page icons",
+      "source": "AI-generated vector paths",
+      "ai_generated": true,
+      "license": "Creative Commons CC0"
+    },
+    {
+      "id": "og-yangmingshan",
+      "path": "assets/img/yangmingshan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Yangmingshan Playbook",
+      "source": "Gemini Image Generator",
+      "ai_generated": true,
+      "ai_high_fidelity": true,
+      "caption": "Misty ridge trail of Yangmingshan Qixingshan peak under golden hour light",
+      "alt": {
+        "ko": "황금빛 일출 아래 안개 낀 양명산 칠성산 능선 등산로 풍경",
+        "en": "Scenic misty hiking trail along the ridge of Yangmingshan Qixingshan peak under soft morning sunlight"
+      }
+    },
+    {
+      "id": "hero-video-yangmingshan",
+      "path": "assets/video/yangmingshan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "10s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on landing page hero",
+      "source": "AI-generated panoramic crop & slow cinematic pan process",
+      "ai_generated": true,
+      "size_bytes": 839680
+    },
+    {
+      "id": "hero-poster-yangmingshan",
+      "path": "assets/video/yangmingshan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for landing page hero",
+      "source": "AI-generated panoramic image crop",
+      "ai_generated": true
+    }
+  ]
+}

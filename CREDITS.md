@@ -299,6 +299,10 @@ This document acknowledges and credits the talented photographers whose beautifu
 - **Gallery 2**: Photo by [Andy Kuo](https://unsplash.com/@chyi826) via [Unsplash](https://unsplash.com).
 - **Gallery 3**: Photo by [Andy Kuo](https://unsplash.com/@chyi826) via [Unsplash](https://unsplash.com).
 - **Gallery 4**: Photo by [Chen Wen-Yu](https://unsplash.com/@waterfay) via [Unsplash](https://unsplash.com).
+- **OG Card (assets/img/yangmingshan/og.png)**: AI-generated image (Gemini Image Generator).
+- **Cinematic Ambient Loop (assets/video/yangmingshan/hero.mp4)**: AI-generated video (Gemini-generated panoramic frame & cinematic panning pipeline).
+- **Unified SVG Icons (assets/icons/icons.svg)**: AI-generated vector design paths.
+
 
 ## 위산 (Yushan)
 
