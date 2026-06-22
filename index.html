@@ -3,291 +3,341 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>한국의 산 — 전국 등산 플레이북</title>
+<title>Korea Trails — 한국 & 대만 명산 등산 플레이북</title>
+
+<!-- SEO Meta Tags -->
+<meta name="description" content="한국과 대만 명산의 코스 정보, 지도, 교통편, 등산 팁을 제공하는 프리미엄 아웃도어 플레이북 가이드.">
+<meta property="og:title" content="Korea Trails — 한국 & 대만 명산 등산 플레이북">
+<meta property="og:description" content="한국과 대만 명산의 코스 정보, 지도, 교통편, 등산 팁을 제공하는 프리미엄 아웃도어 플레이북 가이드.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://trinos-strategy.github.io/korea-trails/">
+<meta name="twitter:card" content="summary_large_image">
+
+<!-- Core CSS from Design System -->
+<link rel="stylesheet" href="assets/css/design-system.css">
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@700,800&display=swap" rel="stylesheet">
+
 <style>
-:root,[data-theme="light"]{
-  --color-bg:#f7f6f2;--color-surface:#f9f8f5;--color-surface-2:#fbfbf9;
-  --color-surface-offset:#f3f0ec;--color-surface-dynamic:#e6e4df;
-  --color-divider:#dcd9d5;--color-border:#d4d1ca;
-  --color-text:#28251d;--color-text-muted:#7a7974;--color-text-faint:#bab9b4;
-  --color-primary:#01696f;--color-primary-hover:#0c4e54;
-  --color-primary-highlight:#cedcd8;
-  --color-success:#437a22;--color-success-highlight:#d4dfcc;
-  --color-gold:#d19900;--color-gold-highlight:#e9e0c6;
-  --color-warning:#964219;--color-warning-highlight:#ddcfc6;
-  --color-error:#a12c7b;--color-orange:#da7101;
-  --shadow-sm:0 1px 2px oklch(0.2 0.01 80/0.06);
-  --shadow-md:0 4px 12px oklch(0.2 0.01 80/0.08);
-  --shadow-lg:0 12px 32px oklch(0.2 0.01 80/0.12);
-  --radius-sm:0.375rem;--radius-md:0.5rem;--radius-lg:0.75rem;--radius-xl:1rem;--radius-full:9999px;
-  --font-body:'Satoshi',sans-serif;--font-display:'Cabinet Grotesk',sans-serif;
-  --text-xs:clamp(0.75rem,0.7rem + 0.25vw,0.875rem);
-  --text-sm:clamp(0.875rem,0.8rem + 0.35vw,1rem);
-  --text-base:clamp(1rem,0.95rem + 0.25vw,1.125rem);
-  --text-lg:clamp(1.125rem,1rem + 0.75vw,1.5rem);
-  --text-xl:clamp(1.5rem,1.2rem + 1.25vw,2.25rem);
-  --text-2xl:clamp(2rem,1.2rem + 2.5vw,3.5rem);
-  --space-1:0.25rem;--space-2:0.5rem;--space-3:0.75rem;--space-4:1rem;
-  --space-5:1.25rem;--space-6:1.5rem;--space-8:2rem;--space-10:2.5rem;
-  --space-12:3rem;--space-16:4rem;
-  --transition:180ms cubic-bezier(0.16,1,0.3,1);
-}
-[data-theme="dark"]{
-  --color-bg:#0f0e0d;--color-surface:#161514;--color-surface-2:#1c1b19;
-  --color-surface-offset:#1d1c1a;--color-surface-dynamic:#2d2c2a;
-  --color-divider:#242321;--color-border:#353432;
-  --color-text:#cdccca;--color-text-muted:#797876;--color-text-faint:#4a4948;
-  --color-primary:#4f98a3;--color-primary-hover:#227f8b;
-  --color-primary-highlight:#1e3234;
-  --color-success:#6daa45;--color-success-highlight:#263321;
-  --color-gold:#e8af34;--color-gold-highlight:#2e2718;
-  --color-warning:#bb653b;--color-warning-highlight:#2a1c12;
-  --color-error:#d163a7;--color-orange:#fdab43;
-  --shadow-sm:0 1px 2px oklch(0 0 0/0.3);
-  --shadow-md:0 4px 12px oklch(0 0 0/0.4);
-  --shadow-lg:0 12px 32px oklch(0 0 0/0.5);
-}
-@media(prefers-color-scheme:dark){:root:not([data-theme]){
-  --color-bg:#0f0e0d;--color-surface:#161514;--color-surface-2:#1c1b19;
-  --color-surface-offset:#1d1c1a;--color-surface-dynamic:#2d2c2a;
-  --color-divider:#242321;--color-border:#353432;
-  --color-text:#cdccca;--color-text-muted:#797876;--color-text-faint:#4a4948;
-  --color-primary:#4f98a3;--color-primary-hover:#227f8b;--color-primary-highlight:#1e3234;
-  --color-success:#6daa45;--color-success-highlight:#263321;
-  --color-gold:#e8af34;--color-gold-highlight:#2e2718;
-  --color-warning:#bb653b;--color-warning-highlight:#2a1c12;
-  --color-error:#d163a7;--color-orange:#fdab43;
-}}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;}
-body{font-family:var(--font-body);font-size:var(--text-base);color:var(--color-text);background:var(--color-bg);min-height:100dvh;line-height:1.6;}
-img,svg{display:block;max-width:100%;}
-button{cursor:pointer;border:none;background:none;font:inherit;color:inherit;}
-a,button,[role="button"]{transition:color var(--transition),background var(--transition),border-color var(--transition),box-shadow var(--transition);}
-.site-header{position:sticky;top:0;z-index:100;background:var(--color-bg);border-bottom:1px solid var(--color-divider);padding:var(--space-3) var(--space-6);display:flex;align-items:center;justify-content:space-between;gap:var(--space-4);}
-.logo-wrap{display:flex;align-items:center;gap:var(--space-3);}
-.logo-svg{width:36px;height:36px;flex-shrink:0;}
-.logo-text{font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;line-height:1;}
-.header-right{display:flex;align-items:center;gap:var(--space-3);}
-.theme-btn{width:36px;height:36px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;background:var(--color-surface-offset);color:var(--color-text-muted);}
-.theme-btn:hover{background:var(--color-surface-dynamic);color:var(--color-text);}
-.hero{padding:var(--space-12) var(--space-6) var(--space-8);text-align:center;background:linear-gradient(180deg,var(--color-surface) 0%,var(--color-bg) 100%);border-bottom:1px solid var(--color-divider);}
-.hero-badge{display:inline-flex;align-items:center;gap:var(--space-2);background:var(--color-primary-highlight);color:var(--color-primary);padding:var(--space-1) var(--space-3);border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:var(--space-4);}
-.hero h1{font-family:var(--font-display);font-size:var(--text-2xl);font-weight:800;line-height:1.1;margin-bottom:var(--space-4);}
-.hero p{font-size:var(--text-base);color:var(--color-text-muted);max-width:56ch;margin:0 auto var(--space-8);}
-.hero-stats{display:flex;gap:var(--space-6);justify-content:center;flex-wrap:wrap;margin-bottom:var(--space-6);}
-.hero-stat{text-align:center;}
-.hero-stat-value{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;color:var(--color-primary);line-height:1;}
-.hero-stat-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:var(--space-1);}
-.grid-section{max-width:1200px;margin:0 auto;padding:var(--space-8) var(--space-6) var(--space-12);}
-.section-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-6);}
-.section-title{font-family:var(--font-display);font-size:var(--text-xl);font-weight:800;}
-.mountain-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);}
-.mountain-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);overflow:hidden;transition:all var(--transition);}
-.mountain-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
-.card-header{padding:var(--space-5);border-bottom:1px solid var(--color-divider);}
-.card-title-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:var(--space-2);}
-.card-name{font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;}
-.card-alt{font-family:var(--font-display);font-size:var(--text-lg);font-weight:700;color:var(--color-primary);}
-.card-region{font-size:var(--text-xs);color:var(--color-text-muted);font-weight:600;}
-.card-body{padding:var(--space-4) var(--space-5);}
-.card-stats{display:flex;gap:var(--space-4);margin-bottom:var(--space-4);}
-.card-stat{flex:1;}
-.card-stat-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:2px;}
-.card-stat-value{font-weight:700;font-size:var(--text-sm);}
-.card-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.6;margin-bottom:var(--space-4);}
-.card-footer{padding:0 var(--space-5) var(--space-5);}
-.card-playbook-btn{display:flex;align-items:center;justify-content:center;gap:var(--space-2);background:var(--color-orange);color:#fff;padding:var(--space-3) var(--space-5);border-radius:var(--radius-full);font-weight:700;font-size:var(--text-sm);text-decoration:none;transition:all var(--transition);}
-.card-playbook-btn:hover{filter:brightness(1.1);}
-.card-pending-tag{display:flex;align-items:center;justify-content:center;gap:var(--space-2);background:var(--color-surface-offset);color:var(--color-text-faint);padding:var(--space-3) var(--space-5);border-radius:var(--radius-full);font-weight:600;font-size:var(--text-sm);}
-.diff-badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
-.diff-easy{background:var(--color-success-highlight);color:var(--color-success);}
-.diff-medium{background:var(--color-gold-highlight);color:var(--color-gold);}
-.diff-hard{background:var(--color-warning-highlight);color:var(--color-warning);}
-.diff-expert{background:#f0d0e8;color:var(--color-error);}
-.section-divider{font-family:var(--font-display);font-size:var(--text-sm);font-weight:700;color:var(--color-text-muted);padding:var(--space-6) 0 var(--space-3);border-top:1px solid var(--color-divider);margin-top:var(--space-4);grid-column:1/-1;letter-spacing:0.05em;text-transform:uppercase;}
-@media(max-width:640px){
-  .site-header{padding:var(--space-3) var(--space-4);}
-  .grid-section{padding-left:var(--space-4);padding-right:var(--space-4);}
-  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
-  .mountain-grid{grid-template-columns:1fr;}
-}
-
-/* --- MOUNTAIN CARD THUMBNAIL --- */
-.card-thumbnail-wrap {
-  position: relative;
-  width: 100%;
-  height: 160px;
-  overflow: hidden;
-  background-color: var(--color-surface-offset, var(--surfaceoff, #f3f0ec));
-  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
-}
-
-.card-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  transition: transform var(--transition, 180ms ease);
-}
-
-.mountain-card:hover .card-thumbnail {
-  transform: scale(1.04);
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .mountain-card:hover .card-thumbnail {
-    transform: none;
+  /* Local index-specific overrides to match Sleek Modern Explorer aesthetic */
+  .hero-gradient-overlay {
+    background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.15), transparent 60%);
   }
-}
+  
+  .search-hero-input {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: var(--space-4) var(--space-6);
+    border-radius: var(--radius-full);
+    width: 100%;
+    max-width: 520px;
+    box-shadow: var(--shadow-md);
+    font-size: var(--text-base);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+  
+  .search-hero-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+  }
+  
+  .filter-bar-card {
+    border-radius: var(--radius-2xl);
+    padding: var(--space-5) var(--space-6);
+    margin-top: calc(-1 * var(--space-8));
+    position: relative;
+    z-index: 10;
+  }
+  
+  .filter-select {
+    background-color: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-lg);
+    font-size: var(--text-xs);
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .filter-select:focus {
+    outline: none;
+    border-color: var(--primary);
+  }
+
+  .national-map-container {
+    height: 480px;
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+    overflow: hidden;
+    margin-bottom: var(--space-8);
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border-radius: var(--radius-lg) !important;
+  }
+
+  .leaflet-popup-tip {
+    background: var(--surface) !important;
+  }
 </style>
 </head>
 <body>
+
+<a href="#mainContent" class="skip-link">본문 바로가기</a>
+
 <header class="site-header">
   <div class="logo-wrap">
     <svg class="logo-svg" viewBox="0 0 36 36" fill="none" aria-label="Korea Trails">
-      <rect width="36" height="36" rx="8" fill="var(--color-primary)"/>
-      <path d="M4 28 L10 16 L15 22 L20 12 L25 20 L30 10 L32 28Z" fill="rgba(255,255,255,0.15)" stroke="none"/>
+      <rect width="36" height="36" rx="8" fill="var(--primary)"/>
       <path d="M4 28 L10 16 L15 22 L20 12 L25 20 L30 10" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
       <circle cx="30" cy="10" r="2.5" fill="white"/>
     </svg>
-    <span class="logo-text">Korea Trails</span>
+    <a href="index.html" class="logo-text" style="color: var(--text);">Korea Trails</a>
   </div>
   <div class="header-right">
-    <button class="theme-btn" data-theme-toggle aria-label="테마 전환">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
+    <button class="theme-btn" id="themeBtn" aria-label="테마 전환">◐</button>
   </div>
 </header>
-<section class="hero">
-  <div class="hero-badge">🏔 전국 등산 플레이북</div>
-  <h1>한국의 명산을<br>정복하세요</h1>
-  <p>전국 명산과 해외 명산의 상세 등산 가이드. 초급부터 고급까지 단계별 코스, 체크포인트, 준비물을 한눈에.</p>
-  <div class="hero-stats">
-    <div class="hero-stat">
-      <div class="hero-stat-value">26</div>
-      <div class="hero-stat-label">등록 명산</div>
+
+<main id="mainContent">
+  <!-- Hero Section -->
+  <section class="hero hero-gradient-overlay" style="padding: var(--space-16) 0 var(--space-12); position: relative; border-bottom: none;">
+    <div class="wrap" style="text-align: center;">
+      <div class="hero-badge">🏔 Premium Outdoor Guide</div>
+      <h1 style="font-size: var(--type.scale.2xl); margin-bottom: var(--space-3); color: var(--text);">한국과 대만의 명산을<br>정복하세요</h1>
+      <p style="margin-bottom: var(--space-6); color: var(--muted); font-size: var(--text-base);">
+        한눈에 비교하는 거리와 고도 정보, 다크모드 대응 실사 지도, 그리고 대중교통 정보까지 탑재된 완성형 명산 가이드북.
+      </p>
+      
+      <!-- Integrated Search Input in Hero -->
+      <div style="display: flex; justify-content: center; margin-bottom: var(--space-6);">
+        <input 
+          type="search" 
+          id="searchInput" 
+          class="search-hero-input" 
+          placeholder="산 이름, 고도, 지역 또는 설명 검색..." 
+          aria-label="명산 검색">
+      </div>
+
+      <div class="hero-stats" style="margin-bottom: 0;">
+        <div class="hero-stat" style="margin: 0 var(--space-4);">
+          <div class="hero-stat-value" style="font-size: var(--text-xl);">26</div>
+          <div class="hero-stat-label">등록 명산</div>
+        </div>
+        <div class="hero-stat" style="margin: 0 var(--space-4);">
+          <div class="hero-stat-value" style="font-size: var(--text-xl);">17</div>
+          <div class="hero-stat-label">플레이북 완성</div>
+        </div>
+        <div class="hero-stat" style="margin: 0 var(--space-4);">
+          <div class="hero-stat-value" style="font-size: var(--text-xl);">4단계</div>
+          <div class="hero-stat-label">난이도별 가이드</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-stat">
-      <div class="hero-stat-value">16</div>
-      <div class="hero-stat-label">플레이북 완성</div>
+  </section>
+
+  <!-- Filter & Grid Section -->
+  <section class="grid-section" style="padding-top: 0;">
+    <div class="wrap">
+      
+      <!-- Filters Card Panel -->
+      <div class="card filter-bar-card">
+        <div style="display: flex; flex-wrap: wrap; gap: var(--space-4); align-items: center; justify-content: space-between;">
+          <div style="display: flex; flex-wrap: wrap; gap: var(--space-3);">
+            <select id="regionSelect" class="filter-select" aria-label="지역 필터">
+              <option value="all">📍 지역: 전체</option>
+              <option value="korea">대한민국 전체</option>
+              <option value="강원">강원</option>
+              <option value="경기">경기/서울</option>
+              <option value="충청">충청</option>
+              <option value="경상">경상</option>
+              <option value="전라">전라</option>
+              <option value="제주">제주</option>
+              <option value="대만">대만</option>
+            </select>
+
+            <select id="diffSelect" class="filter-select" aria-label="난이도 필터">
+              <option value="all">⚡ 난이도: 전체</option>
+              <option value="easy">초급</option>
+              <option value="medium">중급</option>
+              <option value="hard">고급</option>
+              <option value="expert">전문가</option>
+            </select>
+
+            <select id="doneSelect" class="filter-select" aria-label="플레이북 상태 필터">
+              <option value="all">📖 플레이북: 전체</option>
+              <option value="done">완성됨 (17)</option>
+              <option value="pending">준비 중 (9)</option>
+            </select>
+          </div>
+
+          <div style="display: flex; gap: var(--space-3); align-items: center;">
+            <select id="sortSelect" class="filter-select" aria-label="정렬 순서">
+              <option value="elevation-desc">높은 고도 순</option>
+              <option value="elevation-asc">낮은 고도 순</option>
+              <option value="name-asc">가나다 이름 순</option>
+              <option value="difficulty-asc">낮은 난이도 순</option>
+              <option value="difficulty-desc">높은 난이도 순</option>
+            </select>
+            <span id="resultsCount" style="font-size: var(--text-xs); color: var(--muted); font-weight: 700; min-width: 80px; text-align: right;"></span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Interactive National Map Accordion (Collapsible) -->
+      <div class="accordion" style="margin-top: var(--space-6); margin-bottom: var(--space-6);">
+        <button class="accordion-header" id="mapToggleBtn" aria-expanded="false" aria-controls="nationalMapPanel">
+          <span style="font-family: var(--font-display); font-weight: 800; font-size: var(--text-base); display: flex; align-items: center; gap: 8px;">
+            🗺️ 인터랙티브 전국 지도 펼치기 (한국 & 대만)
+          </span>
+        </button>
+        <div class="accordion-content" id="nationalMapPanel" aria-hidden="true" style="padding: 0;">
+          <div id="nationalMap" class="national-map-container" style="height: 450px; border: none; border-radius: 0;"></div>
+        </div>
+      </div>
+
+      <!-- Card Grid Container -->
+      <div class="mountain-grid" id="mountainGrid" style="margin-top: var(--space-6);"></div>
+
     </div>
-    <div class="hero-stat">
-      <div class="hero-stat-value">3단계</div>
-      <div class="hero-stat-label">난이도 코스</div>
-    </div>
+  </section>
+</main>
+
+<footer style="border-top:1px solid var(--border); padding: var(--space-8) var(--space-6); text-align: center; background-color: var(--surface);">
+  <div class="wrap">
+    <p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8;">
+      Korea Trails — 전국 등산 플레이북 · 국립공원 탐방 예약: <a href="https://reservation.knps.or.kr" target="_blank" rel="noopener">knps.or.kr</a><br>
+      © 2026 Korea Trails. All Rights Reserved.
+    </p>
   </div>
-</section>
-<div class="grid-section">
-  <div class="section-header">
-    <h2 class="section-title">전국 명산 목록</h2>
-  </div>
-  <div class="mountain-grid" id="mountainGrid"></div>
-</div>
-<footer style="border-top:1px solid var(--color-divider);padding:var(--space-8) var(--space-6);text-align:center;background:var(--color-surface);">
-  <p style="font-size:var(--text-xs);color:var(--color-text-faint);">Korea Trails — 전국 등산 플레이북 · 국립공원 탐방 예약: <a href="https://reservation.knps.or.kr" style="color:var(--color-primary);">knps.or.kr</a></p>
 </footer>
+
 <script>
-const MOUNTAINS = [
+// Global Mount Data Source
+window.MOUNTAINS = [
   // ── 한국 명산 ──
-  {id:'seoraksan',     name:'설악산',     alt:'1,708m', region:'강원', dist:'10km', time:'7-9시간',  diff:'hard',   done:true,  url:'seoraksan-playbook.html',     desc:'설악산 대청봉. 공룡능선·대청봉 등 대한민국 최고의 암릉 산행지. 사계절 각기 다른 절경.'},
-  {id:'hallasan',      name:'한라산',     alt:'1,950m', region:'제주', dist:'9km',  time:'8-10시간', diff:'hard',   done:true,  url:'hallasan-playbook.html',      desc:'우리나라 최고봉. 성판악·관음사 코스로 분화구 백록담 조망. 연간 100만 탐방객.'},
-  {id:'jirisan',       name:'지리산',     alt:'1,915m', region:'전라', dist:'24km', time:'1박2일',   diff:'expert', done:true,  url:'jirisan-playbook.html',       desc:'남한 최대 산악지. 노고단~천왕봉 종주 25km. 4개 국립공원 탐방로.'},
-  {id:'bukhansan',     name:'북한산',     alt:'836m',   region:'경기', dist:'8km',  time:'4-5시간',  diff:'medium', done:true,  url:'bukhansan-playbook.html',     desc:'서울 북쪽 국립공원. 백운대·인수봉 화강암 명봉. 도심 접근성 최고.'},
-  {id:'sobaeksan',     name:'소백산',     alt:'1,440m', region:'충청', dist:'12km', time:'6-7시간',  diff:'medium', done:true,  url:'sobaeksan-playbook.html',     desc:'연화봉~비로봉 능선. 봄철 철쭉 군락지로 유명. 죽령 고개 경유 코스.'},
-  {id:'gayasan',       name:'가야산',     alt:'1,433m', region:'경상', dist:'10km', time:'5-6시간',  diff:'medium', done:true,  url:'gayasan-playbook.html',       desc:'해인사 품은 명산. 상왕봉에서 고려 팔만대장경의 기운 느끼기.'},
-  {id:'odaesan',       name:'오대산',     alt:'1,563m', region:'강원', dist:'11km', time:'5-6시간',  diff:'medium', done:true,  url:'odaesan-playbook.html',       desc:'월정사·상원사 사찰 탐방과 연계. 비로봉 정상 고원 능선이 인상적.'},
-  {id:'naejangsan',    name:'내장산',     alt:'763m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'easy',   done:true,  url:'naejangsan-playbook.html',    desc:'가을 단풍 최고 명소. 내장사 단풍터널 전국 최고. 케이블카 운영.'},
-  {id:'chiaksan',      name:'치악산',     alt:'1,288m', region:'강원', dist:'9km',  time:'5-6시간',  diff:'hard',   done:false, url:'',                            desc:'원주 치악산. 비로봉 급경사 코스 강원도 최고 난이도 산행.'},
-  {id:'deogyusan',     name:'덕유산',     alt:'1,614m', region:'전라', dist:'12km', time:'6-7시간',  diff:'medium', done:true,  url:'deogyusan-playbook.html',     desc:'향적봉 정상. 겨울 설경과 스키장으로 유명. 무주 리조트 연계.'},
-  {id:'gyeryongsan',   name:'계룡산',     alt:'845m',   region:'충청', dist:'7km',  time:'4시간',    diff:'easy',   done:true,  url:'gyeryongsan-playbook.html',   desc:'충청의 명산. 삼불봉·관음봉 암릉과 갑사·동학사 사찰 탐방.'},
-  {id:'wolchulsan',    name:'월출산',     alt:'809m',   region:'전라', dist:'7km',  time:'4-5시간',  diff:'hard',   done:true,  url:'wolchulsan-playbook.html',    desc:'남도의 금강산. 천황봉 기암괴석 군락. 구름다리 포함 스릴 코스.'},
-  {id:'mudeungsan',    name:'무등산',     alt:'1,187m', region:'전라', dist:'10km', time:'5-6시간',  diff:'medium', done:false, url:'',                            desc:'광주의 진산. 서석대·입석대 주상절리 절경. 국립공원 지정 2013년.'},
-  {id:'baekhaksan',    name:'백학산',     alt:'876m',   region:'경기', dist:'7km',  time:'4시간',    diff:'easy',   done:false, url:'',                            desc:'경기도 연천 백학산. 아기자기한 능선과 조용한 산행 코스.'},
-  {id:'duryunsan',     name:'두륜산',     alt:'703m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'medium', done:false, url:'',                            desc:'해남 대흥사 배경 명산. 가련봉 정상 남해 조망. 케이블카 운영.'},
-  {id:'minjusan',      name:'민주지산',   alt:'1,242m', region:'충청', dist:'9km',  time:'5시간',    diff:'medium', done:false, url:'',                            desc:'충북 영동 민주지산. 삼도봉 삼거리에서 충북·전북·경북 경계.'},
-  {id:'sikjangsan',    name:'식장산',     alt:'598m',   region:'충청', dist:'6km',  time:'3시간',    diff:'easy',   done:true,  url:'sikjangsan-playbook.html',    desc:'대전 동쪽 식장산. 도심 근교 당일 산행. 정상에서 대전 시내 전망.'},
-  {id:'woraksan',      name:'월악산',     alt:'1,097m', region:'충청', dist:'9km',  time:'5-6시간',  diff:'hard',   done:true,  url:'woraksan-playbook.html',      desc:'충주호 절경 품은 월악산. 영봉 암릉 코스 스릴 만점. 가을 단풍.'},
-  {id:'dobongsan',     name:'도봉산',     alt:'740m',   region:'경기', dist:'7km',  time:'3-4시간',  diff:'medium', done:true,  url:'dobongsan-playbook.html',     desc:'서울 도봉구 뒤편 암릉 명산. 자운봉·만장봉 기암. 북한산 국립공원 포함.'},
-  {id:'soyosan',       name:'소요산',     alt:'587m',   region:'경기', dist:'6km',  time:'3시간',    diff:'easy',   done:true,  url:'soyosan-playbook.html',       desc:'경기 동두천 소요산. 자재암 계곡과 단풍. 수도권 당일 산행 명소.'},
-  {id:'juwangsan',     name:'주왕산',     alt:'721m',   region:'경상', dist:'8km',  time:'4-5시간',  diff:'easy',   done:true,  url:'juwangsan-playbook.html',     desc:'청송 주왕산. 주방천 계곡과 폭포 연계 탐방. 주왕굴 신비로운 분위기.'},
-  {id:'myeongseongsan',name:'명성산',     alt:'922m',   region:'경기', dist:'8km',  time:'4-5시간',  diff:'medium', done:true,  url:'myeongseongsan-playbook.html',desc:'포천·철원 경계 명성산. 억새 군락 가을 산행 명소. 산정호수 연계.'},
-  {id:'taebaeksan',    name:'태백산',     alt:'1,567m', region:'강원', dist:'10km', time:'5-6시간',  diff:'medium', done:true,  url:'taebaeksan-playbook.html',    desc:'태백고원 천제단. 겨울 설경과 주목 군락지. 백두대간 핵심 구간.'},
+  {id:'seoraksan',     name:'설악산',     alt:'1,708m', region:'강원', dist:'10km', time:'7-9시간',  diff:'hard',   done:true,  url:'seoraksan-playbook.html',     desc:'설악산 대청봉. 공룡능선·대청봉 등 대한민국 최고의 암릉 산행지. 사계절 각기 다른 절경.', lat: 38.1189, lng: 128.4650},
+  {id:'hallasan',      name:'한라산',     alt:'1,950m', region:'제주', dist:'9km',  time:'8-10시간', diff:'hard',   done:true,  url:'hallasan-playbook.html',      desc:'우리나라 최고봉. 성판악·관음사 코스로 분화구 백록담 조망. 연간 100만 탐방객.', lat: 33.3617, lng: 126.5292},
+  {id:'jirisan',       name:'지리산',     alt:'1,915m', region:'전라', dist:'24km', time:'1박2일',   diff:'expert', done:true,  url:'jirisan-playbook.html',       desc:'남한 최대 산악지. 노고단~천왕봉 종주 25km. 4개 국립공원 탐방로.', lat: 35.3369, lng: 127.7306},
+  {id:'bukhansan',     name:'북한산',     alt:'836m',   region:'경기', dist:'8km',  time:'4-5시간',  diff:'medium', done:true,  url:'bukhansan-playbook.html',     desc:'서울 북쪽 국립공원. 백운대·인수봉 화강암 명봉. 도심 접근성 최고.', lat: 37.6586, lng: 126.9778},
+  {id:'sobaeksan',     name:'소백산',     alt:'1,440m', region:'충청', dist:'12km', time:'6-7시간',  diff:'medium', done:true,  url:'sobaeksan-playbook.html',     desc:'연화봉~비로봉 능선. 봄철 철쭉 군락지로 유명. 죽령 고개 경유 코스.', lat: 36.9427, lng: 128.4722},
+  {id:'gayasan',       name:'가야산',     alt:'1,433m', region:'경상', dist:'10km', time:'5-6시간',  diff:'medium', done:true,  url:'gayasan-playbook.html',       desc:'해인사 품은 명산. 상왕봉에서 고려 팔만대장경의 기운 느끼기.', lat: 35.8236, lng: 128.1219},
+  {id:'odaesan',       name:'오대산',     alt:'1,563m', region:'강원', dist:'11km', time:'5-6시간',  diff:'medium', done:true,  url:'odaesan-playbook.html',       desc:'월정사·상원사 사찰 탐방과 연계. 비로봉 정상 고원 능선이 인상적.', lat: 37.7989, lng: 128.5639},
+  {id:'naejangsan',    name:'내장산',     alt:'763m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'easy',   done:true,  url:'naejangsan-playbook.html',    desc:'가을 단풍 최고 명소. 내장사 단풍터널 전국 최고. 케이블카 운영.', lat: 35.4336, lng: 126.8856},
+  {id:'chiaksan',      name:'치악산',     alt:'1,288m', region:'강원', dist:'9km',  time:'5-6시간',  diff:'hard',   done:false, url:'',                            desc:'원주 치악산. 비로봉 급경사 코스 강원도 최고 난이도 산행.', lat: 37.3686, lng: 128.0531},
+  {id:'deogyusan',     name:'덕유산',     alt:'1,614m', region:'전라', dist:'12km', time:'6-7시간',  diff:'medium', done:true,  url:'deogyusan-playbook.html',     desc:'향적봉 정상. 겨울 설경과 스키장으로 유명. 무주 리조트 연계.', lat: 35.8617, lng: 127.7472},
+  {id:'gyeryongsan',   name:'계룡산',     alt:'845m',   region:'충청', dist:'7km',  time:'4시간',    diff:'easy',   done:true,  url:'gyeryongsan-playbook.html',   desc:'충청의 명산. 삼불봉·관음봉 암릉과 갑사·동학사 사찰 탐방.', lat: 36.3533, lng: 127.2081},
+  {id:'wolchulsan',    name:'월출산',     alt:'809m',   region:'전라', dist:'7km',  time:'4-5시간',  diff:'hard',   done:true,  url:'wolchulsan-playbook.html',    desc:'남도의 금강산. 천황봉 기암괴석 군락. 구름다리 포함 스릴 코스.', lat: 34.7892, lng: 126.6975},
+  {id:'mudeungsan',    name:'무등산',     alt:'1,187m', region:'전라', dist:'10km', time:'5-6시간',  diff:'medium', done:false, url:'',                            desc:'광주의 진산. 서석대·입석대 주상절리 절경. 국립공원 지정 2013년.', lat: 35.1336, lng: 127.0089},
+  {id:'baekhaksan',    name:'백학산',     alt:'876m',   region:'경기', dist:'7km',  time:'4시간',    diff:'easy',   done:true,  url:'baekhaksan-playbook.html',    desc:'경기도 연천 백학산. 아기자기한 능선과 조용한 산행 코스.', lat: 37.9903, lng: 126.9208},
+  {id:'duryunsan',     name:'두륜산',     alt:'703m',   region:'전라', dist:'8km',  time:'4-5시간',  diff:'medium', done:false, url:'',                            desc:'해남 대흥사 배경 명산. 가련봉 정상 남해 조망. 케이블카 운영.', lat: 34.4817, lng: 126.6231},
+  {id:'minjusan',      name:'민주지산',   alt:'1,242m', region:'충청', dist:'9km',  time:'5시간',    diff:'medium', done:false, url:'',                            desc:'충북 영동 민주지산. 삼도봉 삼거리에서 충북·전북·경북 경계.', lat: 36.0356, lng: 127.8719},
+  {id:'sikjangsan',    name:'식장산',     alt:'598m',   region:'충청', dist:'6km',  time:'3시간',    diff:'easy',   done:true,  url:'sikjangsan-playbook.html',    desc:'대전 동쪽 식장산. 도심 근교 당일 산행. 정상에서 대전 시내 전망.', lat: 36.3117, lng: 127.4819},
+  {id:'woraksan',      name:'월악산',     alt:'1,097m', region:'충청', dist:'9km',  time:'5-6시간',  diff:'hard',   done:true,  url:'woraksan-playbook.html',      desc:'충주호 절경 품은 월악산. 영봉 암릉 코스 스릴 만점. 가을 단풍.', lat: 36.8833, lng: 128.0931},
+  {id:'dobongsan',     name:'도봉산',     alt:'740m',   region:'경기', dist:'7km',  time:'3-4시간',  diff:'medium', done:true,  url:'dobongsan-playbook.html',     desc:'서울 도봉구 뒤편 암릉 명산. 자운봉·만장봉 기암. 북한산 국립공원 포함.', lat: 37.6992, lng: 127.0156},
+  {id:'soyosan',       name:'소요산',     alt:'587m',   region:'경기', dist:'6km',  time:'3시간',    diff:'easy',   done:true,  url:'soyosan-playbook.html',       desc:'경기 동두천 소요산. 자재암 계곡과 단풍. 수도권 당일 산행 명소.', lat: 37.9436, lng: 127.0789},
+  {id:'juwangsan',     name:'주왕산',     alt:'721m',   region:'경상', dist:'8km',  time:'4-5시간',  diff:'easy',   done:true,  url:'juwangsan-playbook.html',     desc:'청송 주왕산. 주방천 계곡과 폭포 연계 탐방. 주왕굴 신비로운 분위기.', lat: 36.4022, lng: 129.0628},
+  {id:'myeongseongsan',name:'명성산',     alt:'922m',   region:'경기', dist:'8km',  time:'4-5시간',  diff:'medium', done:true,  url:'myeongseongsan-playbook.html',desc:'포천·철원 경계 명성산. 억새 군락 가을 산행 명소. 산정호수 연계.', lat: 38.1067, lng: 127.3117},
+  {id:'taebaeksan',    name:'태백산',     alt:'1,567m', region:'강원', dist:'10km', time:'5-6시간',  diff:'medium', done:true,  url:'taebaeksan-playbook.html',    desc:'태백고원 천제단. 겨울 설경과 주목 군락지. 백두대간 핵심 구간.', lat: 37.0983, lng: 128.9136},
   // ── 대만 명산 ──
-  {id:'yushan',        name:'위산(玉山)', alt:'3,952m', region:'대만', dist:'11km', time:'1박2일',   diff:'expert', done:true,  url:'yushan-playbook.html',        desc:'대만 최고봉·동북아 최고점. 배운산장 숙박 후 일출 정상 도전. 사전 허가 필수.'},
-  {id:'xueshan',       name:'설산(雪山)', alt:'3,886m', region:'대만', dist:'11km', time:'1박2일',   diff:'expert', done:true,  url:'xueshan-playbook.html',       desc:'대만 제2봉. 칠성담(七星潭) 빙하 지형과 고산 식물대. 타이중·리산 접근.'},
-  {id:'yangmingshan',  name:'양명산(陽明山)',alt:'1,120m',region:'대만',dist:'8km', time:'4-5시간',  diff:'easy',   done:true,  url:'yangmingshan-playbook.html',  desc:'타이베이 근교 화산 국립공원. 치싱산 정상 분화구 조망. 연중 진달래·유황 온천.'},
+  {id:'yushan',        name:'위산(玉山)', alt:'3,952m', region:'대만', dist:'11km', time:'1박2일',   diff:'expert', done:true,  url:'yushan-playbook.html',        desc:'대만 최고봉·동북아 최고점. 배운산장 숙박 후 일출 정상 도전. 사전 허가 필수.', lat: 23.4700, lng: 120.9575},
+  {id:'xueshan',       name:'설산(雪山)', alt:'3,886m', region:'대만', dist:'11km', time:'1박2일',   diff:'expert', done:true,  url:'xueshan-playbook.html',       desc:'대만 제2봉. 칠성담(七星潭) 빙하 지형과 고산 식물대. 타이중·리산 접근.', lat: 24.3850, lng: 121.2319},
+  {id:'yangmingshan',  name:'양명산(陽明山)',alt:'1,120m',region:'대만',dist:'8km', time:'4-5시간',  diff:'easy',   done:true,  url:'yangmingshan-playbook.html',  desc:'타이베이 근교 화산 국립공원. 치싱산 정상 분화구 조망. 연중 진달래·유황 온천.', lat: 25.1672, lng: 121.5742},
 ];
-const DIFF_LABEL = {easy:'초급',medium:'중급',hard:'고급',expert:'전문가'};
-const DIFF_CLASS = {easy:'diff-easy',medium:'diff-medium',hard:'diff-hard',expert:'diff-expert'};
-function renderGrid(){
-  const grid = document.getElementById('mountainGrid');
-  const korea = MOUNTAINS.filter(m => m.region !== '대만');
-  const taiwan = MOUNTAINS.filter(m => m.region === '대만');
-  const renderCard = m => `
-  <div class="mountain-card">
-    <!-- Card Top Photographic Thumbnail -->
-    <div class="card-thumbnail-wrap">
-      <picture>
-        <source srcset="assets/img/${m.id}/g1-640.webp" type="image/webp">
-        <img 
-          src="assets/img/${m.id}/g1-640.jpg" 
-          alt="${m.name} 등산로 전경" 
-          class="card-thumbnail" 
-          loading="lazy" 
-          decoding="async">
-      </picture>
-    </div>
-    <div class="card-header">
-        <div class="card-title-row">
-          <span class="card-name">${m.name}</span>
-          <span class="card-alt">${m.alt}</span>
-        </div>
-        <div style="display:flex;align-items:center;gap:var(--space-2);">
-          <span class="card-region">${m.region}</span>
-          <span class="diff-badge ${DIFF_CLASS[m.diff]}">${DIFF_LABEL[m.diff]}</span>
-          ${m.done ? '<span style="font-size:var(--text-xs);background:var(--color-orange);color:#fff;padding:2px 8px;border-radius:var(--radius-full);font-weight:700;">플레이북 ✓</span>' : ''}
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-stats">
-          <div class="card-stat">
-            <div class="card-stat-label">거리</div>
-            <div class="card-stat-value">🥾 ${m.dist}</div>
-          </div>
-          <div class="card-stat">
-            <div class="card-stat-label">소요시간</div>
-            <div class="card-stat-value">⏱ ${m.time}</div>
-          </div>
-        </div>
-        <p class="card-desc">${m.desc}</p>
-      </div>
-      <div class="card-footer">
-        ${m.done
-          ? `<a href="${m.url}" class="card-playbook-btn">🗺 플레이북 보기</a>`
-          : `<div class="card-pending-tag">⏳ 플레이북 준비 중</div>`
-        }
-      </div>
-    </div>
-  `;
-  grid.innerHTML =
-    korea.map(renderCard).join('') +
-    `<div class="section-divider">🌏 해외 명산 — 대만</div>` +
-    taiwan.map(renderCard).join('');
-}
-const t = document.querySelector('[data-theme-toggle]');
-const r = document.documentElement;
-let d = r.getAttribute('data-theme') === 'dark';
-function updateIcon(){
-  if(!t) return;
-  t.innerHTML = d
-    ? `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>`
-    : `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
-}
-if(t){t.addEventListener('click',()=>{d=!d;r.setAttribute('data-theme',d?'dark':'light');updateIcon();});}
-updateIcon();
-renderGrid();
+</script>
+
+<!-- Combined design-system styles & custom client script -->
+<script src="assets/js/app.js"></script>
+
+<!-- Leaflet CDN Lazy Initer for Landing Map -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const mapToggleBtn = document.getElementById('mapToggleBtn');
+  let mapInstance = null;
+
+  function loadLeaflet(callback) {
+    if (window.L) {
+      callback();
+      return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    link.crossOrigin = '';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    script.crossOrigin = '';
+    script.onload = callback;
+    document.head.appendChild(script);
+  }
+
+  if (mapToggleBtn) {
+    mapToggleBtn.addEventListener('click', () => {
+      const accordion = mapToggleBtn.closest('.accordion');
+      const isExpanded = accordion.classList.contains('open');
+
+      if (isExpanded) {
+        loadLeaflet(() => {
+          if (!mapInstance) {
+            mapInstance = L.map('nationalMap', {
+              scrollWheelZoom: false
+            }).setView([30.0, 124.0], 5);
+
+            // Base Layer
+            L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+              attribution: 'Esri, Maxar',
+              maxZoom: 17
+            }).addTo(mapInstance);
+
+            const DIFF_LABEL = { easy: '초급', medium: '중급', hard: '고급', expert: '전문가' };
+
+            // Add Markers
+            window.MOUNTAINS.forEach(m => {
+              const markerColor = m.diff === 'easy' ? '#10b981' : 
+                                  m.diff === 'medium' ? '#f97316' : 
+                                  m.diff === 'hard' ? '#ef4444' : '#b91c1c';
+                                  
+              const marker = L.circleMarker([m.lat, m.lng], {
+                radius: 7,
+                fillColor: markerColor,
+                color: '#fff',
+                weight: 1.5,
+                fillOpacity: 0.9
+              });
+
+              const popupHtml = `
+                <div style="font-family: var(--font-body); padding: 4px;">
+                  <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 800;">${m.name}</h4>
+                  <div style="font-size: 11px; margin-bottom: 2px;">⛰️ 고도: <strong>${m.alt}</strong></div>
+                  <div style="font-size: 11px; margin-bottom: 6px;">⚡ 난이도: <strong>${DIFF_LABEL[m.diff]}</strong></div>
+                  ${m.done 
+                    ? `<a href="${m.url}" style="font-size: 11px; font-weight: 700; color: var(--primary);">🗺️ 플레이북 바로가기</a>` 
+                    : `<span style="font-size: 11px; color: var(--faint);">⏳ 플레이북 준비 중</span>`
+                  }
+                </div>
+              `;
+
+              marker.bindPopup(popupHtml);
+              marker.addTo(mapInstance);
+            });
+          }
+          
+          // Fix Leaflet viewport dimensions
+          setTimeout(() => {
+            if (mapInstance) mapInstance.invalidateSize();
+          }, 150);
+        });
+      }
+    });
+  }
+});
 </script>
 </body>
 </html>

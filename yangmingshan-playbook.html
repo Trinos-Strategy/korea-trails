@@ -6,23 +6,415 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>양명산 등산 플레이북</title>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/design-system.css">
 <style>
-    :root,[data-theme="light"]{--bg:#f4f5f1;--surface:#fcfcfa;--surface2:#eef1ea;--border:#d8ddd2;--text:#1d221b;--muted:#667061;--faint:#a7b0a2;--green:#4f7d4a;--greenbg:#dfeadf;--blue:#326f95;--bluebg:#dcebf3;--red:#9d4f36;--redbg:#f1dfd7;--teal:#3d8a7f;--shadow:0 10px 24px rgba(21,30,20,.08);--r:18px;--r2:12px;--xs:clamp(.75rem,.7rem+.2vw,.87rem);--sm:clamp(.9rem,.84rem+.2vw,1rem);--base:clamp(1rem,.95rem+.25vw,1.1rem);--lg:clamp(1.15rem,1rem+.5vw,1.45rem);--xl:clamp(1.6rem,1.2rem+1.2vw,2.4rem);--xxl:clamp(2.2rem,1.3rem+2vw,3.6rem)}
-    [data-theme="dark"]{--bg:#151815;--surface:#1f241f;--surface2:#283028;--border:#394338;--text:#e4ebe1;--muted:#96a292;--faint:#667165;--green:#73b06f;--greenbg:#243525;--blue:#73b6df;--bluebg:#1d2f39;--red:#d28c74;--redbg:#3a2620;--teal:#74c0b2;--shadow:0 12px 28px rgba(0,0,0,.3)}
-    *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--text);font-family:'Satoshi',sans-serif;line-height:1.6} h1,h2,h3,h4,p{margin:0} button{font:inherit} table{border-collapse:collapse;width:100%}
-    .wrap{max-width:1160px;margin:0 auto;padding:0 20px}.header{position:sticky;top:0;z-index:50;background:color-mix(in srgb,var(--surface) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
-    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}.brand{display:flex;gap:14px;align-items:center}.logo{width:46px;height:46px;border-radius:14px;background:linear-gradient(135deg,#3d8a7f,#79b8a9);display:grid;place-items:center;box-shadow:var(--shadow)} .brand h1{font:800 var(--lg) 'Cabinet Grotesk',sans-serif}.brand p{font-size:var(--xs);color:var(--muted)} .theme-btn{width:42px;height:42px;border-radius:999px;border:1px solid var(--border);background:var(--surface);cursor:pointer;color:var(--text)}
-    .hero{padding:44px 0 28px;background:linear-gradient(180deg,color-mix(in srgb,var(--teal) 14%,var(--bg)),transparent)} .hero-badge{display:inline-block;background:var(--teal);color:#fff;padding:7px 12px;border-radius:999px;font-size:var(--xs);font-weight:700}.hero h2{margin-top:14px;font:800 var(--xxl) 'Cabinet Grotesk',sans-serif;line-height:1.05}.hero p{margin-top:12px;max-width:760px;color:var(--muted);font-size:var(--base)}
-    .stats{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:24px}.stat{background:var(--surface);border:1px solid var(--border);border-radius:var(--r2);padding:16px;box-shadow:var(--shadow)} .stat .v{font:800 var(--lg) 'Cabinet Grotesk',sans-serif;color:var(--teal)} .stat .l{font-size:var(--xs);color:var(--muted)}
-    .selector{display:flex;flex-wrap:wrap;gap:12px;padding:22px 0 8px}.course-btn{border:1px solid var(--border);background:var(--surface);padding:12px 16px;border-radius:999px;cursor:pointer;font-weight:700;color:var(--text)} .course-btn.active.green{background:var(--green);border-color:var(--green);color:#fff}.course-btn.active.blue{background:var(--blue);border-color:var(--blue);color:#fff}.course-btn.active.red{background:var(--red);border-color:var(--red);color:#fff}
-    .panel{display:none;padding:18px 0 46px}.panel.active{display:block}.panel-top{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}.level{padding:8px 14px;border-radius:999px;color:#fff;font-size:var(--sm);font-weight:800}.green .level{background:var(--green)}.blue .level{background:var(--blue)}.red .level{background:var(--red)} .panel-name{font:800 var(--xl) 'Cabinet Grotesk',sans-serif}.panel-sub{font-size:var(--sm);color:var(--muted)}
-    .tabs{display:flex;gap:8px;overflow:auto;padding-bottom:4px;margin:18px 0 24px}.tab{border:none;background:var(--surface2);padding:11px 14px;border-radius:999px;cursor:pointer;white-space:nowrap;color:var(--muted);font-weight:700}.tab.active{color:#fff}.green .tab.active{background:var(--green)}.blue .tab.active{background:var(--blue)}.red .tab.active{background:var(--red)} .tabpane{display:none}.tabpane.active{display:block}
-    .grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:14px}.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);padding:18px;box-shadow:var(--shadow)} .kpi .num{font:800 var(--lg) 'Cabinet Grotesk',sans-serif}.green .kpi .num{color:var(--green)}.blue .kpi .num{color:var(--blue)}.red .kpi .num{color:var(--red)} .kpi .txt{font-size:var(--xs);color:var(--muted)}
-    .section-title{display:flex;align-items:center;gap:12px;margin:10px 0 16px}.section-title h3{font:800 var(--lg) 'Cabinet Grotesk',sans-serif}.line{height:1px;background:var(--border);flex:1}.flow{display:flex;flex-wrap:wrap;gap:8px}.chip{padding:7px 12px;border-radius:999px;background:var(--surface2);font-size:var(--xs);font-weight:700}.arr{align-self:center;color:var(--faint)} .elev svg{width:100%;height:220px}.desc{margin-top:14px;color:var(--muted);font-size:var(--sm)}
-    .segments{display:grid;gap:12px}.seg{border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow);overflow:hidden}.seg-head{display:flex;gap:14px;align-items:center;padding:16px 18px;cursor:pointer}.seg-no{width:34px;height:34px;border-radius:999px;display:grid;place-items:center;font-size:var(--xs);font-weight:800}.green .seg-no{background:var(--greenbg);color:var(--green)}.blue .seg-no{background:var(--bluebg);color:var(--blue)}.red .seg-no{background:var(--redbg);color:var(--red)} .seg-title{font-weight:800}.seg-meta{font-size:var(--xs);color:var(--muted)} .seg-arrow{margin-left:auto;color:var(--muted)} .seg-body{display:none;padding:0 18px 18px;border-top:1px solid var(--border)} .seg.open .seg-body{display:block}.seg.open .seg-arrow{transform:rotate(180deg)} .seg-body p{margin-top:14px;color:var(--muted);font-size:var(--sm)} .bar{height:7px;background:var(--surface2);border-radius:999px;overflow:hidden;margin:12px 0}.fill{height:100%}.green .fill{background:var(--green)}.blue .fill{background:var(--blue)}.red .fill{background:var(--red)} .tip,.warn{padding:11px 12px;border-radius:12px;font-size:var(--xs);margin-top:10px}.tip{background:var(--surface2);color:var(--muted)}.warn{background:var(--redbg);color:var(--red)}
-    .map svg{width:100%;height:auto;max-height:430px}.table-wrap{overflow:auto;border:1px solid var(--border);border-radius:16px;background:var(--surface);box-shadow:var(--shadow)} th,td{padding:12px 14px;border-bottom:1px solid var(--border);font-size:var(--xs);text-align:left} th{background:var(--surface2);color:var(--muted)} tr:last-child td{border-bottom:none}
-    .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
-    @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
+  /* Course Color Tokens for Yangmingshan */
+  :root {
+    --green: #4f7d4a;
+    --greenbg: #dfeadf;
+    --blue: #326f95;
+    --bluebg: #dcebf3;
+    --red: #9d4f36;
+    --redbg: #f1dfd7;
+    --teal: #3d8a7f;
+  }
+  
+  [data-theme="dark"] {
+    --green: #73b06f;
+    --greenbg: #243525;
+    --blue: #73b6df;
+    --bluebg: #1d2f39;
+    --red: #d28c74;
+    --redbg: #3a2620;
+    --teal: #74c0b2;
+  }
+
+  /* Header & Navigation */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-3) var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--teal), var(--primary));
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .brand h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .brand p {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition), color var(--transition);
+  }
+  
+  .theme-btn:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+
+  /* Selector & Course Buttons */
+  .selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-5) 0 var(--space-3);
+  }
+  
+  .course-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    transition: all var(--transition);
+  }
+  
+  .course-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .course-btn.active.green { background: var(--green); border-color: var(--green); color: #fff; }
+  .course-btn.active.blue { background: var(--blue); border-color: var(--blue); color: #fff; }
+  .course-btn.active.red { background: var(--red); border-color: var(--red); color: #fff; }
+
+  /* Panels & Course Info */
+  .panel {
+    display: none;
+    padding: var(--space-4) 0 var(--space-10);
+  }
+  
+  .panel.active {
+    display: block;
+  }
+  
+  .panel-top {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+  }
+  
+  .level {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    color: #fff;
+    font-size: var(--text-sm);
+    font-weight: 800;
+  }
+  
+  .green .level { background: var(--green); }
+  .blue .level { background: var(--blue); }
+  .red .level { background: var(--red); }
+  
+  .panel-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+  }
+  
+  .panel-sub {
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  /* Tabs Customizations (Keep Pill Style matching original design) */
+  .tabs {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    margin: var(--space-4) 0 var(--space-6);
+    border-bottom: none;
+  }
+  
+  .tab {
+    border: none;
+    background: var(--surface2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--muted);
+    font-weight: 700;
+    transition: all var(--transition);
+  }
+  
+  .tab:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+  
+  .green .tab.active { background: var(--green); color: #fff; }
+  .blue .tab.active { background: var(--blue); color: #fff; }
+  .red .tab.active { background: var(--red); color: #fff; }
+
+  /* Grid & KPI Cards Layout */
+  .grid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .kpi .num {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .green .kpi .num { color: var(--green); }
+  .blue .kpi .num { color: var(--blue); }
+  .red .kpi .num { color: var(--red); }
+  
+  .kpi .txt {
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  /* Section Titles */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 var(--space-4);
+  }
+  
+  .section-title h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .line {
+    height: 1px;
+    background: var(--border);
+    flex: 1;
+  }
+
+  /* Course Flow */
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .chip {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    background: var(--surface2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+  
+  .arr {
+    align-self: center;
+    color: var(--faint);
+  }
+
+  /* Elevation Profile */
+  .elev svg {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .desc {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  /* Segments (Route Accordions) */
+  .segments {
+    display: grid;
+    gap: var(--space-3);
+  }
+  
+  .seg {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+  }
+  
+  .seg-head {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-4) var(--space-5);
+    cursor: pointer;
+  }
+  
+  .seg-no {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    display: grid;
+    place-items: center;
+    font-size: var(--text-xs);
+    font-weight: 800;
+  }
+  
+  .green .seg-no { background: var(--greenbg); color: var(--green); }
+  .blue .seg-no { background: var(--bluebg); color: var(--blue); }
+  .red .seg-no { background: var(--redbg); color: var(--red); }
+  
+  .seg-title {
+    font-weight: 800;
+    font-size: var(--text-sm);
+  }
+  
+  .seg-meta {
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+  
+  .seg-arrow {
+    margin-left: auto;
+    color: var(--muted);
+    transition: transform var(--transition);
+  }
+  
+  .seg-body {
+    display: none;
+    padding: 0 var(--space-5) var(--space-5);
+    border-top: 1px solid var(--border);
+  }
+  
+  .seg.open .seg-body {
+    display: block;
+  }
+  
+  .seg.open .seg-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .seg-body p {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+  
+  .bar {
+    height: 7px;
+    background: var(--surface2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: var(--space-3) 0;
+  }
+  
+  .fill {
+    height: 100%;
+  }
+  
+  .green .fill { background: var(--green); }
+  .blue .fill { background: var(--blue); }
+  .red .fill { background: var(--red); }
+  
+  .tip, .warn {
+    padding: var(--space-3) var(--space-4);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    margin-top: var(--space-3);
+  }
+  
+  .tip {
+    background: var(--surface2);
+    color: var(--muted);
+  }
+  
+  .warn {
+    background: var(--redbg);
+    color: var(--red);
+  }
+
+  /* Tips Grid */
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .tipcard h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-3);
+  }
+  
+  .tipcard ul {
+    padding-left: var(--space-4);
+    margin: 0;
+  }
+  
+  .tipcard li {
+    margin: var(--space-2) 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+  
+  /* Footer Override */
+  footer {
+    padding: var(--space-8) 0 var(--space-12);
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+
+  /* Responsive Adjustments */
+  @media (max-width: 960px) {
+    .grid6 { grid-template-columns: repeat(3, 1fr); }
+    .tips-grid { grid-template-columns: 1fr 1fr; }
+  }
+  
+  @media (max-width: 640px) {
+    .grid6 { grid-template-columns: repeat(2, 1fr); }
+    .tips-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+  }
+</style>
   
 
 
@@ -548,7 +940,8 @@
 </style>
 </head>
 <body>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M7 33c5-9 10-14 16-14 4 0 7 2 10 6 2-1 5-2 8-2" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M8 38h32" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M14 14c3 1 5 3 7 6M24 11c2 2 4 5 5 8M33 13c2 1 3 3 4 5" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>양명산</h1><p>타이베이 근교 · 칠성산 1,120m · 화산지형·유황·초원·온천</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
+<a href="#mainContent" class="skip-link">본문 바로가기</a>
+<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M7 33c5-9 10-14 16-14 4 0 7 2 10 6 2-1 5-2 8-2" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M8 38h32" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M14 14c3 1 5 3 7 6M24 11c2 2 4 5 5 8M33 13c2 1 3 3 4 5" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1><a href="index.html" style="color: var(--text); text-decoration: none;">양명산 플레이북</a></h1><p>타이베이 근교 · 칠성산 1,120m · 화산지형·유황·초원·온천</p></div></div><button class="theme-btn" id="themeBtn" aria-label="다크모드 전환">◐</button></div></header>
 <section class="hero hero-bleed">
   
   <!-- Background Picture -->
@@ -560,8 +953,42 @@
   <div class="hero-overlay"></div>
 
   <div class="hero-content">
-    
-<div class="wrap"><span class="hero-badge">Yangmingshan National Park · Qixingshan</span><h2>양명산 3코스 등산 플레이북</h2><p>타이베이에서 당일로 다녀오기 좋은 양명산·칠성산 코스를 초급·중급·고급으로 나눠 만든 인터랙티브 가이드입니다. 소유갱, 냉수갱, 칭티엔강을 중심으로 가장 많이 걷는 대표 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">1,120m
+    <div class="wrap">
+      <span class="hero-badge">Yangmingshan National Park · Qixingshan</span>
+      <h2>양명산 3코스 등산 플레이북</h2>
+      <p>타이베이에서 당일로 다녀오기 좋은 양명산·칠성산 코스를 초급·중급·고급으로 나눠 만든 인터랙티브 가이드입니다. 소유갱, 냉수갱, 칭티엔강을 중심으로 가장 많이 걷는 대표 루트를 기준으로 구성했습니다.</p>
+      
+      <!-- Stats KPIs -->
+      <div class="stats">
+        <div class="stat">
+          <div class="l">최고 고도</div>
+          <div class="v">1,120m</div>
+        </div>
+        <div class="stat">
+          <div class="l">총 거리</div>
+          <div class="v">8km</div>
+        </div>
+        <div class="stat">
+          <div class="l">소요 시간</div>
+          <div class="v">4.5시간</div>
+        </div>
+        <div class="stat">
+          <div class="l">국가</div>
+          <div class="v">대만 🇹🇼</div>
+        </div>
+        <div class="stat">
+          <div class="l">코스 유형</div>
+          <div class="v">당일 산행</div>
+        </div>
+      </div>
+
+      <!-- Course Selector Buttons -->
+      <div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);">
+        <button class="course-btn active green" data-course="beginner">🌿 초급: 소유갱 왕복</button>
+        <button class="course-btn blue" data-course="intermediate">🦶 중급: 소유갱-냉수갱 종주</button>
+        <button class="course-btn red" data-course="advanced">🏔 고급: 칭티엔강 종주</button>
+      </div>
+    </div>
   </div>
   
   <!-- Hero Credit Overlay -->
@@ -572,7 +999,7 @@
   </div>
 
 </section>
-<main class="wrap">
+<main class="wrap" id="mainContent">
 <section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">소유갱 왕복 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 소유갱 원점회귀 · 약 3.2km · 1시간 40분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
 <div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.2km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">1h 40m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">1,120m</div><div class="txt">칠성산 주봉</div></div><div class="card kpi"><div class="num">중하</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">계단길</div><div class="txt">주요 지형</div></div><div class="card kpi"><div class="num">당일 가능</div><div class="txt">접근성</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">🚌 소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4f7d4a" stop-opacity=".34"></stop><stop offset="100%" stop-color="#4f7d4a" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="4"></path><circle cx="382" cy="60" fill="#4f7d4a" r="6"></circle><text fill="#4f7d4a" font-size="12" x="396" y="54">칠성산 1,120m</text></svg></div><p class="desc">소유갱에서 칠성산 정상만 찍고 돌아오는 가장 짧은 대표 코스는 정상까지 약 1.6km, 왕복 3.2km 정도로 많이 안내되며, 실제 후기도 약 1시간 40분 전후가 자주 보입니다. 타이베이 당일 여행자에게 가장 부담이 적은 입문 코스입니다.</p></div>
 <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 출발</div><div class="seg-meta">0km · 유황 분기공 전망대</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>버스 정류장과 전망대를 지나 칠성산 방향 계단길로 진입합니다. 초반부터 계단 비중이 높아 천천히 리듬을 잡는 편이 좋습니다.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip">💡 출발 전 소유갱 분기공과 유황 지형을 먼저 보고 올라가면 양명산 특색을 제대로 느끼기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">소유갱 → 칠성산 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>주요 구간은 돌계단과 나무계단으로 이어지며, 날씨가 좋으면 타이베이 도심 방향 조망도 열립니다. 해발은 높지 않지만 계단이 계속 이어져 숨이 차는 편입니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="tip">💡 바람이 강하면 정상 체감온도가 낮으니 얇은 바람막이를 준비하는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">정상 감상 후 원점 하산</div><div class="seg-meta">1.6km · 40~50분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>올라온 길로 그대로 내려옵니다. 비 온 뒤에는 계단과 바위에 미끄러움이 생기므로 보폭을 줄여 하산하세요.</p><div class="bar"><div class="fill" style="width:36%"></div></div><div class="tip">💡 하산 뒤 바로 버스로 시내 복귀가 가능해 반나절 일정에 적합합니다.</div></div></div></div></div>
