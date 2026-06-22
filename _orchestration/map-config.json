@@ -1,0 +1,17 @@
+{
+  "mountain_id": "yangmingshan",
+  "default_layer": "satellite",
+  "points": {
+    "xiaoyoukeng_소유갱":   {"lat": 25.1764, "lng": 121.5478, "alt_m": 805, "type": "trailhead/bus"},
+    "qixing_main_주봉":     {"lat": 25.1706, "lng": 121.5533, "alt_m": 1120, "type": "summit"},
+    "qixing_east_동봉":     {"lat": 25.1692, "lng": 121.5554, "alt_m": 1107, "type": "summit"},
+    "menghuanchi_몽환호":   {"lat": 25.1671, "lng": 121.5606, "alt_m": 880, "type": "lake"},
+    "lengshuikeng_냉수갱":  {"lat": 25.1656, "lng": 121.5639, "alt_m": 740, "type": "hotspring/bus"},
+    "qingtiangang_칭티엔강":{"lat": 25.1672, "lng": 121.5742, "alt_m": 760, "type": "grassland/bus"}
+  },
+  "routes": {
+    "beginner":     ["xiaoyoukeng_소유갱","qixing_main_주봉","xiaoyoukeng_소유갱"],
+    "intermediate": ["xiaoyoukeng_소유갱","qixing_main_주봉","qixing_east_동봉","lengshuikeng_냉수갱"],
+    "advanced":     ["xiaoyoukeng_소유갱","qixing_main_주봉","qixing_east_동봉","menghuanchi_몽환호","lengshuikeng_냉수갱","qingtiangang_칭티엔강"]
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "mountain_id": "yangmingshan",
+  "verified_on": "2026-06-22",
+  "sources": [
+    "https://www.ymsnp.gov.tw/en/cp.aspx?n=18205",
+    "https://ebus.gov.taipei/"
+  ],
+  "to_city": [
+    {
+      "from": "Taoyuan Airport (TPE)",
+      "via": "Airport MRT (Express)",
+      "to": "Taipei Main Station",
+      "time_min": 36,
+      "fare": "NT$150",
+      "headway": "15min"
+    },
+    {
+      "from": "Taoyuan Airport (TPE)",
+      "via": "Airport MRT (Commuter)",
+      "to": "Taipei Main Station",
+      "time_min": 50,
+      "fare": "NT$150",
+      "headway": "15min"
+    },
+    {
+      "from": "Taoyuan Airport (TPE)",
+      "via": "Kuo-Kuang Bus 1819",
+      "to": "Taipei Main Station",
+      "time_min": 55,
+      "fare": "NT$140",
+      "headway": "20-30min"
+    }
+  ],
+  "city_to_terminal": [
+    {
+      "route": "260",
+      "board": "Taipei Main Station (Zhongxiao)",
+      "alight": "Yangmingshan Terminal",
+      "time_min": 60,
+      "fare": "NT$30",
+      "headway": "10-15min",
+      "first_bus": "05:40",
+      "last_bus": "22:30"
+    },
+    {
+      "route": "紅5 (Red 5)",
+      "board": "MRT Jiantan Station (Exit 1) / Shilin Station",
+      "alight": "Yangmingshan Terminal",
+      "time_min": 45,
+      "fare": "NT$15",
+      "headway": "Peak 4-8min / Off-peak 12-15min",
+      "first_bus": "05:30",
+      "last_bus": "00:10"
+    },
+    {
+      "route": "小15 (Small 15 / S15)",
+      "board": "MRT Jiantan Station (Exit 1) / Shilin Station",
+      "alight": "Lengshuikeng / Qingtiangang",
+      "time_min": 50,
+      "fare": "NT$15",
+      "headway": "Weekday 30-40min / Weekend 20-30min",
+      "first_bus": "05:40",
+      "last_bus": "16:20 (Weekday) / 17:30 (Weekend)"
+    }
+  ],
+  "park_shuttle": {
+    "route": "108 (Shuttle)",
+    "loop": true,
+    "fare_single": "NT$15",
+    "fare_daypass": "NT$60",
+    "headway_weekday": "30-40min",
+    "headway_weekend": "10-20min",
+    "last_bus": "17:30 (Yangmingshan Bus Terminal Departure)",
+    "stops": [
+      "Yangmingshan Bus Terminal",
+      "Visitor Center",
+      "Zhuzihu Police Station",
+      "Erziping",
+      "Xiaoyoukeng",
+      "Lengshuikeng",
+      "Qingtiangang",
+      "Jialiping"
+    ]
+  },
+  "trailhead_access": {
+    "start_point": "소유갱 (Xiaoyoukeng)",
+    "access_method": "시내에서 260 또는 紅5 버스 탑승 → 양명산 버스터미널 하차 → 108 공원 셔틀버스로 환승 → 소유갱 정류장 하차 (총 소요시간 약 1시간 15분 ~ 1시간 30분)"
+  },
+  "return_by_course": {
+    "beginner": {
+      "course_name": "소유갱 왕복 코스 (초급)",
+      "exit_point": "소유갱 (Xiaoyoukeng)",
+      "route": "소유갱 → 108 셔틀버스 탑승 → 양명산 터미널 하차 → 260 또는 紅5 버스 환승 → 시내 귀가",
+      "safe_departure_time": "16:30 이전 (108 셔틀버스 막차가 끊기기 전 하산 권장)",
+      "last_shuttle_estimate": "막차 통과 시간 약 17:00 ~ 17:15 예상 (터미널 17:30 종료)"
+    },
+    "intermediate": {
+      "course_name": "소유갱 → 냉수갱 종주 코스 (중급)",
+      "exit_point": "냉수갱 (Lengshuikeng)",
+      "route": "냉수갱 → 小15 버스 탑승하여 MRT 젠탄역 직행 (또는 108 셔틀버스 탑승 → 양명산 터미널 → 260/紅5 환승)",
+      "safe_departure_time": "평일 16:00 이전 / 주말 17:00 이전 (小15 막차 시간에 맞춰 하산 완료 필요)",
+      "last_shuttle_estimate": "小15 막차 냉수갱 통과 약 16:30 (평일) / 17:40 (주말) 예상"
+    },
+    "advanced": {
+      "course_name": "칭티엔강 연계 장거리 코스 (고급)",
+      "exit_point": "칭티엔강 (Qingtiangang)",
+      "route": "칭티엔강 → 小15 버스 탑승하여 MRT 젠탄역 직행 (또는 108 셔틀버스 탑승 → 양명산 터미널 → 260/紅5 환승)",
+      "safe_departure_time": "평일 16:00 이전 / 주말 17:00 이전 (칭티엔강 발 小15 막차 시간 엄수)",
+      "last_shuttle_estimate": "小15 막차 칭티엔강 출발 16:20 (평일) / 17:30 (주말)"
+    }
+  }
+}

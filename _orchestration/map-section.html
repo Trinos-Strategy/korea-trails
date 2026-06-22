@@ -1,0 +1,440 @@
+<!--
+  양명산 실사 지도 (A-MAP) 통합용 조각 문서
+  
+  설명:
+  1. HTML 마크업: 기존 yangmingshan-playbook.html의 3개 코스별 'tabpane[data-pane="map"]' 내부의 <div class="card map"> 부분을 아래의 새로운 마크업으로 교체합니다.
+  2. CSS 스타일: 기존 <style> 블록 내에 Leaflet 및 다크모드 대응 스타일을 추가합니다.
+  3. 자바스크립트: 기존 <script> 블록 하단에 Leaflet CDN 로드 및 동적 초기화 스크립트를 삽입합니다.
+-->
+
+<!-- ========================================== -->
+<!-- 1. HTML 마크업 교체 조각 (3개 코스용) -->
+<!-- ========================================== -->
+
+<!-- [초급 코스: beginner] -->
+<!-- 대상 파일 위치: <section class="panel green active" id="beginner"> ... <div class="tabpane" data-pane="map"> -->
+<!-- 변경 전: <div class="card map"><svg viewbox="0 0 760 420">...</svg></div> -->
+<!-- 변경 후: -->
+<div class="card map">
+  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
+    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+    <path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path>
+    <circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle>
+    <circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle>
+    <circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle>
+    <text font-size="12" x="112" y="302">소유갱</text>
+    <text font-size="12" x="398" y="80">칠성산 주봉</text>
+    <text font-size="12" x="612" y="330">원점 회귀</text>
+    <text fill="var(--muted)" font-size="12" x="34" y="44">가장 짧은 입문형 정상 코스</text>
+  </svg>
+  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+  <div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 초급 소유갱 왕복 코스 실사 지도"></div>
+</div>
+
+<!-- [중급 코스: intermediate] -->
+<!-- 대상 파일 위치: <section class="panel blue" id="intermediate"> ... <div class="tabpane" data-pane="map"> -->
+<!-- 변경 전: <div class="card map"><svg viewbox="0 0 760 420">...</svg></div> -->
+<!-- 변경 후: -->
+<div class="card map">
+  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
+    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+    <path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path>
+    <circle cx="90" cy="314" fill="#326f95" r="10"></circle>
+    <circle cx="360" cy="92" fill="#326f95" r="11"></circle>
+    <circle cx="472" cy="100" fill="#326f95" r="10"></circle>
+    <circle cx="710" cy="290" fill="#326f95" r="10"></circle>
+    <text font-size="12" x="104" y="308">소유갱</text>
+    <text font-size="12" x="374" y="86">주봉</text>
+    <text font-size="12" x="486" y="94">동봉</text>
+    <text font-size="12" x="670" y="308">냉수갱</text>
+  </svg>
+  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+  <div class="leaflet-map" id="map-intermediate" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 중급 소유갱-냉수갱 종주 코스 실사 지도"></div>
+</div>
+
+<!-- [고급 코스: advanced] -->
+<!-- 대상 파일 위치: <section class="panel red" id="advanced"> ... <div class="tabpane" data-pane="map"> -->
+<!-- 변경 전: <div class="card map"><svg viewbox="0 0 760 420">...</svg></div> -->
+<!-- 변경 후: -->
+<div class="card map">
+  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
+    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+    <path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path>
+    <circle cx="90" cy="318" fill="#9d4f36" r="10"></circle>
+    <circle cx="360" cy="94" fill="#9d4f36" r="10"></circle>
+    <circle cx="474" cy="100" fill="#9d4f36" r="10"></circle>
+    <circle cx="606" cy="168" fill="#9d4f36" r="10"></circle>
+    <circle cx="728" cy="284" fill="#9d4f36" r="10"></circle>
+    <text font-size="12" x="104" y="312">소유갱</text>
+    <text font-size="12" x="374" y="88">주봉</text>
+    <text font-size="12" x="488" y="94">동봉</text>
+    <text font-size="12" x="620" y="162">냉수갱</text>
+    <text font-size="12" x="672" y="302">칭티엔강</text>
+  </svg>
+  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+  <div class="leaflet-map" id="map-advanced" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 고급 칭티엔강 연계 코스 실사 지도"></div>
+</div>
+
+
+<!-- ========================================== -->
+<!-- 2. CSS 스타일 시트 추가 조각 -->
+<!-- ========================================== -->
+<style>
+  /* Leaflet 기본 스타일 보정 */
+  .leaflet-map {
+    border: 1px solid var(--border);
+    background: var(--surface2);
+    box-shadow: var(--shadow);
+    transition: background 0.3s ease, border-color 0.3s ease;
+  }
+  
+  /* 마커 툴팁 커스텀 */
+  .map-tooltip {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    color: var(--text) !important;
+    font-weight: 700;
+    font-size: var(--xs);
+    border-radius: 6px;
+    padding: 4px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  /* 팝업 창 커스텀 */
+  .map-popup-content {
+    font-family: inherit;
+    line-height: 1.5;
+  }
+  .leaflet-popup-content-wrapper {
+    background: var(--surface) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border);
+    border-radius: 12px !important;
+    box-shadow: var(--shadow) !important;
+  }
+  .leaflet-popup-tip {
+    background: var(--surface) !important;
+    border: 1px solid var(--border);
+  }
+  .leaflet-popup-close-button {
+    color: var(--muted) !important;
+    padding: 8px 8px 0 0 !important;
+  }
+  
+  /* 레이어 컨트롤 커스텀 */
+  .leaflet-control-layers {
+    background-color: var(--surface) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: 8px !important;
+    color: var(--text) !important;
+    box-shadow: var(--shadow) !important;
+    font-size: var(--xs);
+    font-weight: 700;
+  }
+  
+  /* 줌 컨트롤 커스텀 */
+  .leaflet-bar {
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow) !important;
+  }
+  .leaflet-bar a {
+    background-color: var(--surface) !important;
+    color: var(--text) !important;
+    border-bottom: 1px solid var(--border) !important;
+    transition: background-color 0.2s;
+  }
+  .leaflet-bar a:hover {
+    background-color: var(--surface2) !important;
+  }
+  .leaflet-bar a.leaflet-disabled {
+    background-color: var(--surface2) !important;
+    color: var(--faint) !important;
+  }
+  
+  /* 어트리뷰션 바 다크모드 가독성 확보 */
+  .leaflet-container .leaflet-control-attribution {
+    background: rgba(var(--bg), 0.7) !important;
+    color: var(--muted) !important;
+    font-size: 9px;
+    border-top-left-radius: 4px;
+    backdrop-filter: blur(4px);
+  }
+  .leaflet-container .leaflet-control-attribution a {
+    color: var(--blue) !important;
+  }
+
+  /* [다크모드 특화 스타일] */
+  [data-theme="dark"] .leaflet-map {
+    border-color: var(--border);
+  }
+  /* 오픈토포맵(지형도) 다크모드 시 인버트 필터 적용으로 눈부심 방지 */
+  [data-theme="dark"] .terrain-layer-dark-filter {
+    filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
+  }
+</style>
+
+
+<!-- ========================================== -->
+<!-- 3. 자바스크립트 초기화 로직 -->
+<!-- ========================================== -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  // 양명산 지도 구성 데이터 정의
+  const mapConfig = {
+    points: {
+      "xiaoyoukeng_소유갱":   {"lat": 25.1764, "lng": 121.5478, "alt_m": 805, "type": "trailhead/bus"},
+      "qixing_main_주봉":     {"lat": 25.1706, "lng": 121.5533, "alt_m": 1120, "type": "summit"},
+      "qixing_east_동봉":     {"lat": 25.1692, "lng": 121.5554, "alt_m": 1107, "type": "summit"},
+      "menghuanchi_몽환호":   {"lat": 25.1671, "lng": 121.5606, "alt_m": 880, "type": "lake"},
+      "lengshuikeng_냉수갱":  {"lat": 25.1656, "lng": 121.5639, "alt_m": 740, "type": "hotspring/bus"},
+      "qingtiangang_칭티엔강":{"lat": 25.1672, "lng": 121.5742, "alt_m": 760, "type": "grassland/bus"}
+    },
+    routes: {
+      "beginner":     ["xiaoyoukeng_소유갱","qixing_main_주봉","xiaoyoukeng_소유갱"],
+      "intermediate": ["xiaoyoukeng_소유갱","qixing_main_주봉","qixing_east_동봉","lengshuikeng_냉수갱"],
+      "advanced":     ["xiaoyoukeng_소유갱","qixing_main_주봉","qixing_east_동봉","menghuanchi_몽환호","lengshuikeng_냉수갱","qingtiangang_칭티엔강"]
+    },
+    colors: {
+      "beginner": "#4f7d4a",     // 초급 기존 SVG 상속 색
+      "intermediate": "#326f95", // 중급 기존 SVG 상속 색
+      "advanced": "#9d4f36"      // 고급 기존 SVG 상속 색
+    }
+  };
+
+  window.mapInstances = window.mapInstances || {};
+  window.initializedMaps = window.initializedMaps || {};
+
+  // Leaflet CDN 동적 로더 (오프라인 폴백 구조 및 무빌드 통합용)
+  function loadLeafletAssets(callback) {
+    if (window.L) {
+      callback();
+      return;
+    }
+
+    // 1. Leaflet CSS 로드
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    link.crossOrigin = '';
+    document.head.appendChild(link);
+
+    // 2. Leaflet JS 로드
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    script.crossOrigin = '';
+    script.onload = () => {
+      callback();
+    };
+    script.onerror = () => {
+      console.warn("Leaflet CDN 로드 실패. 개념도(SVG) 폴백이 계속 유지됩니다.");
+    };
+    document.head.appendChild(script);
+  }
+
+  // 단일 코스 지도 초기화 로직
+  function initCourseMap(courseId) {
+    const mapEl = document.getElementById(`map-${courseId}`);
+    if (!mapEl || window.initializedMaps[courseId]) return;
+
+    // 폴백 SVG 숨기고 지도 엘리먼트 노출
+    const fallbackSvg = mapEl.parentElement.querySelector('.map-fallback');
+    if (fallbackSvg) fallbackSvg.style.display = 'none';
+    mapEl.style.display = 'block';
+
+    // 지도 인스턴스 생성
+    const map = L.map(mapEl, {
+      scrollWheelZoom: false, // 마우스 스크롤 중 의도치 않은 줌 제한
+      zoomControl: true
+    });
+
+    // 베이스 레이어 1: Esri World Imagery (위성 실사 - 기본값)
+    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
+      maxZoom: 19
+    });
+
+    // 베이스 레이어 2: OpenTopoMap (지형도 - 선택 레이어)
+    const terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
+      maxZoom: 17,
+      className: 'terrain-layer-dark-filter' // 다크모드 대응용 CSS 필터 클래스 바인딩
+    });
+
+    // 위성 기본 로드
+    satellite.addTo(map);
+
+    const baseLayers = {
+      "🛰️ 위성 레이어": satellite,
+      "🏔️ 지형 레이어": terrain
+    };
+
+    L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
+
+    // 경로 노드 수집 및 마커 생성
+    const route = mapConfig.routes[courseId];
+    const color = mapConfig.colors[courseId];
+    const latlngs = [];
+    const markers = L.featureGroup();
+
+    route.forEach((ptKey, idx) => {
+      const pt = mapConfig.points[ptKey];
+      if (!pt) return;
+
+      const latlng = [pt.lat, pt.lng];
+      latlngs.push(latlng);
+
+      // 동일 위치 중복 마커 방지 (왕복 코스의 시점/종점 겹침 처리)
+      let isDuplicate = false;
+      markers.eachLayer(layer => {
+        if (layer.getLatLng().lat === pt.lat && layer.getLatLng().lng === pt.lng) {
+          isDuplicate = true;
+        }
+      });
+
+      if (!isDuplicate) {
+        // 이름 파싱 (xiaoyoukeng_소유갱 -> 소유갱)
+        const nameKo = ptKey.split('_')[1] || ptKey;
+        
+        // 지점별 특징 상세화
+        let detailDesc = "";
+        switch (ptKey) {
+          case "xiaoyoukeng_소유갱":
+            detailDesc = "들머리 · 유황 분기공 · 108 셔틀 버스 정류장";
+            break;
+          case "qixing_main_주봉":
+            detailDesc = "칠성산 주봉 (해발 1,120m 최고점) · 정상석";
+            break;
+          case "qixing_east_동봉":
+            detailDesc = "칠성산 동봉 (해발 1,107m) · 사방 조망 명소";
+            break;
+          case "menghuanchi_몽환호":
+            detailDesc = "대만 대황새풀 보호구역 · 고산 습지";
+            break;
+          case "lengshuikeng_냉수갱":
+            detailDesc = "무료 온천/족욕탕 · 냉수갱 방문객 센터 · 버스 환승";
+            break;
+          case "qingtiangang_칭티엔강":
+            detailDesc = "넓게 펼쳐진 용암 대지 초원 · 방목우 관람 · 날머리 버스";
+            break;
+        }
+
+        // circleMarker 기반 깔끔하고 모던한 체크포인트 마킹
+        const marker = L.circleMarker(latlng, {
+          radius: 8,
+          fillColor: color,
+          color: '#ffffff',
+          weight: 2,
+          opacity: 1,
+          fillOpacity: 0.95
+        });
+
+        // 툴팁(영구 표출 라벨) 부착
+        marker.bindTooltip(nameKo, {
+          permanent: true,
+          direction: 'top',
+          offset: [0, -8],
+          className: 'map-tooltip'
+        });
+
+        // 팝업(클릭 시 상세정보 레이어) 구성
+        const popupContent = `
+          <div class="map-popup-content">
+            <h4 style="margin: 0 0 6px 0; font-size: 13px; font-weight:800; color: var(--text);">${nameKo}</h4>
+            <div style="font-size: 11px; margin-bottom: 4px;">⛰️ 고도: <strong>${pt.alt_m}m</strong></div>
+            <div style="font-size: 11px; color: var(--muted); max-width: 180px; word-break: keep-all;">ℹ️ ${detailDesc}</div>
+          </div>
+        `;
+        marker.bindPopup(popupContent);
+        marker.addTo(markers);
+      }
+    });
+
+    markers.addTo(map);
+
+    // 경로 폴리라인 드로잉
+    const polyline = L.polyline(latlngs, {
+      color: color,
+      weight: 5,
+      opacity: 0.8,
+      lineCap: 'round',
+      lineJoin: 'round'
+    }).addTo(map);
+
+    // 코스 전체 범위에 맞춰 카메라 자동 앵글 맞춤
+    if (latlngs.length > 0) {
+      map.fitBounds(polyline.getBounds(), { padding: [40, 40] });
+    }
+
+    // 접근성 보장: 키보드 제스처 및 탭 포커스 핸들링
+    map.on('focus', () => { map.scrollWheelZoom.enable(); });
+    map.on('blur', () => { map.scrollWheelZoom.disable(); });
+
+    // 전역 관리 변수 바인딩
+    window.mapInstances[courseId] = map;
+    window.initializedMaps[courseId] = true;
+  }
+
+  // IntersectionObserver 기반 레이지 로딩 & 탭 전동 전환 안정화
+  const mapObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const mapId = entry.target.id;
+        const courseId = mapId.replace('map-', '');
+
+        loadLeafletAssets(() => {
+          // 지도 이닛 진행
+          initCourseMap(courseId);
+
+          // 탭 컨텍스트 복구를 위한 resize 보정(Leaflet 0x0 렌더 깨짐 완전방지)
+          setTimeout(() => {
+            if (window.mapInstances[courseId]) {
+              window.mapInstances[courseId].invalidateSize();
+            }
+          }, 150);
+        });
+      }
+    });
+  }, {
+    rootMargin: '100px', // 스크롤 도달 100px 전에 비동기 사전 로드
+    threshold: 0.01
+  });
+
+  // 대상 엘리먼트 구독 등록
+  document.querySelectorAll('.leaflet-map').forEach(mapContainer => {
+    mapObserver.observe(mapContainer);
+  });
+
+  // 기존 탭 스위처 이벤트 핸들러 고침/확장 (탭 클릭 시 Leaflet invalidateSize 재트리거 보장)
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      const panel = tab.closest('.panel');
+      if (!panel) return;
+      const courseId = panel.id;
+      
+      // 📍 지도 탭 클릭 시 렌더 크기 보정 트리거
+      if (tab.dataset.tab === 'map') {
+        setTimeout(() => {
+          if (window.mapInstances[courseId]) {
+            window.mapInstances[courseId].invalidateSize();
+            // 코스 핏 바운즈 재정렬로 카메라 구도 리셋
+            const route = mapConfig.routes[courseId];
+            const latlngs = [];
+            route.forEach(ptKey => {
+              const pt = mapConfig.points[ptKey];
+              if (pt) latlngs.push([pt.lat, pt.lng]);
+            });
+            if (latlngs.length > 0) {
+              window.mapInstances[courseId].fitBounds(L.polyline(latlngs).getBounds(), { padding: [40, 40] });
+            }
+          }
+        }, 180); // 브라우저 display: block 전환 프레임 대기
+      }
+    });
+  });
+});
+</script>
