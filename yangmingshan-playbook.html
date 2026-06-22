@@ -24,6 +24,8 @@
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
   
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -456,22 +458,27 @@
 <body>
 <header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M7 33c5-9 10-14 16-14 4 0 7 2 10 6 2-1 5-2 8-2" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M8 38h32" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M14 14c3 1 5 3 7 6M24 11c2 2 4 5 5 8M33 13c2 1 3 3 4 5" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>양명산</h1><p>타이베이 근교 · 칠성산 1,120m · 화산지형·유황·초원·온천</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/yangmingshan/hero-640.avif 640w, assets/img/yangmingshan/hero-1024.avif 1024w, assets/img/yangmingshan/hero-1600.avif 1600w, assets/img/yangmingshan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/yangmingshan/hero-640.webp 640w, assets/img/yangmingshan/hero-1024.webp 1024w, assets/img/yangmingshan/hero-1600.webp 1600w, assets/img/yangmingshan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="양명산 국립공원의 대표 명소인 양명산와 아름다운 산세 풍경 / Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/yangmingshan/hero-1600.jpg" srcset="assets/img/yangmingshan/hero-640.jpg 640w, assets/img/yangmingshan/hero-1024.jpg 1024w, assets/img/yangmingshan/hero-1600.jpg 1600w, assets/img/yangmingshan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="wrap"><span class="hero-badge">Yangmingshan National Park · Qixingshan</span><h2>양명산 3코스 등산 플레이북</h2><p>타이베이에서 당일로 다녀오기 좋은 양명산·칠성산 코스를 초급·중급·고급으로 나눠 만든 인터랙티브 가이드입니다. 소유갱, 냉수갱, 칭티엔강을 중심으로 가장 많이 걷는 대표 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">1,120m</div><div class="l">칠성산 최고봉</div></div><div class="stat"><div class="v">4.0km</div><div class="l">대표 당일 코스</div></div><div class="stat"><div class="v">5.5km</div><div class="l">연장 트레킹</div></div><div class="stat"><div class="v">화산지형</div><div class="l">유황·분기공</div></div><div class="stat"><div class="v">온천</div><div class="l">냉수갱 연계</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 소유갱 왕복</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 소유갱→냉수갱</button><button class="course-btn red" data-course="advanced">🏔 고급 — 칭티엔강 연계</button></div></div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://unsplash.com/@roberthsu1054" rel="noopener" target="_blank">CHIA-HAO HSU</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/yangmingshan/hero-640.avif 640w, assets/img/yangmingshan/hero-1024.avif 1024w, assets/img/yangmingshan/hero-1600.avif 1600w, assets/img/yangmingshan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/yangmingshan/hero-640.webp 640w, assets/img/yangmingshan/hero-1024.webp 1024w, assets/img/yangmingshan/hero-1600.webp 1600w, assets/img/yangmingshan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/yangmingshan/hero-1600.jpg" srcset="assets/img/yangmingshan/hero-640.jpg 640w, assets/img/yangmingshan/hero-1024.jpg 1024w, assets/img/yangmingshan/hero-1600.jpg 1600w, assets/img/yangmingshan/hero-2400.jpg 2400w" sizes="100vw" alt="양명산 국립공원의 대표 명소인 양명산와 아름다운 산세 풍경 / Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="wrap"><span class="hero-badge">Yangmingshan National Park · Qixingshan</span><h2>양명산 3코스 등산 플레이북</h2><p>타이베이에서 당일로 다녀오기 좋은 양명산·칠성산 코스를 초급·중급·고급으로 나눠 만든 인터랙티브 가이드입니다. 소유갱, 냉수갱, 칭티엔강을 중심으로 가장 많이 걷는 대표 루트를 기준으로 구성했습니다.</p><div class="stats"><div class="stat"><div class="v">1,120m
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by <a href="https://unsplash.com/@roberthsu1054" target="_blank" rel="noopener">CHIA-HAO HSU</a></span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source"><a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></span>
+  </div>
+
 </section>
 <main class="wrap">
 <section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">소유갱 왕복 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 소유갱 원점회귀 · 약 3.2km · 1시간 40분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
@@ -490,57 +497,64 @@
 <div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path><circle cx="90" cy="318" fill="#9d4f36" r="10"></circle><circle cx="360" cy="94" fill="#9d4f36" r="10"></circle><circle cx="474" cy="100" fill="#9d4f36" r="10"></circle><circle cx="606" cy="168" fill="#9d4f36" r="10"></circle><circle cx="728" cy="284" fill="#9d4f36" r="10"></circle><text font-size="12" x="104" y="312">소유갱</text><text font-size="12" x="374" y="88">주봉</text><text font-size="12" x="488" y="94">동봉</text><text font-size="12" x="620" y="162">냉수갱</text><text font-size="12" x="672" y="302">칭티엔강</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·분기공</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>몽환호</td><td>약 880m</td><td>3.1km</td><td>호수·습지 분위기</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.8km</td><td>온천 지대</td></tr><tr><td>칭티엔강</td><td>약 760m</td><td>5.5km</td><td>초원 풍경·버스 연계</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 장비</h4><ul><li>트레킹화와 방풍자켓</li><li>물 1~1.5L</li><li>간식과 보조배터리</li></ul></div><div class="card tipcard"><h4>🌿 볼거리</h4><ul><li>화산 지형 + 정상</li><li>몽환호 습지</li><li>칭티엔강 초원</li></ul></div><div class="card tipcard"><h4>🚌 운영 팁</h4><ul><li>종점이 달라 귀가 버스 동선 확인</li><li>주말엔 버스 혼잡 가능</li><li>안개 시즌엔 시간 여유 필수</li></ul></div></div></div></section>
 </main>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 양명산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 양명산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Yangmingshan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/' target='_blank' rel='noopener'&gt;Timo Volz&lt;/a&gt; on Pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/yangmingshan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/yangmingshan/g1.webp" type="image/webp"/>
-<img alt="양명산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">양명산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Scenic view of Yangmingshan encountered during the Yangmingshan climb 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/yangmingshan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/yangmingshan/g2.webp" type="image/webp"/>
-<img alt="양명산 산행 중 마주하는 양명산의 수려한 모습" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">양명산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Yangmingshan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/yangmingshan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/yangmingshan/g3.webp" type="image/webp"/>
-<img alt="양명산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">양명산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Yangmingshan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@waterfay' target='_blank' rel='noopener'&gt;Chen Wen-Yu&lt;/a&gt; on Unsplash" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/yangmingshan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/yangmingshan/g4.webp" type="image/webp"/>
-<img alt="양명산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/yangmingshan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">양명산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Yangmingshan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/' target='_blank' rel='noopener'>Timo Volz</a> on Pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/yangmingshan/g1.avif">
+        <source type="image/webp" srcset="assets/img/yangmingshan/g1.webp">
+        <img src="assets/img/yangmingshan/g1.jpg" alt="양명산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">양명산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view of Yangmingshan encountered during the Yangmingshan climb 크게 보기" data-index="1" data-credit="Photo by <a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'>Andy Kuo</a> on Unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/yangmingshan/g2.avif">
+        <source type="image/webp" srcset="assets/img/yangmingshan/g2.webp">
+        <img src="assets/img/yangmingshan/g2.jpg" alt="양명산 산행 중 마주하는 양명산의 수려한 모습" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">양명산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Yangmingshan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'>Andy Kuo</a> on Unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/yangmingshan/g3.avif">
+        <source type="image/webp" srcset="assets/img/yangmingshan/g3.webp">
+        <img src="assets/img/yangmingshan/g3.jpg" alt="양명산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">양명산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Yangmingshan 크게 보기" data-index="3" data-credit="Photo by <a href='https://unsplash.com/@waterfay' target='_blank' rel='noopener'>Chen Wen-Yu</a> on Unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/yangmingshan/g4.avif">
+        <source type="image/webp" srcset="assets/img/yangmingshan/g4.webp">
+        <img src="assets/img/yangmingshan/g4.jpg" alt="양명산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">양명산 탐방로</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <footer><div class="wrap">실제 산행 전 양명산 국립공원 탐방 정보, 버스 운행, 기상, 정상부 안개·강풍 여부를 다시 확인하세요.</div></footer>
 <script>
@@ -549,18 +563,21 @@ const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...docume
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');

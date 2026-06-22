@@ -1,6 +1,28 @@
 [
   {
     "mountain_id": "baekhaksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/baekhaksan/hero.avif",
+      "webp": "assets/img/baekhaksan/hero.webp",
+      "jpg": "assets/img/baekhaksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "백학산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Baekhaksan mountain peaks and ridges",
+    "credit": {
+      "author": "Theodore Nguyen",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@thejourneyofframes"
+    }
+  },
+  {
+    "mountain_id": "baekhaksan",
     "role": "gallery_1",
     "files": {
       "avif": "assets/img/baekhaksan/g1.avif",
@@ -11,9 +33,9 @@
     "alt_ko": "백학산 등산로를 따라 펼쳐진 수려한 주변 경관",
     "alt_en": "Scenic hiking trail and beautiful surroundings of Baekhaksan",
     "credit": {
-      "author": "Theodore Nguyen",
+      "author": "JD KIM",
       "source": "pexels",
-      "url": "https://www.pexels.com/@thejourneyofframes"
+      "url": "https://www.pexels.com/@jd-kim-129196221"
     }
   },
   {
@@ -68,96 +90,6 @@
     }
   },
   {
-    "mountain_id": "baekhaksan",
-    "role": "hero",
-    "files": {
-      "avif": "assets/img/baekhaksan/hero.avif",
-      "webp": "assets/img/baekhaksan/hero.webp",
-      "jpg": "assets/img/baekhaksan/hero.jpg"
-    },
-    "widths": [
-      640,
-      1024,
-      1600,
-      2400
-    ],
-    "alt_ko": "백학산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Baekhaksan mountain peaks and ridges",
-    "credit": {
-      "author": "Theodore Nguyen",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@thejourneyofframes"
-    }
-  },
-  {
-    "mountain_id": "bukhansan",
-    "role": "gallery_1",
-    "files": {
-      "avif": "assets/img/bukhansan/g1.avif",
-      "webp": "assets/img/bukhansan/g1.webp",
-      "jpg": "assets/img/bukhansan/g1.jpg"
-    },
-    "widths": [],
-    "alt_ko": "북한산 등산로를 따라 펼쳐진 수려한 주변 경관",
-    "alt_en": "Scenic hiking trail and beautiful surroundings of Bukhansan",
-    "credit": {
-      "author": "vignesh srivatsav",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@vignesh-srivatsav-857495254"
-    }
-  },
-  {
-    "mountain_id": "bukhansan",
-    "role": "gallery_2",
-    "files": {
-      "avif": "assets/img/bukhansan/g2.avif",
-      "webp": "assets/img/bukhansan/g2.webp",
-      "jpg": "assets/img/bukhansan/g2.jpg"
-    },
-    "widths": [],
-    "alt_ko": "북한산 국립공원의 사계절 자연미가 느껴지는 풍경",
-    "alt_en": "Beautiful landscape showcasing the natural beauty of Bukhansan National Park",
-    "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
-    }
-  },
-  {
-    "mountain_id": "bukhansan",
-    "role": "gallery_3",
-    "files": {
-      "avif": "assets/img/bukhansan/g3.avif",
-      "webp": "assets/img/bukhansan/g3.webp",
-      "jpg": "assets/img/bukhansan/g3.jpg"
-    },
-    "widths": [],
-    "alt_ko": "북한산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
-    "alt_en": "Harmonious view of Bukhansan mountain ridges under a clear sky",
-    "credit": {
-      "author": "Saksham Vikram",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@saksham-vikram-2148641748"
-    }
-  },
-  {
-    "mountain_id": "bukhansan",
-    "role": "gallery_4",
-    "files": {
-      "avif": "assets/img/bukhansan/g4.avif",
-      "webp": "assets/img/bukhansan/g4.webp",
-      "jpg": "assets/img/bukhansan/g4.jpg"
-    },
-    "widths": [],
-    "alt_ko": "북한산 숲길과 기암괴석이 어우러진 아름다운 비경",
-    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Bukhansan",
-    "credit": {
-      "author": "Theodore Nguyen",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@thejourneyofframes"
-    }
-  },
-  {
     "mountain_id": "bukhansan",
     "role": "hero",
     "files": {
@@ -174,9 +106,490 @@
     "alt_ko": "북한산 정상과 웅장한 산세가 어우러진 대자연 풍경",
     "alt_en": "Majestic natural landscape of Bukhansan mountain peaks and ridges",
     "credit": {
-      "author": "Elliot Gouy",
-      "source": "unsplash",
-      "url": "https://unsplash.com/@gouyelliot"
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/bukhansan/g1.avif",
+      "webp": "assets/img/bukhansan/g1.webp",
+      "jpg": "assets/img/bukhansan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 1)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 1)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/bukhansan/g2.avif",
+      "webp": "assets/img/bukhansan/g2.webp",
+      "jpg": "assets/img/bukhansan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 2)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 2)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/bukhansan/g3.avif",
+      "webp": "assets/img/bukhansan/g3.webp",
+      "jpg": "assets/img/bukhansan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 3)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 3)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/bukhansan/g4.avif",
+      "webp": "assets/img/bukhansan/g4.webp",
+      "jpg": "assets/img/bukhansan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 4)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 4)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_5",
+    "files": {
+      "avif": "assets/img/bukhansan/g5.avif",
+      "webp": "assets/img/bukhansan/g5.webp",
+      "jpg": "assets/img/bukhansan/g5.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 5)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 5)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_6",
+    "files": {
+      "avif": "assets/img/bukhansan/g6.avif",
+      "webp": "assets/img/bukhansan/g6.webp",
+      "jpg": "assets/img/bukhansan/g6.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 6)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 6)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_7",
+    "files": {
+      "avif": "assets/img/bukhansan/g7.avif",
+      "webp": "assets/img/bukhansan/g7.webp",
+      "jpg": "assets/img/bukhansan/g7.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 7)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 7)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_8",
+    "files": {
+      "avif": "assets/img/bukhansan/g8.avif",
+      "webp": "assets/img/bukhansan/g8.webp",
+      "jpg": "assets/img/bukhansan/g8.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 8)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 8)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_9",
+    "files": {
+      "avif": "assets/img/bukhansan/g9.avif",
+      "webp": "assets/img/bukhansan/g9.webp",
+      "jpg": "assets/img/bukhansan/g9.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 9)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 9)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_10",
+    "files": {
+      "avif": "assets/img/bukhansan/g10.avif",
+      "webp": "assets/img/bukhansan/g10.webp",
+      "jpg": "assets/img/bukhansan/g10.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 10)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 10)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_11",
+    "files": {
+      "avif": "assets/img/bukhansan/g11.avif",
+      "webp": "assets/img/bukhansan/g11.webp",
+      "jpg": "assets/img/bukhansan/g11.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 11)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 11)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_12",
+    "files": {
+      "avif": "assets/img/bukhansan/g12.avif",
+      "webp": "assets/img/bukhansan/g12.webp",
+      "jpg": "assets/img/bukhansan/g12.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 12)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 12)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_13",
+    "files": {
+      "avif": "assets/img/bukhansan/g13.avif",
+      "webp": "assets/img/bukhansan/g13.webp",
+      "jpg": "assets/img/bukhansan/g13.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 13)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 13)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_14",
+    "files": {
+      "avif": "assets/img/bukhansan/g14.avif",
+      "webp": "assets/img/bukhansan/g14.webp",
+      "jpg": "assets/img/bukhansan/g14.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 14)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 14)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_15",
+    "files": {
+      "avif": "assets/img/bukhansan/g15.avif",
+      "webp": "assets/img/bukhansan/g15.webp",
+      "jpg": "assets/img/bukhansan/g15.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 15)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 15)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_16",
+    "files": {
+      "avif": "assets/img/bukhansan/g16.avif",
+      "webp": "assets/img/bukhansan/g16.webp",
+      "jpg": "assets/img/bukhansan/g16.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 16)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 16)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_17",
+    "files": {
+      "avif": "assets/img/bukhansan/g17.avif",
+      "webp": "assets/img/bukhansan/g17.webp",
+      "jpg": "assets/img/bukhansan/g17.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 17)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 17)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_18",
+    "files": {
+      "avif": "assets/img/bukhansan/g18.avif",
+      "webp": "assets/img/bukhansan/g18.webp",
+      "jpg": "assets/img/bukhansan/g18.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 18)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 18)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_19",
+    "files": {
+      "avif": "assets/img/bukhansan/g19.avif",
+      "webp": "assets/img/bukhansan/g19.webp",
+      "jpg": "assets/img/bukhansan/g19.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 19)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 19)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_20",
+    "files": {
+      "avif": "assets/img/bukhansan/g20.avif",
+      "webp": "assets/img/bukhansan/g20.webp",
+      "jpg": "assets/img/bukhansan/g20.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 20)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 20)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_21",
+    "files": {
+      "avif": "assets/img/bukhansan/g21.avif",
+      "webp": "assets/img/bukhansan/g21.webp",
+      "jpg": "assets/img/bukhansan/g21.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 21)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 21)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_22",
+    "files": {
+      "avif": "assets/img/bukhansan/g22.avif",
+      "webp": "assets/img/bukhansan/g22.webp",
+      "jpg": "assets/img/bukhansan/g22.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 22)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 22)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_23",
+    "files": {
+      "avif": "assets/img/bukhansan/g23.avif",
+      "webp": "assets/img/bukhansan/g23.webp",
+      "jpg": "assets/img/bukhansan/g23.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 23)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 23)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_24",
+    "files": {
+      "avif": "assets/img/bukhansan/g24.avif",
+      "webp": "assets/img/bukhansan/g24.webp",
+      "jpg": "assets/img/bukhansan/g24.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 24)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 24)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_25",
+    "files": {
+      "avif": "assets/img/bukhansan/g25.avif",
+      "webp": "assets/img/bukhansan/g25.webp",
+      "jpg": "assets/img/bukhansan/g25.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 25)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 25)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_26",
+    "files": {
+      "avif": "assets/img/bukhansan/g26.avif",
+      "webp": "assets/img/bukhansan/g26.webp",
+      "jpg": "assets/img/bukhansan/g26.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 26)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 26)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "bukhansan",
+    "role": "gallery_27",
+    "files": {
+      "avif": "assets/img/bukhansan/g27.avif",
+      "webp": "assets/img/bukhansan/g27.webp",
+      "jpg": "assets/img/bukhansan/g27.jpg"
+    },
+    "widths": [],
+    "alt_ko": "북한산 산행 중에 촬영한 자연 풍경 (사진 27)",
+    "alt_en": "Scenic view captured during the Bukhansan hike (Photo 27)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "chiaksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/chiaksan/hero.avif",
+      "webp": "assets/img/chiaksan/hero.webp",
+      "jpg": "assets/img/chiaksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "치악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Chiaksan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
     }
   },
   {
@@ -248,12 +661,12 @@
     }
   },
   {
-    "mountain_id": "chiaksan",
+    "mountain_id": "deogyusan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/chiaksan/hero.avif",
-      "webp": "assets/img/chiaksan/hero.webp",
-      "jpg": "assets/img/chiaksan/hero.jpg"
+      "avif": "assets/img/deogyusan/hero.avif",
+      "webp": "assets/img/deogyusan/hero.webp",
+      "jpg": "assets/img/deogyusan/hero.jpg"
     },
     "widths": [
       640,
@@ -261,12 +674,12 @@
       1600,
       2400
     ],
-    "alt_ko": "치악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Chiaksan mountain peaks and ridges",
+    "alt_ko": "덕유산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Deogyusan mountain peaks and ridges",
     "credit": {
-      "author": "정규송 Nui MALAMA",
+      "author": "Anthony Taewan Kim",
       "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
+      "url": "https://www.pexels.com/@anthony-taewan-kim-1326772885"
     }
   },
   {
@@ -338,96 +751,6 @@
     }
   },
   {
-    "mountain_id": "deogyusan",
-    "role": "hero",
-    "files": {
-      "avif": "assets/img/deogyusan/hero.avif",
-      "webp": "assets/img/deogyusan/hero.webp",
-      "jpg": "assets/img/deogyusan/hero.jpg"
-    },
-    "widths": [
-      640,
-      1024,
-      1600,
-      2400
-    ],
-    "alt_ko": "덕유산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Deogyusan mountain peaks and ridges",
-    "credit": {
-      "author": "Anthony Taewan Kim",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@anthony-taewan-kim-1326772885"
-    }
-  },
-  {
-    "mountain_id": "dobongsan",
-    "role": "gallery_1",
-    "files": {
-      "avif": "assets/img/dobongsan/g1.avif",
-      "webp": "assets/img/dobongsan/g1.webp",
-      "jpg": "assets/img/dobongsan/g1.jpg"
-    },
-    "widths": [],
-    "alt_ko": "도봉산 등산로를 따라 펼쳐진 수려한 주변 경관",
-    "alt_en": "Scenic hiking trail and beautiful surroundings of Dobongsan",
-    "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
-    }
-  },
-  {
-    "mountain_id": "dobongsan",
-    "role": "gallery_2",
-    "files": {
-      "avif": "assets/img/dobongsan/g2.avif",
-      "webp": "assets/img/dobongsan/g2.webp",
-      "jpg": "assets/img/dobongsan/g2.jpg"
-    },
-    "widths": [],
-    "alt_ko": "도봉산 국립공원의 사계절 자연미가 느껴지는 풍경",
-    "alt_en": "Beautiful landscape showcasing the natural beauty of Dobongsan National Park",
-    "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
-    }
-  },
-  {
-    "mountain_id": "dobongsan",
-    "role": "gallery_3",
-    "files": {
-      "avif": "assets/img/dobongsan/g3.avif",
-      "webp": "assets/img/dobongsan/g3.webp",
-      "jpg": "assets/img/dobongsan/g3.jpg"
-    },
-    "widths": [],
-    "alt_ko": "도봉산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
-    "alt_en": "Harmonious view of Dobongsan mountain ridges under a clear sky",
-    "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
-    }
-  },
-  {
-    "mountain_id": "dobongsan",
-    "role": "gallery_4",
-    "files": {
-      "avif": "assets/img/dobongsan/g4.avif",
-      "webp": "assets/img/dobongsan/g4.webp",
-      "jpg": "assets/img/dobongsan/g4.jpg"
-    },
-    "widths": [],
-    "alt_ko": "도봉산 숲길과 기암괴석이 어우러진 아름다운 비경",
-    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Dobongsan",
-    "credit": {
-      "author": "영화 정",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@1605595076"
-    }
-  },
-  {
     "mountain_id": "dobongsan",
     "role": "hero",
     "files": {
@@ -443,6 +766,1286 @@
     ],
     "alt_ko": "도봉산 정상과 웅장한 산세가 어우러진 대자연 풍경",
     "alt_en": "Majestic natural landscape of Dobongsan mountain peaks and ridges",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/dobongsan/g1.avif",
+      "webp": "assets/img/dobongsan/g1.webp",
+      "jpg": "assets/img/dobongsan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 1)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 1)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/dobongsan/g2.avif",
+      "webp": "assets/img/dobongsan/g2.webp",
+      "jpg": "assets/img/dobongsan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 2)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 2)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/dobongsan/g3.avif",
+      "webp": "assets/img/dobongsan/g3.webp",
+      "jpg": "assets/img/dobongsan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 3)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 3)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/dobongsan/g4.avif",
+      "webp": "assets/img/dobongsan/g4.webp",
+      "jpg": "assets/img/dobongsan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 4)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 4)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_5",
+    "files": {
+      "avif": "assets/img/dobongsan/g5.avif",
+      "webp": "assets/img/dobongsan/g5.webp",
+      "jpg": "assets/img/dobongsan/g5.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 5)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 5)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_6",
+    "files": {
+      "avif": "assets/img/dobongsan/g6.avif",
+      "webp": "assets/img/dobongsan/g6.webp",
+      "jpg": "assets/img/dobongsan/g6.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 6)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 6)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_7",
+    "files": {
+      "avif": "assets/img/dobongsan/g7.avif",
+      "webp": "assets/img/dobongsan/g7.webp",
+      "jpg": "assets/img/dobongsan/g7.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 7)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 7)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_8",
+    "files": {
+      "avif": "assets/img/dobongsan/g8.avif",
+      "webp": "assets/img/dobongsan/g8.webp",
+      "jpg": "assets/img/dobongsan/g8.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 8)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 8)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_9",
+    "files": {
+      "avif": "assets/img/dobongsan/g9.avif",
+      "webp": "assets/img/dobongsan/g9.webp",
+      "jpg": "assets/img/dobongsan/g9.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 9)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 9)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_10",
+    "files": {
+      "avif": "assets/img/dobongsan/g10.avif",
+      "webp": "assets/img/dobongsan/g10.webp",
+      "jpg": "assets/img/dobongsan/g10.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 10)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 10)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_11",
+    "files": {
+      "avif": "assets/img/dobongsan/g11.avif",
+      "webp": "assets/img/dobongsan/g11.webp",
+      "jpg": "assets/img/dobongsan/g11.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 11)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 11)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_12",
+    "files": {
+      "avif": "assets/img/dobongsan/g12.avif",
+      "webp": "assets/img/dobongsan/g12.webp",
+      "jpg": "assets/img/dobongsan/g12.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 12)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 12)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_13",
+    "files": {
+      "avif": "assets/img/dobongsan/g13.avif",
+      "webp": "assets/img/dobongsan/g13.webp",
+      "jpg": "assets/img/dobongsan/g13.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 13)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 13)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_14",
+    "files": {
+      "avif": "assets/img/dobongsan/g14.avif",
+      "webp": "assets/img/dobongsan/g14.webp",
+      "jpg": "assets/img/dobongsan/g14.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 14)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 14)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_15",
+    "files": {
+      "avif": "assets/img/dobongsan/g15.avif",
+      "webp": "assets/img/dobongsan/g15.webp",
+      "jpg": "assets/img/dobongsan/g15.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 15)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 15)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_16",
+    "files": {
+      "avif": "assets/img/dobongsan/g16.avif",
+      "webp": "assets/img/dobongsan/g16.webp",
+      "jpg": "assets/img/dobongsan/g16.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 16)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 16)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_17",
+    "files": {
+      "avif": "assets/img/dobongsan/g17.avif",
+      "webp": "assets/img/dobongsan/g17.webp",
+      "jpg": "assets/img/dobongsan/g17.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 17)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 17)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_18",
+    "files": {
+      "avif": "assets/img/dobongsan/g18.avif",
+      "webp": "assets/img/dobongsan/g18.webp",
+      "jpg": "assets/img/dobongsan/g18.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 18)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 18)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_19",
+    "files": {
+      "avif": "assets/img/dobongsan/g19.avif",
+      "webp": "assets/img/dobongsan/g19.webp",
+      "jpg": "assets/img/dobongsan/g19.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 19)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 19)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_20",
+    "files": {
+      "avif": "assets/img/dobongsan/g20.avif",
+      "webp": "assets/img/dobongsan/g20.webp",
+      "jpg": "assets/img/dobongsan/g20.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 20)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 20)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_21",
+    "files": {
+      "avif": "assets/img/dobongsan/g21.avif",
+      "webp": "assets/img/dobongsan/g21.webp",
+      "jpg": "assets/img/dobongsan/g21.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 21)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 21)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_22",
+    "files": {
+      "avif": "assets/img/dobongsan/g22.avif",
+      "webp": "assets/img/dobongsan/g22.webp",
+      "jpg": "assets/img/dobongsan/g22.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 22)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 22)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_23",
+    "files": {
+      "avif": "assets/img/dobongsan/g23.avif",
+      "webp": "assets/img/dobongsan/g23.webp",
+      "jpg": "assets/img/dobongsan/g23.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 23)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 23)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_24",
+    "files": {
+      "avif": "assets/img/dobongsan/g24.avif",
+      "webp": "assets/img/dobongsan/g24.webp",
+      "jpg": "assets/img/dobongsan/g24.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 24)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 24)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_25",
+    "files": {
+      "avif": "assets/img/dobongsan/g25.avif",
+      "webp": "assets/img/dobongsan/g25.webp",
+      "jpg": "assets/img/dobongsan/g25.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 25)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 25)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_26",
+    "files": {
+      "avif": "assets/img/dobongsan/g26.avif",
+      "webp": "assets/img/dobongsan/g26.webp",
+      "jpg": "assets/img/dobongsan/g26.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 26)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 26)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_27",
+    "files": {
+      "avif": "assets/img/dobongsan/g27.avif",
+      "webp": "assets/img/dobongsan/g27.webp",
+      "jpg": "assets/img/dobongsan/g27.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 27)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 27)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_28",
+    "files": {
+      "avif": "assets/img/dobongsan/g28.avif",
+      "webp": "assets/img/dobongsan/g28.webp",
+      "jpg": "assets/img/dobongsan/g28.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 28)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 28)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_29",
+    "files": {
+      "avif": "assets/img/dobongsan/g29.avif",
+      "webp": "assets/img/dobongsan/g29.webp",
+      "jpg": "assets/img/dobongsan/g29.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 29)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 29)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_30",
+    "files": {
+      "avif": "assets/img/dobongsan/g30.avif",
+      "webp": "assets/img/dobongsan/g30.webp",
+      "jpg": "assets/img/dobongsan/g30.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 30)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 30)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_31",
+    "files": {
+      "avif": "assets/img/dobongsan/g31.avif",
+      "webp": "assets/img/dobongsan/g31.webp",
+      "jpg": "assets/img/dobongsan/g31.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 31)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 31)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_32",
+    "files": {
+      "avif": "assets/img/dobongsan/g32.avif",
+      "webp": "assets/img/dobongsan/g32.webp",
+      "jpg": "assets/img/dobongsan/g32.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 32)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 32)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_33",
+    "files": {
+      "avif": "assets/img/dobongsan/g33.avif",
+      "webp": "assets/img/dobongsan/g33.webp",
+      "jpg": "assets/img/dobongsan/g33.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 33)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 33)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_34",
+    "files": {
+      "avif": "assets/img/dobongsan/g34.avif",
+      "webp": "assets/img/dobongsan/g34.webp",
+      "jpg": "assets/img/dobongsan/g34.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 34)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 34)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_35",
+    "files": {
+      "avif": "assets/img/dobongsan/g35.avif",
+      "webp": "assets/img/dobongsan/g35.webp",
+      "jpg": "assets/img/dobongsan/g35.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 35)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 35)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_36",
+    "files": {
+      "avif": "assets/img/dobongsan/g36.avif",
+      "webp": "assets/img/dobongsan/g36.webp",
+      "jpg": "assets/img/dobongsan/g36.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 36)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 36)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_37",
+    "files": {
+      "avif": "assets/img/dobongsan/g37.avif",
+      "webp": "assets/img/dobongsan/g37.webp",
+      "jpg": "assets/img/dobongsan/g37.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 37)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 37)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_38",
+    "files": {
+      "avif": "assets/img/dobongsan/g38.avif",
+      "webp": "assets/img/dobongsan/g38.webp",
+      "jpg": "assets/img/dobongsan/g38.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 38)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 38)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_39",
+    "files": {
+      "avif": "assets/img/dobongsan/g39.avif",
+      "webp": "assets/img/dobongsan/g39.webp",
+      "jpg": "assets/img/dobongsan/g39.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 39)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 39)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_40",
+    "files": {
+      "avif": "assets/img/dobongsan/g40.avif",
+      "webp": "assets/img/dobongsan/g40.webp",
+      "jpg": "assets/img/dobongsan/g40.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 40)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 40)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_41",
+    "files": {
+      "avif": "assets/img/dobongsan/g41.avif",
+      "webp": "assets/img/dobongsan/g41.webp",
+      "jpg": "assets/img/dobongsan/g41.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 41)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 41)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_42",
+    "files": {
+      "avif": "assets/img/dobongsan/g42.avif",
+      "webp": "assets/img/dobongsan/g42.webp",
+      "jpg": "assets/img/dobongsan/g42.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 42)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 42)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_43",
+    "files": {
+      "avif": "assets/img/dobongsan/g43.avif",
+      "webp": "assets/img/dobongsan/g43.webp",
+      "jpg": "assets/img/dobongsan/g43.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 43)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 43)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_44",
+    "files": {
+      "avif": "assets/img/dobongsan/g44.avif",
+      "webp": "assets/img/dobongsan/g44.webp",
+      "jpg": "assets/img/dobongsan/g44.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 44)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 44)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_45",
+    "files": {
+      "avif": "assets/img/dobongsan/g45.avif",
+      "webp": "assets/img/dobongsan/g45.webp",
+      "jpg": "assets/img/dobongsan/g45.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 45)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 45)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_46",
+    "files": {
+      "avif": "assets/img/dobongsan/g46.avif",
+      "webp": "assets/img/dobongsan/g46.webp",
+      "jpg": "assets/img/dobongsan/g46.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 46)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 46)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_47",
+    "files": {
+      "avif": "assets/img/dobongsan/g47.avif",
+      "webp": "assets/img/dobongsan/g47.webp",
+      "jpg": "assets/img/dobongsan/g47.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 47)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 47)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_48",
+    "files": {
+      "avif": "assets/img/dobongsan/g48.avif",
+      "webp": "assets/img/dobongsan/g48.webp",
+      "jpg": "assets/img/dobongsan/g48.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 48)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 48)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_49",
+    "files": {
+      "avif": "assets/img/dobongsan/g49.avif",
+      "webp": "assets/img/dobongsan/g49.webp",
+      "jpg": "assets/img/dobongsan/g49.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 49)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 49)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_50",
+    "files": {
+      "avif": "assets/img/dobongsan/g50.avif",
+      "webp": "assets/img/dobongsan/g50.webp",
+      "jpg": "assets/img/dobongsan/g50.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 50)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 50)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_51",
+    "files": {
+      "avif": "assets/img/dobongsan/g51.avif",
+      "webp": "assets/img/dobongsan/g51.webp",
+      "jpg": "assets/img/dobongsan/g51.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 51)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 51)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_52",
+    "files": {
+      "avif": "assets/img/dobongsan/g52.avif",
+      "webp": "assets/img/dobongsan/g52.webp",
+      "jpg": "assets/img/dobongsan/g52.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 52)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 52)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_53",
+    "files": {
+      "avif": "assets/img/dobongsan/g53.avif",
+      "webp": "assets/img/dobongsan/g53.webp",
+      "jpg": "assets/img/dobongsan/g53.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 53)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 53)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_54",
+    "files": {
+      "avif": "assets/img/dobongsan/g54.avif",
+      "webp": "assets/img/dobongsan/g54.webp",
+      "jpg": "assets/img/dobongsan/g54.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 54)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 54)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_55",
+    "files": {
+      "avif": "assets/img/dobongsan/g55.avif",
+      "webp": "assets/img/dobongsan/g55.webp",
+      "jpg": "assets/img/dobongsan/g55.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 55)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 55)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_56",
+    "files": {
+      "avif": "assets/img/dobongsan/g56.avif",
+      "webp": "assets/img/dobongsan/g56.webp",
+      "jpg": "assets/img/dobongsan/g56.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 56)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 56)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_57",
+    "files": {
+      "avif": "assets/img/dobongsan/g57.avif",
+      "webp": "assets/img/dobongsan/g57.webp",
+      "jpg": "assets/img/dobongsan/g57.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 57)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 57)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_58",
+    "files": {
+      "avif": "assets/img/dobongsan/g58.avif",
+      "webp": "assets/img/dobongsan/g58.webp",
+      "jpg": "assets/img/dobongsan/g58.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 58)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 58)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_59",
+    "files": {
+      "avif": "assets/img/dobongsan/g59.avif",
+      "webp": "assets/img/dobongsan/g59.webp",
+      "jpg": "assets/img/dobongsan/g59.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 59)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 59)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_60",
+    "files": {
+      "avif": "assets/img/dobongsan/g60.avif",
+      "webp": "assets/img/dobongsan/g60.webp",
+      "jpg": "assets/img/dobongsan/g60.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 60)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 60)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_61",
+    "files": {
+      "avif": "assets/img/dobongsan/g61.avif",
+      "webp": "assets/img/dobongsan/g61.webp",
+      "jpg": "assets/img/dobongsan/g61.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 61)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 61)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_62",
+    "files": {
+      "avif": "assets/img/dobongsan/g62.avif",
+      "webp": "assets/img/dobongsan/g62.webp",
+      "jpg": "assets/img/dobongsan/g62.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 62)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 62)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_63",
+    "files": {
+      "avif": "assets/img/dobongsan/g63.avif",
+      "webp": "assets/img/dobongsan/g63.webp",
+      "jpg": "assets/img/dobongsan/g63.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 63)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 63)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_64",
+    "files": {
+      "avif": "assets/img/dobongsan/g64.avif",
+      "webp": "assets/img/dobongsan/g64.webp",
+      "jpg": "assets/img/dobongsan/g64.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 64)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 64)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_65",
+    "files": {
+      "avif": "assets/img/dobongsan/g65.avif",
+      "webp": "assets/img/dobongsan/g65.webp",
+      "jpg": "assets/img/dobongsan/g65.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 65)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 65)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_66",
+    "files": {
+      "avif": "assets/img/dobongsan/g66.avif",
+      "webp": "assets/img/dobongsan/g66.webp",
+      "jpg": "assets/img/dobongsan/g66.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 66)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 66)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_67",
+    "files": {
+      "avif": "assets/img/dobongsan/g67.avif",
+      "webp": "assets/img/dobongsan/g67.webp",
+      "jpg": "assets/img/dobongsan/g67.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 67)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 67)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_68",
+    "files": {
+      "avif": "assets/img/dobongsan/g68.avif",
+      "webp": "assets/img/dobongsan/g68.webp",
+      "jpg": "assets/img/dobongsan/g68.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 68)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 68)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_69",
+    "files": {
+      "avif": "assets/img/dobongsan/g69.avif",
+      "webp": "assets/img/dobongsan/g69.webp",
+      "jpg": "assets/img/dobongsan/g69.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 69)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 69)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_70",
+    "files": {
+      "avif": "assets/img/dobongsan/g70.avif",
+      "webp": "assets/img/dobongsan/g70.webp",
+      "jpg": "assets/img/dobongsan/g70.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 70)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 70)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_71",
+    "files": {
+      "avif": "assets/img/dobongsan/g71.avif",
+      "webp": "assets/img/dobongsan/g71.webp",
+      "jpg": "assets/img/dobongsan/g71.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 71)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 71)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_72",
+    "files": {
+      "avif": "assets/img/dobongsan/g72.avif",
+      "webp": "assets/img/dobongsan/g72.webp",
+      "jpg": "assets/img/dobongsan/g72.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 72)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 72)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_73",
+    "files": {
+      "avif": "assets/img/dobongsan/g73.avif",
+      "webp": "assets/img/dobongsan/g73.webp",
+      "jpg": "assets/img/dobongsan/g73.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 73)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 73)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "dobongsan",
+    "role": "gallery_74",
+    "files": {
+      "avif": "assets/img/dobongsan/g74.avif",
+      "webp": "assets/img/dobongsan/g74.webp",
+      "jpg": "assets/img/dobongsan/g74.jpg"
+    },
+    "widths": [],
+    "alt_ko": "도봉산 산행 중에 촬영한 자연 풍경 (사진 74)",
+    "alt_en": "Scenic view captured during the Dobongsan hike (Photo 74)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "duryunsan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/duryunsan/hero.avif",
+      "webp": "assets/img/duryunsan/hero.webp",
+      "jpg": "assets/img/duryunsan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "두륜산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Duryunsan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
       "source": "pexels",
@@ -518,12 +2121,12 @@
     }
   },
   {
-    "mountain_id": "duryunsan",
+    "mountain_id": "gayasan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/duryunsan/hero.avif",
-      "webp": "assets/img/duryunsan/hero.webp",
-      "jpg": "assets/img/duryunsan/hero.jpg"
+      "avif": "assets/img/gayasan/hero.avif",
+      "webp": "assets/img/gayasan/hero.webp",
+      "jpg": "assets/img/gayasan/hero.jpg"
     },
     "widths": [
       640,
@@ -531,8 +2134,8 @@
       1600,
       2400
     ],
-    "alt_ko": "두륜산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Duryunsan mountain peaks and ridges",
+    "alt_ko": "가야산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Gayasan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
       "source": "pexels",
@@ -608,12 +2211,12 @@
     }
   },
   {
-    "mountain_id": "gayasan",
+    "mountain_id": "gyeryongsan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/gayasan/hero.avif",
-      "webp": "assets/img/gayasan/hero.webp",
-      "jpg": "assets/img/gayasan/hero.jpg"
+      "avif": "assets/img/gyeryongsan/hero.avif",
+      "webp": "assets/img/gyeryongsan/hero.webp",
+      "jpg": "assets/img/gyeryongsan/hero.jpg"
     },
     "widths": [
       640,
@@ -621,8 +2224,8 @@
       1600,
       2400
     ],
-    "alt_ko": "가야산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Gayasan mountain peaks and ridges",
+    "alt_ko": "계룡산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Gyeryongsan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
       "source": "pexels",
@@ -698,12 +2301,12 @@
     }
   },
   {
-    "mountain_id": "gyeryongsan",
+    "mountain_id": "hallasan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/gyeryongsan/hero.avif",
-      "webp": "assets/img/gyeryongsan/hero.webp",
-      "jpg": "assets/img/gyeryongsan/hero.jpg"
+      "avif": "assets/img/hallasan/hero.avif",
+      "webp": "assets/img/hallasan/hero.webp",
+      "jpg": "assets/img/hallasan/hero.jpg"
     },
     "widths": [
       640,
@@ -711,12 +2314,12 @@
       1600,
       2400
     ],
-    "alt_ko": "계룡산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Gyeryongsan mountain peaks and ridges",
+    "alt_ko": "한라산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Hallasan mountain peaks and ridges",
     "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
+      "author": "Julien Manival",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@julien_manival"
     }
   },
   {
@@ -788,12 +2391,12 @@
     }
   },
   {
-    "mountain_id": "hallasan",
+    "mountain_id": "jirisan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/hallasan/hero.avif",
-      "webp": "assets/img/hallasan/hero.webp",
-      "jpg": "assets/img/hallasan/hero.jpg"
+      "avif": "assets/img/jirisan/hero.avif",
+      "webp": "assets/img/jirisan/hero.webp",
+      "jpg": "assets/img/jirisan/hero.jpg"
     },
     "widths": [
       640,
@@ -801,12 +2404,12 @@
       1600,
       2400
     ],
-    "alt_ko": "한라산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Hallasan mountain peaks and ridges",
+    "alt_ko": "지리산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Jirisan mountain peaks and ridges",
     "credit": {
-      "author": "Julien Manival",
-      "source": "unsplash",
-      "url": "https://unsplash.com/@julien_manival"
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
     }
   },
   {
@@ -878,12 +2481,12 @@
     }
   },
   {
-    "mountain_id": "jirisan",
+    "mountain_id": "juwangsan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/jirisan/hero.avif",
-      "webp": "assets/img/jirisan/hero.webp",
-      "jpg": "assets/img/jirisan/hero.jpg"
+      "avif": "assets/img/juwangsan/hero.avif",
+      "webp": "assets/img/juwangsan/hero.webp",
+      "jpg": "assets/img/juwangsan/hero.jpg"
     },
     "widths": [
       640,
@@ -891,8 +2494,8 @@
       1600,
       2400
     ],
-    "alt_ko": "지리산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Jirisan mountain peaks and ridges",
+    "alt_ko": "주왕산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Juwangsan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
       "source": "pexels",
@@ -968,12 +2571,12 @@
     }
   },
   {
-    "mountain_id": "juwangsan",
+    "mountain_id": "minjusan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/juwangsan/hero.avif",
-      "webp": "assets/img/juwangsan/hero.webp",
-      "jpg": "assets/img/juwangsan/hero.jpg"
+      "avif": "assets/img/minjusan/hero.avif",
+      "webp": "assets/img/minjusan/hero.webp",
+      "jpg": "assets/img/minjusan/hero.jpg"
     },
     "widths": [
       640,
@@ -981,8 +2584,8 @@
       1600,
       2400
     ],
-    "alt_ko": "주왕산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Juwangsan mountain peaks and ridges",
+    "alt_ko": "민주지산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Minjujisan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
       "source": "pexels",
@@ -1058,12 +2661,12 @@
     }
   },
   {
-    "mountain_id": "minjusan",
+    "mountain_id": "mudeungsan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/minjusan/hero.avif",
-      "webp": "assets/img/minjusan/hero.webp",
-      "jpg": "assets/img/minjusan/hero.jpg"
+      "avif": "assets/img/mudeungsan/hero.avif",
+      "webp": "assets/img/mudeungsan/hero.webp",
+      "jpg": "assets/img/mudeungsan/hero.jpg"
     },
     "widths": [
       640,
@@ -1071,12 +2674,12 @@
       1600,
       2400
     ],
-    "alt_ko": "민주지산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Minjujisan mountain peaks and ridges",
+    "alt_ko": "무등산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of 무등산 mountain peaks and ridges",
     "credit": {
-      "author": "정규송 Nui MALAMA",
+      "author": "Kemal Güneş",
       "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
+      "url": "https://www.pexels.com/@wkgunes"
     }
   },
   {
@@ -1148,12 +2751,12 @@
     }
   },
   {
-    "mountain_id": "mudeungsan",
+    "mountain_id": "myeongseongsan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/mudeungsan/hero.avif",
-      "webp": "assets/img/mudeungsan/hero.webp",
-      "jpg": "assets/img/mudeungsan/hero.jpg"
+      "avif": "assets/img/myeongseongsan/hero.avif",
+      "webp": "assets/img/myeongseongsan/hero.webp",
+      "jpg": "assets/img/myeongseongsan/hero.jpg"
     },
     "widths": [
       640,
@@ -1161,12 +2764,12 @@
       1600,
       2400
     ],
-    "alt_ko": "무등산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of 무등산 mountain peaks and ridges",
+    "alt_ko": "명성산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Myeongseongsan mountain peaks and ridges",
     "credit": {
-      "author": "Kemal Güneş",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@wkgunes"
+      "author": "Flavio Mori",
+      "source": "Unsplash",
+      "url": "https://unsplash.com/@flvision_"
     }
   },
   {
@@ -1238,12 +2841,12 @@
     }
   },
   {
-    "mountain_id": "myeongseongsan",
+    "mountain_id": "naejangsan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/myeongseongsan/hero.avif",
-      "webp": "assets/img/myeongseongsan/hero.webp",
-      "jpg": "assets/img/myeongseongsan/hero.jpg"
+      "avif": "assets/img/naejangsan/hero.avif",
+      "webp": "assets/img/naejangsan/hero.webp",
+      "jpg": "assets/img/naejangsan/hero.jpg"
     },
     "widths": [
       640,
@@ -1251,12 +2854,12 @@
       1600,
       2400
     ],
-    "alt_ko": "명성산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Myeongseongsan mountain peaks and ridges",
+    "alt_ko": "내장산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Naejangsan mountain peaks and ridges",
     "credit": {
-      "author": "Flavio Mori",
-      "source": "Unsplash",
-      "url": "https://unsplash.com/@flvision_"
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
     }
   },
   {
@@ -1328,12 +2931,12 @@
     }
   },
   {
-    "mountain_id": "naejangsan",
+    "mountain_id": "odaesan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/naejangsan/hero.avif",
-      "webp": "assets/img/naejangsan/hero.webp",
-      "jpg": "assets/img/naejangsan/hero.jpg"
+      "avif": "assets/img/odaesan/hero.avif",
+      "webp": "assets/img/odaesan/hero.webp",
+      "jpg": "assets/img/odaesan/hero.jpg"
     },
     "widths": [
       640,
@@ -1341,8 +2944,8 @@
       1600,
       2400
     ],
-    "alt_ko": "내장산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Naejangsan mountain peaks and ridges",
+    "alt_ko": "오대산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Odaesan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
       "source": "pexels",
@@ -1418,12 +3021,12 @@
     }
   },
   {
-    "mountain_id": "odaesan",
+    "mountain_id": "seoraksan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/odaesan/hero.avif",
-      "webp": "assets/img/odaesan/hero.webp",
-      "jpg": "assets/img/odaesan/hero.jpg"
+      "avif": "assets/img/seoraksan/hero.avif",
+      "webp": "assets/img/seoraksan/hero.webp",
+      "jpg": "assets/img/seoraksan/hero.jpg"
     },
     "widths": [
       640,
@@ -1431,12 +3034,12 @@
       1600,
       2400
     ],
-    "alt_ko": "오대산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Odaesan mountain peaks and ridges",
+    "alt_ko": "설악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Seoraksan mountain peaks and ridges",
     "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
+      "author": "Austin Curtis",
+      "source": "unsplash",
+      "url": "https://unsplash.com/@afcurtis"
     }
   },
   {
@@ -1508,12 +3111,12 @@
     }
   },
   {
-    "mountain_id": "seoraksan",
+    "mountain_id": "sikjangsan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/seoraksan/hero.avif",
-      "webp": "assets/img/seoraksan/hero.webp",
-      "jpg": "assets/img/seoraksan/hero.jpg"
+      "avif": "assets/img/sikjangsan/hero.avif",
+      "webp": "assets/img/sikjangsan/hero.webp",
+      "jpg": "assets/img/sikjangsan/hero.jpg"
     },
     "widths": [
       640,
@@ -1521,12 +3124,12 @@
       1600,
       2400
     ],
-    "alt_ko": "설악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Seoraksan mountain peaks and ridges",
+    "alt_ko": "식장산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Sikjangsan mountain peaks and ridges",
     "credit": {
-      "author": "Austin Curtis",
-      "source": "unsplash",
-      "url": "https://unsplash.com/@afcurtis"
+      "author": "정규송 Nui MALAMA",
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
     }
   },
   {
@@ -1598,12 +3201,12 @@
     }
   },
   {
-    "mountain_id": "sikjangsan",
+    "mountain_id": "sobaeksan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/sikjangsan/hero.avif",
-      "webp": "assets/img/sikjangsan/hero.webp",
-      "jpg": "assets/img/sikjangsan/hero.jpg"
+      "avif": "assets/img/sobaeksan/hero.avif",
+      "webp": "assets/img/sobaeksan/hero.webp",
+      "jpg": "assets/img/sobaeksan/hero.jpg"
     },
     "widths": [
       640,
@@ -1611,12 +3214,12 @@
       1600,
       2400
     ],
-    "alt_ko": "식장산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Sikjangsan mountain peaks and ridges",
+    "alt_ko": "소백산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Sobaeksan mountain peaks and ridges",
     "credit": {
-      "author": "정규송 Nui MALAMA",
+      "author": "Pan soo Yi",
       "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
+      "url": "https://www.pexels.com/@pan-soo-yi-9278113"
     }
   },
   {
@@ -1688,96 +3291,6 @@
     }
   },
   {
-    "mountain_id": "sobaeksan",
-    "role": "hero",
-    "files": {
-      "avif": "assets/img/sobaeksan/hero.avif",
-      "webp": "assets/img/sobaeksan/hero.webp",
-      "jpg": "assets/img/sobaeksan/hero.jpg"
-    },
-    "widths": [
-      640,
-      1024,
-      1600,
-      2400
-    ],
-    "alt_ko": "소백산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Sobaeksan mountain peaks and ridges",
-    "credit": {
-      "author": "Pan soo Yi",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@pan-soo-yi-9278113"
-    }
-  },
-  {
-    "mountain_id": "soyosan",
-    "role": "gallery_1",
-    "files": {
-      "avif": "assets/img/soyosan/g1.avif",
-      "webp": "assets/img/soyosan/g1.webp",
-      "jpg": "assets/img/soyosan/g1.jpg"
-    },
-    "widths": [],
-    "alt_ko": "소요산 등산로를 따라 펼쳐진 수려한 주변 경관",
-    "alt_en": "Scenic hiking trail and beautiful surroundings of Soyosan",
-    "credit": {
-      "author": "Dmitriy Ryndin",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@dimafromcrimea"
-    }
-  },
-  {
-    "mountain_id": "soyosan",
-    "role": "gallery_2",
-    "files": {
-      "avif": "assets/img/soyosan/g2.avif",
-      "webp": "assets/img/soyosan/g2.webp",
-      "jpg": "assets/img/soyosan/g2.jpg"
-    },
-    "widths": [],
-    "alt_ko": "소요산 국립공원의 사계절 자연미가 느껴지는 풍경",
-    "alt_en": "Beautiful landscape showcasing the natural beauty of Soyosan National Park",
-    "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
-    }
-  },
-  {
-    "mountain_id": "soyosan",
-    "role": "gallery_3",
-    "files": {
-      "avif": "assets/img/soyosan/g3.avif",
-      "webp": "assets/img/soyosan/g3.webp",
-      "jpg": "assets/img/soyosan/g3.jpg"
-    },
-    "widths": [],
-    "alt_ko": "소요산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관",
-    "alt_en": "Harmonious view of Soyosan mountain ridges under a clear sky",
-    "credit": {
-      "author": "pipop kunachon",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@daddysky"
-    }
-  },
-  {
-    "mountain_id": "soyosan",
-    "role": "gallery_4",
-    "files": {
-      "avif": "assets/img/soyosan/g4.avif",
-      "webp": "assets/img/soyosan/g4.webp",
-      "jpg": "assets/img/soyosan/g4.jpg"
-    },
-    "widths": [],
-    "alt_ko": "소요산 숲길과 기암괴석이 어우러진 아름다운 비경",
-    "alt_en": "Beautiful scenery of lush forests and rugged rocks in Soyosan",
-    "credit": {
-      "author": "Hokusai",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@hokusai-509091422"
-    }
-  },
-  {
     "mountain_id": "soyosan",
     "role": "hero",
     "files": {
@@ -1794,9 +3307,184 @@
     "alt_ko": "소요산 정상과 웅장한 산세가 어우러진 대자연 풍경",
     "alt_en": "Majestic natural landscape of Soyosan mountain peaks and ridges",
     "credit": {
-      "author": "Nizar Firmansyah",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@rfniza"
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_1",
+    "files": {
+      "avif": "assets/img/soyosan/g1.avif",
+      "webp": "assets/img/soyosan/g1.webp",
+      "jpg": "assets/img/soyosan/g1.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 1)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 1)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_2",
+    "files": {
+      "avif": "assets/img/soyosan/g2.avif",
+      "webp": "assets/img/soyosan/g2.webp",
+      "jpg": "assets/img/soyosan/g2.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 2)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 2)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_3",
+    "files": {
+      "avif": "assets/img/soyosan/g3.avif",
+      "webp": "assets/img/soyosan/g3.webp",
+      "jpg": "assets/img/soyosan/g3.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 3)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 3)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_4",
+    "files": {
+      "avif": "assets/img/soyosan/g4.avif",
+      "webp": "assets/img/soyosan/g4.webp",
+      "jpg": "assets/img/soyosan/g4.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 4)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 4)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_5",
+    "files": {
+      "avif": "assets/img/soyosan/g5.avif",
+      "webp": "assets/img/soyosan/g5.webp",
+      "jpg": "assets/img/soyosan/g5.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 5)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 5)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_6",
+    "files": {
+      "avif": "assets/img/soyosan/g6.avif",
+      "webp": "assets/img/soyosan/g6.webp",
+      "jpg": "assets/img/soyosan/g6.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 6)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 6)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_7",
+    "files": {
+      "avif": "assets/img/soyosan/g7.avif",
+      "webp": "assets/img/soyosan/g7.webp",
+      "jpg": "assets/img/soyosan/g7.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 7)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 7)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_8",
+    "files": {
+      "avif": "assets/img/soyosan/g8.avif",
+      "webp": "assets/img/soyosan/g8.webp",
+      "jpg": "assets/img/soyosan/g8.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 8)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 8)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "soyosan",
+    "role": "gallery_9",
+    "files": {
+      "avif": "assets/img/soyosan/g9.avif",
+      "webp": "assets/img/soyosan/g9.webp",
+      "jpg": "assets/img/soyosan/g9.jpg"
+    },
+    "widths": [],
+    "alt_ko": "소요산 산행 중에 촬영한 자연 풍경 (사진 9)",
+    "alt_en": "Scenic view captured during the Soyosan hike (Photo 9)",
+    "credit": {
+      "author": "Dokyung Kim",
+      "source": "Local",
+      "url": ""
+    }
+  },
+  {
+    "mountain_id": "taebaeksan",
+    "role": "hero",
+    "files": {
+      "avif": "assets/img/taebaeksan/hero.avif",
+      "webp": "assets/img/taebaeksan/hero.webp",
+      "jpg": "assets/img/taebaeksan/hero.jpg"
+    },
+    "widths": [
+      640,
+      1024,
+      1600,
+      2400
+    ],
+    "alt_ko": "태백산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Taebaeksan mountain peaks and ridges",
+    "credit": {
+      "author": "정규송 Nui MALAMA",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/scenic-view-of-the-snowy-mountains-14170848/"
     }
   },
   {
@@ -1868,12 +3556,12 @@
     }
   },
   {
-    "mountain_id": "taebaeksan",
+    "mountain_id": "wolchulsan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/taebaeksan/hero.avif",
-      "webp": "assets/img/taebaeksan/hero.webp",
-      "jpg": "assets/img/taebaeksan/hero.jpg"
+      "avif": "assets/img/wolchulsan/hero.avif",
+      "webp": "assets/img/wolchulsan/hero.webp",
+      "jpg": "assets/img/wolchulsan/hero.jpg"
     },
     "widths": [
       640,
@@ -1881,12 +3569,12 @@
       1600,
       2400
     ],
-    "alt_ko": "태백산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Taebaeksan mountain peaks and ridges",
+    "alt_ko": "월출산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Wolchulsan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
-      "source": "Pexels",
-      "url": "https://www.pexels.com/photo/scenic-view-of-the-snowy-mountains-14170848/"
+      "source": "pexels",
+      "url": "https://www.pexels.com/@nui-malama-169330637"
     }
   },
   {
@@ -1958,12 +3646,12 @@
     }
   },
   {
-    "mountain_id": "wolchulsan",
+    "mountain_id": "woraksan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/wolchulsan/hero.avif",
-      "webp": "assets/img/wolchulsan/hero.webp",
-      "jpg": "assets/img/wolchulsan/hero.jpg"
+      "avif": "assets/img/woraksan/hero.avif",
+      "webp": "assets/img/woraksan/hero.webp",
+      "jpg": "assets/img/woraksan/hero.jpg"
     },
     "widths": [
       640,
@@ -1971,8 +3659,8 @@
       1600,
       2400
     ],
-    "alt_ko": "월출산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Wolchulsan mountain peaks and ridges",
+    "alt_ko": "월악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
+    "alt_en": "Majestic natural landscape of Woraksan mountain peaks and ridges",
     "credit": {
       "author": "정규송 Nui MALAMA",
       "source": "pexels",
@@ -2048,12 +3736,12 @@
     }
   },
   {
-    "mountain_id": "woraksan",
+    "mountain_id": "xueshan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/woraksan/hero.avif",
-      "webp": "assets/img/woraksan/hero.webp",
-      "jpg": "assets/img/woraksan/hero.jpg"
+      "avif": "assets/img/xueshan/hero.avif",
+      "webp": "assets/img/xueshan/hero.webp",
+      "jpg": "assets/img/xueshan/hero.jpg"
     },
     "widths": [
       640,
@@ -2061,12 +3749,12 @@
       1600,
       2400
     ],
-    "alt_ko": "월악산 정상과 웅장한 산세가 어우러진 대자연 풍경",
-    "alt_en": "Majestic natural landscape of Woraksan mountain peaks and ridges",
+    "alt_ko": "설산 국립공원의 대표 명소인 설산 주봉와 아름다운 산세 풍경",
+    "alt_en": "Beautiful landscape of Xueshan Main Peak and majestic mountain ridges in Xueshan National Park",
     "credit": {
-      "author": "정규송 Nui MALAMA",
-      "source": "pexels",
-      "url": "https://www.pexels.com/@nui-malama-169330637"
+      "author": "小小 兵",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/aerial-view-of-lush-mountain-ridge-in-taiwan-34434574/"
     }
   },
   {
@@ -2138,12 +3826,12 @@
     }
   },
   {
-    "mountain_id": "xueshan",
+    "mountain_id": "yangmingshan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/xueshan/hero.avif",
-      "webp": "assets/img/xueshan/hero.webp",
-      "jpg": "assets/img/xueshan/hero.jpg"
+      "avif": "assets/img/yangmingshan/hero.avif",
+      "webp": "assets/img/yangmingshan/hero.webp",
+      "jpg": "assets/img/yangmingshan/hero.jpg"
     },
     "widths": [
       640,
@@ -2151,12 +3839,12 @@
       1600,
       2400
     ],
-    "alt_ko": "설산 국립공원의 대표 명소인 설산 주봉와 아름다운 산세 풍경",
-    "alt_en": "Beautiful landscape of Xueshan Main Peak and majestic mountain ridges in Xueshan National Park",
+    "alt_ko": "양명산 국립공원의 대표 명소인 양명산와 아름다운 산세 풍경",
+    "alt_en": "Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park",
     "credit": {
-      "author": "小小 兵",
-      "source": "Pexels",
-      "url": "https://www.pexels.com/photo/aerial-view-of-lush-mountain-ridge-in-taiwan-34434574/"
+      "author": "CHIA-HAO HSU",
+      "source": "Unsplash",
+      "url": "https://unsplash.com/@roberthsu1054"
     }
   },
   {
@@ -2228,12 +3916,12 @@
     }
   },
   {
-    "mountain_id": "yangmingshan",
+    "mountain_id": "yushan",
     "role": "hero",
     "files": {
-      "avif": "assets/img/yangmingshan/hero.avif",
-      "webp": "assets/img/yangmingshan/hero.webp",
-      "jpg": "assets/img/yangmingshan/hero.jpg"
+      "avif": "assets/img/yushan/hero.avif",
+      "webp": "assets/img/yushan/hero.webp",
+      "jpg": "assets/img/yushan/hero.jpg"
     },
     "widths": [
       640,
@@ -2241,12 +3929,12 @@
       1600,
       2400
     ],
-    "alt_ko": "양명산 국립공원의 대표 명소인 양명산와 아름다운 산세 풍경",
-    "alt_en": "Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park",
+    "alt_ko": "위산 국립공원의 대표 명소인 위산 주봉와 아름다운 산세 풍경",
+    "alt_en": "Beautiful landscape of Yushan Main Peak and majestic mountain ridges in Yushan National Park",
     "credit": {
-      "author": "CHIA-HAO HSU",
-      "source": "Unsplash",
-      "url": "https://unsplash.com/@roberthsu1054"
+      "author": "小小 兵",
+      "source": "Pexels",
+      "url": "https://www.pexels.com/photo/breathtaking-mountain-view-above-clouds-in-taiwan-34434573/"
     }
   },
   {
@@ -2315,28 +4003,6 @@
       "author": "P Hsuan Wang",
       "source": "Pexels",
       "url": "https://www.pexels.com/photo/group-of-backpackers-in-mountains-12247773/"
-    }
-  },
-  {
-    "mountain_id": "yushan",
-    "role": "hero",
-    "files": {
-      "avif": "assets/img/yushan/hero.avif",
-      "webp": "assets/img/yushan/hero.webp",
-      "jpg": "assets/img/yushan/hero.jpg"
-    },
-    "widths": [
-      640,
-      1024,
-      1600,
-      2400
-    ],
-    "alt_ko": "위산 국립공원의 대표 명소인 위산 주봉와 아름다운 산세 풍경",
-    "alt_en": "Beautiful landscape of Yushan Main Peak and majestic mountain ridges in Yushan National Park",
-    "credit": {
-      "author": "小小 兵",
-      "source": "Pexels",
-      "url": "https://www.pexels.com/photo/breathtaking-mountain-view-above-clouds-in-taiwan-34434573/"
     }
   }
 ]

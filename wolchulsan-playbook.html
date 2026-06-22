@@ -287,6 +287,8 @@ footer{text-align:center;padding:var(--space-8) var(--space-4);font-size:var(--t
   .course-strip{padding:var(--space-4)}
 }
 
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -739,31 +741,27 @@ footer{text-align:center;padding:var(--space-8) var(--space-4);font-size:var(--t
 </header>
 <!-- HERO -->
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/wolchulsan/hero-640.avif 640w, assets/img/wolchulsan/hero-1024.avif 1024w, assets/img/wolchulsan/hero-1600.avif 1600w, assets/img/wolchulsan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/wolchulsan/hero-640.webp 640w, assets/img/wolchulsan/hero-1024.webp 1024w, assets/img/wolchulsan/hero-1600.webp 1600w, assets/img/wolchulsan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="월출산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Wolchulsan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/wolchulsan/hero-1600.jpg" srcset="assets/img/wolchulsan/hero-640.jpg 640w, assets/img/wolchulsan/hero-1024.jpg 1024w, assets/img/wolchulsan/hero-1600.jpg 1600w, assets/img/wolchulsan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="hero-badge">전남 영암 · 국립공원 제20호</div>
-<h1>월출산 🌙 등산 플레이북</h1>
-<p>달이 뜨는 산, 호남의 금강산. 초급·중급·고급 3개 코스로 만나는 월출산의 모든 것.</p>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">809m</div><div class="hero-stat-lbl">천황봉 정상</div></div>
-<div class="hero-stat"><div class="hero-stat-val">510m</div><div class="hero-stat-lbl">구름다리 고도</div></div>
-<div class="hero-stat"><div class="hero-stat-val">120m</div><div class="hero-stat-lbl">구름다리 지상높이</div></div>
-<div class="hero-stat"><div class="hero-stat-val">1988</div><div class="hero-stat-lbl">국립공원 지정</div></div>
-<div class="hero-stat"><div class="hero-stat-val">56km²</div><div class="hero-stat-lbl">공원 면적</div></div>
-</div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/wolchulsan/hero-640.avif 640w, assets/img/wolchulsan/hero-1024.avif 1024w, assets/img/wolchulsan/hero-1600.avif 1600w, assets/img/wolchulsan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/wolchulsan/hero-640.webp 640w, assets/img/wolchulsan/hero-1024.webp 1024w, assets/img/wolchulsan/hero-1600.webp 1600w, assets/img/wolchulsan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/wolchulsan/hero-1600.jpg" srcset="assets/img/wolchulsan/hero-640.jpg 640w, assets/img/wolchulsan/hero-1024.jpg 1024w, assets/img/wolchulsan/hero-1600.jpg 1600w, assets/img/wolchulsan/hero-2400.jpg 2400w" sizes="100vw" alt="월출산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Wolchulsan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="hero-badge">전남 영암 · 국립공원 제20호
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" target="_blank" rel="noopener">정규송 Nui MALAMA</a></span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source"><a href="https://pexels.com" target="_blank" rel="noopener">pexels</a></span>
+  </div>
+
 </section>
 <!-- COURSE SELECTOR -->
 <div class="course-selector">
@@ -1334,57 +1332,64 @@ footer{text-align:center;padding:var(--space-8) var(--space-4);font-size:var(--t
 </div>
 </div>
 </div>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 월출산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 월출산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Wolchulsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'&gt;Kwangho Cha&lt;/a&gt; on pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/wolchulsan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/wolchulsan/g1.webp" type="image/webp"/>
-<img alt="월출산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/wolchulsan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월출산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Wolchulsan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/wolchulsan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/wolchulsan/g2.webp" type="image/webp"/>
-<img alt="월출산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/wolchulsan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월출산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Wolchulsan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/wolchulsan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/wolchulsan/g3.webp" type="image/webp"/>
-<img alt="월출산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/wolchulsan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월출산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Wolchulsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@daejeung' target='_blank' rel='noopener'&gt;대정 김&lt;/a&gt; on pexels" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/wolchulsan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/wolchulsan/g4.webp" type="image/webp"/>
-<img alt="월출산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/wolchulsan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월출산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Wolchulsan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'>Kwangho Cha</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/wolchulsan/g1.avif">
+        <source type="image/webp" srcset="assets/img/wolchulsan/g1.webp">
+        <img src="assets/img/wolchulsan/g1.jpg" alt="월출산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월출산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Wolchulsan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'>Suki Lee</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/wolchulsan/g2.avif">
+        <source type="image/webp" srcset="assets/img/wolchulsan/g2.webp">
+        <img src="assets/img/wolchulsan/g2.jpg" alt="월출산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월출산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Wolchulsan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'>Suki Lee</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/wolchulsan/g3.avif">
+        <source type="image/webp" srcset="assets/img/wolchulsan/g3.webp">
+        <img src="assets/img/wolchulsan/g3.jpg" alt="월출산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월출산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Wolchulsan 크게 보기" data-index="3" data-credit="Photo by <a href='https://www.pexels.com/@daejeung' target='_blank' rel='noopener'>대정 김</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/wolchulsan/g4.avif">
+        <source type="image/webp" srcset="assets/img/wolchulsan/g4.webp">
+        <img src="assets/img/wolchulsan/g4.jpg" alt="월출산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월출산 탐방로</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <footer>
 <p>월출산 국립공원 탐방 정보 · 실제 산행 전 국립공원 공식 웹사이트에서 탐방 통제 여부를 반드시 확인하세요.</p>
@@ -1424,18 +1429,21 @@ function toggleSegment(card){
   card.classList.toggle('open');
 }
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');

@@ -179,6 +179,8 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
   .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
 }
 
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -624,29 +626,27 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 </button>
 </header>
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/hallasan/hero-640.avif 640w, assets/img/hallasan/hero-1024.avif 1024w, assets/img/hallasan/hero-1600.avif 1600w, assets/img/hallasan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/hallasan/hero-640.webp 640w, assets/img/hallasan/hero-1024.webp 1024w, assets/img/hallasan/hero-1600.webp 1600w, assets/img/hallasan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="한라산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Hallasan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/hallasan/hero-1600.jpg" srcset="assets/img/hallasan/hero-640.jpg 640w, assets/img/hallasan/hero-1024.jpg 1024w, assets/img/hallasan/hero-1600.jpg 1600w, assets/img/hallasan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="hero-badge">🌋 대한민국 최고봉 · 제주특별자치도 · 해발 1,947m</div>
-<h1>한라산 등산 코스 가이드</h1>
-<p>백록담을 품은 유네스코 세계자연유산. 영실 탐방부터 성판악·관음사 종주까지 — 나에게 맞는 코스를 선택하세요.</p>
-<div class="course-selector">
-<button class="course-btn ab" onclick="selectCourse('beginner',this)">🌿 초급 — 영실·윗세오름</button>
-<button class="course-btn" onclick="selectCourse('intermediate',this)">🦶 중급 — 성판악 백록담 왕복</button>
-<button class="course-btn" onclick="selectCourse('advanced',this)">🏔 고급 — 관음사↑ 성판악↓ 종주</button>
-</div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://unsplash.com/@julien_manival" rel="noopener" target="_blank">Julien Manival</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">unsplash</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/hallasan/hero-640.avif 640w, assets/img/hallasan/hero-1024.avif 1024w, assets/img/hallasan/hero-1600.avif 1600w, assets/img/hallasan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/hallasan/hero-640.webp 640w, assets/img/hallasan/hero-1024.webp 1024w, assets/img/hallasan/hero-1600.webp 1600w, assets/img/hallasan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/hallasan/hero-1600.jpg" srcset="assets/img/hallasan/hero-640.jpg 640w, assets/img/hallasan/hero-1024.jpg 1024w, assets/img/hallasan/hero-1600.jpg 1600w, assets/img/hallasan/hero-2400.jpg 2400w" sizes="100vw" alt="한라산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Hallasan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="hero-badge">🌋 대한민국 최고봉 · 제주특별자치도 · 해발 1,947m
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by <a href="https://unsplash.com/@julien_manival" target="_blank" rel="noopener">Julien Manival</a></span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source"><a href="https://unsplash.com" target="_blank" rel="noopener">unsplash</a></span>
+  </div>
+
 </section>
 <!-- ═══ 초급 ═══ -->
 <div class="course-panel active beginner" id="course-beginner">
@@ -1250,57 +1250,64 @@ a,button,[role="button"]{transition:color var(--tx),background var(--tx),border-
 </div>
 </main>
 </div>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 한라산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 한라산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Hallasan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@suping1555' target='_blank' rel='noopener'&gt;shuping zhao&lt;/a&gt; on unsplash" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/hallasan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/hallasan/g1.webp" type="image/webp"/>
-<img alt="한라산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">한라산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Hallasan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@rfniza' target='_blank' rel='noopener'&gt;Nizar Firmansyah&lt;/a&gt; on unsplash" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/hallasan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/hallasan/g2.webp" type="image/webp"/>
-<img alt="한라산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">한라산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Hallasan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@rfniza' target='_blank' rel='noopener'&gt;Nizar Firmansyah&lt;/a&gt; on unsplash" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/hallasan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/hallasan/g3.webp" type="image/webp"/>
-<img alt="한라산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">한라산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Hallasan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@mdrhmn' target='_blank' rel='noopener'&gt;Muhammad Rahiman Abdulmanab&lt;/a&gt; on unsplash" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/hallasan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/hallasan/g4.webp" type="image/webp"/>
-<img alt="한라산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/hallasan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">한라산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Hallasan 크게 보기" data-index="0" data-credit="Photo by <a href='https://unsplash.com/@suping1555' target='_blank' rel='noopener'>shuping zhao</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/hallasan/g1.avif">
+        <source type="image/webp" srcset="assets/img/hallasan/g1.webp">
+        <img src="assets/img/hallasan/g1.jpg" alt="한라산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">한라산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Hallasan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://unsplash.com/@rfniza' target='_blank' rel='noopener'>Nizar Firmansyah</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/hallasan/g2.avif">
+        <source type="image/webp" srcset="assets/img/hallasan/g2.webp">
+        <img src="assets/img/hallasan/g2.jpg" alt="한라산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">한라산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Hallasan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://unsplash.com/@rfniza' target='_blank' rel='noopener'>Nizar Firmansyah</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/hallasan/g3.avif">
+        <source type="image/webp" srcset="assets/img/hallasan/g3.webp">
+        <img src="assets/img/hallasan/g3.jpg" alt="한라산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">한라산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Hallasan 크게 보기" data-index="3" data-credit="Photo by <a href='https://unsplash.com/@mdrhmn' target='_blank' rel='noopener'>Muhammad Rahiman Abdulmanab</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/hallasan/g4.avif">
+        <source type="image/webp" srcset="assets/img/hallasan/g4.webp">
+        <img src="assets/img/hallasan/g4.jpg" alt="한라산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">한라산 탐방로</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <footer style="border-top:1px solid var(--color-divider);padding:var(--space-8) var(--space-6);text-align:center;background:var(--color-surface);">
 <p style="font-size:var(--text-xs);color:var(--color-text-faint);">한라산국립공원 탐방 정보 기준. 실제 산행 전 한라산탐방예약 공식 홈페이지(visithalla.jeju.go.kr)에서 최신 예약 정보·입산통제 시간을 반드시 확인하세요. 064-713-9950</p>
@@ -1334,18 +1341,21 @@ function selectTab(c,t,btn){
 function toggleAcc(h){h.parentElement.classList.toggle("open");}
 document.querySelectorAll(".accordion").forEach(a=>{const f=a.querySelector(".acc-item");if(f)f.classList.add("open");});
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');

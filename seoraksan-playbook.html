@@ -205,6 +205,8 @@ a,button,[role="button"]{transition:color var(--transition),background var(--tra
   .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
 }
 
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -654,29 +656,27 @@ a,button,[role="button"]{transition:color var(--transition),background var(--tra
 </header>
 <!-- HERO -->
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/seoraksan/hero-640.avif 640w, assets/img/seoraksan/hero-1024.avif 1024w, assets/img/seoraksan/hero-1600.avif 1600w, assets/img/seoraksan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/seoraksan/hero-640.webp 640w, assets/img/seoraksan/hero-1024.webp 1024w, assets/img/seoraksan/hero-1600.webp 1600w, assets/img/seoraksan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="설악산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Seoraksan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/seoraksan/hero-1600.jpg" srcset="assets/img/seoraksan/hero-640.jpg 640w, assets/img/seoraksan/hero-1024.jpg 1024w, assets/img/seoraksan/hero-1600.jpg 1600w, assets/img/seoraksan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="hero-badge">🏔 강원도 속초 · 양양 · 인제 · 고성</div>
-<h1>설악산 등산 코스 가이드</h1>
-<p>대청봉(1,708m)을 품은 대한민국 3대 명산. 초급부터 고급까지 나에게 맞는 코스를 선택하세요.</p>
-<div class="course-selector">
-<button class="course-btn active-beginner" onclick="selectCourse('beginner',this)">🌿 초급 — 울산바위·비룡폭포</button>
-<button class="course-btn" onclick="selectCourse('intermediate',this)">🦶 중급 — 오색 대청봉 왕복</button>
-<button class="course-btn" onclick="selectCourse('advanced',this)">🏔 고급 — 내외설악 관통 종주</button>
-</div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://unsplash.com/@afcurtis" rel="noopener" target="_blank">Austin Curtis</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">unsplash</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/seoraksan/hero-640.avif 640w, assets/img/seoraksan/hero-1024.avif 1024w, assets/img/seoraksan/hero-1600.avif 1600w, assets/img/seoraksan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/seoraksan/hero-640.webp 640w, assets/img/seoraksan/hero-1024.webp 1024w, assets/img/seoraksan/hero-1600.webp 1600w, assets/img/seoraksan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/seoraksan/hero-1600.jpg" srcset="assets/img/seoraksan/hero-640.jpg 640w, assets/img/seoraksan/hero-1024.jpg 1024w, assets/img/seoraksan/hero-1600.jpg 1600w, assets/img/seoraksan/hero-2400.jpg 2400w" sizes="100vw" alt="설악산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Seoraksan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="hero-badge">🏔 강원도 속초 · 양양 · 인제 · 고성
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by <a href="https://unsplash.com/@afcurtis" target="_blank" rel="noopener">Austin Curtis</a></span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source"><a href="https://unsplash.com" target="_blank" rel="noopener">unsplash</a></span>
+  </div>
+
 </section>
 <!-- ═══════════════════ 초급 코스 ═══════════════════ -->
 <div class="course-panel active beginner" id="course-beginner">
@@ -1343,57 +1343,64 @@ a,button,[role="button"]{transition:color var(--transition),background var(--tra
 </div>
 </main>
 </div>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 설악산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 설악산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Seoraksan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@afcurtis' target='_blank' rel='noopener'&gt;Austin Curtis&lt;/a&gt; on unsplash" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/seoraksan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/seoraksan/g1.webp" type="image/webp"/>
-<img alt="설악산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/seoraksan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">설악산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Seoraksan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@kimyebin' target='_blank' rel='noopener'&gt;yebin kim&lt;/a&gt; on unsplash" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/seoraksan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/seoraksan/g2.webp" type="image/webp"/>
-<img alt="설악산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/seoraksan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">설악산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Seoraksan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@julien_manival' target='_blank' rel='noopener'&gt;Julien Manival&lt;/a&gt; on unsplash" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/seoraksan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/seoraksan/g3.webp" type="image/webp"/>
-<img alt="설악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/seoraksan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">설악산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Seoraksan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@minkus' target='_blank' rel='noopener'&gt;Minku Kang&lt;/a&gt; on unsplash" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/seoraksan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/seoraksan/g4.webp" type="image/webp"/>
-<img alt="설악산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/seoraksan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">설악산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Seoraksan 크게 보기" data-index="0" data-credit="Photo by <a href='https://unsplash.com/@afcurtis' target='_blank' rel='noopener'>Austin Curtis</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/seoraksan/g1.avif">
+        <source type="image/webp" srcset="assets/img/seoraksan/g1.webp">
+        <img src="assets/img/seoraksan/g1.jpg" alt="설악산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">설악산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Seoraksan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://unsplash.com/@kimyebin' target='_blank' rel='noopener'>yebin kim</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/seoraksan/g2.avif">
+        <source type="image/webp" srcset="assets/img/seoraksan/g2.webp">
+        <img src="assets/img/seoraksan/g2.jpg" alt="설악산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">설악산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Seoraksan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://unsplash.com/@julien_manival' target='_blank' rel='noopener'>Julien Manival</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/seoraksan/g3.avif">
+        <source type="image/webp" srcset="assets/img/seoraksan/g3.webp">
+        <img src="assets/img/seoraksan/g3.jpg" alt="설악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">설악산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Seoraksan 크게 보기" data-index="3" data-credit="Photo by <a href='https://unsplash.com/@minkus' target='_blank' rel='noopener'>Minku Kang</a> on unsplash">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/seoraksan/g4.avif">
+        <source type="image/webp" srcset="assets/img/seoraksan/g4.webp">
+        <img src="assets/img/seoraksan/g4.jpg" alt="설악산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">설악산 탐방로</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <!-- FOOTER -->
 <footer style="border-top:1px solid var(--color-divider);padding:var(--space-8) var(--space-6);text-align:center;background:var(--color-surface);">
@@ -1451,18 +1458,21 @@ document.querySelectorAll('.accordion').forEach(acc=>{
   if(first)first.classList.add('open');
 });
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');

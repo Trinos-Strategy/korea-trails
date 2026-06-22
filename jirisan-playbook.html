@@ -170,6 +170,8 @@ footer{text-align:center;padding:var(--space-8);font-size:var(--text-xs);color:v
   .tab-panel{padding:var(--space-4);}
 }
 
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -601,34 +603,28 @@ footer{text-align:center;padding:var(--space-8);font-size:var(--text-xs);color:v
 </head>
 <body>
 <header class="site-header hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/jirisan/hero-640.avif 640w, assets/img/jirisan/hero-1024.avif 1024w, assets/img/jirisan/hero-1600.avif 1600w, assets/img/jirisan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/jirisan/hero-640.webp 640w, assets/img/jirisan/hero-1024.webp 1024w, assets/img/jirisan/hero-1600.webp 1600w, assets/img/jirisan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="지리산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Jirisan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/jirisan/hero-1600.jpg" srcset="assets/img/jirisan/hero-640.jpg 640w, assets/img/jirisan/hero-1024.jpg 1024w, assets/img/jirisan/hero-1600.jpg 1600w, assets/img/jirisan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/jirisan/hero-640.avif 640w, assets/img/jirisan/hero-1024.avif 1024w, assets/img/jirisan/hero-1600.avif 1600w, assets/img/jirisan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/jirisan/hero-640.webp 640w, assets/img/jirisan/hero-1024.webp 1024w, assets/img/jirisan/hero-1600.webp 1600w, assets/img/jirisan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/jirisan/hero-1600.jpg" srcset="assets/img/jirisan/hero-640.jpg 640w, assets/img/jirisan/hero-1024.jpg 1024w, assets/img/jirisan/hero-1600.jpg 1600w, assets/img/jirisan/hero-2400.jpg 2400w" sizes="100vw" alt="지리산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Jirisan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
 <div class="inner">
-<div class="header-badge">🏔 지리산 국립공원 제1호</div>
-<h1>지리산 등산 플레이북</h1>
-<p class="sub">초급 · 중급 · 고급 — 3가지 코스 완전 가이드</p>
-<div class="level-nav">
-<button class="lvl-btn beg active" onclick="selectLevel('beg',this)">🌿 초급 — 노고단 코스</button>
-<button class="lvl-btn int" onclick="selectLevel('int',this)">🦶 중급 — 천왕봉 당일 코스</button>
-<button class="lvl-btn adv" onclick="selectLevel('adv',this)">🏔 고급 — 성중종주 코스</button>
-</div>
-</div>
-<button aria-label="다크모드 전환" class="theme-toggle" data-theme-toggle="">
-<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><circle cx="12" cy="12" r="5"></circle><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path></svg>
-</button>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
-</div>
+<div class="header-badge">🏔 지리산 국립공원 제1호
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" target="_blank" rel="noopener">정규송 Nui MALAMA</a></span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source"><a href="https://pexels.com" target="_blank" rel="noopener">pexels</a></span>
+  </div>
+
 </header>
 <!-- ═══════════════════════ 코스 비교표 ═══════════════════════ -->
 <div style="max-width:900px;margin:var(--space-8) auto 0;padding:0 var(--space-4);">
@@ -1273,57 +1269,64 @@ footer{text-align:center;padding:var(--space-8);font-size:var(--text-xs);color:v
 </div>
 </div>
 </div>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 지리산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 지리산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Jirisan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/jirisan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/jirisan/g1.webp" type="image/webp"/>
-<img alt="지리산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/jirisan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">지리산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Jirisan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/jirisan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/jirisan/g2.webp" type="image/webp"/>
-<img alt="지리산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/jirisan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">지리산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Jirisan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/jirisan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/jirisan/g3.webp" type="image/webp"/>
-<img alt="지리산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/jirisan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">지리산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Jirisan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/jirisan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/jirisan/g4.webp" type="image/webp"/>
-<img alt="지리산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/jirisan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">지리산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Jirisan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/jirisan/g1.avif">
+        <source type="image/webp" srcset="assets/img/jirisan/g1.webp">
+        <img src="assets/img/jirisan/g1.jpg" alt="지리산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">지리산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Jirisan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/jirisan/g2.avif">
+        <source type="image/webp" srcset="assets/img/jirisan/g2.webp">
+        <img src="assets/img/jirisan/g2.jpg" alt="지리산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">지리산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Jirisan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/jirisan/g3.avif">
+        <source type="image/webp" srcset="assets/img/jirisan/g3.webp">
+        <img src="assets/img/jirisan/g3.jpg" alt="지리산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">지리산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Jirisan 크게 보기" data-index="3" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/jirisan/g4.avif">
+        <source type="image/webp" srcset="assets/img/jirisan/g4.webp">
+        <img src="assets/img/jirisan/g4.jpg" alt="지리산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">지리산 탐방로</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <footer>지리산 등산 플레이북 — 출처: 지리산국립공원(knps.or.kr), 국립공원공단 탐방예약시스템, 트랭글GPS 실측 데이터 종합<br/>코스별 거리·시간은 실측 기준이며 개인 체력에 따라 달라질 수 있습니다.</footer>
 <script>
@@ -1358,18 +1361,21 @@ function toggleStage(id) {
   document.getElementById(id).classList.toggle('open');
 }
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');

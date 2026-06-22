@@ -24,6 +24,8 @@
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
   
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -456,22 +458,27 @@
 <body>
 <header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M7 36c6-9 10-12 16-12 3 0 5 1 7 4 3-4 6-6 11-6" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M6 40h36" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M16 16l3-5M25 14l3-4M33 18l3-6" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>월악산</h1><p>영봉 1,097m · 덕주사·신륵사·보덕암 대표 루트</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/woraksan/hero-640.avif 640w, assets/img/woraksan/hero-1024.avif 1024w, assets/img/woraksan/hero-1600.avif 1600w, assets/img/woraksan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/woraksan/hero-640.webp 640w, assets/img/woraksan/hero-1024.webp 1024w, assets/img/woraksan/hero-1600.webp 1600w, assets/img/woraksan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="월악산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Woraksan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/woraksan/hero-1600.jpg" srcset="assets/img/woraksan/hero-640.jpg 640w, assets/img/woraksan/hero-1024.jpg 1024w, assets/img/woraksan/hero-1600.jpg 1600w, assets/img/woraksan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="wrap"><span class="hero-badge">Woraksan National Park</span><h2>월악산 3코스 등산 플레이북</h2><p>월악산 영봉을 중심으로 초급, 중급, 고급 3개 코스를 같은 방식의 인터랙티브 플레이북으로 정리했습니다. 신륵사 최단, 덕주사 대표, 보덕암-하봉-중봉 연계 종주형까지 한 번에 비교할 수 있습니다.</p><div class="stats"><div class="stat"><div class="v">1,097m</div><div class="l">영봉</div></div><div class="stat"><div class="v">3.6km</div><div class="l">신륵사 편도</div></div><div class="stat"><div class="v">6.0km</div><div class="l">덕주사 편도</div></div><div class="stat"><div class="v">6.2km</div><div class="l">보덕암 편도</div></div><div class="stat"><div class="v">계단 많음</div><div class="l">체감 특징</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 신륵사 최단</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 덕주사 대표</button><button class="course-btn red" data-course="advanced">🏔 고급 — 보덕암 종주형</button></div></div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/woraksan/hero-640.avif 640w, assets/img/woraksan/hero-1024.avif 1024w, assets/img/woraksan/hero-1600.avif 1600w, assets/img/woraksan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/woraksan/hero-640.webp 640w, assets/img/woraksan/hero-1024.webp 1024w, assets/img/woraksan/hero-1600.webp 1600w, assets/img/woraksan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/woraksan/hero-1600.jpg" srcset="assets/img/woraksan/hero-640.jpg 640w, assets/img/woraksan/hero-1024.jpg 1024w, assets/img/woraksan/hero-1600.jpg 1600w, assets/img/woraksan/hero-2400.jpg 2400w" sizes="100vw" alt="월악산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Woraksan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="wrap"><span class="hero-badge">Woraksan National Park</span><h2>월악산 3코스 등산 플레이북</h2><p>월악산 영봉을 중심으로 초급, 중급, 고급 3개 코스를 같은 방식의 인터랙티브 플레이북으로 정리했습니다. 신륵사 최단, 덕주사 대표, 보덕암-하봉-중봉 연계 종주형까지 한 번에 비교할 수 있습니다.</p><div class="stats"><div class="stat"><div class="v">1,097m
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" target="_blank" rel="noopener">정규송 Nui MALAMA</a></span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source"><a href="https://pexels.com" target="_blank" rel="noopener">pexels</a></span>
+  </div>
+
 </section>
 <main class="wrap">
 <section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">신륵사 최단 영봉 코스</div><div class="panel-sub">신륵사 주차장 → 신륵사삼거리 → 영봉 왕복 · 약 7.2km · 4~5시간</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
@@ -490,57 +497,64 @@
 <div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M82 328 C154 298, 234 246, 306 184 S406 110, 478 134 S590 92, 652 64 S706 46, 738 60" fill="none" stroke="#915d45" stroke-linecap="round" stroke-width="6"></path><circle cx="82" cy="328" fill="#915d45" r="10"></circle><circle cx="306" cy="184" fill="#915d45" r="9"></circle><circle cx="478" cy="134" fill="#915d45" r="9"></circle><circle cx="652" cy="64" fill="#915d45" r="10"></circle><text font-size="12" x="94" y="322">보덕암</text><text font-size="12" x="270" y="176">하봉</text><text font-size="12" x="442" y="126">중봉</text><text font-size="12" x="614" y="56">영봉</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>수산리/보덕암</td><td>들머리</td><td>0km</td><td>고급 코스 시작</td></tr><tr><td>하봉</td><td>-</td><td>중반</td><td>조망 포인트</td></tr><tr><td>중봉</td><td>-</td><td>후반</td><td>능선 업다운</td></tr><tr><td>영봉</td><td>1,097m</td><td>6.2km</td><td>주봉</td></tr><tr><td>덕주사 방면 하산</td><td>-</td><td>11km 전후</td><td>종주형 마무리</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>💪 추천 대상</h4><ul><li>영봉 경험자</li><li>능선 업다운 선호자</li><li>경치 우선 산행</li></ul></div><div class="card tipcard"><h4>🎒 준비 장비</h4><ul><li>무릎 보호대</li><li>충분한 식수</li><li>장갑·스틱</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>업다운 반복</li><li>긴 하산</li><li>체력 고갈 시 위험</li></ul></div></div></div></section>
 </main>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 월악산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 월악산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Woraksan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'&gt;Kwangho Cha&lt;/a&gt; on pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/woraksan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/woraksan/g1.webp" type="image/webp"/>
-<img alt="월악산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월악산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Woraksan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/woraksan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/woraksan/g2.webp" type="image/webp"/>
-<img alt="월악산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월악산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Woraksan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/woraksan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/woraksan/g3.webp" type="image/webp"/>
-<img alt="월악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월악산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Woraksan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'&gt;Suki Lee&lt;/a&gt; on pexels" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/woraksan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/woraksan/g4.webp" type="image/webp"/>
-<img alt="월악산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/woraksan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">월악산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Woraksan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'>Kwangho Cha</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/woraksan/g1.avif">
+        <source type="image/webp" srcset="assets/img/woraksan/g1.webp">
+        <img src="assets/img/woraksan/g1.jpg" alt="월악산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월악산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Woraksan National Park 크게 보기" data-index="1" data-credit="Photo by <a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/woraksan/g2.avif">
+        <source type="image/webp" srcset="assets/img/woraksan/g2.webp">
+        <img src="assets/img/woraksan/g2.jpg" alt="월악산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월악산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Woraksan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'>Suki Lee</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/woraksan/g3.avif">
+        <source type="image/webp" srcset="assets/img/woraksan/g3.webp">
+        <img src="assets/img/woraksan/g3.jpg" alt="월악산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월악산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Woraksan 크게 보기" data-index="3" data-credit="Photo by <a href='https://www.pexels.com/@suki-lee-110686949' target='_blank' rel='noopener'>Suki Lee</a> on pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/woraksan/g4.avif">
+        <source type="image/webp" srcset="assets/img/woraksan/g4.webp">
+        <img src="assets/img/woraksan/g4.jpg" alt="월악산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">월악산 탐방로</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <footer><div class="wrap">실제 산행 전 월악산국립공원 탐방로 통제, 기상, 주차, 들머리 접근과 하산 교통을 반드시 다시 확인하세요.</div></footer>
 <script>
@@ -549,18 +563,21 @@ const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...docume
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');

@@ -24,6 +24,8 @@
     .tips-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.tipcard h4{font-size:var(--sm);margin-bottom:10px}.tipcard ul{padding-left:18px;margin:0}.tipcard li{margin:7px 0;color:var(--muted);font-size:var(--xs)} footer{padding:28px 0 40px;color:var(--muted);font-size:var(--xs)}
     @media(max-width:960px){.grid6{grid-template-columns:repeat(3,1fr)}.tips-grid{grid-template-columns:1fr 1fr}.stats{grid-template-columns:repeat(2,1fr)}} @media(max-width:640px){.grid6{grid-template-columns:repeat(2,1fr)}.tips-grid{grid-template-columns:1fr}.stats{grid-template-columns:1fr}}
   
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -456,22 +458,27 @@
 <body>
 <header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M6 34c6-10 11-16 18-16 4 0 8 2 10 7 2-1 4-2 8-2" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M7 39h34" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M16 17l4-7M23 15l4-8M31 15l5-6" stroke="white" stroke-linecap="round" stroke-width="2.5"></path></svg></div><div><h1>명성산</h1><p>산정호수 · 억새군락지 · 삼각봉 능선의 대표 가을 산행지</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/myeongseongsan/hero-640.avif 640w, assets/img/myeongseongsan/hero-1024.avif 1024w, assets/img/myeongseongsan/hero-1600.avif 1600w, assets/img/myeongseongsan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/myeongseongsan/hero-640.webp 640w, assets/img/myeongseongsan/hero-1024.webp 1024w, assets/img/myeongseongsan/hero-1600.webp 1600w, assets/img/myeongseongsan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="명성산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Myeongseongsan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/myeongseongsan/hero-1600.jpg" srcset="assets/img/myeongseongsan/hero-640.jpg 640w, assets/img/myeongseongsan/hero-1024.jpg 1024w, assets/img/myeongseongsan/hero-1600.jpg 1600w, assets/img/myeongseongsan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="wrap"><span class="hero-badge">경기 포천 · 강원 철원 · 해발 923m</span><h2>명성산 3코스 등산 플레이북</h2><p>산정호수와 억새군락지, 삼각봉과 명성산 정상을 묶어 초급·중급·고급 3단계로 정리한 인터랙티브 가이드입니다.</p><div class="stats"><div class="stat"><div class="v">923m</div><div class="l">명성산 정상</div></div><div class="stat"><div class="v">903m</div><div class="l">삼각봉</div></div><div class="stat"><div class="v">14.1km</div><div class="l">최장 환종주</div></div><div class="stat"><div class="v">억새</div><div class="l">가을 대표 포인트</div></div><div class="stat"><div class="v">산정호수</div><div class="l">주요 들머리</div></div></div><div class="selector"><button class="course-btn green active" data-course="beginner">🌿 초급 — 억새밭 왕복</button><button class="course-btn blue" data-course="intermediate">🦶 중급 — 삼각봉 코스</button><button class="course-btn red" data-course="advanced">🏔 고급 — 정상 환종주</button></div></div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://unsplash.com/@flvision_" rel="noopener" target="_blank">Flavio Mori</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/myeongseongsan/hero-640.avif 640w, assets/img/myeongseongsan/hero-1024.avif 1024w, assets/img/myeongseongsan/hero-1600.avif 1600w, assets/img/myeongseongsan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/myeongseongsan/hero-640.webp 640w, assets/img/myeongseongsan/hero-1024.webp 1024w, assets/img/myeongseongsan/hero-1600.webp 1600w, assets/img/myeongseongsan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/myeongseongsan/hero-1600.jpg" srcset="assets/img/myeongseongsan/hero-640.jpg 640w, assets/img/myeongseongsan/hero-1024.jpg 1024w, assets/img/myeongseongsan/hero-1600.jpg 1600w, assets/img/myeongseongsan/hero-2400.jpg 2400w" sizes="100vw" alt="명성산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Myeongseongsan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="wrap"><span class="hero-badge">경기 포천 · 강원 철원 · 해발 923m</span><h2>명성산 3코스 등산 플레이북</h2><p>산정호수와 억새군락지, 삼각봉과 명성산 정상을 묶어 초급·중급·고급 3단계로 정리한 인터랙티브 가이드입니다.</p><div class="stats"><div class="stat"><div class="v">923m
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by <a href="https://unsplash.com/@flvision_" target="_blank" rel="noopener">Flavio Mori</a></span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source"><a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a></span>
+  </div>
+
 </section>
 <main class="wrap">
 <section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">억새밭 왕복 코스</div><div class="panel-sub">산정호수 상동주차장 → 비선폭포 → 등룡폭포 → 억새밭 → 원점회귀 · 약 6.3km · 2시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
@@ -490,57 +497,64 @@
 <div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M84 330 C170 294, 248 246, 336 170 S474 84, 585 72 S666 88, 700 146 S726 214, 712 286 S660 340, 612 356" fill="none" stroke="#b1423b" stroke-linecap="round" stroke-width="6"></path><circle cx="84" cy="330" fill="#b1423b" r="10"></circle><circle cx="210" cy="278" fill="#b1423b" r="9"></circle><circle cx="352" cy="166" fill="#b1423b" r="9"></circle><circle cx="560" cy="82" fill="#b1423b" r="10"></circle><circle cx="612" cy="356" fill="#b1423b" r="10"></circle><text font-size="12" x="98" y="326">상동주차장</text><text font-size="12" x="222" y="272">등룡폭포</text><text font-size="12" x="364" y="160">억새밭</text><text font-size="12" x="574" y="76">명성산 정상</text><text font-size="12" x="626" y="350">산안고개</text></svg></div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>상동주차장</td><td>약 280m</td><td>0km</td><td>들머리</td></tr><tr><td>비선폭포</td><td>약 360m</td><td>1.0km</td><td>계곡 포인트</td></tr><tr><td>등룡폭포</td><td>약 470m</td><td>1.8km</td><td>폭포</td></tr><tr><td>억새밭</td><td>약 760m</td><td>3.15km</td><td>주요 억새군락</td></tr><tr><td>삼각봉</td><td>903m</td><td>4.7km</td><td>조망 포인트</td></tr><tr><td>명성산 정상</td><td>923m</td><td>6.2km</td><td>주봉</td></tr><tr><td>산안고개</td><td>약 520m</td><td>8.2km</td><td>하산 갈림길</td></tr><tr><td>산정호수 복귀</td><td>약 280m</td><td>14.1km</td><td>환종주 종료</td></tr></tbody></table></div></div>
 <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 필수 장비</h4><ul><li>중등산화, 스틱, 장갑</li><li>물 1.5~2L</li><li>행동식·점심 충분히</li><li>가을 방풍자켓</li></ul></div><div class="card tipcard"><h4>⏰ 산행 운영</h4><ul><li>오전 7시 전후 출발 권장</li><li>정상 도착 전 체력 분배 중요</li><li>일몰 전 산안고개 통과 목표</li></ul></div><div class="card tipcard"><h4>⛔ 주의사항</h4><ul><li>군부대 훈련에 따른 통제 여부 확인 필요</li><li>자인사·정상부 일부 구간은 시기별 통제 가능</li><li>강풍·결빙 시 위험도 상승</li></ul></div></div></div></section>
 </main>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 명성산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 명성산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Myeongseongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/rocky-mountain-with-plants-18959280/' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on Pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/myeongseongsan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/myeongseongsan/g1.webp" type="image/webp"/>
-<img alt="명성산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">명성산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Scenic view of Sanjeong Lake encountered during the Myeongseongsan climb 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/hill-behind-lake-in-black-and-white-19207220/' target='_blank' rel='noopener'&gt;jia yi&lt;/a&gt; on Pexels" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/myeongseongsan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/myeongseongsan/g2.webp" type="image/webp"/>
-<img alt="명성산 산행 중 마주하는 산정호수의 수려한 모습" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">명성산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Myeongseongsan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/serene-view-of-jara-island-south-korea-33268308/' target='_blank' rel='noopener'&gt;한기 장&lt;/a&gt; on Pexels" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/myeongseongsan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/myeongseongsan/g3.webp" type="image/webp"/>
-<img alt="명성산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">명성산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Myeongseongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/red-temple-near-green-trees-under-blue-sky-5863417/' target='_blank' rel='noopener'&gt;Joel M B Marrinan&lt;/a&gt; on Pexels" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/myeongseongsan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/myeongseongsan/g4.webp" type="image/webp"/>
-<img alt="명성산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/myeongseongsan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">명성산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Myeongseongsan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/photo/rocky-mountain-with-plants-18959280/' target='_blank' rel='noopener'>정규송 Nui MALAMA</a> on Pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/myeongseongsan/g1.avif">
+        <source type="image/webp" srcset="assets/img/myeongseongsan/g1.webp">
+        <img src="assets/img/myeongseongsan/g1.jpg" alt="명성산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">명성산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view of Sanjeong Lake encountered during the Myeongseongsan climb 크게 보기" data-index="1" data-credit="Photo by <a href='https://www.pexels.com/photo/hill-behind-lake-in-black-and-white-19207220/' target='_blank' rel='noopener'>jia yi</a> on Pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/myeongseongsan/g2.avif">
+        <source type="image/webp" srcset="assets/img/myeongseongsan/g2.webp">
+        <img src="assets/img/myeongseongsan/g2.jpg" alt="명성산 산행 중 마주하는 산정호수의 수려한 모습" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">명성산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Myeongseongsan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://www.pexels.com/photo/serene-view-of-jara-island-south-korea-33268308/' target='_blank' rel='noopener'>한기 장</a> on Pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/myeongseongsan/g3.avif">
+        <source type="image/webp" srcset="assets/img/myeongseongsan/g3.webp">
+        <img src="assets/img/myeongseongsan/g3.jpg" alt="명성산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">명성산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Myeongseongsan 크게 보기" data-index="3" data-credit="Photo by <a href='https://www.pexels.com/photo/red-temple-near-green-trees-under-blue-sky-5863417/' target='_blank' rel='noopener'>Joel M B Marrinan</a> on Pexels">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/myeongseongsan/g4.avif">
+        <source type="image/webp" srcset="assets/img/myeongseongsan/g4.webp">
+        <img src="assets/img/myeongseongsan/g4.jpg" alt="명성산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">명성산 탐방로</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <footer><div class="wrap">실제 산행 전 명성산 억새축제 기간 혼잡, 군 훈련 통제, 산정호수 주차, 자인사 구간 개방 여부를 현장 안내로 재확인하세요.</div></footer>
 <script>
@@ -549,18 +563,21 @@ const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...docume
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
