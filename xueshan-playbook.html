@@ -881,11 +881,15 @@
 <header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg fill="none" height="26" viewbox="0 0 48 48" width="26"><path d="M8 34c4-5 8-10 13-10 4 0 6 3 8 6 2-2 5-5 9-5" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path><path d="M6 39h36" stroke="white" stroke-linecap="round" stroke-width="3"></path><path d="M14 19l4-5M24 16l3-4M31 18l4-5" stroke="white" stroke-linecap="round" stroke-width="2.4"></path></svg></div><div><h1>설산</h1><p>Xueshan · 대만 제2고봉 3,886m · 369산장 중심 대표 고산 코스</p></div></div><button class="theme-btn" id="themeBtn">◐</button></div></header>
 <section class="hero hero-bleed">
 <!-- Background Picture -->
-<picture class="hero-picture">
+<picture class="hero-picture" id="heroFallbackImage">
 <source sizes="100vw" srcset="assets/img/xueshan/hero-640.avif 640w, assets/img/xueshan/hero-1024.avif 1024w, assets/img/xueshan/hero-1600.avif 1600w, assets/img/xueshan/hero-2400.avif 2400w" type="image/avif"/>
 <source sizes="100vw" srcset="assets/img/xueshan/hero-640.webp 640w, assets/img/xueshan/hero-1024.webp 1024w, assets/img/xueshan/hero-1600.webp 1600w, assets/img/xueshan/hero-2400.webp 2400w" type="image/webp"/>
 <img alt="설산 국립공원의 대표 명소인 설산 주봉와 아름다운 산세 풍경 / Beautiful landscape of Xueshan Main Peak and majestic mountain ridges in Xueshan National Park" class="hero-img" sizes="100vw" src="assets/img/xueshan/hero-1600.jpg" srcset="assets/img/xueshan/hero-640.jpg 640w, assets/img/xueshan/hero-1024.jpg 1024w, assets/img/xueshan/hero-1600.jpg 1600w, assets/img/xueshan/hero-2400.jpg 2400w"/>
 </picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/xueshan/hero-poster.jpg" preload="none" style="display: none;">
+  <source src="assets/video/xueshan/hero.mp4" type="video/mp4">
+</video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
 <div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 설산 플레이북</div>
@@ -1136,6 +1140,30 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
 })();
+</script>
+<!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
 </script>
 </body>
 </html>
