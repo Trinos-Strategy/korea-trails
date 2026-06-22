@@ -570,11 +570,15 @@
 </header>
 <section class="hero hero-bleed">
 <!-- Background Picture -->
-<picture class="hero-picture">
+<picture class="hero-picture" id="heroFallbackImage">
 <source sizes="100vw" srcset="assets/img/hallasan/hero-640.avif 640w, assets/img/hallasan/hero-1024.avif 1024w, assets/img/hallasan/hero-1600.avif 1600w, assets/img/hallasan/hero-2400.avif 2400w" type="image/avif"/>
 <source sizes="100vw" srcset="assets/img/hallasan/hero-640.webp 640w, assets/img/hallasan/hero-1024.webp 1024w, assets/img/hallasan/hero-1600.webp 1600w, assets/img/hallasan/hero-2400.webp 2400w" type="image/webp"/>
 <img alt="한라산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Hallasan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/hallasan/hero-1600.jpg" srcset="assets/img/hallasan/hero-640.jpg 640w, assets/img/hallasan/hero-1024.jpg 1024w, assets/img/hallasan/hero-1600.jpg 1600w, assets/img/hallasan/hero-2400.jpg 2400w"/>
 </picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/hallasan/hero-poster.jpg" preload="none" style="display: none;">
+  <source src="assets/video/hallasan/hero.mp4" type="video/mp4">
+</video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
 <div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 한라산 플레이북</div>
@@ -1429,5 +1433,29 @@ document.addEventListener('DOMContentLoaded', () => {
   window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
 })();
 </script>
-</div></div></body>
+</div></div><!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+</body>
 </html>
