@@ -1008,8 +1008,6 @@
 <span class="credit-author">Photo by <a href="https://unsplash.com/@roberthsu1054" rel="noopener" target="_blank">CHIA-HAO HSU</a></span>
 <span class="credit-divider">/</span>
 <span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
-<span class="credit-divider" id="videoCreditDivider" style="display: none;">|</span>
-<span class="credit-source" id="videoCredit" style="display: none;">배경 영상: AI 생성</span>
 </div>
 </section>
 <main class="wrap" id="mainContent">
@@ -1746,12 +1744,7 @@ document.addEventListener('DOMContentLoaded', () => {
           video.style.display = 'block';
           if (fallback) fallback.style.display = 'none';
           video.load();
-          video.play().then(() => {
-            const divider = document.getElementById('videoCreditDivider');
-            const credit = document.getElementById('videoCredit');
-            if (divider) divider.style.display = 'inline';
-            if (credit) credit.style.display = 'inline';
-          }).catch(err => console.log("Video auto-play blocked: ", err));
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
           observer.disconnect();
         }
       });
