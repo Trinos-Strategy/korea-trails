@@ -153,6 +153,8 @@ button{cursor:pointer;border:none;background:none;font:inherit;color:inherit;}
   .diff-label{width:90px;font-size:.72rem;}
 }
 
+
+
 /* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
 .hero-bleed {
   position: relative;
@@ -601,30 +603,27 @@ button{cursor:pointer;border:none;background:none;font:inherit;color:inherit;}
 </button>
 </header>
 <section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture">
-<source sizes="100vw" srcset="assets/img/dobongsan/hero-640.avif 640w, assets/img/dobongsan/hero-1024.avif 1024w, assets/img/dobongsan/hero-1600.avif 1600w, assets/img/dobongsan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="assets/img/dobongsan/hero-640.webp 640w, assets/img/dobongsan/hero-1024.webp 1024w, assets/img/dobongsan/hero-1600.webp 1600w, assets/img/dobongsan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="도봉산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Dobongsan mountain peaks and ridges" class="hero-img" decoding="async" fetchpriority="high" loading="eager" sizes="100vw" src="assets/img/dobongsan/hero-1600.jpg" srcset="assets/img/dobongsan/hero-640.jpg 640w, assets/img/dobongsan/hero-1024.jpg 1024w, assets/img/dobongsan/hero-1600.jpg 1600w, assets/img/dobongsan/hero-2400.jpg 2400w"/>
-</picture>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="hero-badge">🏔 북한산국립공원 · 서울 100대 명산</div>
-<h1>도봉산 등산 플레이북</h1>
-<p>자운봉(740m) · 신선대 · 오봉 — 서울 근교 대표 화강암 암릉 명산의 초·중·고급 3코스</p>
-<div class="hero-stats">
-<div class="hero-stat"><div class="hero-stat-val">740m</div><div class="hero-stat-lbl">최고봉(자운봉)</div></div>
-<div class="hero-stat"><div class="hero-stat-val">3코스</div><div class="hero-stat-lbl">초·중·고급</div></div>
-<div class="hero-stat"><div class="hero-stat-val">지하철</div><div class="hero-stat-lbl">직접 접근 가능</div></div>
-<div class="hero-stat"><div class="hero-stat-val">1983</div><div class="hero-stat-lbl">국립공원 지정</div></div>
-</div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
-</div>
+  
+  <!-- Background Picture -->
+  <picture class="hero-picture">
+    <source type="image/avif" srcset="assets/img/dobongsan/hero-640.avif 640w, assets/img/dobongsan/hero-1024.avif 1024w, assets/img/dobongsan/hero-1600.avif 1600w, assets/img/dobongsan/hero-2400.avif 2400w" sizes="100vw">
+    <source type="image/webp" srcset="assets/img/dobongsan/hero-640.webp 640w, assets/img/dobongsan/hero-1024.webp 1024w, assets/img/dobongsan/hero-1600.webp 1600w, assets/img/dobongsan/hero-2400.webp 2400w" sizes="100vw">
+    <img src="assets/img/dobongsan/hero-1600.jpg" srcset="assets/img/dobongsan/hero-640.jpg 640w, assets/img/dobongsan/hero-1024.jpg 1024w, assets/img/dobongsan/hero-1600.jpg 1600w, assets/img/dobongsan/hero-2400.jpg 2400w" sizes="100vw" alt="도봉산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Dobongsan mountain peaks and ridges" class="hero-img">
+  </picture>
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    
+<div class="hero-badge">🏔 북한산국립공원 · 서울 100대 명산
+  </div>
+  
+  <!-- Hero Credit Overlay -->
+  <div class="photo-credit hero-credit">
+    <span class="credit-author">Photo by Dokyung Kim</span>
+    <span class="credit-divider">/</span>
+    <span class="credit-source">Local</span>
+  </div>
+
 </section>
 <div class="level-switcher">
 <button class="level-btn active" data-level="beginner" onclick="switchLevel('beginner')"><span class="dot"></span>🌿 초급</button>
@@ -1029,57 +1028,904 @@ button{cursor:pointer;border:none;background:none;font:inherit;color:inherit;}
 </div>
 </div>
 </div></div>
+
+
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
-<h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon">📸</span> 도봉산의 사계 &amp; 명소
+  <h3 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon">📸</span> 도봉산의 사계 &amp; 명소
   </h3>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Dobongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="assets/img/dobongsan/g1.avif" type="image/avif"/>
-<source srcset="assets/img/dobongsan/g1.webp" type="image/webp"/>
-<img alt="도봉산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">도봉산 등산코스</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="Beautiful landscape showcasing the natural beauty of Dobongsan National Park 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
-<picture class="gallery-picture">
-<source srcset="assets/img/dobongsan/g2.avif" type="image/avif"/>
-<source srcset="assets/img/dobongsan/g2.webp" type="image/webp"/>
-<img alt="도봉산 국립공원의 사계절 자연미가 느껴지는 풍경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">도봉산 절경</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="Harmonious view of Dobongsan mountain ridges under a clear sky 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;정규송 Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
-<picture class="gallery-picture">
-<source srcset="assets/img/dobongsan/g3.avif" type="image/avif"/>
-<source srcset="assets/img/dobongsan/g3.webp" type="image/webp"/>
-<img alt="도봉산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">도봉산 풍경</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Dobongsan 크게 보기" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@1605595076' target='_blank' rel='noopener'&gt;영화 정&lt;/a&gt; on pexels" data-index="3">
-<picture class="gallery-picture">
-<source srcset="assets/img/dobongsan/g4.avif" type="image/avif"/>
-<source srcset="assets/img/dobongsan/g4.webp" type="image/webp"/>
-<img alt="도봉산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/dobongsan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">도봉산 탐방로</span>
-</div>
-</button>
-</div>
+  <div class="gallery-grid">
+    
+    <!-- Gallery Image Button 1 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 1) 크게 보기" data-index="0" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g1.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g1.webp">
+        <img src="assets/img/dobongsan/g1.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 1)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 등산코스</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 2 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 2) 크게 보기" data-index="1" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g2.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g2.webp">
+        <img src="assets/img/dobongsan/g2.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 2)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 절경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 3 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 3) 크게 보기" data-index="2" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g3.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g3.webp">
+        <img src="assets/img/dobongsan/g3.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 3)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 풍경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 4 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 4) 크게 보기" data-index="3" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g4.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g4.webp">
+        <img src="assets/img/dobongsan/g4.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 4)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 탐방로</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 5 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 5) 크게 보기" data-index="4" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g5.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g5.webp">
+        <img src="assets/img/dobongsan/g5.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 5)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 6 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 6) 크게 보기" data-index="5" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g6.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g6.webp">
+        <img src="assets/img/dobongsan/g6.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 6)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 7 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 7) 크게 보기" data-index="6" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g7.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g7.webp">
+        <img src="assets/img/dobongsan/g7.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 7)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 8 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 8) 크게 보기" data-index="7" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g8.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g8.webp">
+        <img src="assets/img/dobongsan/g8.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 8)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 9 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 9) 크게 보기" data-index="8" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g9.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g9.webp">
+        <img src="assets/img/dobongsan/g9.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 9)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 10 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 10) 크게 보기" data-index="9" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g10.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g10.webp">
+        <img src="assets/img/dobongsan/g10.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 10)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 11 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 11) 크게 보기" data-index="10" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g11.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g11.webp">
+        <img src="assets/img/dobongsan/g11.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 11)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 12 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 12) 크게 보기" data-index="11" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g12.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g12.webp">
+        <img src="assets/img/dobongsan/g12.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 12)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 13 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 13) 크게 보기" data-index="12" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g13.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g13.webp">
+        <img src="assets/img/dobongsan/g13.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 13)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 14 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 14) 크게 보기" data-index="13" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g14.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g14.webp">
+        <img src="assets/img/dobongsan/g14.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 14)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 15 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 15) 크게 보기" data-index="14" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g15.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g15.webp">
+        <img src="assets/img/dobongsan/g15.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 15)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 16 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 16) 크게 보기" data-index="15" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g16.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g16.webp">
+        <img src="assets/img/dobongsan/g16.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 16)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 17 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 17) 크게 보기" data-index="16" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g17.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g17.webp">
+        <img src="assets/img/dobongsan/g17.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 17)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 18 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 18) 크게 보기" data-index="17" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g18.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g18.webp">
+        <img src="assets/img/dobongsan/g18.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 18)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 19 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 19) 크게 보기" data-index="18" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g19.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g19.webp">
+        <img src="assets/img/dobongsan/g19.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 19)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 20 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 20) 크게 보기" data-index="19" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g20.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g20.webp">
+        <img src="assets/img/dobongsan/g20.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 20)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 21 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 21) 크게 보기" data-index="20" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g21.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g21.webp">
+        <img src="assets/img/dobongsan/g21.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 21)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 22 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 22) 크게 보기" data-index="21" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g22.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g22.webp">
+        <img src="assets/img/dobongsan/g22.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 22)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 23 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 23) 크게 보기" data-index="22" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g23.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g23.webp">
+        <img src="assets/img/dobongsan/g23.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 23)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 24 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 24) 크게 보기" data-index="23" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g24.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g24.webp">
+        <img src="assets/img/dobongsan/g24.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 24)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 25 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 25) 크게 보기" data-index="24" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g25.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g25.webp">
+        <img src="assets/img/dobongsan/g25.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 25)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 26 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 26) 크게 보기" data-index="25" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g26.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g26.webp">
+        <img src="assets/img/dobongsan/g26.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 26)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 27 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 27) 크게 보기" data-index="26" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g27.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g27.webp">
+        <img src="assets/img/dobongsan/g27.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 27)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 28 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 28) 크게 보기" data-index="27" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g28.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g28.webp">
+        <img src="assets/img/dobongsan/g28.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 28)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 29 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 29) 크게 보기" data-index="28" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g29.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g29.webp">
+        <img src="assets/img/dobongsan/g29.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 29)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 30 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 30) 크게 보기" data-index="29" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g30.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g30.webp">
+        <img src="assets/img/dobongsan/g30.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 30)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 31 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 31) 크게 보기" data-index="30" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g31.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g31.webp">
+        <img src="assets/img/dobongsan/g31.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 31)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 32 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 32) 크게 보기" data-index="31" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g32.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g32.webp">
+        <img src="assets/img/dobongsan/g32.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 32)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 33 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 33) 크게 보기" data-index="32" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g33.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g33.webp">
+        <img src="assets/img/dobongsan/g33.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 33)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 34 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 34) 크게 보기" data-index="33" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g34.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g34.webp">
+        <img src="assets/img/dobongsan/g34.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 34)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 35 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 35) 크게 보기" data-index="34" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g35.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g35.webp">
+        <img src="assets/img/dobongsan/g35.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 35)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 36 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 36) 크게 보기" data-index="35" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g36.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g36.webp">
+        <img src="assets/img/dobongsan/g36.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 36)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 37 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 37) 크게 보기" data-index="36" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g37.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g37.webp">
+        <img src="assets/img/dobongsan/g37.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 37)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 38 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 38) 크게 보기" data-index="37" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g38.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g38.webp">
+        <img src="assets/img/dobongsan/g38.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 38)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 39 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 39) 크게 보기" data-index="38" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g39.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g39.webp">
+        <img src="assets/img/dobongsan/g39.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 39)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 40 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 40) 크게 보기" data-index="39" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g40.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g40.webp">
+        <img src="assets/img/dobongsan/g40.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 40)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 41 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 41) 크게 보기" data-index="40" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g41.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g41.webp">
+        <img src="assets/img/dobongsan/g41.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 41)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 42 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 42) 크게 보기" data-index="41" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g42.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g42.webp">
+        <img src="assets/img/dobongsan/g42.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 42)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 43 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 43) 크게 보기" data-index="42" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g43.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g43.webp">
+        <img src="assets/img/dobongsan/g43.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 43)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 44 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 44) 크게 보기" data-index="43" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g44.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g44.webp">
+        <img src="assets/img/dobongsan/g44.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 44)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 45 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 45) 크게 보기" data-index="44" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g45.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g45.webp">
+        <img src="assets/img/dobongsan/g45.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 45)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 46 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 46) 크게 보기" data-index="45" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g46.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g46.webp">
+        <img src="assets/img/dobongsan/g46.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 46)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 47 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 47) 크게 보기" data-index="46" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g47.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g47.webp">
+        <img src="assets/img/dobongsan/g47.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 47)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 48 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 48) 크게 보기" data-index="47" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g48.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g48.webp">
+        <img src="assets/img/dobongsan/g48.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 48)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 49 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 49) 크게 보기" data-index="48" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g49.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g49.webp">
+        <img src="assets/img/dobongsan/g49.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 49)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 50 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 50) 크게 보기" data-index="49" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g50.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g50.webp">
+        <img src="assets/img/dobongsan/g50.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 50)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 51 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 51) 크게 보기" data-index="50" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g51.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g51.webp">
+        <img src="assets/img/dobongsan/g51.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 51)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 52 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 52) 크게 보기" data-index="51" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g52.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g52.webp">
+        <img src="assets/img/dobongsan/g52.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 52)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 53 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 53) 크게 보기" data-index="52" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g53.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g53.webp">
+        <img src="assets/img/dobongsan/g53.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 53)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 54 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 54) 크게 보기" data-index="53" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g54.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g54.webp">
+        <img src="assets/img/dobongsan/g54.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 54)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 55 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 55) 크게 보기" data-index="54" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g55.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g55.webp">
+        <img src="assets/img/dobongsan/g55.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 55)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 56 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 56) 크게 보기" data-index="55" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g56.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g56.webp">
+        <img src="assets/img/dobongsan/g56.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 56)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 57 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 57) 크게 보기" data-index="56" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g57.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g57.webp">
+        <img src="assets/img/dobongsan/g57.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 57)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 58 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 58) 크게 보기" data-index="57" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g58.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g58.webp">
+        <img src="assets/img/dobongsan/g58.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 58)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 59 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 59) 크게 보기" data-index="58" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g59.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g59.webp">
+        <img src="assets/img/dobongsan/g59.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 59)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 60 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 60) 크게 보기" data-index="59" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g60.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g60.webp">
+        <img src="assets/img/dobongsan/g60.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 60)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 61 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 61) 크게 보기" data-index="60" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g61.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g61.webp">
+        <img src="assets/img/dobongsan/g61.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 61)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 62 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 62) 크게 보기" data-index="61" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g62.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g62.webp">
+        <img src="assets/img/dobongsan/g62.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 62)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 63 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 63) 크게 보기" data-index="62" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g63.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g63.webp">
+        <img src="assets/img/dobongsan/g63.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 63)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 64 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 64) 크게 보기" data-index="63" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g64.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g64.webp">
+        <img src="assets/img/dobongsan/g64.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 64)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 65 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 65) 크게 보기" data-index="64" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g65.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g65.webp">
+        <img src="assets/img/dobongsan/g65.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 65)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 66 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 66) 크게 보기" data-index="65" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g66.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g66.webp">
+        <img src="assets/img/dobongsan/g66.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 66)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 67 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 67) 크게 보기" data-index="66" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g67.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g67.webp">
+        <img src="assets/img/dobongsan/g67.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 67)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 68 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 68) 크게 보기" data-index="67" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g68.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g68.webp">
+        <img src="assets/img/dobongsan/g68.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 68)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 69 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 69) 크게 보기" data-index="68" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g69.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g69.webp">
+        <img src="assets/img/dobongsan/g69.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 69)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 70 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 70) 크게 보기" data-index="69" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g70.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g70.webp">
+        <img src="assets/img/dobongsan/g70.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 70)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 71 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 71) 크게 보기" data-index="70" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g71.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g71.webp">
+        <img src="assets/img/dobongsan/g71.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 71)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 72 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 72) 크게 보기" data-index="71" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g72.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g72.webp">
+        <img src="assets/img/dobongsan/g72.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 72)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 73 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 73) 크게 보기" data-index="72" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g73.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g73.webp">
+        <img src="assets/img/dobongsan/g73.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 73)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+    <!-- Gallery Image Button 74 -->
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view captured during the Dobongsan hike (Photo 74) 크게 보기" data-index="73" data-credit="Photo by Dokyung Kim (Local)">
+      <picture class="gallery-picture">
+        <source type="image/avif" srcset="assets/img/dobongsan/g74.avif">
+        <source type="image/webp" srcset="assets/img/dobongsan/g74.webp">
+        <img src="assets/img/dobongsan/g74.jpg" alt="도봉산 산행 중에 촬영한 자연 풍경 (사진 74)" class="gallery-img" loading="lazy" decoding="async">
+      </picture>
+      <div class="gallery-caption-overlay">
+        <span class="gallery-caption-text">도봉산 전경</span>
+      </div>
+    </button>
+
+  </div>
 </section>
 <script>
 (function(){
@@ -1112,18 +1958,21 @@ function toggleAcc(item){
   if(!isOpen)item.classList.add('open');
 }
 </script>
+
+
 <!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
-<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
-<button aria-label="다음 이미지" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
+<div id="lightbox" class="lightbox" role="dialog" aria-modal="true" aria-label="이미지 크게 보기" aria-hidden="true" tabindex="-1">
+  <button class="lightbox-close" aria-label="갤러리 닫기">&times;</button>
+  <button class="lightbox-prev" aria-label="이전 이미지">&#10094;</button>
+  <button class="lightbox-next" aria-label="다음 이미지">&#10095;</button>
+  <div class="lightbox-content">
+    <figure class="lightbox-figure">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+    <div class="photo-credit lightbox-credit"></div>
+  </div>
 </div>
-</div>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
