@@ -4,6 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta name="description" content="양명산 국립공원의 3가지 핵심 등산 코스(초급 소유갱 왕복, 중급 소유갱-냉수갱 종주, 고급 칭티엔강 종주) 안내 및 실사 지도, 상세 대중교통 플레이북"/>
 <title>양명산 등산 플레이북</title>
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="assets/css/design-system.css">
@@ -28,6 +29,16 @@
     --redbg: #3a2620;
     --teal: #74c0b2;
   }
+
+  [data-theme="dark"] .course-btn.active.green,
+  [data-theme="dark"] .green .tab.active,
+  [data-theme="dark"] .green .level { color: #052e16 !important; background: var(--green) !important; }
+  [data-theme="dark"] .course-btn.active.blue,
+  [data-theme="dark"] .blue .tab.active,
+  [data-theme="dark"] .blue .level { color: #0b2545 !important; background: var(--blue) !important; }
+  [data-theme="dark"] .course-btn.active.red,
+  [data-theme="dark"] .red .tab.active,
+  [data-theme="dark"] .red .level { color: #3b0f03 !important; background: var(--red) !important; }
 
   /* Header & Navigation */
   .header {
@@ -1001,69 +1012,87 @@
 </section>
 <main class="wrap" id="mainContent">
 <section class="panel green active" id="beginner"><div class="panel-top"><span class="level">🌿 초급</span><div><div class="panel-name">소유갱 왕복 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 소유갱 원점회귀 · 약 3.2km · 1시간 40분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.2km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">1h 40m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">1,120m</div><div class="txt">칠성산 주봉</div></div><div class="card kpi"><div class="num">중하</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">계단길</div><div class="txt">주요 지형</div></div><div class="card kpi"><div class="num">당일 가능</div><div class="txt">접근성</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">🚌 소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4f7d4a" stop-opacity=".34"></stop><stop offset="100%" stop-color="#4f7d4a" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="4"></path><circle cx="382" cy="60" fill="#4f7d4a" r="6"></circle><text fill="#4f7d4a" font-size="12" x="396" y="54">칠성산 1,120m</text></svg></div><p class="desc">소유갱에서 칠성산 정상만 찍고 돌아오는 가장 짧은 대표 코스는 정상까지 약 1.6km, 왕복 3.2km 정도로 많이 안내되며, 실제 후기도 약 1시간 40분 전후가 자주 보입니다. 타이베이 당일 여행자에게 가장 부담이 적은 입문 코스입니다.</p></div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 출발</div><div class="seg-meta">0km · 유황 분기공 전망대</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>버스 정류장과 전망대를 지나 칠성산 방향 계단길로 진입합니다. 초반부터 계단 비중이 높아 천천히 리듬을 잡는 편이 좋습니다.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip">💡 출발 전 소유갱 분기공과 유황 지형을 먼저 보고 올라가면 양명산 특색을 제대로 느끼기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">소유갱 → 칠성산 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>주요 구간은 돌계단과 나무계단으로 이어지며, 날씨가 좋으면 타이베이 도심 방향 조망도 열립니다. 해발은 높지 않지만 계단이 계속 이어져 숨이 차는 편입니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="tip">💡 바람이 강하면 정상 체감온도가 낮으니 얇은 바람막이를 준비하는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">정상 감상 후 원점 하산</div><div class="seg-meta">1.6km · 40~50분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>올라온 길로 그대로 내려옵니다. 비 온 뒤에는 계단과 바위에 미끄러움이 생기므로 보폭을 줄여 하산하세요.</p><div class="bar"><div class="fill" style="width:36%"></div></div><div class="tip">💡 하산 뒤 바로 버스로 시내 복귀가 가능해 반나절 일정에 적합합니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map">
-  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
-  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
-    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-    <path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path>
-    <circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle>
-    <circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle>
-    <circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle>
-    <text font-size="12" x="112" y="302">소유갱</text>
-    <text font-size="12" x="398" y="80">칠성산 주봉</text>
-    <text font-size="12" x="612" y="330">원점 회귀</text>
-    <text fill="var(--muted)" font-size="12" x="34" y="44">가장 짧은 입문형 정상 코스</text>
-  </svg>
-  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
-  <div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 초급 소유갱 왕복 코스 실사 지도"></div>
-</div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·유황 분기공</td></tr><tr><td>능선 계단 구간</td><td>약 980m</td><td>1.0km</td><td>조망 시작</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>양명산 최고점</td></tr><tr><td>소유갱 복귀</td><td>약 800m</td><td>3.2km</td><td>원점 회귀</td></tr></tbody></table></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>👟 준비물</h4><ul><li>운동화보다 접지 좋은 트레킹화 권장</li><li>물 500mL~1L</li><li>바람막이 1벌</li></ul></div><div class="card tipcard"><h4>🌋 포인트</h4><ul><li>소유갱 유황 분기공</li><li>정상 조망</li><li>짧고 굵은 타이베이 근교 산행</li></ul></div><div class="card tipcard"><h4>🚌 교통</h4><ul><li>타이베이 시내에서 버스로 접근</li><li>주말엔 등산객 많음</li><li>오전 출발이 전망 확보에 유리</li></ul></div></div></div></section>
+<div class="playbook-split-container">
+  <div class="playbook-main-col">
+    <div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.2km</div><div class="txt">왕복 거리</div></div><div class="card kpi"><div class="num">1h 40m</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">1,120m</div><div class="txt">칠성산 주봉</div></div><div class="card kpi"><div class="num">중하</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">계단길</div><div class="txt">주요 지형</div></div><div class="card kpi"><div class="num">당일 가능</div><div class="txt">접근성</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">🚌 소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">원점 회귀</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4f7d4a" stop-opacity=".34"></stop><stop offset="100%" stop-color="#4f7d4a" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="4"></path><circle cx="382" cy="60" fill="#4f7d4a" r="6"></circle><text fill="#4f7d4a" font-size="12" x="396" y="54">칠성산 1,120m</text></svg></div><p class="desc">소유갱에서 칠성산 정상만 찍고 돌아오는 가장 짧은 대표 코스는 정상까지 약 1.6km, 왕복 3.2km 정도로 많이 안내되며, 실제 후기도 약 1시간 40분 전후가 자주 보입니다. 타이베이 당일 여행자에게 가장 부담이 적은 입문 코스입니다.</p></div>
+    <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 출발</div><div class="seg-meta">0km · 유황 분기공 전망대</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>버스 정류장과 전망대를 지나 칠성산 방향 계단길로 진입합니다. 초반부터 계단 비중이 높아 천천히 리듬을 잡는 편이 좋습니다.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip">💡 출발 전 소유갱 분기공과 유황 지형을 먼저 보고 올라가면 양명산 특색을 제대로 느끼기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">소유갱 → 칠성산 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>주요 구간은 돌계단과 나무계단으로 이어지며, 날씨가 좋으면 타이베이 도심 방향 조망도 열립니다. 해발은 높지 않지만 계단이 계속 이어져 숨이 차는 편입니다.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="tip">💡 바람이 강하면 정상 체감온도가 낮으니 얇은 바람막이를 준비하는 편이 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">정상 감상 후 원점 하산</div><div class="seg-meta">1.6km · 40~50분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>올라온 길로 그대로 내려옵니다. 비 온 뒤에는 계단과 바위에 미끄러움이 생기므로 보폭을 줄여 하산하세요.</p><div class="bar"><div class="fill" style="width:36%"></div></div><div class="tip">💡 하산 뒤 바로 버스로 시내 복귀가 가능해 반나절 일정에 적합합니다.</div></div></div></div></div>
+    <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>👟 준비물</h4><ul><li>운동화보다 접지 좋은 트레킹화 권장</li><li>물 500mL~1L</li><li>바람막이 1벌</li></ul></div><div class="card tipcard"><h4>🌋 포인트</h4><ul><li>소유갱 유황 분기공</li><li>정상 조망</li><li>짧고 굵은 타이베이 근교 산행</li></ul></div><div class="card tipcard"><h4>🚌 교통</h4><ul><li>타이베이 시내에서 버스로 접근</li><li>주말엔 등산객 많음</li><li>오전 출발이 전망 확보에 유리</li></ul></div></div></div>
+  </div>
+  <div class="playbook-sidebar-col">
+    <div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map">
+      <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+      <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
+        <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+        <path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path>
+        <circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle>
+        <circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle>
+        <circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle>
+        <text font-size="12" x="112" y="302">소유갱</text>
+        <text font-size="12" x="398" y="80">칠성산 주봉</text>
+        <text font-size="12" x="612" y="330">원점 회귀</text>
+        <text fill="var(--muted)" font-size="12" x="34" y="44">가장 짧은 입문형 정상 코스</text>
+      </svg>
+      <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+      <div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 초급 소유갱 왕복 코스 실사 지도"></div>
+    </div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·유황 분기공</td></tr><tr><td>능선 계단 구간</td><td>약 980m</td><td>1.0km</td><td>조망 시작</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>양명산 최고점</td></tr><tr><td>소유갱 복귀</td><td>약 800m</td><td>3.2km</td><td>원점 회귀</td></tr></tbody></table></div></div>
+  </div>
+</div></section>
 <section class="panel blue" id="intermediate"><div class="panel-top"><span class="level">🦶 중급</span><div><div class="panel-name">소유갱 → 냉수갱 종주 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 칠성산 동봉 → 냉수갱 · 약 3.5~4.0km · 2시간 30분~3시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.5~4km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">2.5~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">주봉+동봉</div><div class="txt">정상 2개</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">냉수갱</div><div class="txt">하산 포인트</div></div><div class="card kpi"><div class="num">당일 최적</div><div class="txt">대표 루트</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">칠성산 동봉</span><span class="arr">→</span><span class="chip">♨ 냉수갱</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#326f95" stop-opacity=".34"></stop><stop offset="100%" stop-color="#326f95" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="4"></path><circle cx="364" cy="66" fill="#326f95" r="6"></circle><circle cx="468" cy="72" fill="#326f95" r="6"></circle><text fill="#326f95" font-size="12" x="378" y="60">주봉</text><text fill="#326f95" font-size="12" x="482" y="66">동봉</text></svg></div><p class="desc">냉수갱까지 이어지는 가장 보편적인 칠성산 종주 루트는 4km 안팎, 평균 2.5~3.5시간 정도로 소개됩니다. 소유갱에서 올라 주봉과 동봉을 잇고 냉수갱 온천 지대로 하산하는 구성이 가장 균형이 좋습니다.</p></div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 → 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초급 코스와 같은 길로 오르지만 정상 후 하산 동선이 달라집니다. 계단 구간이 길어 초반부터 과속하지 않는 것이 좋습니다.</p><div class="bar"><div class="fill" style="width:54%"></div></div><div class="tip">💡 안개가 낄 때는 시야가 짧아져도 표지판은 비교적 잘 정비된 편입니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">주봉 → 동봉</div><div class="seg-meta">0.5km · 15~20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선을 따라 동봉으로 이동합니다. 오르내림이 짧지만 바람과 습기에 따라 미끄러운 날이 있습니다.</p><div class="bar"><div class="fill" style="width:40%"></div></div><div class="tip">💡 주봉보다 동봉 쪽이 능선 시야가 더 시원하게 열리는 날이 많습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">동봉 → 냉수갱</div><div class="seg-meta">1.5~1.9km · 1시간 내외</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>냉수갱 방향은 계단과 흙길이 섞여 있으며 하산 후 온천 지대와 버스 정류장을 이용하기 좋습니다. 무릎 부담은 소유갱 왕복보다 약간 더 큽니다.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip">💡 하산 후 냉수갱 족욕·온천 분위기를 함께 즐기기 좋습니다.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map">
-  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
-  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
-    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-    <path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path>
-    <circle cx="90" cy="314" fill="#326f95" r="10"></circle>
-    <circle cx="360" cy="92" fill="#326f95" r="11"></circle>
-    <circle cx="472" cy="100" fill="#326f95" r="10"></circle>
-    <circle cx="710" cy="290" fill="#326f95" r="10"></circle>
-    <text font-size="12" x="104" y="308">소유갱</text>
-    <text font-size="12" x="374" y="86">주봉</text>
-    <text font-size="12" x="486" y="94">동봉</text>
-    <text font-size="12" x="670" y="308">냉수갱</text>
-  </svg>
-  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
-  <div class="leaflet-map" id="map-intermediate" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 중급 소유갱-냉수갱 종주 코스 실사 지도"></div>
-</div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>들머리</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.5~4.0km</td><td>버스·온천 지대</td></tr></tbody></table></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🥾 장비</h4><ul><li>트레킹화 권장</li><li>물 1L</li><li>안개 대비 얇은 겉옷</li></ul></div><div class="card tipcard"><h4>♨️ 매력 포인트</h4><ul><li>정상 2개 연계</li><li>냉수갱 온천 분위기</li><li>대중교통 연계 편리</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>비 오는 날 계단 미끄러움</li><li>정상부 강풍</li><li>하산 버스 시간 확인 필요</li></ul></div></div></div></section>
+<div class="playbook-split-container">
+  <div class="playbook-main-col">
+    <div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.5~4km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">2.5~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">주봉+동봉</div><div class="txt">정상 2개</div></div><div class="card kpi"><div class="num">중</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">냉수갱</div><div class="txt">하산 포인트</div></div><div class="card kpi"><div class="num">당일 최적</div><div class="txt">대표 루트</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">칠성산 주봉</span><span class="arr">→</span><span class="chip">칠성산 동봉</span><span class="arr">→</span><span class="chip">♨ 냉수갱</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#326f95" stop-opacity=".34"></stop><stop offset="100%" stop-color="#326f95" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="4"></path><circle cx="364" cy="66" fill="#326f95" r="6"></circle><circle cx="468" cy="72" fill="#326f95" r="6"></circle><text fill="#326f95" font-size="12" x="378" y="60">주봉</text><text fill="#326f95" font-size="12" x="482" y="66">동봉</text></svg></div><p class="desc">냉수갱까지 이어지는 가장 보편적인 칠성산 종주 루트는 4km 안팎, 평균 2.5~3.5시간 정도로 소개됩니다. 소유갱에서 올라 주봉 and 동봉을 잇고 냉수갱 온천 지대로 하산하는 구성이 가장 균형이 좋습니다.</p></div>
+    <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 → 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초급 코스와 같은 길로 오르지만 정상 후 하산 동선이 달라집니다. 계단 구간이 길어 초반부터 과속하지 않는 것이 좋습니다.</p><div class="bar"><div class="fill" style="width:54%"></div></div><div class="tip">💡 안개가 낄 때는 시야가 짧아져도 표지판은 비교적 잘 정비된 편입니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">주봉 → 동봉</div><div class="seg-meta">0.5km · 15~20분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선을 따라 동봉으로 이동합니다. 오르내림이 짧지만 바람과 습기에 따라 미끄러운 날이 있습니다.</p><div class="bar"><div class="fill" style="width:40%"></div></div><div class="tip">💡 주봉보다 동봉 쪽이 능선 시야가 더 시원하게 열리는 날이 많습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">동봉 → 냉수갱</div><div class="seg-meta">1.5~1.9km · 1시간 내외</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>냉수갱 방향은 계단과 흙길이 섞여 있으며 하산 후 온천 지대와 버스 정류장을 이용하기 좋습니다. 무릎 부담은 소유갱 왕복보다 약간 더 큽니다.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip">💡 하산 후 냉수갱 족욕·온천 분위기를 함께 즐기기 좋습니다.</div></div></div></div></div>
+    <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🥾 장비</h4><ul><li>트레킹화 권장</li><li>물 1L</li><li>안개 대비 얇은 겉옷</li></ul></div><div class="card tipcard"><h4>♨️ 매력 포인트</h4><ul><li>정상 2개 연계</li><li>냉수갱 온천 분위기</li><li>대중교통 연계 편리</li></ul></div><div class="card tipcard"><h4>⚠️ 주의</h4><ul><li>비 오는 날 계단 미끄러움</li><li>정상부 강풍</li><li>하산 버스 시간 확인 필요</li></ul></div></div></div>
+  </div>
+  <div class="playbook-sidebar-col">
+    <div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map">
+      <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+      <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
+        <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+        <path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path>
+        <circle cx="90" cy="314" fill="#326f95" r="10"></circle>
+        <circle cx="360" cy="92" fill="#326f95" r="11"></circle>
+        <circle cx="472" cy="100" fill="#326f95" r="10"></circle>
+        <circle cx="710" cy="290" fill="#326f95" r="10"></circle>
+        <text font-size="12" x="104" y="308">소유갱</text>
+        <text font-size="12" x="374" y="86">주봉</text>
+        <text font-size="12" x="486" y="94">동봉</text>
+        <text font-size="12" x="670" y="308">냉수갱</text>
+      </svg>
+      <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+      <div class="leaflet-map" id="map-intermediate" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 중급 소유갱-냉수갱 종주 코스 실사 지도"></div>
+    </div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>들머리</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.5~4.0km</td><td>버스·온천 지대</td></tr></tbody></table></div></div>
+  </div>
+</div></section>
 <section class="panel red" id="advanced"><div class="panel-top"><span class="level">🏔 고급</span><div><div class="panel-name">칭티엔강 연계 장거리 코스</div><div class="panel-sub">소유갱 → 칠성산 주봉 → 칠성산 동봉 → 몽환호 → 냉수갱 → 칭티엔강 · 약 5.5km · 3시간~3시간 30분</div></div></div><div class="tabs"><button class="tab active" data-tab="overview">📋 개요</button><button class="tab" data-tab="route">🗺 경로 안내</button><button class="tab" data-tab="map">📍 지도</button><button class="tab" data-tab="tips">💡 팁 &amp; 주의</button></div>
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">5.5km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">3~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">몽환호</div><div class="txt">추가 포인트</div></div><div class="card kpi"><div class="num">초원</div><div class="txt">칭티엔강</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">풀코스</div><div class="txt">당일 종주형</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">주봉</span><span class="arr">→</span><span class="chip">동봉</span><span class="arr">→</span><span class="chip">몽환호</span><span class="arr">→</span><span class="chip">냉수갱</span><span class="arr">→</span><span class="chip">🌿 칭티엔강</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9d4f36" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9d4f36" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="4"></path><circle cx="360" cy="70" fill="#9d4f36" r="6"></circle><circle cx="540" cy="92" fill="#9d4f36" r="6"></circle><circle cx="738" cy="146" fill="#9d4f36" r="6"></circle><text fill="#9d4f36" font-size="12" x="374" y="64">주봉</text><text fill="#9d4f36" font-size="12" x="554" y="86">몽환호</text><text fill="#9d4f36" font-size="12" x="650" y="164">칭티엔강</text></svg></div><p class="desc">소유갱에서 칠성산 주봉·동봉을 거쳐 몽환호, 냉수갱, 칭티엔강까지 잇는 루트는 약 5.5km에 3~3시간 30분 전후로 널리 추천됩니다. 정상 산행에 초원 풍경과 온천 지대까지 한 번에 연결할 수 있어 양명산 풀코스 성격이 강합니다.</p></div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 → 칠성산 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상까지는 동일한 핵심 오르막입니다. 인파가 많은 날은 초반 계단에서 속도가 느려질 수 있습니다.</p><div class="bar"><div class="fill" style="width:56%"></div></div><div class="tip">💡 오전 일찍 출발하면 안개·인파를 모두 줄이기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">주봉 → 동봉 → 몽환호</div><div class="seg-meta">1.2km · 35~45분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선을 지나 몽환호 쪽으로 이어집니다. 날씨가 맑으면 초원과 분화구 지형 느낌을 함께 즐기기 좋습니다.</p><div class="bar"><div class="fill" style="width:48%"></div></div><div class="tip">💡 몽환호는 계절과 수위에 따라 분위기가 크게 달라집니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">몽환호 → 냉수갱</div><div class="seg-meta">1.0km · 25~35분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>냉수갱 방향으로 내려서며 지열 지대와 온천 감성을 느낄 수 있습니다. 하산 후 휴식 포인트가 생겨 체감상 여유가 있습니다.</p><div class="bar"><div class="fill" style="width:42%"></div></div><div class="tip">💡 냉수갱에서 간단히 쉬고 칭티엔강으로 이어가면 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">냉수갱 → 칭티엔강</div><div class="seg-meta">1.7km · 40~50분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초원 지형으로 연결되는 마무리 구간입니다. 숲과 능선 위주의 칠성산과 달리 개방감이 큰 목초지 풍경이 특징입니다.</p><div class="bar"><div class="fill" style="width:46%"></div></div><div class="warn">⚠ 비나 안개가 짙은 날은 초원 구간 시야가 급격히 줄 수 있어 버스 시간과 일몰 시간을 고려하세요.</div></div></div></div></div>
-<div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map">
-  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
-  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
-    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-    <path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path>
-    <circle cx="90" cy="318" fill="#9d4f36" r="10"></circle>
-    <circle cx="360" cy="94" fill="#9d4f36" r="10"></circle>
-    <circle cx="474" cy="100" fill="#9d4f36" r="10"></circle>
-    <circle cx="606" cy="168" fill="#9d4f36" r="10"></circle>
-    <circle cx="728" cy="284" fill="#9d4f36" r="10"></circle>
-    <text font-size="12" x="104" y="312">소유갱</text>
-    <text font-size="12" x="374" y="88">주봉</text>
-    <text font-size="12" x="488" y="94">동봉</text>
-    <text font-size="12" x="620" y="162">냉수갱</text>
-    <text font-size="12" x="672" y="302">칭티엔강</text>
-  </svg>
-  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
-  <div class="leaflet-map" id="map-advanced" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 고급 칭티엔강 연계 코스 실사 지도"></div>
-</div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·분기공</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>몽환호</td><td>약 880m</td><td>3.1km</td><td>호수·습지 분위기</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.8km</td><td>온천 지대</td></tr><tr><td>칭티엔강</td><td>약 760m</td><td>5.5km</td><td>초원 풍경·버스 연계</td></tr></tbody></table></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 장비</h4><ul><li>트레킹화와 방풍자켓</li><li>물 1~1.5L</li><li>간식과 보조배터리</li></ul></div><div class="card tipcard"><h4>🌿 볼거리</h4><ul><li>화산 지형 + 정상</li><li>몽환호 습지</li><li>칭티엔강 초원</li></ul></div><div class="card tipcard"><h4>🚌 운영 팁</h4><ul><li>종점이 달라 귀가 버스 동선 확인</li><li>주말엔 버스 혼잡 가능</li><li>안개 시즌엔 시간 여유 필수</li></ul></div></div></div></section>
+<div class="playbook-split-container">
+  <div class="playbook-main-col">
+    <div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">5.5km</div><div class="txt">총 거리</div></div><div class="card kpi"><div class="num">3~3.5h</div><div class="txt">예상 시간</div></div><div class="card kpi"><div class="num">몽환호</div><div class="txt">추가 포인트</div></div><div class="card kpi"><div class="num">초원</div><div class="txt">칭티엔강</div></div><div class="card kpi"><div class="num">중상</div><div class="txt">난이도</div></div><div class="card kpi"><div class="num">풀코스</div><div class="txt">당일 종주형</div></div></div><div class="section-title"><h3>코스 흐름</h3><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">소유갱</span><span class="arr">→</span><span class="chip">주봉</span><span class="arr">→</span><span class="chip">동봉</span><span class="arr">→</span><span class="chip">몽환호</span><span class="arr">→</span><span class="chip">냉수갱</span><span class="arr">→</span><span class="chip">🌿 칭티엔강</span></div></div><div class="section-title"><h3>고도 프로파일</h3><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9d4f36" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9d4f36" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="4"></path><circle cx="360" cy="70" fill="#9d4f36" r="6"></circle><circle cx="540" cy="92" fill="#9d4f36" r="6"></circle><circle cx="738" cy="146" fill="#9d4f36" r="6"></circle><text fill="#9d4f36" font-size="12" x="374" y="64">주봉</text><text fill="#9d4f36" font-size="12" x="554" y="86">몽환호</text><text fill="#9d4f36" font-size="12" x="650" y="164">칭티엔강</text></svg></div><p class="desc">소유갱에서 칠성산 주봉·동봉을 거쳐 몽환호, 냉수갱, 칭티엔강까지 잇는 루트는 약 5.5km에 3~3시간 30분 전후로 널리 추천됩니다. 정상 산행에 초원 풍경과 온천 지대까지 한 번에 연결할 수 있어 양명산 풀코스 성격이 강합니다.</p></div>
+    <div class="tabpane" data-pane="route"><div class="section-title"><h3>구간별 경로 안내</h3><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">출</div><div><div class="seg-title">소유갱 → 칠성산 주봉</div><div class="seg-meta">1.6km · 50~60분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>정상까지는 동일한 핵심 오르막입니다. 인파가 많은 날은 초반 계단에서 속도가 느려질 수 있습니다.</p><div class="bar"><div class="fill" style="width:56%"></div></div><div class="tip">💡 오전 일찍 출발하면 안개·인파를 모두 줄이기 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">주봉 → 동봉 → 몽환호</div><div class="seg-meta">1.2km · 35~45분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>능선을 지나 몽환호 쪽으로 이어집니다. 날씨가 맑으면 초원과 분화구 지형 느낌을 함께 즐기기 좋습니다.</p><div class="bar"><div class="fill" style="width:48%"></div></div><div class="tip">💡 몽환호는 계절과 수위에 따라 분위기가 크게 달라집니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">몽환호 → 냉수갱</div><div class="seg-meta">1.0km · 25~35분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>냉수갱 방향으로 내려서며 지열 지대와 온천 감성을 느낄 수 있습니다. 하산 후 휴식 포인트가 생겨 체감상 여유가 있습니다.</p><div class="bar"><div class="fill" style="width:42%"></div></div><div class="tip">💡 냉수갱에서 간단히 쉬고 칭티엔강으로 이어가면 좋습니다.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">하</div><div><div class="seg-title">냉수갱 → 칭티엔강</div><div class="seg-meta">1.7km · 40~50분</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>초원 지형으로 연결되는 마무리 구간입니다. 숲과 능선 위주의 칠성산과 달리 개방감이 큰 목초지 풍경이 특징입니다.</p><div class="bar"><div class="fill" style="width:46%"></div></div><div class="warn">⚠ 비나 안개가 짙은 날은 초원 구간 시야가 급격히 줄 수 있어 버스 시간과 일몰 시간을 고려하세요.</div></div></div></div></div>
+    <div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h4>🎒 장비</h4><ul><li>트레킹화와 방풍자켓</li><li>물 1~1.5L</li><li>간식과 보조배터리</li></ul></div><div class="card tipcard"><h4>🌿 볼거리</h4><ul><li>화산 지형 + 정상</li><li>몽환호 습지</li><li>칭티엔강 초원</li></ul></div><div class="card tipcard"><h4>🚌 운영 팁</h4><ul><li>종점이 달라 귀가 버스 동선 확인</li><li>주말엔 버스 혼잡 가능</li><li>안개 시즌엔 시간 여유 필수</li></ul></div></div></div>
+  </div>
+  <div class="playbook-sidebar-col">
+    <div class="tabpane" data-pane="map"><div class="section-title"><h3>코스 개념도</h3><div class="line"></div></div><div class="card map">
+      <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+      <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
+        <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+        <path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path>
+        <circle cx="90" cy="318" fill="#9d4f36" r="10"></circle>
+        <circle cx="360" cy="94" fill="#9d4f36" r="10"></circle>
+        <circle cx="474" cy="100" fill="#9d4f36" r="10"></circle>
+        <circle cx="606" cy="168" fill="#9d4f36" r="10"></circle>
+        <circle cx="728" cy="284" fill="#9d4f36" r="10"></circle>
+        <text font-size="12" x="104" y="312">소유갱</text>
+        <text font-size="12" x="374" y="88">주봉</text>
+        <text font-size="12" x="488" y="94">동봉</text>
+        <text font-size="12" x="620" y="162">냉수갱</text>
+        <text font-size="12" x="672" y="302">칭티엔강</text>
+      </svg>
+      <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+      <div class="leaflet-map" id="map-advanced" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 고급 칭티엔강 연계 코스 실사 지도"></div>
+    </div><div class="section-title"><h3>체크포인트 표</h3><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>지점</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody><tr><td>소유갱</td><td>약 800m</td><td>0km</td><td>버스·분기공</td></tr><tr><td>칠성산 주봉</td><td>1,120m</td><td>1.6km</td><td>최고점</td></tr><tr><td>칠성산 동봉</td><td>약 1,107m</td><td>2.1km</td><td>능선 조망</td></tr><tr><td>몽환호</td><td>약 880m</td><td>3.1km</td><td>호수·습지 분위기</td></tr><tr><td>냉수갱</td><td>약 740m</td><td>3.8km</td><td>온천 지대</td></tr><tr><td>칭티엔강</td><td>약 760m</td><td>5.5km</td><td>초원 풍경·버스 연계</td></tr></tbody></table></div></div>
+  </div>
+</div></section>
 
 <!-- 대중교통 상세 안내 섹션 (Yangmingshan Public Transit Guide) -->
 <section class="transit-section" style="margin-top: 40px; padding: 20px 0;">
@@ -1246,7 +1275,7 @@
       <li><strong>주말 혼잡:</strong> 날씨가 좋은 주말 오후 2시~5시 사이는 하산 버스 탑승객이 대거 몰려 30분 이상 줄을 서야 할 수 있습니다. 가능하면 오전 8시 이전에 산행을 시작하여 오후 2~3시 전에 하산하는 것이 쾌적합니다.</li>
       <li><strong>기상 악화 폴백:</strong> 양명산 정상부는 기온 변화가 급격하고 짙은 안개나 강풍이 부는 날이 많습니다. 폭우나 태풍 경보 등으로 인해 버스가 감축 운행되거나 운휴될 수 있으므로, 출발 전 반드시 공식 사이트의 실시간 버스 정보를 재확인하세요.</li>
     </ul>
-    <div style="margin-top: 10px; font-size: 11px; text-align: right; color: var(--faint);">
+    <div style="margin-top: 10px; font-size: 11px; text-align: right; color: var(--muted);">
       공식 출처: 양명산 국립공원(ymsnp.gov.tw) 및 타이베이시 공공운수처 | 최종 갱신일: 2026년 06월 22일
     </div>
   </div>
@@ -1262,11 +1291,11 @@
   <div class="gallery-grid">
     
     <!-- Gallery Image Button 1 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic hiking trail and beautiful surroundings of Yangmingshan 크게 보기" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/' target='_blank' rel='noopener'>Timo Volz</a> on Pexels">
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="양명산 등산코스 크게 보기: Scenic hiking trail and beautiful surroundings of Yangmingshan" data-index="0" data-credit="Photo by <a href='https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/' target='_blank' rel='noopener'>Timo Volz</a> on Pexels">
       <picture class="gallery-picture">
         <source type="image/avif" srcset="assets/img/yangmingshan/g1.avif">
         <source type="image/webp" srcset="assets/img/yangmingshan/g1.webp">
-        <img src="assets/img/yangmingshan/g1.jpg" alt="양명산 등산로를 따라 펼쳐진 수려한 주변 경관" class="gallery-img" loading="lazy" decoding="async">
+        <img src="assets/img/yangmingshan/g1.jpg" alt="" class="gallery-img" loading="lazy" decoding="async">
       </picture>
       <div class="gallery-caption-overlay">
         <span class="gallery-caption-text">양명산 등산코스</span>
@@ -1274,11 +1303,11 @@
     </button>
 
     <!-- Gallery Image Button 2 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Scenic view of Yangmingshan encountered during the Yangmingshan climb 크게 보기" data-index="1" data-credit="Photo by <a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'>Andy Kuo</a> on Unsplash">
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="양명산 절경 크게 보기: Scenic view of Yangmingshan encountered during the Yangmingshan climb" data-index="1" data-credit="Photo by <a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'>Andy Kuo</a> on Unsplash">
       <picture class="gallery-picture">
         <source type="image/avif" srcset="assets/img/yangmingshan/g2.avif">
         <source type="image/webp" srcset="assets/img/yangmingshan/g2.webp">
-        <img src="assets/img/yangmingshan/g2.jpg" alt="양명산 산행 중 마주하는 양명산의 수려한 모습" class="gallery-img" loading="lazy" decoding="async">
+        <img src="assets/img/yangmingshan/g2.jpg" alt="" class="gallery-img" loading="lazy" decoding="async">
       </picture>
       <div class="gallery-caption-overlay">
         <span class="gallery-caption-text">양명산 절경</span>
@@ -1286,11 +1315,11 @@
     </button>
 
     <!-- Gallery Image Button 3 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Harmonious view of Yangmingshan mountain ridges under a clear sky 크게 보기" data-index="2" data-credit="Photo by <a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'>Andy Kuo</a> on Unsplash">
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="양명산 풍경 크게 보기: Harmonious view of Yangmingshan mountain ridges under a clear sky" data-index="2" data-credit="Photo by <a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'>Andy Kuo</a> on Unsplash">
       <picture class="gallery-picture">
         <source type="image/avif" srcset="assets/img/yangmingshan/g3.avif">
         <source type="image/webp" srcset="assets/img/yangmingshan/g3.webp">
-        <img src="assets/img/yangmingshan/g3.jpg" alt="양명산 산등성이와 푸른 하늘이 조화를 이루는 자연 경관" class="gallery-img" loading="lazy" decoding="async">
+        <img src="assets/img/yangmingshan/g3.jpg" alt="" class="gallery-img" loading="lazy" decoding="async">
       </picture>
       <div class="gallery-caption-overlay">
         <span class="gallery-caption-text">양명산 풍경</span>
@@ -1298,11 +1327,11 @@
     </button>
 
     <!-- Gallery Image Button 4 -->
-    <button class="gallery-item" aria-haspopup="dialog" aria-label="Beautiful scenery of lush forests and rugged rocks in Yangmingshan 크게 보기" data-index="3" data-credit="Photo by <a href='https://unsplash.com/@waterfay' target='_blank' rel='noopener'>Chen Wen-Yu</a> on Unsplash">
+    <button class="gallery-item" aria-haspopup="dialog" aria-label="양명산 탐방로 크게 보기: Beautiful scenery of lush forests and rugged rocks in Yangmingshan" data-index="3" data-credit="Photo by <a href='https://unsplash.com/@waterfay' target='_blank' rel='noopener'>Chen Wen-Yu</a> on Unsplash">
       <picture class="gallery-picture">
         <source type="image/avif" srcset="assets/img/yangmingshan/g4.avif">
         <source type="image/webp" srcset="assets/img/yangmingshan/g4.webp">
-        <img src="assets/img/yangmingshan/g4.jpg" alt="양명산 숲길과 기암괴석이 어우러진 아름다운 비경" class="gallery-img" loading="lazy" decoding="async">
+        <img src="assets/img/yangmingshan/g4.jpg" alt="" class="gallery-img" loading="lazy" decoding="async">
       </picture>
       <div class="gallery-caption-overlay">
         <span class="gallery-caption-text">양명산 탐방로</span>

@@ -178,14 +178,21 @@ h1, h2, h3, h4, h5, h6 {
 /* 3. Layout Grid & Flex Utilities */
 .wrap {
   width: 100%;
-  max-width: 1200px;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 var(--space-6);
+  padding: 0 var(--space-4);
 }
 
-@media (max-width: 640px) {
+@media (min-width: 640px) {
   .wrap {
-    padding: 0 var(--space-4);
+    padding: 0 var(--space-6);
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    max-width: clamp(1080px, 90vw, 1440px);
+    padding: 0 var(--space-8);
   }
 }
 
@@ -201,9 +208,13 @@ h1, h2, h3, h4, h5, h6 {
   transition: transform var(--transition), box-shadow var(--transition), background-color var(--transition), border-color var(--transition);
 }
 
+.card-hoverable {
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition), background-color var(--transition);
+}
+
 .card-hoverable:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-lg);
   border-color: var(--primary);
 }
 
@@ -413,6 +424,91 @@ tr:last-child td {
   filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
 }
 
+/* 5. Header & Navigation (Unified & Responsive) */
+.site-header, .header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(248, 250, 252, 0.85); /* Light mode translucent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  padding: var(--space-4) var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  transition: background-color var(--transition), border-color var(--transition);
+}
+
+[data-theme="dark"] .site-header,
+[data-theme="dark"] .header {
+  background-color: rgba(9, 9, 11, 0.85); /* Dark mode translucent */
+}
+
+.logo-wrap, .brand {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  text-decoration: none;
+}
+
+.logo-svg, .logo {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+  display: grid;
+  place-items: center;
+  box-shadow: var(--shadow-sm);
+  flex-shrink: 0;
+}
+
+.logo-text, .brand h1 {
+  font-family: var(--font-display);
+  font-size: var(--text-lg);
+  font-weight: 800;
+  color: var(--text) !important;
+  text-decoration: none;
+  line-height: 1;
+}
+
+.header-right, .header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.header-nav {
+  display: none;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.header-nav-link {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--muted);
+  transition: color var(--transition);
+  text-decoration: none;
+}
+
+.header-nav-link:hover, .header-nav-link.active {
+  color: var(--primary);
+}
+
+@media (min-width: 1024px) {
+  .header-nav {
+    display: flex;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-header, .header {
+    padding: var(--space-3) var(--space-4);
+  }
+}
+
 /* Skip link accessibility */
 .skip-link {
   position: absolute;
@@ -496,4 +592,124 @@ tr:last-child td {
 [data-theme="dark"] .badge-landmark {
   color: #fcd34d !important; /* Light amber/gold */
 }
+
+/* 6. Landing Cards Grid (Unified & Responsive) */
+.mountain-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: var(--space-6);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .mountain-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .mountain-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-8);
+  }
+}
+
+@media (min-width: 1280px) {
+  .mountain-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1536px) {
+  .mountain-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+/* 7. Additional Rebranding Accessibility Overrides */
+[data-theme="dark"] .btn-primary {
+  color: #09090b !important;
+}
+[data-theme="dark"] .btn-primary:hover {
+  color: #09090b !important;
+}
+
+/* Difficulty Badge Accessibility Overrides */
+.diff-badge.diff-easy {
+  color: #047857 !important;
+}
+[data-theme="dark"] .diff-badge.diff-easy {
+  color: #6ee7b7 !important;
+}
+.diff-badge.diff-medium {
+  color: #b45309 !important;
+}
+[data-theme="dark"] .diff-badge.diff-medium {
+  color: #fcd34d !important;
+}
+.diff-badge.diff-hard {
+  color: #c2410c !important;
+}
+[data-theme="dark"] .diff-badge.diff-hard {
+  color: #fdba74 !important;
+}
+.diff-badge.diff-expert {
+  color: #b91c1c !important;
+}
+[data-theme="dark"] .diff-badge.diff-expert {
+  color: #fca5a5 !important;
+  background-color: #7f1d1d !important;
+}
+
+/* Footer Link Accessibility */
+footer a, .site-footer a {
+  text-decoration: underline !important;
+}
+
+/* Playbook Split Layout for Desktop (>=1280px) */
+@media (min-width: 1280px) {
+  .playbook-split-container {
+    display: grid;
+    grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.1fr);
+    gap: var(--space-8);
+    align-items: start;
+    margin-top: var(--space-6);
+  }
+  
+  .playbook-main-col {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-8);
+  }
+  
+  .playbook-sidebar-col {
+    position: sticky;
+    top: 90px; /* Offset to clear the sticky glassmorphic header */
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+  
+  /* Show all panes on desktop sequentially */
+  .panel .tabs,
+  .course-panel .tab-bar {
+    display: none !important;
+  }
+  
+  .panel .tabpane,
+  .course-panel .tab-content {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-bottom: 0 !important;
+  }
+  
+  /* Reduce KPI grid columns slightly in 2-column layout to fit side-by-side */
+  .grid6, .stat-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: var(--space-4) !important;
+  }
+}
+
+
 

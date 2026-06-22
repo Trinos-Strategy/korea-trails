@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
           
           <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1;">
             <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-2);">
-              <h3 style="font-size: var(--text-lg); font-weight: 800; color: var(--text);">${m.name}</h3>
+              <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text);">${m.name}</h2>
               <span style="font-size: 1.15rem; font-weight: 800; color: var(--primary); font-family: var(--font-display);">${m.alt}</span>
             </div>
             
@@ -196,14 +196,14 @@ document.addEventListener('DOMContentLoaded', () => {
             <p style="font-size: var(--text-sm); color: var(--muted); margin-bottom: var(--space-4); line-height: 1.5; flex-grow: 1; word-break: keep-all;">
               ${m.desc}
             </p>
-
+ 
             <div style="display: flex; gap: var(--space-4); border-top: 1px solid var(--border); padding-top: var(--space-4); margin-bottom: var(--space-4);">
               <div style="flex: 1;">
-                <div style="font-size: 10px; color: var(--faint); text-transform: uppercase; font-weight: 800;">거리</div>
+                <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 800;">거리</div>
                 <div style="font-weight: 700; font-size: var(--text-sm); color: var(--text); margin-top: 2px;">🥾 ${m.dist}</div>
               </div>
               <div style="flex: 1;">
-                <div style="font-size: 10px; color: var(--faint); text-transform: uppercase; font-weight: 800;">시간</div>
+                <div style="font-size: 10px; color: var(--muted); text-transform: uppercase; font-weight: 800;">시간</div>
                 <div style="font-weight: 700; font-size: var(--text-sm); color: var(--text); margin-top: 2px;">⏱ ${m.time}</div>
               </div>
             </div>
