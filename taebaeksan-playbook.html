@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -556,29 +556,13 @@
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <span class="logo-txt">태백산 플레이북</span>
 </div>
@@ -632,13 +616,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">5.1km</div><div class="sl">백천계곡 왕복</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">2~3h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,510m</div><div class="sl">문수봉 조망</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±500m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~600</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">백천계곡 왕복</span>
+<span class="pill-value">5.1km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">2~3h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">문수봉 조망</span>
+<span class="pill-value">1,510m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±500m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~600</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 1단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-easy"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 백천계곡 코스 왕복</h2>
@@ -678,7 +694,7 @@
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-t">현불사 주차장 출발</div><div class="acc-m">해발 1,020m · 강원도 태백시</div></div>
+<div class="acc-tw"><div class="acc-t">현불사 주차장 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 1,020m</span><span class="meta-chip">📍 강원도 태백시</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -689,7 +705,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-t">현불사 주차장 → 백천계곡 입구</div><div class="acc-m">약 1.0km · 30분 · 고도 ↑80m</div></div>
+<div class="acc-tw"><div class="acc-t">현불사 주차장 → 백천계곡 입구</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.0km</span><span class="meta-chip">⏱ 30분</span><span class="meta-chip">⏱ 고도 ↑80m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -701,19 +717,19 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-t">백천계곡 → 열목어 서식지 → 문수봉 정상</div><div class="acc-m">약 1.55km · 1시간 20분 · 고도 ↑420m</div></div>
+<div class="acc-tw"><div class="acc-t">백천계곡 → 열목어 서식지 → 문수봉 정상</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.55km</span><span class="meta-chip">⏱ 1시간 20분</span><span class="meta-chip">⏱ 고도 ↑420m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
-<p class="acc-desc">맑고 찬 계곡물을 따라 오릅니다. 이 구간은 국내 멸종위기 어류 열목어 서식지로 탁월한 자연 생태 환경입니다. 계곡을 벗어나면 경사가 다소 높아지며 문수봉(1,510m)에 도달합니다. 문수봉 정상에서 태백산 능선 전망 가능.</p>
+<p class="acc-desc">맑고 찬 계곡물을 따라 오릅니다. 이 구간은 국내 멸종위기 어류 열목어 서식지로 탁월한 자연 생태 환경입니다.</p><p class="acc-desc">계곡을 벗어나면 경사가 다소 높아지며 문수봉(1,510m)에 도달합니다. 문수봉 정상에서 태백산 능선 전망 가능.</p>
 <div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 열목어 서식지 보호를 위해 계곡 내 취사·수영 금지. 발밑 생태계를 밟지 않도록 주의하세요.</div>
 </div>
 </div>
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-t">문수봉 → 원점 하산</div><div class="acc-m">약 2.55km · 1시간 · 하산</div></div>
+<div class="acc-tw"><div class="acc-t">문수봉 → 원점 하산</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.55km</span><span class="meta-chip">⏱ 1시간</span><span class="meta-chip">📍 하산</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -767,18 +783,103 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>현불사 주차장</td><td>1,020m</td><td>0km</td><td><span class="bdg b-st">출발점</span></td><td>주차(무료)·화장실</td></tr>
-<tr><td>2</td><td>현불사</td><td>1,060m</td><td>0.5km</td><td><span class="bdg b-te">사찰</span></td><td>탐방 가능</td></tr>
-<tr><td>3</td><td>백천계곡 입구</td><td>1,100m</td><td>1.0km</td><td><span class="bdg b-lm">계곡</span></td><td>—</td></tr>
-<tr><td>4</td><td>열목어 서식지</td><td>1,200m</td><td>1.8km</td><td><span class="bdg b-lm">생태명소</span></td><td>안내판</td></tr>
-<tr><td>5</td><td>문수봉 정상</td><td>1,510m</td><td>2.55km</td><td><span class="bdg b-pk">정상부</span></td><td>정상석·전망</td></tr>
-<tr><td>6</td><td>현불사 주차장 귀환</td><td>1,020m</td><td>5.1km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당(태백시)</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">현불사 주차장</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,020m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차(무료)·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">현불사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,060m</span>
+<span class="meta-item">📏 누적 0.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 탐방 가능
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백천계곡 입구</span>
+<span class="badge badge-landmark">계곡</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,100m</span>
+<span class="meta-item">📏 누적 1.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">열목어 서식지</span>
+<span class="badge badge-landmark">생태명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,200m</span>
+<span class="meta-item">📏 누적 1.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 안내판
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">문수봉 정상</span>
+<span class="badge badge-summit">정상부</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,510m</span>
+<span class="meta-item">📏 누적 2.55km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·전망
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">현불사 주차장 귀환</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,020m</span>
+<span class="meta-item">📏 누적 5.1km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·식당(태백시)
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div></div></main>
@@ -793,13 +894,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">10.8km</div><div class="sl">문수봉 환종주</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">5~6h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,567m</div><div class="sl">천제단(영봉)</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±700m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~1,500</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">문수봉 환종주</span>
+<span class="pill-value">10.8km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">5~6h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">천제단(영봉)</span>
+<span class="pill-value">1,567m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±700m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~1,500</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 문수봉 환종주 (당골 출발)</h2>
@@ -845,7 +978,7 @@
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-t">당골광장 출발</div><div class="acc-m">해발 870m · 강원도 태백시 소도동</div></div>
+<div class="acc-tw"><div class="acc-t">당골광장 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 870m</span><span class="meta-chip">📍 강원도 태백시 소도동</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -856,7 +989,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-t">당골광장 → 갈림길 → 소문수봉</div><div class="acc-m">약 2.0km · 1시간 · 고도 ↑350m</div></div>
+<div class="acc-tw"><div class="acc-t">당골광장 → 갈림길 → 소문수봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.0km</span><span class="meta-chip">⏱ 1시간</span><span class="meta-chip">⏱ 고도 ↑350m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -868,7 +1001,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-t">소문수봉 → 문수봉 → 부쇠봉</div><div class="acc-m">약 2.5km · 1시간 20분 · 능선 종주</div></div>
+<div class="acc-tw"><div class="acc-t">소문수봉 → 문수봉 → 부쇠봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.5km</span><span class="meta-chip">⏱ 1시간 20분</span><span class="meta-chip">📍 능선 종주</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -880,19 +1013,19 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-t">부쇠봉 → 천제단(영봉) 정상</div><div class="acc-m">약 0.5km · 20분 · 고도 ↑50m</div></div>
+<div class="acc-tw"><div class="acc-t">부쇠봉 → 천제단(영봉) 정상</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.5km</span><span class="meta-chip">⏱ 20분</span><span class="meta-chip">⏱ 고도 ↑50m</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
-<p class="acc-desc">태백산 최고봉 천제단(영봉, 1,567m)에 도달합니다. 하늘에 제를 올리던 천제단 돌무더기와 주목 군락지가 장관. 사방 360도 파노라마 조망. 겨울 아침 일출은 국내 최고 경관으로 꼽힙니다.</p>
+<p class="acc-desc">태백산 최고봉 천제단(영봉, 1,567m)에 도달합니다. 하늘에 제를 올리던 천제단 돌무더기와 주목 군락지가 장관.</p><p class="acc-desc">사방 360도 파노라마 조망. 겨울 아침 일출은 국내 최고 경관으로 꼽힙니다.</p>
 <div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 천제단 정상 일출 감상 시 별도 새벽 산행 계획 필요. 새벽 3~4시 출발 → 일출(오전 6~7시) 감상 후 하산.</div>
 </div>
 </div>
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-t">천제단 → 망경사 → 반재 → 당골광장</div><div class="acc-m">약 5.8km · 2시간 · 하산</div></div>
+<div class="acc-tw"><div class="acc-t">천제단 → 망경사 → 반재 → 당골광장</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 5.8km</span><span class="meta-chip">⏱ 2시간</span><span class="meta-chip">📍 하산</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -958,21 +1091,151 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>당골광장</td><td>870m</td><td>0km</td><td><span class="bdg b-st">출발점</span></td><td>주차·화장실·안내소</td></tr>
-<tr><td>2</td><td>갈림길</td><td>1,000m</td><td>1.0km</td><td><span class="bdg b-ct">갈림길</span></td><td>이정표</td></tr>
-<tr><td>3</td><td>소문수봉</td><td>1,395m</td><td>3.0km</td><td><span class="bdg b-lm">봉우리</span></td><td>조망·쉼터</td></tr>
-<tr><td>4</td><td>문수봉</td><td>1,557m</td><td>4.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>정상석·전망</td></tr>
-<tr><td>5</td><td>부쇠봉</td><td>1,546m</td><td>5.0km</td><td><span class="bdg b-lm">봉우리</span></td><td>—</td></tr>
-<tr><td>6</td><td>천제단(영봉)</td><td>1,567m</td><td>5.5km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·제단·주목</td></tr>
-<tr><td>7</td><td>망경사</td><td>1,470m</td><td>6.5km</td><td><span class="bdg b-te">사찰</span></td><td>용정 약수·화장실</td></tr>
-<tr><td>8</td><td>반재</td><td>1,330m</td><td>7.8km</td><td><span class="bdg b-lm">안부</span></td><td>—</td></tr>
-<tr><td>9</td><td>당골광장 귀환</td><td>870m</td><td>10.8km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당가</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">당골광장</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 870m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·안내소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">갈림길</span>
+<span class="badge badge-landmark">갈림길</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,000m</span>
+<span class="meta-item">📏 누적 1.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">소문수봉</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,395m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망·쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">문수봉</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,557m</span>
+<span class="meta-item">📏 누적 4.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·전망
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">부쇠봉</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,546m</span>
+<span class="meta-item">📏 누적 5.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천제단(영봉)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,567m</span>
+<span class="meta-item">📏 누적 5.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·제단·주목
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">망경사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,470m</span>
+<span class="meta-item">📏 누적 6.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 용정 약수·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">반재</span>
+<span class="badge badge-landmark">안부</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,330m</span>
+<span class="meta-item">📏 누적 7.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">당골광장 귀환</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 870m</span>
+<span class="meta-item">📏 누적 10.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·식당가
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
@@ -987,13 +1250,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">~23km</div><div class="sl">태함백 종주 거리</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">9~11h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,573m</div><div class="sl">함백산 정상</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">1,400m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~3,000</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★★</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">태함백 종주 거리</span>
+<span class="pill-value">~23km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">9~11h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">함백산 정상</span>
+<span class="pill-value">1,573m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">1,400m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~3,000</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 5단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 태함백 종주 (당골 → 정암사)</h2>
@@ -1044,7 +1339,7 @@
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-t">당골광장 출발</div><div class="acc-m">해발 870m · 강원도 태백시 소도동</div></div>
+<div class="acc-tw"><div class="acc-t">당골광장 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 870m</span><span class="meta-chip">📍 강원도 태백시 소도동</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1056,7 +1351,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-t">당골광장 → 문수봉 → 천제단(영봉)</div><div class="acc-m">약 5.5km · 2시간 30분 · 중급 구간</div></div>
+<div class="acc-tw"><div class="acc-t">당골광장 → 문수봉 → 천제단(영봉)</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 5.5km</span><span class="meta-chip">⏱ 2시간 30분</span><span class="meta-chip">📍 중급 구간</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1068,7 +1363,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-t">천제단 → 장군봉 → 유일사 갈림길 → 사길령</div><div class="acc-m">약 5.5km · 2시간 30분 · 백두대간 능선</div></div>
+<div class="acc-tw"><div class="acc-t">천제단 → 장군봉 → 유일사 갈림길 → 사길령</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 5.5km</span><span class="meta-chip">⏱ 2시간 30분</span><span class="meta-chip">📍 백두대간 능선</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1080,7 +1375,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-t">사길령 → 은대봉 → 만항재</div><div class="acc-m">약 5.0km · 2시간 · 백두대간 핵심</div></div>
+<div class="acc-tw"><div class="acc-t">사길령 → 은대봉 → 만항재</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 5.0km</span><span class="meta-chip">⏱ 2시간</span><span class="meta-chip">📍 백두대간 핵심</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1092,12 +1387,12 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-t">만항재 → 함백산 정상 → 중함백산 → 정암사</div><div class="acc-m">약 7.0km · 3시간 · 최종 구간</div></div>
+<div class="acc-tw"><div class="acc-t">만항재 → 함백산 정상 → 중함백산 → 정암사</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 7.0km</span><span class="meta-chip">⏱ 3시간</span><span class="meta-chip">📍 최종 구간</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg xh"><div class="df" style="width:85%"></div></div></div>
-<p class="acc-desc">만항재에서 함백산(1,573m)까지 30분 급경사 오르막 후 정상 도달. 함백산은 정규 등산로 기준 국내 2위 고도. 정상에서 중함백산을 넘어 정암사 방향으로 하산합니다. 정암사(646년 창건, 자장율사)는 국내 최고 역사 사찰 중 하나.</p>
+<p class="acc-desc">만항재에서 함백산(1,573m)까지 30분 급경사 오르막 후 정상 도달. 함백산은 정규 등산로 기준 국내 2위 고도.</p><p class="acc-desc">정상에서 중함백산을 넘어 정암사 방향으로 하산합니다. 정암사(646년 창건, 자장율사)는 국내 최고 역사 사찰 중 하나.</p>
 <div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 정암사 도착 후 고한읍 시가지에서 식사 가능. 사전 예약한 교통편으로 귀환. 정암사 경내 수마노탑(국보) 꼭 관람하세요.</div>
 </div>
 </div>
@@ -1168,24 +1463,199 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (종주)</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>당골광장</td><td>870m</td><td>0km</td><td><span class="bdg b-st">출발점</span></td><td>주차·화장실</td></tr>
-<tr><td>2</td><td>소문수봉</td><td>1,395m</td><td>3.0km</td><td><span class="bdg b-lm">봉우리</span></td><td>—</td></tr>
-<tr><td>3</td><td>문수봉</td><td>1,557m</td><td>4.5km</td><td><span class="bdg b-pk">봉우리</span></td><td>전망·쉼터</td></tr>
-<tr><td>4</td><td>천제단(영봉)</td><td>1,567m</td><td>5.5km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·주목</td></tr>
-<tr><td>5</td><td>장군봉</td><td>1,567m</td><td>6.0km</td><td><span class="bdg b-lm">봉우리</span></td><td>—</td></tr>
-<tr><td>6</td><td>유일사 갈림길</td><td>1,440m</td><td>8.0km</td><td><span class="bdg b-ct">갈림길</span></td><td>이정표</td></tr>
-<tr><td>7</td><td>사길령 (백두대간)</td><td>1,280m</td><td>11.0km</td><td><span class="bdg b-lm">백두대간</span></td><td>—</td></tr>
-<tr><td>8</td><td>은대봉</td><td>1,442m</td><td>13.5km</td><td><span class="bdg b-lm">봉우리</span></td><td>—</td></tr>
-<tr><td>9</td><td>만항재</td><td>1,330m</td><td>16.0km</td><td><span class="bdg b-sh">쉼터</span></td><td>편의점·화장실</td></tr>
-<tr><td>10</td><td>함백산 정상</td><td>1,573m</td><td>17.5km</td><td><span class="bdg b-pk">정상</span></td><td>정상석·전망대</td></tr>
-<tr><td>11</td><td>중함백산</td><td>1,505m</td><td>19.5km</td><td><span class="bdg b-lm">봉우리</span></td><td>—</td></tr>
-<tr><td>12</td><td>정암사</td><td>800m</td><td>~23km</td><td><span class="bdg b-st">종점</span></td><td>사찰·주차</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">당골광장</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 870m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">소문수봉</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,395m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">문수봉</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,557m</span>
+<span class="meta-item">📏 누적 4.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 전망·쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">천제단(영봉)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,567m</span>
+<span class="meta-item">📏 누적 5.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·주목
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">장군봉</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,567m</span>
+<span class="meta-item">📏 누적 6.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">유일사 갈림길</span>
+<span class="badge badge-landmark">갈림길</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,440m</span>
+<span class="meta-item">📏 누적 8.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사길령 (백두대간)</span>
+<span class="badge badge-landmark">백두대간</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,280m</span>
+<span class="meta-item">📏 누적 11.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">은대봉</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,442m</span>
+<span class="meta-item">📏 누적 13.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">만항재</span>
+<span class="badge badge-shelter">쉼터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,330m</span>
+<span class="meta-item">📏 누적 16.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 편의점·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">함백산 정상</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,573m</span>
+<span class="meta-item">📏 누적 17.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·전망대
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">11</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">중함백산</span>
+<span class="badge badge-summit">봉우리</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,505m</span>
+<span class="meta-item">📏 누적 19.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">12</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">정암사</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 800m</span>
+<span class="meta-item">📏 누적 ~23km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 사찰·주차
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
