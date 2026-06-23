@@ -1,0 +1,67 @@
+{
+  "id": "baekhaksan",
+  "name_ko": "백학산",
+  "name_en": "Baekhaksan",
+  "region": "경기",
+  "park": "민통선 구역 (비공식)",
+  "summit": {
+    "name": "백학산 정상",
+    "alt_m": 229,
+    "source": [
+      "https://encykorea.aks.ac.kr/Article/E0022363",
+      "https://paju.wiki/%EB%B0%B1%ED%95%99%EC%82%B0"
+    ]
+  },
+  "courses": [
+    {
+      "level": "intermediate",
+      "name": "백학산 역사 답사 코스 (통일대교~읍내리~석조여래입상)",
+      "distance_km": 0.0,
+      "time": "0h00m",
+      "difficulty": "확인 필요",
+      "checkpoints": [
+        {"name": "통일대교 검문소", "alt_m": 20, "cum_km": 0.0, "note": "민통선 진입부 (허가 필요)"},
+        {"name": "군내면 읍내리", "alt_m": 50, "cum_km": 2.5, "note": "접근 경로"},
+        {"name": "읍내리 석조여래입상", "alt_m": 120, "cum_km": 3.5, "note": "백학산 남쪽 중턱 (경기도 문화재자료 제139호)"},
+        {"name": "백학산 정상 (통제구역)", "alt_m": 229, "cum_km": 4.5, "note": "정상 고지 (민간인 접근 불가)"}
+      ],
+      "elevation_profile": "구릉성 지형이며 민간인 출입 통제선 내부 군 관할 구역으로 상세 등산로 및 경사 분석 불가",
+      "hazards": [
+        "군사작전지역 및 미확인 지뢰 지대 위험",
+        "무단 침입 시 군사기지 및 군사시설 보호법에 따른 법적 처벌"
+      ],
+      "source": [
+        "https://www.paju.go.kr",
+        "http://www.pajuminbo.com"
+      ]
+    }
+  ],
+  "transport": {
+    "by_transit": "일반 대중교통을 이용한 접근 불가. 사전 승인된 인원에 한해 통일대교 건너 차량 진입 가능.",
+    "trailhead_access": "통일대교 검문소 / 파주시 군내면 읍내리",
+    "source": [
+      "https://www.paju.go.kr",
+      "https://paju.wiki/%EB%B0%B1%ED%95%99%EC%82%B0"
+    ]
+  },
+  "season": {
+    "highlights": "문화재 답사 (사전 군사 허가 필요)",
+    "cautions": "민간인 출입이 완전히 금지된 전방 작전지역으로 겨울철 결빙이나 낙석 외에도 군사적 안전 위험 상존"
+  },
+  "tips": [
+    "일반적인 등산 목적의 방문은 절대 불가능합니다.",
+    "역사 및 문화재(읍내리 석조여래입상) 답사 목적의 경우, 사전에 파주시청 문화관광과 및 관할 군부대(육군 1사단)의 승인을 득해야 합니다.",
+    "연천군 백학면의 지명 유래가 된 백학산은 경기도 파주시 군내면·진서면 경계에 있는 227m/229m 높이의 백학산(白鶴山)을 의미합니다."
+  ],
+  "uncertainties": [
+    "역사 문헌(장단지 등)에서는 높이가 227m로 기록되어 있으나, 현대 국토정보 및 한국학중앙연구원 백과사전 등에는 229m로 등재되어 있음. index.html의 876m 시드값은 실제와 무관한 오류임.",
+    "민통선 내부 군사시설 구역이므로 공식 등산 코스 및 소요시간, 거리는 등산로가 개방되어 있지 않아 산정할 수 없음."
+  ],
+  "all_sources": [
+    "한국민족문화대백과사전 (https://encykorea.aks.ac.kr/Article/E0022363)",
+    "파주시청 문화관광 (https://www.paju.go.kr)",
+    "파주민보 (http://www.pajuminbo.com)",
+    "연천군청 백학면 유래 (https://www.yeoncheon.go.kr)",
+    "파주위키 백학산 (https://paju.wiki/%EB%B0%B1%ED%95%99%EC%82%B0)"
+  ]
+}

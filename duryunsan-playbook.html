@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>두륜산 등산 플레이북</title>
+<meta content="대한민국 최고의 명산 중 하나인 두륜산도립공원 가이드. 초급, 중급, 고급 코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/design-system.css" rel="stylesheet"/>
+<style>
+/* COURSE SELECTOR */
+.course-selector {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.course-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.course-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.course-btn.active.beginner, .course-btn.active-beginner {
+  background: var(--success-highlight);
+  color: var(--success);
+  border-color: var(--success);
+}
+.course-btn.active.intermediate, .course-btn.active-intermediate {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.course-btn.active.advanced, .course-btn.active-advanced {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.intermediate .section-title-icon{background:var(--color-gold-highlight);}
+.advanced .section-title-icon{background:var(--color-warning-highlight);}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);}
+.acc-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
+.acc-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-5);cursor:pointer;user-select:none;width:100%;text-align:left;}
+.acc-header:hover{background:var(--color-surface-offset);}
+.acc-num{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;flex-shrink:0;}
+.beginner .acc-num{background:var(--color-success-highlight);color:var(--color-success);}
+.intermediate .acc-num{background:var(--color-gold-highlight);color:var(--color-gold);}
+.advanced .acc-num{background:var(--color-warning-highlight);color:var(--color-warning);}
+.acc-title-wrap{flex:1;}
+.acc-title{font-weight:700;font-size:var(--text-base);line-height:1.3;}
+.acc-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px;}
+.acc-chevron{color:var(--color-text-faint);transition:transform var(--transition);flex-shrink:0;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--color-divider);}
+.acc-item.open .acc-body{display:block;}
+.acc-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-4);}
+
+/* DIFF BAR */
+.diff-bar-wrap{margin-bottom:var(--space-4);}
+.diff-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-1);}
+.diff-bar-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full);}
+.diff-easy .diff-bar-fill{background:var(--color-success);}
+.diff-medium .diff-bar-fill{background:var(--color-gold);}
+.diff-hard .diff-bar-fill{background:var(--color-warning);}
+.diff-expert .diff-bar-fill{background:var(--color-error);}
+
+/* TIP / WARN BOX */
+.tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-primary);margin-bottom:var(--space-3);line-height:1.6;}
+.warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-warning);margin-bottom:var(--space-3);line-height:1.6;}
+
+/* CHECKPOINT TABLE */
+.cp-table-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
+.cp-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
+.cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:middle;}
+.cp-table tr:last-child td{border-bottom:none;}
+.cp-table tr:hover td{background:var(--color-surface-offset);}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
+.badge-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
+.badge-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-trailhead{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
+.badge-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
+
+/* MAP SVG */
+.map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
+.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-svg{width:100%;height:auto;max-height:520px;}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
+.tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
+.tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-3);}
+.tip-card h4{font-weight:700;margin-bottom:var(--space-2);}
+.tip-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-1);}
+.tip-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);padding-left:var(--space-4);position:relative;}
+.tip-card ul li::before{content:"·";position:absolute;left:var(--space-2);color:var(--color-text-faint);}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .site-header{padding:var(--space-3) var(--space-4);}
+  .main{padding:var(--space-6) var(--space-4);}
+  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
+  .tab-bar{padding:0 var(--space-4);}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .course-selector{gap:var(--space-2);}
+  .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
+}
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
+<meta content="assets/img/duryunsan/og.png" property="og:image"/><meta content="assets/img/duryunsan/og.png" name="twitter:image"/></head>
+<body>
+<a class="skip-link" href="#mainContent">본문 바로가기</a>
+<header class="hdr">
+<div class="logo">
+<svg aria-label="두륜산 플레이북" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<rect fill="var(--pri)" height="36" rx="8" width="36"></rect>
+<!-- 5 peaks silhouette -->
+<path d="M3 27 Q7 22 10 18 Q12 14 14 10 Q15.5 7 16 5 Q17 7 18 11 Q20 15 22 18 Q24 15 26 12 Q27.5 10 28 8 Q29 10 30 14 Q31 18 33 27" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="16" cy="5" fill="white" r="2.2"></circle>
+</svg>
+<span class="logo-txt">두륜산 플레이북</span>
+</div>
+<button aria-label="테마 전환" class="thm-btn" data-thm="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="assets/img/duryunsan/hero-640.avif 640w, assets/img/duryunsan/hero-1024.avif 1024w, assets/img/duryunsan/hero-1600.avif 1600w, assets/img/duryunsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/duryunsan/hero-640.webp 640w, assets/img/duryunsan/hero-1024.webp 1024w, assets/img/duryunsan/hero-1600.webp 1600w, assets/img/duryunsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="두륜산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Duryunsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/duryunsan/hero-1600.jpg" srcset="assets/img/duryunsan/hero-640.jpg 640w, assets/img/duryunsan/hero-1024.jpg 1024w, assets/img/duryunsan/hero-1600.jpg 1600w, assets/img/duryunsan/hero-2400.jpg 2400w"/>
+</picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="assets/video/duryunsan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="assets/video/duryunsan/hero.mp4" type="video/mp4"/>
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 두륜산 플레이북</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">두륜산 등산 플레이북</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+      대한민국 최고의 명산 중 하나인 두륜산도립공원 가이드. 초급, 중급, 고급 코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
+    </p>
+<!-- Course Selector Buttons -->
+<div class="course-selector">
+<button class="course-btn diff-btn beginner beginner active" onclick="selC('beginner',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급: 두륜산 케이블카~고계봉 코스</button>
+<button class="course-btn diff-btn intermediate intermediate" onclick="selC('intermediate',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급: 오소재~가련봉 최단 코스</button>
+<button class="course-btn diff-btn advanced advanced" onclick="selC('advanced',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급: 대흥사 일주 코스</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">정규송 Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
+<!-- ═══ 초급 ═══ -->
+<main class="wrap" id="mainContent">
+<div class="panel active beginner" id="course-beginner">
+<nav class="tabs">
+<button class="tab active" onclick="selT('beginner','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('beginner','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('beginner','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('beginner','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">0.6km</div><div class="sl">코스 길이</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">0h50m</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">638m</div><div class="sl">최고 고도</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±518m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~48</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 고도 프로파일 — 두륜산 케이블카~고계봉 코스</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="bg1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--suc)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--suc)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 152 C100 148 200 142 300 134 C370 128 430 120 500 110 C570 100 640 94 720 88 C780 84 840 80 900 76 L900 160Z" fill="url(#bg1)"></path>
+<path d="M0 152 C100 148 200 142 300 134 C370 128 430 120 500 110 C570 100 640 94 720 88 C780 84 840 80 900 76" fill="none" stroke="var(--suc)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="156">월정사 600m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="200" y="136">전나무숲길</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="490" y="104">오대천 계곡</text>
+<text fill="var(--suc)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="840" y="70">상원사 970m</text>
+<circle cx="900" cy="76" fill="var(--suc)" r="5"></circle>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
+<div class="flow"><span class="fn sk">케이블카 하부역사</span><span class="fa">→</span><span class="fn">케이블카 상부역사</span><span class="fa">→</span><span class="fn">고계봉 전망대</span><span class="fa">→</span><span class="fn pk">고계봉 정상</span><span class="fa">→</span><span class="fn sh">케이블카 상부역사 복귀</span></div>
+<div class="ic"><h2>코스 특징</h2><ul><li>케이블카 하부역사(120m)에서 상부역사(580m)까지 케이블카로 편안하게 오른 후, 약 280개의 목재 데크 계단을 따라 고계봉 전망대 및 정상(638m)까지 가볍게 올라가는 가족형 관광 및 산책 코스입니다.</li><li>⚠️ 전망대 데크 계단 결빙 시 미끄럼 주의</li><li>⚠️ 기상 악화(강풍, 낙뢰 등) 시 케이블카 운행 여부 사전 확인 필요</li></ul></div>
+</div><div class="tc" id="beginner-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">케이블카 하부역사 → 케이블카 상부역사</div><div class="acc-m">약 0.0km · 10분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">케이블카 하부역사에서 출발하여 케이블카 상부역사(해발 580m)로 향합니다. 하차 후 데크 로드 기점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 케이블카 상부역사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">케이블카 상부역사 → 고계봉 전망대</div><div class="acc-m">약 0.2km · 5분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">케이블카 상부역사에서 출발하여 고계봉 전망대(해발 630m)로 향합니다. 다도해 조망처. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 고계봉 전망대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">고계봉 전망대 → 고계봉 정상</div><div class="acc-m">약 0.0km · 10분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">고계봉 전망대에서 출발하여 고계봉 정상(해발 638m)로 향합니다. 두륜산 고계봉 정상석. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 고계봉 정상 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">고계봉 정상 → 케이블카 상부역사 복귀</div><div class="acc-m">약 0.3km · 4분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">고계봉 정상에서 출발하여 케이블카 상부역사 복귀(해발 580m)로 향합니다. 탑승지로 복귀. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 케이블카 상부역사 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+</div><div class="tc" id="beginner-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 준비물</h2><ul><li>등산화 또는 트레킹화</li><li>충분한 식수 (1L 이상)</li><li>계절별 방풍의/방한의</li><li>간단한 행동식(초콜릿, 견과류)</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><h2>대중교통 접근</h2><ul><li>해남종합버스터미널에서 대흥사행 농어촌버스(해남교통) 탑승 후 대흥사 종점(매표소 인근) 하차(약 25분 소요, 30분~1시간 간격 운행)</li><li>오소재 방면은 터미널에서 남창/완도행 군내버스 탑승 후 오소재쉼터 하차 또는 해남택시 이용 추천.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h2>추천 계절 &amp; 매력</h2><ul><li>봄철 대흥사 진입로 '십리숲길' 동백꽃과 벚꽃</li><li>가을철 오심재와 만일재의 은빛 억새 군락 및 단풍</li><li>겨울철 눈 덮인 주상절리 암릉과 다도해 설경</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h2>코스 안전 수칙</h2><ul><li>전망대 데크 계단 결빙 시 미끄럼 주의</li><li>기상 악화(강풍, 낙뢰 등) 시 케이블카 운행 여부 사전 확인 필요</li><li>동절기 산행 시 가파른 철계단 및 바위 구간 결빙으로 인한 미끄러짐 사고가 빈발하므로 반드시 아이젠과 방한 장비 휴대 요망</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🍱</div><h2>주변 편의 시설</h2><ul><li>주요 들머리: 대흥사 매표소 주차장 (전남 해남군 삼산면 대흥사길 400) 또는 오소재 쉼터 주차장 (전남 해남군 북일면 흥촌리 산119-1)</li><li>유네스코 세계문화유산인 대흥사는 서산대사의 의발이 전해지는 천년고찰로, 보물로 지정된 북미륵암 삼층석탑과 국보인 마애여래좌상 등 유서 깊은 문화유적을 만나볼 수 있습니다.</li><li>두륜봉 직전에 위치한 자연 석문인 '구름다리'는 두륜산의 대표적인 포토존이며, 가련봉 정상에서는 다도해의 비경을 사방으로 감상할 수 있습니다.</li><li>만일재 고개 인근 헬기장 옆에는 수령 1,200년이 넘은 거대한 '천년수' 느티나무가 보존되어 있어 쉼터로 적합합니다.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📱</div><h2>국립공원 안내</h2><ul><li>두륜산도립공원 사무소: 062-227-1187</li><li>정상 인증: 블랙야크 100대명산 (가련봉)</li><li>예약 시스템: reservation.knps.or.kr</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="beginner-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 두륜산 케이블카~고계봉 코스 개념도</h2>
+<svg style="width:100%;height:auto;max-height:400px" viewbox="0 0 680 380">
+<rect fill="var(--surfaceoff)" height="380" rx="12" width="680"></rect>
+<!-- ohdaecheon stream -->
+<path d="M60 330 C80 310 100 295 130 278 C160 262 190 248 220 235 C260 218 300 205 340 192 C390 176 440 163 500 152 C545 142 590 135 640 128" fill="none" stroke="var(--sky)" stroke-dasharray="5,4" stroke-opacity=".5" stroke-width="2"></path>
+<!-- trail -->
+<path d="M60 330 C82 312 108 298 140 282 C172 266 204 252 236 238 C276 220 316 207 356 194 C406 178 456 165 510 154 C556 144 600 137 645 130" fill="none" stroke="var(--suc)" stroke-linecap="round" stroke-width="4"></path>
+<!-- nodes -->
+<circle cx="60" cy="330" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="80" y="335">월정사 P 600m</text>
+<!-- jeonnamu forest -->
+<rect fill="var(--suchl)" height="26" rx="7" stroke="var(--suc)" stroke-width="1.5" width="72" x="62" y="280"></rect>
+<text fill="var(--suc)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="70" y="298">전나무숲 1km</text>
+<!-- woljeongsa -->
+<circle cx="130" cy="278" fill="var(--amber)" fill-opacity=".8" r="9" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--amber)" font-family="Satoshi,sans-serif" font-size="11" x="144" y="273">월정사 (사찰)</text>
+<!-- midpoint rest -->
+<circle cx="356" cy="194" fill="var(--surfdyn)" r="7" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="370" y="198">중간 쉼터</text>
+<!-- sangwonsa -->
+<circle cx="645" cy="130" fill="var(--suc)" r="16" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--suc)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="12" font-weight="800" x="560" y="116">상원사 970m</text>
+<!-- ohdaecheon label -->
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="10" x="180" y="258">오대천 계곡</text>
+<!-- distance markers -->
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="9" x="190" y="245">5km →</text>
+<!-- tree symbols -->
+<text font-size="20" x="75" y="275">🌲</text>
+<text font-size="16" x="100" y="255">🌲</text>
+<!-- compass -->
+<circle cx="628" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="625" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="628" x2="628" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="30" rx="7" stroke="var(--bor)" stroke-width="1" width="224" x="16" y="336"></rect>
+<line stroke="var(--suc)" stroke-width="3" x1="30" x2="52" y1="352" y2="352"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="356">선재길 탐방로 (10km)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody><tr><td>1</td><td>케이블카 하부역사</td><td>120m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>매표소 및 탑승지</td></tr><tr><td>2</td><td>케이블카 상부역사</td><td>580m</td><td>0.0km</td><td><span class="bdg b-te">사찰</span></td><td>하차 후 데크 로드 기점</td></tr><tr><td>3</td><td>고계봉 전망대</td><td>630m</td><td>0.25km</td><td><span class="bdg b-sk">일반</span></td><td>다도해 조망처</td></tr><tr><td>4</td><td>고계봉 정상</td><td>638m</td><td>0.3km</td><td><span class="bdg b-am">정상</span></td><td>두륜산 고계봉 정상석</td></tr><tr><td>5</td><td>케이블카 상부역사 복귀</td><td>580m</td><td>0.6km</td><td><span class="bdg b-st">도착</span></td><td>탑승지로 복귀</td></tr></tbody>
+</table>
+</div>
+</div></div></div>
+</div></div></main>
+<!-- ═══ 중급 ═══ -->
+<div class="panel intermediate" id="course-intermediate">
+<nav class="tabs">
+<button class="tab active" onclick="selT('intermediate','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('intermediate','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('intermediate','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('intermediate','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">5.2km</div><div class="sl">코스 길이</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">2h30m</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">703m</div><div class="sl">최고 고도</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±403m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~416</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 고도 프로파일 — 오소재~가련봉 최단 코스</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ig1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--pri)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--pri)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 148 C80 142 160 128 230 110 C285 95 330 76 365 56 C390 42 410 28 430 18 L450 12 C470 18 490 32 510 48 C540 68 575 88 618 108 C668 128 728 142 820 148 L900 150 L900 160Z" fill="url(#ig1)"></path>
+<path d="M0 148 C80 142 160 128 230 110 C285 95 330 76 365 56 C390 42 410 28 430 18 L450 12 C470 18 490 32 510 48 C540 68 575 88 618 108 C668 128 728 142 820 148" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="152">상원사 970m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="195" y="104">중대사자암</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="330" y="50">적멸보궁</text>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="415" y="8">비로봉 1,563m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="end" x="870" y="148">상원사</text>
+<circle cx="450" cy="12" fill="var(--pri)" r="5"></circle>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
+<div class="flow"><span class="fn sk">오소재약수터</span><span class="fa">→</span><span class="fn">오심재</span><span class="fa">→</span><span class="fn">노승봉</span><span class="fa">→</span><span class="fn pk">가련봉 정상</span><span class="fa">→</span><span class="fn">노승봉</span><span class="fa">→</span><span class="fn">오심재</span><span class="fa">→</span><span class="fn sh">오소재약수터 복귀</span></div>
+<div class="ic"><h2>코스 특징</h2><ul><li>오소재약수터(300m)에서 오심재(510m)까지는 완만하고 부드러운 숲길이지만, 오심재에서 노승봉(685m)과 정상 가련봉(703m)까지는 경사가 가파른 급경사 계단 및 로프가 가설된 암릉 지대입니다.</li><li>⚠️ 노승봉~가련봉 사이 암릉 구간 추락 및 낙상 위험</li><li>⚠️ 비 또는 눈이 내린 직후 암반 구간 매우 미끄러움</li></ul></div>
+</div><div class="tc" id="intermediate-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">오소재약수터 → 오심재</div><div class="acc-m">약 1.6km · 40분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">오소재약수터에서 출발하여 오심재(해발 510m)로 향합니다. 오소재~노승봉 사이 넓은 고개. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 오심재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">오심재 → 노승봉</div><div class="acc-m">약 0.6km · 15분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">오심재에서 출발하여 노승봉(해발 685m)로 향합니다. 해발 685m, 기암 절벽 조망점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 노승봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">노승봉 → 가련봉 정상</div><div class="acc-m">약 0.4km · 10분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">노승봉에서 출발하여 가련봉 정상(해발 703m)로 향합니다. 두륜산 최고봉 정상석. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 가련봉 정상 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">가련봉 정상 → 노승봉</div><div class="acc-m">약 0.4km · 6분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">가련봉 정상에서 출발하여 노승봉(해발 685m)로 향합니다. 하산길 재경유. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 노승봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">노승봉 → 오심재</div><div class="acc-m">약 0.6km · 9분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">노승봉에서 출발하여 오심재(해발 510m)로 향합니다. 오심재 회귀. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 오심재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">오심재 → 오소재약수터 복귀</div><div class="acc-m">약 1.6km · 24분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">오심재에서 출발하여 오소재약수터 복귀(해발 300m)로 향합니다. 하산 완료 및 원점회귀. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 오소재약수터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+</div><div class="tc" id="intermediate-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 준비물</h2><ul><li>등산화 또는 트레킹화</li><li>충분한 식수 (1L 이상)</li><li>계절별 방풍의/방한의</li><li>간단한 행동식(초콜릿, 견과류)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>대중교통 접근</h2><ul><li>해남종합버스터미널에서 대흥사행 농어촌버스(해남교통) 탑승 후 대흥사 종점(매표소 인근) 하차(약 25분 소요, 30분~1시간 간격 운행)</li><li>오소재 방면은 터미널에서 남창/완도행 군내버스 탑승 후 오소재쉼터 하차 또는 해남택시 이용 추천.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">❄</div><h2>추천 계절 &amp; 매력</h2><ul><li>봄철 대흥사 진입로 '십리숲길' 동백꽃과 벚꽃</li><li>가을철 오심재와 만일재의 은빛 억새 군락 및 단풍</li><li>겨울철 눈 덮인 주상절리 암릉과 다도해 설경</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h2>코스 안전 수칙</h2><ul><li>노승봉~가련봉 사이 암릉 구간 추락 및 낙상 위험</li><li>비 또는 눈이 내린 직후 암반 구간 매우 미끄러움</li><li>동절기 산행 시 가파른 철계단 및 바위 구간 결빙으로 인한 미끄러짐 사고가 빈발하므로 반드시 아이젠과 방한 장비 휴대 요망</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h2>주변 편의 시설</h2><ul><li>주요 들머리: 대흥사 매표소 주차장 (전남 해남군 삼산면 대흥사길 400) 또는 오소재 쉼터 주차장 (전남 해남군 북일면 흥촌리 산119-1)</li><li>유네스코 세계문화유산인 대흥사는 서산대사의 의발이 전해지는 천년고찰로, 보물로 지정된 북미륵암 삼층석탑과 국보인 마애여래좌상 등 유서 깊은 문화유적을 만나볼 수 있습니다.</li><li>두륜봉 직전에 위치한 자연 석문인 '구름다리'는 두륜산의 대표적인 포토존이며, 가련봉 정상에서는 다도해의 비경을 사방으로 감상할 수 있습니다.</li><li>만일재 고개 인근 헬기장 옆에는 수령 1,200년이 넘은 거대한 '천년수' 느티나무가 보존되어 있어 쉼터로 적합합니다.</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><h2>국립공원 안내</h2><ul><li>두륜산도립공원 사무소: 062-227-1187</li><li>정상 인증: 블랙야크 100대명산 (가련봉)</li><li>예약 시스템: reservation.knps.or.kr</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="intermediate-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 오소재~가련봉 최단 코스 개념도</h2>
+<svg style="width:100%;height:auto;max-height:480px" viewbox="0 0 680 460">
+<rect fill="var(--surfaceoff)" height="460" rx="12" width="680"></rect>
+<path d="M120 400 Q160 280 240 200 Q300 140 360 90" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M360 90 Q400 130 430 180 Q460 238 480 300 Q490 340 490 390" fill="none" stroke="var(--pri)" stroke-dasharray="7,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- mountain bg -->
+<path d="M90 340 Q200 180 360 80 Q520 180 610 340" fill="var(--surfdyn)" fill-opacity=".2" stroke="none"></path>
+<!-- nodes -->
+<circle cx="120" cy="400" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="140" y="405">상원사 주차장 P</text>
+<circle cx="145" cy="365" fill="var(--amber)" fill-opacity=".8" r="9" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--amber)" font-family="Satoshi,sans-serif" font-size="11" x="160" y="360">상원사 (국보 동종)</text>
+<circle cx="196" cy="296" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="212" y="300">중대사자암</text>
+<circle cx="262" cy="210" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="278" y="206">적멸보궁 1,400m</text>
+<circle cx="360" cy="90" fill="var(--pri)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="382" y="83">비로봉</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="382" y="98">1,563m ★</text>
+<!-- return path node -->
+<circle cx="490" cy="390" fill="var(--sky)" r="13" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="420" y="412">상원사 귀환 P</text>
+<!-- jungmok (주목) -->
+<text fill="var(--suc)" font-family="Satoshi,sans-serif" font-size="11" x="310" y="125">주목 군락지</text>
+<!-- compass -->
+<circle cx="628" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="625" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="628" x2="628" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="30" rx="7" stroke="var(--bor)" stroke-width="1" width="224" x="16" y="420"></rect>
+<line stroke="var(--pri)" stroke-width="3.5" x1="30" x2="52" y1="436" y2="436"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="440">등정로</text>
+<line stroke="var(--pri)" stroke-dasharray="5,3" stroke-width="2.5" x1="130" x2="152" y1="436" y2="436"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="160" y="440">하산로</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody><tr><td>1</td><td>오소재약수터</td><td>300m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>등산로 입구 및 주차장</td></tr><tr><td>2</td><td>오심재</td><td>510m</td><td>1.6km</td><td><span class="bdg b-sk">쉼터</span></td><td>오소재~노승봉 사이 넓은 고개</td></tr><tr><td>3</td><td>노승봉</td><td>685m</td><td>2.2km</td><td><span class="bdg b-sk">일반</span></td><td>해발 685m, 기암 절벽 조망점</td></tr><tr><td>4</td><td>가련봉 정상</td><td>703m</td><td>2.6km</td><td><span class="bdg b-am">정상</span></td><td>두륜산 최고봉 정상석</td></tr><tr><td>5</td><td>노승봉</td><td>685m</td><td>3.0km</td><td><span class="bdg b-sk">일반</span></td><td>하산길 재경유</td></tr><tr><td>6</td><td>오심재</td><td>510m</td><td>3.6km</td><td><span class="bdg b-sk">쉼터</span></td><td>오심재 회귀</td></tr><tr><td>7</td><td>오소재약수터 복귀</td><td>300m</td><td>5.2km</td><td><span class="bdg b-st">도착</span></td><td>하산 완료 및 원점회귀</td></tr></tbody>
+</table>
+</div>
+</div></div></div>
+</div>
+</div>
+<!-- ═══ 고급 ═══ -->
+<div class="panel advanced" id="course-advanced">
+<nav class="tabs">
+<button class="tab active" onclick="selT('advanced','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('advanced','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('advanced','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('advanced','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">5.85km</div><div class="sl">코스 길이</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">4h30m</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">703m</div><div class="sl">최고 고도</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±563m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~468</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 고도 프로파일 — 대흥사 일주 코스 (공식 1코스)</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ag1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--warn)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--warn)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 148 C50 140 100 130 150 118 C185 108 210 95 235 78 C252 66 265 50 278 35 L288 22 C298 30 308 44 320 60 C338 82 358 102 382 118 C404 132 428 142 452 148 C472 152 490 154 508 152 C526 148 545 140 562 126 C578 114 590 98 604 82 C618 66 630 52 642 40 L652 28 C662 38 672 55 684 74 C698 96 714 118 732 134 C752 148 776 156 810 158 L900 160 L900 160Z" fill="url(#ag1)"></path>
+<path d="M0 148 C50 140 100 130 150 118 C185 108 210 95 235 78 C252 66 265 50 278 35 L288 22 C298 30 308 44 320 60 C338 82 358 102 382 118 C404 132 428 142 452 148 C472 152 490 154 508 152 C526 148 545 140 562 126 C578 114 590 98 604 82 C618 66 630 52 642 40 L652 28 C662 38 672 55 684 74 C698 96 714 118 732 134 C752 148 776 156 810 158" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="5" y="152">상원사 970m</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="264" y="17">비로봉 1,563m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="370" y="112">상왕봉 1,491m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="490" y="146">두로령</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="582" y="120">두로봉</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="635" y="23">동대산 1,434m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="870" y="155">상원사(동피골)</text>
+<circle cx="288" cy="22" fill="var(--warn)" r="4"></circle>
+<circle cx="652" cy="28" fill="var(--warn)" r="4"></circle>
+<line stroke="var(--faint)" stroke-dasharray="4,4" stroke-width="1" x1="452" x2="452" y1="10" y2="170"></line>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="8" x="350" y="12">비로봉 구간</text>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="8" x="460" y="12">동대산 구간</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
+<div class="flow"><span class="fn sk">대웅전</span><span class="fa">→</span><span class="fn">북미륵암</span><span class="fa">→</span><span class="fn">오심재</span><span class="fa">→</span><span class="fn">노승봉</span><span class="fa">→</span><span class="fn pk">가련봉 정상</span><span class="fa">→</span><span class="fn">만일재</span><span class="fa">→</span><span class="fn">두륜봉</span><span class="fa">→</span><span class="fn">진불암</span><span class="fa">→</span><span class="fn sh">표충사</span></div>
+<div class="ic"><h2>코스 특징</h2><ul><li>대흥사 대웅전(140m)에서 완만하게 시작하여 북미륵암(380m)과 오심재(510m)를 거친 후 노승봉과 가련봉(703m)까지 급격하게 고도를 높입니다. 이후 만일재(560m)로 하강한 다음, 두륜봉(630m)까지 다시 오르막길을 탄 뒤 진불암을 거쳐 표충사(140m)로 급경사를 내려오는 난이도 높은 종주 경로입니다.</li><li>⚠️ 가련봉과 두륜봉 부근 암릉 지대의 가파른 계단 및 쇠줄 난간 구간 추락 주의</li><li>⚠️ 만일재에서 진불암 방향 하산로 너덜지대 발목 부상 유의</li></ul></div>
+</div><div class="tc" id="advanced-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">대웅전 → 북미륵암</div><div class="acc-m">약 1.6km · 40분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">대웅전에서 출발하여 북미륵암(해발 380m)로 향합니다. 국보 마애여래좌상 소재 사찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 북미륵암 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">북미륵암 → 오심재</div><div class="acc-m">약 0.7km · 17분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">북미륵암에서 출발하여 오심재(해발 510m)로 향합니다. 오심재 고개 합류. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 오심재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">오심재 → 노승봉</div><div class="acc-m">약 0.6km · 15분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">오심재에서 출발하여 노승봉(해발 685m)로 향합니다. 암릉 능선 시작. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 노승봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">노승봉 → 가련봉 정상</div><div class="acc-m">약 0.2km · 5분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">노승봉에서 출발하여 가련봉 정상(해발 703m)로 향합니다. 두륜산 최고봉 정상 도달. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 가련봉 정상 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">가련봉 정상 → 만일재</div><div class="acc-m">약 0.4km · 6분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">가련봉 정상에서 출발하여 만일재(해발 560m)로 향합니다. 가련봉~두륜봉 사이 억새 안부. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 만일재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">만일재 → 두륜봉</div><div class="acc-m">약 0.3km · 7분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">만일재에서 출발하여 두륜봉(해발 630m)로 향합니다. 명물 구름다리(석문) 지점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 두륜봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">두륜봉 → 진불암</div><div class="acc-m">약 1.0km · 15분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">두륜봉에서 출발하여 진불암(해발 350m)로 향합니다. 고즈넉한 암자 경내 통과. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 진불암 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">8</span><div class="acc-tw"><div class="acc-t">진불암 → 표충사</div><div class="acc-m">약 1.0km · 15분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">진불암에서 출발하여 표충사(해발 140m)로 향합니다. 하산 종점 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 표충사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+</div><div class="tc" id="advanced-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 준비물</h2><ul><li>등산화 또는 트레킹화</li><li>충분한 식수 (1L 이상)</li><li>계절별 방풍의/방한의</li><li>간단한 행동식(초콜릿, 견과류)</li><li>등산 스틱 (장거리 보행 보조)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>대중교통 접근</h2><ul><li>해남종합버스터미널에서 대흥사행 농어촌버스(해남교통) 탑승 후 대흥사 종점(매표소 인근) 하차(약 25분 소요, 30분~1시간 간격 운행)</li><li>오소재 방면은 터미널에서 남창/완도행 군내버스 탑승 후 오소재쉼터 하차 또는 해남택시 이용 추천.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📡</div><h2>추천 계절 &amp; 매력</h2><ul><li>봄철 대흥사 진입로 '십리숲길' 동백꽃과 벚꽃</li><li>가을철 오심재와 만일재의 은빛 억새 군락 및 단풍</li><li>겨울철 눈 덮인 주상절리 암릉과 다도해 설경</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h2>코스 안전 수칙</h2><ul><li>가련봉과 두륜봉 부근 암릉 지대의 가파른 계단 및 쇠줄 난간 구간 추락 주의</li><li>만일재에서 진불암 방향 하산로 너덜지대 발목 부상 유의</li><li>동절기 산행 시 가파른 철계단 및 바위 구간 결빙으로 인한 미끄러짐 사고가 빈발하므로 반드시 아이젠과 방한 장비 휴대 요망</li></ul></div>
+<div class="tc-card"><div class="tc-icon">💪</div><h2>주변 편의 시설</h2><ul><li>주요 들머리: 대흥사 매표소 주차장 (전남 해남군 삼산면 대흥사길 400) 또는 오소재 쉼터 주차장 (전남 해남군 북일면 흥촌리 산119-1)</li><li>유네스코 세계문화유산인 대흥사는 서산대사의 의발이 전해지는 천년고찰로, 보물로 지정된 북미륵암 삼층석탑과 국보인 마애여래좌상 등 유서 깊은 문화유적을 만나볼 수 있습니다.</li><li>두륜봉 직전에 위치한 자연 석문인 '구름다리'는 두륜산의 대표적인 포토존이며, 가련봉 정상에서는 다도해의 비경을 사방으로 감상할 수 있습니다.</li><li>만일재 고개 인근 헬기장 옆에는 수령 1,200년이 넘은 거대한 '천년수' 느티나무가 보존되어 있어 쉼터로 적합합니다.</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><h2>국립공원 안내</h2><ul><li>두륜산도립공원 사무소: 062-227-1187</li><li>정상 인증: 블랙야크 100대명산 (가련봉)</li><li>예약 시스템: reservation.knps.or.kr</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="advanced-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 대흥사 일주 코스 (공식 1코스) 개념도</h2>
+<svg style="width:100%;height:auto;max-height:540px" viewbox="0 0 820 520">
+<rect fill="var(--surfaceoff)" height="520" rx="12" width="820"></rect>
+<!-- circular ridge concept -->
+<ellipse cx="390" cy="260" fill="none" rx="250" ry="190" stroke="var(--surfdyn)" stroke-dasharray="10,8" stroke-width="1.5"></ellipse>
+<!-- trail from sangwonsa up to biro -->
+<path d="M200 440 Q210 405 224 368 Q240 330 258 296 Q276 262 295 230 Q314 200 332 175 Q350 150 362 128" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="4"></path>
+<!-- biro to holyeong to sangwang -->
+<path d="M362 128 Q390 122 418 128 Q440 136 456 155 Q472 174 478 196" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- sangwang to durog -->
+<path d="M478 196 Q490 220 496 248 Q500 272 498 298" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- durog to durobong to dongdaesan -->
+<path d="M498 298 Q504 326 508 355 Q510 378 510 400 Q518 390 530 372 Q548 346 564 322 Q580 298 598 276 Q614 256 628 238 Q644 220 656 202 Q666 186 672 170" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3"></path>
+<!-- dongdaesan down to dongpigol and back to sangwonsa -->
+<path d="M672 170 Q680 190 684 214 Q688 240 688 268 Q684 302 674 332 Q660 365 640 395 Q618 422 590 444" fill="none" stroke="var(--warn)" stroke-dasharray="7,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- return along seonjae-gil -->
+<path d="M590 444 Q560 448 530 448 Q490 446 450 444 Q390 442 340 444 Q290 448 250 448 L200 448" fill="none" stroke="var(--pri)" stroke-dasharray="5,3" stroke-linecap="round" stroke-opacity=".7" stroke-width="2"></path>
+<!-- nodes -->
+<circle cx="200" cy="440" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="220" y="445">상원사 주차장 P</text>
+<circle cx="362" cy="128" fill="var(--warn)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="295" y="118">비로봉 1,563m</text>
+<!-- holyeong -->
+<circle cx="390" cy="115" fill="var(--warn)" fill-opacity=".7" r="10" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="middle" x="390" y="105">호령봉 1,561m</text>
+<!-- sangwang -->
+<circle cx="478" cy="196" fill="var(--pri)" r="13" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="494" y="190">상왕봉 1,491m</text>
+<!-- durognyeong -->
+<circle cx="498" cy="298" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="512" y="302">두로령 탈출 ↓</text>
+<!-- durobong -->
+<circle cx="510" cy="400" fill="var(--pri)" r="13" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="526" y="404">두로봉 1,422m</text>
+<!-- sinsonmogi -->
+<circle cx="622" cy="240" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="638" y="244">신선목이</text>
+<!-- chadolbaegi -->
+<circle cx="654" cy="200" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="668" y="196">차돌백이</text>
+<!-- dongdaesan -->
+<circle cx="672" cy="170" fill="var(--warn)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="12" font-weight="800" x="690" y="163">동대산 1,434m</text>
+<!-- dongpigol -->
+<circle cx="590" cy="444" fill="var(--pri)" fill-opacity=".8" r="10" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" x="530" y="462">동피골 → 선재길 귀환</text>
+<!-- compass -->
+<circle cx="766" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="763" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="766" x2="766" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="44" rx="7" stroke="var(--bor)" stroke-width="1" width="270" x="16" y="468"></rect>
+<line stroke="var(--warn)" stroke-width="3.5" x1="30" x2="52" y1="484" y2="484"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="488">5봉 환종주 주능선</text>
+<line stroke="var(--pri)" stroke-dasharray="5,3" stroke-width="2.5" x1="30" x2="52" y1="503" y2="503"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="507">선재길 복귀 (동피골~상원사)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (환종주)</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody><tr><td>1</td><td>대웅전</td><td>140m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>대흥사 대웅전 앞 출발 기점</td></tr><tr><td>2</td><td>북미륵암</td><td>380m</td><td>1.6km</td><td><span class="bdg b-te">사찰</span></td><td>국보 마애여래좌상 소재 사찰</td></tr><tr><td>3</td><td>오심재</td><td>510m</td><td>2.3km</td><td><span class="bdg b-sk">쉼터</span></td><td>오심재 고개 합류</td></tr><tr><td>4</td><td>노승봉</td><td>685m</td><td>2.9km</td><td><span class="bdg b-sk">일반</span></td><td>암릉 능선 시작</td></tr><tr><td>5</td><td>가련봉 정상</td><td>703m</td><td>3.1km</td><td><span class="bdg b-am">정상</span></td><td>두륜산 최고봉 정상 도달</td></tr><tr><td>6</td><td>만일재</td><td>560m</td><td>3.5km</td><td><span class="bdg b-sk">쉼터</span></td><td>가련봉~두륜봉 사이 억새 안부</td></tr><tr><td>7</td><td>두륜봉</td><td>630m</td><td>3.8km</td><td><span class="bdg b-sk">일반</span></td><td>명물 구름다리(석문) 지점</td></tr><tr><td>8</td><td>진불암</td><td>350m</td><td>4.8km</td><td><span class="bdg b-te">사찰</span></td><td>고즈넉한 암자 경내 통과</td></tr><tr><td>9</td><td>표충사</td><td>140m</td><td>5.85km</td><td><span class="bdg b-st">도착</span></td><td>하산 종점 완료</td></tr></tbody>
+</table>
+</div>
+</div></div></div>
+</div>
+</div>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;"><span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 두륜산의 사계 &amp; 명소</h2>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="두륜산 가련봉 정상 조망 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@daejeung' target='_blank' rel='noopener'&amp;gt;대정 김&amp;lt;/a&amp;gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/duryunsan/g1.avif" type="image/avif"/>
+<source srcset="assets/img/duryunsan/g1.webp" type="image/webp"/>
+<img alt="두륜산 두륜산 가련봉 정상 조망" class="gallery-img" decoding="async" loading="lazy" src="assets/img/duryunsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">두륜산 가련봉 정상 조망</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="두륜산 대흥사 전경 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@henry-acevedo-382866382' target='_blank' rel='noopener'&amp;gt;Henry Acevedo&amp;lt;/a&amp;gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/duryunsan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/duryunsan/g2.webp" type="image/webp"/>
+<img alt="두륜산 두륜산 대흥사 전경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/duryunsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">두륜산 대흥사 전경</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="두륜산 케이블카와 전망대 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@daejeung' target='_blank' rel='noopener'&amp;gt;대정 김&amp;lt;/a&amp;gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/duryunsan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/duryunsan/g3.webp" type="image/webp"/>
+<img alt="두륜산 두륜산 케이블카와 전망대" class="gallery-img" decoding="async" loading="lazy" src="assets/img/duryunsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">두륜산 케이블카와 전망대</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="두륜산 남해 바다 조망 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@timepro-tv-2148736540' target='_blank' rel='noopener'&amp;gt;TimePRO TV&amp;lt;/a&amp;gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/duryunsan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/duryunsan/g4.webp" type="image/webp"/>
+<img alt="두륜산 두륜산 남해 바다 조망" class="gallery-img" decoding="async" loading="lazy" src="assets/img/duryunsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">두륜산 남해 바다 조망</span>
+</div>
+</button>
+</div>
+</section>
+<footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
+<p style="font-size:var(--xs);color:var(--muted)">두륜산도립공원 공식 정보 기준. 산행 전 국립공원공단 예약시스템(reservation.knps.or.kr)과 기상 정보를 반드시 확인하세요. 두륜산도립공원 사무소: 062-227-1187</p>
+</footer>
+<script>
+(function(){
+  const t=document.querySelector("[data-thm]"),r=document.documentElement;
+  let d=r.getAttribute("data-theme")||"dark"; setIco(d);
+  if(t)t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);setIco(d)});
+  function setIco(th){if(!t)return;t.innerHTML=th==="dark"?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+})();
+function selC(lv,btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".cs-btn").forEach(b=>b.classList.remove("ab","ai","aa"));
+  document.getElementById("course-"+lv).classList.add("active");
+  btn.classList.add(lv==="beginner"?"ab":lv==="intermediate"?"ai":"aa");
+  const p=document.getElementById("course-"+lv);
+  p.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("active",i===0));
+  p.querySelectorAll(".tc").forEach((c,i)=>c.classList.toggle("active",i===0));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function selT(c,t,btn){
+  const p=document.getElementById("course-"+c);
+  p.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+  p.querySelectorAll(".tc").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(c+"-"+t).classList.add("active");
+}
+function togAcc(h){h.parentElement.classList.toggle("open")}
+document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script>
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script>
+<!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+</body>
+</html>

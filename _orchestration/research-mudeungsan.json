@@ -1,0 +1,114 @@
+{
+  "id": "mudeungsan",
+  "name_ko": "무등산",
+  "name_en": "Mudeungsan",
+  "region": "광주",
+  "park": "무등산국립공원",
+  "summit": {
+    "name": "천왕봉/서석대",
+    "alt_m": 1187,
+    "source": [
+      "https://mudeung.knps.or.kr",
+      "https://ko.wikipedia.org/wiki/%EB%AC%B4%EB%93%B1%EC%82%B0"
+    ]
+  },
+  "courses": [
+    {
+      "level": "beginner",
+      "name": "당산나무 코스 (증심사~중머리재 원점회귀)",
+      "distance_km": 8.0,
+      "time": "3h10m",
+      "difficulty": "초급",
+      "checkpoints": [
+        {"name": "증심사 탐방지원센터", "alt_m": 150, "cum_km": 0.0, "note": "산행 기점, 공원 안내소"},
+        {"name": "증심사", "alt_m": 220, "cum_km": 0.9, "note": "천년고찰"},
+        {"name": "당산나무", "alt_m": 350, "cum_km": 2.3, "note": "수령 500년 보호수"},
+        {"name": "중머리재", "alt_m": 617, "cum_km": 4.0, "note": "넓은 평지 고개, 1차 기점"},
+        {"name": "당산나무 복귀", "alt_m": 350, "cum_km": 5.7, "note": "하산길 경유"},
+        {"name": "증심사 탐방지원센터 복귀", "alt_m": 150, "cum_km": 8.0, "note": "원점회귀 완료"}
+      ],
+      "elevation_profile": "증심사입구(150m)에서 당산나무(350m)까지는 경사가 완만하나, 이후 중머리재(617m)까지는 돌길이 이어지며 고도가 가파르게 상승합니다.",
+      "hazards": [
+        "당산나무 이후 돌너덜지대 미끄러짐 주의",
+        "중머리재 부근 바람 강함"
+      ],
+      "source": [
+        "https://www.knps.or.kr/portal/main/contents.do?menuNo=7020015"
+      ]
+    },
+    {
+      "level": "intermediate",
+      "name": "새인봉-입석대 코스 (증심교~새인봉~장불재~입석대~서석대)",
+      "distance_km": 12.4,
+      "time": "6h00m",
+      "difficulty": "중급",
+      "checkpoints": [
+        {"name": "증심사 탐방지원센터", "alt_m": 150, "cum_km": 0.0, "note": "기점 출발"},
+        {"name": "새인봉", "alt_m": 490, "cum_km": 2.2, "note": "기암절벽 조망점"},
+        {"name": "서인봉", "alt_m": 611, "cum_km": 3.1, "note": "중머리재 직전 봉우리"},
+        {"name": "장불재", "alt_m": 900, "cum_km": 5.0, "note": "쉼터 및 대피소, 주상절리 조망처"},
+        {"name": "입석대", "alt_m": 1017, "cum_km": 5.4, "note": "주상절리대 (천연기념물)"},
+        {"name": "서석대", "alt_m": 1100, "cum_km": 5.9, "note": "일반인 등반 최고점"},
+        {"name": "중머리재", "alt_m": 617, "cum_km": 8.4, "note": "하산 능선길 합류점"},
+        {"name": "증심사 탐방지원센터 복귀", "alt_m": 150, "cum_km": 12.4, "note": "하산 완료"}
+      ],
+      "elevation_profile": "새인봉까지 가파른 계단과 능선길을 타고 오른 뒤, 서인봉과 장불재(900m)를 지나 서석대(1100m)까지 꾸준한 급경사가 이어집니다.",
+      "hazards": [
+        "새인봉 급경사 철계단 및 난간 구간 주의",
+        "서석대 부근 겨울철 상습 결빙 및 강풍"
+      ],
+      "source": [
+        "https://www.knps.or.kr/portal/main/contents.do?menuNo=7020015"
+      ]
+    },
+    {
+      "level": "advanced",
+      "name": "원효사-규봉암 코스 (원효사~꼬막재~규봉암~장불재~서석대 종주)",
+      "distance_km": 14.6,
+      "time": "7h00m",
+      "difficulty": "고급",
+      "checkpoints": [
+        {"name": "원효사 탐방지원센터", "alt_m": 380, "cum_km": 0.0, "note": "원효사 기점 출발"},
+        {"name": "꼬막재", "alt_m": 738, "cum_km": 2.0, "note": "완만한 흙길 고개"},
+        {"name": "신선대 입구", "alt_m": 850, "cum_km": 4.1, "note": "능선 합류부"},
+        {"name": "규봉암 (광석대)", "alt_m": 950, "cum_km": 5.6, "note": "암벽 아래 천년암자, 3대 석경"},
+        {"name": "장불재", "alt_m": 900, "cum_km": 7.4, "note": "억새 평원 교차점"},
+        {"name": "서석대", "alt_m": 1100, "cum_km": 8.3, "note": "일반 최고점 도달"},
+        {"name": "목교", "alt_m": 990, "cum_km": 8.8, "note": "옛길 갈림길"},
+        {"name": "원효사 탐방지원센터 복귀", "alt_m": 380, "cum_km": 14.6, "note": "원효사 옛길 하산 완료"}
+      ],
+      "elevation_profile": "원효사(380m)에서 규봉암(950m)까지는 비교적 완만한 능선길이나, 장불재를 경유해 서석대(1100m)로 향하는 구간 및 옛길 하산로는 급경사 너덜지대입니다.",
+      "hazards": [
+        "14.6km 장거리 산행에 따른 체력 분배 조절 필요",
+        "규봉암 부근 낙석 및 너덜지대 주의"
+      ],
+      "source": [
+        "https://www.knps.or.kr/portal/main/contents.do?menuNo=7020015"
+      ]
+    }
+  ],
+  "transport": {
+    "by_transit": "광주 도시철도 1호선 학동·증심사입구역 하차 후 버스 환승(09, 50, 51, 54번 등 승차 후 증심사지구 종점 하차, 약 10분 소요). 원효사 지구 이동 시 광주역 또는 종합버스터미널에서 1187번 버스 승차 후 원효사 종점 하차.",
+    "trailhead_access": "증심사 탐방지원센터 (광주 동구 증심사길 160) 또는 원효사 탐방지원센터 (광주 북구 무등로 1550)",
+    "source": [
+      "http://bus.gwangju.go.kr",
+      "https://mudeung.knps.or.kr"
+    ]
+  },
+  "season": {
+    "highlights": "봄철 철쭉(바랑재), 여름철 시원한 계곡길, 가을철 억새(장불재·백마능선), 겨울철 서석대·입석대 주상절리 상고대(설화)",
+    "cautions": "동절기 주상절리 일대 빙판길 미끄러짐 및 강풍 대비 방한림 필수 지참"
+  },
+  "tips": [
+    "무등산 정상부(인왕봉 등)는 평시 군사시설 보호구역으로 출입 금지이나, 지자체 및 군부대 협의에 따라 매년 특정일에 한해 개방하므로 일정 사전 확인이 필요합니다.",
+    "광주 시내버스 1187번은 무등산의 해발 높이(1187m)를 기념하여 명명된 노선번호입니다."
+  ],
+  "uncertainties": [
+    "코스별 거리는 스마트폰 GPS 기록이나 안내판 표기 방법에 따라 약 500m 내외의 편차가 있을 수 있습니다."
+  ],
+  "all_sources": [
+    "국립공원공단 무등산국립공원 탐방코스 가이드 (knps.or.kr)",
+    "광주광역시 버스정보시스템 (bus.gwangju.go.kr)",
+    "대한민국 구석구석 (korean.visitkorea.or.kr)"
+  ]
+}

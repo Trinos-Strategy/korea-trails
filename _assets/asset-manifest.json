@@ -618,6 +618,122 @@
       "purpose": "Fallback poster and mobile background image for Yushan playbook hero",
       "source": "Copy of actual hero photo",
       "ai_generated": false
+    },
+    {
+      "id": "og-mudeungsan",
+      "path": "assets/img/mudeungsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Mudeungsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-mudeungsan",
+      "path": "assets/video/mudeungsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Mudeungsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1102746
+    },
+    {
+      "id": "hero-poster-mudeungsan",
+      "path": "assets/video/mudeungsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Mudeungsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
+      "id": "og-chiaksan",
+      "path": "assets/img/chiaksan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Chiaksan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-chiaksan",
+      "path": "assets/video/chiaksan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Chiaksan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1250640
+    },
+    {
+      "id": "hero-poster-chiaksan",
+      "path": "assets/video/chiaksan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Chiaksan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
+      "id": "og-duryunsan",
+      "path": "assets/img/duryunsan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Duryunsan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-duryunsan",
+      "path": "assets/video/duryunsan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Duryunsan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1419112
+    },
+    {
+      "id": "hero-poster-duryunsan",
+      "path": "assets/video/duryunsan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Duryunsan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
+      "id": "og-minjusan",
+      "path": "assets/img/minjusan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Minjusan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-minjusan",
+      "path": "assets/video/minjusan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Minjusan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1649101
+    },
+    {
+      "id": "hero-poster-minjusan",
+      "path": "assets/video/minjusan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Minjusan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     }
   ]
 }

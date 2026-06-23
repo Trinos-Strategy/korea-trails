@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="ko">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>무등산 등산 플레이북</title>
+<meta content="대한민국 최고의 명산 중 하나인 무등산국립공원 가이드. 초급, 중급, 고급 코스의 상세 경로, 실사 지도 및 팁을 제공합니다." name="description"/>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link href="assets/css/design-system.css" rel="stylesheet"/>
+<style>
+/* COURSE SELECTOR */
+.course-selector {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.course-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.course-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.course-btn.active.beginner, .course-btn.active-beginner {
+  background: var(--success-highlight);
+  color: var(--success);
+  border-color: var(--success);
+}
+.course-btn.active.intermediate, .course-btn.active-intermediate {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.course-btn.active.advanced, .course-btn.active-advanced {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.intermediate .section-title-icon{background:var(--color-gold-highlight);}
+.advanced .section-title-icon{background:var(--color-warning-highlight);}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);}
+.acc-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
+.acc-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-5);cursor:pointer;user-select:none;width:100%;text-align:left;}
+.acc-header:hover{background:var(--color-surface-offset);}
+.acc-num{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;flex-shrink:0;}
+.beginner .acc-num{background:var(--color-success-highlight);color:var(--color-success);}
+.intermediate .acc-num{background:var(--color-gold-highlight);color:var(--color-gold);}
+.advanced .acc-num{background:var(--color-warning-highlight);color:var(--color-warning);}
+.acc-title-wrap{flex:1;}
+.acc-title{font-weight:700;font-size:var(--text-base);line-height:1.3;}
+.acc-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px;}
+.acc-chevron{color:var(--color-text-faint);transition:transform var(--transition);flex-shrink:0;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--color-divider);}
+.acc-item.open .acc-body{display:block;}
+.acc-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-4);}
+
+/* DIFF BAR */
+.diff-bar-wrap{margin-bottom:var(--space-4);}
+.diff-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-1);}
+.diff-bar-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full);}
+.diff-easy .diff-bar-fill{background:var(--color-success);}
+.diff-medium .diff-bar-fill{background:var(--color-gold);}
+.diff-hard .diff-bar-fill{background:var(--color-warning);}
+.diff-expert .diff-bar-fill{background:var(--color-error);}
+
+/* TIP / WARN BOX */
+.tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-primary);margin-bottom:var(--space-3);line-height:1.6;}
+.warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-warning);margin-bottom:var(--space-3);line-height:1.6;}
+
+/* CHECKPOINT TABLE */
+.cp-table-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
+.cp-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
+.cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:middle;}
+.cp-table tr:last-child td{border-bottom:none;}
+.cp-table tr:hover td{background:var(--color-surface-offset);}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
+.badge-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
+.badge-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-trailhead{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
+.badge-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
+
+/* MAP SVG */
+.map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
+.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-svg{width:100%;height:auto;max-height:520px;}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
+.tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
+.tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-3);}
+.tip-card h4{font-weight:700;margin-bottom:var(--space-2);}
+.tip-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-1);}
+.tip-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);padding-left:var(--space-4);position:relative;}
+.tip-card ul li::before{content:"·";position:absolute;left:var(--space-2);color:var(--color-text-faint);}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .site-header{padding:var(--space-3) var(--space-4);}
+  .main{padding:var(--space-6) var(--space-4);}
+  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
+  .tab-bar{padding:0 var(--space-4);}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .course-selector{gap:var(--space-2);}
+  .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
+}
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
+<meta content="assets/img/mudeungsan/og.png" property="og:image"/><meta content="assets/img/mudeungsan/og.png" name="twitter:image"/></head>
+<body>
+<a class="skip-link" href="#mainContent">본문 바로가기</a>
+<header class="hdr">
+<div class="logo">
+<svg aria-label="무등산 플레이북" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<rect fill="var(--pri)" height="36" rx="8" width="36"></rect>
+<!-- 5 peaks silhouette -->
+<path d="M3 27 Q7 22 10 18 Q12 14 14 10 Q15.5 7 16 5 Q17 7 18 11 Q20 15 22 18 Q24 15 26 12 Q27.5 10 28 8 Q29 10 30 14 Q31 18 33 27" fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<circle cx="16" cy="5" fill="white" r="2.2"></circle>
+</svg>
+<span class="logo-txt">무등산 플레이북</span>
+</div>
+<button aria-label="테마 전환" class="thm-btn" data-thm="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="assets/img/mudeungsan/hero-640.avif 640w, assets/img/mudeungsan/hero-1024.avif 1024w, assets/img/mudeungsan/hero-1600.avif 1600w, assets/img/mudeungsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="assets/img/mudeungsan/hero-640.webp 640w, assets/img/mudeungsan/hero-1024.webp 1024w, assets/img/mudeungsan/hero-1600.webp 1600w, assets/img/mudeungsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="무등산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Mudeungsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/mudeungsan/hero-1600.jpg" srcset="assets/img/mudeungsan/hero-640.jpg 640w, assets/img/mudeungsan/hero-1024.jpg 1024w, assets/img/mudeungsan/hero-1600.jpg 1600w, assets/img/mudeungsan/hero-2400.jpg 2400w"/>
+</picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="assets/video/mudeungsan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="assets/video/mudeungsan/hero.mp4" type="video/mp4"/>
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 무등산 플레이북</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">무등산 등산 플레이북</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+      대한민국 최고의 명산 중 하나인 무등산국립공원 가이드. 초급, 중급, 고급 코스의 상세 경로, 실사 지도 및 팁을 제공합니다.
+    </p>
+<!-- Course Selector Buttons -->
+<div class="course-selector">
+<button class="course-btn diff-btn beginner beginner active" onclick="selC('beginner',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 초급: 당산나무 코스</button>
+<button class="course-btn diff-btn intermediate intermediate" onclick="selC('intermediate',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 중급: 새인봉-입석대 코스</button>
+<button class="course-btn diff-btn advanced advanced" onclick="selC('advanced',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 고급: 원효사-규봉암 코스</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@wkgunes" rel="noopener" target="_blank">Kemal Güneş</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
+<!-- ═══ 초급 ═══ -->
+<main class="wrap" id="mainContent">
+<div class="panel active beginner" id="course-beginner">
+<nav class="tabs">
+<button class="tab active" onclick="selT('beginner','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('beginner','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('beginner','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('beginner','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">8.0km</div><div class="sl">코스 길이</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">3h10m</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">617m</div><div class="sl">최고 고도</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±467m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~640</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 고도 프로파일 — 당산나무 코스 (증심사~중머리재 원점회귀)</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="bg1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--suc)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--suc)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 152 C100 148 200 142 300 134 C370 128 430 120 500 110 C570 100 640 94 720 88 C780 84 840 80 900 76 L900 160Z" fill="url(#bg1)"></path>
+<path d="M0 152 C100 148 200 142 300 134 C370 128 430 120 500 110 C570 100 640 94 720 88 C780 84 840 80 900 76" fill="none" stroke="var(--suc)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="156">월정사 600m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="200" y="136">전나무숲길</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="490" y="104">오대천 계곡</text>
+<text fill="var(--suc)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="840" y="70">상원사 970m</text>
+<circle cx="900" cy="76" fill="var(--suc)" r="5"></circle>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
+<div class="flow"><span class="fn sk">증심사 탐방지원센터</span><span class="fa">→</span><span class="fn">증심사</span><span class="fa">→</span><span class="fn">당산나무</span><span class="fa">→</span><span class="fn pk">중머리재</span><span class="fa">→</span><span class="fn">당산나무 복귀</span><span class="fa">→</span><span class="fn sh">증심사 탐방지원센터 복귀</span></div>
+<div class="ic"><h2>코스 특징</h2><ul><li>증심사입구(150m)에서 당산나무(350m)까지는 경사가 완만하나, 이후 중머리재(617m)까지는 돌길이 이어지며 고도가 가파르게 상승합니다.</li><li>⚠️ 당산나무 이후 돌너덜지대 미끄러짐 주의</li><li>⚠️ 중머리재 부근 바람 강함</li></ul></div>
+</div><div class="tc" id="beginner-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">증심사 탐방지원센터 → 증심사</div><div class="acc-m">약 0.9km · 22분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">증심사 탐방지원센터에서 출발하여 증심사(해발 220m)로 향합니다. 천년고찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">증심사 → 당산나무</div><div class="acc-m">약 1.4km · 35분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">증심사에서 출발하여 당산나무(해발 350m)로 향합니다. 수령 500년 보호수. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 당산나무 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">당산나무 → 중머리재</div><div class="acc-m">약 1.7km · 42분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">당산나무에서 출발하여 중머리재(해발 617m)로 향합니다. 넓은 평지 고개, 1차 기점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중머리재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">중머리재 → 당산나무 복귀</div><div class="acc-m">약 1.7km · 25분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">중머리재에서 출발하여 당산나무 복귀(해발 350m)로 향합니다. 하산길 경유. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 당산나무 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">당산나무 복귀 → 증심사 탐방지원센터 복귀</div><div class="acc-m">약 2.3km · 34분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">당산나무 복귀에서 출발하여 증심사 탐방지원센터 복귀(해발 150m)로 향합니다. 원점회귀 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+</div><div class="tc" id="beginner-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 준비물</h2><ul><li>등산화 또는 트레킹화</li><li>충분한 식수 (1L 이상)</li><li>계절별 방풍의/방한의</li><li>간단한 행동식(초콜릿, 견과류)</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><h2>대중교통 접근</h2><ul><li>광주 도시철도 1호선 학동·증심사입구역 하차 후 버스 환승(09, 50, 51, 54번 등 승차 후 증심사지구 종점 하차, 약 10분 소요)</li><li>원효사 지구 이동 시 광주역 또는 종합버스터미널에서 1187번 버스 승차 후 원효사 종점 하차.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h2>추천 계절 &amp; 매력</h2><ul><li>봄철 철쭉(바랑재)</li><li>여름철 시원한 계곡길</li><li>가을철 억새(장불재·백마능선)</li><li>겨울철 서석대·입석대 주상절리 상고대(설화)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h2>코스 안전 수칙</h2><ul><li>당산나무 이후 돌너덜지대 미끄러짐 주의</li><li>중머리재 부근 바람 강함</li><li>동절기 주상절리 일대 빙판길 미끄러짐 및 강풍 대비 방한림 필수 지참</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🍱</div><h2>주변 편의 시설</h2><ul><li>주요 들머리: 증심사 탐방지원센터 (광주 동구 증심사길 160) 또는 원효사 탐방지원센터 (광주 북구 무등로 1550)</li><li>무등산 정상부(인왕봉 등)는 평시 군사시설 보호구역으로 출입 금지이나, 지자체 및 군부대 협의에 따라 매년 특정일에 한해 개방하므로 일정 사전 확인이 필요합니다.</li><li>광주 시내버스 1187번은 무등산의 해발 높이(1187m)를 기념하여 명명된 노선번호입니다.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📱</div><h2>국립공원 안내</h2><ul><li>무등산국립공원 사무소: 062-227-1187</li><li>정상 인증: 블랙야크 100대명산 (서석대)</li><li>예약 시스템: reservation.knps.or.kr</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="beginner-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 당산나무 코스 (증심사~중머리재 원점회귀) 개념도</h2>
+<svg style="width:100%;height:auto;max-height:400px" viewbox="0 0 680 380">
+<rect fill="var(--surfaceoff)" height="380" rx="12" width="680"></rect>
+<!-- ohdaecheon stream -->
+<path d="M60 330 C80 310 100 295 130 278 C160 262 190 248 220 235 C260 218 300 205 340 192 C390 176 440 163 500 152 C545 142 590 135 640 128" fill="none" stroke="var(--sky)" stroke-dasharray="5,4" stroke-opacity=".5" stroke-width="2"></path>
+<!-- trail -->
+<path d="M60 330 C82 312 108 298 140 282 C172 266 204 252 236 238 C276 220 316 207 356 194 C406 178 456 165 510 154 C556 144 600 137 645 130" fill="none" stroke="var(--suc)" stroke-linecap="round" stroke-width="4"></path>
+<!-- nodes -->
+<circle cx="60" cy="330" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="80" y="335">월정사 P 600m</text>
+<!-- jeonnamu forest -->
+<rect fill="var(--suchl)" height="26" rx="7" stroke="var(--suc)" stroke-width="1.5" width="72" x="62" y="280"></rect>
+<text fill="var(--suc)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="70" y="298">전나무숲 1km</text>
+<!-- woljeongsa -->
+<circle cx="130" cy="278" fill="var(--amber)" fill-opacity=".8" r="9" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--amber)" font-family="Satoshi,sans-serif" font-size="11" x="144" y="273">월정사 (사찰)</text>
+<!-- midpoint rest -->
+<circle cx="356" cy="194" fill="var(--surfdyn)" r="7" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="370" y="198">중간 쉼터</text>
+<!-- sangwonsa -->
+<circle cx="645" cy="130" fill="var(--suc)" r="16" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--suc)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="12" font-weight="800" x="560" y="116">상원사 970m</text>
+<!-- ohdaecheon label -->
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="10" x="180" y="258">오대천 계곡</text>
+<!-- distance markers -->
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="9" x="190" y="245">5km →</text>
+<!-- tree symbols -->
+<text font-size="20" x="75" y="275">🌲</text>
+<text font-size="16" x="100" y="255">🌲</text>
+<!-- compass -->
+<circle cx="628" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="625" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="628" x2="628" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="30" rx="7" stroke="var(--bor)" stroke-width="1" width="224" x="16" y="336"></rect>
+<line stroke="var(--suc)" stroke-width="3" x1="30" x2="52" y1="352" y2="352"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="356">선재길 탐방로 (10km)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody><tr><td>1</td><td>증심사 탐방지원센터</td><td>150m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>산행 기점, 공원 안내소</td></tr><tr><td>2</td><td>증심사</td><td>220m</td><td>0.9km</td><td><span class="bdg b-te">사찰</span></td><td>천년고찰</td></tr><tr><td>3</td><td>당산나무</td><td>350m</td><td>2.3km</td><td><span class="bdg b-sk">일반</span></td><td>수령 500년 보호수</td></tr><tr><td>4</td><td>중머리재</td><td>617m</td><td>4.0km</td><td><span class="bdg b-am">정상</span></td><td>넓은 평지 고개, 1차 기점</td></tr><tr><td>5</td><td>당산나무 복귀</td><td>350m</td><td>5.7km</td><td><span class="bdg b-sk">일반</span></td><td>하산길 경유</td></tr><tr><td>6</td><td>증심사 탐방지원센터 복귀</td><td>150m</td><td>8.0km</td><td><span class="bdg b-st">도착</span></td><td>원점회귀 완료</td></tr></tbody>
+</table>
+</div>
+</div></div></div>
+</div></div></main>
+<!-- ═══ 중급 ═══ -->
+<div class="panel intermediate" id="course-intermediate">
+<nav class="tabs">
+<button class="tab active" onclick="selT('intermediate','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('intermediate','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('intermediate','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('intermediate','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">12.4km</div><div class="sl">코스 길이</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">6h00m</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1100m</div><div class="sl">최고 고도</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±950m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~992</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 고도 프로파일 — 새인봉-입석대 코스 (증심교~새인봉~장불재~입석대~서석대)</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ig1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--pri)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--pri)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 148 C80 142 160 128 230 110 C285 95 330 76 365 56 C390 42 410 28 430 18 L450 12 C470 18 490 32 510 48 C540 68 575 88 618 108 C668 128 728 142 820 148 L900 150 L900 160Z" fill="url(#ig1)"></path>
+<path d="M0 148 C80 142 160 128 230 110 C285 95 330 76 365 56 C390 42 410 28 430 18 L450 12 C470 18 490 32 510 48 C540 68 575 88 618 108 C668 128 728 142 820 148" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="152">상원사 970m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="195" y="104">중대사자암</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="330" y="50">적멸보궁</text>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="415" y="8">비로봉 1,563m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" text-anchor="end" x="870" y="148">상원사</text>
+<circle cx="450" cy="12" fill="var(--pri)" r="5"></circle>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
+<div class="flow"><span class="fn sk">증심사 탐방지원센터</span><span class="fa">→</span><span class="fn">새인봉</span><span class="fa">→</span><span class="fn">서인봉</span><span class="fa">→</span><span class="fn">장불재</span><span class="fa">→</span><span class="fn">입석대</span><span class="fa">→</span><span class="fn pk">서석대</span><span class="fa">→</span><span class="fn">중머리재</span><span class="fa">→</span><span class="fn sh">증심사 탐방지원센터 복귀</span></div>
+<div class="ic"><h2>코스 특징</h2><ul><li>새인봉까지 가파른 계단과 능선길을 타고 오른 뒤, 서인봉과 장불재(900m)를 지나 서석대(1100m)까지 꾸준한 급경사가 이어집니다.</li><li>⚠️ 새인봉 급경사 철계단 및 난간 구간 주의</li><li>⚠️ 서석대 부근 겨울철 상습 결빙 및 강풍</li></ul></div>
+</div><div class="tc" id="intermediate-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">증심사 탐방지원센터 → 새인봉</div><div class="acc-m">약 2.2km · 55분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">증심사 탐방지원센터에서 출발하여 새인봉(해발 490m)로 향합니다. 기암절벽 조망점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 새인봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">새인봉 → 서인봉</div><div class="acc-m">약 0.9km · 22분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">새인봉에서 출발하여 서인봉(해발 611m)로 향합니다. 중머리재 직전 봉우리. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서인봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">서인봉 → 장불재</div><div class="acc-m">약 1.9km · 47분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">서인봉에서 출발하여 장불재(해발 900m)로 향합니다. 쉼터 및 대피소, 주상절리 조망처. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 장불재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">장불재 → 입석대</div><div class="acc-m">약 0.4km · 10분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">장불재에서 출발하여 입석대(해발 1017m)로 향합니다. 주상절리대 (천연기념물). 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 입석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">입석대 → 서석대</div><div class="acc-m">약 0.5km · 12분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">입석대에서 출발하여 서석대(해발 1100m)로 향합니다. 일반인 등반 최고점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">서석대 → 중머리재</div><div class="acc-m">약 2.5km · 37분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">서석대에서 출발하여 중머리재(해발 617m)로 향합니다. 하산 능선길 합류점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 중머리재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">중머리재 → 증심사 탐방지원센터 복귀</div><div class="acc-m">약 4.0km · 60분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">중머리재에서 출발하여 증심사 탐방지원센터 복귀(해발 150m)로 향합니다. 하산 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 증심사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+</div><div class="tc" id="intermediate-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 준비물</h2><ul><li>등산화 또는 트레킹화</li><li>충분한 식수 (1L 이상)</li><li>계절별 방풍의/방한의</li><li>간단한 행동식(초콜릿, 견과류)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>대중교통 접근</h2><ul><li>광주 도시철도 1호선 학동·증심사입구역 하차 후 버스 환승(09, 50, 51, 54번 등 승차 후 증심사지구 종점 하차, 약 10분 소요)</li><li>원효사 지구 이동 시 광주역 또는 종합버스터미널에서 1187번 버스 승차 후 원효사 종점 하차.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">❄</div><h2>추천 계절 &amp; 매력</h2><ul><li>봄철 철쭉(바랑재)</li><li>여름철 시원한 계곡길</li><li>가을철 억새(장불재·백마능선)</li><li>겨울철 서석대·입석대 주상절리 상고대(설화)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h2>코스 안전 수칙</h2><ul><li>새인봉 급경사 철계단 및 난간 구간 주의</li><li>서석대 부근 겨울철 상습 결빙 및 강풍</li><li>동절기 주상절리 일대 빙판길 미끄러짐 및 강풍 대비 방한림 필수 지참</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h2>주변 편의 시설</h2><ul><li>주요 들머리: 증심사 탐방지원센터 (광주 동구 증심사길 160) 또는 원효사 탐방지원센터 (광주 북구 무등로 1550)</li><li>무등산 정상부(인왕봉 등)는 평시 군사시설 보호구역으로 출입 금지이나, 지자체 및 군부대 협의에 따라 매년 특정일에 한해 개방하므로 일정 사전 확인이 필요합니다.</li><li>광주 시내버스 1187번은 무등산의 해발 높이(1187m)를 기념하여 명명된 노선번호입니다.</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><h2>국립공원 안내</h2><ul><li>무등산국립공원 사무소: 062-227-1187</li><li>정상 인증: 블랙야크 100대명산 (서석대)</li><li>예약 시스템: reservation.knps.or.kr</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="intermediate-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 새인봉-입석대 코스 (증심교~새인봉~장불재~입석대~서석대) 개념도</h2>
+<svg style="width:100%;height:auto;max-height:480px" viewbox="0 0 680 460">
+<rect fill="var(--surfaceoff)" height="460" rx="12" width="680"></rect>
+<path d="M120 400 Q160 280 240 200 Q300 140 360 90" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="4.5"></path>
+<path d="M360 90 Q400 130 430 180 Q460 238 480 300 Q490 340 490 390" fill="none" stroke="var(--pri)" stroke-dasharray="7,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- mountain bg -->
+<path d="M90 340 Q200 180 360 80 Q520 180 610 340" fill="var(--surfdyn)" fill-opacity=".2" stroke="none"></path>
+<!-- nodes -->
+<circle cx="120" cy="400" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="140" y="405">상원사 주차장 P</text>
+<circle cx="145" cy="365" fill="var(--amber)" fill-opacity=".8" r="9" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--amber)" font-family="Satoshi,sans-serif" font-size="11" x="160" y="360">상원사 (국보 동종)</text>
+<circle cx="196" cy="296" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="212" y="300">중대사자암</text>
+<circle cx="262" cy="210" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="278" y="206">적멸보궁 1,400m</text>
+<circle cx="360" cy="90" fill="var(--pri)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="382" y="83">비로봉</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="382" y="98">1,563m ★</text>
+<!-- return path node -->
+<circle cx="490" cy="390" fill="var(--sky)" r="13" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="420" y="412">상원사 귀환 P</text>
+<!-- jungmok (주목) -->
+<text fill="var(--suc)" font-family="Satoshi,sans-serif" font-size="11" x="310" y="125">주목 군락지</text>
+<!-- compass -->
+<circle cx="628" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="625" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="628" x2="628" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="30" rx="7" stroke="var(--bor)" stroke-width="1" width="224" x="16" y="420"></rect>
+<line stroke="var(--pri)" stroke-width="3.5" x1="30" x2="52" y1="436" y2="436"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="440">등정로</text>
+<line stroke="var(--pri)" stroke-dasharray="5,3" stroke-width="2.5" x1="130" x2="152" y1="436" y2="436"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="160" y="440">하산로</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody><tr><td>1</td><td>증심사 탐방지원센터</td><td>150m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>기점 출발</td></tr><tr><td>2</td><td>새인봉</td><td>490m</td><td>2.2km</td><td><span class="bdg b-sk">일반</span></td><td>기암절벽 조망점</td></tr><tr><td>3</td><td>서인봉</td><td>611m</td><td>3.1km</td><td><span class="bdg b-sk">일반</span></td><td>중머리재 직전 봉우리</td></tr><tr><td>4</td><td>장불재</td><td>900m</td><td>5.0km</td><td><span class="bdg b-sk">쉼터</span></td><td>쉼터 및 대피소, 주상절리 조망처</td></tr><tr><td>5</td><td>입석대</td><td>1017m</td><td>5.4km</td><td><span class="bdg b-sk">일반</span></td><td>주상절리대 (천연기념물)</td></tr><tr><td>6</td><td>서석대</td><td>1100m</td><td>5.9km</td><td><span class="bdg b-am">정상</span></td><td>일반인 등반 최고점</td></tr><tr><td>7</td><td>중머리재</td><td>617m</td><td>8.4km</td><td><span class="bdg b-sk">쉼터</span></td><td>하산 능선길 합류점</td></tr><tr><td>8</td><td>증심사 탐방지원센터 복귀</td><td>150m</td><td>12.4km</td><td><span class="bdg b-st">도착</span></td><td>하산 완료</td></tr></tbody>
+</table>
+</div>
+</div></div></div>
+</div>
+</div>
+<!-- ═══ 고급 ═══ -->
+<div class="panel advanced" id="course-advanced">
+<nav class="tabs">
+<button class="tab active" onclick="selT('advanced','ov',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 개요</button>
+<button class="tab" onclick="selT('advanced','rt',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 경로 안내</button>
+<button class="tab" onclick="selT('advanced','mp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 지도</button>
+<button class="tab" onclick="selT('advanced','tp',this)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 팁 &amp; 주의</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">14.6km</div><div class="sl">코스 길이</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">7h00m</div><div class="sl">소요 시간</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1100m</div><div class="sl">최고 고도</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±720m</div><div class="sl">누적 고도차</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~1168</div><div class="sl">예상 칼로리</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 고도 프로파일 — 원효사-규봉암 코스 (원효사~꼬막재~규봉암~장불재~서석대 종주)</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ag1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--warn)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--warn)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 148 C50 140 100 130 150 118 C185 108 210 95 235 78 C252 66 265 50 278 35 L288 22 C298 30 308 44 320 60 C338 82 358 102 382 118 C404 132 428 142 452 148 C472 152 490 154 508 152 C526 148 545 140 562 126 C578 114 590 98 604 82 C618 66 630 52 642 40 L652 28 C662 38 672 55 684 74 C698 96 714 118 732 134 C752 148 776 156 810 158 L900 160 L900 160Z" fill="url(#ag1)"></path>
+<path d="M0 148 C50 140 100 130 150 118 C185 108 210 95 235 78 C252 66 265 50 278 35 L288 22 C298 30 308 44 320 60 C338 82 358 102 382 118 C404 132 428 142 452 148 C472 152 490 154 508 152 C526 148 545 140 562 126 C578 114 590 98 604 82 C618 66 630 52 642 40 L652 28 C662 38 672 55 684 74 C698 96 714 118 732 134 C752 148 776 156 810 158" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="5" y="152">상원사 970m</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="264" y="17">비로봉 1,563m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="370" y="112">상왕봉 1,491m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="490" y="146">두로령</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="582" y="120">두로봉</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="635" y="23">동대산 1,434m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="870" y="155">상원사(동피골)</text>
+<circle cx="288" cy="22" fill="var(--warn)" r="4"></circle>
+<circle cx="652" cy="28" fill="var(--warn)" r="4"></circle>
+<line stroke="var(--faint)" stroke-dasharray="4,4" stroke-width="1" x1="452" x2="452" y1="10" y2="170"></line>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="8" x="350" y="12">비로봉 구간</text>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="8" x="460" y="12">동대산 구간</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>전체 코스 흐름</span></div>
+<div class="flow"><span class="fn sk">원효사 탐방지원센터</span><span class="fa">→</span><span class="fn">꼬막재</span><span class="fa">→</span><span class="fn">신선대 입구</span><span class="fa">→</span><span class="fn">규봉암 (광석대)</span><span class="fa">→</span><span class="fn">장불재</span><span class="fa">→</span><span class="fn pk">서석대</span><span class="fa">→</span><span class="fn">목교</span><span class="fa">→</span><span class="fn sh">원효사 탐방지원센터 복귀</span></div>
+<div class="ic"><h2>코스 특징</h2><ul><li>원효사(380m)에서 규봉암(950m)까지는 비교적 완만한 능선길이나, 장불재를 경유해 서석대(1100m)로 향하는 구간 및 옛길 하산로는 급경사 너덜지대입니다.</li><li>⚠️ 14.6km 장거리 산행에 따른 체력 분배 조절 필요</li><li>⚠️ 규봉암 부근 낙석 및 너덜지대 주의</li></ul></div>
+</div><div class="tc" id="advanced-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">원효사 탐방지원센터 → 꼬막재</div><div class="acc-m">약 2.0km · 50분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">원효사 탐방지원센터에서 출발하여 꼬막재(해발 738m)로 향합니다. 완만한 흙길 고개. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 꼬막재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">꼬막재 → 신선대 입구</div><div class="acc-m">약 2.1km · 52분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">꼬막재에서 출발하여 신선대 입구(해발 850m)로 향합니다. 능선 합류부. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 신선대 입구 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">신선대 입구 → 규봉암 (광석대)</div><div class="acc-m">약 1.5km · 37분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">신선대 입구에서 출발하여 규봉암 (광석대)(해발 950m)로 향합니다. 암벽 아래 천년암자, 3대 석경. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 규봉암 (광석대) 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">규봉암 (광석대) → 장불재</div><div class="acc-m">약 1.8km · 27분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">규봉암 (광석대)에서 출발하여 장불재(해발 900m)로 향합니다. 억새 평원 교차점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 장불재 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">장불재 → 서석대</div><div class="acc-m">약 0.9km · 22분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">장불재에서 출발하여 서석대(해발 1100m)로 향합니다. 일반 최고점 도달. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 서석대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">서석대 → 목교</div><div class="acc-m">약 0.5km · 7분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">서석대에서 출발하여 목교(해발 990m)로 향합니다. 옛길 갈림길. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 목교 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">목교 → 원효사 탐방지원센터 복귀</div><div class="acc-m">약 5.8km · 87분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">목교에서 출발하여 원효사 탐방지원센터 복귀(해발 380m)로 향합니다. 원효사 옛길 하산 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 원효사 탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+</div><div class="tc" id="advanced-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>필수 준비물</h2><ul><li>등산화 또는 트레킹화</li><li>충분한 식수 (1L 이상)</li><li>계절별 방풍의/방한의</li><li>간단한 행동식(초콜릿, 견과류)</li><li>등산 스틱 (장거리 보행 보조)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>대중교통 접근</h2><ul><li>광주 도시철도 1호선 학동·증심사입구역 하차 후 버스 환승(09, 50, 51, 54번 등 승차 후 증심사지구 종점 하차, 약 10분 소요)</li><li>원효사 지구 이동 시 광주역 또는 종합버스터미널에서 1187번 버스 승차 후 원효사 종점 하차.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📡</div><h2>추천 계절 &amp; 매력</h2><ul><li>봄철 철쭉(바랑재)</li><li>여름철 시원한 계곡길</li><li>가을철 억새(장불재·백마능선)</li><li>겨울철 서석대·입석대 주상절리 상고대(설화)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h2>코스 안전 수칙</h2><ul><li>14.6km 장거리 산행에 따른 체력 분배 조절 필요</li><li>규봉암 부근 낙석 및 너덜지대 주의</li><li>동절기 주상절리 일대 빙판길 미끄러짐 및 강풍 대비 방한림 필수 지참</li></ul></div>
+<div class="tc-card"><div class="tc-icon">💪</div><h2>주변 편의 시설</h2><ul><li>주요 들머리: 증심사 탐방지원센터 (광주 동구 증심사길 160) 또는 원효사 탐방지원센터 (광주 북구 무등로 1550)</li><li>무등산 정상부(인왕봉 등)는 평시 군사시설 보호구역으로 출입 금지이나, 지자체 및 군부대 협의에 따라 매년 특정일에 한해 개방하므로 일정 사전 확인이 필요합니다.</li><li>광주 시내버스 1187번은 무등산의 해발 높이(1187m)를 기념하여 명명된 노선번호입니다.</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><h2>국립공원 안내</h2><ul><li>무등산국립공원 사무소: 062-227-1187</li><li>정상 인증: 블랙야크 100대명산 (서석대)</li><li>예약 시스템: reservation.knps.or.kr</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="advanced-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 원효사-규봉암 코스 (원효사~꼬막재~규봉암~장불재~서석대 종주) 개념도</h2>
+<svg style="width:100%;height:auto;max-height:540px" viewbox="0 0 820 520">
+<rect fill="var(--surfaceoff)" height="520" rx="12" width="820"></rect>
+<!-- circular ridge concept -->
+<ellipse cx="390" cy="260" fill="none" rx="250" ry="190" stroke="var(--surfdyn)" stroke-dasharray="10,8" stroke-width="1.5"></ellipse>
+<!-- trail from sangwonsa up to biro -->
+<path d="M200 440 Q210 405 224 368 Q240 330 258 296 Q276 262 295 230 Q314 200 332 175 Q350 150 362 128" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="4"></path>
+<!-- biro to holyeong to sangwang -->
+<path d="M362 128 Q390 122 418 128 Q440 136 456 155 Q472 174 478 196" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- sangwang to durog -->
+<path d="M478 196 Q490 220 496 248 Q500 272 498 298" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- durog to durobong to dongdaesan -->
+<path d="M498 298 Q504 326 508 355 Q510 378 510 400 Q518 390 530 372 Q548 346 564 322 Q580 298 598 276 Q614 256 628 238 Q644 220 656 202 Q666 186 672 170" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3"></path>
+<!-- dongdaesan down to dongpigol and back to sangwonsa -->
+<path d="M672 170 Q680 190 684 214 Q688 240 688 268 Q684 302 674 332 Q660 365 640 395 Q618 422 590 444" fill="none" stroke="var(--warn)" stroke-dasharray="7,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- return along seonjae-gil -->
+<path d="M590 444 Q560 448 530 448 Q490 446 450 444 Q390 442 340 444 Q290 448 250 448 L200 448" fill="none" stroke="var(--pri)" stroke-dasharray="5,3" stroke-linecap="round" stroke-opacity=".7" stroke-width="2"></path>
+<!-- nodes -->
+<circle cx="200" cy="440" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="220" y="445">상원사 주차장 P</text>
+<circle cx="362" cy="128" fill="var(--warn)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="295" y="118">비로봉 1,563m</text>
+<!-- holyeong -->
+<circle cx="390" cy="115" fill="var(--warn)" fill-opacity=".7" r="10" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="middle" x="390" y="105">호령봉 1,561m</text>
+<!-- sangwang -->
+<circle cx="478" cy="196" fill="var(--pri)" r="13" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="494" y="190">상왕봉 1,491m</text>
+<!-- durognyeong -->
+<circle cx="498" cy="298" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="512" y="302">두로령 탈출 ↓</text>
+<!-- durobong -->
+<circle cx="510" cy="400" fill="var(--pri)" r="13" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="526" y="404">두로봉 1,422m</text>
+<!-- sinsonmogi -->
+<circle cx="622" cy="240" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="638" y="244">신선목이</text>
+<!-- chadolbaegi -->
+<circle cx="654" cy="200" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="668" y="196">차돌백이</text>
+<!-- dongdaesan -->
+<circle cx="672" cy="170" fill="var(--warn)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="12" font-weight="800" x="690" y="163">동대산 1,434m</text>
+<!-- dongpigol -->
+<circle cx="590" cy="444" fill="var(--pri)" fill-opacity=".8" r="10" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" x="530" y="462">동피골 → 선재길 귀환</text>
+<!-- compass -->
+<circle cx="766" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="763" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="766" x2="766" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="44" rx="7" stroke="var(--bor)" stroke-width="1" width="270" x="16" y="468"></rect>
+<line stroke="var(--warn)" stroke-width="3.5" x1="30" x2="52" y1="484" y2="484"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="488">5봉 환종주 주능선</text>
+<line stroke="var(--pri)" stroke-dasharray="5,3" stroke-width="2.5" x1="30" x2="52" y1="503" y2="503"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="507">선재길 복귀 (동피골~상원사)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (환종주)</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
+<tbody><tr><td>1</td><td>원효사 탐방지원센터</td><td>380m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>원효사 기점 출발</td></tr><tr><td>2</td><td>꼬막재</td><td>738m</td><td>2.0km</td><td><span class="bdg b-sk">쉼터</span></td><td>완만한 흙길 고개</td></tr><tr><td>3</td><td>신선대 입구</td><td>850m</td><td>4.1km</td><td><span class="bdg b-sk">일반</span></td><td>능선 합류부</td></tr><tr><td>4</td><td>규봉암 (광석대)</td><td>950m</td><td>5.6km</td><td><span class="bdg b-te">사찰</span></td><td>암벽 아래 천년암자, 3대 석경</td></tr><tr><td>5</td><td>장불재</td><td>900m</td><td>7.4km</td><td><span class="bdg b-sk">쉼터</span></td><td>억새 평원 교차점</td></tr><tr><td>6</td><td>서석대</td><td>1100m</td><td>8.3km</td><td><span class="bdg b-am">정상</span></td><td>일반 최고점 도달</td></tr><tr><td>7</td><td>목교</td><td>990m</td><td>8.8km</td><td><span class="bdg b-sk">일반</span></td><td>옛길 갈림길</td></tr><tr><td>8</td><td>원효사 탐방지원센터 복귀</td><td>380m</td><td>14.6km</td><td><span class="bdg b-st">도착</span></td><td>원효사 옛길 하산 완료</td></tr></tbody>
+</table>
+</div>
+</div></div></div>
+</div>
+</div>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;"><span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 무등산의 사계 &amp; 명소</h2>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="무등산 입석대 주상절리 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'&amp;gt;Kwangho Cha&amp;lt;/a&amp;gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="assets/img/mudeungsan/g1.avif" type="image/avif">
+<source srcset="assets/img/mudeungsan/g1.webp" type="image/webp"/>
+<img alt="무등산 무등산 입석대 주상절리" class="gallery-img" decoding="async" loading="lazy" src="assets/img/mudeungsan/g1.jpg"/>
+</source></picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">무등산 입석대 주상절리</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="무등산 서석대 전망 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@sudal' target='_blank' rel='noopener'&amp;gt;Kwangho Cha&amp;lt;/a&amp;gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="assets/img/mudeungsan/g2.avif" type="image/avif"/>
+<source srcset="assets/img/mudeungsan/g2.webp" type="image/webp"/>
+<img alt="무등산 무등산 서석대 전망" class="gallery-img" decoding="async" loading="lazy" src="assets/img/mudeungsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">무등산 서석대 전망</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="무등산 철쭉과 산세 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@722721370' target='_blank' rel='noopener'&amp;gt;창균 이&amp;lt;/a&amp;gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="assets/img/mudeungsan/g3.avif" type="image/avif"/>
+<source srcset="assets/img/mudeungsan/g3.webp" type="image/webp"/>
+<img alt="무등산 무등산 철쭉과 산세" class="gallery-img" decoding="async" loading="lazy" src="assets/img/mudeungsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">무등산 철쭉과 산세</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="무등산 겨울 설경 크게 보기" class="gallery-item" data-credit="Photo by &amp;lt;a href='https://www.pexels.com/@722721370' target='_blank' rel='noopener'&amp;gt;창균 이&amp;lt;/a&amp;gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="assets/img/mudeungsan/g4.avif" type="image/avif"/>
+<source srcset="assets/img/mudeungsan/g4.webp" type="image/webp"/>
+<img alt="무등산 무등산 겨울 설경" class="gallery-img" decoding="async" loading="lazy" src="assets/img/mudeungsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">무등산 겨울 설경</span>
+</div>
+</button>
+</div>
+</section>
+<footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
+<p style="font-size:var(--xs);color:var(--muted)">무등산국립공원 공식 정보 기준. 산행 전 국립공원공단 예약시스템(reservation.knps.or.kr)과 기상 정보를 반드시 확인하세요. 무등산국립공원 사무소: 062-227-1187</p>
+</footer>
+<script>
+(function(){
+  const t=document.querySelector("[data-thm]"),r=document.documentElement;
+  let d=r.getAttribute("data-theme")||"dark"; setIco(d);
+  if(t)t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);setIco(d)});
+  function setIco(th){if(!t)return;t.innerHTML=th==="dark"?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+})();
+function selC(lv,btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".cs-btn").forEach(b=>b.classList.remove("ab","ai","aa"));
+  document.getElementById("course-"+lv).classList.add("active");
+  btn.classList.add(lv==="beginner"?"ab":lv==="intermediate"?"ai":"aa");
+  const p=document.getElementById("course-"+lv);
+  p.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("active",i===0));
+  p.querySelectorAll(".tc").forEach((c,i)=>c.classList.toggle("active",i===0));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function selT(c,t,btn){
+  const p=document.getElementById("course-"+c);
+  p.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+  p.querySelectorAll(".tc").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(c+"-"+t).classList.add("active");
+}
+function togAcc(h){h.parentElement.classList.toggle("open")}
+document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="이미지 크게 보기" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="갤러리 닫기" class="lightbox-close">×</button>
+<button aria-label="이전 이미지" class="lightbox-prev">❮</button>
+<button aria-label="다음 이미지" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script>
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script>
+<!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+</body>
+</html>
