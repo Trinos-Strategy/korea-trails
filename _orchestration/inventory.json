@@ -321,28 +321,6 @@
     "hero_present": false
   },
   {
-    "id": "baekhaksan",
-    "name_ko": "백학산",
-    "name_en": "Baekhaksan",
-    "name_hanja": null,
-    "region": "경기",
-    "country": "KR",
-    "altitude_m": 876,
-    "landmarks": [
-      "백학산",
-      "연천"
-    ],
-    "search_terms": [
-      "Baekhaksan",
-      "Baekhaksan Yeoncheon Korea",
-      "Yeoncheon"
-    ],
-    "file": "",
-    "done": false,
-    "season_signature": "조용하고 한적한 가을 숲길",
-    "hero_present": false
-  },
-  {
     "id": "duryunsan",
     "name_ko": "두륜산",
     "name_en": "Duryunsan",

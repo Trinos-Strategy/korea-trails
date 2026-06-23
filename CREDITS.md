@@ -2,14 +2,6 @@
 
 This document acknowledges and credits the talented photographers whose beautiful work brings the Korea Trails site to life. All photos are used under the free Unsplash License or Pexels License, or are user-contributed local photos.
 
-## 백학산 (Baekhaksan)
-
-- **Hero Header**: Photo by [Theodore Nguyen](https://www.pexels.com/@thejourneyofframes) via [pexels](https://pexels.com).
-- **Gallery 1**: Photo by [JD KIM](https://www.pexels.com/@jd-kim-129196221) via [pexels](https://pexels.com).
-- **Gallery 2**: Photo by [Theodore Nguyen](https://www.pexels.com/@thejourneyofframes) via [pexels](https://pexels.com).
-- **Gallery 3**: Photo by [정규송 Nui MALAMA](https://www.pexels.com/@nui-malama-169330637) via [pexels](https://pexels.com).
-- **Gallery 4**: Photo by [Theodore Nguyen](https://www.pexels.com/@thejourneyofframes) via [pexels](https://pexels.com).
-
 ## 북한산 (Bukhansan)
 - **OG Card (assets/img/bukhansan/og.png)**: AI-generated image (composite of actual hero photo with branding and text overlay).
 - **Cinematic Ambient Loop (assets/video/bukhansan/hero.mp4)**: Ken Burns slow zoom/pan video loop from the actual photograph (non-AI).
