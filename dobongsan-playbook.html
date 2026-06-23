@@ -726,41 +726,44 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-<meta content="assets/img/dobongsan/og.png" property="og:image"/><meta content="assets/img/dobongsan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/dobongsan/og.png" property="og:image"/><meta content="assets/img/dobongsan/og.png" name="twitter:image"/><script src="assets/js/i18n.js"></script><link href="dobongsan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/dobongsan-playbook.html" hreflang="en" rel="alternate"/><link href="dobongsan-playbook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="site-header">
 <div class="header-logo">
-<svg class="logo-svg" viewbox="0 0 36 36" fill="none" aria-label="도봉산 로고">
-  <defs>
-    <linearGradient id="grad36_sun" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f43f5e"/>
-      <stop offset="100%" stop-color="#be123c"/>
-    </linearGradient>
-    <linearGradient id="grad36_mt" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#0d9488"/>
-    </linearGradient>
-    <linearGradient id="grad36_wind" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
-      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
-    </linearGradient>
-  </defs>
-  <circle cx="18" cy="18" r="16" stroke="#ca8a04" stroke-width="0.5" stroke-dasharray="1 2" opacity="0.4"/>
-  <circle cx="27" cy="10" r="2.2" fill="url(#grad36_sun)"/>
-  <circle cx="9" cy="10" r="2.2" fill="#fbbf24"/>
-  <path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-width="0.8" stroke-linejoin="round"/>
-  <path d="M2 22 Q12 14 18 20 T34 16" stroke="url(#grad36_wind)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-  <path d="M4 18 Q14 24 20 16 T32 22" stroke="url(#grad36_wind)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
-  <path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" stroke="#0284c7" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+<svg aria-label="도봉산 로고" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
 </svg>
 <div>
 <div class="logo-text">도봉산 등산 플레이북</div>
 <div class="logo-sub">북한산국립공원 · 서울 도봉구</div>
 </div>
 </div>
-<button aria-label="다크모드 전환" class="theme-btn" data-theme-toggle="">
+<div class="lang-toggle">
+<button aria-label="한국어" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="false" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="다크모드 전환" class="theme-btn" data-theme-toggle="">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 </header>
@@ -772,8 +775,8 @@
 <img alt="도봉산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Dobongsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/dobongsan/hero-1600.jpg" srcset="assets/img/dobongsan/hero-640.jpg 640w, assets/img/dobongsan/hero-1024.jpg 1024w, assets/img/dobongsan/hero-1600.jpg 1600w, assets/img/dobongsan/hero-2400.jpg 2400w"/>
 </picture>
 <!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
-<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/dobongsan/hero-poster.jpg" preload="none" style="display: none;">
-  <source src="assets/video/dobongsan/hero.mp4" type="video/mp4">
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="assets/video/dobongsan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="assets/video/dobongsan/hero.mp4" type="video/mp4"/>
 </video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
@@ -901,7 +904,7 @@
 <circle cx="36" cy="54" fill="#2d7a3a" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="48" y="58">봉우리</text>
 <ellipse cx="36" cy="70" fill="#c5e8f0" rx="12" ry="6"></ellipse><text fill="var(--color-text-muted)" font-size="9" x="54" y="74">습지·계곡</text>
 </svg>
-<div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="도봉산 초급 오봉·여성봉 코스 실사 지도"></div>
+<div aria-label="도봉산 초급 오봉·여성봉 코스 실사 지도" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 </div>
 <div class="cp-table-wrap">
@@ -1033,7 +1036,7 @@
 <circle cx="36" cy="54" fill="#b87000" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="48" y="58">출발·정상</text>
 <rect fill="#f5eefb" height="9" rx="2" width="14" x="28" y="66"></rect><text fill="var(--color-text-muted)" font-size="9" x="48" y="74">사찰·유적</text>
 </svg>
-<div class="leaflet-map" id="map-inter" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="도봉산 중급 신선대 코스 실사 지도"></div>
+<div aria-label="도봉산 중급 신선대 코스 실사 지도" class="leaflet-map" id="map-inter" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 </div>
 <div class="cp-table-wrap">
@@ -1168,7 +1171,7 @@
 <circle cx="37" cy="72" fill="#c0392b" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="49" y="76">봉우리·출발</text>
 <line stroke="#999" stroke-dasharray="3,2" stroke-width="1.5" x1="22" x2="52" y1="88" y2="88"></line><text fill="var(--color-text-muted)" font-size="9" x="59" y="92">우회로</text>
 </svg>
-<div class="leaflet-map" id="map-adv" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="도봉산 고급 Y계곡 종주 코스 실사 지도"></div>
+<div aria-label="도봉산 고급 Y계곡 종주 코스 실사 지도" class="leaflet-map" id="map-adv" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 </div>
 <div class="cp-table-wrap">
@@ -2011,193 +2014,192 @@
 </button>
 </div>
 </section>
-
 <section class="video-section">
-  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-    <span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내 트래킹 영상
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내 트래킹 영상
   </h2>
-  <div class="video-grid">
-    <!-- Video Card 1 -->
-    <div class="video-card">
-      <div id="shorts-fqzChTcpmjM" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-fqzChTcpmjM', 'fqzChTcpmjM', '신선대')" aria-label="신선대 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/fqzChTcpmjM/hqdefault.jpg" alt="신선대 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">신선대</span>
-        <a class="video-link" href="https://youtube.com/shorts/fqzChTcpmjM" target="_blank" rel="noopener noreferrer">
+<div class="video-grid">
+<!-- Video Card 1 -->
+<div class="video-card">
+<div class="video-container" id="shorts-fqzChTcpmjM">
+<button aria-label="신선대 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-fqzChTcpmjM', 'fqzChTcpmjM', '신선대')">
+<img alt="신선대 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/fqzChTcpmjM/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">신선대</span>
+<a class="video-link" href="https://youtube.com/shorts/fqzChTcpmjM" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 2 -->
-    <div class="video-card">
-      <div id="shorts-JeCUmWleiK4" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-JeCUmWleiK4', 'JeCUmWleiK4', '주봉·신선대')" aria-label="주봉·신선대 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/JeCUmWleiK4/hqdefault.jpg" alt="주봉·신선대 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">주봉·신선대</span>
-        <a class="video-link" href="https://youtube.com/shorts/JeCUmWleiK4" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="video-card">
+<div class="video-container" id="shorts-JeCUmWleiK4">
+<button aria-label="주봉·신선대 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-JeCUmWleiK4', 'JeCUmWleiK4', '주봉·신선대')">
+<img alt="주봉·신선대 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/JeCUmWleiK4/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">주봉·신선대</span>
+<a class="video-link" href="https://youtube.com/shorts/JeCUmWleiK4" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 3 -->
-    <div class="video-card">
-      <div id="shorts-YMghILiM-4c" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-YMghILiM-4c', 'YMghILiM-4c', '우이암')" aria-label="우이암 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/YMghILiM-4c/hqdefault.jpg" alt="우이암 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">우이암</span>
-        <a class="video-link" href="https://youtube.com/shorts/YMghILiM-4c" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="video-card">
+<div class="video-container" id="shorts-YMghILiM-4c">
+<button aria-label="우이암 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-YMghILiM-4c', 'YMghILiM-4c', '우이암')">
+<img alt="우이암 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/YMghILiM-4c/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">우이암</span>
+<a class="video-link" href="https://youtube.com/shorts/YMghILiM-4c" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 4 -->
-    <div class="video-card">
-      <div id="shorts-D_P56H5LcWs" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-D_P56H5LcWs', 'D_P56H5LcWs', '우이령·오봉·석굴암')" aria-label="우이령·오봉·석굴암 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/D_P56H5LcWs/hqdefault.jpg" alt="우이령·오봉·석굴암 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">우이령·오봉·석굴암</span>
-        <a class="video-link" href="https://youtube.com/shorts/D_P56H5LcWs" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 4 -->
+<div class="video-card">
+<div class="video-container" id="shorts-D_P56H5LcWs">
+<button aria-label="우이령·오봉·석굴암 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-D_P56H5LcWs', 'D_P56H5LcWs', '우이령·오봉·석굴암')">
+<img alt="우이령·오봉·석굴암 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/D_P56H5LcWs/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">우이령·오봉·석굴암</span>
+<a class="video-link" href="https://youtube.com/shorts/D_P56H5LcWs" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 5 -->
-    <div class="video-card">
-      <div id="shorts-ER2uyn2WmFE" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-ER2uyn2WmFE', 'ER2uyn2WmFE', '만월사')" aria-label="만월사 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/ER2uyn2WmFE/hqdefault.jpg" alt="만월사 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">만월사</span>
-        <a class="video-link" href="https://youtube.com/shorts/ER2uyn2WmFE" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 5 -->
+<div class="video-card">
+<div class="video-container" id="shorts-ER2uyn2WmFE">
+<button aria-label="만월사 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-ER2uyn2WmFE', 'ER2uyn2WmFE', '만월사')">
+<img alt="만월사 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/ER2uyn2WmFE/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">만월사</span>
+<a class="video-link" href="https://youtube.com/shorts/ER2uyn2WmFE" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 6 -->
-    <div class="video-card">
-      <div id="shorts-lHu7jaQ-32w" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-lHu7jaQ-32w', 'lHu7jaQ-32w', '냥이 천국')" aria-label="냥이 천국 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/lHu7jaQ-32w/hqdefault.jpg" alt="냥이 천국 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">냥이 천국</span>
-        <a class="video-link" href="https://youtube.com/shorts/lHu7jaQ-32w" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 6 -->
+<div class="video-card">
+<div class="video-container" id="shorts-lHu7jaQ-32w">
+<button aria-label="냥이 천국 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-lHu7jaQ-32w', 'lHu7jaQ-32w', '냥이 천국')">
+<img alt="냥이 천국 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/lHu7jaQ-32w/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">냥이 천국</span>
+<a class="video-link" href="https://youtube.com/shorts/lHu7jaQ-32w" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 7 -->
-    <div class="video-card">
-      <div id="shorts-IVMQiilgr_M" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-IVMQiilgr_M', 'IVMQiilgr_M', '정상 고양이')" aria-label="정상 고양이 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/IVMQiilgr_M/hqdefault.jpg" alt="정상 고양이 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">정상 고양이</span>
-        <a class="video-link" href="https://youtube.com/shorts/IVMQiilgr_M" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 7 -->
+<div class="video-card">
+<div class="video-container" id="shorts-IVMQiilgr_M">
+<button aria-label="정상 고양이 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-IVMQiilgr_M', 'IVMQiilgr_M', '정상 고양이')">
+<img alt="정상 고양이 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/IVMQiilgr_M/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">정상 고양이</span>
+<a class="video-link" href="https://youtube.com/shorts/IVMQiilgr_M" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 8 -->
-    <div class="video-card">
-      <div id="shorts-h7AtXJMzggI" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-h7AtXJMzggI', 'h7AtXJMzggI', '고양이 2')" aria-label="고양이 2 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/h7AtXJMzggI/hqdefault.jpg" alt="고양이 2 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">고양이 2</span>
-        <a class="video-link" href="https://youtube.com/shorts/h7AtXJMzggI" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 8 -->
+<div class="video-card">
+<div class="video-container" id="shorts-h7AtXJMzggI">
+<button aria-label="고양이 2 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-h7AtXJMzggI', 'h7AtXJMzggI', '고양이 2')">
+<img alt="고양이 2 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/h7AtXJMzggI/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">고양이 2</span>
+<a class="video-link" href="https://youtube.com/shorts/h7AtXJMzggI" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 9 -->
-    <div class="video-card">
-      <div id="shorts-vnEniq-ljRA" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-vnEniq-ljRA', 'vnEniq-ljRA', '고양이 3')" aria-label="고양이 3 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/vnEniq-ljRA/hqdefault.jpg" alt="고양이 3 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">고양이 3</span>
-        <a class="video-link" href="https://youtube.com/shorts/vnEniq-ljRA" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 9 -->
+<div class="video-card">
+<div class="video-container" id="shorts-vnEniq-ljRA">
+<button aria-label="고양이 3 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-vnEniq-ljRA', 'vnEniq-ljRA', '고양이 3')">
+<img alt="고양이 3 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/vnEniq-ljRA/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">고양이 3</span>
+<a class="video-link" href="https://youtube.com/shorts/vnEniq-ljRA" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 10 -->
-    <div class="video-card">
-      <div id="shorts-P3zO2XUmo6o" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-P3zO2XUmo6o', 'P3zO2XUmo6o', '냥이와 교감')" aria-label="냥이와 교감 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/P3zO2XUmo6o/hqdefault.jpg" alt="냥이와 교감 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">냥이와 교감</span>
-        <a class="video-link" href="https://youtube.com/shorts/P3zO2XUmo6o" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 10 -->
+<div class="video-card">
+<div class="video-container" id="shorts-P3zO2XUmo6o">
+<button aria-label="냥이와 교감 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-P3zO2XUmo6o', 'P3zO2XUmo6o', '냥이와 교감')">
+<img alt="냥이와 교감 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/P3zO2XUmo6o/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">냥이와 교감</span>
+<a class="video-link" href="https://youtube.com/shorts/P3zO2XUmo6o" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 11 -->
-    <div class="video-card">
-      <div id="shorts-kYBnFPkAc2s" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-kYBnFPkAc2s', 'kYBnFPkAc2s', '대서 개미왕국 탄생')" aria-label="대서 개미왕국 탄생 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/kYBnFPkAc2s/hqdefault.jpg" alt="대서 개미왕국 탄생 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">대서 개미왕국 탄생</span>
-        <a class="video-link" href="https://youtube.com/shorts/kYBnFPkAc2s" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 11 -->
+<div class="video-card">
+<div class="video-container" id="shorts-kYBnFPkAc2s">
+<button aria-label="대서 개미왕국 탄생 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-kYBnFPkAc2s', 'kYBnFPkAc2s', '대서 개미왕국 탄생')">
+<img alt="대서 개미왕국 탄생 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/kYBnFPkAc2s/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">대서 개미왕국 탄생</span>
+<a class="video-link" href="https://youtube.com/shorts/kYBnFPkAc2s" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 12 -->
-    <div class="video-card">
-      <div id="shorts-8gGM0qgEvY4" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-8gGM0qgEvY4', '8gGM0qgEvY4', '거북바위')" aria-label="거북바위 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/8gGM0qgEvY4/hqdefault.jpg" alt="거북바위 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">거북바위</span>
-        <a class="video-link" href="https://youtube.com/shorts/8gGM0qgEvY4" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 12 -->
+<div class="video-card">
+<div class="video-container" id="shorts-8gGM0qgEvY4">
+<button aria-label="거북바위 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-8gGM0qgEvY4', '8gGM0qgEvY4', '거북바위')">
+<img alt="거북바위 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/8gGM0qgEvY4/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">거북바위</span>
+<a class="video-link" href="https://youtube.com/shorts/8gGM0qgEvY4" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </section>
 <script>
 (function(){

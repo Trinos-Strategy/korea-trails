@@ -1,0 +1,2629 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dobongsan Hiking Playbook</title>
+<meta content="A guide to Dobongsan National Park, one of South Korea's best mountains. Provides detailed routes, real-world maps, and tips for the Beginner Obong/Yeoseongbong Course, Intermediate Dobongsan Visitor Center → Sinseondae Round Trip, and Advanced Darakneungseon Y-Valley Traverse Course." name="description"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Noto+Serif+KR:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/design-system.css" rel="stylesheet"/>
+<style>
+/* COURSE SELECTOR */
+.course-selector {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.course-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.course-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.course-btn.active.beginner, .course-btn.active-beginner {
+  background: var(--success-highlight);
+  color: var(--success);
+  border-color: var(--success);
+}
+.course-btn.active.intermediate, .course-btn.active-intermediate {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.course-btn.active.advanced, .course-btn.active-advanced {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.intermediate .section-title-icon{background:var(--color-gold-highlight);}
+.advanced .section-title-icon{background:var(--color-warning-highlight);}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);}
+.acc-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
+.acc-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-5);cursor:pointer;user-select:none;width:100%;text-align:left;}
+.acc-header:hover{background:var(--color-surface-offset);}
+.acc-num{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;flex-shrink:0;}
+.beginner .acc-num{background:var(--color-success-highlight);color:var(--color-success);}
+.intermediate .acc-num{background:var(--color-gold-highlight);color:var(--color-gold);}
+.advanced .acc-num{background:var(--color-warning-highlight);color:var(--color-warning);}
+.acc-title-wrap{flex:1;}
+.acc-title{font-weight:700;font-size:var(--text-base);line-height:1.3;}
+.acc-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px;}
+.acc-chevron{color:var(--color-text-faint);transition:transform var(--transition);flex-shrink:0;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--color-divider);}
+.acc-item.open .acc-body{display:block;}
+.acc-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-4);}
+
+/* DIFF BAR */
+.diff-bar-wrap{margin-bottom:var(--space-4);}
+.diff-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-1);}
+.diff-bar-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full);}
+.diff-easy .diff-bar-fill{background:var(--color-success);}
+.diff-medium .diff-bar-fill{background:var(--color-gold);}
+.diff-hard .diff-bar-fill{background:var(--color-warning);}
+.diff-expert .diff-bar-fill{background:var(--color-error);}
+
+/* TIP / WARN BOX */
+.tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-primary);margin-bottom:var(--space-3);line-height:1.6;}
+.warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-warning);margin-bottom:var(--space-3);line-height:1.6;}
+
+/* CHECKPOINT TABLE */
+.cp-table-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
+.cp-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
+.cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:middle;}
+.cp-table tr:last-child td{border-bottom:none;}
+.cp-table tr:hover td{background:var(--color-surface-offset);}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
+.badge-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
+.badge-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-trailhead{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
+.badge-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
+
+/* MAP SVG */
+.map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
+.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-svg{width:100%;height:auto;max-height:520px;}
+
+/* Leaflet map styles */
+.leaflet-map {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  box-shadow: var(--shadow-sm);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.map-tooltip {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text) !important;
+  font-weight: 700;
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+  box-shadow: var(--shadow-md);
+}
+.map-popup-content {
+  font-family: inherit;
+  line-height: 1.5;
+}
+.leaflet-popup-content-wrapper {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+.leaflet-popup-tip {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border);
+}
+.leaflet-popup-close-button {
+  color: var(--color-text-muted) !important;
+}
+.leaflet-control-layers {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--color-text) !important;
+  box-shadow: var(--shadow-md) !important;
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.leaflet-bar {
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.leaflet-bar a {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+.leaflet-bar a:hover {
+  background-color: var(--color-surface-2) !important;
+}
+.leaflet-container .leaflet-control-attribution {
+  background: rgba(var(--color-bg), 0.7) !important;
+  color: var(--color-text-muted) !important;
+  font-size: 9px;
+  backdrop-filter: blur(4px);
+}
+[data-theme="dark"] .terrain-layer-dark-filter {
+  filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
+}
+
+/* YouTube Shorts Grid */
+.video-section {
+  padding: var(--space-10) var(--space-6);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+@media(max-width:640px){
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+}
+.video-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.video-facade-btn {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+  background: #000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+.video-facade-btn:hover .video-thumbnail {
+  transform: scale(1.05);
+}
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: background var(--transition), transform var(--transition);
+  pointer-events: none;
+}
+.video-facade-btn:hover .video-play-btn {
+  background: rgba(220, 50, 50, 0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.video-play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 4px;
+}
+.video-iframe {
+  width: 100%;
+  aspect-ratio: 9/16;
+  border: none;
+}
+.video-info {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.video-label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.video-link {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.video-link:hover {
+  text-decoration: underline;
+}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
+.tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
+.tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-3);}
+.tip-card h4{font-weight:700;margin-bottom:var(--space-2);}
+.tip-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-1);}
+.tip-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);padding-left:var(--space-4);position:relative;}
+.tip-card ul li::before{content:"·";position:absolute;left:var(--space-2);color:var(--color-text-faint);}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .site-header{padding:var(--space-3) var(--space-4);}
+  .main{padding:var(--space-6) var(--space-4);}
+  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
+  .tab-bar{padding:0 var(--space-4);}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .course-selector{gap:var(--space-2);}
+  .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
+}
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
+<meta content="../assets/img/dobongsan/og.png" property="og:image"/><meta content="../assets/img/dobongsan/og.png" name="twitter:image"/><script src="../assets/js/i18n.js"></script><link href="../dobongsan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/dobongsan-playbook.html" hreflang="en" rel="alternate"/><link href="../dobongsan-playbook.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+<header class="site-header">
+<div class="header-logo">
+<svg aria-label="Dobongsan Logo" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+</svg>
+<div>
+<div class="logo-text">Dobongsan Hiking Playbook</div>
+<div class="logo-sub">Bukhansan National Park · Dobong-gu, Seoul</div>
+</div>
+</div>
+<div class="lang-toggle">
+<button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="Toggle Dark Mode" class="theme-btn" data-theme-toggle="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="../assets/img/dobongsan/hero-640.avif 640w, assets/img/dobongsan/hero-1024.avif 1024w, assets/img/dobongsan/hero-1600.avif 1600w, assets/img/dobongsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="../assets/img/dobongsan/hero-640.webp 640w, assets/img/dobongsan/hero-1024.webp 1024w, assets/img/dobongsan/hero-1600.webp 1600w, assets/img/dobongsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="Majestic natural landscape of Dobongsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="../assets/img/dobongsan/hero-1600.jpg" srcset="../assets/img/dobongsan/hero-640.jpg 640w, assets/img/dobongsan/hero-1024.jpg 1024w, assets/img/dobongsan/hero-1600.jpg 1600w, assets/img/dobongsan/hero-2400.jpg 2400w"/>
+</picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="../assets/video/dobongsan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="../assets/video/dobongsan/hero.mp4" type="video/mp4"/>
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Dobongsan National Park Playbook</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">Dobongsan Hiking Playbook</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">A guide to Dobongsan National Park, one of South Korea's best mountains. Provides detailed routes, real-world maps, and tips for the Beginner Obong/Yeoseongbong Course, Intermediate Dobongsan Visitor Center → Sinseondae Round Trip, and Advanced Darakneungseon Y-Valley Traverse Course.</p>
+<!-- Course Selector Buttons -->
+<div class="course-selector">
+<button class="course-btn diff-btn beginner beginner active" onclick="switchLevel('beginner',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner: Obong Peak·Yeoseongbong Peak Course</button>
+<button class="course-btn diff-btn intermediate inter" onclick="switchLevel('inter',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate: Dobong Exploration Center→Sinseondae Round Trip</button>
+<button class="course-btn diff-btn advanced adv" onclick="switchLevel('adv',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced: Darakneungseon Ridge Y Valley Traverse</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by Dokyung Kim</span>
+<span class="credit-divider">/</span>
+<span class="credit-source">Local</span>
+</div>
+</section>
+Beginner
+<main class="wrap" id="mainContent">
+<div class="course-panel active" id="panel-beginner">
+<div class="main-container">
+<div class="course-banner beginner">
+<div><div class="banner-title"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner — Obong Peak·Yeoseongbong Peak Course</div><div class="banner-subtitle">Starting from Songchu Valley · Yeoseongbong Peak (504m) → Obong Peak (660m) · Recommended for families/beginners · Round trip</div></div>
+<span class="banner-badge">Beginner</span>
+</div>
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('beginner','overview')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab-btn" onclick="switchTab('beginner','route')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab-btn" onclick="switchTab('beginner','map')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab-btn" onclick="switchTab('beginner','tips')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+<!-- overview -->
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-beginner-overview">
+<div class="kpi-grid beginner">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">9.5km</div><div class="kpi-label">Round trip distance</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">Duration</div></div>
+<div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">620m</div><div class="kpi-label">Cumulative Ascent</div></div>
+<div class="kpi-card"><div class="kpi-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="kpi-val">660m</div><div class="kpi-label">Highest Point (Obong)</div></div>
+<div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">Mid-low</div><div class="kpi-label">Physical exertion</div></div>
+<div class="kpi-card"><div class="kpi-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg></div><div class="kpi-val">Bus</div><div class="kpi-label">Gupabal Station → Songchu</div></div>
+</div>
+<div class="elev-wrap beginner">
+<h2>📈 Elevation Profile</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
+<defs><lineargradient id="gb" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".3"></stop><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".03"></stop></lineargradient></defs>
+<path d="M0,135 L100,95 L160,80 L200,95 L350,30 L450,50 L500,80 L580,95 L700,135Z" fill="url(#gb)"></path>
+<path d="M0,135 L100,95 L160,80 L200,95 L350,30 L450,50 L500,80 L580,95 L700,135" fill="none" stroke="#2d7a3a" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="135" fill="#2d7a3a" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="4" y="145">Start 160m</text>
+<circle cx="160" cy="80" fill="#2d7a3a" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="118" y="72">Yeoseongbong Peak 504m</text>
+<circle cx="350" cy="30" fill="#2d7a3a" r="5"></circle><text fill="#2d7a3a" font-size="10" font-weight="700" x="315" y="22">Obong Peak 660m</text>
+<circle cx="700" cy="135" fill="#2d7a3a" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="648" y="145">Starting point 160m</text>
+<line stroke="currentColor" stroke-opacity=".1" x1="0" x2="700" y1="135" y2="135"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="90" y2="90"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="50" y2="50"></line>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="88">400m</text>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="48">580m</text>
+</svg>
+</div>
+<div class="diff-wrap beginner">
+<h2>⚡ Difficulty by Section</h2>
+<div class="diff-row"><span class="diff-label">Visitor Center → Uldae Wetland</span><div class="diff-bar"><div class="diff-fill" style="width:20%"></div></div><span class="diff-pct">20%</span></div>
+<div class="diff-row"><span class="diff-label">Uldae Wetland → Yeoseongbong Peak</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
+<div class="diff-row"><span class="diff-label">Yeoseongbong Peak → Obong Peak</span><div class="diff-bar"><div class="diff-fill" style="width:65%"></div></div><span class="diff-pct">65%</span></div>
+<div class="diff-row"><span class="diff-label">Obong Peak → Descend to Starting Point</span><div class="diff-bar"><div class="diff-fill" style="width:30%"></div></div><span class="diff-pct">30%</span></div>
+</div>
+<div class="section-title"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Key Points</div>
+<div class="peak-grid">
+<div class="peak-card"><div class="peak-icon">🌸</div><div class="peak-elev" style="color:var(--color-beginner)">504m</div><div class="peak-name">Yeoseongbong Peak</div><div class="peak-desc">Gentle rocky peak. Best spot for Obong Peak views. Famous for spring azaleas.</div></div>
+<div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-beginner)">660m</div><div class="peak-name">Obong Peak</div><div class="peak-desc">The five rock peaks are the landmark of Dobongsan National Park. Panoramic view of northwestern Seoul.</div></div>
+<div class="peak-card"><div class="peak-icon">💧</div><div class="peak-elev" style="color:var(--color-beginner)">—</div><div class="peak-name">Songchu Falls</div><div class="peak-desc">A popular summer retreat. Optimal for relaxing by the valley after descending.</div></div>
+</div>
+</div><div class="tab-content" id="tab-beginner-route">
+<p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">Total round trip approx. 9.5km · 4~5h · Songchu Valley loop</p>
+<div class="accordion beginner">
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">Depart from Songchu 2nd Parking Lot</div><div class="acc-meta">Altitude 160m · 5-minute walk from bus stop</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Gupabal Station (Subway Line 3) → Bus No. 34 → Get off at Songchu Valley (approx. 30 min). 5-minute walk to Obong Information Center. Check restrooms and maps at the information center.</p><div class="tip-box">🅿 Recommended to arrive before 8 AM on weekends. When driving, use Songchu Parking Lot 1 or 2.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">Obong Visitor Center → Uldae Wetland</div><div class="acc-meta">1.2km · 25min · ★☆☆☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Gentle valley path. Passes through Uldae Wetland wooden deck. Well-maintained signposts ensure safety.</p><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Stretching and warm-up exercises recommended at Uldae Wetland. Very cool in summer.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">Uldae Wetland → Yeoseongbong Peak (504m)</div><div class="acc-meta">1.5km · 50min · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">The incline gradually increases. There is a rope section before the rock ridge. The panoramic view of Obong's five peaks from the summit is superb.</p><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg>Yeoseongbong Peak = a scenic spot for panoramic views of Obong Peak. Recommended to depart after sufficient rest.</div><div class="warn-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Caution: Slippery on rocky ridge sections. Children must hold hands.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">Yeoseongbong Peak → Obong Peak (660m)</div><div class="acc-meta">0.8km · 40min · ★★★★☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Traverse 5 Obong peaks along the ridge. Rope climbing sections. Panoramic views of Seoul and Bukhansan National Park from each peak.</p><div class="tip-box">🪨 Obong: Hold the safety rope and move slowly. The 3rd peak is the highest.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">Obong Peak → Songchupokpo Falls → Starting Point</div><div class="acc-meta">3.5km · 70min · ★★☆☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Steep descent, then via Songchu Falls. Return to starting point along the valley.</p><div class="tip-box">💧 After descent, highly recommend Pajeon and Makgeolli at Songchu Valley restaurant area!</div></div></div></div>
+</div>
+</div><div class="tab-content" id="tab-beginner-tips">
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">Essential Gear</div><ul><li>Hiking Boots (Grip)</li><li>1-2 trekking poles</li><li>Water 1L or more</li><li>Snacks, energy bars</li><li>Sunscreen</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🍱</div><div class="tip-card-title">Meals/Drinks</div><ul><li>Visitor Center Entrance Shop</li><li>Songchu Valley restaurant area after descent</li><li>Famous for Pajeon, Makgeolli, Sundubu</li><li>Summer: Naengmyeon recommended</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg></div><div class="tip-card-title">Transportation Guide</div><ul><li>Gupabal Station (Subway Line 3) → Bus No. 34</li><li>Mangwolsa Station (Subway Line 1) → 10-minute taxi ride</li><li>Car: Songchu Valley Navigation</li><li>Recommended to arrive before 8 AM on weekends</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">Optimal Season</div><ul><li>Spring (April-May): Azalea bloom peak</li><li>Autumn (Oct-Nov): Famous for fall foliage</li><li>Summer: Cool valley</li><li>Winter: Crampons essential</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg></div><div class="tip-card-title">Safety Warning</div><ul><li>Obong Peak rock ridge handholds for children</li><li>Caution for knees on downhill descent</li><li>Do not feed wildlife</li><li>Complete descent before sunset</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">Useful Apps</div><ul><li>Tranggle: GPS Track</li><li>Korea National Park Service App</li><li>Korea Forest Service Hiking Map</li><li>Korea Meteorological Administration App</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tab-content" id="tab-beginner-map">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Beginner Obong Peak·Yeoseongbong Peak Course Concept Map</h2>
+<div class="map-svg-wrap">
+<svg class="map-fallback" style="max-height:370px;min-width:280px;" viewbox="0 0 520 355" width="100%">
+<rect fill="var(--color-surface-2)" height="355" rx="10" width="520"></rect>
+<path d="M232,342 L230,305 L227,268 L225,235 L229,202 L235,172 L241,145 L247,119" fill="none" stroke="#2d7a3a" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<path d="M247,119 L261,109 L278,105 L295,109 L313,103 L331,107 L345,117" fill="none" stroke="#2d7a3a" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<path d="M345,117 L352,145 L355,175 L351,207 L345,242 L341,277 L335,312 L329,342" fill="none" opacity=".7" stroke="#2d7a3a" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<circle cx="232" cy="345" fill="#2d7a3a" r="12"></circle><text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="232" y="350">P</text>
+<text fill="var(--color-text)" font-size="11" font-weight="600" x="174" y="343">Songchu Parking Lot</text>
+<text fill="var(--color-text-muted)" font-size="9" x="174" y="355">160m</text>
+<ellipse cx="230" cy="215" fill="#c5e8f0" opacity=".8" rx="22" ry="10"></ellipse>
+<text fill="#1a6a8a" font-size="9" text-anchor="middle" x="230" y="219">Uldae Wetland</text>
+<circle cx="247" cy="117" fill="#5abf6a" r="9"></circle>
+<text fill="white" font-size="8" font-weight="700" text-anchor="middle" x="247" y="121">Yeoseongbong Peak</text>
+<text fill="var(--color-text-muted)" font-size="10" text-anchor="middle" x="247" y="105">504m</text>
+<circle cx="278" cy="105" fill="#2d7a3a" r="6"></circle><text fill="white" font-size="7" text-anchor="middle" x="278" y="109">1</text>
+<circle cx="295" cy="101" fill="#2d7a3a" r="7"></circle><text fill="white" font-size="7" text-anchor="middle" x="295" y="105">2</text>
+<circle cx="313" cy="97" fill="#1a5a28" r="9"></circle><text fill="white" font-size="8" font-weight="700" text-anchor="middle" x="313" y="101">3</text>
+<circle cx="331" cy="101" fill="#2d7a3a" r="7"></circle><text fill="white" font-size="7" text-anchor="middle" x="331" y="105">4</text>
+<circle cx="345" cy="107" fill="#2d7a3a" r="6"></circle><text fill="white" font-size="7" text-anchor="middle" x="345" y="111">5</text>
+<text fill="var(--color-text)" font-size="13" font-weight="700" text-anchor="middle" x="313" y="86">Obong Peak</text>
+<text fill="#2d7a3a" font-size="10" text-anchor="middle" x="313" y="75">660m</text>
+<text fill="#5a9ac8" font-size="10" x="385" y="208">💧 Songchu Waterfall</text>
+<circle cx="329" cy="345" fill="none" r="8" stroke="#2d7a3a" stroke-dasharray="3,2" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="342" y="347">Return to starting point</text>
+<text fill="var(--color-text-muted)" font-size="13" x="474" y="22">N↑</text>
+<rect fill="var(--color-surface)" height="72" opacity=".92" rx="7" width="145" x="12" y="12"></rect>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="22" y="28">Legend</text>
+<line stroke="#2d7a3a" stroke-dasharray="5,3" stroke-width="2" x1="22" x2="50" y1="38" y2="38"></line><text fill="var(--color-text-muted)" font-size="9" x="57" y="42">Hiking Trail</text>
+<circle cx="36" cy="54" fill="#2d7a3a" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="48" y="58">Peak</text>
+<ellipse cx="36" cy="70" fill="#c5e8f0" rx="12" ry="6"></ellipse><text fill="var(--color-text-muted)" font-size="9" x="54" y="74">Wetland/Valley</text>
+</svg>
+<div aria-label="Dobongsan Beginner Obong/Yeoseongbong Course Real-World Map" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
+</div>
+</div>
+<div class="cp-table-wrap">
+<table class="cp-table"><thead><tr><th>#</th><th>Point</th><th>Altitude</th><th>Distance</th><th>Special Notes</th></tr></thead><tbody>
+<tr><td>P</td><td>Songchu Parking Lot</td><td>160m</td><td>0km</td><td><span class="cp-badge br">Start</span></td></tr>
+<tr><td>1</td><td>Obong Visitor Support Center</td><td>165m</td><td>0.3km</td><td><span class="cp-badge bw">Restroom · Information</span></td></tr>
+<tr><td>2</td><td>Uldae Wetland</td><td>230m</td><td>1.5km</td><td><span class="cp-badge bv">Ecological Conservation</span></td></tr>
+<tr><td>3</td><td>Yeoseongbong Peak Junction</td><td>420m</td><td>2.5km</td><td><span class="cp-badge br">Signpost</span></td></tr>
+<tr><td>4</td><td>Yeoseongbong Peak</td><td>504m</td><td>3.0km</td><td><span class="cp-badge bv">Obong Peak View</span></td></tr>
+<tr><td>5</td><td>Obong Peak (3rd Peak)</td><td>660m</td><td>3.8km</td><td><span class="cp-badge bs">Highest Point &amp; Panorama</span></td></tr>
+<tr><td>6</td><td>Songchu Falls</td><td>260m</td><td>6.2km</td><td><span class="cp-badge bw">Valley, rest</span></td></tr>
+<tr><td>P</td><td>Return to starting point</td><td>160m</td><td>9.5km</td><td><span class="cp-badge br">End</span></td></tr>
+</tbody></table>
+</div>
+</div></div></div>
+<!-- route -->
+<!-- map -->
+<!-- tips -->
+</div></div>
+Intermediate
+<div class="course-panel" id="panel-inter">
+<div class="main-container">
+<div class="course-banner inter">
+<div><div class="banner-title"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate — Dobong Exploration Center→Sinseondae Round Trip</div><div class="banner-subtitle">Depart from Dobongsan Station · Cheonchuksa Temple · Madangbawi Rock → Sinseondae Peak (714m) · Dobongsan National Park's Representative Course</div></div>
+<span class="banner-badge">Intermediate</span>
+</div>
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('inter','overview')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab-btn" onclick="switchTab('inter','route')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab-btn" onclick="switchTab('inter','map')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab-btn" onclick="switchTab('inter','tips')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-inter-overview">
+<div class="kpi-grid inter">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.0km</div><div class="kpi-label">Round trip distance</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">3~4h</div><div class="kpi-label">Duration</div></div>
+<div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">660m</div><div class="kpi-label">Cumulative Ascent</div></div>
+<div class="kpi-card"><div class="kpi-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="kpi-val">714m</div><div class="kpi-label">Highest Point (Sinsandae)</div></div>
+<div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">Medium</div><div class="kpi-label">Physical exertion</div></div>
+<div class="kpi-card"><div class="kpi-icon">🚇</div><div class="kpi-val">Subway Line 1 &amp; 7</div><div class="kpi-label">Right at Dobongsan Station</div></div>
+</div>
+<div class="elev-wrap inter">
+<h2>📈 Elevation Profile</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
+<defs><lineargradient id="gi" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b87000" stop-opacity=".3"></stop><stop offset="100%" stop-color="#b87000" stop-opacity=".03"></stop></lineargradient></defs>
+<path d="M0,135 L80,118 L140,100 L190,85 L240,70 L285,56 L320,44 L348,28 L400,45 L450,60 L500,75 L560,95 L630,116 L700,135Z" fill="url(#gi)"></path>
+<path d="M0,135 L80,118 L140,100 L190,85 L240,70 L285,56 L320,44 L348,28 L400,45 L450,60 L500,75 L560,95 L630,116 L700,135" fill="none" stroke="#b87000" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="135" fill="#b87000" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="4" y="145">Dobongsan Station 75m</text>
+<circle cx="320" cy="44" fill="#b87000" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="285" y="36">Madangbawi Rock 450m</text>
+<circle cx="348" cy="28" fill="#b87000" r="5"></circle><text fill="#b87000" font-size="10" font-weight="700" x="316" y="20">Sinseondae 714m</text>
+<circle cx="700" cy="135" fill="#b87000" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="645" y="145">Starting point 75m</text>
+<line stroke="currentColor" stroke-opacity=".1" x1="0" x2="700" y1="135" y2="135"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="90" y2="90"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="50" y2="50"></line>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="88">400m</text>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="48">600m</text>
+</svg>
+</div>
+<div class="diff-wrap inter">
+<h2>⚡ Difficulty by Section</h2>
+<div class="diff-row"><span class="diff-label">Dobongsan Station → Dobongseowon</span><div class="diff-bar"><div class="diff-fill" style="width:25%"></div></div><span class="diff-pct">25%</span></div>
+<div class="diff-row"><span class="diff-label">Dobongseowon → Madangbawi Rock</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
+<div class="diff-row"><span class="diff-label">Madangbawi Rock → Junction</span><div class="diff-bar"><div class="diff-fill" style="width:75%"></div></div><span class="diff-pct">75%</span></div>
+<div class="diff-row"><span class="diff-label">Junction→Sinseondae</span><div class="diff-bar"><div class="diff-fill" style="width:80%"></div></div><span class="diff-pct">80%</span></div>
+<div class="diff-row"><span class="diff-label">Entire Descent Section</span><div class="diff-bar"><div class="diff-fill" style="width:50%"></div></div><span class="diff-pct">50%</span></div>
+</div>
+<div class="section-title"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Key Points</div>
+<div class="peak-grid">
+<div class="peak-card"><div class="peak-icon">⛪</div><div class="peak-elev" style="color:var(--color-inter)">320m</div><div class="peak-name">Cheonchuksa Temple</div><div class="peak-desc">Thousand-year-old temple on Dobongsan's mid-slope. Spring water available.</div></div>
+<div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-inter)">450m</div><div class="peak-name">Madangbawi Rock</div><div class="peak-desc">Flat rock slab where dozens can rest. Views of downtown Seoul.</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="peak-elev" style="color:var(--color-inter)">714m</div><div class="peak-name">Sinseondae</div><div class="peak-desc">Dobongsan summit marker. 360-degree views. Sambong Panorama.</div></div>
+<div class="peak-card"><div class="peak-icon">🌫</div><div class="peak-elev" style="color:var(--color-inter)">740m</div><div class="peak-name">Jaunbong Peak (View)</div><div class="peak-desc">Dobongsan's highest peak. Climbing prohibited. Scenic views from Sinseondae.</div></div>
+</div>
+</div><div class="tab-content" id="tab-inter-route">
+<p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">Total round trip approx. 7km · 3~4h · Dobongsan Station loop</p>
+<div class="accordion inter">
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">Depart from Dobongsan Station</div><div class="acc-meta">Altitude 75m · Subway Line 1 &amp; 7, Exit 1</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Dobongsan Station (Subway Line 1 &amp; 7), Exit 1 → Pass through the Outdoor Specialty Street → 15-minute walk to Dobong Information Center.</p><div class="tip-box">🛒 Final purchase of water and snacks at the convenience store on the specialized street before departure</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">Visitor Center → Dobongseowon Site</div><div class="acc-meta">0.8km · 20min · ★☆☆☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Gentle along the valley. The site of Dobongseowon Confucian Academy is a trace of the academy dedicated to Jo Gwang-jo, a Joseon Neo-Confucian scholar.</p><div class="tip-box">📜 Rock carvings remain, making it a historical site. Recommended to take a moment to appreciate.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">Dobongseowon → Cheonchuksa Temple → Madangbawi Rock</div><div class="acc-meta">1.5km · 50min · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Via Cheonchuksa Temple. Granite exposure section begins. Madangbawi offers an excellent view of downtown Seoul.</p><div class="tip-box">⛪ Water refill available at Cheonchuksa Temple spring. Madangbawi Rock is ideal for lunch.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">Madangbawi Rock → Jaunbong Peak Junction</div><div class="acc-meta">0.6km · 30min · ★★★★☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Steep iron stairs and railings. Jaunbong Peak and Manjangbong Peak are in sight. At the junction, choose the direction to Sinseondae.</p><div class="warn-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Weekend iron staircase congestion. Pass after yielding to descending hikers.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">Junction → Sinseondae (714m)</div><div class="acc-meta">0.3km · 15min · ★★★★☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Final rock ridge. 360-degree view from the summit marker. Jaunbong, Manjangbong, Seoninbong Three Peaks Panorama.</p><div class="tip-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg>Photo of Jaunbong Peak from Sinseondae = Dobongsan National Park's best photo spot</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">Sinseondae → Dobongsan Station (round trip)</div><div class="acc-meta">3.5km · 80min · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Descend the way you came up. Return to the visitor center along Dobonggyegok Valley.</p><div class="tip-box">🍺 Dobongsan Station Specialty Street: Highly recommend Makgeolli, Dotori-muk, and Pajeon!</div></div></div></div>
+</div>
+</div><div class="tab-content" id="tab-inter-tips">
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">Essential Gear</div><ul><li>Hiking boots for rocky terrain</li><li>Trekking poles (for iron stair sections)</li><li>Water 1.5L or more</li><li>Gloves (for gripping rocks)</li><li>Knee Pads</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">🍱</div><div class="tip-card-title">Meals/Drinks</div><ul><li>Snack Break at Madangbawi Rock</li><li>Refill at Cheonchuksa Temple Mineral Spring</li><li>Dobongsan Station restaurant area after descent</li><li>Famous for soft tofu stew and samgyeopsal</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg></div><div class="tip-card-title">Transportation Guide</div><ul><li>Dobongsan Station (Subway Line 1 &amp; 7), Exit 1</li><li>Station ~ Visitor Center 15 min walk</li><li>Car: Dobong-dong Parking Lot</li><li>Weekend parking is very congested</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">Optimal Season</div><ul><li>Optimal in Spring/Autumn (April-May, October)</li><li>Summer: Early start essential</li><li>Winter: Crampons essential</li><li>Early start recommended during autumn foliage season</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg></div><div class="tip-card-title">Safety Warning</div><ul><li>Absolutely no climbing on Jaunbong Peak</li><li>Yield alternately on the iron staircase for ascending and descending hikers</li><li>Caution: Strong winds at Sinseondae Peak</li><li>Night hiking prohibited</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">Useful Apps</div><ul><li>Tranggle: GPS Track</li><li>Korea Forest Service Hiking Map</li><li>Korea National Park Service App</li><li>Korea Meteorological Administration App</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tab-content" id="tab-inter-map">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Intermediate Sinseondae Course Concept Map</h2>
+<div class="map-svg-wrap">
+<svg class="map-fallback" style="max-height:415px;min-width:280px;" viewbox="0 0 520 395" width="100%">
+<rect fill="var(--color-surface-2)" height="395" rx="10" width="520"></rect>
+<path d="M263,380 L261,342 L256,302 L252,262 L247,225 L242,188 L238,155 L236,125 L238,102" fill="none" stroke="#b87000" stroke-dasharray="7,4" stroke-width="2.5"></path>
+<circle cx="263" cy="383" fill="#b87000" r="12"></circle><text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="263" y="388">P</text>
+<text fill="var(--color-text)" font-size="11" font-weight="600" x="206" y="381">Dobongsan Station</text>
+<text fill="var(--color-text-muted)" font-size="9" x="206" y="393">75m · Subway Line 1 &amp; 7</text>
+<rect fill="#fff4e0" height="16" rx="4" width="46" x="240" y="338"></rect><text fill="#8a5200" font-size="9" font-weight="600" text-anchor="middle" x="263" y="350">Visitor Center</text>
+<rect fill="#f5eefb" height="16" rx="4" width="44" x="241" y="298"></rect><text fill="#6a2a8a" font-size="9" font-weight="600" text-anchor="middle" x="263" y="310">Dobongseowon Site</text>
+<rect fill="#f5eefb" height="16" rx="4" width="38" x="242" y="262"></rect><text fill="#6a2a8a" font-size="9" font-weight="600" text-anchor="middle" x="261" y="274">Cheonchuksa Temple</text>
+<ellipse cx="240" cy="238" fill="#e8d8b8" opacity=".9" rx="22" ry="11"></ellipse>
+<text fill="#7a5a20" font-size="9" font-weight="600" text-anchor="middle" x="240" y="242">Madangbawi Rock</text>
+<text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="240" y="226">450m</text>
+<circle cx="238" cy="135" fill="white" r="7" stroke="#b87000" stroke-width="2"></circle>
+<text fill="var(--color-text-muted)" font-size="9" x="222" y="129">Junction</text>
+<polygon fill="#b87000" points="238,102 228,125 248,125"></polygon>
+<circle cx="238" cy="97" fill="#b87000" r="12"></circle>
+<text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="238" y="101">Sinseondae</text>
+<text fill="#b87000" font-size="11" font-weight="700" text-anchor="middle" x="238" y="85">714m</text>
+<polygon fill="#888" points="294,86 284,110 304,110"></polygon><circle cx="294" cy="82" fill="#888" r="12"></circle>
+<text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="294" y="86">Jaunbong Peak</text>
+<text fill="#666" font-size="10" text-anchor="middle" x="294" y="70">740m</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="294" y="60">(Climbing Prohibited)</text>
+<polygon fill="#aaa" points="326,96 318,113 334,113"></polygon><circle cx="326" cy="92" fill="#aaa" r="8"></circle>
+<text fill="white" font-size="7" text-anchor="middle" x="326" y="96">Manjangbong Peak</text>
+<text fill="#888" font-size="9" text-anchor="middle" x="326" y="82">716m</text>
+<polygon fill="#aaa" points="352,104 345,118 359,118"></polygon><circle cx="352" cy="100" fill="#aaa" r="7"></circle>
+<text fill="white" font-size="7" text-anchor="middle" x="352" y="104">Seoninbong Peak</text>
+<text fill="#888" font-size="9" text-anchor="middle" x="352" y="90">708m</text>
+<text fill="var(--color-text-muted)" font-size="13" x="476" y="24">N↑</text>
+<rect fill="var(--color-surface)" height="72" opacity=".93" rx="7" width="148" x="12" y="12"></rect>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="22" y="28">Legend</text>
+<line stroke="#b87000" stroke-dasharray="5,3" stroke-width="2" x1="22" x2="50" y1="38" y2="38"></line><text fill="var(--color-text-muted)" font-size="9" x="57" y="42">Hiking Trail</text>
+<circle cx="36" cy="54" fill="#b87000" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="48" y="58">Start · Summit</text>
+<rect fill="#f5eefb" height="9" rx="2" width="14" x="28" y="66"></rect><text fill="var(--color-text-muted)" font-size="9" x="48" y="74">Temple/Historic Site</text>
+</svg>
+<div aria-label="Dobongsan Intermediate Sinseondae Course Real-World Map" class="leaflet-map" id="map-inter" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
+</div>
+</div>
+<div class="cp-table-wrap">
+<table class="cp-table"><thead><tr><th>#</th><th>Point</th><th>Altitude</th><th>Distance</th><th>Special Notes</th></tr></thead><tbody>
+<tr><td>P</td><td>Dobongsan Station Exit 1</td><td>75m</td><td>0km</td><td><span class="cp-badge br">Subway·Start</span></td></tr>
+<tr><td>1</td><td>Dobong Information Center</td><td>90m</td><td>0.9km</td><td><span class="cp-badge bw">Restroom · Information</span></td></tr>
+<tr><td>2</td><td>Dobongseowon Site</td><td>210m</td><td>1.7km</td><td><span class="cp-badge bt">Historical site</span></td></tr>
+<tr><td>3</td><td>Cheonchuksa Temple</td><td>320m</td><td>2.3km</td><td><span class="cp-badge bt">Ancient Temple &amp; Drinking Water</span></td></tr>
+<tr><td>4</td><td>Madangbawi Rock</td><td>450m</td><td>2.8km</td><td><span class="cp-badge bv">Viewpoint·Rest</span></td></tr>
+<tr><td>5</td><td>Jaunbong Junction</td><td>620m</td><td>3.1km</td><td><span class="cp-badge br">Signpost</span></td></tr>
+<tr><td>6</td><td>Sinseondae</td><td>714m</td><td>3.5km</td><td><span class="cp-badge bs">Summit·360-degree view</span></td></tr>
+<tr><td>P</td><td>Dobongsan Station (Starting Point)</td><td>75m</td><td>7.0km</td><td><span class="cp-badge br">End</span></td></tr>
+</tbody></table>
+</div>
+</div></div></div>
+</div></div>
+Advanced
+<div class="course-panel" id="panel-adv">
+<div class="main-container">
+<div class="course-banner adv">
+<div><div class="banner-title"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced — Darakneungseon Ridge Y Valley Traverse</div><div class="banner-subtitle">Mangwolsa Station → Darakneungseon Ridge → Y-Valley → Sinseondae Peak → Dobongsan Station (One-way Traverse Type)</div></div>
+<span class="banner-badge">Advanced</span>
+</div>
+<div class="tab-bar">
+<button class="tab-btn active" onclick="switchTab('adv','overview')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab-btn" onclick="switchTab('adv','route')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab-btn" onclick="switchTab('adv','map')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab-btn" onclick="switchTab('adv','tips')"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-content active" id="tab-adv-overview">
+<div class="kpi-grid adv">
+<div class="kpi-card"><div class="kpi-icon">📏</div><div class="kpi-val">7.2km</div><div class="kpi-label">One-way (Traverse)</div></div>
+<div class="kpi-card"><div class="kpi-icon">⏱</div><div class="kpi-val">4~5h</div><div class="kpi-label">Duration</div></div>
+<div class="kpi-card"><div class="kpi-icon">⬆️</div><div class="kpi-val">700m</div><div class="kpi-label">Cumulative Ascent</div></div>
+<div class="kpi-card"><div class="kpi-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="kpi-val">714m</div><div class="kpi-label">Highest Point (Sinsandae)</div></div>
+<div class="kpi-card"><div class="kpi-icon">💪</div><div class="kpi-val">Upper</div><div class="kpi-label">Physical exertion</div></div>
+<div class="kpi-card"><div class="kpi-icon">🚇</div><div class="kpi-val">Traverse type</div><div class="kpi-label">Mangwolsa Temple → Dobongsan Station</div></div>
+</div>
+<div class="elev-wrap adv">
+<h2>📈 Elevation Profile</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
+<defs><lineargradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#c0392b" stop-opacity=".3"></stop><stop offset="100%" stop-color="#c0392b" stop-opacity=".03"></stop></lineargradient></defs>
+<path d="M0,133 L60,115 L110,97 L150,82 L178,69 L208,57 L238,49 L258,45 L278,52 L298,37 L328,29 L353,25 L378,35 L400,45 L428,52 L458,65 L498,87 L558,112 L618,127 L700,135Z" fill="url(#ga)"></path>
+<path d="M0,133 L60,115 L110,97 L150,82 L178,69 L208,57 L238,49 L258,45 L278,52 L298,37 L328,29 L353,25 L378,35 L400,45 L428,52 L458,65 L498,87 L558,112 L618,127 L700,135" fill="none" stroke="#c0392b" stroke-linejoin="round" stroke-width="2.5"></path>
+<circle cx="0" cy="133" fill="#c0392b" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="4" y="144">Mangwolsa Station 85m</text>
+<circle cx="208" cy="57" fill="#c0392b" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="175" y="49">Podae Observatory 600m</text>
+<rect fill="#fdecea" height="16" opacity=".95" rx="3" width="42" x="238" y="37"></rect>
+<text fill="#c0392b" font-size="9" font-weight="700" text-anchor="middle" x="259" y="49">Y Valley</text>
+<circle cx="353" cy="25" fill="#c0392b" r="5"></circle><text fill="#c0392b" font-size="10" font-weight="700" x="320" y="17">Sinseondae 714m</text>
+<circle cx="700" cy="135" fill="#c0392b" r="4"></circle><text fill="currentColor" font-size="10" opacity=".7" x="645" y="145">Dobongsan Station 75m</text>
+<line stroke="currentColor" stroke-opacity=".1" x1="0" x2="700" y1="135" y2="135"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="90" y2="90"></line>
+<line stroke="currentColor" stroke-dasharray="4,4" stroke-opacity=".07" x1="0" x2="700" y1="50" y2="50"></line>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="88">400m</text>
+<text fill="currentColor" font-size="9" opacity=".5" x="2" y="48">600m</text>
+</svg>
+</div>
+<div class="diff-wrap adv">
+<h2>⚡ Difficulty by Section</h2>
+<div class="diff-row"><span class="diff-label">Mangwolsa Station → Darakneungseon Ridge</span><div class="diff-bar"><div class="diff-fill" style="width:60%"></div></div><span class="diff-pct">60%</span></div>
+<div class="diff-row"><span class="diff-label">Darakneungseon Rock Ridge</span><div class="diff-bar"><div class="diff-fill" style="width:85%"></div></div><span class="diff-pct">85%</span></div>
+<div class="diff-row"><span class="diff-label">Podae Observatory</span><div class="diff-bar"><div class="diff-fill" style="width:70%"></div></div><span class="diff-pct">70%</span></div>
+<div class="diff-row"><span class="diff-label">Pass through Y Valley</span><div class="diff-bar"><div class="diff-fill" style="width:98%"></div></div><span class="diff-pct">98%</span></div>
+<div class="diff-row"><span class="diff-label">Sinseondae→Dobongsan Station</span><div class="diff-bar"><div class="diff-fill" style="width:45%"></div></div><span class="diff-pct">45%</span></div>
+</div>
+<div class="section-title">🔥 Key Points</div>
+<div class="peak-grid">
+<div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-adv)">Darakneungseon Ridge</div><div class="peak-name">Dobongsan's Best Rock Ridge</div><div class="peak-desc">Continuous granite scrambling. 360-degree view of Seoul.</div></div>
+<div class="peak-card"><div class="peak-icon">🗼</div><div class="peak-elev" style="color:var(--color-adv)">600m</div><div class="peak-name">Podae Observatory</div><div class="peak-desc">Former military battery site. Views of Uijeongbu and Sapaesan Mountain.</div></div>
+<div class="peak-card"><div class="peak-icon">🆘</div><div class="peak-elev" style="color:var(--color-adv)">Key Points</div><div class="peak-name">Y Valley</div><div class="peak-desc">Dobongsan's highest difficulty. Pass through Y-shaped rock crevices. Not for beginners.</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="peak-elev" style="color:var(--color-adv)">714m</div><div class="peak-name">Sinseondae</div><div class="peak-desc">Traverse endpoint. Highest sense of accomplishment after passing Y Valley.</div></div>
+</div>
+</div><div class="tab-content" id="tab-adv-route">
+<p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:.75rem;">Total one-way approx. 7.2km · 4~5h · Mangwolsa Station → Dobongsan Station traverse</p>
+<div class="warn-box" style="margin-bottom:1rem;"><strong>🚨 Advanced Course Warning:</strong>Y Valley strictly prohibited for beginners, children, and those with acrophobia. Rock climbing experience is essential. Operation suspended in case of rain or ice.</div>
+<div class="accordion adv">
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">Depart from Mangwolsa Station</div><div class="acc-meta">Altitude 85m · Subway Line 1, Mangwolsa Station</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Mangwolsa Station (Subway Line 1) → 15-minute walk towards Simwonsa Temple. Final resupply at convenience store. Thorough equipment check.</p><div class="tip-box">🎯 Departure Check: Hiking boots, 2L water, gloves, knee pads, headlamp (for delays)</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">Mangwolsa Station → Enter Darakneungseon Ridge</div><div class="acc-meta">1.5km · 45min · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Past Simwonsa Temple entrance, steep slope of Darakneungseon Ridge. Once on the ridge, continuous granite rocks. Significant incline from the start.</p><div class="tip-box">💪 The beginning is the most challenging. It's essential to maintain a slow pace.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">Darakneungseon Rock Ridge Section</div><div class="acc-meta">1.5km · 60min · ★★★★★</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Dobongsan's best rock ridge. Continuous granite hand-and-foot scrambling. Continuous panoramic views of Seoul.</p><div class="warn-box"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Beware of backpack getting caught on rocks. Maintain sufficient distance from the person in front. Detour is essential on slippery days.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">Podae Observatory (600m)</div><div class="acc-meta">0.5km · 20min · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Podae Ridge Observatory. Uijeongbu and Sapaesan Mountain at a glance. Y-Valley or detour option point.</p><div class="tip-box">🔋 Enter Y-Valley after sufficient rest and replenishing snacks. A detour option is also available.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">Pass through Y Valley 🔥</div><div class="acc-meta">0.5km · 30~40min · ★★★★★</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Dobongsan National Park Highlights. Includes a section where you must remove your backpack to pass through a narrow Y-shaped rock crevice. Use ropes and iron bars. Pass through one person at a time.</p><div class="warn-box">🚨 Absolutely no beginners. Detach your backpack first, then pass. Detour essential in wet weather. Detour route: Left towards Sinseondae.</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">Y Valley → Sinseondae Peak (714m)</div><div class="acc-meta">0.4km · 15min · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">After passing Y Valley, follow the ridge for 200m to Sinseondae Peak. Peak sense of accomplishment. 360-degree panorama.</p><div class="tip-box">🏆 Sinsandae = Completion of Dobongsan National Park Advanced Badge! Summit certification photo required</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">6</div><div><div class="acc-title">Sinseondae → Descend to Dobongsan Station</div><div class="acc-meta">3.5km · 75min · ★★★☆☆</div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Descend via Madangbawi Rock, Cheonchuksa Temple, and Dobongseowon Site. Walk to Dobongsan Station. Traverse complete!</p><div class="tip-box">🍺 Dobongsan Station Specialty Street: Highly recommend after-traverse celebration!</div></div></div></div>
+</div>
+</div><div class="tab-content" id="tab-adv-tips">
+<div class="warn-box" style="margin-bottom:1.25rem;"><strong>🚨 Advanced Course Essential Safety:</strong>Y Valley strictly prohibited for beginners and children. Experienced rock climbers must accompany. Discontinue in case of rain or ice. Avoid solo hiking.</div>
+<div class="tips-grid">
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">Essential Gear</div><ul><li>Hiking boots for rocky terrain (high friction)</li><li>Gloves required</li><li>Water 2L or more</li><li>Knee and Ankle Pads</li><li>Headlamp (for delays)</li><li>Long pants (knee protection)</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">⛑</div><div class="tip-card-title">How to pass Y Valley</div><ul><li>Remove backpack first, then pass through</li><li>Maintain sufficient distance from person in front</li><li>Check footing before moving</li><li>Observe order one person at a time</li><li>Detour: Left option available</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg></div><div class="tip-card-title">Traverse Transportation</div><ul><li>Start: Mangwolsa Station (Line 1)</li><li>Arrival: Dobongsan Station (Line 1 &amp; 7)</li><li>Transfer to Line 1 between the two stations</li><li>Traverse type — Public transportation recommended</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📅</div><div class="tip-card-title">Optimal Season</div><ul><li>Spring/Autumn (April-May, October)</li><li>Prohibited during summer monsoon season</li><li>Winter: Crampons and gaiters essential</li><li>Rock ridge is very slippery the day after rain</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg></div><div class="tip-card-title">Safety Warning</div><ul><li>Y Valley strictly prohibited for beginners</li><li>Caution: Backpacks may get caught on rocky ridges</li><li>Winter icing is very dangerous</li><li>Dobongsan Office 02-954-2566</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon">📱</div><div class="tip-card-title">Useful Apps</div><ul><li>Tranggle · Garmin: GPS Track</li><li>Korea National Park Service App</li><li>Korea Forest Service Hiking Map</li><li>Korea Meteorological Administration App (Essential before departure)</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tab-content" id="tab-adv-map">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Advanced Y Valley Traverse Course Concept Map</h2>
+<div class="map-svg-wrap">
+<svg class="map-fallback" style="max-height:435px;min-width:280px;" viewbox="0 0 560 415" width="100%">
+<rect fill="var(--color-surface-2)" height="415" rx="10" width="560"></rect>
+<path d="M90,398 Q113,373 131,346 Q150,316 159,280 Q168,243 173,208 Q178,176 182,146 Q188,116 197,93 Q207,73 220,63 Q235,53 253,51 Q267,50 280,56 Q293,62 303,72 Q315,84 330,86 Q343,88 357,82 Q369,74 377,66 Q393,53 413,60 Q433,70 439,88 Q443,108 439,133 Q433,163 427,193 Q419,226 415,258 Q410,293 415,328 Q421,363 423,398" fill="none" stroke="#c0392b" stroke-dasharray="8,4" stroke-width="3"></path>
+<circle cx="90" cy="400" fill="#c0392b" r="13"></circle><text fill="white" font-size="10" font-weight="bold" text-anchor="middle" x="90" y="405">P</text>
+<text fill="var(--color-text)" font-size="11" font-weight="600" x="43" y="398">Mangwolsa Station</text>
+<text fill="var(--color-text-muted)" font-size="9" x="43" y="410">85m</text>
+<text fill="#c0392b" font-size="11" font-weight="700" x="88" y="265">Darakneungseon Ridge</text>
+<circle cx="186" cy="118" fill="#c0392b" r="9"></circle>
+<rect fill="#fdecea" height="16" rx="4" width="72" x="196" y="111"></rect>
+<text fill="#c0392b" font-size="9" font-weight="600" text-anchor="middle" x="232" y="122">Podae Observatory 600m</text>
+<ellipse cx="265" cy="53" fill="#c0392b" opacity=".2" rx="28" ry="16"></ellipse>
+<ellipse cx="265" cy="53" fill="none" rx="28" ry="16" stroke="#c0392b" stroke-width="2.5"></ellipse>
+<text fill="#c0392b" font-size="11" font-weight="800" text-anchor="middle" x="265" y="49">Y Valley</text>
+<text fill="#c0392b" font-size="8" text-anchor="middle" x="265" y="61"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Advanced Only</text>
+<path d="M237,68 Q233,88 233,106 Q235,116 247,120" fill="none" stroke="#999" stroke-dasharray="3,3" stroke-width="1.5"></path>
+<text fill="var(--color-text-muted)" font-size="9" x="194" y="106">Detour</text>
+<polygon fill="#c0392b" points="377,66 367,86 387,86"></polygon>
+<circle cx="377" cy="62" fill="#c0392b" r="13"></circle>
+<text fill="white" font-size="8" font-weight="bold" text-anchor="middle" x="377" y="66">Sinseondae</text>
+<text fill="#c0392b" font-size="11" font-weight="700" text-anchor="middle" x="377" y="50">714m</text>
+<polygon fill="#888" points="423,60 413,80 433,80"></polygon><circle cx="423" cy="56" fill="#888" r="10"></circle>
+<text fill="white" font-size="7" text-anchor="middle" x="423" y="60">Jaunbong Peak</text>
+<text fill="#666" font-size="9" text-anchor="middle" x="423" y="46">740m</text>
+<circle cx="423" cy="398" fill="none" r="11" stroke="#c0392b" stroke-width="2.5"></circle>
+<text fill="var(--color-text)" font-size="9" font-weight="700" text-anchor="middle" x="423" y="402">Dobongsan Station</text>
+<text fill="var(--color-text-muted)" font-size="8" text-anchor="middle" x="423" y="414">End 75m</text>
+<text fill="var(--color-text-muted)" font-size="13" x="518" y="26">N↑</text>
+<rect fill="var(--color-surface)" height="88" opacity=".93" rx="7" width="158" x="12" y="12"></rect>
+<text fill="var(--color-text)" font-size="10" font-weight="700" x="22" y="28">Legend</text>
+<line stroke="#c0392b" stroke-dasharray="6,3" stroke-width="2" x1="22" x2="52" y1="38" y2="38"></line><text fill="var(--color-text-muted)" font-size="9" x="59" y="42">Hiking Trail (Traverse)</text>
+<ellipse cx="37" cy="56" fill="#c0392b" opacity=".2" rx="12" ry="7"></ellipse>
+<ellipse cx="37" cy="56" fill="none" rx="12" ry="7" stroke="#c0392b" stroke-width="1.5"></ellipse>
+<text fill="var(--color-text-muted)" font-size="9" x="54" y="60">Y Valley (Dangerous)</text>
+<circle cx="37" cy="72" fill="#c0392b" r="6"></circle><text fill="var(--color-text-muted)" font-size="9" x="49" y="76">Peak/Start</text>
+<line stroke="#999" stroke-dasharray="3,2" stroke-width="1.5" x1="22" x2="52" y1="88" y2="88"></line><text fill="var(--color-text-muted)" font-size="9" x="59" y="92">Detour</text>
+</svg>
+<div aria-label="Dobongsan Advanced Y-Valley Traverse Course Real-World Map" class="leaflet-map" id="map-adv" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
+</div>
+</div>
+<div class="cp-table-wrap">
+<table class="cp-table"><thead><tr><th>#</th><th>Point</th><th>Altitude</th><th>Distance</th><th>Special Notes</th></tr></thead><tbody>
+<tr><td>P</td><td>Mangwolsa Station</td><td>85m</td><td>0km</td><td><span class="cp-badge br">Start · Line 1</span></td></tr>
+<tr><td>1</td><td>Simwonsa Temple Entrance</td><td>150m</td><td>0.8km</td><td><span class="cp-badge bt">Temple</span></td></tr>
+<tr><td>2</td><td>Enter Darakneungseon Ridge</td><td>320m</td><td>1.5km</td><td><span class="cp-badge bv">Rocky ridge begins</span></td></tr>
+<tr><td>3</td><td>Podae Observatory</td><td>600m</td><td>3.0km</td><td><span class="cp-badge bv">Viewpoint·Bypass Fork</span></td></tr>
+<tr><td>4</td><td>Y Valley Entrance</td><td>630m</td><td>3.5km</td><td><span class="cp-badge bs">🔥 No beginners</span></td></tr>
+<tr><td>5</td><td>Y Valley passage completed</td><td>680m</td><td>4.0km</td><td><span class="cp-badge bs">Highest Difficulty</span></td></tr>
+<tr><td>6</td><td>Sinseondae</td><td>714m</td><td>4.5km</td><td><span class="cp-badge bs">Summit·360-degree view</span></td></tr>
+<tr><td>7</td><td>Madangbawi Rock</td><td>450m</td><td>5.3km</td><td><span class="cp-badge br">Rest</span></td></tr>
+<tr><td>8</td><td>Cheonchuksa Temple</td><td>320m</td><td>5.9km</td><td><span class="cp-badge bt">Drinking water</span></td></tr>
+<tr><td>9</td><td>Dobong Information Center</td><td>90m</td><td>6.8km</td><td><span class="cp-badge bw">Restroom</span></td></tr>
+<tr><td>E</td><td>Dobongsan Station</td><td>75m</td><td>7.2km</td><td><span class="cp-badge br">End·Subway</span></td></tr>
+</tbody></table>
+</div>
+</div></div></div>
+</div></div>
+<!-- Photo Gallery Grid -->
+</main>
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span>Dobongsan National Park's Four Seasons &amp; Attractions</h2>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Hiking Courses Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="0">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g1.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Hiking Courses</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Scenic View Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="1">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g2.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Scenic View</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan National Park Scenery Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="2">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g3.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan National Park Scenery</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan National Park Trails Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="3">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g4.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan National Park Trails</span>
+</div>
+</button>
+<!-- Gallery Image Button 5 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="4">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g5.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g5.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g5.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 6 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="5">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g6.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g6.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g6.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 7 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="6">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g7.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g7.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g7.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 8 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="7">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g8.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g8.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g8.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 9 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="8">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g9.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g9.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g9.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 10 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="9">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g10.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g10.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g10.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 11 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="10">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g11.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g11.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g11.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 12 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="11">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g12.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g12.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g12.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 13 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="12">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g13.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g13.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g13.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 14 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="13">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g14.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g14.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g14.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 15 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="14">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g15.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g15.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g15.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 16 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="15">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g16.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g16.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g16.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 17 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="16">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g17.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g17.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g17.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 18 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="17">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g18.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g18.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g18.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 19 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="18">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g19.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g19.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g19.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 20 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="19">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g20.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g20.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g20.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 21 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="20">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g21.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g21.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g21.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 22 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="21">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g22.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g22.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g22.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 23 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="22">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g23.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g23.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g23.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 24 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="23">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g24.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g24.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g24.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 25 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="24">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g25.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g25.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g25.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 26 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="25">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g26.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g26.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g26.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 27 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="26">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g27.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g27.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g27.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 28 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="27">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g28.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g28.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g28.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 29 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="28">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g29.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g29.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g29.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 30 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="29">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g30.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g30.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g30.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 31 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="30">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g31.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g31.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g31.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 32 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="31">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g32.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g32.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g32.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 33 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="32">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g33.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g33.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g33.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 34 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="33">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g34.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g34.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g34.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 35 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="34">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g35.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g35.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g35.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 36 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="35">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g36.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g36.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g36.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 37 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="36">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g37.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g37.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g37.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 38 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="37">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g38.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g38.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g38.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 39 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="38">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g39.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g39.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g39.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 40 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="39">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g40.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g40.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g40.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 41 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="40">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g41.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g41.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g41.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 42 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="41">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g42.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g42.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g42.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 43 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="42">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g43.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g43.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g43.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 44 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="43">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g44.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g44.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g44.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 45 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="44">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g45.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g45.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g45.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 46 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="45">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g46.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g46.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g46.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 47 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="46">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g47.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g47.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g47.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 48 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="47">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g48.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g48.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g48.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 49 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="48">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g49.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g49.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g49.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 50 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="49">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g50.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g50.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g50.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 51 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="50">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g51.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g51.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g51.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 52 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="51">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g52.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g52.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g52.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 53 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="52">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g53.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g53.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g53.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 54 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="53">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g54.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g54.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g54.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 55 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="54">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g55.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g55.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g55.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 56 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="55">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g56.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g56.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g56.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 57 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="56">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g57.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g57.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g57.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 58 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="57">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g58.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g58.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g58.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 59 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="58">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g59.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g59.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g59.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 60 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="59">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g60.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g60.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g60.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 61 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="60">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g61.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g61.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g61.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 62 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="61">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g62.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g62.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g62.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 63 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="62">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g63.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g63.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g63.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 64 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="63">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g64.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g64.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g64.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 65 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="64">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g65.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g65.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g65.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 66 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="65">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g66.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g66.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g66.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 67 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="66">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g67.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g67.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g67.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 68 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="67">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g68.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g68.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g68.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 69 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="68">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g69.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g69.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g69.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 70 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="69">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g70.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g70.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g70.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 71 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="70">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g71.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g71.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g71.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 72 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="71">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g72.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g72.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g72.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 73 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="72">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g73.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g73.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g73.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+<!-- Gallery Image Button 74 -->
+<button aria-haspopup="dialog" aria-label="View Dobongsan Panorama Larger" class="gallery-item" data-credit="Photo by Dokyung Kim (Local)" data-index="73">
+<picture class="gallery-picture">
+<source srcset="../assets/img/dobongsan/g74.avif" type="image/avif"/>
+<source srcset="../assets/img/dobongsan/g74.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/dobongsan/g74.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Dobongsan Panorama</span>
+</div>
+</button>
+</div>
+</section>
+<section class="video-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span>My Trekking Video</h2>
+<div class="video-grid">
+<!-- Video Card 1 -->
+<div class="video-card">
+<div class="video-container" id="shorts-fqzChTcpmjM">
+<button aria-label="Play Sinseondae YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Sinseondae Peak')">
+<img alt="Sinseondae YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/fqzChTcpmjM/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Sinseondae</span>
+<a class="video-link" href="https://youtube.com/shorts/fqzChTcpmjM" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="video-card">
+<div class="video-container" id="shorts-JeCUmWleiK4">
+<button aria-label="Play Jubong Peak·Sinseondae YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Jubong Peak, Sinseondae Peak')">
+<img alt="Jubong Peak·Sinseondae YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/JeCUmWleiK4/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Jubong Peak·Sinseondae</span>
+<a class="video-link" href="https://youtube.com/shorts/JeCUmWleiK4" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="video-card">
+<div class="video-container" id="shorts-YMghILiM-4c">
+<button aria-label="Play Ui-am Peak YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Ui-am Rock')">
+<img alt="Ui-am Peak YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/YMghILiM-4c/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Ui-am Peak</span>
+<a class="video-link" href="https://youtube.com/shorts/YMghILiM-4c" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 4 -->
+<div class="video-card">
+<div class="video-container" id="shorts-D_P56H5LcWs">
+<button aria-label="Play Uiryeong Pass, Obong Peak, Seokguram Hermitage YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Uiryeong Pass, Obong, Seokguram Hermitage')">
+<img alt="Uiryeong Pass, Obong Peak, Seokguram Hermitage YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/D_P56H5LcWs/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Uiryeong Pass, Obong Peak, Seokguram Hermitage</span>
+<a class="video-link" href="https://youtube.com/shorts/D_P56H5LcWs" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 5 -->
+<div class="video-card">
+<div class="video-container" id="shorts-ER2uyn2WmFE">
+<button aria-label="Play Manwolsa Temple YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Manwolsa Temple')">
+<img alt="Manwolsa Temple YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/ER2uyn2WmFE/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Manwolsa Temple</span>
+<a class="video-link" href="https://youtube.com/shorts/ER2uyn2WmFE" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 6 -->
+<div class="video-card">
+<div class="video-container" id="shorts-lHu7jaQ-32w">
+<button aria-label="Play Cat Paradise YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Cat Paradise')">
+<img alt="Cat Paradise YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/lHu7jaQ-32w/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Cat Paradise</span>
+<a class="video-link" href="https://youtube.com/shorts/lHu7jaQ-32w" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 7 -->
+<div class="video-card">
+<div class="video-container" id="shorts-IVMQiilgr_M">
+<button aria-label="Play Summit Cat YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Summit Cat')">
+<img alt="Summit Cat YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/IVMQiilgr_M/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Summit Cat</span>
+<a class="video-link" href="https://youtube.com/shorts/IVMQiilgr_M" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 8 -->
+<div class="video-card">
+<div class="video-container" id="shorts-h7AtXJMzggI">
+<button aria-label="Play Cat 2 YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Cat 2')">
+<img alt="Cat 2 YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/h7AtXJMzggI/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Cat 2</span>
+<a class="video-link" href="https://youtube.com/shorts/h7AtXJMzggI" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 9 -->
+<div class="video-card">
+<div class="video-container" id="shorts-vnEniq-ljRA">
+<button aria-label="Play Cat 3 YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Cat 3')">
+<img alt="Cat 3 YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/vnEniq-ljRA/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Cat 3</span>
+<a class="video-link" href="https://youtube.com/shorts/vnEniq-ljRA" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 10 -->
+<div class="video-card">
+<div class="video-container" id="shorts-P3zO2XUmo6o">
+<button aria-label="Play Communicate with Cats YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Connecting with a Cat')">
+<img alt="Communicate with Cats YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/P3zO2XUmo6o/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Communicate with Cats</span>
+<a class="video-link" href="https://youtube.com/shorts/P3zO2XUmo6o" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 11 -->
+<div class="video-card">
+<div class="video-container" id="shorts-kYBnFPkAc2s">
+<button aria-label="Play Birth of the Great Ant Kingdom YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('Birth of a Giant Ant Kingdom')">
+<img alt="Birth of the Great Ant Kingdom YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/kYBnFPkAc2s/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Birth of the Great Ant Kingdom</span>
+<a class="video-link" href="https://youtube.com/shorts/kYBnFPkAc2s" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+<!-- Video Card 12 -->
+<div class="video-card">
+<div class="video-container" id="shorts-8gGM0qgEvY4">
+<button aria-label="Play Geobukbawi Rock YouTube Shorts" class="video-facade-btn" onclick="playShortsVideo('shorts-8gGM0qgEvY4', '8gGM0qgEvY4', 'Geobukbawi Rock')">
+<img alt="Geobukbawi Rock YouTube Shorts Thumbnail" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/8gGM0qgEvY4/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">Geobukbawi Rock</span>
+<a class="video-link" href="https://youtube.com/shorts/8gGM0qgEvY4" rel="noopener noreferrer" target="_blank">View original Shorts ↗</a>
+</div>
+</div>
+</div>
+</section>
+<script>
+(function(){
+  var t=document.querySelector('[data-theme-toggle]'),r=document.documentElement;
+  var d=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
+  r.setAttribute('data-theme',d);
+  function si(m){if(!t)return;t.innerHTML=m==='dark'?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+  si(d);
+  if(t)t.addEventListener('click',function(){d=d==='dark'?'light':'dark';r.setAttribute('data-theme',d);si(d);});
+})();
+function switchLevel(lv){
+  document.querySelectorAll('.level-btn').forEach(function(b){b.classList.remove('active');});
+  document.querySelector('.level-btn[data-level="'+lv+'"]').classList.add('active');
+  document.querySelectorAll('.course-panel').forEach(function(p){p.classList.remove('active');});
+  document.getElementById('panel-'+lv).classList.add('active');
+}
+function switchTab(lv,tab){
+  var panel=document.getElementById('panel-'+lv);
+  panel.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  panel.querySelectorAll('.tab-content').forEach(function(c){c.classList.remove('active');});
+  var tabs=panel.querySelectorAll('.tab-btn');
+  var m={overview:0,route:1,map:2,tips:3};
+  if(tabs[m[tab]])tabs[m[tab]].classList.add('active');
+  var el=document.getElementById('tab-'+lv+'-'+tab);
+  if(el)el.classList.add('active');
+  
+  if(tab === 'map' && window.mapInstances && window.mapInstances[lv]) {
+    setTimeout(function() {
+      window.mapInstances[lv].invalidateSize();
+    }, 180);
+  }
+}
+function toggleAcc(item){
+  var isOpen=item.classList.contains('open');
+  item.closest('.accordion').querySelectorAll('.acc-item').forEach(function(a){a.classList.remove('open');});
+  if(!isOpen)item.classList.add('open');
+}
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="View larger image" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="Close Gallery" class="lightbox-close">×</button>
+<button aria-label="Previous image" class="lightbox-prev">❮</button>
+<button aria-label="Next Image" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script>
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script>
+<!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+<!-- Leaflet & Video Facade Logic -->
+<script>
+function playShortsVideo(containerId, videoId, label) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const iframe = document.createElement('iframe');
+  iframe.className = 'video-iframe';
+  iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1';
+  iframe.title = label + ' YouTube Shorts';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  container.innerHTML = '';
+  container.appendChild(iframe);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mapConfig = {
+    points: {
+      "Songchu Parking Lot": {"lat": 37.7126, "lng": 126.9744, "alt_m": 160},
+      "obong_center_Obong Information Center": {"lat": 37.7135, "lng": 126.9785, "alt_m": 165},
+      "Uldae Wetland": {"lat": 37.7188, "lng": 126.9850, "alt_m": 230},
+      "Yeoseongbong Junction": {"lat": 37.7210, "lng": 126.9930, "alt_m": 420},
+      "Yeoseongbong Peak": {"lat": 37.7225, "lng": 126.9972, "alt_m": 504},
+      "obong_Obong": {"lat": 37.7183, "lng": 127.0055, "alt_m": 660},
+      "Songchu Waterfall": {"lat": 37.7181, "lng": 126.9912, "alt_m": 260},
+      "dobongsan_exit1_Dobongsan Station": {"lat": 37.6896, "lng": 127.0427, "alt_m": 75},
+      "dobong_center_Dobong Information Center": {"lat": 37.6905, "lng": 127.0325, "alt_m": 90},
+      "dobong_seowon_Dobongseowon Site": {"lat": 37.6946, "lng": 127.0255, "alt_m": 210},
+      "cheonchuksa_Cheonchuksa Temple": {"lat": 37.6980, "lng": 127.0230, "alt_m": 320},
+      "madangbawi_Madangbawi Rock": {"lat": 37.6983, "lng": 127.0202, "alt_m": 450},
+      "jaunbong_junction_Jaunbong Junction": {"lat": 37.6992, "lng": 127.0175, "alt_m": 620},
+      "Sinseondae Peak": {"lat": 37.6998, "lng": 127.0165, "alt_m": 714},
+      "mangwolsa_station_Mangwolsa Station": {"lat": 37.7303, "lng": 127.0469, "alt_m": 85},
+      "Simwonsa Temple Entrance": {"lat": 37.7225, "lng": 127.0395, "alt_m": 150},
+      "darak_ridge_Darak Ridge Entrance": {"lat": 37.7165, "lng": 127.0315, "alt_m": 320},
+      "podae_observatory_Podae Observatory": {"lat": 37.7015, "lng": 127.0195, "alt_m": 600},
+      "Y Valley Entrance": {"lat": 37.7008, "lng": 127.0175, "alt_m": 630},
+      "Y Valley Exit": {"lat": 37.6999, "lng": 127.0168, "alt_m": 680}
+    },
+    routes: {
+      "beginner": [
+        "Songchu Parking Lot",
+        "obong_center_Obong Information Center",
+        "Uldae Wetland",
+        "Yeoseongbong Junction",
+        "Yeoseongbong Peak",
+        "obong_Obong",
+        "Songchu Waterfall",
+        "obong_center_Obong Information Center",
+        "Songchu Parking Lot"
+      ],
+      "inter": [
+        "dobongsan_exit1_Dobongsan Station",
+        "dobong_center_Dobong Information Center",
+        "dobong_seowon_Dobongseowon Site",
+        "cheonchuksa_Cheonchuksa Temple",
+        "madangbawi_Madangbawi Rock",
+        "jaunbong_junction_Jaunbong Junction",
+        "Sinseondae Peak",
+        "jaunbong_junction_Jaunbong Junction",
+        "madangbawi_Madangbawi Rock",
+        "dobong_center_Dobong Information Center",
+        "dobongsan_exit1_Dobongsan Station"
+      ],
+      "adv": [
+        "mangwolsa_station_Mangwolsa Station",
+        "Simwonsa Temple Entrance",
+        "darak_ridge_Darak Ridge Entrance",
+        "podae_observatory_Podae Observatory",
+        "Y Valley Entrance",
+        "Y Valley Exit",
+        "Sinseondae Peak",
+        "madangbawi_Madangbawi Rock",
+        "cheonchuksa_Cheonchuksa Temple",
+        "dobong_center_Dobong Information Center",
+        "dobongsan_exit1_Dobongsan Station"
+      ]
+    },
+    colors: {
+      "beginner": "#2d7a3a",
+      "inter": "#b87000",
+      "adv": "#c0392b"
+    }
+  };
+
+  window.mapInstances = window.mapInstances || {};
+  window.initializedMaps = window.initializedMaps || {};
+
+  function loadLeafletAssets(callback) {
+    if (window.L) {
+      callback();
+      return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    link.crossOrigin = '';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    script.crossOrigin = '';
+    script.onload = callback;
+    script.onerror = () => console.warn("Leaflet CDN failed to load. The conceptual map will be maintained.");
+    document.head.appendChild(script);
+  }
+
+  function initCourseMap(courseId) {
+    const mapEl = document.getElementById(`map-${courseId}`);
+    if (!mapEl || window.initializedMaps[courseId]) return;
+
+    const fallbackSvg = mapEl.parentElement.querySelector('.map-fallback');
+    if (fallbackSvg) fallbackSvg.style.display = 'none';
+    mapEl.style.display = 'block';
+
+    const map = L.map(mapEl, { scrollWheelZoom: false, zoomControl: true });
+    
+    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics',
+      maxZoom: 19
+    });
+
+    const terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data: &copy; OpenStreetMap contributors, OpenTopoMap',
+      maxZoom: 17,
+      className: 'terrain-layer-dark-filter'
+    });
+
+    satellite.addTo(map);
+
+    L.control.layers({
+      "🛰️ Satellite Layer": satellite,
+      "🏔️ Terrain Layer": terrain
+    }, null, { collapsed: false }).addTo(map);
+
+    const route = mapConfig.routes[courseId];
+    const color = mapConfig.colors[courseId];
+    const latlngs = [];
+    const markers = L.featureGroup();
+
+    route.forEach((ptKey) => {
+      const pt = mapConfig.points[ptKey];
+      if (!pt) return;
+
+      const latlng = [pt.lat, pt.lng];
+      latlngs.push(latlng);
+
+      let isDuplicate = false;
+      markers.eachLayer(layer => {
+        if (layer.getLatLng().lat === pt.lat && layer.getLatLng().lng === pt.lng) {
+          isDuplicate = true;
+        }
+      });
+
+      if (!isDuplicate) {
+        const nameKo = ptKey.split('_')[2] || ptKey.split('_')[1] || ptKey;
+        const marker = L.circleMarker(latlng, {
+          radius: 6,
+          fillColor: color,
+          color: '#ffffff',
+          weight: 1.5,
+          opacity: 1,
+          fillOpacity: 0.9
+        });
+
+        marker.bindTooltip(nameKo, {
+          permanent: true,
+          direction: 'top',
+          offset: [0, -6],
+          className: 'map-tooltip'
+        });
+
+        marker.addTo(markers);
+      }
+    });
+
+    const polyline = L.polyline(latlngs, {
+      color: color,
+      weight: 4,
+      opacity: 0.85,
+      lineCap: 'round',
+      lineJoin: 'round'
+    });
+
+    // Set view/bounds first to project coordinates properly
+    if (latlngs.length > 0) {
+      try {
+        map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+      } catch (e) {
+        console.warn("fitBounds failed:", e.message);
+        map.setView(latlngs[0], 13);
+      }
+    } else {
+      map.setView([37.6998, 127.0165], 13);
+    }
+
+    // Now safely add elements to the map
+    polyline.addTo(map);
+    markers.addTo(map);
+
+    map.on('focus', () => { map.scrollWheelZoom.enable(); });
+    map.on('blur', () => { map.scrollWheelZoom.disable(); });
+
+    window.mapInstances[courseId] = map;
+    window.initializedMaps[courseId] = true;
+  }
+
+  const mapObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const mapEl = entry.target.querySelector('.leaflet-map');
+        if (!mapEl) return;
+        const courseId = mapEl.id.replace('map-', '');
+        loadLeafletAssets(() => {
+          initCourseMap(courseId);
+          setTimeout(() => {
+            if (window.mapInstances[courseId]) {
+              window.mapInstances[courseId].invalidateSize();
+            }
+          }, 150);
+        });
+      }
+    });
+  }, { rootMargin: '100px', threshold: 0.01 });
+
+  document.querySelectorAll('.map-wrap').forEach(mapContainer => {
+    mapObserver.observe(mapContainer);
+  });
+});
+</script>
+</body>
+</html>
