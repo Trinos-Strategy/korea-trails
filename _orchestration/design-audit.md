@@ -1,6 +1,6 @@
 # Korea Trails — 디자인 및 UX/UI 기술 부채 감사 보고서 (Design Audit)
 
-본 문서는 `DESIGN-OVERHAUL.md`에 근거하여 `CassianK/korea-trails` 프로젝트 전체 21개 플레이북 및 메인 랜딩 페이지(`index.html`)의 디자인 시스템 상태, 기술 부채, 정보 구조를 감사한 결과보고서입니다.
+본 문서는 `DESIGN-OVERHAUL.md`에 근거하여 `Dokyung KimK/korea-trails` 프로젝트 전체 21개 플레이북 및 메인 랜딩 페이지(`index.html`)의 디자인 시스템 상태, 기술 부채, 정보 구조를 감사한 결과보고서입니다.
 
 ---
 

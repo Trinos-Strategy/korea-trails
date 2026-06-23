@@ -1,6 +1,6 @@
 # Korea Trails 전면 업그레이드 — 멀티에이전트 오케스트레이션 설계서
 
-> **목적** — `CassianK/korea-trails` 정적 사이트(index + 플레이북 22개, 명산 26개)의 디자인·UX·UI·그래픽을 전면 업그레이드하고, 모든 산에 **실제 사진(무료 스톡 API)** 을 도입한다.
+> **목적** — `Dokyung KimK/korea-trails` 정적 사이트(index + 플레이북 22개, 명산 26개)의 디자인·UX·UI·그래픽을 전면 업그레이드하고, 모든 산에 **실제 사진(무료 스톡 API)** 을 도입한다.
 > **실행 런타임** — Claude Code 서브에이전트(Task 도구 병렬 spawn).
 > **범위** — 전체 26개 산 + index 랜딩.
 > **이 문서의 사용법** — §11의 "마스터 킥오프 프롬프트"를 오케스트레이터(리드 Claude)에게 그대로 전달하면 된다. §7의 에이전트 프롬프트는 각 서브에이전트 spawn 시 `prompt` 인자로 복붙한다.
@@ -33,7 +33,7 @@
 - **사진 부재**: `<img>` 0개. 모든 시각요소가 SVG 그라디언트(`#advGrad`,`#begGrad`,`#intGrad`)로 생성됨.
 - **index.html**: `MOUNTAINS[]` 배열(JS)로 카드 렌더. 한국 23 + 대만 3(위산·설산·양명산). `done:true` 16개.
 
-> ⚠️ 리포지토리 표기 불일치 주의: 사용자가 준 URL은 `Trinos-Strategy/korea-trails`이나, 로컬 git remote는 `CassianK/korea-trails`. **배포 에이전트(A8)는 작업 시작 전 실제 remote/Pages 대상을 반드시 재확인**한다.
+> ⚠️ 리포지토리 표기 불일치 주의: 사용자가 준 URL은 `Trinos-Strategy/korea-trails`이나, 로컬 git remote는 `Dokyung KimK/korea-trails`. **배포 에이전트(A8)는 작업 시작 전 실제 remote/Pages 대상을 반드시 재확인**한다.
 
 ---
 
@@ -346,7 +346,7 @@ P6(최종 게이트):
 | R3 | 성능 회귀(이미지 과중) | 이탈·SEO | 전송량 예산, AVIF/WebP, srcset, lazy, A7 실측 |
 | R4 | 다크모드 가독성 저하 | UX 손상 | 오버레이 토큰, 대비 AA, A1 양테마 명시 |
 | R5 | 기존 기능 파손 | 회귀 | 브랜치/PR, 산1=커밋1, A7 무회귀 체크 |
-| R6 | 리포 대상 혼선(Trinos vs CassianK) | 잘못 배포 | A8 착수 전 remote/Pages 재확인 |
+| R6 | 리포 대상 혼선(Trinos vs Dokyung KimK) | 잘못 배포 | A8 착수 전 remote/Pages 재확인 |
 | R7 | API 키/레이트리밋 | 진행 정체 | 키 사전확보, 배치 4~6 병렬 상한, 백오프 |
 | R8 | 서브에이전트 산출 스키마 불일치 | 파이프 단절 | §6 스키마 강제, 게이트에서 검증 |
 

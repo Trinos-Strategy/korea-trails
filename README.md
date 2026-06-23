@@ -3,7 +3,7 @@
 전국 명산 코스를 탐색하고, 상세 플레이북을 확인하는 **오픈소스 등산 아카이브**입니다.  
 인터랙티브 전국 지도에서 산을 클릭하면 체크포인트·고도 프로필·팁이 담긴 플레이북으로 바로 이동합니다.
 
-🌐 **라이브 사이트** → [https://CassianK.github.io/korea-trails](https://CassianK.github.io/korea-trails)
+🌐 **라이브 사이트** → [https://Dokyung KimK.github.io/korea-trails](https://Dokyung KimK.github.io/korea-trails)
 
 ---
 
@@ -47,4 +47,4 @@
 
 ---
 
-Made with ❤️ by [Cassian](https://github.com/CassianK)
+Made with ❤️ by [Dokyung Kim](https://youtube.com/@DK2560 KimK)
