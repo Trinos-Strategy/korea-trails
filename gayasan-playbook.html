@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -556,29 +556,13 @@
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <span class="logo-txt">가야산 플레이북</span>
 </div>
@@ -632,13 +616,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">6km</div><div class="sl">소리길 왕복</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">2~3h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">900m</div><div class="sl">최고 도달 고도</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±300m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~500</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">소리길 왕복</span>
+<span class="pill-value">6km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">2~3h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고 도달 고도</span>
+<span class="pill-value">900m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±300m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~500</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 1단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-easy"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 홍류동 소리길 (해인사 주차장 → 홍류문 왕복)</h2>
@@ -682,7 +698,7 @@
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-t">해인사 주차장 출발</div><div class="acc-m">해발 약 700m · 경남 합천군 가야면 해인사길 122</div></div>
+<div class="acc-tw"><div class="acc-t">해인사 주차장 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 약 700m</span><span class="meta-chip">📍 경남 합천군 가야면 해인사길 122</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -693,7 +709,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-t">해인사 → 홍류동 계곡 입구</div><div class="acc-m">약 0.5km · 10분 · 평탄한 임도</div></div>
+<div class="acc-tw"><div class="acc-t">해인사 → 홍류동 계곡 입구</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.5km</span><span class="meta-chip">⏱ 10분</span><span class="meta-chip">📍 평탄한 임도</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -704,19 +720,19 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-t">홍류동 계곡 → 청량대</div><div class="acc-m">약 2.0km · 50분 · 계곡 숲길</div></div>
+<div class="acc-tw"><div class="acc-t">홍류동 계곡 → 청량대</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.0km</span><span class="meta-chip">⏱ 50분</span><span class="meta-chip">📍 계곡 숲길</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div>
-<p class="acc-desc">홍류동 계곡은 가야산의 진수입니다. 맑은 계곡물이 바위를 타고 흐르는 소리, 울창한 활엽수림의 시원한 그늘. 가을 단풍이 계곡에 붉게 물들어 '홍류동'이란 이름이 붙었습니다. 청량대 바위 전망대에서 잠시 쉬어가세요.</p>
+<p class="acc-desc">홍류동 계곡은 가야산의 진수입니다. 맑은 계곡물이 바위를 타고 흐르는 소리, 울창한 활엽수림의 시원한 그늘.</p><p class="acc-desc">가을 단풍이 계곡에 붉게 물들어 '홍류동'이란 이름이 붙었습니다. 청량대 바위 전망대에서 잠시 쉬어가세요.</p>
 <div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 홍류동 계곡은 가을(10월 중~11월 초)에 가장 아름답습니다. 단풍이 계곡물에 붉게 반영되는 풍경은 전국 손꼽히는 단풍 명소.</div>
 </div>
 </div>
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-t">청량대 → 홍류문</div><div class="acc-m">약 0.5km · 15분 · 완만한 오름</div></div>
+<div class="acc-tw"><div class="acc-t">청량대 → 홍류문</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.5km</span><span class="meta-chip">⏱ 15분</span><span class="meta-chip">📍 완만한 오름</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -728,7 +744,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-t">홍류문 → 원점 하산</div><div class="acc-m">약 3.0km · 1시간 · 왔던 길 하산</div></div>
+<div class="acc-tw"><div class="acc-t">홍류문 → 원점 하산</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 3.0km</span><span class="meta-chip">⏱ 1시간</span><span class="meta-chip">📍 왔던 길 하산</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -782,18 +798,103 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>해인사 주차장</td><td>700m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·식당</td></tr>
-<tr><td>2</td><td>해인사 (팔만대장경)</td><td>720m</td><td>0.5km</td><td><span class="bdg b-am">세계유산</span></td><td>입장료·화장실·관람</td></tr>
-<tr><td>3</td><td>홍류동 계곡 입구</td><td>730m</td><td>1.0km</td><td><span class="bdg b-tl">계곡</span></td><td>계곡 산책로 시작</td></tr>
-<tr><td>4</td><td>청량대</td><td>850m</td><td>2.5km</td><td><span class="bdg b-sk">전망</span></td><td>바위 전망대</td></tr>
-<tr><td>5</td><td>홍류문</td><td>900m</td><td>3.0km</td><td><span class="bdg b-te">명소 ★</span></td><td>최치원 은거지</td></tr>
-<tr><td>6</td><td>해인사 주차장 귀환</td><td>700m</td><td>6.0km</td><td><span class="bdg b-st">종점</span></td><td>주차·합천 식당</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">해인사 주차장</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·식당
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">해인사 (팔만대장경)</span>
+<span class="badge badge-landmark">세계유산</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 720m</span>
+<span class="meta-item">📏 누적 0.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 입장료·화장실·관람
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">홍류동 계곡 입구</span>
+<span class="badge badge-landmark">계곡</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 730m</span>
+<span class="meta-item">📏 누적 1.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 계곡 산책로 시작
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">청량대</span>
+<span class="badge badge-shelter">전망</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 850m</span>
+<span class="meta-item">📏 누적 2.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 바위 전망대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">홍류문</span>
+<span class="badge badge-landmark">명소 ★</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 900m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 최치원 은거지
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">해인사 주차장 귀환</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 6.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·합천 식당
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div></div></main>
@@ -808,13 +909,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">11km</div><div class="sl">왕복 거리</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">4~5h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,430m</div><div class="sl">상왕봉 정상</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±730m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~1,400</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">왕복 거리</span>
+<span class="pill-value">11km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">4~5h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">상왕봉 정상</span>
+<span class="pill-value">1,430m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±730m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~1,400</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 해인사(치인주차장) → 토신골 → 상왕봉 → 칠불봉 왕복</h2>
@@ -863,7 +996,7 @@
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-t">치인주차장 출발</div><div class="acc-m">해발 700m · 경남 합천군 가야면 치인리</div></div>
+<div class="acc-tw"><div class="acc-t">치인주차장 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 700m</span><span class="meta-chip">📍 경남 합천군 가야면 치인리</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -874,7 +1007,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-t">해인사 → 토신골탐방지원센터 → 석조여래입상</div><div class="acc-m">약 1.5km · 40분 · 완만한 계곡길</div></div>
+<div class="acc-tw"><div class="acc-t">해인사 → 토신골탐방지원센터 → 석조여래입상</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.5km</span><span class="meta-chip">⏱ 40분</span><span class="meta-chip">📍 완만한 계곡길</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -886,7 +1019,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-t">석조여래입상 → 봉천대</div><div class="acc-m">약 1.5km · 50분 · 점진적 오르막</div></div>
+<div class="acc-tw"><div class="acc-t">석조여래입상 → 봉천대</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.5km</span><span class="meta-chip">⏱ 50분</span><span class="meta-chip">📈 점진적 오르막</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -898,7 +1031,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-t">봉천대 → 상왕봉(우두봉) 정상</div><div class="acc-m">약 1.0km · 40분 · 급경사 철계단</div></div>
+<div class="acc-tw"><div class="acc-t">봉천대 → 상왕봉(우두봉) 정상</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.0km</span><span class="meta-chip">⏱ 40분</span><span class="meta-chip">📍 급경사 철계단</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -910,7 +1043,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-t">상왕봉 → 칠불봉 → 원점 하산</div><div class="acc-m">칠불봉 편도 0.2km + 하산 5.5km · 2시간</div></div>
+<div class="acc-tw"><div class="acc-t">상왕봉 → 칠불봉 → 원점 하산</div><div class="acc-meta-chips"><span class="meta-chip">📏 칠불봉 편도 0.2km + 하산 5.5km</span><span class="meta-chip">⏱ 2시간</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -969,20 +1102,135 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>치인주차장</td><td>700m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·매점</td></tr>
-<tr><td>2</td><td>해인사 경내</td><td>720m</td><td>1.5km</td><td><span class="bdg b-am">세계유산</span></td><td>팔만대장경·화장실</td></tr>
-<tr><td>3</td><td>토신골탐방지원센터</td><td>750m</td><td>1.8km</td><td><span class="bdg b-tl">탐방센터</span></td><td>입산통제 확인</td></tr>
-<tr><td>4</td><td>석조여래입상</td><td>850m</td><td>2.5km</td><td><span class="bdg b-sk">문화재</span></td><td>신라 불교 유적</td></tr>
-<tr><td>5</td><td>봉천대</td><td>1,200m</td><td>3.5km</td><td><span class="bdg b-ro">급경사 시작</span></td><td>암반 쉼터·조망</td></tr>
-<tr><td>6</td><td>상왕봉 (우두봉)</td><td>1,430m</td><td>4.5km</td><td><span class="bdg b-gr">정상</span></td><td>정상석·조망대</td></tr>
-<tr><td>7</td><td>칠불봉</td><td>1,432m</td><td>4.7km</td><td><span class="bdg b-pk">최고봉 ★</span></td><td>철계단·BAC인증</td></tr>
-<tr><td>8</td><td>치인주차장 귀환</td><td>700m</td><td>11.0km</td><td><span class="bdg b-st">종점</span></td><td>주차·식당</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">치인주차장</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·매점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">해인사 경내</span>
+<span class="badge badge-landmark">세계유산</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 720m</span>
+<span class="meta-item">📏 누적 1.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 팔만대장경·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">토신골탐방지원센터</span>
+<span class="badge badge-landmark">탐방센터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 750m</span>
+<span class="meta-item">📏 누적 1.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 입산통제 확인
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">석조여래입상</span>
+<span class="badge badge-shelter">문화재</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 850m</span>
+<span class="meta-item">📏 누적 2.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 신라 불교 유적
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">봉천대</span>
+<span class="badge badge-trailhead">급경사 시작</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,200m</span>
+<span class="meta-item">📏 누적 3.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 암반 쉼터·조망
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상왕봉 (우두봉)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,430m</span>
+<span class="meta-item">📏 누적 4.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·조망대
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">칠불봉</span>
+<span class="badge badge-summit">최고봉 ★</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,432m</span>
+<span class="meta-item">📏 누적 4.7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 철계단·BAC인증
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">치인주차장 귀환</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 11.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·식당
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
@@ -997,13 +1245,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">9.2km</div><div class="sl">만물상 종주</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">5~6h</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,432m</div><div class="sl">칠불봉 최고봉</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">830m</div><div class="sl">누적 상승 고도</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~1,800</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">만물상 종주</span>
+<span class="pill-value">9.2km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">5~6h</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">칠불봉 최고봉</span>
+<span class="pill-value">1,432m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 상승 고도</span>
+<span class="pill-value">830m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~1,800</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 4단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 백운동 → 만물상 → 칠불봉 → 상왕봉 → 해인사(토신골)</h2>
@@ -1057,7 +1337,7 @@
 <div class="acc-item open">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">출</span>
-<div class="acc-tw"><div class="acc-t">백운동탐방지원센터 출발</div><div class="acc-m">해발 600m · 경북 성주군 수륜면 가야산식물원길 17</div></div>
+<div class="acc-tw"><div class="acc-t">백운동탐방지원센터 출발</div><div class="acc-meta-chips"><span class="meta-chip">⛰ 해발 600m</span><span class="meta-chip">📍 경북 성주군 수륜면 가야산식물원길 17</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1068,7 +1348,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">1</span>
-<div class="acc-tw"><div class="acc-t">백운동 → 만물상 암릉 시작</div><div class="acc-m">약 1.0km · 30분 · 초반 숲길 오르막</div></div>
+<div class="acc-tw"><div class="acc-t">백운동 → 만물상 암릉 시작</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.0km</span><span class="meta-chip">⏱ 30분</span><span class="meta-chip">📈 초반 숲길 오르막</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1080,7 +1360,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">2</span>
-<div class="acc-tw"><div class="acc-t">만물상 암릉 → 상아덤</div><div class="acc-m">약 1.3km · 1시간 20분 · 극한 암릉 구간</div></div>
+<div class="acc-tw"><div class="acc-t">만물상 암릉 → 상아덤</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.3km</span><span class="meta-chip">⏱ 1시간 20분</span><span class="meta-chip">📍 극한 암릉 구간</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1092,7 +1372,7 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">3</span>
-<div class="acc-tw"><div class="acc-t">상아덤 → 서성재</div><div class="acc-m">약 0.7km · 25분 · 능선 하강</div></div>
+<div class="acc-tw"><div class="acc-t">상아덤 → 서성재</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.7km</span><span class="meta-chip">⏱ 25분</span><span class="meta-chip">📍 능선 하강</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1104,19 +1384,19 @@
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">4</span>
-<div class="acc-tw"><div class="acc-t">서성재 → 칠불봉 → 상왕봉</div><div class="acc-m">약 1.4km · 50분 · 가야산 핵심 능선</div></div>
+<div class="acc-tw"><div class="acc-t">서성재 → 칠불봉 → 상왕봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.4km</span><span class="meta-chip">⏱ 50분</span><span class="meta-chip">📍 가야산 핵심 능선</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
 <div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div>
-<p class="acc-desc">서성재에서 칠불봉(1,432m)까지 가야산의 핵심 암릉 능선 구간. 마지막 철계단·로프를 돌파하면 칠불봉 삼거리에 올라섭니다. 칠불봉에서 상왕봉(0.2km)까지 방문. 두 정상 모두 인증.</p>
+<p class="acc-desc">서성재에서 칠불봉(1,432m)까지 가야산의 핵심 암릉 능선 구간. 마지막 철계단·로프를 돌파하면 칠불봉 삼거리에 올라섭니다.</p><p class="acc-desc">칠불봉에서 상왕봉(0.2km)까지 방문. 두 정상 모두 인증.</p>
 <div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 칠불봉 정상에서 만물상 암릉 전체와 합천호·남해 방향이 파노라마로 펼쳐집니다. 흐리지 않은 날 한려수도까지 보입니다!</div>
 </div>
 </div>
 <div class="acc-item">
 <div class="acc-hdr" onclick="togAcc(this)">
 <span class="acc-num">5</span>
-<div class="acc-tw"><div class="acc-t">상왕봉 → 토신골 → 해인사·치인주차장 하산</div><div class="acc-m">약 5.5km · 1시간 50분 · 하산</div></div>
+<div class="acc-tw"><div class="acc-t">상왕봉 → 토신골 → 해인사·치인주차장 하산</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 5.5km</span><span class="meta-chip">⏱ 1시간 50분</span><span class="meta-chip">📍 하산</span></div></div>
 <svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
 </div>
 <div class="acc-body">
@@ -1180,24 +1460,199 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (종주)</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>백운동탐방지원센터</td><td>600m</td><td>0km</td><td><span class="bdg b-st">출발</span></td><td>주차·화장실·성주군</td></tr>
-<tr><td>2</td><td>만물상 암릉 시작점</td><td>900m</td><td>1.0km</td><td><span class="bdg b-pk">암릉 ★</span></td><td>철봉·장갑 착용 시작</td></tr>
-<tr><td>3</td><td>만물상 중간 조망대</td><td>1,150m</td><td>1.8km</td><td><span class="bdg b-sk">전망</span></td><td>바위 조망·촬영 명소</td></tr>
-<tr><td>4</td><td>상아덤</td><td>1,300m</td><td>2.3km</td><td><span class="bdg b-ro">명소</span></td><td>코끼리 바위·360도 조망</td></tr>
-<tr><td>5</td><td>서성재 (안부)</td><td>1,280m</td><td>3.0km</td><td><span class="bdg b-tl">갈림길</span></td><td>용기골 탈출 가능</td></tr>
-<tr><td>6</td><td>칠불봉</td><td>1,432m</td><td>4.2km</td><td><span class="bdg b-pk">최고봉 ★</span></td><td>BAC인증·합천호 조망</td></tr>
-<tr><td>7</td><td>상왕봉 (우두봉)</td><td>1,430m</td><td>4.4km</td><td><span class="bdg b-gr">정상</span></td><td>정상석</td></tr>
-<tr><td>8</td><td>봉천대</td><td>1,200m</td><td>5.5km</td><td><span class="bdg b-sk">조망</span></td><td>암반 쉼터</td></tr>
-<tr><td>9</td><td>석조여래입상</td><td>850m</td><td>6.8km</td><td><span class="bdg b-am">문화재</span></td><td>신라 불교 유적</td></tr>
-<tr><td>10</td><td>토신골탐방지원센터</td><td>750m</td><td>7.5km</td><td><span class="bdg b-tl">탐방센터</span></td><td>—</td></tr>
-<tr><td>11</td><td>해인사 경내</td><td>720m</td><td>8.5km</td><td><span class="bdg b-am">세계유산</span></td><td>팔만대장경·화장실</td></tr>
-<tr><td>12</td><td>치인주차장</td><td>700m</td><td>9.2km</td><td><span class="bdg b-st">종점 🏁</span></td><td>주차·합천 식당</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백운동탐방지원센터</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 600m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·화장실·성주군
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">만물상 암릉 시작점</span>
+<span class="badge badge-summit">암릉 ★</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 900m</span>
+<span class="meta-item">📏 누적 1.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 철봉·장갑 착용 시작
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">만물상 중간 조망대</span>
+<span class="badge badge-shelter">전망</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,150m</span>
+<span class="meta-item">📏 누적 1.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 바위 조망·촬영 명소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상아덤</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,300m</span>
+<span class="meta-item">📏 누적 2.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 코끼리 바위·360도 조망
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">서성재 (안부)</span>
+<span class="badge badge-landmark">갈림길</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,280m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 용기골 탈출 가능
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">칠불봉</span>
+<span class="badge badge-summit">최고봉 ★</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,432m</span>
+<span class="meta-item">📏 누적 4.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> BAC인증·합천호 조망
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상왕봉 (우두봉)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,430m</span>
+<span class="meta-item">📏 누적 4.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">봉천대</span>
+<span class="badge badge-shelter">조망</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,200m</span>
+<span class="meta-item">📏 누적 5.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 암반 쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">석조여래입상</span>
+<span class="badge badge-landmark">문화재</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 850m</span>
+<span class="meta-item">📏 누적 6.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 신라 불교 유적
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">토신골탐방지원센터</span>
+<span class="badge badge-landmark">탐방센터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 750m</span>
+<span class="meta-item">📏 누적 7.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">11</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">해인사 경내</span>
+<span class="badge badge-landmark">세계유산</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 720m</span>
+<span class="meta-item">📏 누적 8.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 팔만대장경·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">12</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">치인주차장</span>
+<span class="badge badge-trailhead">종점 🏁</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 9.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·합천 식당
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
