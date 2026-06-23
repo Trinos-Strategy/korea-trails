@@ -572,6 +572,9 @@
 </div><button aria-label="테마 전환" class="thm-btn" data-thm="">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
+  <button aria-label="메뉴 열기" aria-expanded="false" aria-controls="navDrawer" class="menu-toggle-btn" id="menuToggleBtn">
+    <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+  </button>
 </header>
 <section class="hero hero-bleed">
 <!-- Background Picture -->
@@ -1711,9 +1714,75 @@
 </button>
 </div>
 </section>
-<footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
-<p style="font-size:var(--xs);color:var(--faint)">태백산국립공원 공식 정보 기준. 산행 전 국립공원공단 예약 시스템(reservation.knps.or.kr)과 기상 정보를 반드시 확인하세요. 태백산국립공원 사무소 1577-0307</p>
+<footer style="border-top:1px solid var(--border); padding: var(--space-8) var(--space-6); background-color: var(--surface); margin-top: var(--space-12);">
+<div class="wrap">
+  <div class="footer-sitemap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-6); text-align: left; margin-bottom: var(--space-8); border-bottom: 1px solid var(--border); padding-bottom: var(--space-8);">
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">경기/서울</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="bukhansan-playbook.html" style="color: var(--muted); text-decoration: none;">북한산</a>
+        <a href="dobongsan-playbook.html" style="color: var(--muted); text-decoration: none;">도봉산</a>
+        <a href="myeongseongsan-playbook.html" style="color: var(--muted); text-decoration: none;">명성산</a>
+        <a href="soyosan-playbook.html" style="color: var(--muted); text-decoration: none;">소요산</a>
+        <a href="unaksan-playbook.html" style="color: var(--muted); text-decoration: none;">운악산</a>
+      </div>
+    </div>
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">강원</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="seoraksan-playbook.html" style="color: var(--muted); text-decoration: none;">설악산</a>
+        <a href="chiaksan-playbook.html" style="color: var(--muted); text-decoration: none;">치악산</a>
+        <a href="odaesan-playbook.html" style="color: var(--muted); text-decoration: none;">오대산</a>
+        <a href="taebaeksan-playbook.html" style="color: var(--muted); text-decoration: none;">태백산</a>
+      </div>
+    </div>
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">충청</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="sobaeksan-playbook.html" style="color: var(--muted); text-decoration: none;">소백산</a>
+        <a href="gyeryongsan-playbook.html" style="color: var(--muted); text-decoration: none;">계룡산</a>
+        <a href="minjusan-playbook.html" style="color: var(--muted); text-decoration: none;">민주지산</a>
+        <a href="sikjangsan-playbook.html" style="color: var(--muted); text-decoration: none;">식장산</a>
+        <a href="woraksan-playbook.html" style="color: var(--muted); text-decoration: none;">월악산</a>
+      </div>
+    </div>
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">전라</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="jirisan-playbook.html" style="color: var(--muted); text-decoration: none;">지리산</a>
+        <a href="naejangsan-playbook.html" style="color: var(--muted); text-decoration: none;">내장산</a>
+        <a href="deogyusan-playbook.html" style="color: var(--muted); text-decoration: none;">덕유산</a>
+        <a href="wolchulsan-playbook.html" style="color: var(--muted); text-decoration: none;">월출산</a>
+        <a href="mudeungsan-playbook.html" style="color: var(--muted); text-decoration: none;">무등산</a>
+        <a href="duryunsan-playbook.html" style="color: var(--muted); text-decoration: none;">두륜산</a>
+      </div>
+    </div>
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">경상 / Jeju</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="gayasan-playbook.html" style="color: var(--muted); text-decoration: none;">가야산</a>
+        <a href="juwangsan-playbook.html" style="color: var(--muted); text-decoration: none;">주왕산</a>
+        <a href="hallasan-playbook.html" style="color: var(--muted); text-decoration: none;">한라산</a>
+      </div>
+    </div>
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">대만</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="yushan-playbook.html" style="color: var(--muted); text-decoration: none;">위산</a>
+        <a href="xueshan-playbook.html" style="color: var(--muted); text-decoration: none;">설산</a>
+        <a href="yangmingshan-playbook.html" style="color: var(--muted); text-decoration: none;">양명산</a>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
+    Korea Trails — 전국 등산 플레이북 · 국립공원 탐방 예약: <a href="https://reservation.knps.or.kr" rel="noopener" target="_blank" style="color: var(--primary); text-decoration: underline;">knps.or.kr</a><br/>
+    본 사이트의 일부 등산 사진과 트래킹 영상은 Cassian Kim이 직접 촬영·제작한 저작물이며, 영상은 유튜브 채널 Cassian Kim에 게시되어 있습니다. 비상업적 목적에 한해 이용할 수 있으며, 이용 시 반드시 출처와 저작자(Cassian Kim / Cassian Kim)를 표시해야 합니다. (CC BY-NC 4.0 준용)<br/>
+    © 2026 Korea Trails. All Rights Reserved.
+  </p>
+</div>
 </footer>
+
 <script>
 (function(){
   const t=document.querySelector("[data-thm]"),r=document.documentElement;
@@ -1924,5 +1993,73 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 });
 </script>
+
+
+<!-- Navigation Drawer (Hamburger Menu) -->
+<div id="navDrawer" class="nav-drawer" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Navigation Menu">
+  <div class="nav-drawer-overlay" tabindex="-1"></div>
+  <div class="nav-drawer-content">
+    <div class="nav-drawer-header">
+      <div class="nav-drawer-logo">
+        <svg aria-label="Korea Trails" class="logo-svg" height="30" role="img" viewbox="0 0 40 40" width="30">
+          <defs><lineargradient id="kt-gold-drawer" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+          </lineargradient></defs>
+          <rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+          <path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold-drawer)" stroke-linejoin="round" stroke-width="2.2"></path>
+          <polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold-drawer)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
+        </svg>
+        <span class="nav-drawer-logo-text">Korea Trails</span>
+      </div>
+      <button aria-label="메뉴 닫기" class="nav-drawer-close-btn" id="navDrawerCloseBtn">
+        <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="20"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+      </button>
+    </div>
+    
+    <nav class="nav-drawer-menu" aria-label="Drawer Navigation">
+      <a href="index.html" class="nav-drawer-link">
+        <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        홈
+      </a>
+      <a href="index.html#mountainGrid" class="nav-drawer-link">
+        <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="m8 3-7 18h22L16 7l-4 7-4-11Z"></path></svg>
+        명산 목록
+      </a>
+      <a href="sitemap.html#regions" class="nav-drawer-link">
+        <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        지역별 탐색
+      </a>
+      <a href="sitemap.html" class="nav-drawer-link">
+        <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        사이트맵
+      </a>
+      <a href="https://github.com/Trinos-Strategy/korea-trails" target="_blank" rel="noopener noreferrer" class="nav-drawer-link">
+        <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+        GitHub
+      </a>
+    </nav>
+    
+    <div class="nav-drawer-divider"></div>
+    
+    <div class="nav-drawer-footer">
+      <div class="nav-drawer-section-title">설정</div>
+      <div class="nav-drawer-settings">
+        <button aria-label="테마 전환" class="drawer-theme-toggle" id="drawerThemeBtn">
+          <span class="theme-icon"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+          <span class="theme-label">다크/라이트 모드</span>
+        </button>
+        <div class="drawer-lang-toggle">
+          <span class="lang-label">언어 (Language)</span>
+          <div class="lang-toggle">
+            <button aria-label="한국어" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('ko')">KO</button>
+            <button aria-label="English" aria-pressed="false" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="assets/js/nav-drawer.js"></script>
 </body>
 </html>
