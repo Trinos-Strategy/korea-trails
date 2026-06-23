@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Korea Trails — 로고 리디자인 5종 시안</title>
+<title>Korea Trails — 로고 리디자인 15종 시안</title>
 
 <!-- Fonts from Fontshare -->
 <link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&f[]=cabinet-grotesk@800&display=swap" rel="stylesheet">
@@ -43,7 +43,7 @@
 
   .options-header {
     text-align: center;
-    margin-bottom: var(--space-12);
+    margin-bottom: var(--space-10);
   }
 
   .options-title {
@@ -57,7 +57,7 @@
   .options-subtitle {
     font-size: var(--text-lg);
     color: var(--text-muted-options);
-    max-width: 600px;
+    max-width: 650px;
     margin: 0 auto;
     line-height: 1.6;
   }
@@ -87,6 +87,18 @@
   .theme-toggle-btn:hover {
     transform: translateY(-1px);
     box-shadow: var(--shadow-md);
+  }
+
+  /* Section Title for New Concepts */
+  .section-divider {
+    font-family: 'Cabinet Grotesk', sans-serif;
+    font-size: var(--text-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--primary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: var(--space-2);
+    margin: var(--space-12) 0 var(--space-8);
   }
 
   .logo-grid {
@@ -128,11 +140,20 @@
     margin-bottom: var(--space-2);
   }
 
+  .option-number.alive-tag {
+    color: #e11d48;
+    background-color: rgba(225, 29, 72, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--radius-full);
+    display: inline-block;
+    width: fit-content;
+  }
+
   .option-name {
     font-family: 'Cabinet Grotesk', sans-serif;
     font-size: var(--text-2xl);
     font-weight: 800;
-    margin: 0 0 var(--space-3);
+    margin: var(--space-2) 0 var(--space-3);
   }
 
   .option-desc {
@@ -154,6 +175,10 @@
     text-align: center;
     transition: opacity 0.2s;
     margin-top: auto;
+  }
+
+  .select-badge.alive-btn {
+    background-color: #e11d48;
   }
 
   .select-badge:hover {
@@ -283,10 +308,10 @@
 
 <div class="options-container">
   <div class="options-header">
-    <span class="option-number">Track A — Gate 1</span>
-    <h1 class="options-title">Korea Trails 로고 리디자인 시안</h1>
+    <span class="option-number">Track A — Gate 1 (Updated)</span>
+    <h1 class="options-title">Korea Trails 로고 시안 15종</h1>
     <p class="options-subtitle">
-      Korea Trails 브랜드의 아이덴티티를 확립할 5가지 로고 방향성입니다. 라이트/다크 테마, 가로형 헤더 락업 및 32px 파비콘 가독성을 확인해 보세요.
+      더 생동감 있고("more alive") 자연의 생명력이 깃든 10가지 시안(시안 6~15)이 추가되었습니다. 기존 시안 5종을 포함한 총 15종의 다양한 라이트/다크 테마 렌더를 검토해 보세요.
     </p>
     
     <div class="theme-toggle-container">
@@ -296,6 +321,1006 @@
     </div>
   </div>
 
+  <!-- SECTION: NEW "MORE ALIVE" CONCEPTS -->
+  <div class="section-divider">New "More Alive" Concepts (시안 06 ~ 15)</div>
+
+  <div class="logo-grid">
+
+    <!-- OPTION 6: Eco Leaf & Peak -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 06 · Alive</span>
+        <h2 class="option-name">Eco Leaf & Peak</h2>
+        <p class="option-desc">
+          산봉우리가 싱그러운 나뭇잎의 형태로 자연스럽게 융합된 친생태적 디자인입니다. 잎맥이 등산로와 산세를 뻗어 나가는 형태로 뻗어 있으며, 아웃도어 탐험이 갖는 자연 친화적 생명력을 비비드 그린으로 강하게 나타냅니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(6, 'Eco Leaf & Peak')">시안 6번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="leafGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#10b981"/>
+                  <stop offset="100%" stop-color="#a3e635"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 C18 32 11 32 9 26 C7 18 11 10 18 4 Z" fill="url(#leafGrad)" fill-opacity="0.15" stroke="url(#leafGrad)" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M18 4 V32 M18 14 L24 10 M18 20 L26 15 M18 26 L23 22 M18 14 L12 10 M18 20 L10 15 M18 26 L13 22" stroke="url(#leafGrad)" stroke-width="1.8" stroke-linecap="round"/>
+              <path d="M11 26 L18 16 L25 26 Z" fill="url(#leafGrad)" fill-opacity="0.6" stroke="url(#leafGrad)" stroke-width="1"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 C18 32 11 32 9 26 C7 18 11 10 18 4 Z" fill-opacity="0.1" fill="currentColor"/>
+              <path d="M18 4 V32 M18 14 L24 10 M18 20 L26 15 M18 26 L23 22 M18 14 L12 10 M18 20 L10 15 M18 26 L13 22"/>
+              <path d="M11 26 L18 16 L25 26 Z" fill="currentColor" fill-opacity="0.5"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 C18 32 11 32 9 26 C7 18 11 10 18 4 Z" fill="#10b981" fill-opacity="0.15" stroke="#10b981" stroke-width="2"/>
+                <path d="M18 4 V32 M18 14 L24 10 M18 20 L26 15 M18 26 L23 22 M18 14 L12 10 M18 20 L10 15 M18 26 L13 22" stroke="#10b981" stroke-width="1.8"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 C18 32 11 32 9 26 C7 18 11 10 18 4 Z" fill="#a3e635" fill-opacity="0.15" stroke="#a3e635" stroke-width="2"/>
+                <path d="M18 4 V32 M18 14 L24 10 M18 20 L26 15 M18 26 L23 22 M18 14 L12 10 M18 20 L10 15 M18 26 L13 22" stroke="#a3e635" stroke-width="1.8"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 C18 32 11 32 9 26 C7 18 11 10 18 4 Z" fill="currentColor" fill-opacity="0.1"/>
+                <path d="M18 4 V32 M18 14 L24 10 M18 20 L26 15 M18 26 L23 22"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 C18 32 11 32 9 26 C7 18 11 10 18 4 Z" fill="currentColor" fill-opacity="0.1"/>
+                <path d="M18 4 V32 M18 14 L24 10 M18 20 L26 15 M18 26 L23 22"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 Z" fill="#10b981" fill-opacity="0.2"/>
+                  <path d="M18 4 V32 M18 14 L24 10 M18 20 L26 15" stroke="#10b981" stroke-width="2.5"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 22px; height: 22px;">
+                  <path d="M18 4 C25 10 29 18 27 26 C25 32 18 32 18 32 Z" fill="currentColor" fill-opacity="0.2"/>
+                  <path d="M18 4 V32 M18 14 L24 10" stroke-width="2.5"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 7: Dynamic Wave Ridge -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 07 · Alive</span>
+        <h2 class="option-name">Dynamic Wave Ridge</h2>
+        <p class="option-desc">
+          바람과 파도처럼 살아 움직이며 굽이치는 역동적인 능선 구조입니다. 고정된 기하학적 형태 대신 겹겹이 굽이치는 부드러운 산세의 흐름과 태양을 통해 탐험가가 마주할 대자연의 깊은 리듬감과 역동성을 선사합니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(7, 'Dynamic Wave Ridge')">시안 7번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="waveGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#0284c7"/>
+                  <stop offset="100%" stop-color="#6366f1"/>
+                </linearGradient>
+              </defs>
+              <path d="M4 27 C10 18 14 26 20 14 C26 28 28 10 32 18" stroke="url(#waveGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 31 C11 25 15 30 21 21 C27 32 29 18 32 24" stroke="url(#waveGrad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"/>
+              <circle cx="28" cy="6" r="3" fill="#38bdf8"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 27 C10 18 14 26 20 14 C26 28 28 10 32 18"/>
+              <path d="M6 31 C11 25 15 30 21 21 C27 32 29 18 32 24" stroke-width="1.5" opacity="0.6"/>
+              <circle cx="28" cy="6" r="2.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 27 C10 18 14 26 20 14 C26 28 28 10 32 18" stroke="#0284c7" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="28" cy="6" r="2.5" fill="#0284c7"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 27 C10 18 14 26 20 14 C26 28 28 10 32 18" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="28" cy="6" r="2.5" fill="#38bdf8"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M4 27 C10 18 14 26 20 14 C26 28 28 10 32 18"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M4 27 C10 18 14 26 20 14 C26 28 28 10 32 18"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M4 27 C10 18 14 26 20 14 Z" stroke="#6366f1" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.8" style="width: 22px; height: 22px;">
+                  <path d="M4 27 C10 18 14 26 20 14 Z" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 8: Sunset Compass -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 08 · Alive</span>
+        <h2 class="option-name">Sunset Compass</h2>
+        <p class="option-desc">
+          지평선 끝자락 산맥 뒤로 붉게 타오르는 태양의 활기와 나침반 바늘의 형태가 결합된 모험 지향형 디자인입니다. 사방으로 뻗은 듯한 다이나믹한 바늘의 각도와 뜨거운 그라디언트가 매력적입니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(8, 'Sunset Compass')">시안 8번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="sunsetGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#f97316"/>
+                  <stop offset="100%" stop-color="#ef4444"/>
+                </linearGradient>
+              </defs>
+              <circle cx="18" cy="18" r="15" stroke="url(#sunsetGrad)" stroke-width="2" opacity="0.3"/>
+              <path d="M18 18 L18 6 L23 13 Z" fill="url(#sunsetGrad)"/>
+              <path d="M18 18 L18 30 L13 23 Z" fill="url(#sunsetGrad)" opacity="0.5"/>
+              <path d="M6 18 C6 11.37 11.37 6 18 6" stroke="url(#sunsetGrad)" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M8 26 L15 18 L22 26 L29 19 L32 23" stroke="url(#sunsetGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="18" r="15" stroke-width="1.5" opacity="0.3"/>
+              <path d="M18 18 L18 6 L23 13 Z" fill="currentColor"/>
+              <path d="M18 18 L18 30 L13 23 Z" fill="currentColor" fill-opacity="0.4"/>
+              <path d="M6 18 C6 11.37 11.37 6 18 6" stroke-width="2.2"/>
+              <path d="M8 26 L15 18 L22 26" stroke-width="1.8"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 18 L18 6 L23 13 Z" fill="#ef4444"/>
+                <path d="M6 18 C6 11.37 11.37 6 18 6" stroke="#ef4444" stroke-width="2"/>
+                <path d="M8 26 L15 18 L22 26" stroke="#ef4444" stroke-width="1.8"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 18 L18 6 L23 13 Z" fill="#f97316"/>
+                <path d="M6 18 C6 11.37 11.37 6 18 6" stroke="#f97316" stroke-width="2"/>
+                <path d="M8 26 L15 18 L22 26" stroke="#f97316" stroke-width="1.8"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 18 L18 6 L23 13 Z" fill="currentColor"/>
+                <path d="M8 26 L15 18 L22 26" stroke-width="2"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+                <path d="M18 18 L18 6 L23 13 Z" fill="currentColor"/>
+                <path d="M8 26 L15 18 L22 26" stroke-width="2"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M18 18 L18 6 L23 13 Z" fill="#ef4444"/>
+                  <path d="M8 26 L15 18 L22 26" stroke="#ef4444" stroke-width="2.5"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 22px; height: 22px;">
+                  <path d="M18 18 L18 6 L23 13 Z" fill="currentColor"/>
+                  <path d="M8 26 L15 18" stroke-width="2.5"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 9: Rising Pulse Trail -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 09 · Alive</span>
+        <h2 class="option-name">Rising Pulse Trail</h2>
+        <p class="option-desc">
+          심박선(Heartbeat Pulse)과 활기차게 오르는 등산로의 형태를 융합한 지능형 마크입니다. 등산객이 정상을 정복할 때 느끼는 아드레날린과 심장박동을 네온 틸/시안의 전자기적 라인으로 연출하여 스포츠의 살아있는 즐거움을 전합니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(9, 'Rising Pulse Trail')">시안 9번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="pulseGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#14b8a6"/>
+                  <stop offset="100%" stop-color="#06b6d4"/>
+                </linearGradient>
+              </defs>
+              <path d="M4 22 H11 L14 10 L18 28 L22 16 L25 22 H32" stroke="url(#pulseGrad)" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="14" cy="10" r="2.5" fill="#22d3ee"/>
+              <path d="M14 10 L18 28 L22 16" fill="url(#pulseGrad)" fill-opacity="0.15"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 22 H11 L14 10 L18 28 L22 16 L25 22 H32"/>
+              <circle cx="14" cy="10" r="2" fill="currentColor" stroke="none"/>
+              <path d="M14 10 L18 28 L22 16" fill="currentColor" fill-opacity="0.2"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 22 H11 L14 10 L18 28 L22 16 L25 22 H32" stroke="#14b8a6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="14" cy="10" r="2" fill="#14b8a6"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M4 22 H11 L14 10 L18 28 L22 16 L25 22 H32" stroke="#06b6d4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="14" cy="10" r="2" fill="#06b6d4"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M4 22 H11 L14 10 L18 28 L22 16 L25 22 H32"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                <path d="M4 22 H11 L14 10 L18 28 L22 16 L25 22 H32"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M7 22 L14 10 L18 28 L22 16 L29 22" stroke="#14b8a6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.8" style="width: 22px; height: 22px;">
+                  <path d="M7 22 L14 10 L18 28 L22 16 L29 22" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 10: Nature Fireplace -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 10 · Alive</span>
+        <h2 class="option-name">Nature Fireplace</h2>
+        <p class="option-desc">
+          모험가들의 캠프파이어 불꽃(Fire) 실루엣이 산봉우리 형상과 하나가 되어 타오르는 엠블럼입니다. 야영과 등산이 제공하는 따뜻함, 자연 속에서 느끼는 열정을 골드/오렌지의 활기찬 색상 조화로 해석해 매력적인 온기를 더합니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(10, 'Nature Fireplace')">시안 10번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="fireGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#f59e0b"/>
+                  <stop offset="100%" stop-color="#ea580c"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 C14 32 8 30 8 24 C8 16 14 12 18 4 Z" fill="url(#fireGrad)" fill-opacity="0.15" stroke="url(#fireGrad)" stroke-width="1.8" stroke-linejoin="round"/>
+              <path d="M18 10 C21 16 24 18 24 24 C24 28 20 29 18 29 C16 29 12 28 12 24 C12 18 15 16 18 10 Z" fill="url(#fireGrad)" fill-opacity="0.6"/>
+              <path d="M10 28 L26 28 M12 30 L24 30" stroke="url(#fireGrad)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round">
+              <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 C14 32 8 30 8 24 C8 16 14 12 18 4 Z" fill="currentColor" fill-opacity="0.1"/>
+              <path d="M18 10 C21 16 24 18 24 24 C24 28 20 29 18 29 C16 29 12 28 12 24 Z" fill="currentColor" fill-opacity="0.4"/>
+              <path d="M10 28 L26 28" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 C14 32 8 30 8 24 C8 16 14 12 18 4 Z" fill="#ea580c" fill-opacity="0.15" stroke="#ea580c" stroke-width="1.8"/>
+                <path d="M18 10 C21 16 24 18 24 24 C24 28 20 29 18 29 C16 29 12 28 12 24 Z" fill="#ea580c" fill-opacity="0.5"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 C14 32 8 30 8 24 C8 16 14 12 18 4 Z" fill="#f59e0b" fill-opacity="0.15" stroke="#f59e0b" stroke-width="1.8"/>
+                <path d="M18 10 C21 16 24 18 24 24 C24 28 20 29 18 29 C16 29 12 28 12 24 Z" fill="#f59e0b" fill-opacity="0.5"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 Z" fill="currentColor" fill-opacity="0.15"/>
+                <path d="M10 28 L26 28"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 Z" fill="currentColor" fill-opacity="0.15"/>
+                <path d="M10 28 L26 28"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 Z" fill="#ea580c" fill-opacity="0.2"/>
+                  <path d="M10 28 L26 28" stroke="#ea580c" stroke-width="3"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 22px; height: 22px;">
+                  <path d="M18 4 C22 12 28 16 28 24 C28 30 22 32 18 32 Z" fill="currentColor" fill-opacity="0.2"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 11: Windswept Summit -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 11 · Alive</span>
+        <h2 class="option-name">Windswept Summit</h2>
+        <p class="option-desc">
+          산봉우리 정상 위로 시원하게 부는 바람과 기류의 숨결을 결합한 매우 dynamic한 레이아웃입니다. 산꼭대기에서 느낄 수 있는 시원하고 세찬 바람(Wind)을 연상시키는 유기적 곡선이 브랜드에 살아있는 공간감을 채워줍니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(11, 'Windswept Summit')">시안 11번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="windGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#38bdf8"/>
+                  <stop offset="100%" stop-color="#0284c7"/>
+                </linearGradient>
+              </defs>
+              <path d="M6 28 L15 14 L24 24 L30 16 L33 20" stroke="url(#windGrad)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M4 14 C10 12 15 18 20 10 C25 2 32 8 32 8" stroke="url(#windGrad)" stroke-width="2.5" stroke-linecap="round" opacity="0.8"/>
+              <path d="M8 18 C13 17 18 22 22 14 C26 6 30 11 30 11" stroke="url(#windGrad)" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M6 28 L15 14 L24 24 L30 16 L33 20"/>
+              <path d="M4 14 C10 12 15 18 20 10 C25 2 32 8 32 8" stroke-width="2.5"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 28 L15 14 L24 24" stroke="#0284c7" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M4 14 C10 12 15 18 20 10" stroke="#0284c7" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M6 28 L15 14 L24 24" stroke="#38bdf8" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M4 14 C10 12 15 18 20 10" stroke="#38bdf8" stroke-width="2.2" stroke-linecap="round"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <path d="M6 28 L15 14 L24 24 M4 14 C10 12 15 18 20 10"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round">
+                <path d="M6 28 L15 14 L24 24 M4 14 C10 12 15 18 20 10"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M6 28 L15 14 L24 24" stroke="#0284c7" stroke-width="3" stroke-linejoin="round"/>
+                  <path d="M4 14 C10 12 15 18 20 10" stroke="#0284c7" stroke-width="2.5"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 22px; height: 22px;">
+                  <path d="M6 28 L15 14 L24 24" stroke-width="3"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 12: Forest Harmony -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 12 · Alive</span>
+        <h2 class="option-name">Forest Harmony</h2>
+        <p class="option-desc">
+          자연스럽게 정렬된 세 그루의 침엽수가 중첩되며 숲의 풍성함과 웅장한 능선 실루엣을 동시에 형성합니다. 아래로는 하이킹 등산로와 시내가 흐르고, 숲속 생태계의 유기적 조화와 생명력을 깊이감 있게 시각화했습니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(12, 'Forest Harmony')">시안 12번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="forestGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#15803d"/>
+                  <stop offset="100%" stop-color="#84cc16"/>
+                </linearGradient>
+              </defs>
+              <path d="M10 28 L15 16 L20 28 Z" fill="url(#forestGrad)" opacity="0.5"/>
+              <path d="M20 28 L25 18 L30 28 Z" fill="url(#forestGrad)" opacity="0.7"/>
+              <path d="M14 30 L20 12 L26 30 Z" fill="url(#forestGrad)"/>
+              <circle cx="27" cy="8" r="2.5" fill="#facc15"/>
+              <path d="M6 31 C12 29 18 33 24 30 L32 31" stroke="url(#forestGrad)" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10 28 L15 16 L20 28 Z" fill="currentColor" fill-opacity="0.2"/>
+              <path d="M20 28 L25 18 L30 28 Z" fill="currentColor" fill-opacity="0.4"/>
+              <path d="M14 30 L20 12 L26 30 Z" fill="currentColor"/>
+              <path d="M6 31 C12 29 18 33 24 30 L32 31" stroke-width="2"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 30 L20 12 L26 30 Z" fill="#15803d"/>
+                <path d="M6 31 C12 29 18 33 24 30 L32 31" stroke="#15803d" stroke-width="2"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14 30 L20 12 L26 30 Z" fill="#84cc16"/>
+                <path d="M6 31 C12 29 18 33 24 30 L32 31" stroke="#84cc16" stroke-width="2"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14 30 L20 12 L26 30 Z" fill="currentColor"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M14 30 L20 12 L26 30 Z" fill="currentColor"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M14 30 L20 12 L26 30 Z" fill="#15803d"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" style="width: 22px; height: 22px;">
+                  <path d="M14 30 L20 12 L26 30 Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 13: Solar Peak Crest -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 13 · Alive</span>
+        <h2 class="option-name">Solar Peak Crest</h2>
+        <p class="option-desc">
+          산봉우리 뒤편에서 폭발하듯 뻗어 나가는 아침 해의 강렬한 서광(Solar Rays)을 입체적인 벡터 라인으로 표현했습니다. 대자연의 아침 기운과 태양광 에너지의 눈부신 활력을 엠블럼 속에 정교히 매립하여 긍정적인 파워를 냅니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(13, 'Solar Peak Crest')">시안 13번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="solarGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+                  <stop offset="0%" stop-color="#fbbf24"/>
+                  <stop offset="100%" stop-color="#f97316"/>
+                </linearGradient>
+              </defs>
+              <path d="M18 16 V5 M18 16 L26 8 M18 16 H29 M18 16 L26 24 M18 16 L10 8 M18 16 H7 M18 16 L10 24" stroke="url(#solarGrad)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+              <circle cx="18" cy="16" r="6" fill="url(#solarGrad)"/>
+              <path d="M4 28 L14 16 L22 25 L32 14 L34 28 Z" fill="#1e293b"/>
+              <path d="M4 28 L14 16 L22 25 L32 14 L34 28" stroke="url(#solarGrad)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="16" r="5" fill="currentColor"/>
+              <path d="M18 16 V5 M18 16 L26 8 M18 16 H29 M18 16 L10 8 M18 16 H7" stroke-width="1.5" opacity="0.5"/>
+              <path d="M4 28 L14 16 L22 25 L32 14 L34 28" stroke-width="2.5"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="16" r="5" fill="#f97316"/>
+                <path d="M4 28 L14 16 L22 25 L32 14 L34 28" stroke="#1e293b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="18" cy="16" r="5" fill="#fbbf24"/>
+                <path d="M4 28 L14 16 L22 25 L32 14 L34 28" stroke="#ffffff" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="18" cy="16" r="4" fill="currentColor"/>
+                <path d="M4 28 L14 16 L22 25 L32 14" stroke-width="2.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <circle cx="18" cy="16" r="4" fill="currentColor"/>
+                <path d="M4 28 L14 16 L22 25 L32 14" stroke-width="2.5" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <circle cx="18" cy="16" r="4.5" fill="#f97316"/>
+                  <path d="M4 28 L14 16 L32 14" stroke="#1e293b" stroke-width="3"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.5" style="width: 22px; height: 22px;">
+                  <circle cx="18" cy="16" r="4" fill="currentColor"/>
+                  <path d="M4 28 L14 16 L32 14" stroke-width="3"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 14: Geometric Origami Mountain -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 14 · Alive</span>
+        <h2 class="option-name">Origami Mountain</h2>
+        <p class="option-desc">
+          3D 다면체(Origami) 면 분할 방식을 적용해 빛을 받는 각도에 따라 그림자가 살아 움직이는 입체적인 산맥 마크입니다. 구조적 기하학 속에 현대적인 색상 파티션(바이올렛/블루)을 사용하여 입체적인 시각 자극과 공간감을 줍니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(14, 'Geometric Origami Mountain')">시안 14번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6 L8 28 H18 Z" fill="#3b82f6"/>
+              <path d="M18 6 L28 28 H18 Z" fill="#1d4ed8"/>
+              <path d="M25 12 L18 28 H28 Z" fill="#8b5cf6" opacity="0.7"/>
+              <path d="M25 12 L32 28 H28 Z" fill="#6d28d9" opacity="0.7"/>
+              <path d="M18 28 L16 18 L18 15 L20 18 Z" fill="#fbbf24"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round">
+              <path d="M18 6 L8 28 H18 Z" fill="currentColor" fill-opacity="0.1"/>
+              <path d="M18 6 L28 28 H18 Z" fill="currentColor" fill-opacity="0.3"/>
+              <path d="M25 12 L18 28 H32 Z" fill="currentColor" fill-opacity="0.5"/>
+              <path d="M18 28 L16 18 L18 15 L20 18 Z" fill="currentColor"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6 L8 28 H18 Z" fill="#3b82f6"/>
+                <path d="M18 6 L28 28 H18 Z" fill="#1d4ed8"/>
+                <path d="M18 28 L16 18 L18 15 L20 18 Z" fill="#fbbf24"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 6 L8 28 H18 Z" fill="#60a5fa"/>
+                <path d="M18 6 L28 28 H18 Z" fill="#2563eb"/>
+                <path d="M18 28 L16 18 L18 15 L20 18 Z" fill="#fbbf24"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M18 6 L8 28 H28 Z" fill="currentColor" fill-opacity="0.3"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1">
+                <path d="M18 6 L8 28 H28 Z" fill="currentColor" fill-opacity="0.3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M18 6 L8 28 H18 Z" fill="#3b82f6"/>
+                  <path d="M18 6 L28 28 H18 Z" fill="#1d4ed8"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1" style="width: 22px; height: 22px;">
+                  <path d="M18 6 L8 28 H28 Z" fill="currentColor" fill-opacity="0.4"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPTION 15: Wild Pathway Monogram -->
+    <div class="logo-card">
+      <div class="logo-info">
+        <span class="option-number alive-tag">Option 15 · Alive</span>
+        <h2 class="option-name">Wild Pathway (KT)</h2>
+        <p class="option-desc">
+          알파벳 K와 T가 거친 절벽(세로기둥)과 굽이치는 계곡 지형선(사선 루프)으로 승화된 하이커 모노그램입니다. 가로지르는 선이 T의 상단을 만들고, 골드빛 트레일이 자연 속 탐험 경로(Pathway)를 상징하여 생동하는 모험심을 형상화했습니다.
+        </p>
+        <button class="select-badge alive-btn" onclick="selectLogo(15, 'Wild Pathway')">시안 15번 선택</button>
+      </div>
+      
+      <div class="logo-mockups">
+        <div class="mockup-item">
+          <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
+          <div class="render-box" style="gap: var(--space-6);">
+            <!-- Full Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="pathGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#ca8a04"/>
+                  <stop offset="100%" stop-color="#854d0e"/>
+                </linearGradient>
+              </defs>
+              <path d="M9 6 V30" stroke="url(#pathGrad)" stroke-width="4" stroke-linecap="round"/>
+              <path d="M28 30 C20 30 16 22 13 18 L26 7" stroke="url(#pathGrad)" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M6 6 H15" stroke="url(#pathGrad)" stroke-width="3.5" stroke-linecap="round"/>
+              <circle cx="23" cy="13" r="2" fill="#ca8a04"/>
+            </svg>
+            <!-- Single Color -->
+            <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 6 V30"/>
+              <path d="M28 30 C20 30 16 22 13 18 L26 7" stroke-width="4"/>
+              <path d="M6 6 H15"/>
+              <circle cx="23" cy="13" r="2.2" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
+          <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
+            <div class="header-mockup light-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6 V30" stroke="#854d0e" stroke-width="4" stroke-linecap="round"/>
+                <path d="M28 30 C20 30 16 22 13 18 L26 7" stroke="#854d0e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="23" cy="13" r="2" fill="#854d0e"/>
+              </svg>
+              <span class="logo-text">Korea Trails</span>
+            </div>
+            <div class="header-mockup dark-box">
+              <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M9 6 V30" stroke="#ca8a04" stroke-width="4" stroke-linecap="round"/>
+                <path d="M28 30 C20 30 16 22 13 18 L26 7" stroke="#ca8a04" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <circle cx="23" cy="13" r="2" fill="#ca8a04"/>
+              </svg>
+              <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">배경 테마별 가독성</span>
+          <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
+            <div class="render-box light-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                <path d="M9 6 V30 M28 30 C20 30 16 22 13 18 L26 7"/>
+              </svg>
+            </div>
+            <div class="render-box dark-box" style="flex: 1;">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+                <path d="M9 6 V30 M28 30 C20 30 16 22 13 18 L26 7"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div class="mockup-item">
+          <span class="mockup-title">파비콘 가독성 (32px)</span>
+          <div class="render-box favicon-box" style="flex-grow: 1;">
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
+                  <path d="M9 6 V30" stroke="#854d0e" stroke-width="4.5" stroke-linecap="round"/>
+                  <path d="M28 30 C20 30 16 22 13 18 L26 7" stroke="#854d0e" stroke-width="4.5" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="favicon-label">컬러</span>
+            </div>
+            <div class="favicon-item">
+              <div class="favicon-render light-box">
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="3.5" style="width: 22px; height: 22px;">
+                  <path d="M9 6 V30 M28 30 C20 30 16 22 13 18 L26 7" stroke-linecap="round"/>
+                </svg>
+              </div>
+              <span class="favicon-label">단색</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SECTION: ORIGINAL 5 CONCEPTS -->
+  <div class="section-divider">Original Concepts (시안 01 ~ 05)</div>
+
   <div class="logo-grid">
 
     <!-- OPTION 1: Topographic Peak -->
@@ -304,13 +1329,12 @@
         <span class="option-number">Option 01</span>
         <h2 class="option-name">Topographic Peak</h2>
         <p class="option-desc">
-          둥글게 중첩되는 등고선(Contour Line)이 자연스러운 산봉우리를 형성하는 구조입니다. 지도학적(Cartographic) 요소를 현대적인 디자인 시스템으로 재해석하여, 아웃도어 탐험의 과학적 정밀함과 세련미를 전달합니다.
+          둥글게 중첩되는 등고선(Contour Line)이 자연스러운 산봉우리를 형성하는 구조입니다. 탐험의 과학적 정밀함과 지리학적 세련미를 전달합니다.
         </p>
         <button class="select-badge" onclick="selectLogo(1, 'Topographic Peak')">시안 1번 선택</button>
       </div>
       
       <div class="logo-mockups">
-        <!-- 1. Full Color & Monochrome Large -->
         <div class="mockup-item">
           <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
           <div class="render-box" style="gap: var(--space-6);">
@@ -335,59 +1359,49 @@
           </div>
         </div>
 
-        <!-- 2. Header Context (Lockup) -->
         <div class="mockup-item">
           <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
           <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
             <div class="header-mockup light-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20C28 15 22 8 18 4Z" stroke="#0d9488" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
-                <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z" stroke="#0d9488" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-                <path d="M18 16C17 17.5 15 20 15 21C15 22.8 16.3 24 18 24C19.7 24 21 22.8 21 21C21 20 19 17.5 18 16Z" stroke="#0d9488" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z" stroke="#0d9488" stroke-width="1.8" opacity="0.7"/>
               </svg>
               <span class="logo-text">Korea Trails</span>
             </div>
             <div class="header-mockup dark-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20C28 15 22 8 18 4Z" stroke="#10b981" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" opacity="0.4"/>
-                <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z" stroke="#10b981" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" opacity="0.7"/>
-                <path d="M18 16C17 17.5 15 20 15 21C15 22.8 16.3 24 18 24C19.7 24 21 22.8 21 21C21 20 19 17.5 18 16Z" stroke="#10b981" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z" stroke="#10b981" stroke-width="1.8" opacity="0.7"/>
               </svg>
               <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
             </div>
           </div>
         </div>
 
-        <!-- 3. Dark & Light Theme Previews -->
         <div class="mockup-item">
           <span class="mockup-title">배경 테마별 가독성</span>
           <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
             <div class="render-box light-box" style="flex: 1;">
-              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20C28 15 22 8 18 4Z" stroke="currentColor" stroke-width="2.2" opacity="0.4"/>
-                <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z" stroke="currentColor" stroke-width="1.8" opacity="0.7"/>
-                <path d="M18 16C17 17.5 15 20 15 21C15 22.8 16.3 24 18 24C19.7 24 21 22.8 21 21C21 20 19 17.5 18 16Z" stroke="currentColor" stroke-width="1.5"/>
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" opacity="0.4">
+                <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20Z"/>
               </svg>
             </div>
             <div class="render-box dark-box" style="flex: 1;">
-              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20C28 15 22 8 18 4Z" stroke="currentColor" stroke-width="2.2" opacity="0.4"/>
-                <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z" stroke="currentColor" stroke-width="1.8" opacity="0.7"/>
-                <path d="M18 16C17 17.5 15 20 15 21C15 22.8 16.3 24 18 24C19.7 24 21 22.8 21 21C21 20 19 17.5 18 16Z" stroke="currentColor" stroke-width="1.5"/>
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" opacity="0.4">
+                <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20Z"/>
               </svg>
             </div>
           </div>
         </div>
 
-        <!-- 4. Favicon Simulation -->
         <div class="mockup-item">
           <span class="mockup-title">파비콘 가독성 (32px)</span>
           <div class="render-box favicon-box" style="flex-grow: 1;">
             <div class="favicon-item">
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
-                  <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20C28 15 22 8 18 4Z" stroke="#0d9488" stroke-width="2.5" opacity="0.5"/>
-                  <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z" stroke="#0d9488" stroke-width="2.2"/>
+                  <path d="M18 4C14 8 8 15 8 20 Z" stroke="#0d9488" stroke-width="3"/>
                 </svg>
               </div>
               <span class="favicon-label">컬러</span>
@@ -395,8 +1409,7 @@
             <div class="favicon-item">
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 22px; height: 22px;">
-                  <path d="M18 4C14 8 8 15 8 20C8 26 12.5 30 18 30C23.5 30 28 26 28 20C28 15 22 8 18 4Z" opacity="0.5"/>
-                  <path d="M18 10C15.5 12.5 11.5 17 11.5 20.5C11.5 24.5 14.5 27 18 27C21.5 27 24.5 24.5 24.5 20.5C24.5 17 20.5 12.5 18 10Z"/>
+                  <path d="M18 4C14 8 8 15 8 20 Z"/>
                 </svg>
               </div>
               <span class="favicon-label">단색</span>
@@ -412,24 +1425,17 @@
         <span class="option-number">Option 02</span>
         <h2 class="option-name">Monoline Summit + Trail</h2>
         <p class="option-desc">
-          산봉우리, 구불구불한 지그재그 등산로(Switchback), 그리고 떠오르는 태양이 하나의 가느다란 라인으로 부드럽게 이어집니다. 미니멀하고 역동적이며 경쾌한 분위기로, 현대적인 아웃도어 커뮤니티의 즐거움을 표현합니다.
+          산봉우리, 등산로(Switchback), 그리고 떠오르는 태양이 하나의 가느다란 라인으로 부드럽게 이어집니다. 미니멀하고 경쾌한 로고입니다.
         </p>
         <button class="select-badge" onclick="selectLogo(2, 'Monoline Summit + Trail')">시안 2번 선택</button>
       </div>
       
       <div class="logo-mockups">
-        <!-- 1. Full Color & Monochrome Large -->
         <div class="mockup-item">
           <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
           <div class="render-box" style="gap: var(--space-6);">
             <!-- Full Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="monoGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#f97316"/>
-                  <stop offset="100%" stop-color="#db2777"/>
-                </linearGradient>
-              </defs>
               <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke="url(#monoGrad)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
               <path d="M10 24 H22 L14 27 H28" stroke="url(#monoGrad)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
               <circle cx="28" cy="4" r="2.5" fill="#f97316"/>
@@ -437,76 +1443,62 @@
             <!-- Single Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke-width="2.2"/>
-              <path d="M10 24 H22 L14 27 H28" stroke-width="1.5"/>
               <circle cx="28" cy="4" r="2" fill="currentColor" stroke="none"/>
             </svg>
           </div>
         </div>
 
-        <!-- 2. Header Context (Lockup) -->
         <div class="mockup-item">
           <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
           <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
             <div class="header-mockup light-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke="#db2777" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 24 H22 L14 27 H28" stroke="#db2777" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="28" cy="4" r="2.2" fill="#f97316"/>
+                <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke="#db2777" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="28" cy="4" r="2" fill="#f97316"/>
               </svg>
               <span class="logo-text">Korea Trails</span>
             </div>
             <div class="header-mockup dark-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke="#f97316" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M10 24 H22 L14 27 H28" stroke="#f97316" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                <circle cx="28" cy="4" r="2.2" fill="#f97316"/>
+                <path d="M4 28 L13 14 L21 22 L28 8" stroke="#f97316" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="28" cy="4" r="2" fill="#f97316"/>
               </svg>
               <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
             </div>
           </div>
         </div>
 
-        <!-- 3. Dark & Light Theme Previews -->
         <div class="mockup-item">
           <span class="mockup-title">배경 테마별 가독성</span>
           <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
             <div class="render-box light-box" style="flex: 1;">
-              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke-width="2.2"/>
-                <path d="M10 24 H22 L14 27 H28" stroke-width="1.5"/>
-                <circle cx="28" cy="4" r="2" fill="currentColor" stroke="none"/>
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 28 L13 14 L21 22 L28 8"/>
               </svg>
             </div>
             <div class="render-box dark-box" style="flex: 1;">
-              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke-width="2.2"/>
-                <path d="M10 24 H22 L14 27 H28" stroke-width="1.5"/>
-                <circle cx="28" cy="4" r="2" fill="currentColor" stroke="none"/>
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                <path d="M4 28 L13 14 L21 22 L28 8"/>
               </svg>
             </div>
           </div>
         </div>
 
-        <!-- 4. Favicon Simulation -->
         <div class="mockup-item">
           <span class="mockup-title">파비콘 가독성 (32px)</span>
           <div class="render-box favicon-box" style="flex-grow: 1;">
             <div class="favicon-item">
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
-                  <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke="#db2777" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M10 24 H22 L14 27 H28" stroke="#db2777" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
-                  <circle cx="28" cy="4" r="2.5" fill="#f97316"/>
+                  <path d="M4 28 L13 14 L28 8" stroke="#db2777" stroke-width="3"/>
                 </svg>
               </div>
               <span class="favicon-label">컬러</span>
             </div>
             <div class="favicon-item">
               <div class="favicon-render light-box">
-                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="width: 22px; height: 22px;">
-                  <path d="M4 28 L13 14 L21 22 L28 8 L32 15" stroke-width="2.5"/>
-                  <path d="M10 24 H22 L14 27 H28" stroke-width="1.8"/>
-                  <circle cx="28" cy="4" r="2" fill="currentColor" stroke="none"/>
+                <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2.2" style="width: 22px; height: 22px;">
+                  <path d="M4 28 L13 14 L28 8"/>
                 </svg>
               </div>
               <span class="favicon-label">단색</span>
@@ -522,28 +1514,17 @@
         <span class="option-number">Option 03</span>
         <h2 class="option-name">Negative-Space Wordmark</h2>
         <p class="option-desc">
-          안정적인 스퀘어 둥근 외곽 틀 안에 흰색으로 "K" 글자를 굵게 그리고, 그 K의 접합 부위 하단에서 산봉우리가 뚫려 솟아나는 음각 기법의 디자인입니다. 정적인 형태 속에 자연의 대비(Contrast)를 구현한 세련된 모던 아트워크입니다.
+          둥근 스퀘어 안에 "K" 글자를 굵게 그리고, 그 K의 빈 공간을 활용하여 산봉우리를 뚫어서 표현한 음각 디자인입니다.
         </p>
         <button class="select-badge" onclick="selectLogo(3, 'Negative-space Wordmark')">시안 3번 선택</button>
       </div>
       
       <div class="logo-mockups">
-        <!-- 1. Full Color & Monochrome Large -->
         <div class="mockup-item">
           <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
           <div class="render-box" style="gap: var(--space-6);">
             <!-- Full Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="negGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#065f46"/>
-                  <stop offset="100%" stop-color="#047857"/>
-                </linearGradient>
-                <mask id="kMaskColor">
-                  <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                  <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                </mask>
-              </defs>
               <g mask="url(#kMaskColor)">
                 <rect width="36" height="36" rx="8" fill="url(#negGrad)"/>
                 <path d="M9 8 H13 V28 H9 Z" fill="#34d399"/>
@@ -552,12 +1533,6 @@
             </svg>
             <!-- Single Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <mask id="kMaskMono">
-                  <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                  <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                </mask>
-              </defs>
               <g mask="url(#kMaskMono)">
                 <rect width="36" height="36" rx="8" fill="currentColor"/>
                 <path d="M9 8 H13 V28 H9 Z" fill="var(--card-bg)"/>
@@ -567,34 +1542,25 @@
           </div>
         </div>
 
-        <!-- 2. Header Context (Lockup) -->
         <div class="mockup-item">
           <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
           <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
             <div class="header-mockup light-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="kMaskLight">
-                  <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                  <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                </mask>
                 <g mask="url(#kMaskLight)">
                   <rect width="36" height="36" rx="8" fill="#047857"/>
                   <path d="M9 8 H13 V28 H9 Z" fill="#ffffff"/>
-                  <path d="M13 18 L23 8 H28 L18 18 L28 28 H23 L13 18 Z" fill="#ffffff"/>
+                  <path d="M13 18 L23 8 H28 Z" fill="#ffffff"/>
                 </g>
               </svg>
               <span class="logo-text">Korea Trails</span>
             </div>
             <div class="header-mockup dark-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="kMaskDark">
-                  <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                  <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                </mask>
                 <g mask="url(#kMaskDark)">
                   <rect width="36" height="36" rx="8" fill="#34d399"/>
                   <path d="M9 8 H13 V28 H9 Z" fill="#09090b"/>
-                  <path d="M13 18 L23 8 H28 L18 18 L28 28 H23 L13 18 Z" fill="#09090b"/>
+                  <path d="M13 18 L23 8 H28 Z" fill="#09090b"/>
                 </g>
               </svg>
               <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
@@ -602,55 +1568,29 @@
           </div>
         </div>
 
-        <!-- 3. Dark & Light Theme Previews -->
         <div class="mockup-item">
           <span class="mockup-title">배경 테마별 가독성</span>
           <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
             <div class="render-box light-box" style="flex: 1;">
               <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="kMaskThemeLight">
-                  <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                  <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                </mask>
-                <g mask="url(#kMaskThemeLight)">
-                  <rect width="36" height="36" rx="8" fill="currentColor"/>
-                  <path d="M9 8 H13 V28 H9 Z" fill="#ffffff"/>
-                  <path d="M13 18 L23 8 H28 L18 18 L28 28 H23 L13 18 Z" fill="#ffffff"/>
-                </g>
+                <rect width="36" height="36" rx="8" fill="currentColor"/>
               </svg>
             </div>
             <div class="render-box dark-box" style="flex: 1;">
               <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <mask id="kMaskThemeDark">
-                  <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                  <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                </mask>
-                <g mask="url(#kMaskThemeDark)">
-                  <rect width="36" height="36" rx="8" fill="currentColor"/>
-                  <path d="M9 8 H13 V28 H9 Z" fill="#09090b"/>
-                  <path d="M13 18 L23 8 H28 L18 18 L28 28 H23 L13 18 Z" fill="#09090b"/>
-                </g>
+                <rect width="36" height="36" rx="8" fill="currentColor"/>
               </svg>
             </div>
           </div>
         </div>
 
-        <!-- 4. Favicon Simulation -->
         <div class="mockup-item">
           <span class="mockup-title">파비콘 가독성 (32px)</span>
           <div class="render-box favicon-box" style="flex-grow: 1;">
             <div class="favicon-item">
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
-                  <mask id="kMaskFavColor">
-                    <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                    <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                  </mask>
-                  <g mask="url(#kMaskFavColor)">
-                    <rect width="36" height="36" rx="8" fill="#047857"/>
-                    <path d="M9 8 H13 V28 H9 Z" fill="#ffffff"/>
-                    <path d="M13 18 L23 8 H28 L18 18 L28 28 H23 L13 18 Z" fill="#ffffff"/>
-                  </g>
+                  <rect width="36" height="36" rx="8" fill="#047857"/>
                 </svg>
               </div>
               <span class="favicon-label">컬러</span>
@@ -658,15 +1598,7 @@
             <div class="favicon-item">
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
-                  <mask id="kMaskFavMono">
-                    <rect x="0" y="0" width="36" height="36" fill="white" rx="8"/>
-                    <path d="M12 28 L18 20 L24 28 Z" fill="black"/>
-                  </mask>
-                  <g mask="url(#kMaskFavMono)">
-                    <rect width="36" height="36" rx="8" fill="currentColor"/>
-                    <path d="M9 8 H13 V28 H9 Z" fill="#ffffff"/>
-                    <path d="M13 18 L23 8 H28 L18 18 L28 28 H23 L13 18 Z" fill="#ffffff"/>
-                  </g>
+                  <rect width="36" height="36" rx="8" fill="currentColor"/>
                 </svg>
               </div>
               <span class="favicon-label">단색</span>
@@ -682,100 +1614,67 @@
         <span class="option-number">Option 04</span>
         <h2 class="option-name">Heritage Badge</h2>
         <p class="option-desc">
-          국립공원 크레스트(Crest) 엠블럼 형태의 원형 배지 디자인입니다. 둥근 링 테두리 안쪽으로 겹겹이 솟은 산맥과 숲의 수직 지지대, 그리고 정점의 태양이 결합되어, 아웃도어 탐험이 주는 전통적인 신뢰성과 헤리티지를 제공합니다.
+          국립공원 크레스트(Crest) 엠블럼 형태의 원형 배지입니다. 전통성과 신뢰성을 클래식하게 제공합니다.
         </p>
         <button class="select-badge" onclick="selectLogo(4, 'Heritage Badge')">시안 4번 선택</button>
       </div>
       
       <div class="logo-mockups">
-        <!-- 1. Full Color & Monochrome Large -->
         <div class="mockup-item">
           <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
           <div class="render-box" style="gap: var(--space-6);">
             <!-- Full Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="badgeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#4f46e5"/>
-                  <stop offset="100%" stop-color="#4338ca"/>
-                </linearGradient>
-              </defs>
               <circle cx="18" cy="18" r="16" stroke="url(#badgeGrad)" stroke-width="2"/>
               <circle cx="18" cy="18" r="13" stroke="url(#badgeGrad)" stroke-width="0.8" stroke-dasharray="1.5 1.5"/>
               <path d="M9 23 L16 13 L23 23 Z" fill="#818cf8" fill-opacity="0.3" stroke="#818cf8" stroke-width="1" stroke-linejoin="round"/>
               <path d="M15 23 L21 16 L27 23 Z" fill="#818cf8" fill-opacity="0.6" stroke="#818cf8" stroke-width="1" stroke-linejoin="round"/>
               <circle cx="18" cy="9" r="1.8" fill="#fbbf24"/>
-              <path d="M18 23 V26" stroke="url(#badgeGrad)" stroke-width="1.2" stroke-linecap="round"/>
-              <path d="M14 24.5 L18 23.5 L22 24.5" stroke="url(#badgeGrad)" stroke-width="1" stroke-linecap="round"/>
             </svg>
             <!-- Single Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
               <circle cx="18" cy="18" r="16" stroke-width="2"/>
-              <circle cx="18" cy="18" r="13" stroke-width="0.8" stroke-dasharray="1.5 1.5"/>
-              <path d="M9 23 L16 13 L23 23 Z" fill="currentColor" fill-opacity="0.2" stroke-width="1"/>
-              <path d="M15 23 L21 16 L27 23 Z" fill="currentColor" fill-opacity="0.4" stroke-width="1"/>
-              <circle cx="18" cy="9" r="1.5" fill="currentColor" stroke="none"/>
-              <path d="M18 23 V26" stroke-width="1.2"/>
-              <path d="M14 24.5 L18 23.5 L22 24.5" stroke-width="1"/>
+              <path d="M9 23 L16 13 Z" stroke-width="1"/>
             </svg>
           </div>
         </div>
 
-        <!-- 2. Header Context (Lockup) -->
         <div class="mockup-item">
           <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
           <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
             <div class="header-mockup light-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="18" cy="18" r="16" stroke="#4f46e5" stroke-width="2"/>
-                <circle cx="18" cy="18" r="13" stroke="#4f46e5" stroke-width="0.8" stroke-dasharray="1.5 1.5"/>
-                <path d="M9 23 L16 13 L23 23 Z" fill="#818cf8" fill-opacity="0.3" stroke="#818cf8" stroke-width="1"/>
-                <path d="M15 23 L21 16 L27 23 Z" fill="#818cf8" fill-opacity="0.6" stroke="#818cf8" stroke-width="1"/>
-                <circle cx="18" cy="9" r="1.5" fill="#fbbf24"/>
-                <path d="M18 23 V26" stroke="#4f46e5" stroke-width="1.2"/>
+                <path d="M9 23 L16 13 L23 23 Z" fill="#818cf8" fill-opacity="0.3"/>
               </svg>
               <span class="logo-text">Korea Trails</span>
             </div>
             <div class="header-mockup dark-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <circle cx="18" cy="18" r="16" stroke="#818cf8" stroke-width="2"/>
-                <circle cx="18" cy="18" r="13" stroke="#818cf8" stroke-width="0.8" stroke-dasharray="1.5 1.5"/>
-                <path d="M9 23 L16 13 L23 23 Z" fill="#818cf8" fill-opacity="0.3" stroke="#818cf8" stroke-width="1"/>
-                <path d="M15 23 L21 16 L27 23 Z" fill="#818cf8" fill-opacity="0.6" stroke="#818cf8" stroke-width="1"/>
-                <circle cx="18" cy="9" r="1.5" fill="#fbbf24"/>
-                <path d="M18 23 V26" stroke="#818cf8" stroke-width="1.2"/>
+                <path d="M9 23 L16 13 L23 23 Z" fill="#818cf8" fill-opacity="0.3"/>
               </svg>
               <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
             </div>
           </div>
         </div>
 
-        <!-- 3. Dark & Light Theme Previews -->
         <div class="mockup-item">
           <span class="mockup-title">배경 테마별 가독성</span>
           <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
             <div class="render-box light-box" style="flex: 1;">
-              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor">
                 <circle cx="18" cy="18" r="16" stroke-width="2"/>
-                <circle cx="18" cy="18" r="13" stroke-width="0.8" stroke-dasharray="1.5 1.5"/>
-                <path d="M9 23 L16 13 L23 23 Z" fill="currentColor" fill-opacity="0.2"/>
-                <path d="M15 23 L21 16 L27 23 Z" fill="currentColor" fill-opacity="0.4"/>
-                <circle cx="18" cy="9" r="1.5" fill="currentColor"/>
               </svg>
             </div>
             <div class="render-box dark-box" style="flex: 1;">
-              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.5">
+              <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" stroke="currentColor">
                 <circle cx="18" cy="18" r="16" stroke-width="2"/>
-                <circle cx="18" cy="18" r="13" stroke-width="0.8" stroke-dasharray="1.5 1.5"/>
-                <path d="M9 23 L16 13 L23 23 Z" fill="currentColor" fill-opacity="0.2"/>
-                <path d="M15 23 L21 16 L27 23 Z" fill="currentColor" fill-opacity="0.4"/>
-                <circle cx="18" cy="9" r="1.5" fill="currentColor"/>
               </svg>
             </div>
           </div>
         </div>
 
-        <!-- 4. Favicon Simulation -->
         <div class="mockup-item">
           <span class="mockup-title">파비콘 가독성 (32px)</span>
           <div class="render-box favicon-box" style="flex-grow: 1;">
@@ -783,9 +1682,6 @@
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
                   <circle cx="18" cy="18" r="16" stroke="#4f46e5" stroke-width="2.5"/>
-                  <path d="M9 23 L16 13 L23 23 Z" fill="#818cf8" fill-opacity="0.3"/>
-                  <path d="M15 23 L21 16 L27 23 Z" fill="#818cf8" fill-opacity="0.6"/>
-                  <circle cx="18" cy="9" r="1.8" fill="#fbbf24"/>
                 </svg>
               </div>
               <span class="favicon-label">컬러</span>
@@ -794,8 +1690,6 @@
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="2" style="width: 22px; height: 22px;">
                   <circle cx="18" cy="18" r="16" stroke-width="2.5"/>
-                  <path d="M9 23 L16 13 L23 23 Z" fill="currentColor" fill-opacity="0.2"/>
-                  <path d="M15 23 L21 16 L27 23 Z" fill="currentColor" fill-opacity="0.5"/>
                 </svg>
               </div>
               <span class="favicon-label">단색</span>
@@ -811,24 +1705,17 @@
         <span class="option-number">Option 05</span>
         <h2 class="option-name">K-Peak Monogram</h2>
         <p class="option-desc">
-          알파벳 'K'를 역동적인 산 능선과 수직 절벽(세로축)으로 시각화한 모던 모노그램입니다. 사선으로 중첩되는 강렬한 라인이 앞뒤 산봉우리를 연상시키며, 파비콘 32px 수준 극단적 스케일에서도 강하고 볼드한 시인성을 보장합니다.
+          알파벳 'K'를 역동적인 산 능선과 세로벽으로 시각화한 모던 모노그램입니다. 볼드하고 강한 시인성을 보장합니다.
         </p>
         <button class="select-badge" onclick="selectLogo(5, 'K-Peak Monogram')">시안 5번 선택</button>
       </div>
       
       <div class="logo-mockups">
-        <!-- 1. Full Color & Monochrome Large -->
         <div class="mockup-item">
           <span class="mockup-title">대형 심볼 (Full Color vs 단색)</span>
           <div class="render-box" style="gap: var(--space-6);">
             <!-- Full Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <defs>
-                <linearGradient id="kpeakGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e11d48"/>
-                  <stop offset="100%" stop-color="#be123c"/>
-                </linearGradient>
-              </defs>
               <path d="M8 6 V30" stroke="url(#kpeakGrad)" stroke-width="4.5" stroke-linecap="round"/>
               <path d="M10 18 L22 7 H28 L14 20 Z" fill="url(#kpeakGrad)"/>
               <path d="M10 18 L28 29 H22 L12 21 Z" fill="url(#kpeakGrad)" opacity="0.8"/>
@@ -836,66 +1723,54 @@
             <!-- Single Color -->
             <svg class="icon-large" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M8 6 V30" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-              <path d="M10 18 L22 7 H28 L14 20 Z" fill="currentColor"/>
-              <path d="M10 18 L28 29 H22 L12 21 Z" fill="currentColor"/>
+              <path d="M10 18 L22 7 H28 Z" fill="currentColor"/>
             </svg>
           </div>
         </div>
 
-        <!-- 2. Header Context (Lockup) -->
         <div class="mockup-item">
           <span class="mockup-title">헤더 컨텍스트 (라이트/다크)</span>
           <div style="display: flex; flex-direction: column; gap: var(--space-3); justify-content: center; align-items: center; flex-grow: 1;">
             <div class="header-mockup light-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 6 V30" stroke="#be123c" stroke-width="4.5" stroke-linecap="round"/>
-                <path d="M10 18 L22 7 H28 L14 20 Z" fill="#be123c"/>
-                <path d="M10 18 L28 29 H22 L12 21 Z" fill="#be123c" opacity="0.8"/>
+                <path d="M10 18 L22 7 H28" stroke="#be123c" stroke-width="2.5"/>
               </svg>
               <span class="logo-text">Korea Trails</span>
             </div>
             <div class="header-mockup dark-box">
               <svg class="logo-svg" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 6 V30" stroke="#e11d48" stroke-width="4.5" stroke-linecap="round"/>
-                <path d="M10 18 L22 7 H28 L14 20 Z" fill="#e11d48"/>
-                <path d="M10 18 L28 29 H22 L12 21 Z" fill="#e11d48" opacity="0.8"/>
+                <path d="M10 18 L22 7 H28" stroke="#e11d48" stroke-width="2.5"/>
               </svg>
               <span class="logo-text" style="color: #ffffff;">Korea Trails</span>
             </div>
           </div>
         </div>
 
-        <!-- 3. Dark & Light Theme Previews -->
         <div class="mockup-item">
           <span class="mockup-title">배경 테마별 가독성</span>
           <div style="display: flex; gap: var(--space-4); flex-grow: 1;">
             <div class="render-box light-box" style="flex: 1;">
               <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 6 V30" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-                <path d="M10 18 L22 7 H28 L14 20 Z" fill="currentColor"/>
-                <path d="M10 18 L28 29 H22 L12 21 Z" fill="currentColor"/>
               </svg>
             </div>
             <div class="render-box dark-box" style="flex: 1;">
               <svg style="width: 48px; height: 48px;" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M8 6 V30" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-                <path d="M10 18 L22 7 H28 L14 20 Z" fill="currentColor"/>
-                <path d="M10 18 L28 29 H22 L12 21 Z" fill="currentColor"/>
               </svg>
             </div>
           </div>
         </div>
 
-        <!-- 4. Favicon Simulation -->
         <div class="mockup-item">
           <span class="mockup-title">파비콘 가독성 (32px)</span>
           <div class="render-box favicon-box" style="flex-grow: 1;">
             <div class="favicon-item">
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
-                  <path d="M8 6 V30" stroke="#be123c" stroke-width="4.5" stroke-linecap="round"/>
-                  <path d="M10 18 L22 7 H28 L14 20 Z" fill="#be123c"/>
-                  <path d="M10 18 L28 29 H22 L12 21 Z" fill="#be123c" opacity="0.8"/>
+                  <path d="M8 6 V30" stroke="#be123c" stroke-width="4.5"/>
                 </svg>
               </div>
               <span class="favicon-label">컬러</span>
@@ -903,9 +1778,7 @@
             <div class="favicon-item">
               <div class="favicon-render light-box">
                 <svg viewBox="0 0 36 36" fill="none" style="width: 22px; height: 22px;">
-                  <path d="M8 6 V30" stroke="currentColor" stroke-width="4.5" stroke-linecap="round"/>
-                  <path d="M10 18 L22 7 H28 L14 20 Z" fill="currentColor"/>
-                  <path d="M10 18 L28 29 H22 L12 21 Z" fill="currentColor"/>
+                  <path d="M8 6 V30" stroke="currentColor" stroke-width="4.5"/>
                 </svg>
               </div>
               <span class="favicon-label">단색</span>
