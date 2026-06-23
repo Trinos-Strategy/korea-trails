@@ -102,7 +102,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -559,29 +559,13 @@
 <header class="site-header">
 <div class="header-inner">
 <a class="logo" href="#">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <div>
 <div class="logo-text">주왕산 국립공원</div>
@@ -754,15 +738,120 @@
 </div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 체크포인트</div>
-<div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
-<tr><td><span class="cp-badge" style="background:var(--color-easy-light);color:var(--color-easy)">P</span></td><td class="cp-name">상의주차장</td><td>250m</td><td>0km</td><td>🅿️ 화장실·매점</td></tr>
-<tr><td>1</td><td class="cp-name">대전사</td><td>260m</td><td>0.9km</td><td>⛩ 신라시대 고찰, 화장실</td></tr>
-<tr><td>2</td><td class="cp-name">주왕굴 갈림길</td><td>280m</td><td>1.6km</td><td>🕳 주왕굴 지선 분기</td></tr>
-<tr><td>3</td><td class="cp-name">용추폭포 (제1)</td><td>300m</td><td>2.3km</td><td>💧 낙차 4m</td></tr>
-<tr><td>4</td><td class="cp-name">절구폭포 (제3)</td><td>310m</td><td>3.0km</td><td>💧 2단 낙차 6m</td></tr>
-<tr><td>5</td><td class="cp-name">용연폭포 (제2)</td><td>330m</td><td>3.7km</td><td>💧 최고 절경 낙차 10m</td></tr>
-<tr><td>🏁</td><td class="cp-name">내원동 반환점</td><td>350m</td><td>4.8km</td><td>🔄 벤치, 귀환 지점</td></tr>
-</tbody></table></div>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상의주차장</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 250m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🅿️ 화장실·매점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대전사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 260m</span>
+<span class="meta-item">📏 누적 0.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> ⛩ 신라시대 고찰, 화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">주왕굴 갈림길</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 280m</span>
+<span class="meta-item">📏 누적 1.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🕳 주왕굴 지선 분기
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">용추폭포 (제1)</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 300m</span>
+<span class="meta-item">📏 누적 2.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 💧 낙차 4m
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">절구폭포 (제3)</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 310m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 💧 2단 낙차 6m
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">용연폭포 (제2)</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 330m</span>
+<span class="meta-item">📏 누적 3.7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 💧 최고 절경 낙차 10m
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">내원동 반환점</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 350m</span>
+<span class="meta-item">📏 누적 4.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🔄 벤치, 귀환 지점
+      </div>
+</div>
+</div>
+</div>
 </div></div></div>
 </div>
 <!-- ===== 중급 ===== -->
@@ -867,17 +956,152 @@
 </div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 체크포인트</div>
-<div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
-<tr><td><span class="cp-badge" style="background:var(--color-mid-light);color:var(--color-mid)">P</span></td><td class="cp-name">상의주차장</td><td>250m</td><td>0km</td><td>🅿️ 출발지</td></tr>
-<tr><td>1</td><td class="cp-name">대전사</td><td>260m</td><td>0.9km</td><td>⛩ 화장실·물 보충</td></tr>
-<tr><td>2</td><td class="cp-name">제1전망대</td><td>450m</td><td>2.2km</td><td>🔭 용추협곡 조망</td></tr>
-<tr><td>3</td><td class="cp-name">제2·3전망대</td><td>600m</td><td>2.8km</td><td>🔭 능선 파노라마</td></tr>
-<tr><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></td><td class="cp-name">주봉 정상</td><td>722m</td><td>3.2km</td><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 정상석, 360° 조망</td></tr>
-<tr><td>4</td><td class="cp-name">칼등고개</td><td>580m</td><td>4.2km</td><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 능선 갈림길</td></tr>
-<tr><td>5</td><td class="cp-name">후리메기삼거리</td><td>370m</td><td>5.7km</td><td>🔀 계곡 합류</td></tr>
-<tr><td>6</td><td class="cp-name">용연폭포</td><td>330m</td><td>7.2km</td><td>💧 제2폭포</td></tr>
-<tr><td>🏁</td><td class="cp-name">상의주차장 귀환</td><td>250m</td><td>10.1km</td><td>✅ 종료</td></tr>
-</tbody></table></div>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상의주차장</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 250m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🅿️ 출발지
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대전사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 260m</span>
+<span class="meta-item">📏 누적 0.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> ⛩ 화장실·물 보충
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">제1전망대</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 450m</span>
+<span class="meta-item">📏 누적 2.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🔭 용추협곡 조망
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">제2·3전망대</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 600m</span>
+<span class="meta-item">📏 누적 2.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🔭 능선 파노라마
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">주봉 정상</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 722m</span>
+<span class="meta-item">📏 누적 3.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석, 360° 조망
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">칼등고개</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 580m</span>
+<span class="meta-item">📏 누적 4.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 능선 갈림길
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">후리메기삼거리</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 370m</span>
+<span class="meta-item">📏 누적 5.7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🔀 계곡 합류
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">용연폭포</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 330m</span>
+<span class="meta-item">📏 누적 7.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 💧 제2폭포
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상의주차장 귀환</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 250m</span>
+<span class="meta-item">📏 누적 10.1km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> ✅ 종료
+      </div>
+</div>
+</div>
+</div>
 </div></div></div>
 </div>
 <!-- ===== 고급 ===== -->
@@ -989,19 +1213,184 @@
 </div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 체크포인트</div>
-<div class="cp-table-wrap"><table class="cp-table"><thead><tr><th>#</th><th>지점명</th><th>고도</th><th>누적거리</th><th>특징</th></tr></thead><tbody>
-<tr><td><span class="cp-badge" style="background:var(--color-hard-light);color:var(--color-hard)">P</span></td><td class="cp-name">절골분소</td><td>320m</td><td>0km</td><td>🅿️ 종주 시작점</td></tr>
-<tr><td>1</td><td class="cp-name">데크쉼터</td><td>360m</td><td>1.2km</td><td>🪵 벤치, 첫 휴식</td></tr>
-<tr><td>2</td><td class="cp-name">대문다리 광장</td><td>420m</td><td>3.5km</td><td>🌉 급경사 전 대형 쉼터</td></tr>
-<tr><td>3</td><td class="cp-name">대문다리</td><td>430m</td><td>3.7km</td><td>🌉 급경사 시작</td></tr>
-<tr><td>4</td><td class="cp-name">오르막 시작점</td><td>450m</td><td>4.4km</td><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 이후 1.5km 급경사</td></tr>
-<tr><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></td><td class="cp-name">가메봉 정상</td><td>882m</td><td>5.9km</td><td><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 최고봉, 360° 조망</td></tr>
-<tr><td>5</td><td class="cp-name">후리메기삼거리</td><td>370m</td><td>8.5km</td><td>🔀 계곡 합류, 급경사 종료</td></tr>
-<tr><td>6</td><td class="cp-name">용연폭포 (제2)</td><td>330m</td><td>9.9km</td><td>💧 낙차 10m</td></tr>
-<tr><td>7</td><td class="cp-name">용추폭포 (제1)</td><td>300m</td><td>10.8km</td><td>💧 협곡 절경</td></tr>
-<tr><td>8</td><td class="cp-name">대전사</td><td>260m</td><td>12.6km</td><td>⛩ 음료 구매 가능</td></tr>
-<tr><td>🏁</td><td class="cp-name">상의주차장</td><td>250m</td><td>13.5km</td><td>✅ 종주 완료</td></tr>
-</tbody></table></div>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">절골분소</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 320m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🅿️ 종주 시작점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">데크쉼터</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 360m</span>
+<span class="meta-item">📏 누적 1.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🪵 벤치, 첫 휴식
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대문다리 광장</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 420m</span>
+<span class="meta-item">📏 누적 3.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🌉 급경사 전 대형 쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대문다리</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 430m</span>
+<span class="meta-item">📏 누적 3.7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🌉 급경사 시작
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">오르막 시작점</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 450m</span>
+<span class="meta-item">📏 누적 4.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이후 1.5km 급경사
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">가메봉 정상</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 882m</span>
+<span class="meta-item">📏 누적 5.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 최고봉, 360° 조망
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">후리메기삼거리</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 370m</span>
+<span class="meta-item">📏 누적 8.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 🔀 계곡 합류, 급경사 종료
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">용연폭포 (제2)</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 330m</span>
+<span class="meta-item">📏 누적 9.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 💧 낙차 10m
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">용추폭포 (제1)</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 300m</span>
+<span class="meta-item">📏 누적 10.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 💧 협곡 절경
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대전사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 260m</span>
+<span class="meta-item">📏 누적 12.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> ⛩ 음료 구매 가능
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">11</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상의주차장</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 250m</span>
+<span class="meta-item">📏 누적 13.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> ✅ 종주 완료
+      </div>
+</div>
+</div>
+</div>
 </div></div></div>
 </div>
 </main></div>
