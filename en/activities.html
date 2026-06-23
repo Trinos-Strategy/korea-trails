@@ -3,19 +3,19 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Korea Trails — Road & Mountain Cycling Course Playbook</title>
+<title>Korea Trails — Adventures & Activities Hub</title>
 <!-- SEO Meta Tags -->
-<meta content="A premium outdoor guide featuring scenic road, MTB, and gravel cycling routes with elevation profiles and transit information in Korea and Asia." name="description"/>
-<meta content="Korea Trails — Road & Mountain Cycling Course Playbook" property="og:title"/>
-<meta content="A premium outdoor guide featuring scenic road, MTB, and gravel cycling routes with elevation profiles and transit information in Korea and Asia." property="og:description"/>
+<meta content="A premium comprehensive adventures hub featuring hiking trails, road cycling, mountain biking (MTB), and motorcycle riding routes globally." name="description"/>
+<meta content="Korea Trails — Adventures & Activities Hub" property="og:title"/>
+<meta content="A premium comprehensive adventures hub featuring hiking trails, road cycling, mountain biking (MTB), and motorcycle riding routes globally." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="../assets/img/cycling-hero.png" property="og:image"/>
 <meta content="summary_large_image" name="twitter:card"/>
 <meta content="../assets/img/cycling-hero.png" name="twitter:image"/>
 <link href="../assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/>
-<link href="../cycling.html" hreflang="ko" rel="alternate"/>
-<link href="cycling.html" hreflang="en" rel="alternate"/>
-<link href="cycling.html" hreflang="x-default" rel="alternate"/>
+<link href="../activities.html" hreflang="ko" rel="alternate"/>
+<link href="activities.html" hreflang="en" rel="alternate"/>
+<link href="activities.html" hreflang="x-default" rel="alternate"/>
 <!-- Core CSS from Design System -->
 <link href="../assets/css/design-system.css" rel="stylesheet"/>
 <script src="../assets/js/i18n.js"></script>
@@ -215,7 +215,7 @@
 <nav aria-label="Main Navigation" class="header-nav">
 <a class="header-nav-link" href="index.html">Home</a>
 <a class="header-nav-link" href="index.html#mountainGrid">Explore Mountains</a>
-<a class="header-nav-link active" href="cycling.html">Cycling</a>
+<a class="header-nav-link active" href="activities.html">Activities</a>
 <a class="header-nav-link" href="map.html">Interactive Map</a>
 </nav>
 <div class="header-right">
@@ -241,7 +241,7 @@
 <div class="wrap">
 <div class="hero-badge">
 <svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bike"/></svg>
-  Premium Cycling Route Guide
+  Adventures & Activities Hub
 </div>
 <h1 class="hero-title-giant">Conquer Beautiful<br/>Mountain Climbs</h1>
 <p class="hero-desc-large">
@@ -253,11 +253,11 @@
 <div class="hero-stats">
 <div class="hero-stat">
 <div class="hero-stat-value" id="statsCount">0</div>
-<div class="hero-stat-label">Routes</div>
+<div class="hero-stat-label">Activities & Peaks</div>
 </div>
 <div class="hero-stat">
 <div class="hero-stat-value" id="statsDistance">0km</div>
-<div class="hero-stat-label">Total Distance</div>
+<div class="hero-stat-label">Total Route Distance</div>
 </div>
 <div class="hero-stat">
 <div class="hero-stat-value">3 Types</div>
@@ -289,11 +289,12 @@
 </div>
 <div class="filter-select-wrapper">
 <svg class="filter-icon"><use href="../assets/icons/icons.svg#icon-lightning"></use></svg>
-<select aria-label="Type Filter" class="filter-select" id="typeSelect">
-<option value="all">Type: All</option>
-<option value="Road">Road</option>
-<option value="MTB">MTB</option>
-<option value="Gravel">Gravel</option>
+<select aria-label="Activity Filter" class="filter-select" id="typeSelect">
+<option value="all">Activity: All</option>
+<option value="hiking">Hiking</option>
+<option value="road_cycling">Road Cycling</option>
+<option value="mtb">MTB</option>
+<option value="motorcycle">Motorcycle</option>
 </select>
 </div>
 </div>
@@ -376,7 +377,7 @@
     <div class="sitemap-col">
       <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Themes</div>
       <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
-        <a href="cycling.html" style="color: var(--muted); text-decoration: none;">Cycling Routes</a>
+        <a href="activities.html" style="color: var(--muted); text-decoration: none;">Activities</a>
         <a href="map.html" style="color: var(--muted); text-decoration: none;">Interactive Map</a>
       </div>
     </div>
@@ -420,9 +421,9 @@
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="m8 3-7 18h22L16 7l-4 7-4-11Z"></path></svg>
         Mountain List
       </a>
-      <a href="cycling.html" class="nav-drawer-link">
+      <a href="activities.html" class="nav-drawer-link">
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/></svg>
-        Cycling
+        Activities
       </a>
       <a href="map.html" class="nav-drawer-link">
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -458,10 +459,10 @@
 <script src="../assets/js/nav-drawer.js"></script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  let spotsData = [];
+  let activitiesData = [];
   const grid = document.getElementById('cyclingGrid');
   const searchInput = document.getElementById('searchInput');
-  const regionSelect = document.getElementById('regionSelect');
+  const countrySelect = document.getElementById('countrySelect');
   const typeSelect = document.getElementById('typeSelect');
   const sortSelect = document.getElementById('sortSelect');
   const resultsCount = document.getElementById('resultsCount');
@@ -471,96 +472,163 @@ document.addEventListener('DOMContentLoaded', () => {
 
   async function init() {
     try {
-      const res = await fetch('../_orchestration/cycling-spots.json');
-      spotsData = await res.json();
-      
-      // Update global hero stats
-      if (statsCount) statsCount.textContent = spotsData.length;
-      if (statsDistance) {
-        const totalDist = spotsData.reduce((acc, s) => acc + s.distance_km, 0);
-        statsDistance.textContent = totalDist.toFixed(1) + 'km';
-      }
+      const res = await fetch('../_orchestration/activities.json');
+      activitiesData = await res.json();
       
       render();
       
       // Hook up listeners
-      [searchInput, regionSelect, typeSelect, sortSelect].forEach(el => {
+      [searchInput, countrySelect, typeSelect, sortSelect].forEach(el => {
         if (el) el.addEventListener('input', render);
       });
     } catch (e) {
-      console.error("Failed to load cycling spots:", e);
+      console.error("Failed to load activities:", e);
       grid.innerHTML = `<div style="grid-column: 1/-1; text-align: center; padding: var(--space-8); color: var(--error);">Failed to load data.</div>`;
     }
   }
 
   function render() {
     const query = (searchInput.value || '').toLowerCase().trim();
-    const region = regionSelect.value;
+    const country = countrySelect.value;
     const type = typeSelect.value;
     const sort = sortSelect.value;
 
-    let filtered = spotsData.filter(s => {
+    // 1. Map MOUNTAINS array (hiking playbooks)
+    const mappedMountains = window.MOUNTAINS.map(m => ({
+      id: m.id,
+      cat: "hiking",
+      name_ko: m.name,
+      name_en: m.name,
+      country: m.region === 'Taiwan' ? 'Taiwan' : 'South Korea',
+      region: m.region,
+      lat: m.lat,
+      lng: m.lng,
+      distance_km: 0,
+      altitude_m: parseFloat(m.alt.replace(/,/g, '').replace('m', '')),
+      altitude: m.alt,
+      type: "Hiking",
+      photos: [],
+      youtube: "",
+      url: m.url,
+      desc_ko: `Detailed outdoor playbook guide for ${m.name} featuring route and public transit information.`,
+      desc_en: `Detailed outdoor playbook guide for ${m.name} featuring route and public transit information.`
+    }));
+
+    // 2. Combine all items
+    const allItems = [...mappedMountains, ...activitiesData];
+
+    // 3. Filter items
+    let filtered = allItems.filter(s => {
       const matchesQuery = s.name_en.toLowerCase().includes(query) ||
-                           s.desc_en.toLowerCase().includes(query) ||
+                           (s.desc_en && s.desc_en.toLowerCase().includes(query)) ||
                            s.region.toLowerCase().includes(query);
-      const matchesRegion = region === 'all' || s.region.toLowerCase() === region.toLowerCase();
-      const matchesType = type === 'all' || s.type.toLowerCase() === type.toLowerCase();
-      return matchesQuery && matchesRegion && matchesType;
+      const matchesCountry = country === 'all' || s.country.toLowerCase() === country.toLowerCase();
+      const matchesType = type === 'all' || s.cat.toLowerCase() === type.toLowerCase();
+      return matchesQuery && matchesCountry && matchesType;
     });
 
+    // 4. Sort items
     filtered.sort((a, b) => {
-      if (sort === 'distance-desc') return b.distance_km - a.distance_km;
-      if (sort === 'distance-asc') return a.distance_km - b.distance_km;
+      if (sort === 'distance-desc') return (b.distance_km || 0) - (a.distance_km || 0);
+      if (sort === 'altitude-desc') {
+        const aAlt = a.altitude_m || 0;
+        const bAlt = b.altitude_m || 0;
+        return bAlt - aAlt;
+      }
       if (sort === 'name-asc') return a.name_en.localeCompare(b.name_en, 'en');
       return 0;
     });
+
+    // Update global hero stats
+    if (statsCount) statsCount.textContent = filtered.length;
+    if (statsDistance) {
+      const totalDist = filtered.reduce((acc, s) => acc + (s.distance_km || 0), 0);
+      statsDistance.textContent = totalDist > 0 ? totalDist.toFixed(1) + 'km' : '0km';
+    }
 
     resultsCount.textContent = `Results: ${filtered.length}`;
 
     if (filtered.length === 0) {
       grid.innerHTML = `
         <div style="grid-column: 1/-1; text-align: center; padding: var(--space-12) 0; color: var(--muted);">
-          <div style="font-size: 3rem; margin-bottom: var(--space-4);">🚲</div>
-          <h3 style="font-size: var(--text-lg); font-weight: 800; margin-bottom: var(--space-2); color: var(--text);">No routes found</h3>
+          <div style="font-size: 3rem; margin-bottom: var(--space-4);">🧭</div>
+          <h3 style="font-size: var(--text-lg); font-weight: 800; margin-bottom: var(--space-2); color: var(--text);">No activities found</h3>
           <p style="font-size: var(--text-sm); color: var(--muted);">Try a different query or filters.</p>
         </div>
       `;
       return;
     }
 
-    grid.innerHTML = filtered.map(s => `
-      <article class="card card-hoverable" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
-        <div style="position: relative; width: 100%; height: 180px; overflow: hidden; background-color: var(--surface2);">
-          <img src="../assets/img/cycling-hero.png" alt="${s.name_en}" style="width: 100%; height: 100%; object-fit: cover;" loading="lazy">
-          <div style="position: absolute; top: var(--space-3); right: var(--space-3);">
-            <span class="cycling-type-badge type-${s.type.toLowerCase()}">${s.type}</span>
+    grid.innerHTML = filtered.map(s => {
+      let badgeLabel = "";
+      let badgeClass = "";
+      let iconName = "";
+      let detailLabel = "";
+
+      if (s.cat === 'hiking') {
+        badgeLabel = "Hiking";
+        badgeClass = "type-mtb"; // reuse green
+        iconName = "icon-mountain";
+        detailLabel = `Alt: <strong>${s.altitude || '—'}</strong>`;
+      } else if (s.cat === 'road_cycling') {
+        badgeLabel = "Road Cycling";
+        badgeClass = "type-road"; // blue
+        iconName = "icon-bike";
+        detailLabel = `Dist: <strong>${s.distance_km}km</strong>`;
+      } else if (s.cat === 'mtb') {
+        badgeLabel = "MTB";
+        badgeClass = "type-mtb"; // green
+        iconName = "icon-bike";
+        detailLabel = `Dist: <strong>${s.distance_km}km</strong>`;
+      } else if (s.cat === 'motorcycle') {
+        badgeLabel = "Motorcycle";
+        badgeClass = "type-gravel"; // amber
+        iconName = "icon-bike";
+        detailLabel = `Dist: <strong>${s.distance_km}km</strong>`;
+      }
+
+      const isPlaybook = !!s.url;
+
+      return `
+        <article class="card card-hoverable" style="padding: 0; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="position: relative; width: 100%; height: 180px; overflow: hidden; background-color: var(--surface2);">
+            <img src="${isPlaybook ? '../assets/img/' + s.id + '/hero.png' : '../assets/img/cycling-hero.png'}" alt="${s.name_en}" style="width: 100%; height: 100%; object-fit: cover;" onerror="this.src='../assets/img/cycling-hero.png'" loading="lazy">
+            <div style="position: absolute; top: var(--space-3); right: var(--space-3);">
+              <span class="cycling-type-badge ${badgeClass}">${badgeLabel}</span>
+            </div>
           </div>
-        </div>
-        <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1;">
-          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-2);">
-            <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text);">${s.name_en}</h2>
-            <span style="font-size: 1.15rem; font-weight: 800; color: var(--primary); font-family: var(--font-display);">${s.distance_km}km</span>
+          <div style="padding: var(--space-5); display: flex; flex-direction: column; flex-grow: 1;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: var(--space-2);">
+              <h2 style="font-size: var(--text-lg); font-weight: 800; color: var(--text);">${s.name_en}</h2>
+              <span style="font-size: 1.15rem; font-weight: 800; color: var(--primary); font-family: var(--font-display);">${detailLabel}</span>
+            </div>
+            <p style="font-size: var(--text-xs); color: var(--muted); margin-bottom: var(--space-4); display: flex; align-items: center; gap: 4px;">
+              <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="../assets/icons/icons.svg#icon-location"/></svg>
+              ${s.country} · ${s.region}
+            </p>
+            <p style="font-size: var(--text-sm); line-height: 1.6; color: var(--text-muted); margin-bottom: var(--space-6); flex-grow: 1;">
+              ${s.desc_en || ''}
+            </p>
+            <div style="display: flex; gap: var(--space-3); margin-top: auto;">
+              ${isPlaybook ? `
+                <a href="${s.url}" class="btn btn-sm btn-outline" style="flex: 1; text-align: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; height: 36px; padding: 0;">
+                  🏔️ View Playbook
+                </a>
+              ` : `
+                <a href="map.html?spot=${s.id}" class="btn btn-sm btn-outline" style="flex: 1; text-align: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; height: 36px; padding: 0;">
+                  📍 View on Map
+                </a>
+                ${s.youtube ? `
+                  <a href="${s.youtube}" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="flex: 1; text-align: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; height: 36px; padding: 0; gap: 4px;">
+                    🎥 Watch Video
+                  </a>
+                ` : ''}
+              `}
+            </div>
           </div>
-          <p style="font-size: var(--text-xs); color: var(--muted); margin-bottom: var(--space-4); display: flex; align-items: center; gap: 4px;">
-            <svg class="icon-svg" style="width: 12px; height: 12px;"><use href="../assets/icons/icons.svg#icon-location"/></svg>
-            ${s.country} · ${s.region}
-          </p>
-          <p style="font-size: var(--text-sm); line-height: 1.6; color: var(--text-muted); margin-bottom: var(--space-6); flex-grow: 1;">
-            ${s.desc_en}
-          </p>
-          <div style="display: flex; gap: var(--space-3); margin-top: auto;">
-            <a href="map.html?spot=${s.id}" class="btn btn-sm btn-outline" style="flex: 1; text-align: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; height: 36px; padding: 0;">
-              📍 View on Map
-            </a>
-            ${s.youtube ? `
-              <a href="${s.youtube}" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="flex: 1; text-align: center; justify-content: center; font-size: var(--text-xs); font-weight: 700; height: 36px; padding: 0; gap: 4px;">
-                🎥 Watch Video
-              </a>
-            ` : ''}
-          </div>
-        </div>
-      </article>
-    `).join('');
+        </article>
+      `;
+    }).join('');
   }
 
   init();

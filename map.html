@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Korea Trails — 인터랙티브 월드 맵 (등산 &amp; 사이클)</title>
+<title>Korea Trails — 인터랙티브 월드 맵 (등산 &amp; 액티비티)</title>
 <!-- SEO Meta Tags -->
 <meta content="한국과 아시아의 명산 등산로 및 사이클링 코스를 한눈에 볼 수 있는 인터랙티브 월드 맵 가이드." name="description"/>
-<meta content="Korea Trails — 인터랙티브 월드 맵 (등산 &amp; 사이클)" property="og:title"/>
+<meta content="Korea Trails — 인터랙티브 월드 맵 (등산 &amp; 액티비티)" property="og:title"/>
 <meta content="한국과 아시아의 명산 등산로 및 사이클링 코스를 한눈에 볼 수 있는 인터랙티브 월드 맵 가이드." property="og:description"/>
 <meta content="website" property="og:type"/>
 <meta content="assets/img/brand-og.png" property="og:image"/>
@@ -235,7 +235,7 @@
 <nav aria-label="메인 네비게이션" class="header-nav">
 <a class="header-nav-link" href="index.html">홈</a>
 <a class="header-nav-link" href="index.html#mountainGrid">명산 탐색</a>
-<a class="header-nav-link" href="cycling.html">사이클링</a>
+<a class="header-nav-link" href="activities.html">활동</a>
 <a class="header-nav-link active" href="map.html">인터랙티브 지도</a>
 </nav>
 <div class="header-right">
@@ -255,7 +255,7 @@
   <aside class="map-sidebar">
     <div class="map-sidebar-header">
       <div class="map-sidebar-title">코스 및 명소 탐색</div>
-      <input type="search" id="sidebarSearch" class="map-sidebar-search" placeholder="산 이름, 사이클 코스 검색..." aria-label="검색"/>
+      <input type="search" id="sidebarSearch" class="map-sidebar-search" placeholder="산 이름, 액티비티 검색..." aria-label="검색"/>
       
       <!-- Layer Toggles -->
       <div class="layer-toggles-card">
@@ -267,14 +267,28 @@
           </label>
         </div>
         <div class="layer-toggle-row">
-          <span style="display: flex; align-items: center; gap: 6px;">🚲 사이클링 코스</span>
+          <span style="display: flex; align-items: center; gap: 6px;">🚲 로드사이클</span>
           <label class="switch">
-            <input type="checkbox" id="toggleCycling" checked>
+            <input type="checkbox" id="toggleRoadCycling" checked>
             <span class="slider"></span>
           </label>
         </div>
         <div class="layer-toggle-row">
-          <span style="display: flex; align-items: center; gap: 6px;">📷 내 등산 사진 핀</span>
+          <span style="display: flex; align-items: center; gap: 6px;">🚵 산악자전거 (MTB)</span>
+          <label class="switch">
+            <input type="checkbox" id="toggleMTB" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="layer-toggle-row">
+          <span style="display: flex; align-items: center; gap: 6px;">🏍️ 모터사이클</span>
+          <label class="switch">
+            <input type="checkbox" id="toggleMotorcycle" checked>
+            <span class="slider"></span>
+          </label>
+        </div>
+        <div class="layer-toggle-row">
+          <span style="display: flex; align-items: center; gap: 6px;">📷 내 사진 (95핀)</span>
           <label class="switch">
             <input type="checkbox" id="togglePhotos" checked>
             <span class="slider"></span>
@@ -324,9 +338,9 @@
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="m8 3-7 18h22L16 7l-4 7-4-11Z"></path></svg>
         명산 목록
       </a>
-      <a href="cycling.html" class="nav-drawer-link">
+      <a href="activities.html" class="nav-drawer-link">
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"/></svg>
-        사이클링
+        활동
       </a>
       <a href="map.html" class="nav-drawer-link">
         <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" width="18"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -393,16 +407,20 @@ window.MOUNTAINS = [
 
 document.addEventListener('DOMContentLoaded', () => {
   let map = null;
-  let cyclingSpots = [];
+  let activitiesData = [];
   let photoGeoData = [];
   
   // Marker Group definitions
   let hikingCluster = L.markerClusterGroup();
-  let cyclingCluster = L.markerClusterGroup();
+  let roadCyclingCluster = L.markerClusterGroup();
+  let mtbCluster = L.markerClusterGroup();
+  let motorcycleCluster = L.markerClusterGroup();
   let photoCluster = L.markerClusterGroup();
 
   const toggleHiking = document.getElementById('toggleHiking');
-  const toggleCycling = document.getElementById('toggleCycling');
+  const toggleRoadCycling = document.getElementById('toggleRoadCycling');
+  const toggleMTB = document.getElementById('toggleMTB');
+  const toggleMotorcycle = document.getElementById('toggleMotorcycle');
   const togglePhotos = document.getElementById('togglePhotos');
   const sidebarSearch = document.getElementById('sidebarSearch');
   const locationList = document.getElementById('locationList');
@@ -422,15 +440,15 @@ document.addEventListener('DOMContentLoaded', () => {
       maxZoom: 18
     }).addTo(map);
 
-    // 2. Load Cycling Data
+    // 2. Load Activities Data
     try {
-      const res = await fetch('_orchestration/cycling-spots.json');
-      cyclingSpots = await res.json();
+      const res = await fetch('_orchestration/activities.json');
+      activitiesData = await res.json();
     } catch (e) {
-      console.error("Failed to load cycling spots database:", e);
+      console.error("Failed to load activities database:", e);
     }
 
-    // 3. Load photo-geo.json for "My Photos" layer [D]
+    // 3. Load photo-geo.json for "My Photos" layer
     try {
       const res = await fetch('_orchestration/photo-geo.json');
       photoGeoData = await res.json();
@@ -440,24 +458,59 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 4. Plot markers
     plotHikingMarkers();
-    plotCyclingMarkers();
+    plotActivityMarkers();
     plotPhotoMarkers();
 
     // Add layers to map
     map.addLayer(hikingCluster);
-    map.addLayer(cyclingCluster);
+    map.addLayer(roadCyclingCluster);
+    map.addLayer(mtbCluster);
+    map.addLayer(motorcycleCluster);
     map.addLayer(photoCluster);
 
-    // 5. Build sidebar lists & bind toggles
+    // 5. Fit bounds to all visible items if no specific spot is targeted
+    const params = new URLSearchParams(window.location.search);
+    if (!params.get('spot') && !params.get('mountain')) {
+      fitAllVisibleBounds();
+    } else {
+      handleUrlParams();
+    }
+
+    // 6. Build sidebar lists & bind toggles
     renderSidebarList();
 
-    [toggleHiking, toggleCycling, togglePhotos].forEach(chk => {
-      chk.addEventListener('change', updateLayerVisibility);
+    [toggleHiking, toggleRoadCycling, toggleMTB, toggleMotorcycle, togglePhotos].forEach(chk => {
+      if (chk) chk.addEventListener('change', () => {
+        updateLayerVisibility();
+        renderSidebarList();
+      });
     });
-    sidebarSearch.addEventListener('input', renderSidebarList);
+    if (sidebarSearch) sidebarSearch.addEventListener('input', renderSidebarList);
 
-    // 6. Handle deep linking parameter (?spot=xxx or ?mountain=xxx)
-    handleUrlParams();
+    // 7. Watch for popup open events to hook up YouTube facade click handlers
+    map.on('popupopen', (e) => {
+      const container = e.popup.getElement().querySelector('.youtube-facade-container');
+      if (container) {
+        container.addEventListener('click', function() {
+          const yid = this.getAttribute('data-youtube-id');
+          this.innerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${yid}?autoplay=1" style="width: 100%; height: 100%; border: none;" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+        });
+      }
+    });
+  }
+
+  function fitAllVisibleBounds() {
+    const coords = [];
+    if (toggleHiking.checked) hikingCluster.eachLayer(l => coords.push(l.getLatLng()));
+    if (toggleRoadCycling.checked) roadCyclingCluster.eachLayer(l => coords.push(l.getLatLng()));
+    if (toggleMTB.checked) mtbCluster.eachLayer(l => coords.push(l.getLatLng()));
+    if (toggleMotorcycle.checked) motorcycleCluster.eachLayer(l => coords.push(l.getLatLng()));
+    if (togglePhotos.checked) photoCluster.eachLayer(l => coords.push(l.getLatLng()));
+    
+    if (coords.length > 0) {
+      const bounds = L.latLngBounds(coords);
+      map.fitBounds(bounds, { padding: [50, 50], maxZoom: 10 });
+    }
   }
 
   function plotHikingMarkers() {
@@ -475,9 +528,10 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       const popupHtml = `
-        <div style="font-family: var(--font-body); padding: 4px;">
+        <div style="font-family: var(--font-body); padding: 4px; width: 200px;">
           <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 800;">🏔️ ${m.name}</h4>
           <div style="font-size: 11px; margin-bottom: 2px;">고도: <strong>${m.alt}</strong></div>
+          <div style="font-size: 11px; margin-bottom: 2px;">지역: <strong>${m.region}</strong></div>
           <a href="${m.url}" style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-block; margin-top: 4px;">
             플레이북 바로가기 &rarr;
           </a>
@@ -489,34 +543,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  function plotCyclingMarkers() {
-    cyclingSpots.forEach(s => {
+  function plotActivityMarkers() {
+    activitiesData.forEach(s => {
+      let fillColor = '#0ea5e9';
+      let icon = '🚲';
+      let clusterGroup = roadCyclingCluster;
+
+      if (s.cat === 'hiking') {
+        fillColor = '#10b981';
+        icon = '🏔️';
+        clusterGroup = hikingCluster;
+      } else if (s.cat === 'road_cycling') {
+        fillColor = '#0ea5e9';
+        icon = '🚲';
+        clusterGroup = roadCyclingCluster;
+      } else if (s.cat === 'mtb') {
+        fillColor = '#10b981';
+        icon = '🚵';
+        clusterGroup = mtbCluster;
+      } else if (s.cat === 'motorcycle') {
+        fillColor = '#f59e0b';
+        icon = '🏍️';
+        clusterGroup = motorcycleCluster;
+      }
+
       const marker = L.circleMarker([s.lat, s.lng], {
         radius: 8,
-        fillColor: '#0ea5e9',
+        fillColor: fillColor,
         color: '#ffffff',
         weight: 1.5,
         fillOpacity: 0.95
       });
 
+      const youtubeId = s.youtube ? s.youtube.split('v=')[1] : null;
+      let youtubeHtml = '';
+      if (youtubeId) {
+        youtubeHtml = `
+          <div class="youtube-facade-container" data-youtube-id="${youtubeId}" style="position: relative; width: 100%; height: 130px; background-color: #000; border-radius: var(--radius-lg); overflow: hidden; cursor: pointer; display: flex; align-items: center; justify-content: center; margin-top: 6px; box-shadow: var(--shadow-sm);">
+            <img src="https://img.youtube.com/vi/${youtubeId}/hqdefault.jpg" alt="${s.name_ko} 썸네일" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.85;">
+            <div class="play-btn-circle" style="position: absolute; width: 36px; height: 36px; background-color: rgba(14, 165, 233, 0.9); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid white; box-shadow: var(--shadow-md);">
+              <svg fill="white" height="14" viewBox="0 0 24 24" width="14" style="margin-left: 2px;"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+          </div>
+        `;
+      }
+
       const popupHtml = `
-        <div style="font-family: var(--font-body); padding: 4px;">
-          <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 800;">🚲 ${s.name_ko}</h4>
-          <div style="font-size: 11px; margin-bottom: 2px;">거리: <strong>${s.distance_km}km</strong></div>
-          <div style="font-size: 11px; margin-bottom: 4px;">타입: <strong>${s.type}</strong></div>
-          <a href="cycling.html" style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-block;">
-            사이클링 가이드 보기 &rarr;
-          </a>
+        <div style="font-family: var(--font-body); padding: 4px; width: 240px;">
+          <h4 style="margin: 0 0 4px 0; font-size: 14px; font-weight: 800;">${icon} ${s.name_ko}</h4>
+          <div style="font-size: 11px; margin-bottom: 2px;">국가: <strong>${s.country === 'South Korea' ? '대한민국' : s.country === 'United States' ? '미국' : s.country === 'Australia' ? '호주' : s.country === 'Taiwan' ? '대만' : s.country}</strong></div>
+          <div style="font-size: 11px; margin-bottom: 2px;">거리: <strong>${s.distance_km}km</strong> (${s.type})</div>
+          ${youtubeHtml}
+          <div style="margin-top: var(--space-2); display: flex; justify-content: space-between;">
+            <a href="activities.html?spot=${s.id}" style="font-size: 11px; font-weight: 700; color: var(--primary); display: inline-block;">
+              상세 정보 보기 &rarr;
+            </a>
+            ${s.youtube ? `<a href="${s.youtube}" target="_blank" rel="noopener" style="font-size: 11px; color: var(--muted); display: inline-block;">유튜브로 열기</a>` : ''}
+          </div>
         </div>
       `;
       marker.bindPopup(popupHtml);
-      cyclingCluster.addLayer(marker);
-      markersMap['cycling-' + s.id] = marker;
+      clusterGroup.addLayer(marker);
+      markersMap['activities-' + s.id] = marker;
     });
   }
 
   function plotPhotoMarkers() {
-    // 95 pins layer for photo-geo.json matched photos [D]
     photoGeoData.forEach((p, idx) => {
       const marker = L.marker([p.lat, p.lng], {
         icon: L.divIcon({
@@ -529,7 +621,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const cleanFilename = p.original.split('/').pop();
       const popupHtml = `
-        <div style="font-family: var(--font-body); padding: 4px; text-align: center;">
+        <div style="font-family: var(--font-body); padding: 4px; text-align: center; width: 160px;">
           <div style="font-size: 11px; font-weight: 700; margin-bottom: 4px;">📷 촬영지 사진</div>
           <div style="font-size: 9px; color: var(--muted); margin-bottom: 6px;">파일명: ${cleanFilename}</div>
           <div style="font-size: 10px;">위경도: ${p.lat.toFixed(5)}, ${p.lng.toFixed(5)}</div>
@@ -541,27 +633,15 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function updateLayerVisibility() {
-    if (toggleHiking.checked) {
-      map.addLayer(hikingCluster);
-    } else {
-      map.removeLayer(hikingCluster);
-    }
-
-    if (toggleCycling.checked) {
-      map.addLayer(cyclingCluster);
-    } else {
-      map.removeLayer(cyclingCluster);
-    }
-
-    if (togglePhotos.checked) {
-      map.addLayer(photoCluster);
-    } else {
-      map.removeLayer(photoCluster);
-    }
+    if (toggleHiking.checked) map.addLayer(hikingCluster); else map.removeLayer(hikingCluster);
+    if (toggleRoadCycling.checked) map.addLayer(roadCyclingCluster); else map.removeLayer(roadCyclingCluster);
+    if (toggleMTB.checked) map.addLayer(mtbCluster); else map.removeLayer(mtbCluster);
+    if (toggleMotorcycle.checked) map.addLayer(motorcycleCluster); else map.removeLayer(motorcycleCluster);
+    if (togglePhotos.checked) map.addLayer(photoCluster); else map.removeLayer(photoCluster);
   }
 
   function renderSidebarList() {
-    const query = sidebarSearch.value.toLowerCase().trim();
+    const query = (sidebarSearch.value || '').toLowerCase().trim();
     locationList.innerHTML = '';
 
     const listItems = [];
@@ -582,21 +662,36 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Filter Cycling
-    if (toggleCycling.checked) {
-      cyclingSpots.forEach(s => {
-        if (s.name_ko.toLowerCase().includes(query) || s.region.toLowerCase().includes(query) || s.desc_ko.toLowerCase().includes(query)) {
+    // Filter Activities
+    activitiesData.forEach(s => {
+      let isVisible = false;
+      if (s.cat === 'hiking' && toggleHiking.checked) isVisible = true;
+      if (s.cat === 'road_cycling' && toggleRoadCycling.checked) isVisible = true;
+      if (s.cat === 'mtb' && toggleMTB.checked) isVisible = true;
+      if (s.cat === 'motorcycle' && toggleMotorcycle.checked) isVisible = true;
+
+      if (isVisible) {
+        const matchesQuery = s.name_ko.toLowerCase().includes(query) || 
+                             s.region.toLowerCase().includes(query) || 
+                             s.country.toLowerCase().includes(query);
+        if (matchesQuery) {
+          let icon = '🚲';
+          let label = '사이클';
+          if (s.cat === 'hiking') { icon = '🏔️'; label = '등산'; }
+          if (s.cat === 'mtb') { icon = '🚵'; label = 'MTB'; }
+          if (s.cat === 'motorcycle') { icon = '🏍️'; label = '모터사이클'; }
+
           listItems.push({
-            type: 'cycling',
+            type: 'activities',
             id: s.id,
-            name: '🚲 ' + s.name_ko,
-            meta: `사이클 · 거리: ${s.distance_km}km · ${s.type} · ${s.region}`,
+            name: `${icon} ${s.name_ko}`,
+            meta: `${label} · 거리: ${s.distance_km}km · ${s.region}`,
             lat: s.lat,
             lng: s.lng
           });
         }
-      });
-    }
+      }
+    });
 
     listItems.forEach(item => {
       const btn = document.createElement('button');
@@ -633,8 +728,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const spotId = params.get('spot');
     const mountainId = params.get('mountain');
 
-    if (spotId && markersMap['cycling-' + spotId]) {
-      const marker = markersMap['cycling-' + spotId];
+    if (spotId && markersMap['activities-' + spotId]) {
+      const marker = markersMap['activities-' + spotId];
       const latlng = marker.getLatLng();
       map.setView([latlng.lat, latlng.lng], 14);
       setTimeout(() => {
