@@ -6,79 +6,73 @@
   2. CSS 스타일: 기존 <style> 블록 내에 Leaflet 및 다크모드 대응 스타일을 추가합니다.
   3. 자바스크립트: 기존 <script> 블록 하단에 Leaflet CDN 로드 및 동적 초기화 스크립트를 삽입합니다.
 -->
-
 <!-- ========================================== -->
 <!-- 1. HTML 마크업 교체 조각 (3개 코스용) -->
 <!-- ========================================== -->
-
 <!-- [초급 코스: beginner] -->
 <!-- 대상 파일 위치: <section class="panel green active" id="beginner"> ... <div class="tabpane" data-pane="map"> -->
 <!-- 변경 전: <div class="card map"><svg viewbox="0 0 760 420">...</svg></div> -->
 <!-- 변경 후: -->
 <div class="card map">
-  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
-  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
-    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-    <path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path>
-    <circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle>
-    <circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle>
-    <circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle>
-    <text font-size="12" x="112" y="302">소유갱</text>
-    <text font-size="12" x="398" y="80">칠성산 주봉</text>
-    <text font-size="12" x="612" y="330">원점 회귀</text>
-    <text fill="var(--muted)" font-size="12" x="34" y="44">가장 짧은 입문형 정상 코스</text>
-  </svg>
-  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
-  <div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 초급 소유갱 왕복 코스 실사 지도"></div>
+<!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+<svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420">
+<rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+<path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path>
+<circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle>
+<circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle>
+<circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle>
+<text font-size="12" x="112" y="302">소유갱</text>
+<text font-size="12" x="398" y="80">칠성산 주봉</text>
+<text font-size="12" x="612" y="330">원점 회귀</text>
+<text fill="var(--muted)" font-size="12" x="34" y="44">가장 짧은 입문형 정상 코스</text>
+</svg>
+<!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+<div aria-label="양명산 초급 소유갱 왕복 코스 실사 지도" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
-
 <!-- [중급 코스: intermediate] -->
 <!-- 대상 파일 위치: <section class="panel blue" id="intermediate"> ... <div class="tabpane" data-pane="map"> -->
 <!-- 변경 전: <div class="card map"><svg viewbox="0 0 760 420">...</svg></div> -->
 <!-- 변경 후: -->
 <div class="card map">
-  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
-  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
-    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-    <path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path>
-    <circle cx="90" cy="314" fill="#326f95" r="10"></circle>
-    <circle cx="360" cy="92" fill="#326f95" r="11"></circle>
-    <circle cx="472" cy="100" fill="#326f95" r="10"></circle>
-    <circle cx="710" cy="290" fill="#326f95" r="10"></circle>
-    <text font-size="12" x="104" y="308">소유갱</text>
-    <text font-size="12" x="374" y="86">주봉</text>
-    <text font-size="12" x="486" y="94">동봉</text>
-    <text font-size="12" x="670" y="308">냉수갱</text>
-  </svg>
-  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
-  <div class="leaflet-map" id="map-intermediate" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 중급 소유갱-냉수갱 종주 코스 실사 지도"></div>
+<!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+<svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420">
+<rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+<path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path>
+<circle cx="90" cy="314" fill="#326f95" r="10"></circle>
+<circle cx="360" cy="92" fill="#326f95" r="11"></circle>
+<circle cx="472" cy="100" fill="#326f95" r="10"></circle>
+<circle cx="710" cy="290" fill="#326f95" r="10"></circle>
+<text font-size="12" x="104" y="308">소유갱</text>
+<text font-size="12" x="374" y="86">주봉</text>
+<text font-size="12" x="486" y="94">동봉</text>
+<text font-size="12" x="670" y="308">냉수갱</text>
+</svg>
+<!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+<div aria-label="양명산 중급 소유갱-냉수갱 종주 코스 실사 지도" class="leaflet-map" id="map-intermediate" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
-
 <!-- [고급 코스: advanced] -->
 <!-- 대상 파일 위치: <section class="panel red" id="advanced"> ... <div class="tabpane" data-pane="map"> -->
 <!-- 변경 전: <div class="card map"><svg viewbox="0 0 760 420">...</svg></div> -->
 <!-- 변경 후: -->
 <div class="card map">
-  <!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
-  <svg class="map-fallback" viewbox="0 0 760 420" aria-hidden="true">
-    <rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-    <path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path>
-    <circle cx="90" cy="318" fill="#9d4f36" r="10"></circle>
-    <circle cx="360" cy="94" fill="#9d4f36" r="10"></circle>
-    <circle cx="474" cy="100" fill="#9d4f36" r="10"></circle>
-    <circle cx="606" cy="168" fill="#9d4f36" r="10"></circle>
-    <circle cx="728" cy="284" fill="#9d4f36" r="10"></circle>
-    <text font-size="12" x="104" y="312">소유갱</text>
-    <text font-size="12" x="374" y="88">주봉</text>
-    <text font-size="12" x="488" y="94">동봉</text>
-    <text font-size="12" x="620" y="162">냉수갱</text>
-    <text font-size="12" x="672" y="302">칭티엔강</text>
-  </svg>
-  <!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
-  <div class="leaflet-map" id="map-advanced" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="양명산 고급 칭티엔강 연계 코스 실사 지도"></div>
+<!-- Fallback SVG (JS 오프라인/실패 시 표시) -->
+<svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420">
+<rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
+<path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path>
+<circle cx="90" cy="318" fill="#9d4f36" r="10"></circle>
+<circle cx="360" cy="94" fill="#9d4f36" r="10"></circle>
+<circle cx="474" cy="100" fill="#9d4f36" r="10"></circle>
+<circle cx="606" cy="168" fill="#9d4f36" r="10"></circle>
+<circle cx="728" cy="284" fill="#9d4f36" r="10"></circle>
+<text font-size="12" x="104" y="312">소유갱</text>
+<text font-size="12" x="374" y="88">주봉</text>
+<text font-size="12" x="488" y="94">동봉</text>
+<text font-size="12" x="620" y="162">냉수갱</text>
+<text font-size="12" x="672" y="302">칭티엔강</text>
+</svg>
+<!-- Leaflet 지도 컨테이너 (JS 로드 성공 시 표시됨) -->
+<div aria-label="양명산 고급 칭티엔강 연계 코스 실사 지도" class="leaflet-map" id="map-advanced" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
-
-
 <!-- ========================================== -->
 <!-- 2. CSS 스타일 시트 추가 조각 -->
 <!-- ========================================== -->
@@ -175,8 +169,6 @@
     filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
   }
 </style>
-
-
 <!-- ========================================== -->
 <!-- 3. 자바스크립트 초기화 로직 -->
 <!-- ========================================== -->
@@ -269,8 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
     satellite.addTo(map);
 
     const baseLayers = {
-      "🛰️ 위성 레이어": satellite,
-      "🏔️ 지형 레이어": terrain
+      "위성 레이어": satellite,
+      "지형 레이어": terrain
     };
 
     L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
@@ -345,8 +337,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const popupContent = `
           <div class="map-popup-content">
             <h4 style="margin: 0 0 6px 0; font-size: 13px; font-weight:800; color: var(--text);">${nameKo}</h4>
-            <div style="font-size: 11px; margin-bottom: 4px;">⛰️ 고도: <strong>${pt.alt_m}m</strong></div>
-            <div style="font-size: 11px; color: var(--muted); max-width: 180px; word-break: keep-all;">ℹ️ ${detailDesc}</div>
+            <div style="font-size: 11px; margin-bottom: 4px;"> 고도: <strong>${pt.alt_m}m</strong></div>
+            <div style="font-size: 11px; color: var(--muted); max-width: 180px; word-break: keep-all;"> ${detailDesc}</div>
           </div>
         `;
         marker.bindPopup(popupContent);
@@ -416,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!panel) return;
       const courseId = panel.id;
       
-      // 📍 지도 탭 클릭 시 렌더 크기 보정 트리거
+      //  지도 탭 클릭 시 렌더 크기 보정 트리거
       if (tab.dataset.tab === 'map') {
         setTimeout(() => {
           if (window.mapInstances[courseId]) {

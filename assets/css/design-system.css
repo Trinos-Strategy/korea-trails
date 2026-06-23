@@ -1107,3 +1107,187 @@ footer a, .site-footer a {
   font-weight: 600;
 }
 
+/* ==========================================================================
+   READABILITY & UX UPGRADE: TABS & VIDEO GRIDS
+   ========================================================================== */
+
+/* 5. Styled Navigation Tabs for Mobile & Desktop */
+.tab-bar, .tabs-nav {
+  display: flex;
+  gap: var(--space-2);
+  overflow-x: auto;
+  padding: var(--space-2) 0;
+  margin: var(--space-4) 0 var(--space-6);
+  border-bottom: 1px solid var(--border);
+  scrollbar-width: none; /* Hide scrollbar for Cleanliness */
+  -ms-overflow-style: none;
+}
+.tab-bar::-webkit-scrollbar, .tabs-nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  border: none;
+  background: var(--surface2);
+  padding: var(--space-2) var(--space-4);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  white-space: nowrap;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  transition: all var(--transition);
+  outline: none;
+}
+
+.tab-btn:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.tab-btn.active {
+  background-color: var(--primary);
+  color: var(--surface);
+}
+
+.beginner .tab-btn.active,
+.easy .tab-btn.active,
+.green .tab-btn.active,
+#panel-beginner .tab-btn.active,
+#course-beginner .tab-btn.active {
+  background: var(--success-highlight);
+  color: var(--success);
+  border: 1px solid var(--success);
+}
+
+.intermediate .tab-btn.active,
+.medium .tab-btn.active,
+.blue .tab-btn.active,
+#panel-intermediate .tab-btn.active,
+#course-intermediate .tab-btn.active {
+  background: var(--primary-highlight);
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.advanced .tab-btn.active,
+.hard .tab-btn.active,
+.red .tab-btn.active,
+#panel-advanced .tab-btn.active,
+#course-advanced .tab-btn.active {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border: 1px solid var(--warning);
+}
+
+/* 6. YouTube Shorts Grid */
+.video-section {
+  padding: var(--space-10) var(--space-6);
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+@media(max-width:640px){
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+}
+.video-card {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.video-facade-btn {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+  background: #000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+.video-facade-btn:hover .video-thumbnail {
+  transform: scale(1.05);
+}
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: background var(--transition), transform var(--transition);
+  pointer-events: none;
+}
+.video-facade-btn:hover .video-play-btn {
+  background: rgba(220, 50, 50, 0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.video-play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 4px;
+}
+.video-iframe {
+  width: 100%;
+  aspect-ratio: 9/16;
+  border: none;
+}
+.video-info {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.video-label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.video-link {
+  font-size: var(--text-xs);
+  color: var(--primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.video-link:hover {
+  text-decoration: underline;
+}
+
+
