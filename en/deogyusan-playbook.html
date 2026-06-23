@@ -1,0 +1,1487 @@
+<!DOCTYPE html>
+
+<html data-theme="dark" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deogyusan National Park Hiking Playbook</title>
+<meta content="A guide to Deogyusan National Park, one of South Korea's best mountains. Provides detailed routes, real-world maps, and tips for Beginner, Intermediate, and Advanced courses." name="description"/>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/design-system.css" rel="stylesheet"/>
+<style>
+/* COURSE SELECTOR */
+.course-selector {
+  display: flex;
+  gap: var(--space-3);
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+.course-btn {
+  padding: var(--space-3) var(--space-6);
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  border: 2px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  cursor: pointer;
+  transition: all var(--transition);
+}
+.course-btn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+.course-btn.active.beginner, .course-btn.active-beginner {
+  background: var(--success-highlight);
+  color: var(--success);
+  border-color: var(--success);
+}
+.course-btn.active.intermediate, .course-btn.active-intermediate {
+  background: var(--color-gold-highlight);
+  color: var(--color-gold);
+  border-color: var(--color-gold);
+}
+.course-btn.active.advanced, .course-btn.active-advanced {
+  background: var(--warning-highlight);
+  color: var(--warning);
+  border-color: var(--warning);
+}
+
+.intermediate .section-title-icon{background:var(--color-gold-highlight);}
+.advanced .section-title-icon{background:var(--color-warning-highlight);}
+
+/* ACCORDION */
+.accordion{display:flex;flex-direction:column;gap:var(--space-3);margin-bottom:var(--space-8);}
+.acc-item{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);overflow:hidden;}
+.acc-header{display:flex;align-items:center;gap:var(--space-4);padding:var(--space-4) var(--space-5);cursor:pointer;user-select:none;width:100%;text-align:left;}
+.acc-header:hover{background:var(--color-surface-offset);}
+.acc-num{width:28px;height:28px;border-radius:var(--radius-full);display:flex;align-items:center;justify-content:center;font-size:var(--text-xs);font-weight:700;flex-shrink:0;}
+.beginner .acc-num{background:var(--color-success-highlight);color:var(--color-success);}
+.intermediate .acc-num{background:var(--color-gold-highlight);color:var(--color-gold);}
+.advanced .acc-num{background:var(--color-warning-highlight);color:var(--color-warning);}
+.acc-title-wrap{flex:1;}
+.acc-title{font-weight:700;font-size:var(--text-base);line-height:1.3;}
+.acc-meta{font-size:var(--text-xs);color:var(--color-text-muted);margin-top:2px;}
+.acc-chevron{color:var(--color-text-faint);transition:transform var(--transition);flex-shrink:0;}
+.acc-item.open .acc-chevron{transform:rotate(180deg);}
+.acc-body{display:none;padding:0 var(--space-5) var(--space-5);border-top:1px solid var(--color-divider);}
+.acc-item.open .acc-body{display:block;}
+.acc-desc{font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-4);}
+
+/* DIFF BAR */
+.diff-bar-wrap{margin-bottom:var(--space-4);}
+.diff-label{font-size:var(--text-xs);color:var(--color-text-muted);margin-bottom:var(--space-1);}
+.diff-bar-bg{height:6px;background:var(--color-surface-dynamic);border-radius:var(--radius-full);overflow:hidden;}
+.diff-bar-fill{height:100%;border-radius:var(--radius-full);}
+.diff-easy .diff-bar-fill{background:var(--color-success);}
+.diff-medium .diff-bar-fill{background:var(--color-gold);}
+.diff-hard .diff-bar-fill{background:var(--color-warning);}
+.diff-expert .diff-bar-fill{background:var(--color-error);}
+
+/* TIP / WARN BOX */
+.tip-box{background:var(--color-primary-highlight);border-left:3px solid var(--color-primary);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-primary);margin-bottom:var(--space-3);line-height:1.6;}
+.warn-box{background:var(--color-warning-highlight);border-left:3px solid var(--color-warning);border-radius:0 var(--radius-md) var(--radius-md) 0;padding:var(--space-3) var(--space-4);font-size:var(--text-sm);color:var(--color-warning);margin-bottom:var(--space-3);line-height:1.6;}
+
+/* CHECKPOINT TABLE */
+.cp-table-wrap{overflow-x:auto;margin-bottom:var(--space-8);}
+.cp-table{width:100%;border-collapse:collapse;font-size:var(--text-sm);}
+.cp-table th{text-align:left;font-weight:700;font-size:var(--text-xs);text-transform:uppercase;letter-spacing:0.06em;color:var(--color-text-muted);padding:var(--space-2) var(--space-4);border-bottom:2px solid var(--color-divider);white-space:nowrap;}
+.cp-table td{padding:var(--space-3) var(--space-4);border-bottom:1px solid var(--color-divider);vertical-align:middle;}
+.cp-table tr:last-child td{border-bottom:none;}
+.cp-table tr:hover td{background:var(--color-surface-offset);}
+.badge{display:inline-flex;align-items:center;padding:2px 8px;border-radius:var(--radius-full);font-size:var(--text-xs);font-weight:700;}
+.badge-summit{background:var(--color-warning-highlight);color:var(--color-warning);}
+.badge-shelter{background:var(--color-primary-highlight);color:var(--color-primary);}
+.badge-temple{background:var(--color-success-highlight);color:var(--color-success);}
+.badge-trailhead{background:var(--color-surface-dynamic);color:var(--color-text-muted);}
+.badge-landmark{background:var(--color-gold-highlight);color:var(--color-gold);}
+
+/* MAP SVG */
+.map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
+.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-svg{width:100%;height:auto;max-height:520px;}
+
+/* TIPS GRID */
+.tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
+.tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
+.tip-card-icon{font-size:1.5rem;margin-bottom:var(--space-3);}
+.tip-card h4{font-weight:700;margin-bottom:var(--space-2);}
+.tip-card ul{list-style:none;display:flex;flex-direction:column;gap:var(--space-1);}
+.tip-card ul li{font-size:var(--text-sm);color:var(--color-text-muted);padding-left:var(--space-4);position:relative;}
+.tip-card ul li::before{content:"·";position:absolute;left:var(--space-2);color:var(--color-text-faint);}
+
+/* RESPONSIVE */
+@media(max-width:640px){
+  .site-header{padding:var(--space-3) var(--space-4);}
+  .main{padding:var(--space-6) var(--space-4);}
+  .hero{padding:var(--space-8) var(--space-4) var(--space-6);}
+  .tab-bar{padding:0 var(--space-4);}
+  .stat-grid{grid-template-columns:repeat(2,1fr);}
+  .course-selector{gap:var(--space-2);}
+  .course-btn{padding:var(--space-2) var(--space-4);font-size:var(--text-xs);}
+}
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
+<meta content="../assets/img/deogyusan/og.png" property="og:image"/><meta content="../assets/img/deogyusan/og.png" name="twitter:image"/><script src="../assets/js/i18n.js"></script><link href="../deogyusan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/deogyusan-playbook.html" hreflang="en" rel="alternate"/><link href="../deogyusan-playbook.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+<header class="hdr">
+<div class="logo">
+<svg aria-label="Deogyusan National Park Playbook" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+</svg>
+<span class="logo-txt">Deogyusan National Park Playbook</span>
+</div>
+<div class="lang-toggle">
+<button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="Toggle Theme" class="thm-btn" data-thm="">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+</button>
+</header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="../assets/img/deogyusan/hero-640.avif 640w, assets/img/deogyusan/hero-1024.avif 1024w, assets/img/deogyusan/hero-1600.avif 1600w, assets/img/deogyusan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="../assets/img/deogyusan/hero-640.webp 640w, assets/img/deogyusan/hero-1024.webp 1024w, assets/img/deogyusan/hero-1600.webp 1600w, assets/img/deogyusan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="Deogyusan National Park's majestic natural landscape, where the peaks and grand mountain ranges harmonize / Majestic natural landscape of Deogyusan mountain peaks and ridges" class="hero-img" sizes="100vw" src="../assets/img/deogyusan/hero-1600.jpg" srcset="../assets/img/deogyusan/hero-640.jpg 640w, assets/img/deogyusan/hero-1024.jpg 1024w, assets/img/deogyusan/hero-1600.jpg 1600w, assets/img/deogyusan/hero-2400.jpg 2400w"/>
+</picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="../assets/video/deogyusan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="../assets/video/deogyusan/hero.mp4" type="video/mp4"/>
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Deogyusan National Park Playbook</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">Deogyusan National Park Hiking Playbook</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">A guide to Deogyusan National Park, one of South Korea's best mountains. Provides detailed routes, real-world maps, and tips for Beginner, Intermediate, and Advanced courses.</p>
+<!-- Course Selector Buttons -->
+<div class="course-selector">
+<button class="course-btn diff-btn beginner beginner active" onclick="selC('beginner',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner:</button>
+<button class="course-btn diff-btn intermediate intermediate" onclick="selC('intermediate',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate:</button>
+<button class="course-btn diff-btn advanced advanced" onclick="selC('advanced',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced:</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@anthony-taewan-kim-1326772885" rel="noopener" target="_blank">Anthony Taewan Kim</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
+═══ Beginner ═══
+<main class="wrap" id="mainContent">
+<div class="panel active beginner" id="course-beginner">
+<nav class="tabs">
+<button class="tab active" onclick="selT('beginner','ov',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab" onclick="selT('beginner','rt',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab" onclick="selT('beginner','mp',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab" onclick="selT('beginner','tp',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg></div><span>Beginner Course Overview</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">🚡</div><div class="sv">Round trip 3.2km</div><div class="sl">Gondola + Hyangjeokbong Peak</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">1.5~2h</div><div class="sl">Duration</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,614m</div><div class="sl">Hyangjeokbong Peak Summit</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±160m</div><div class="sl">Walking Elevation Difference</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~300</div><div class="sl">Estimated Calories</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">Difficulty</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 Elevation Profile — Hyangjeokbong Peak Round Trip via Gondola</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="bg1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--sky)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--sky)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<rect fill="none" height="180" width="900" x="0" y="0"></rect>
+Gondola dotted section
+<line stroke="var(--sky)" stroke-dasharray="10,5" stroke-opacity=".5" stroke-width="2" x1="0" x2="320" y1="155" y2="45"></line>
+Walking Section
+<path d="M320 45 C360 38 400 28 450 24 L450 24 C500 28 540 38 580 45" fill="none" stroke="var(--sky)" stroke-linecap="round" stroke-width="3"></path>
+Gondola descent dotted line
+<line stroke="var(--sky)" stroke-dasharray="10,5" stroke-opacity=".5" stroke-width="2" x1="580" x2="900" y1="45" y2="155"></line>
+<!-- fill area (walk only) -->
+<path d="M320 45 C360 38 400 28 450 24 L450 24 C500 28 540 38 580 45 L580 180 L320 180Z" fill="url(#bg1)"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="5" y="172">Muju Resort 680m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="320" y="60">Seolcheonbong Peak 1,520m</text>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="420" y="18">Hyangjeokbong Peak 1,614m</text>
+<circle cx="450" cy="24" fill="var(--sky)" r="5"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="10" x="130" y="100">━━ Gondola</text>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="10" x="380" y="165">Walking Section</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg></div><span>Overall Course Flow</span></div>
+<div class="flow">
+<span class="fn sk">🅿 Muju Resort</span><span class="fa">→</span>
+<span class="fn sh">🚡 Gondola ride (20 min)</span><span class="fa">→</span>
+<span class="fn">Seolcheonbong Peak 1,520m</span><span class="fa">→</span>
+<span class="fn pk">Hyangjeokbong Peak 1,614m ★</span><span class="fa">→</span>
+<span class="fn sh">🚡 Gondola descent</span><span class="fa">→</span>
+<span class="fn sk">🅿 Return to Muju Resort</span>
+</div>
+<div class="ic"><h2>Course Features</h2><ul>
+<li>🚡 Easiest course: Take the gondola up to Seolcheonbong Peak (1,520m) and walk only 0.6km</li>
+<li>✅ Deogyusan National Park's most accessible course, suitable for children, the elderly, and people with disabilities</li>
+<li>✅ Panoramic views of the main ridge connecting Jungbong and Namdeogyusan from Hyangjeokbong Peak</li>
+<li>✅ Best course for winter snow flower viewing — Seolcheonbong~Hyangjeokbong rime ice scenery</li>
+<li><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Gondola fare: 17,000 won (round trip) for adults, check in advance · Weekends tend to have long waits</li>
+<li><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Gondola operations may be suspended during strong winter winds — Prior weather check is essential</li>
+</ul></div>
+</div><div class="tc" id="beginner-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg></div><span>Detailed Route by Section</span></div>
+<div class="acc-wrap">
+<div class="acc-item open">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">Departure</span>
+<div class="acc-tw"><div class="acc-t">Departure from Muju Resort Gondola Boarding Area</div><div class="acc-m">Elevation 680m · Seolcheon-myeon, Muju-gun, Jeollabuk-do</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">Depart from the gondola boarding area within Muju Deogyusan Resort Ski Resort. Purchase a ticket (round trip adult approx. 17,000 won) and wait in line to board. It takes approximately 20 minutes to reach Seolcheonbong Peak (1,520m).</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>During weekends, holidays, and the snow flower season (Jan-Feb), expect wait times of over 1 hour for boarding. Arriving before 9 AM is recommended. Check gondola operating hours (winter season standard: 08:30~16:30).</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-t">Seolcheonbong Peak → Hyangjeokbong Peak Summit</div><div class="acc-m">One-way 0.6km · 20 min · Elevation ↑94m</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg easy"><div class="df" style="width:20%"></div></div></div>
+<p class="acc-desc">From Seolcheonbong Peak, ascend to Hyangjeokbong Peak along a well-maintained deck trail. The slope is gentle, and stairs are well-installed, making it accessible to everyone. In winter, hoarfrost (snow blossoms frozen on trees) on both sides of the trail creates a spectacular sight.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>The temperature at Hyangjeokbong Peak summit is approximately 5~8°C lower than in Muju city. Be sure to bring warm clothing for the perceived temperature.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-t">Hyangjeokbong Peak Summit Exploration and View</div><div class="acc-m">Summit 1,614m · 30 min view</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg easy"><div class="df" style="width:10%"></div></div></div>
+<p class="acc-desc">Hyangjeokbong Peak (1,614m) is the highest peak in Deogyusan National Park and the fourth highest peak in South Korea. From the summit, a panoramic view unfolds in all directions, including the main ridge leading to Jungbong Peak (1,594m) and Namdeogyusan Mountain, as well as Jeoksangsan Mountain. Inside Hyangjeokbong Shelter, you can rest warmly and purchase food.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Ramen and drinks are sold at Hyangjeokbong Shelter. Winter summit wind chill can drop below -20°C, so gloves and a hat are essential.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-t">Hyangjeokbong Peak → Seolcheonbong Peak → Gondola Descent</div><div class="acc-m">0.6km · 15min · Descent</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div>
+<p class="acc-desc">Return to Seolcheonbong Peak via the same path and descend using the gondola. You can enjoy the scenery of the Seolcheonbong Peak to resort section even inside the gondola.</p>
+<div class="wrn"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>There may be long waits for the descending gondola during peak season. It is essential to arrive at Seolcheonbong Peak before the last ride (16:30 in winter).</div>
+</div>
+</div>
+</div>
+</div><div class="tc" id="beginner-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg></div><span>Tips &amp; Precautions</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>Essential Gear</h2><ul><li>Winter Clothing, Padded Jacket (Low Summit Temperature)</li><li>Gloves·Scarf·Hat</li><li>Winter: Anti-slip crampons</li><li>Sunscreen (UV reflection from snow)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚡</div><h2>Gondola use</h2><ul><li>Round trip adult fare approx. 17,000 won</li><li>Operating hours 08:30~16:30 (winter season)</li><li>Operations suspended during strong winds or heavy snowfall</li><li>Call to confirm operation status before departure.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌨</div><h2>Snow Flower Season</h2><ul><li>Rime ice at its peak in January-February</li><li>Fantastic snow blossoms on the Seolcheonbong Peak ~ Hyangjeokbong Peak section</li><li>Crampons required (icy conditions)</li><li>Weekend wait times can exceed 2 hours</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg></div><h2>Transportation Information</h2><ul><li>Seoul → Dongseoul Bus Terminal → Muju Bus</li><li>Muju → Muju Resort Shuttle Bus</li><li>Daejeon → Muju Express Bus</li><li>Resort Parking Fee 5,000 won</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🍂</div><h2>Seasonal Attractions</h2><ul><li>Spring: Azaleas peak in mid-May</li><li>Summer: Cool ridge for summer retreat</li><li>Autumn: Fall foliage mid to late October</li><li>Winter: Best for snow flowers and rime ice</li></ul></div>
+<div class="tc-card"><div class="tc-icon">📱</div><h2>Useful Information</h2><ul><li>Deogyusan National Park 063-322-3174</li><li>Muju Resort Gondola 063-320-7000</li><li>Blackyak 100 Great Mountains certification possible</li><li>Recommended to check sunrise times on an app for Hyangjeokbong Peak.</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="beginner-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Gondola·Hyangjeokbong Peak Course Map</h2>
+<svg style="width:100%;height:auto;max-height:420px" viewbox="0 0 660 400">
+<rect fill="var(--surfaceoff)" height="400" rx="12" width="660"></rect>
+<!-- mountain bg -->
+<path d="M100 320 Q220 160 330 100 Q440 160 560 320" fill="var(--surfdyn)" fill-opacity=".25" stroke="none"></path>
+<!-- gondola cable line -->
+<line stroke="var(--sky)" stroke-dasharray="10,5" stroke-width="2.5" x1="100" x2="260" y1="340" y2="160"></line>
+<!-- walk trail -->
+<path d="M260 160 Q280 145 310 128 Q320 118 330 110" fill="none" stroke="var(--sky)" stroke-linecap="round" stroke-width="4"></path>
+<!-- down gondola -->
+<line stroke="var(--sky)" stroke-dasharray="8,5" stroke-opacity=".4" stroke-width="1.5" x1="260" x2="100" y1="160" y2="340"></line>
+<!-- nodes -->
+<rect fill="var(--sky)" fill-opacity=".15" height="30" rx="8" stroke="var(--sky)" stroke-width="1.5" width="80" x="60" y="328"></rect>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="70" y="349">Muju Resort P</text>
+<circle cx="260" cy="160" fill="var(--surfdyn)" r="11" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="12" x="275" y="155">Seolcheonbong Peak 1,520m</text>
+<circle cx="330" cy="110" fill="var(--sky)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="355" y="103">Hyangjeokbong Peak</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="355" y="118">1,614m ★</text>
+<!-- gondola car icon -->
+<rect fill="var(--sky)" fill-opacity=".8" height="16" rx="4" width="22" x="165" y="236"></rect>
+<text fill="white" font-family="Satoshi,sans-serif" font-size="9" x="170" y="248">🚡</text>
+<!-- daepiho -->
+<circle cx="350" cy="125" fill="var(--gold)" fill-opacity=".8" r="7" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--gold)" font-family="Satoshi,sans-serif" font-size="10" x="363" y="130">Hyangjeokbong Shelter</text>
+<!-- compass -->
+<circle cx="618" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="615" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="618" x2="618" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="42" rx="7" stroke="var(--bor)" stroke-width="1" width="220" x="16" y="348"></rect>
+<line stroke="var(--sky)" stroke-width="3" x1="30" x2="52" y1="364" y2="364"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="368">Walking Trail</text>
+<line stroke="var(--sky)" stroke-dasharray="6,3" stroke-width="2" x1="30" x2="52" y1="381" y2="381"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="385">Gondola cable</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg></div><span>All Checkpoints</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>Point Name</th><th>Elevation</th><th>Cumulative Distance</th><th>Type</th><th>Amenities</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Muju Resort Gondola Boarding Area</td><td>680m</td><td>0km</td><td><span class="bdg b-st">Departure</span></td><td>Parking·Ticket office·Restroom</td></tr>
+<tr><td>2</td><td>Seolcheonbong Peak (Gondola drop-off)</td><td>1,520m</td><td>—</td><td><span class="bdg b-sk">Gondola arrival</span></td><td>Viewpoint·Restaurant</td></tr>
+<tr><td>3</td><td>Hyangjeokbong Peak Summit</td><td>1,614m</td><td>0.6km</td><td><span class="bdg b-pk">Summit</span></td><td>Summit marker·Shelter·Ramen</td></tr>
+<tr><td>4</td><td>Seolcheonbong Peak (Return)</td><td>1,520m</td><td>1.2km</td><td><span class="bdg b-sk">Gondola boarding</span></td><td>Restroom</td></tr>
+<tr><td>5</td><td>Muju Resort (Descent)</td><td>680m</td><td>3.2km</td><td><span class="bdg b-st">Endpoint</span></td><td>Restaurant area, Ski facilities</td></tr>
+</tbody>
+</table>
+</div>
+</div></div></div>
+</div></div></main>
+═══ Intermediate ═══
+<div class="panel intermediate" id="course-intermediate">
+<nav class="tabs">
+<button class="tab active" onclick="selT('intermediate','ov',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab" onclick="selT('intermediate','rt',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab" onclick="selT('intermediate','mp',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab" onclick="selT('intermediate','tp',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg></div><span>Intermediate Course Overview</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">18km</div><div class="sl">Gucheondong Loop Traverse</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">6~7h</div><div class="sl">Duration</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,614m</div><div class="sl">Hyangjeokbong Peak Summit</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">±900m</div><div class="sl">Cumulative Elevation Difference</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~2,000</div><div class="sl">Estimated Calories</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">Difficulty</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 Elevation Profile — Guchangdong Chilbong Peak Loop</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ig1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--pri)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--pri)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 155 C60 150 120 142 180 128 C220 118 256 105 290 88 C320 74 345 58 368 42 C382 30 392 18 400 12 L408 18 C416 28 425 42 438 60 C455 82 470 100 492 118 C525 140 575 152 650 156 C700 158 750 160 800 160 C835 160 865 159 900 158 L900 160Z" fill="url(#ig1)"></path>
+<path d="M0 155 C60 150 120 142 180 128 C220 118 256 105 290 88 C320 74 345 58 368 42 C382 30 392 18 400 12 L408 18 C416 28 425 42 438 60 C455 82 470 100 492 118 C525 140 575 152 650 156 C700 158 750 160 800 160" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="5" y="158">Gucheondong 600m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="170" y="122">Chilbong Peak</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="275" y="82">Baengnyeonsa Temple 970m</text>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="370" y="36">Hyangjeokbong Peak 1,614m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="480" y="112">Jungbong Peak 1,594m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="640" y="150">Dongyeopnyeong Pass 1,320m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="860" y="155">Gucheondong</text>
+<circle cx="400" cy="12" fill="var(--pri)" r="4"></circle>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg></div><span>Overall Course Flow</span></div>
+<div class="flow">
+<span class="fn pk">🅿 Guchangdong Trailhead</span><span class="fa">→</span>
+<span class="fn">Inwoldam Pond</span><span class="fa">→</span>
+<span class="fn">Chilbong Peak</span><span class="fa">→</span>
+<span class="fn">Seolcheonbong Peak</span><span class="fa">→</span>
+<span class="fn pk">Hyangjeokbong Peak 1,614m ★</span><span class="fa">→</span>
+<span class="fn">Jungbong Peak 1,594m</span><span class="fa">→</span>
+<span class="fn sh">Dongyeopnyeong Pass</span><span class="fa">→</span>
+<span class="fn">Gucheondonggyegok Valley</span><span class="fa">→</span>
+<span class="fn pk">🅿 Return to Guchangdong</span>
+</div>
+<div class="ic"><h2>Course Features</h2><ul>
+<li>✅ Passes through all 33 scenic spots of Deogyusan National Park's Gucheondong Valley (Bipadam, Guwoldam, Isokdae, etc.)</li>
+<li>✅ Dual landscape of Gucheondong Valley and Hyangjeokbong Ridge from Chilbong Ridge</li>
+<li>✅ Loop hike starting and ending at Gucheondong Exploration Support Center — No vehicle transfer needed</li>
+<li>✅ Excellent views towards Namdeogyu from the Jungbong (1,594m)~Dongyeopnyeong ridge</li>
+<li><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>18km long distance — Recommended to depart before 8 AM</li>
+<li><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Caution: steep sections on Chilbong Ridge / Crampons are essential for all sections in winter.</li>
+</ul></div>
+</div><div class="tc" id="intermediate-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg></div><span>Detailed Route by Section</span></div>
+<div class="acc-wrap">
+<div class="acc-item open">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">Departure</span>
+<div class="acc-tw"><div class="acc-t">Gucheondong Visitor Support Center Departure</div><div class="acc-m">Elevation 600m · Anseong-myeon, Muju-gun, Jeollabuk-do</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">Depart from Muju Guchangdong Visitor Center. After checking the course and using the restroom at the information center, begin your ascent. Parking is available (paid).</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Gucheondong is located in Gucheondonggyegok Valley, Seolcheon-myeon, Muju-gun, and can be reached by bus from Muju. The Samgong-ri area has a high concentration of guesthouses and pensions.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-t">Gucheondong → Inwoldam → Chilbong Peak</div><div class="acc-m">Approx. 5.0km · 2h · 33 Scenic Valley Section</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg med"><div class="df" style="width:40%"></div></div></div>
+<p class="acc-desc">Follow Gucheondonggyegok Valley, enjoying the Gucheondong 33 Scenic Spots such as Inwoldam and Bipadam, as you ascend gently. The slope becomes significantly steeper once you climb onto the Chilbong Ridge at the Chilbong Peak junction.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Information signs for the Gucheondong 33 Scenic Spots are installed, making it enjoyable to identify each valley landscape as you walk. The autumn foliage, snow flowers, and fresh greenery offer diverse scenery depending on the season.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-t">Chilbong Peak → Seolcheonbong Peak → Hyangjeokbong Peak Summit</div><div class="acc-m">Approx. 4.5km · 2h · Approach to main ridge</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg med"><div class="df" style="width:60%"></div></div></div>
+<p class="acc-desc">The section from Chilbong Ridge to Seolcheonbong Peak is an access route to the main ridge of Deogyusan National Park with a considerable incline. You will join tourists descending from the gondola at Seolcheonbong Peak, followed by a final 0.6km climb to Hyangjeokbong Peak.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Meals are available at Hyangjeokbong Shelter from Seolcheonbong Peak. It is recommended to replenish energy sufficiently before descending towards Jungbong Peak.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-t">Hyangjeokbong Peak → Jungbong Peak → Dongyeopnyeong Pass</div><div class="acc-m">Approx. 4.5km · 1h 30min · Main ridge descent</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg med"><div class="df" style="width:50%"></div></div></div>
+<p class="acc-desc">From Hyangjeokbong Peak, follow the main ridge past Jungbong Peak (1,594m) to Dongyeopnyeong Pass. The ridge view towards Namdeogyusan Mountain from Jungbong Peak is breathtaking. Descend towards Guchangdong Valley from Dongyeopnyeong Pass.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Some say the view from Jungbong Peak is even better than from Hyangjeokbong Peak. On a clear day, Jirisan National Park and Gayasan National Park are visible.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">4</span>
+<div class="acc-tw"><div class="acc-t">Dongyeopnyeong Pass → Guchangdong Valley → Return to Guchangdong</div><div class="acc-m">Approx. 4.0km · 1h 30min · Valley descent</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg med"><div class="df" style="width:35%"></div></div></div>
+<p class="acc-desc">Descend from Dongyeopnyeong Pass towards Anseong District or Guchangdong. When descending towards Guchangdong Valley, you can visit Baengnyeonsa Temple. Baengnyeonsa Temple (founded by King Heungdeok of Silla) is the highest nunnery in Korea (970m).</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Approximately 4km valley trail from Baengnyeonsa Temple to Guchangdong Visitor Center. If you have time, slowly enjoy the 33 scenic spots of the valley as you descend.</div>
+</div>
+</div>
+</div>
+</div><div class="tc" id="intermediate-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg></div><span>Tips &amp; Precautions</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>Essential Gear</h2><ul><li>Hiking Boots (Waterproof)</li><li>2 trekking poles</li><li>Windproof, Waterproof Jacket</li><li>Winter: Crampons + gloves</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>Food &amp; Hydration</h2><ul><li>Water 1.5L or more</li><li>Ramen available for purchase at Hyangjeokbong Shelter</li><li>Lunchbox, Energy Bar</li><li>Baengnyeonsa Temple Mineral Water Available</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛡</div><h2>Safety Rules</h2><ul><li>Depart between 7-8 AM (for 18km course)</li><li>Slippery descent from Dongyeopnyeong Pass to Baengnyeonsa Temple</li><li>Plan to complete descent before sunset</li><li>Check mountain entry control times</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌊</div><h2>Gucheondong 33 Scenic Spots</h2><ul><li>Naje Tongmun Gate·Inwoldam·Bipadam</li><li>Guwoldam·Isokdae·Ansimdae</li><li>Guchangpokpo Waterfall in front of Baengnyeonsa Temple</li><li>Do not drink stream water</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🌸</div><h2>Seasonal Characteristics</h2><ul><li>Spring: Gucheondong's fresh greenery + azaleas</li><li>Summer: Best for refreshing valleys</li><li>Autumn: Fall foliage peaks in October</li><li>Winter: Overwhelming snow flower ridge</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg></div><h2>Transportation Information</h2><ul><li>Bus Service from Muju to Guchangdong</li><li>Parking available at Samgong-ri (Gucheondong Entrance)</li><li>Seoul→Dongseoul Bus Terminal→Muju</li><li>Muju-gun Tourism 063-320-5643</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="intermediate-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Gucheondong Loop Traverse Course Map</h2>
+<svg style="width:100%;height:auto;max-height:520px" viewbox="0 0 700 500">
+<rect fill="var(--surfaceoff)" height="500" rx="12" width="700"></rect>
+<ellipse cx="340" cy="250" fill="var(--pri)" fill-opacity=".03" rx="270" ry="210"></ellipse>
+<!-- up: left arc (gyeokdong valley + chilbong) -->
+<path d="M140 440 Q135 405 138 368 Q142 330 152 295 Q164 258 182 225 Q200 195 222 168 Q244 142 268 118 Q290 96 310 78" fill="none" stroke="var(--pri)" stroke-linecap="round" stroke-width="4"></path>
+<!-- summit -->
+<circle cx="310" cy="78" fill="var(--pri)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="332" y="70">Hyangjeokbong Peak</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="332" y="85">1,614m ★</text>
+<!-- down: right arc (jungbong, dongyeop, valley) -->
+<path d="M310 78 Q325 85 342 95 Q358 108 372 128 Q388 152 395 180 Q402 210 400 240 Q398 272 390 302 Q378 338 362 372 Q348 402 338 438" fill="none" stroke="var(--pri)" stroke-dasharray="7,4" stroke-linecap="round" stroke-width="3"></path>
+<!-- key nodes left -->
+<circle cx="140" cy="440" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="160" y="445">Gucheondong Visitor Center P</text>
+<circle cx="167" cy="362" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="80" y="366">Inwoldam Pond·33 Scenic Spots</text>
+<circle cx="195" cy="250" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="108" y="254">Chilbong Ridge</text>
+<circle cx="258" cy="135" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="175" y="130">Seolcheonbong Peak 1,520m</text>
+<!-- key nodes right -->
+<circle cx="360" cy="100" fill="var(--gold)" fill-opacity=".8" r="9" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--gold)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="340" y="108">Shelter</text>
+<circle cx="390" cy="178" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="404" y="182">Jungbong Peak 1,594m</text>
+<circle cx="395" cy="272" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="410" y="276">Dongyeopnyeong Pass 1,320m</text>
+<circle cx="366" cy="368" fill="var(--pri)" fill-opacity=".7" r="8" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" x="380" y="372">Baengnyeonsa Temple 970m</text>
+<circle cx="338" cy="438" fill="var(--sky)" r="13" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="268" y="462">Gucheondong Return P</text>
+<!-- compass -->
+<circle cx="648" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="645" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="648" x2="648" y1="38" y2="47"></line>
+<!-- legend -->
+<rect fill="var(--surface)" height="42" rx="7" stroke="var(--bor)" stroke-width="1" width="238" x="16" y="450"></rect>
+<line stroke="var(--pri)" stroke-width="3.5" x1="30" x2="52" y1="466" y2="466"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="470">Ascent Route (Chilbong Ridge)</text>
+<line stroke="var(--pri)" stroke-dasharray="6,3" stroke-width="2.5" x1="30" x2="52" y1="483" y2="483"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="487">Descent Route (Jungbong Peak·Dongyeopnyeong Pass)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg></div><span>All Checkpoints</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>Point Name</th><th>Elevation</th><th>Cumulative Distance</th><th>Type</th><th>Amenities</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Gucheondong Visitor Support Center</td><td>600m</td><td>0km</td><td><span class="bdg b-st">Departure</span></td><td>Parking·Restroom·Information center</td></tr>
+<tr><td>2</td><td>Inwoldam Pond (Guchangdong 33 Scenic Spots)</td><td>680m</td><td>2.0km</td><td><span class="bdg b-gl">Attractions</span></td><td>Information board</td></tr>
+<tr><td>3</td><td>Chilbong Junction</td><td>870m</td><td>5.0km</td><td><span class="bdg b-sk">Fork in the road</span></td><td>Signpost</td></tr>
+<tr><td>4</td><td>Seolcheonbong Peak</td><td>1,520m</td><td>8.5km</td><td><span class="bdg b-sk">Peak</span></td><td>Gondola Station</td></tr>
+<tr><td>5</td><td>Hyangjeokbong Peak Summit</td><td>1,614m</td><td>9.1km</td><td><span class="bdg b-pk">Summit</span></td><td>Shelter·Ramen</td></tr>
+<tr><td>6</td><td>Jungbong Peak</td><td>1,594m</td><td>10.5km</td><td><span class="bdg b-pk">Peak</span></td><td>Viewpoint·Rest area</td></tr>
+<tr><td>7</td><td>Dongyeopnyeong Pass</td><td>1,320m</td><td>13.0km</td><td><span class="bdg b-sk">Saddle</span></td><td>Fork signpost</td></tr>
+<tr><td>8</td><td>Baengnyeonsa Temple</td><td>970m</td><td>15.0km</td><td><span class="bdg b-te">Temple</span></td><td>Restroom, trail</td></tr>
+<tr><td>9</td><td>Gucheondong Visitor Center Return</td><td>600m</td><td>18.0km</td><td><span class="bdg b-st">Endpoint</span></td><td>Parking·Restaurant area</td></tr>
+</tbody>
+</table>
+</div>
+</div></div></div>
+</div>
+═══ Advanced ═══
+<div class="panel advanced" id="course-advanced">
+<nav class="tabs">
+<button class="tab active" onclick="selT('advanced','ov',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button>
+<button class="tab" onclick="selT('advanced','rt',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button>
+<button class="tab" onclick="selT('advanced','mp',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button>
+<button class="tab" onclick="selT('advanced','tp',this)"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</nav>
+<div class="main">
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><span>Advanced Course Overview</span></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="si">📏</div><div class="sv">~27km</div><div class="sl">Hyangjeokbong Peak·Namdeogyu Traverse</div></div>
+<div class="stat-card"><div class="si">⏱</div><div class="sv">10~12h</div><div class="sl">Duration</div></div>
+<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1,614m</div><div class="sl">Hyangjeokbong Peak Summit</div></div>
+<div class="stat-card"><div class="si">📈</div><div class="sv">1,500m</div><div class="sl">Cumulative Elevation Difference</div></div>
+<div class="stat-card"><div class="si">🔥</div><div class="sv">~3,500</div><div class="sl">Estimated Calories</div></div>
+<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★★</div><div class="sl">Difficulty</div></div>
+</div>
+<div class="elev-wrap">
+<h2>📊 Elevation Profile — Yukgujongju (Guchangdong → Yuksipnyeong Pass)</h2>
+<svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 900 180">
+<defs><lineargradient id="ag1" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0%" stop-color="var(--warn)" stop-opacity=".3"></stop>
+<stop offset="100%" stop-color="var(--warn)" stop-opacity="0"></stop>
+</lineargradient></defs>
+<path d="M0 160 L0 155 C40 150 80 142 120 128 C150 118 170 105 195 85 C215 68 228 48 240 30 L248 20 C260 30 272 48 285 65 C300 84 318 100 338 115 C355 126 372 135 390 142 C408 148 428 152 445 155 C460 156 474 155 490 150 C504 144 515 134 530 120 C546 106 558 95 572 82 C585 70 595 60 608 48 L618 38 C628 50 638 68 652 88 C668 112 684 135 700 148 C720 158 750 162 800 162 L900 160 L900 160Z" fill="url(#ag1)"></path>
+<path d="M0 155 C40 150 80 142 120 128 C150 118 170 105 195 85 C215 68 228 48 240 30 L248 20 C260 30 272 48 285 65 C300 84 318 100 338 115 C355 126 372 135 390 142 C408 148 428 152 445 155 C460 156 474 155 490 150 C504 144 515 134 530 120 C546 106 558 95 572 82 C585 70 595 60 608 48 L618 38 C628 50 638 68 652 88 C668 112 684 135 700 148" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="2.5"></path>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" x="5" y="158">Gucheondong 600m</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="225" y="16">Hyangjeokbong Peak 1,614m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="340" y="108">Baegambong Peak</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="430" y="148">Dongyeopnyeong Pass</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="495" y="144">Muryongsan Mountain</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="9" x="578" y="76">Satgatbong Peak</text>
+<text fill="var(--warn)" font-family="Satoshi,sans-serif" font-size="11" font-weight="700" x="600" y="33">Namdeogyusan Mountain 1,507m</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="end" x="870" y="156">Yuksimnyeong Pass</text>
+<circle cx="248" cy="20" fill="var(--warn)" r="4"></circle>
+<circle cx="618" cy="38" fill="var(--warn)" r="4"></circle>
+<line stroke="var(--faint)" stroke-dasharray="4,4" stroke-width="1" x1="445" x2="445" y1="10" y2="170"></line>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="9" x="350" y="12">Hyangjeokbong Peak↑ Section</text>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="9" x="455" y="12">↑Namdeogyu section</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg></div><span>Overall Course Flow</span></div>
+<div class="flow">
+<span class="fn pk">🅿 Guchangdong</span><span class="fa">→</span>
+<span class="fn">Baengnyeonsa Temple</span><span class="fa">→</span>
+<span class="fn pk">Hyangjeokbong Peak 1,614m</span><span class="fa">→</span>
+<span class="fn">Jungbong Peak</span><span class="fa">→</span>
+<span class="fn">Baegambong Peak</span><span class="fa">→</span>
+<span class="fn sh">Dongyeopnyeong Pass</span><span class="fa">→</span>
+<span class="fn">Muryongsan Mountain 1,491m</span><span class="fa">→</span>
+<span class="fn sh">Satgatjae Shelter</span><span class="fa">→</span>
+<span class="fn">Satgatbong Peak</span><span class="fa">→</span>
+<span class="fn pk">Namdeogyusan Mountain 1,507m</span><span class="fa">→</span>
+<span class="fn pk">🏁 Yuksipnyeong Pass</span>
+</div>
+<div class="ic"><h2>Course Features</h2><ul>
+<li>🏆 Deogyusan National Park Full Ridge Traverse — Guchangdong (Gu-side) → Yuksipnyeong Pass (Yuk-side), aptly named 'Yukgujongju'</li>
+<li>✅ Passes through 6 peaks: Hyangjeokbong (1,614m), Jungbong (1,594m), Baegambong (1,503m), Muryongsan (1,491m), Satgatbong (1,418m), and Namdeogyusan (1,507m)</li>
+<li>✅ Can be split into a 2-day, 1-night course with an overnight stay at Satgatjae Shelter (1,280m)</li>
+<li>✅ Passes through the core section of the Baekdudaegan mountain range — Dongyeopnyeong~Namdeogyusan section</li>
+<li><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Approx. 27km one-way long distance — advance preparation for transportation at the Yuksipnyeong endpoint is essential.</li>
+<li><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>For advanced hikers with sufficient stamina — recommended to attempt after gaining ample intermediate experience.</li>
+</ul></div>
+</div><div class="tc" id="advanced-rt">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg></div><span>Detailed Route by Section</span></div>
+<div class="acc-wrap">
+<div class="acc-item open">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">Departure</span>
+<div class="acc-tw"><div class="acc-t">Gucheondong Visitor Center Departure (Dawn)</div><div class="acc-m">Elevation 600m · Muju-gun, Jeollabuk-do</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<p class="acc-desc">For a same-day completion of the Yukgujongju traverse, a pre-dawn departure between 4-5 AM is essential. Be sure to pre-book transportation or arrange a car shuttle from Yuksimnyeong Pass (the endpoint) towards Jangsu/Jeonju.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Recommended 2-day, 1-night trip: Day 1 Gucheondong → Satgatjae Shelter, Day 2 Satgatjae → Namdeogyu → Yuksipnyeong. Satgatjae Shelter reservations: 063-322-4536.</div>
+<div class="wrn"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Solo hiking is strictly prohibited. Rescue is difficult in case of an accident on the 27km ridge section. Team hiking of 3 or more people is recommended.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">1</span>
+<div class="acc-tw"><div class="acc-t">Gucheondong → Baengnyeonsa Temple → Hyangjeokbong Peak</div><div class="acc-m">Approx. 9km · 3h 30min · Intermediate section</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg med"><div class="df" style="width:55%"></div></div></div>
+<p class="acc-desc">Follow the Gucheondong 33 Scenic Valley past Baengnyeonsa Temple and Hyangjeokbong Shelter to the summit of Hyangjeokbong Peak. From Hyangjeokbong Peak, begin the Baekdudaegan main ridge traverse towards Jungbong Peak.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Have a sufficient meal and replenish energy at Hyangjeokbong Peak summit. Afterward, a long ridge hike of approximately 13km continues to Satgatjae Pass.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">2</span>
+<div class="acc-tw"><div class="acc-t">Hyangjeokbong Peak → Jungbong Peak → Baegambong Peak → Dongyeopnyeong Pass</div><div class="acc-m">Approx. 6km · 2h 30min · Baekdudaegan Ridge</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg hard"><div class="df" style="width:65%"></div></div></div>
+<p class="acc-desc">From Hyangjeokbong Peak, follow the ridge past Jungbong Peak (1,594m) and Baegambong Peak (1,503m) to Dongyeopnyeong Pass. Enjoy expansive views of Jirisan National Park, Gayasan National Park, and Jeoksangsan Mountain from the open ridge. Dongyeopnyeong Pass is a key saddle connecting Anseong and Guchangdong.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>There is an escape route descending towards Anseong from Dongyeopnyeong Pass. Consider escaping if you experience physical difficulties. Descend to Chilyeon Valley, approximately 4km to Anseong Visitor Center.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">3</span>
+<div class="acc-tw"><div class="acc-t">Dongyeopnyeong Pass → Muryongsan Mountain → Satgatjae Shelter</div><div class="acc-m">Approx. 6km · 2h 30min · Plateau ridge</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg hard"><div class="df" style="width:72%"></div></div></div>
+<p class="acc-desc">From Dongyeopnyeong Pass, cross Muryongsan Mountain (1,491m) and follow the plateau ridge to Satgatjae Shelter (1,280m). The ridge around Muryongsan Mountain is exceptionally wide and open, allowing you to experience the true essence of the Deogyu ridge.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>If staying overnight at Satgatjae Shelter, this is the end of Day 1. Shelter reservation is required. On Day 2, descend from Namdeogyu to Yuksipnyeong.</div>
+</div>
+</div>
+<div class="acc-item">
+<div class="acc-hdr" onclick="togAcc(this)">
+<span class="acc-num">4</span>
+<div class="acc-tw"><div class="acc-t">Satgatjae → Satgatbong Peak → Namdeogyusan → Seobong Peak → Yuksipnyeong</div><div class="acc-m">Approx. 8km · 3h 30min · Final section</div></div>
+<svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg>
+</div>
+<div class="acc-body">
+<div class="dw"><div class="dlb">Difficulty</div><div class="dbg xh"><div class="df" style="width:85%"></div></div></div>
+<p class="acc-desc">Cross Satgatbong Peak (1,418m) to reach the summit of Namdeogyusan (1,507m). Namdeogyusan is the second highest peak of Deogyusan National Park, offering a distinct landscape from Hyangjeokbong Peak. Descend steeply past Seobong Peak (1,492m) to Yuksipnyeong (700m) to complete the traverse.</p>
+<div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Buses are available from Yuksimnyeong Pass towards Jangsu, Jeonju, and Daejeon, but the intervals are long. Advance taxi reservation is strongly recommended. Yuksimnyeong Pass is right next to the border of Jangsu-gun and Hamyang-gun.</div>
+</div>
+</div>
+</div>
+</div><div class="tc" id="advanced-tp">
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg></div><span>Tips &amp; Precautions</span></div>
+<div class="tg">
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg></div><h2>Essential Gear</h2><ul><li>Hiking Boots (Waterproof, Ankle Support)</li><li>2 trekking poles</li><li>Knee Protectors (Both Sides)</li><li>Headlamp + spare batteries</li><li>Winter: Crampons + gaiters</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🥗</div><h2>Food &amp; Hydration</h2><ul><li>Water 2.5L or more</li><li>Ramen, drinks at Hyangjeokbong Shelter</li><li>Meals available at Satgatjae Shelter</li><li>Prepare lunch for 2 meals</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🛖</div><h2>Satgatjae Shelter</h2><ul><li>Phone: 063-322-4536</li><li>Reservation: National Park Reservation System</li><li>Limited capacity, advance reservation required</li><li>1 night, 1 person: 13,000 won (adult)</li></ul></div>
+<div class="tc-card"><div class="tc-icon">🚗</div><h2>Transportation Plan</h2><ul><li>Gucheondong Departure → Yuksipnyeong Arrival</li><li>Yuksimnyeong Pass → Jangsu·Jeonju Bus (infrequent)</li><li>Advance taxi reservation for Yuksimnyeong Pass is essential</li><li>Vehicle teams are recommended to park at Yuksipnyeong.</li></ul></div>
+<div class="tc-card"><div class="tc-icon">💪</div><h2>Physical Preparation</h2><ul><li>Complete intermediate courses 10+ times beforehand</li><li>Long-distance training over 25km</li><li>Knee and Ankle Strengthening Exercises</li><li>Sufficient sleep and hydration the day before</li></ul></div>
+<div class="tc-card"><div class="tc-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg></div><h2>Attractions Information</h2><ul><li>Gucheondong 33 Scenic Valley Landscape</li><li>Jungbong Peak and Baegambong Peak Ridge View</li><li>Muryongsan Mountain Wide Plateau Ridge</li><li>Namdeogyusan Mountain~Seobong Peak Scenic View</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tc" id="advanced-mp">
+<div class="map-wrap">
+<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Yukgujongju Traverse Course Map (Guchangdong → Yuksimnyeong Pass)</h2>
+<svg style="width:100%;height:auto;max-height:540px" viewbox="0 0 820 520">
+<rect fill="var(--surfaceoff)" height="520" rx="12" width="820"></rect>
+<ellipse cx="300" cy="280" fill="var(--warn)" fill-opacity=".03" rx="260" ry="200"></ellipse>
+<ellipse cx="580" cy="280" fill="var(--warn)" fill-opacity=".02" rx="200" ry="160"></ellipse>
+<!-- route line: gucheondong to hyangjeokbong -->
+<path d="M100 460 Q105 425 112 390 Q122 355 140 320 Q160 285 184 255 Q208 226 232 200 Q255 175 276 152 Q293 132 304 108" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="4"></path>
+<!-- summit hyangjeok -->
+<circle cx="304" cy="108" fill="var(--warn)" r="18" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="325" y="100">Hyangjeokbong Peak</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="325" y="115">1,614m ★</text>
+<!-- route: hyangjeok to jungbong/baekam/dongyeop -->
+<path d="M304 108 Q320 115 335 128 Q350 145 360 165 Q370 185 376 205 Q380 222 380 240" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- dongyeop -->
+<circle cx="380" cy="240" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="394" y="244">Dongyeopnyeong Pass 1,320m</text>
+<!-- route: dongyeop to muryong to satgat -->
+<path d="M380 240 Q388 258 400 278 Q416 302 434 322 Q450 340 462 360 Q472 378 478 398 Q482 415 480 435" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- muryong -->
+<circle cx="416" cy="302" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="430" y="306">Muryongsan Mountain 1,491m</text>
+<!-- satgat daepiso -->
+<circle cx="480" cy="435" fill="var(--gold)" fill-opacity=".8" r="11" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--gold)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="496" y="440">Satgatjae Shelter 1,280m</text>
+<!-- route: satgat to satgatbong to namdeokyusan -->
+<path d="M480 435 Q498 415 516 392 Q534 368 552 345 Q565 326 580 308 Q592 292 600 274 Q606 258 608 240" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3.5"></path>
+<!-- satgatbong -->
+<circle cx="552" cy="345" fill="var(--surfdyn)" r="9" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="566" y="349">Satgatbong Peak 1,418m</text>
+<!-- namdeokyusan -->
+<circle cx="608" cy="240" fill="var(--warn)" r="17" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--warn)" font-family="Cabinet Grotesk,Satoshi,sans-serif" font-size="13" font-weight="800" x="628" y="233">Namdeogyusan Mountain</text>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="628" y="248">1,507m</text>
+<!-- route: namdeokyusan to yuksipreong -->
+<path d="M608 240 Q614 262 620 286 Q628 315 636 348 Q642 378 644 412 L645 450" fill="none" stroke="var(--warn)" stroke-linecap="round" stroke-width="3"></path>
+<!-- seobong -->
+<circle cx="622" cy="290" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="636" y="294">Seobong Peak 1,492m</text>
+<!-- yuksipreong -->
+<circle cx="645" cy="450" fill="var(--pri)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="580" y="472">Yuksimnyeong Pass 🏁 700m</text>
+<!-- start node -->
+<circle cx="100" cy="460" fill="var(--sky)" r="14" stroke="var(--bg)" stroke-width="3"></circle>
+<text fill="var(--sky)" font-family="Satoshi,sans-serif" font-size="12" font-weight="700" x="118" y="465">Gucheondong Visitor Center P</text>
+<!-- baengnyeonsa -->
+<circle cx="220" cy="228" fill="var(--pri)" fill-opacity=".7" r="8" stroke="var(--bg)" stroke-width="2"></circle>
+<text fill="var(--pri)" font-family="Satoshi,sans-serif" font-size="11" x="145" y="224">Baengnyeonsa Temple 970m</text>
+<!-- jungbong -->
+<circle cx="330" cy="148" fill="var(--surfdyn)" r="8" stroke="var(--bor)" stroke-width="2"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="344" y="152">Jungbong Peak 1,594m</text>
+<!-- compass -->
+<circle cx="770" cy="48" fill="var(--surface)" r="25" stroke="var(--bor)" stroke-width="1.5"></circle>
+<text fill="var(--txt)" font-family="Satoshi,sans-serif" font-size="10" font-weight="700" x="767" y="34">N</text>
+<line stroke="var(--txt)" stroke-width="1.5" x1="770" x2="770" y1="38" y2="47"></line>
+<!-- divider -->
+<line stroke="var(--faint)" stroke-dasharray="5,5" stroke-width="1" x1="406" x2="406" y1="30" y2="490"></line>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="middle" x="245" y="500">← Gucheondong·Hyangjeokbong section</text>
+<text fill="var(--faint)" font-family="Satoshi,sans-serif" font-size="10" text-anchor="middle" x="560" y="500">Namdeogyu·Yuksipnyeong Section →</text>
+<!-- legend -->
+<rect fill="var(--surface)" height="42" rx="7" stroke="var(--bor)" stroke-width="1" width="200" x="16" y="464"></rect>
+<line stroke="var(--warn)" stroke-width="3.5" x1="30" x2="52" y1="480" y2="480"></line>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="60" y="484">Yukgujongju Traverse Full Route</text>
+<circle cx="38" cy="497" fill="var(--gold)" fill-opacity=".8" r="5"></circle>
+<text fill="var(--muted)" font-family="Satoshi,sans-serif" font-size="11" x="52" y="501">Shelter (Accommodation)</text>
+</svg>
+</div>
+<div class="stitle"><div class="sico"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg></div><span>All Checkpoints (Traverse)</span></div>
+<div class="cp-wrap">
+<table class="cpt">
+<thead><tr><th>#</th><th>Point Name</th><th>Elevation</th><th>Cumulative Distance</th><th>Type</th><th>Amenities</th></tr></thead>
+<tbody>
+<tr><td>1</td><td>Gucheondong Visitor Support Center</td><td>600m</td><td>0km</td><td><span class="bdg b-st">Departure</span></td><td>Parking·Restroom</td></tr>
+<tr><td>2</td><td>Baengnyeonsa Temple</td><td>970m</td><td>5.0km</td><td><span class="bdg b-te">Temple</span></td><td>Restroom, mineral spring</td></tr>
+<tr><td>3</td><td>Hyangjeokbong Peak Summit</td><td>1,614m</td><td>9.0km</td><td><span class="bdg b-pk">Summit</span></td><td>Shelter·Ramen</td></tr>
+<tr><td>4</td><td>Jungbong Peak</td><td>1,594m</td><td>10.5km</td><td><span class="bdg b-pk">Peak</span></td><td>—</td></tr>
+<tr><td>5</td><td>Baegambong Peak</td><td>1,503m</td><td>12.0km</td><td><span class="bdg b-pk">Peak</span></td><td>—</td></tr>
+<tr><td>6</td><td>Dongyeopnyeong Pass</td><td>1,320m</td><td>15.0km</td><td><span class="bdg b-sk">Saddle/Fork</span></td><td>Escape route available</td></tr>
+<tr><td>7</td><td>Muryongsan Mountain</td><td>1,491m</td><td>17.0km</td><td><span class="bdg b-pk">Peak</span></td><td>—</td></tr>
+<tr><td>8</td><td>Satgatjae Shelter</td><td>1,280m</td><td>19.0km</td><td><span class="bdg b-gl">Shelter</span></td><td>Accommodation, Meals, Restrooms</td></tr>
+<tr><td>9</td><td>Satgatbong Peak</td><td>1,418m</td><td>21.0km</td><td><span class="bdg b-pk">Peak</span></td><td>—</td></tr>
+<tr><td>10</td><td>Namdeogyusan Mountain</td><td>1,507m</td><td>23.0km</td><td><span class="bdg b-pk">Summit</span></td><td>Summit marker·Viewpoint</td></tr>
+<tr><td>11</td><td>Seobong Peak</td><td>1,492m</td><td>24.5km</td><td><span class="bdg b-pk">Peak</span></td><td>—</td></tr>
+<tr><td>12</td><td>Yuksimnyeong Pass</td><td>700m</td><td>~27km</td><td><span class="bdg b-st">Endpoint</span></td><td>Parking·Restroom·Bus</td></tr>
+</tbody>
+</table>
+</div>
+</div></div></div>
+</div>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span>Four Seasons &amp; Attractions of Deogyusan National Park</h2>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="View Deogyusan National Park Hiking Courses Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;Jeonggyusong Nui MALAMA&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="../assets/img/deogyusan/g1.avif" type="image/avif"/>
+<source srcset="../assets/img/deogyusan/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/deogyusan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Deogyusan National Park Hiking Courses</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="View Deogyusan National Park Scenic Views Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;Jeonggyusong Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="../assets/img/deogyusan/g2.avif" type="image/avif"/>
+<source srcset="../assets/img/deogyusan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/deogyusan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Deogyusan National Park Scenic Views</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="View Deogyusan National Park Scenery Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;Jeonggyusong Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="../assets/img/deogyusan/g3.avif" type="image/avif"/>
+<source srcset="../assets/img/deogyusan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/deogyusan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Deogyusan National Park Scenery</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="View Deogyusan National Park Trails Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@kevin-yung-2152346613' target='_blank' rel='noopener'&gt;kevin yung&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="../assets/img/deogyusan/g4.avif" type="image/avif"/>
+<source srcset="../assets/img/deogyusan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/deogyusan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Deogyusan National Park Trails</span>
+</div>
+</button>
+</div>
+</section>
+<footer style="border-top:1px solid var(--div);padding:var(--s8) var(--s6);text-align:center;background:var(--surface)">
+<p style="font-size:var(--xs);color:var(--faint)">Based on official information from Deogyusan National Park. Before hiking, be sure to check the Korea National Park Service reservation system (reservation.knps.or.kr) and weather information. Deogyusan National Park 063-322-3174</p>
+</footer>
+<script>
+(function(){
+  const t=document.querySelector("[data-thm]"),r=document.documentElement;
+  let d=r.getAttribute("data-theme")||"dark"; setIco(d);
+  if(t)t.addEventListener("click",()=>{d=d==="dark"?"light":"dark";r.setAttribute("data-theme",d);setIco(d)});
+  function setIco(th){if(!t)return;t.innerHTML=th==="dark"?'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>':'<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';}
+})();
+function selC(lv,btn){
+  document.querySelectorAll(".panel").forEach(p=>p.classList.remove("active"));
+  document.querySelectorAll(".cs-btn").forEach(b=>b.classList.remove("ab","ai","aa"));
+  document.getElementById("course-"+lv).classList.add("active");
+  btn.classList.add(lv==="beginner"?"ab":lv==="intermediate"?"ai":"aa");
+  const p=document.getElementById("course-"+lv);
+  p.querySelectorAll(".tab").forEach((b,i)=>b.classList.toggle("active",i===0));
+  p.querySelectorAll(".tc").forEach((c,i)=>c.classList.toggle("active",i===0));
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+function selT(c,t,btn){
+  const p=document.getElementById("course-"+c);
+  p.querySelectorAll(".tab").forEach(b=>b.classList.remove("active"));
+  p.querySelectorAll(".tc").forEach(x=>x.classList.remove("active"));
+  btn.classList.add("active");
+  document.getElementById(c+"-"+t).classList.add("active");
+}
+function togAcc(h){h.parentElement.classList.toggle("open")}
+document.querySelectorAll(".acc-wrap").forEach(w=>{const f=w.querySelector(".acc-item");if(f)f.classList.add("open")});
+</script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="View larger image" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="Close Gallery" class="lightbox-close">×</button>
+<button aria-label="Previous image" class="lightbox-prev">❮</button>
+<button aria-label="Next Image" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script>
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script>
+</div></div><!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+</body>
+</html>
