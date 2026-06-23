@@ -1,0 +1,49 @@
+{
+  "mountain_id": "myeongseongsan",
+  "default_layer": "satellite",
+  "points": {
+    "sangdong_parking_상동주차장": {"lat": 38.1008, "lng": 127.3168, "alt_m": 280, "type": "parking"},
+    "biseon_waterfall_비선폭포": {"lat": 38.1035, "lng": 127.3235, "alt_m": 360, "type": "waterfall"},
+    "deungryong_waterfall_등룡폭포": {"lat": 38.1085, "lng": 127.3285, "alt_m": 470, "type": "waterfall"},
+    "silver_grass_억새밭": {"lat": 38.1180, "lng": 127.3325, "alt_m": 760, "type": "meadow"},
+    "samgakbong_삼각봉": {"lat": 38.1256, "lng": 127.3235, "alt_m": 903, "type": "summit"},
+    "myeongseongsan_summit_명성산 정상": {"lat": 38.1296, "lng": 127.3242, "alt_m": 923, "type": "summit"},
+    "jainsa_자인사": {"lat": 38.1042, "lng": 127.3122, "alt_m": 320, "type": "temple"},
+    "sanan_pass_산안고개": {"lat": 38.1205, "lng": 127.3082, "alt_m": 520, "type": "junction"}
+  },
+  "routes": {
+    "beginner": [
+      "sangdong_parking_상동주차장",
+      "biseon_waterfall_비선폭포",
+      "deungryong_waterfall_등룡폭포",
+      "silver_grass_억새밭",
+      "deungryong_waterfall_등룡폭포",
+      "biseon_waterfall_비선폭포",
+      "sangdong_parking_상동주차장"
+    ],
+    "intermediate": [
+      "sangdong_parking_상동주차장",
+      "biseon_waterfall_비선폭포",
+      "deungryong_waterfall_등룡폭포",
+      "silver_grass_억새밭",
+      "samgakbong_삼각봉",
+      "jainsa_자인사",
+      "sangdong_parking_상동주차장"
+    ],
+    "advanced": [
+      "sangdong_parking_상동주차장",
+      "biseon_waterfall_비선폭포",
+      "deungryong_waterfall_등룡폭포",
+      "silver_grass_억새밭",
+      "samgakbong_삼각봉",
+      "myeongseongsan_summit_명성산 정상",
+      "sanan_pass_산안고개",
+      "sangdong_parking_상동주차장"
+    ]
+  },
+  "colors": {
+    "beginner": "#427b49",
+    "intermediate": "#2f6ba3",
+    "advanced": "#b1423b"
+  }
+}
