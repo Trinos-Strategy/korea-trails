@@ -2509,12 +2509,124 @@ function toggleCard(header){
 <figcaption class="lightbox-caption"></figcaption>
 </figure>
 <div class="photo-credit lightbox-credit"></div>
+      <!-- Location Map Integration [D] -->
+      <div style="text-align: center; margin-top: var(--space-3);">
+        <button id="lightboxGeoBtn" class="lightbox-geo-btn" style="display: none;">📍 촬영지 보기</button>
+      </div>
+      <div id="lightboxMapWrap" class="lightbox-map-wrap">
+        <div id="lightboxMap" class="lightbox-map"></div>
+      </div>
 </div>
 </div>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox = document.getElementById('lightbox');
+  // --- Lightbox Location Map Integration [D] ---
+  let photoGeoData = null;
+  let galleryMapData = null;
+  let lightboxMapInstance = null;
+  const geoBtn = document.getElementById('lightboxGeoBtn');
+  const mapWrap = document.getElementById('lightboxMapWrap');
+  
+  // Dynamic Leaflet Loader for lightbox
+  function loadLeafletForLightbox(callback) {
+    if (window.L) {
+      callback();
+      return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.onload = callback;
+    document.head.appendChild(script);
+  }
+
+  async function loadGeoDatabases() {
+    try {
+      const relPath = document.documentElement.lang === 'en' ? '../' : '';
+      if (!photoGeoData) {
+        const res = await fetch(relPath + '_orchestration/photo-geo.json');
+        photoGeoData = await res.json();
+      }
+      if (!galleryMapData) {
+        const res = await fetch(relPath + '_orchestration/gallery-to-original.json');
+        galleryMapData = await res.json();
+      }
+    } catch (e) {
+      console.error("Failed to load photo geo databases:", e);
+    }
+  }
+
+  loadGeoDatabases();
+  
+  function checkAndShowLocation(imgSrc) {
+    if (!geoBtn || !mapWrap) return;
+    
+    // Hide map and button initially
+    geoBtn.style.display = 'none';
+    mapWrap.style.display = 'none';
+    if (lightboxMapInstance) {
+      lightboxMapInstance.remove();
+      lightboxMapInstance = null;
+    }
+    
+    if (!photoGeoData || !galleryMapData) {
+      // Retry loading if databases not ready
+      loadGeoDatabases().then(() => checkAndShowLocation(imgSrc));
+      return;
+    }
+    
+    // Normalize path to match JSON keys
+    const cleanSrc = imgSrc.replace(/^(\.\.\/)+/, '');
+    const m_id = cleanSrc.split('/')[2]; // e.g. bukhansan
+    const originalPath = galleryMapData[m_id] ? galleryMapData[m_id][cleanSrc] : null;
+    
+    if (!originalPath) return;
+    
+    const geoInfo = photoGeoData.find(item => item.original === originalPath);
+    if (!geoInfo) return;
+    
+    // Show geo location button
+    geoBtn.style.display = 'inline-flex';
+    
+    // Setup button click action
+    geoBtn.onclick = () => {
+      if (mapWrap.style.display === 'block') {
+        mapWrap.style.display = 'none';
+        if (lightboxMapInstance) {
+          lightboxMapInstance.remove();
+          lightboxMapInstance = null;
+        }
+        return;
+      }
+      
+      mapWrap.style.display = 'block';
+      loadLeafletForLightbox(() => {
+        if (lightboxMapInstance) lightboxMapInstance.remove();
+        
+        lightboxMapInstance = L.map('lightboxMap', {
+          scrollWheelZoom: false
+        }).setView([geoInfo.lat, geoInfo.lng], 15);
+        
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Esri, Maxar'
+        }).addTo(lightboxMapInstance);
+        
+        L.marker([geoInfo.lat, geoInfo.lng]).addTo(lightboxMapInstance)
+          .bindPopup(document.documentElement.lang === 'en' ? 'Photo Spot' : '촬영 장소')
+          .openPopup();
+          
+        setTimeout(() => {
+          lightboxMapInstance.invalidateSize();
+        }, 200);
+      });
+    };
+  }
   if (!lightbox || galleryItems.length === 0) return;
   
   const closeBtn = lightbox.querySelector('.lightbox-close');
@@ -2546,7 +2658,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     figureContainer.insertBefore(clonedPic, captionEl);
     captionEl.textContent = captionText;
-    
+
+    checkAndShowLocation(img.getAttribute('src'));    
     const creditData = item.getAttribute('data-credit') || '';
     if (creditData && creditEl) {
       creditEl.innerHTML = creditData;
@@ -2561,6 +2674,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
   
   const closeLightbox = () => {
+    if (lightboxMapInstance) {
+      lightboxMapInstance.remove();
+      lightboxMapInstance = null;
+    }
+    if (geoBtn) geoBtn.style.display = 'none';
+    if (mapWrap) mapWrap.style.display = 'none';
     lightbox.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
     if (lastActiveElement) lastActiveElement.focus();
