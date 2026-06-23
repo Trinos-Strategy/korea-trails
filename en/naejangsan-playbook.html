@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Naejangsan National Park Hiking Playbook</title>
+<meta content="A guide to Naejangsan National Park, one of South Korea's best-known mountains. Provides detailed routes, real-world maps, and tips for the Beginner Nature Observation Trail, Intermediate Seoraebong Peak Representative Course, and Advanced Ridge Traverse Course." name="description"/>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
+<link href="../assets/css/design-system.css" rel="stylesheet"/>
+<style>
+  :root {
+    --green: #3e7d3f;
+    --greenbg: #dcebdc;
+    --blue: #2d6faa;
+    --bluebg: #d9e9f8;
+    --red: #b93a2f;
+    --redbg: #f5ddd9;
+    --radius: 18px;
+    --radius2: 12px;
+  }
+
+  [data-theme="dark"] {
+    --green: #69b66b;
+    --greenbg: #1f3320;
+    --blue: #67a6df;
+    --bluebg: #18293a;
+    --red: #ea7d72;
+    --redbg: #3b1f1b;
+  }
+
+  /* Header & Navigation */
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-3) var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--teal, var(--primary)), var(--primary));
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .brand h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .brand p {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition), color var(--transition);
+  }
+  
+  .theme-btn:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+
+  /* Selector & Course Buttons */
+  .selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-5) 0 var(--space-3);
+  }
+  
+  .course-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    transition: all var(--transition);
+  }
+  
+  .course-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: #273e16; }
+  .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: #1e3a5f; }
+  .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: #6a2a18; }
+
+  [data-theme="dark"] .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: var(--green); }
+  [data-theme="dark"] .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: var(--blue); }
+  [data-theme="dark"] .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: var(--red); }
+
+  /* Panels & Course Info */
+  .panel {
+    display: none;
+    padding: var(--space-4) 0 var(--space-10);
+  }
+  
+  .panel.active {
+    display: block;
+  }
+  
+  .panel-top {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+  }
+  
+  .level {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 800;
+  }
+  
+  .green .level { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .level { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .level { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .level { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .level { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .level { background: var(--redbg); color: var(--red); }
+  
+  .panel-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+  }
+  
+  .panel-sub {
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  /* Tabs Customizations (Keep Pill Style matching original design) */
+  .tabs {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    margin: var(--space-4) 0 var(--space-6);
+    border-bottom: none;
+  }
+  
+  .tab {
+    border: none;
+    background: var(--surface2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--muted);
+    font-weight: 700;
+    transition: all var(--transition);
+  }
+  
+  .tab:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+  
+  .green .tab.active { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .tab.active { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .tab.active { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .tab.active { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .tab.active { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .tab.active { background: var(--redbg); color: var(--red); }
+
+  /* Grid & KPI Cards Layout */
+  .grid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .kpi .num {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .green .kpi .num { color: var(--green); }
+  .blue .kpi .num { color: var(--blue); }
+  .red .kpi .num { color: var(--red); }
+  
+  .kpi .txt {
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  /* Section Titles */
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 var(--space-4);
+  }
+  
+  .section-title h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .line {
+    height: 1px;
+    background: var(--border);
+    flex: 1;
+  }
+
+  /* Course Flow */
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .chip {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    background: var(--surface2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+  
+  .arr {
+    align-self: center;
+    color: var(--faint);
+  }
+  
+  .elev svg {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .desc {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  /* Segment Accordions */
+  .segments {
+    display: grid;
+    gap: var(--space-3);
+  }
+  
+  .seg {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+  
+  .seg-head {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-4) var(--space-5);
+    cursor: pointer;
+  }
+  
+  .seg-no {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    display: grid;
+    place-items: center;
+    font-size: var(--text-xs);
+    font-weight: 800;
+  }
+  
+  .green .seg-no { background: var(--greenbg); color: var(--green); }
+  .blue .seg-no { background: var(--bluebg); color: var(--blue); }
+  .red .seg-no { background: var(--redbg); color: var(--red); }
+  
+  .seg-title {
+    font-weight: 800;
+    font-size: var(--text-base);
+  }
+  
+  .seg-meta {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .seg-arrow {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.85rem;
+    transition: transform var(--transition);
+  }
+  
+  .seg-body {
+    display: none;
+    padding: 0 var(--space-5) var(--space-5);
+    border-top: 1px solid var(--border);
+  }
+  
+  .seg.open .seg-body {
+    display: block;
+  }
+  
+  .seg.open .seg-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .seg-body p {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+  
+  .bar {
+    height: 7px;
+    background: var(--surface2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: var(--space-3) 0;
+  }
+  
+  .fill {
+    height: 100%;
+  }
+  
+  .green .fill { background: var(--green); }
+  .blue .fill { background: var(--blue); }
+  .red .fill { background: var(--red); }
+  
+  .tip, .warn {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    margin-top: var(--space-3);
+    line-height: 1.5;
+  }
+  
+  .tip {
+    background: var(--surface2);
+    color: var(--muted);
+  }
+  
+  .warn {
+    background: var(--redbg);
+    color: var(--red);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  th, td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--text-xs);
+    text-align: left;
+  }
+  
+  th {
+    background: var(--surface2);
+    color: var(--muted);
+    font-weight: 800;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .tipcard h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+  }
+  
+  .tipcard ul {
+    padding-left: var(--space-4);
+    margin: 0;
+  }
+  
+  .tipcard li {
+    margin: var(--space-2) 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+  
+  @media (max-width: 960px) {
+    .grid6 { grid-template-columns: repeat(3, 1fr); }
+    .tips-grid { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 640px) {
+    .grid6 { grid-template-columns: repeat(2, 1fr); }
+    .tips-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .selector { gap: var(--space-2); }
+    .course-btn { padding: var(--space-2) var(--space-4); font-size: var(--text-xs); }
+  }
+
+/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style>
+<meta content="../assets/img/naejangsan/og.png" property="og:image"/><meta content="../assets/img/naejangsan/og.png" name="twitter:image"/><script src="../assets/js/i18n.js"></script><link href="../naejangsan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/naejangsan-playbook.html" hreflang="en" rel="alternate"/><link href="../naejangsan-playbook.html" hreflang="x-default" rel="alternate"/></head>
+<body>
+<a class="skip-link" href="#mainContent">Skip to main content</a>
+<header class="header">
+<div class="wrap header-inner">
+<div class="brand">
+<div class="logo">
+<svg aria-label="Naejangsan National Park Logo" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+</svg>
+</div>
+<div>
+<h1>Naejangsan National Park</h1>
+<p>Famous Autumn Foliage Mountain · Sinseonbong Peak 763m · Jeongeup's Representative National Park</p>
+</div>
+</div>
+<div class="lang-toggle">
+<button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="Toggle Theme" class="theme-btn" id="themeBtn">◐</button>
+</div>
+</header>
+<section class="hero hero-bleed">
+<!-- Background Picture -->
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="../assets/img/naejangsan/hero-640.avif 640w, assets/img/naejangsan/hero-1024.avif 1024w, assets/img/naejangsan/hero-1600.avif 1600w, assets/img/naejangsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="../assets/img/naejangsan/hero-640.webp 640w, assets/img/naejangsan/hero-1024.webp 1024w, assets/img/naejangsan/hero-1600.webp 1600w, assets/img/naejangsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="Majestic natural landscape of Naejangsan mountain peaks and ridges" class="hero-img" sizes="100vw" src="../assets/img/naejangsan/hero-1600.jpg" srcset="../assets/img/naejangsan/hero-640.jpg 640w, assets/img/naejangsan/hero-1024.jpg 1024w, assets/img/naejangsan/hero-1600.jpg 1600w, assets/img/naejangsan/hero-2400.jpg 2400w"/>
+</picture>
+<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="../assets/video/naejangsan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="../assets/video/naejangsan/hero.mp4" type="video/mp4"/>
+</video>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Naejangsan National Park Playbook</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">Naejangsan National Park Hiking Playbook</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">A guide to Naejangsan National Park, one of South Korea's best-known mountains. Provides detailed routes, real-world maps, and tips for the Beginner Nature Observation Trail, Intermediate Seoraebong Peak Representative Course, and Advanced Ridge Traverse Course.</p>
+<!-- Course Selector Buttons -->
+<div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);">
+<button class="course-btn active green" data-course="beginner"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner: Nature Observation Trail Course</button>
+<button class="course-btn blue" data-course="intermediate"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate: Seoraebong Peak Representative Course</button>
+<button class="course-btn red" data-course="advanced"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced: Ridge Traverse Course</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://www.pexels.com/@nui-malama-169330637" rel="noopener" target="_blank">Jeonggyusong Nui MALAMA</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://pexels.com" rel="noopener" target="_blank">pexels</a></span>
+</div>
+</section>
+<main class="wrap">
+<main class="wrap" id="mainContent">
+<section class="panel green active" id="beginner">
+<div class="panel-top"><span class="level"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner</span><div><div class="panel-name">Nature Observation Trail Course</div><div class="panel-sub">Iljumun Gate → Naejangsa Temple → Wonjeogam Hermitage → Sarangui Dari Bridge → Byeokryeonam Hermitage → Iljumun Gate · 3.9km · 1h 20m</div></div></div>
+<div class="tabs">
+<button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview">
+<div class="grid6">
+<div class="card kpi"><div class="num">3.9km</div><div class="txt">Total Distance</div></div>
+<div class="card kpi"><div class="num">1h 20m</div><div class="txt">Estimated Time</div></div>
+<div class="card kpi"><div class="num">Down</div><div class="txt">Difficulty</div></div>
+<div class="card kpi"><div class="num">Flat</div><div class="txt">Main Characteristics</div></div>
+<div class="card kpi"><div class="num">Maple Tunnel</div><div class="txt">Key Attractions</div></div>
+<div class="card kpi"><div class="num">Family-friendly</div><div class="txt">Recommended for</div></div>
+</div>
+<div class="section-title"><h2>Course Flow</h2><div class="line"></div></div>
+<div class="card"><div class="flow"><span class="chip">🚩 Iljumun Gate</span><span class="arr">→</span><span class="chip">🍁 Autumn Foliage Tunnel</span><span class="arr">→</span><span class="chip">⛩ Naejangsa Temple</span><span class="arr">→</span><span class="chip">Wonjeokam Hermitage</span><span class="arr">→</span><span class="chip">Bridge of Love</span><span class="arr">→</span><span class="chip">Byeongnyeonam Hermitage</span><span class="arr">→</span><span class="chip">🚩 Iljumun Gate</span></div></div>
+<div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div>
+<div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#3e7d3f" stop-opacity=".35"></stop><stop offset="100%" stop-color="#3e7d3f" stop-opacity=".06"></stop></lineargradient></defs><path d="M20 180 C120 168, 180 155, 260 148 S430 142, 520 134 S650 144, 740 154 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 180 C120 168, 180 155, 260 148 S430 142, 520 134 S650 144, 740 154" fill="none" stroke="#3e7d3f" stroke-linecap="round" stroke-width="4"></path><circle cx="380" cy="144" fill="#3e7d3f" r="6"></circle><text fill="#3e7d3f" font-size="12" x="395" y="138">Naejangsa Temple</text><text fill="#7a7367" font-size="11" x="20" y="205">Iljumun Gate</text><text fill="#7a7367" font-size="11" x="690" y="205">Starting Point</text></svg></div>
+<p class="desc">This is the least strenuous course in Naejangsan National Park, known as one of the first nature observation trails in a national park. It's perfect for families, the elderly, and those seeking a light stroll, as it allows you to explore the Autumn Foliage Tunnel, Naejangsa Temple, and Byeongnyeonam Hermitage together.</p>
+</div><div class="tabpane" data-pane="route">
+<div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div>
+<div class="segments">
+<div class="seg"><div class="seg-head"><div class="seg-no">Exit</div><div><div class="seg-title">Depart from Iljumun Gate</div><div class="seg-meta">0km · Group Facility Area</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The hike officially begins at Iljumun Gate, past the parking lot, ticket office, and restrooms. From the start, maple trees and a wide trail continue, making it suitable as a warm-up section.</p><div class="bar"><div class="fill" style="width:15%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>During peak autumn season, arriving before 9 AM is advantageous to avoid crowds.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Iljumun Gate → Autumn Foliage Tunnel</div><div class="seg-meta">0.8km · 15 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is the Maple Tunnel section, a symbol of Naejangsan National Park. The slope is almost flat and wide, making it suitable for strollers and light walking.</p><div class="bar"><div class="fill" style="width:12%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>It is best to take photos in the morning before the backlight.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Maple Tunnel → Naejangsa Temple</div><div class="seg-meta">0.7km · 15 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Enter the temple area along the valley and forest path. The area around Naejangsa Temple is a particularly popular spot for visitors in autumn.</p><div class="bar"><div class="fill" style="width:18%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Quiet viewing etiquette must be observed within the precincts of Naejangsa Temple.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">Naejangsa Temple → Wonjeogam Hermitage → Sarangui Dari Bridge</div><div class="seg-meta">1.3km · 25 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is the core section of the Nature Observation Trail. Gentle forest paths, streams, and bridges continue, allowing even beginners to walk safely.</p><div class="bar"><div class="fill" style="width:22%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>The area around Wonjeokam Hermitage has a lot of shade, making it relatively cool even in summer.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">Down</div><div><div class="seg-title">Return to Iljumun Gate via Byeongnyeonam Hermitage</div><div class="seg-meta">1.1km · 25 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>After passing Byeongnyeonam Hermitage, you return to the starting point. The final section is also gentle, reducing strain on the knees.</p><div class="bar"><div class="fill" style="width:15%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After descending, the route to Naejangsan Cultural Plaza's cafes and restaurants is convenient.</div></div></div>
+</div>
+</div><div class="tabpane" data-pane="tips">
+<div class="tips-grid">
+<div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Preparation &amp; Gear</h2><ul><li>Light sneakers or trekking shoes</li><li>Water 500mL~1L</li><li>Light outerwear in autumn</li></ul></div>
+<div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg>Recommended Points</h2><ul><li>Maple Tunnel</li><li>Pond in front of Naejangsa Temple</li><li>Byeongnyeonam Hermitage Forest Path</li></ul></div>
+<div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Transportation</h2><ul><li>After Jeongeup Station, city bus No. 171, etc., are available.</li><li>Check shuttle operation during peak season</li><li>Alight at Naejangsan Tourist Complex and proceed on foot</li></ul></div>
+</div>
+</div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map">
+<div class="section-title"><h2>Course Map</h2><div class="line"></div></div>
+<div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M90 330 C170 300, 210 245, 285 225 S430 225, 520 245 S630 290, 690 320" fill="none" stroke="#3e7d3f" stroke-linecap="round" stroke-width="6"></path><circle cx="90" cy="330" fill="#3e7d3f" r="11"></circle><circle cx="250" cy="236" fill="#3e7d3f" r="9"></circle><circle cx="405" cy="228" fill="#3e7d3f" r="9"></circle><circle cx="530" cy="252" fill="#3e7d3f" r="9"></circle><circle cx="690" cy="320" fill="#3e7d3f" r="11"></circle><text fill="var(--text)" font-size="12" x="103" y="325">Iljumun Gate</text><text fill="var(--text)" font-size="12" x="262" y="230">Maple Tunnel</text><text fill="var(--text)" font-size="12" x="417" y="222">Naejangsa Temple</text><text fill="var(--text)" font-size="12" x="542" y="246">Wonjeokam Hermitage</text><text fill="var(--text)" font-size="12" x="622" y="344">Byeongnyeonam Hermitage · Return</text><text fill="var(--muted)" font-size="12" x="30" y="48">Flat, Walkable Loop Course</text></svg></div>
+<div class="section-title"><h2>Checkpoint table</h2><div class="line"></div></div>
+<div class="table-wrap"><table><thead><tr><th>Point</th><th>Elevation</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Iljumun Gate</td><td>Approx. 180m</td><td>0km</td><td>Adjacent to parking lot and tourist area</td></tr><tr><td>Maple Tunnel</td><td>Approx. 190m</td><td>0.8km</td><td>Representative Photo Zone</td></tr><tr><td>Naejangsa Temple</td><td>Approx. 220m</td><td>1.5km</td><td>Temple/Rest Point</td></tr><tr><td>Wonjeokam Hermitage</td><td>Approx. 250m</td><td>2.3km</td><td>Quiet forest path section</td></tr><tr><td>Bridge of Love</td><td>Approx. 240m</td><td>2.9km</td><td>Valley/Bridge Point</td></tr><tr><td>Byeongnyeonam Hermitage</td><td>Approx. 210m</td><td>3.3km</td><td>Attraction just before return</td></tr></tbody></table></div>
+</div></div></div>
+</section>
+<section class="panel blue" id="intermediate">
+<div class="panel-top"><span class="level"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate</span><div><div class="panel-name">Seoraebong Peak Representative Course</div><div class="panel-sub">Iljumun Gate → Byeokryeonam Hermitage → Seoraebong Peak (624m) → Bulchulbong Peak (622m) → Wonjeogam Hermitage → Iljumun Gate · 5.9km · 4h</div></div></div>
+<div class="tabs">
+<button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview">
+<div class="grid6">
+<div class="card kpi"><div class="num">5.9km</div><div class="txt">Total Distance</div></div><div class="card kpi"><div class="num">4 hours</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">624m</div><div class="txt">Seoraebong Peak</div></div><div class="card kpi"><div class="num">622m</div><div class="txt">Bulchulbong Peak</div></div><div class="card kpi"><div class="num">Medium</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Rocky Ridge</div><div class="txt">Key Attractions</div></div>
+</div>
+<div class="section-title"><h2>Course Flow</h2><div class="line"></div></div>
+<div class="card"><div class="flow"><span class="chip">🚩 Iljumun Gate</span><span class="arr">→</span><span class="chip">Byeongnyeonam Hermitage</span><span class="arr">→</span><span class="chip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Seoraebong Peak 624m</span><span class="arr">→</span><span class="chip">Bulchulbong Peak 622m</span><span class="arr">→</span><span class="chip">Wonjeokam Hermitage</span><span class="arr">→</span><span class="chip">🚩 Iljumun Gate</span></div></div>
+<div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div>
+<div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2d6faa" stop-opacity=".34"></stop><stop offset="100%" stop-color="#2d6faa" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 186 C120 170, 180 140, 250 92 S350 46, 410 76 S500 120, 560 98 S660 130, 740 178 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 186 C120 170, 180 140, 250 92 S350 46, 410 76 S500 120, 560 98 S660 130, 740 178" fill="none" stroke="#2d6faa" stroke-linecap="round" stroke-width="4"></path><circle cx="330" cy="54" fill="#2d6faa" r="6"></circle><circle cx="560" cy="98" fill="#2d6faa" r="6"></circle><text fill="#2d6faa" font-size="12" x="344" y="48">Seoraebong Peak</text><text fill="#2d6faa" font-size="12" x="574" y="92">Bulchulbong Peak</text></svg></div>
+<p class="desc">The Seoraebong Peak course is a representative trail of Naejangsan National Park, widely known as a 5.9km, approximately 4-hour course connecting Iljumun Gate, Byeongnyeonam Hermitage, Seoraebong Peak, Bulchulbong Peak, and Wonjeokam Hermitage. It is suitable as a representative route for intermediate hikers due to its excellent views of strange rock formations and rocky ridges, while not being excessively long.</p>
+</div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments">
+<div class="seg"><div class="seg-head"><div class="seg-no">Exit</div><div><div class="seg-title">Depart from Iljumun Gate</div><div class="seg-meta">0km · Naejangsa Temple Area</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This section involves entering towards Naejangsa Temple and warming up to Byeongnyeonam Hermitage. The beginning is gentle, but conserving energy before the main ascent is important.</p><div class="bar"><div class="fill" style="width:18%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Please check with the visitor center first for same-day access restrictions.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Byeongnyeonam Hermitage → Seoraebong Peak</div><div class="seg-meta">1.8km · 1 hr 20 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The Seoraebong Peak section features a continuous series of stairs and rocky ridge climbs. As its name suggests, it is characterized by a rocky ridge resembling a farm harrow.</p><div class="bar"><div class="fill" style="width:68%"></div></div><div class="warn"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>After rain, rocks and fallen leaves can be slippery, so caution is needed.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Seoraebong Peak → Bulchulbong Peak</div><div class="seg-meta">1.1km · 40 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is the core section with the most spectacular ridge views. From the rock observatory, you can see the peaks of Naejangsan National Park and the autumn foliage ridges at a glance.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After taking photos at the summit of Seoraebong Peak, it is recommended to take a long break in the Bulchulbong Peak section.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">Bulchulbong Peak → Wonjeokam Hermitage</div><div class="seg-meta">1.5km · 55 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The descent section is continuously sloped, but the abundant forest shade slightly reduces the perceived burden. Using trekking poles is advantageous due to the strain on the knees.</p><div class="bar"><div class="fill" style="width:55%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After descending, it's good to quickly replenish water and snacks at Wonjeokam Temple.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">Down</div><div><div class="seg-title">Wonjeokam Hermitage → Return to Iljumun Gate</div><div class="seg-meta">1.5km · 1 hr</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The trail concludes with a gentle promenade. During peak season, there may be large crowds from the descent to Iljumun Gate.</p><div class="bar"><div class="fill" style="width:25%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Easy access to the restaurant area in the collective facility zone makes it convenient for meals after hiking.</div></div></div>
+</div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Gear</h2><ul><li>Trekking shoes with good grip</li><li>1 or more trekking poles recommended</li><li>Water 1~1.5L</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Caution</h2><ul><li>Many rocky ridge and stair sections</li><li>Slippery leaves after rain</li><li>Severe autumn crowd congestion</li></ul></div><div class="card tipcard"><h2>🚗 Transportation &amp; Parking</h2><ul><li>Access via Jeongeup IC or Naejangsan IC</li><li>Parking lots 1-3 are paid, crowded during peak season</li><li>Accessible by city bus from Jeongeup Station</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M92 336 C170 298, 216 248, 286 170 S380 80, 430 112 S505 188, 562 142 S660 210, 696 324" fill="none" stroke="#2d6faa" stroke-linecap="round" stroke-width="6"></path><circle cx="92" cy="336" fill="#2d6faa" r="11"></circle><circle cx="260" cy="190" fill="#2d6faa" r="10"></circle><circle cx="430" cy="112" fill="#2d6faa" r="10"></circle><circle cx="560" cy="142" fill="#2d6faa" r="10"></circle><circle cx="696" cy="324" fill="#2d6faa" r="11"></circle><text font-size="12" x="108" y="332">Iljumun Gate</text><text font-size="12" x="220" y="204">Byeongnyeonam Hermitage</text><text font-size="12" x="444" y="106">Seoraebong Peak 624m</text><text font-size="12" x="574" y="136">Bulchulbong Peak 622m</text><text font-size="12" x="616" y="338">Wonjeokam Hermitage / Return</text></svg></div><div class="section-title"><h2>Checkpoint table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Elevation</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Iljumun Gate</td><td>Approx. 180m</td><td>0km</td><td>Starting Point</td></tr><tr><td>Byeongnyeonam Hermitage</td><td>Approx. 300m</td><td>1.0km</td><td>Start of serious ascent</td></tr><tr><td>Seoraebong Peak</td><td>624m</td><td>2.8km</td><td>Representative Rock Ridge View</td></tr><tr><td>Bulchulbong Peak</td><td>622m</td><td>3.9km</td><td>Ridge Key Point</td></tr><tr><td>Wonjeokam Hermitage</td><td>Approx. 260m</td><td>5.0km</td><td>Descent Rest Point</td></tr><tr><td>Iljumun Gate</td><td>Approx. 180m</td><td>5.9km</td><td>Return to starting point</td></tr></tbody></table></div></div></div></div>
+</section>
+<section class="panel red" id="advanced">
+<div class="panel-top"><span class="level"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Advanced</span><div><div class="panel-name">Ridge Traverse Course</div><div class="panel-sub">Iljumun Gate → Seoraebong Peak → Bulchulbong Peak → Manghaebong Peak → Yeonjibong Peak → Kkachibong Peak → Sinseonbong Peak → Yeonjabong Peak → Janggunbong Peak → Dongguri · 11.7km · 7h</div></div></div>
+<div class="tabs">
+<button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button>
+</div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview">
+<div class="grid6"><div class="card kpi"><div class="num">11.7km</div><div class="txt">Total Distance</div></div><div class="card kpi"><div class="num">7 hours</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">763m</div><div class="txt">Sinseonbong Peak</div></div><div class="card kpi"><div class="num">8 Peaks</div><div class="txt">Major Peaks</div></div><div class="card kpi"><div class="num">Upper Intermediate</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Traverse type</div><div class="txt">Character</div></div></div>
+<div class="section-title"><h2>Course Flow</h2><div class="line"></div></div>
+<div class="card"><div class="flow"><span class="chip">Iljumun Gate</span><span class="arr">→</span><span class="chip">Seoraebong Peak</span><span class="arr">→</span><span class="chip">Bulchulbong Peak</span><span class="arr">→</span><span class="chip">Manghaebong Peak</span><span class="arr">→</span><span class="chip">Yeonjibong Peak</span><span class="arr">→</span><span class="chip">Kkachibong Peak</span><span class="arr">→</span><span class="chip">Sinseonbong Peak</span><span class="arr">→</span><span class="chip">Yeonjabong Peak</span><span class="arr">→</span><span class="chip">Janggunbong Peak</span><span class="arr">→</span><span class="chip">Dongguri</span></div></div>
+<div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div>
+<div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b93a2f" stop-opacity=".34"></stop><stop offset="100%" stop-color="#b93a2f" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 190 C80 150, 140 100, 200 84 S280 68, 330 95 S420 115, 470 98 S540 55, 590 80 S650 120, 740 165 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 190 C80 150, 140 100, 200 84 S280 68, 330 95 S420 115, 470 98 S540 55, 590 80 S650 120, 740 165" fill="none" stroke="#b93a2f" stroke-linecap="round" stroke-width="4"></path><circle cx="548" cy="58" fill="#b93a2f" r="6"></circle><text fill="#b93a2f" font-size="12" x="561" y="53">Sinseonbong Peak 763m</text></svg></div>
+<p class="desc">The Ridge Traverse Course is introduced as an 11.7 km, approximately 7-hour thru-hiking route starting from Iljumun Gate and connecting Seoraebong Peak, Bulchulbong Peak, Manghaebong Peak, Yeonjibong Peak, Kkachibong Peak, Sinseonbong Peak, Yeonjabong Peak, Janggunbong Peak, and Dongguri. As it connects most of Naejangsan National Park's key peaks, it is suitable for experienced hikers for a day hike.</p>
+</div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments">
+<div class="seg"><div class="seg-head"><div class="seg-no">Exit</div><div><div class="seg-title">Iljumun Gate → Seoraebong Peak</div><div class="seg-meta">2.8km · 1 hr 40 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is the first gateway of the Ridge Traverse. It involves a significant elevation gain early on, so pace control is important.</p><div class="bar"><div class="fill" style="width:72%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Starting early in the morning and reaching the first peak between 8-9 AM allows for a more relaxed pace.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Seoraebong Peak → Bulchulbong Peak → Manghaebong Peak</div><div class="seg-meta">2.2km · 1 hr 20 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is a continuous ridge traverse section with excellent views, but short ascents and descents are repeated. It is a part where physical fatigue can easily accumulate.</p><div class="bar"><div class="fill" style="width:78%"></div></div><div class="warn"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>In summer, there is little shade, leading to significant sun exposure.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Manghaebong Peak → Yeonjibong Peak → Kkachibong Peak</div><div class="seg-meta">2.6km · 1 hr 30 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This section offers the strongest feeling of traversing the main ridge of Naejangsan National Park. The views open up widely before and after Kkachibong Peak, making it a popular spot for photography.</p><div class="bar"><div class="fill" style="width:70%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>It is best to take short, frequent breaks for snacks and hydration.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">Kkachibong Peak → Sinseonbong Peak → Yeonjabong Peak</div><div class="seg-meta">2.3km · 1 hr 20 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Sinseonbong Peak is the highest peak of Naejangsan National Park and a highlight of the traverse. The ridge towards the upper cable car station gets closer, but careful walking is still required.</p><div class="bar"><div class="fill" style="width:74%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After a sufficient break with views from Sinseonbong Peak, prepare for the descent in the latter half.</div></div></div>
+<div class="seg"><div class="seg-head"><div class="seg-no">Down</div><div><div class="seg-title">Yeonjabong Peak → Janggunbong Peak → Dongguri Descent</div><div class="seg-meta">1.8km · 1 hr 10 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is a descent section with remaining elevation changes until the end. Ankle injuries are common due to accumulated fatigue, so concentration is required.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="warn"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>You should plan to complete your descent before sunset.</div></div></div>
+</div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Essential Gear</h2><ul><li>Hiking boots, trekking poles, gloves</li><li>Water 1.5~2L</li><li>Plenty of lunch and snacks</li><li>Headlamp (for emergencies)</li></ul></div><div class="card tipcard"><h2>⏰ Time Plan</h2><ul><li>Recommended departure between 6-7 AM</li><li>Recommended lunch timing before/after Sinseonbong Peak</li><li>Aim to descend Dongguri before sunset</li></ul></div><div class="card tipcard"><h2>🚕 Transportation Operation</h2><ul><li>Confirm return route from endpoint in advance</li><li>Check connecting transportation for Jeongeup Station and parking lot</li><li>Check peak season shuttle and parking dispersion information</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M70 330 C120 286, 170 185, 230 145 S330 120, 380 160 S450 190, 500 156 S560 108, 610 132 S670 200, 700 280" fill="none" stroke="#b93a2f" stroke-linecap="round" stroke-width="6"></path><g fill="#b93a2f"><circle cx="70" cy="330" r="9"></circle><circle cx="210" cy="150" r="9"></circle><circle cx="315" cy="135" r="9"></circle><circle cx="400" cy="170" r="9"></circle><circle cx="490" cy="160" r="9"></circle><circle cx="560" cy="110" r="9"></circle><circle cx="635" cy="145" r="9"></circle><circle cx="700" cy="280" r="9"></circle></g><text font-size="12" x="84" y="324">Iljumun Gate</text><text font-size="12" x="222" y="144">Seoraebong Peak</text><text font-size="12" x="327" y="129">Bulchulbong Peak</text><text font-size="12" x="412" y="164">Manghaebong Peak</text><text font-size="12" x="502" y="154">Kkachibong Peak</text><text font-size="12" x="572" y="104">Sinseonbong Peak</text><text font-size="12" x="647" y="139">Yeonjabong Peak</text><text font-size="12" x="646" y="298">Janggunbong Peak · Dongguri</text></svg></div><div class="section-title"><h2>Checkpoint table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Elevation</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Iljumun Gate</td><td>Approx. 180m</td><td>0km</td><td>Departure</td></tr><tr><td>Seoraebong Peak</td><td>624m</td><td>2.8km</td><td>First key viewpoint</td></tr><tr><td>Bulchulbong Peak</td><td>622m</td><td>3.9km</td><td>Rocky Ridge Line</td></tr><tr><td>Manghaebong Peak</td><td>Approx. 680m</td><td>5.0km</td><td>Continuous ascents and descents</td></tr><tr><td>Kkachibong Peak</td><td>Approx. 717m</td><td>7.3km</td><td>Wide View</td></tr><tr><td>Sinseonbong Peak</td><td>763m</td><td>8.5km</td><td>Highest Peak</td></tr><tr><td>Yeonjabong Peak</td><td>Approx. 675m</td><td>9.5km</td><td>Cable Car Upper Section Connection Ticket</td></tr><tr><td>Dongguri</td><td>Approx. 260m</td><td>11.7km</td><td>End of traverse</td></tr></tbody></table></div></div></div></div>
+</section>
+</main>
+<!-- Photo Gallery Grid -->
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span>Naejangsan National Park's Four Seasons &amp; Attractions</h2>
+<div class="gallery-grid">
+<!-- Gallery Image Button 1 -->
+<button aria-haspopup="dialog" aria-label="View Naejangsan National Park hiking courses in full screen" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nuhyil-ahammed-282191113' target='_blank' rel='noopener'&gt;Nuhyil Ahammed&lt;/a&gt; on pexels" data-index="0">
+<picture class="gallery-picture">
+<source srcset="../assets/img/naejangsan/g1.avif" type="image/avif"/>
+<source srcset="../assets/img/naejangsan/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/naejangsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Naejangsan National Park Hiking Course</span>
+</div>
+</button>
+<!-- Gallery Image Button 2 -->
+<button aria-haspopup="dialog" aria-label="View Naejangsan National Park Scenery in full screen" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;Jeonggyusong Nui MALAMA&lt;/a&gt; on pexels" data-index="1">
+<picture class="gallery-picture">
+<source srcset="../assets/img/naejangsan/g2.avif" type="image/avif"/>
+<source srcset="../assets/img/naejangsan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/naejangsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Naejangsan National Park Scenery</span>
+</div>
+</button>
+<!-- Gallery Image Button 3 -->
+<button aria-haspopup="dialog" aria-label="View Naejangsan National Park Landscape in full screen" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@nui-malama-169330637' target='_blank' rel='noopener'&gt;Jeonggyusong Nui MALAMA&lt;/a&gt; on pexels" data-index="2">
+<picture class="gallery-picture">
+<source srcset="../assets/img/naejangsan/g3.avif" type="image/avif"/>
+<source srcset="../assets/img/naejangsan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/naejangsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Naejangsan National Park Landscape</span>
+</div>
+</button>
+<!-- Gallery Image Button 4 -->
+<button aria-haspopup="dialog" aria-label="View Naejangsan National Park Trails in full screen" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/@vasilij-zajcev-3061980' target='_blank' rel='noopener'&gt;Vasilij Zajcev&lt;/a&gt; on pexels" data-index="3">
+<picture class="gallery-picture">
+<source srcset="../assets/img/naejangsan/g4.avif" type="image/avif"/>
+<source srcset="../assets/img/naejangsan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/naejangsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Naejangsan National Park Trails</span>
+</div>
+</button>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">Before your actual hike, be sure to reconfirm trail closures, parking, shuttle, and cable car operation status with Naejangsan National Park and on-site information.</div>
+</footer>
+<script>
+    const themeBtn=document.getElementById('themeBtn');
+    let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';
+    document.documentElement.setAttribute('data-theme',mode);
+    themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
+
+    const courseBtns=[...document.querySelectorAll('.course-btn')];
+    const panels=[...document.querySelectorAll('.panel')];
+    courseBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      const id=btn.dataset.course;
+      courseBtns.forEach(b=>b.classList.remove('active'));
+      btn.classList.add('active');
+      panels.forEach(p=>p.classList.remove('active'));
+      document.getElementById(id).classList.add('active');
+    }));
+
+    document.querySelectorAll('.panel').forEach(panel=>{
+      const tabs=[...panel.querySelectorAll('.tab')];
+      const panes=[...panel.querySelectorAll('.tabpane')];
+      tabs.forEach(tab=>tab.addEventListener('click',()=>{
+        tabs.forEach(t=>t.classList.remove('active'));
+        panes.forEach(p=>p.classList.remove('active'));
+        tab.classList.add('active');
+        panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active');
+      }));
+    });
+
+    document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+  </script>
+<!-- Lightbox Dialog Overlay -->
+<div aria-hidden="true" aria-label="View larger image" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
+<button aria-label="Close Gallery" class="lightbox-close">×</button>
+<button aria-label="Previous image" class="lightbox-prev">❮</button>
+<button aria-label="Next image" class="lightbox-next">❯</button>
+<div class="lightbox-content">
+<figure class="lightbox-figure">
+<figcaption class="lightbox-caption"></figcaption>
+</figure>
+<div class="photo-credit lightbox-credit"></div>
+</div>
+</div>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script>
+<script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script>
+<!-- Desktop Cinematic Video Lazy Loader -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+</body>
+</html>
