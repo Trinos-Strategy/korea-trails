@@ -10,7 +10,7 @@
 <link href="assets/css/design-system.css" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Black+Han+Sans&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&amp;family=Black+Han+Sans&amp;display=swap" rel="stylesheet"/>
 <style>
 /* COURSE SELECTOR */
 .course-selector {
@@ -727,36 +727,36 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 </style>
-</link><meta content="assets/img/bukhansan/og.png" property="og:image"/><meta content="assets/img/bukhansan/og.png" name="twitter:image"/></head>
+<meta content="assets/img/bukhansan/og.png" property="og:image"/><meta content="assets/img/bukhansan/og.png" name="twitter:image"/><script src="assets/js/i18n.js"></script><link href="bukhansan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/bukhansan-playbook.html" hreflang="en" rel="alternate"/><link href="bukhansan-playbook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <div class="app-wrapper">
 <!-- HEADER -->
 <header class="header">
 <div class="header-logo">
-<svg class="logo-svg" viewbox="0 0 36 36" fill="none" aria-label="북한산 로고">
-  <defs>
-    <linearGradient id="grad36_sun" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#f43f5e"/>
-      <stop offset="100%" stop-color="#be123c"/>
-    </linearGradient>
-    <linearGradient id="grad36_mt" x1="0" y1="1" x2="0" y2="0">
-      <stop offset="0%" stop-color="#0f172a"/>
-      <stop offset="100%" stop-color="#0d9488"/>
-    </linearGradient>
-    <linearGradient id="grad36_wind" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"/>
-      <stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"/>
-      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"/>
-    </linearGradient>
-  </defs>
-  <circle cx="18" cy="18" r="16" stroke="#ca8a04" stroke-width="0.5" stroke-dasharray="1 2" opacity="0.4"/>
-  <circle cx="27" cy="10" r="2.2" fill="url(#grad36_sun)"/>
-  <circle cx="9" cy="10" r="2.2" fill="#fbbf24"/>
-  <path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-width="0.8" stroke-linejoin="round"/>
-  <path d="M2 22 Q12 14 18 20 T34 16" stroke="url(#grad36_wind)" stroke-width="1.8" fill="none" stroke-linecap="round"/>
-  <path d="M4 18 Q14 24 20 16 T32 22" stroke="url(#grad36_wind)" stroke-width="1" fill="none" stroke-linecap="round" opacity="0.6"/>
-  <path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" stroke="#0284c7" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+<svg aria-label="북한산 로고" class="logo-svg" fill="none" viewbox="0 0 36 36">
+<defs>
+<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
+<stop offset="0%" stop-color="#f43f5e"></stop>
+<stop offset="100%" stop-color="#be123c"></stop>
+</lineargradient>
+<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
+<stop offset="0%" stop-color="#0f172a"></stop>
+<stop offset="100%" stop-color="#0d9488"></stop>
+</lineargradient>
+<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
+<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
+<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
+</lineargradient>
+</defs>
+<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
+<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
+<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
+<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
+<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
+<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
+<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
 </svg>
 <div>
 <div class="logo-text">북한산</div>
@@ -764,7 +764,10 @@
 </div>
 </div>
 <div class="header-actions">
-<button aria-label="다크모드 전환" class="theme-toggle" data-theme-toggle="">
+<div class="lang-toggle">
+<button aria-label="한국어" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="false" class="lang-btn" onclick="changeLanguage('en')">EN</button>
+</div><button aria-label="다크모드 전환" class="theme-toggle" data-theme-toggle="">
 <svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
 </button>
 </div>
@@ -778,8 +781,8 @@
 <img alt="북한산 정상과 웅장한 산세가 어우러진 대자연 풍경 / Majestic natural landscape of Bukhansan mountain peaks and ridges" class="hero-img" sizes="100vw" src="assets/img/bukhansan/hero-1600.jpg" srcset="assets/img/bukhansan/hero-640.jpg 640w, assets/img/bukhansan/hero-1024.jpg 1024w, assets/img/bukhansan/hero-1600.jpg 1600w, assets/img/bukhansan/hero-2400.jpg 2400w"/>
 </picture>
 <!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
-<video id="heroVideo" class="hero-bg-video" muted loop playsinline poster="assets/video/bukhansan/hero-poster.jpg" preload="none" style="display: none;">
-  <source src="assets/video/bukhansan/hero.mp4" type="video/mp4">
+<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="assets/video/bukhansan/hero-poster.jpg" preload="none" style="display: none;">
+<source src="assets/video/bukhansan/hero.mp4" type="video/mp4"/>
 </video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
@@ -1091,7 +1094,7 @@
 <div class="legend-item"><span>🏛</span>사찰</div>
 <div class="legend-item"><span><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></span>교통</div>
 </div>
-<div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="북한산 초급 비봉 능선 코스 실사 지도"></div>
+<div aria-label="북한산 초급 비봉 능선 코스 실사 지도" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
 <div class="table-wrap">
@@ -1390,7 +1393,7 @@
 <line stroke="#c06000" stroke-dasharray="6,3" stroke-width="2" x1="20" x2="70" y1="55" y2="55"></line>
 <text fill="var(--color-text-faint)" font-size="8" x="75" y="59">하산로</text>
 </svg>
-<div class="leaflet-map" id="map-intermediate" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="북한산 중급 백운대 코스 실사 지도"></div>
+<div aria-label="북한산 중급 백운대 코스 실사 지도" class="leaflet-map" id="map-intermediate" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
 <div class="table-wrap">
@@ -1707,7 +1710,7 @@
 <line stroke="#a01830" stroke-width="2.5" x1="20" x2="70" y1="40" y2="40"></line>
 <text fill="var(--color-text-faint)" font-size="8" x="75" y="44">종주 경로</text>
 </svg>
-<div class="leaflet-map" id="map-advanced" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="북한산 고급 만경대 능선 종주 코스 실사 지도"></div>
+<div aria-label="북한산 고급 만경대 능선 종주 코스 실사 지도" class="leaflet-map" id="map-advanced" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
 <div class="table-wrap">
@@ -1741,8 +1744,8 @@
 <!-- 지도 -->
 <!-- 팁 -->
 </div><!-- /advanced panel -->
-</main></div><!-- /container -->
-</div><!-- /app-wrapper -->
+</div></main></div><!-- /container -->
+<!-- /app-wrapper -->
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
 <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
@@ -2048,120 +2051,118 @@
 </button>
 </div>
 </section>
-
 <section class="video-section">
-  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-    <span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내 트래킹 영상
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내 트래킹 영상
   </h2>
-  <div class="video-grid">
-    <!-- Video Card 1 -->
-    <div class="video-card">
-      <div id="shorts-Vk7J8vaG3Y0" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-Vk7J8vaG3Y0', 'Vk7J8vaG3Y0', '칼바위')" aria-label="칼바위 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/Vk7J8vaG3Y0/hqdefault.jpg" alt="칼바위 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">칼바위</span>
-        <a class="video-link" href="https://youtube.com/shorts/Vk7J8vaG3Y0" target="_blank" rel="noopener noreferrer">
+<div class="video-grid">
+<!-- Video Card 1 -->
+<div class="video-card">
+<div class="video-container" id="shorts-Vk7J8vaG3Y0">
+<button aria-label="칼바위 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-Vk7J8vaG3Y0', 'Vk7J8vaG3Y0', '칼바위')">
+<img alt="칼바위 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/Vk7J8vaG3Y0/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">칼바위</span>
+<a class="video-link" href="https://youtube.com/shorts/Vk7J8vaG3Y0" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 2 -->
-    <div class="video-card">
-      <div id="shorts-IFi9TguP7f0" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-IFi9TguP7f0', 'IFi9TguP7f0', '대동문·조국문')" aria-label="대동문·조국문 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/IFi9TguP7f0/hqdefault.jpg" alt="대동문·조국문 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">대동문·조국문</span>
-        <a class="video-link" href="https://youtube.com/shorts/IFi9TguP7f0" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 2 -->
+<div class="video-card">
+<div class="video-container" id="shorts-IFi9TguP7f0">
+<button aria-label="대동문·조국문 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-IFi9TguP7f0', 'IFi9TguP7f0', '대동문·조국문')">
+<img alt="대동문·조국문 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/IFi9TguP7f0/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">대동문·조국문</span>
+<a class="video-link" href="https://youtube.com/shorts/IFi9TguP7f0" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 3 -->
-    <div class="video-card">
-      <div id="shorts-ZPHm7E6kvrA" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-ZPHm7E6kvrA', 'ZPHm7E6kvrA', '능선 구간')" aria-label="능선 구간 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/ZPHm7E6kvrA/hqdefault.jpg" alt="능선 구간 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">능선 구간</span>
-        <a class="video-link" href="https://youtube.com/shorts/ZPHm7E6kvrA" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 3 -->
+<div class="video-card">
+<div class="video-container" id="shorts-ZPHm7E6kvrA">
+<button aria-label="능선 구간 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-ZPHm7E6kvrA', 'ZPHm7E6kvrA', '능선 구간')">
+<img alt="능선 구간 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/ZPHm7E6kvrA/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">능선 구간</span>
+<a class="video-link" href="https://youtube.com/shorts/ZPHm7E6kvrA" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 4 -->
-    <div class="video-card">
-      <div id="shorts-vaKLvPNpVdw" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-vaKLvPNpVdw', 'vaKLvPNpVdw', '중흥사 고양이')" aria-label="중흥사 고양이 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/vaKLvPNpVdw/hqdefault.jpg" alt="중흥사 고양이 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">중흥사 고양이</span>
-        <a class="video-link" href="https://youtube.com/shorts/vaKLvPNpVdw" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 4 -->
+<div class="video-card">
+<div class="video-container" id="shorts-vaKLvPNpVdw">
+<button aria-label="중흥사 고양이 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-vaKLvPNpVdw', 'vaKLvPNpVdw', '중흥사 고양이')">
+<img alt="중흥사 고양이 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/vaKLvPNpVdw/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">중흥사 고양이</span>
+<a class="video-link" href="https://youtube.com/shorts/vaKLvPNpVdw" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 5 -->
-    <div class="video-card">
-      <div id="shorts-b5vbksD_0OE" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-b5vbksD_0OE', 'b5vbksD_0OE', '고양이 2')" aria-label="고양이 2 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/b5vbksD_0OE/hqdefault.jpg" alt="고양이 2 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">고양이 2</span>
-        <a class="video-link" href="https://youtube.com/shorts/b5vbksD_0OE" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 5 -->
+<div class="video-card">
+<div class="video-container" id="shorts-b5vbksD_0OE">
+<button aria-label="고양이 2 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-b5vbksD_0OE', 'b5vbksD_0OE', '고양이 2')">
+<img alt="고양이 2 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/b5vbksD_0OE/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">고양이 2</span>
+<a class="video-link" href="https://youtube.com/shorts/b5vbksD_0OE" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 6 -->
-    <div class="video-card">
-      <div id="shorts-zKM1r8udgDY" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-zKM1r8udgDY', 'zKM1r8udgDY', '고양이 3')" aria-label="고양이 3 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/zKM1r8udgDY/hqdefault.jpg" alt="고양이 3 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">고양이 3</span>
-        <a class="video-link" href="https://youtube.com/shorts/zKM1r8udgDY" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 6 -->
+<div class="video-card">
+<div class="video-container" id="shorts-zKM1r8udgDY">
+<button aria-label="고양이 3 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-zKM1r8udgDY', 'zKM1r8udgDY', '고양이 3')">
+<img alt="고양이 3 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/zKM1r8udgDY/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">고양이 3</span>
+<a class="video-link" href="https://youtube.com/shorts/zKM1r8udgDY" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-    <!-- Video Card 7 -->
-    <div class="video-card">
-      <div id="shorts-pJksnZhdD1A" class="video-container">
-        <button class="video-facade-btn" onclick="playShortsVideo('shorts-pJksnZhdD1A', 'pJksnZhdD1A', '백운대 말벌')" aria-label="백운대 말벌 유튜브 쇼츠 재생">
-          <img class="video-thumbnail" src="https://i.ytimg.com/vi/pJksnZhdD1A/hqdefault.jpg" alt="백운대 말벌 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
-          <div class="video-play-btn"><div class="video-play-icon"></div></div>
-        </button>
-      </div>
-      <div class="video-info">
-        <span class="video-label">백운대 말벌</span>
-        <a class="video-link" href="https://youtube.com/shorts/pJksnZhdD1A" target="_blank" rel="noopener noreferrer">
+</div>
+</div>
+<!-- Video Card 7 -->
+<div class="video-card">
+<div class="video-container" id="shorts-pJksnZhdD1A">
+<button aria-label="백운대 말벌 유튜브 쇼츠 재생" class="video-facade-btn" onclick="playShortsVideo('shorts-pJksnZhdD1A', 'pJksnZhdD1A', '백운대 말벌')">
+<img alt="백운대 말벌 유튜브 쇼츠 썸네일" class="video-thumbnail" decoding="async" loading="lazy" src="https://i.ytimg.com/vi/pJksnZhdD1A/hqdefault.jpg"/>
+<div class="video-play-btn"><div class="video-play-icon"></div></div>
+</button>
+</div>
+<div class="video-info">
+<span class="video-label">백운대 말벌</span>
+<a class="video-link" href="https://youtube.com/shorts/pJksnZhdD1A" rel="noopener noreferrer" target="_blank">
           원본 쇼츠 보기 ↗
         </a>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
 </section>
-
 <script>
 // Theme toggle
 (function(){
