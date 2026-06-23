@@ -631,13 +631,45 @@
 </div>
 <span class="course-tag">초급 · 왕복</span>
 </div>
-<div class="kpi-grid">
-<div class="kpi-card"><span class="kpi-label">📏 거리</span><span class="kpi-val">약 8km</span></div>
-<div class="kpi-card"><span class="kpi-label">⏱ 소요시간</span><span class="kpi-val">3~4시간</span></div>
-<div class="kpi-card"><span class="kpi-label">⬆ 최고도</span><span class="kpi-val">560m</span></div>
-<div class="kpi-card"><span class="kpi-label">📈 누적 상승</span><span class="kpi-val">약 500m</span></div>
-<div class="kpi-card"><span class="kpi-label">🔥 난이도</span><span class="kpi-val">하~중하</span></div>
-<div class="kpi-card"><span class="kpi-label">🅿 주차</span><span class="kpi-val">불광역 (지하철)</span></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">거리</span>
+<span class="pill-value">약 8km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">소요시간</span>
+<span class="pill-value">3~4시간</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고도</span>
+<span class="pill-value">560m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg></span>
+<span class="pill-label">누적 상승</span>
+<span class="pill-value">약 500m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-fire"></use></svg></span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-parking"></use></svg></span>
+<span class="pill-label">주차</span>
+<span class="pill-value">불광역 (지하철)</span>
+</div>
 </div>
 </div>
 <!-- TABS -->
@@ -650,7 +682,7 @@
 <!-- 개요 TAB -->
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-beginner-overview">
 <div class="chart-wrap">
-<div class="chart-title">📈 고도 프로파일</div>
+<div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg> 고도 프로파일</div>
 <svg class="chart-svg" style="height:180px" viewbox="0 0 700 180">
 <defs>
 <lineargradient id="grad-b" x1="0" x2="0" y1="0" y2="1">
@@ -694,7 +726,7 @@
 <text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="670" y="143">구기</text>
 </svg>
 </div>
-<div class="section-title">📊 구간별 난이도</div>
+<div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 구간별 난이도</div>
 <div class="chart-wrap">
 <div class="diff-bar-row"><span class="diff-bar-label">접근로</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:20%"></div></div><span class="diff-bar-pct">20%</span></div>
 <div class="diff-bar-row"><span class="diff-bar-label">족두리봉</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:50%"></div></div><span class="diff-bar-pct">50%</span></div>
@@ -704,7 +736,7 @@
 </div>
 <div class="section-title">🌟 코스 특징</div>
 <div class="tips-grid" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
-<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">🚇</div><div class="tip-card-title">대중교통 접근</div><div class="tip-card-body">불광역 9번 출구에서 바로 출발. 차량 없이 서울 어디서든 편리하게 접근 가능.</div></div>
+<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg> </div><div class="tip-card-title">대중교통 접근</div><div class="tip-card-body">불광역 9번 출구에서 바로 출발. 차량 없이 서울 어디서든 편리하게 접근 가능.</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">👀</div><div class="tip-card-title">진흥왕 순수비</div><div class="tip-card-body">비봉 정상 직전 신라 진흥왕 순수비(국보) 복제비 탐방. 역사와 등산을 함께 즐길 수 있음.</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">🪨</div><div class="tip-card-title">암릉 맛집</div><div class="tip-card-body">족두리봉·비봉 구간 짧은 암릉 구간으로 초보자도 바위 등산의 짜릿함을 경험 가능.</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">🏛</div><div class="tip-card-title">승가사 하산</div><div class="tip-card-body">신라 시대 창건한 승가사를 거쳐 계곡길로 하산. 구기탐방지원센터까지 완만한 마무리.</div></div>
@@ -720,7 +752,7 @@
 <span class="route-num">출발</span>
 <span class="route-name">🚇 불광역 9번 출구</span>
 </div>
-<div class="route-meta"><span class="route-chip">🏁 고도 110m</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 고도 110m</span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -738,7 +770,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">①</span><span class="route-name">불광역 → 족두리봉 (370m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 1.8km</span><span class="route-chip">⏱ 50분</span><span class="route-chip">🟢 쉬움</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.8km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="route-chip"><span class="badge badge-trailhead">쉬움</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -756,7 +788,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">②</span><span class="route-name">족두리봉 → 향로봉 (535m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 1.0km</span><span class="route-chip">⏱ 30분</span><span class="route-chip">🟡 보통</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.0km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 30분</span><span class="route-chip"><span class="badge badge-landmark">보통</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -774,7 +806,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">③</span><span class="route-name">향로봉 → 비봉 ★ (560m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 0.5km</span><span class="route-chip">⏱ 20분</span><span class="route-chip">🟡 보통</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.5km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 20분</span><span class="route-chip"><span class="badge badge-landmark">보통</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -793,7 +825,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">④</span><span class="route-name">비봉 → 사모바위 (500m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 0.8km</span><span class="route-chip">⏱ 25분</span><span class="route-chip">🟢 쉬움</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.8km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 25분</span><span class="route-chip"><span class="badge badge-trailhead">쉬움</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -811,7 +843,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">⑤</span><span class="route-name">사모바위 → 승가사 → 구기탐방지원센터</span></div>
-<div class="route-meta"><span class="route-chip">📏 2.5km</span><span class="route-chip">⏱ 55분</span><span class="route-chip">🟢 쉬움</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 2.5km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 55분</span><span class="route-chip"><span class="badge badge-trailhead">쉬움</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -841,13 +873,13 @@
 </div><div class="tab-pane" id="tab-beginner-tips">
 <div class="tips-grid">
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">필수 장비</div><div class="tip-card-body">등산화(암릉 구간), 물 1L이상, 등산 스틱(선택), 장갑, 모자, 자외선차단제</div></div>
-<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">🍱</div><div class="tip-card-title">식음료</div><div class="tip-card-body">승가사 약수대에서 물 보충 가능. 출발 전 불광역 편의점에서 간식 준비 권장. 정상 매점 없음.</div></div>
+<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-food"></use></svg> </div><div class="tip-card-title">식음료</div><div class="tip-card-body">승가사 약수대에서 물 보충 가능. 출발 전 불광역 편의점에서 간식 준비 권장. 정상 매점 없음.</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><div class="tip-card-title">교통</div><div class="tip-card-body"><strong>출발:</strong> 지하철 6호선 불광역 9번 출구<br/><strong>도착:</strong> 구기탐방센터 → 7022·7211번 → 구파발역(3호선)</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg></div><div class="tip-card-title">안전 주의</div><div class="tip-card-body">비봉 직전 암릉 구간은 미끄럼 주의. 우측 절벽 접근 금지. 비 오는 날은 바위 미끄러움 2배.</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">🌸</div><div class="tip-card-title">추천 시즌</div><div class="tip-card-body">봄(진달래·철쭉) / 가을(단풍) 최고. 여름 이른 아침 출발 권장. 겨울 아이젠 필수.</div></div>
-<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)">📱</div><div class="tip-card-title">앱 &amp; 정보</div><div class="tip-card-body">스마트국립공원(공식앱), 산림청 산행지도, 기상청 날씨 앱 활용. 탐방안내소 ☎02-909-0497</div></div>
+<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-beginner-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-phone"></use></svg> </div><div class="tip-card-title">앱 &amp; 정보</div><div class="tip-card-body">스마트국립공원(공식앱), 산림청 산행지도, 기상청 날씨 앱 활용. 탐방안내소 ☎02-909-0497</div></div>
 </div>
-<div class="section-title">🚇 대중교통 안내</div>
+<div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg> 대중교통 안내</div>
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-beginner-map">
 <div class="map-wrap">
 <div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 코스 개념도 — 비봉 능선</div>
@@ -917,8 +949,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 110m</span>
-<span class="meta-item">📏 누적 0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 110m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 편의점·화장실·지하철
@@ -933,8 +965,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 130m</span>
-<span class="meta-item">📏 누적 0.5km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 130m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 0.5km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 이정표
@@ -949,8 +981,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 370m</span>
-<span class="meta-item">📏 누적 1.8km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 370m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 1.8km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 조망대
@@ -965,8 +997,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 535m</span>
-<span class="meta-item">📏 누적 2.8km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 535m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 2.8km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 이정표
@@ -981,8 +1013,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 560m</span>
-<span class="meta-item">📏 누적 3.3km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 560m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 3.3km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 진흥왕순수비 복제비
@@ -997,8 +1029,8 @@
 <span class="badge badge-temple">사찰</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 500m</span>
-<span class="meta-item">📏 누적 4.1km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 500m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 4.1km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 조망·휴식
@@ -1013,8 +1045,8 @@
 <span class="badge badge-temple">사찰</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 300m</span>
-<span class="meta-item">📏 누적 5.5km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 300m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 5.5km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 약수·화장실
@@ -1029,8 +1061,8 @@
 <span class="badge badge-trailhead">출발점</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 150m</span>
-<span class="meta-item">📏 누적 8.0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 150m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 8.0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 화장실·버스정류장
@@ -1064,13 +1096,45 @@
 </div>
 <span class="course-tag">중급 · 왕복형</span>
 </div>
-<div class="kpi-grid">
-<div class="kpi-card"><span class="kpi-label">📏 거리</span><span class="kpi-val">약 9.4km</span></div>
-<div class="kpi-card"><span class="kpi-label">⏱ 소요시간</span><span class="kpi-val">4~5시간</span></div>
-<div class="kpi-card"><span class="kpi-label">⬆ 최고도</span><span class="kpi-val">836.5m</span></div>
-<div class="kpi-card"><span class="kpi-label">📈 누적 상승</span><span class="kpi-val">약 750m</span></div>
-<div class="kpi-card"><span class="kpi-label">🔥 난이도</span><span class="kpi-val">중</span></div>
-<div class="kpi-card"><span class="kpi-label">🅿 주차</span><span class="kpi-val">북한산성 주차장</span></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">거리</span>
+<span class="pill-value">약 9.4km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">소요시간</span>
+<span class="pill-value">4~5시간</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고도</span>
+<span class="pill-value">836.5m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg></span>
+<span class="pill-label">누적 상승</span>
+<span class="pill-value">약 750m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-fire"></use></svg></span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-parking"></use></svg></span>
+<span class="pill-label">주차</span>
+<span class="pill-value">북한산성 주차장</span>
+</div>
 </div>
 </div>
 <div class="tabs-nav">
@@ -1082,7 +1146,7 @@
 <!-- 개요 -->
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-intermediate-overview">
 <div class="chart-wrap">
-<div class="chart-title">📈 고도 프로파일</div>
+<div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg> 고도 프로파일</div>
 <svg class="chart-svg" style="height:180px" viewbox="0 0 700 180">
 <defs>
 <lineargradient id="grad-i" x1="0" x2="0" y1="0" y2="1">
@@ -1118,7 +1182,7 @@
 <text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="640" y="134">백운대탐방</text>
 </svg>
 </div>
-<div class="section-title">📊 구간별 난이도</div>
+<div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 구간별 난이도</div>
 <div class="chart-wrap">
 <div class="diff-bar-row"><span class="diff-bar-label">대서문까지</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:25%"></div></div><span class="diff-bar-pct">25%</span></div>
 <div class="diff-bar-row"><span class="diff-bar-label">보리사까지</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:55%"></div></div><span class="diff-bar-pct">55%</span></div>
@@ -1140,7 +1204,7 @@
 <div class="route-card open" style="margin-top:12px">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">출발</span><span class="route-name">🅿 북한산성탐방지원센터 (230m)</span></div>
-<div class="route-meta"><span class="route-chip">🏁 넓은 주차장</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 넓은 주차장</span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1157,7 +1221,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">①</span><span class="route-name">탐방센터 → 대서문 (250m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 0.5km</span><span class="route-chip">⏱ 15분</span><span class="route-chip">🟢 쉬움</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.5km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 15분</span><span class="route-chip"><span class="badge badge-trailhead">쉬움</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1174,7 +1238,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">②</span><span class="route-name">대서문 → 보리사 (480m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 1.4km</span><span class="route-chip">⏱ 50분</span><span class="route-chip">🟡 보통</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.4km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="route-chip"><span class="badge badge-landmark">보통</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1191,7 +1255,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">③</span><span class="route-name">보리사 → 위문 (780m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 1.4km</span><span class="route-chip">⏱ 60분</span><span class="route-chip">🔴 가파름</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.4km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 60분</span><span class="route-chip"><span class="badge badge-summit">가파름</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1209,7 +1273,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">④</span><span class="route-name">위문 → 백운대 ★ (836.5m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 0.3km</span><span class="route-chip">⏱ 20분</span><span class="route-chip">🔴 암벽</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.3km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 20분</span><span class="route-chip"><span class="badge badge-summit">암벽</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1227,7 +1291,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">⑤</span><span class="route-name">백운대 → 하루재 → 백운대탐방지원센터</span></div>
-<div class="route-meta"><span class="route-chip">📏 3.8km</span><span class="route-chip">⏱ 80분</span><span class="route-chip">🟡 보통</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 3.8km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 80분</span><span class="route-chip"><span class="badge badge-landmark">보통</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1260,7 +1324,7 @@
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-intermediate-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><div class="tip-card-title">교통</div><div class="tip-card-body"><strong>출발:</strong> 704번 → 산성입구 (구파발역 3호선)<br/><strong>도착:</strong> 북한산우이역(우이신설선)</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-intermediate-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg></div><div class="tip-card-title">안전 주의</div><div class="tip-card-body">위문~정상 암벽 미끄럼 주의. 하산 시 무릎 부상 빈번. 스틱 반드시 사용. 일몰 전 하산.</div></div>
 <div class="tip-card"><div class="tip-card-icon" style="background:var(--color-intermediate-bg)">🌦</div><div class="tip-card-title">날씨 확인</div><div class="tip-card-body">정상부 기온 평지 대비 5~7도 낮음. 바람 강함. 비 예보 시 취소 권장. 여름 낙뢰 위험.</div></div>
-<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-intermediate-bg)">📱</div><div class="tip-card-title">앱 &amp; 예약</div><div class="tip-card-body">국립공원 탐방예약 불필요(일반 코스). 스마트국립공원 앱. 탐방안내소 ☎02-909-0497</div></div>
+<div class="tip-card"><div class="tip-card-icon" style="background:var(--color-intermediate-bg)"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-phone"></use></svg> </div><div class="tip-card-title">앱 &amp; 예약</div><div class="tip-card-body">국립공원 탐방예약 불필요(일반 코스). 스마트국립공원 앱. 탐방안내소 ☎02-909-0497</div></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg> 대중교통</div>
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-intermediate-map">
@@ -1331,8 +1395,8 @@
 <span class="badge badge-trailhead">출발점</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 230m</span>
-<span class="meta-item">📏 누적 0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 230m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 주차장·화장실·매점
@@ -1347,8 +1411,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 250m</span>
-<span class="meta-item">📏 누적 0.5km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 250m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 0.5km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 화장실
@@ -1363,8 +1427,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 350m</span>
-<span class="meta-item">📏 누적 1.2km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 350m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 1.2km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 이정표
@@ -1379,8 +1443,8 @@
 <span class="badge badge-temple">사찰</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 480m</span>
-<span class="meta-item">📏 누적 1.9km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 480m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 1.9km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 화장실·약수
@@ -1395,8 +1459,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 780m</span>
-<span class="meta-item">📏 누적 3.3km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 780m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 3.3km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 이정표 삼거리
@@ -1411,8 +1475,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 836.5m</span>
-<span class="meta-item">📏 누적 3.6km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 836.5m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 3.6km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 정상석·조망대
@@ -1427,8 +1491,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 580m</span>
-<span class="meta-item">📏 누적 5.0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 580m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 5.0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 이정표·벤치
@@ -1443,8 +1507,8 @@
 <span class="badge badge-trailhead">출발점</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 330m</span>
-<span class="meta-item">📏 누적 9.4km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 330m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 9.4km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 화장실·버스정류장
@@ -1478,13 +1542,45 @@
 </div>
 <span class="course-tag">고급 · 종주</span>
 </div>
-<div class="kpi-grid">
-<div class="kpi-card"><span class="kpi-label">📏 거리</span><span class="kpi-val">약 12km</span></div>
-<div class="kpi-card"><span class="kpi-label">⏱ 소요시간</span><span class="kpi-val">6~8시간</span></div>
-<div class="kpi-card"><span class="kpi-label">⬆ 최고도</span><span class="kpi-val">836.5m</span></div>
-<div class="kpi-card"><span class="kpi-label">📈 누적 상승</span><span class="kpi-val">약 1,100m</span></div>
-<div class="kpi-card"><span class="kpi-label">🔥 난이도</span><span class="kpi-val">상 (고급)</span></div>
-<div class="kpi-card"><span class="kpi-label">🏕 형태</span><span class="kpi-val">A→B 종주</span></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">거리</span>
+<span class="pill-value">약 12km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">소요시간</span>
+<span class="pill-value">6~8시간</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고도</span>
+<span class="pill-value">836.5m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg></span>
+<span class="pill-label">누적 상승</span>
+<span class="pill-value">약 1,100m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-fire"></use></svg></span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 5단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+</div>
+</div>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">형태</span>
+<span class="pill-value">A→B 종주</span>
+</div>
 </div>
 </div>
 <div class="tabs-nav">
@@ -1496,7 +1592,7 @@
 <!-- 개요 -->
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tab-pane active" id="tab-advanced-overview">
 <div class="chart-wrap">
-<div class="chart-title">📈 고도 프로파일</div>
+<div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg> 고도 프로파일</div>
 <svg class="chart-svg" style="height:190px" viewbox="0 0 700 190">
 <defs>
 <lineargradient id="grad-a" x1="0" x2="0" y1="0" y2="1">
@@ -1537,7 +1633,7 @@
 <text fill="var(--color-text-muted)" font-size="9" text-anchor="middle" x="670" y="152">구기계곡</text>
 </svg>
 </div>
-<div class="section-title">📊 구간별 난이도</div>
+<div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg> 구간별 난이도</div>
 <div class="chart-wrap">
 <div class="diff-bar-row"><span class="diff-bar-label">우이~도선사</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:30%"></div></div><span class="diff-bar-pct">30%</span></div>
 <div class="diff-bar-row"><span class="diff-bar-label">도선사~하루재</span><div class="diff-bar-track"><div class="diff-bar-fill" style="width:65%"></div></div><span class="diff-bar-pct">65%</span></div>
@@ -1577,7 +1673,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">①</span><span class="route-name">우이동 → 도선사 (300m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 1.8km</span><span class="route-chip">⏱ 40분</span><span class="route-chip">🟢 완만</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.8km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 40분</span><span class="route-chip"><span class="badge badge-trailhead">쉬움</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1590,7 +1686,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">②</span><span class="route-name">도선사 → 하루재 (540m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 1.2km</span><span class="route-chip">⏱ 50분</span><span class="route-chip">🟡 가파름</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.2km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="route-chip"><span class="badge badge-landmark">보통</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1604,7 +1700,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">③</span><span class="route-name">하루재 → 백운봉암문(위문) → 백운대 ★ (836.5m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 1.5km</span><span class="route-chip">⏱ 60분</span><span class="route-chip">🔴 암벽</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 60분</span><span class="route-chip"><span class="badge badge-summit">암벽</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1622,7 +1718,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">④</span><span class="route-name">백운대 → 위문 → 만경대 ★ (799.5m)</span></div>
-<div class="route-meta"><span class="route-chip">📏 0.8km</span><span class="route-chip">⏱ 50분</span><span class="route-chip">🔴 험한 암릉</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.8km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="route-chip"><span class="badge badge-summit">어려움</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1640,7 +1736,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">⑤</span><span class="route-name">만경대 → 노적봉 (715m) → 용암문</span></div>
-<div class="route-meta"><span class="route-chip">📏 2.0km</span><span class="route-chip">⏱ 60분</span><span class="route-chip">🟡 보통</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 2.0km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 60분</span><span class="route-chip"><span class="badge badge-landmark">보통</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1653,7 +1749,7 @@
 <div class="route-card">
 <div class="route-card-header" onclick="toggleCard(this)">
 <div class="route-card-left"><span class="route-num">⑥</span><span class="route-name">용암문 → 대남문 (650m) → 구기계곡 하산</span></div>
-<div class="route-meta"><span class="route-chip">📏 4.0km</span><span class="route-chip">⏱ 90분</span><span class="route-chip">🟢 하산</span></div>
+<div class="route-meta"><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 4.0km</span><span class="route-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 90분</span><span class="route-chip"><span class="badge badge-trailhead">쉬움</span></span></div>
 <span class="route-arrow">▼</span>
 </div>
 <div class="route-card-body">
@@ -1763,8 +1859,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 160m</span>
-<span class="meta-item">📏 누적 0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 160m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 편의점·화장실
@@ -1779,8 +1875,8 @@
 <span class="badge badge-temple">사찰</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 300m</span>
-<span class="meta-item">📏 누적 1.8km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 300m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 1.8km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 약수·화장실·매점
@@ -1795,8 +1891,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 540m</span>
-<span class="meta-item">📏 누적 3.0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 540m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 3.0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 벤치·이정표
@@ -1811,8 +1907,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 780m</span>
-<span class="meta-item">📏 누적 4.2km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 780m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 4.2km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 이정표
@@ -1827,8 +1923,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 836.5m</span>
-<span class="meta-item">📏 누적 4.5km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 836.5m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 4.5km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 정상석·조망대
@@ -1843,8 +1939,8 @@
 <span class="badge badge-temple">사찰</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 799.5m</span>
-<span class="meta-item">📏 누적 5.3km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 799.5m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 5.3km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 조망·암릉
@@ -1859,8 +1955,8 @@
 <span class="badge badge-summit">정상</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 715m</span>
-<span class="meta-item">📏 누적 7.3km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 715m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 7.3km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 삼각봉 조망 명소
@@ -1875,8 +1971,8 @@
 <span class="badge badge-temple">사찰</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 580m</span>
-<span class="meta-item">📏 누적 8.0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 580m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 8.0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 이정표
@@ -1891,8 +1987,8 @@
 <span class="badge badge-landmark">명소</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 650m</span>
-<span class="meta-item">📏 누적 9.0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 650m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 9.0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 화장실·이정표
@@ -1907,8 +2003,8 @@
 <span class="badge badge-trailhead">출발점</span>
 </div>
 <div class="timeline-meta">
-<span class="meta-item">⛰ 해발 150m</span>
-<span class="meta-item">📏 누적 12.0km</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 150m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 12.0km</span>
 </div>
 <div class="timeline-features">
 <span class="feature-label">편의시설:</span> 화장실·버스정류장
