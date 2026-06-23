@@ -705,6 +705,35 @@
       "purpose": "Fallback poster and mobile background image for Duryunsan playbook hero",
       "source": "Copy of actual hero photo",
       "ai_generated": false
+    },
+    {
+      "id": "og-minjusan",
+      "path": "assets/img/minjusan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Minjusan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": true
+    },
+    {
+      "id": "hero-video-minjusan",
+      "path": "assets/video/minjusan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Minjusan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 1649101
+    },
+    {
+      "id": "hero-poster-minjusan",
+      "path": "assets/video/minjusan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Minjusan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
     }
   ]
 }
