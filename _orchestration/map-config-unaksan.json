@@ -1,0 +1,46 @@
+{
+  "mountain_id": "unaksan",
+  "default_layer": "satellite",
+  "points": {
+    "gapyeong_parking_가평 주차장": {"lat": 37.8996, "lng": 127.3298, "alt_m": 170, "type": "parking"},
+    "nunseop_rock_눈썹바위": {"lat": 37.9068, "lng": 127.3323, "alt_m": 360, "type": "landmark"},
+    "miruk_rock_미륵바위": {"lat": 37.9125, "lng": 127.3255, "alt_m": 680, "type": "landmark"},
+    "byeongpung_rock_병풍바위": {"lat": 37.9135, "lng": 127.3238, "alt_m": 750, "type": "landmark"},
+    "mangyeongdae_망경대": {"lat": 37.9158, "lng": 127.3200, "alt_m": 920, "type": "summit"},
+    "dongbong_summit_동봉 정상": {"lat": 37.9163, "lng": 127.3188, "alt_m": 937.5, "type": "summit"},
+    "seobong_summit_서봉 정상": {"lat": 37.9160, "lng": 127.3160, "alt_m": 935.5, "type": "summit"},
+    "jeolgogae_절고개": {"lat": 37.9132, "lng": 127.3148, "alt_m": 820, "type": "junction"},
+    "hyeondeungsa_현등사": {"lat": 37.9103, "lng": 127.3248, "alt_m": 370, "type": "temple"},
+    "pocheon_parking_포천 주차장": {"lat": 37.9198, "lng": 127.2942, "alt_m": 230, "type": "parking"},
+    "mujichi_waterfall_무지치폭포": {"lat": 37.9172, "lng": 127.3045, "alt_m": 400, "type": "waterfall"},
+    "sinseondae_신선대": {"lat": 37.9160, "lng": 127.3090, "alt_m": 680, "type": "landmark"}
+  },
+  "routes": {
+    "beginner": [
+      "gapyeong_parking_가평 주차장",
+      "hyeondeungsa_현등사",
+      "jeolgogae_절고개",
+      "dongbong_summit_동봉 정상"
+    ],
+    "intermediate": [
+      "pocheon_parking_포천 주차장",
+      "mujichi_waterfall_무지치폭포",
+      "sinseondae_신선대",
+      "seobong_summit_서봉 정상",
+      "dongbong_summit_동봉 정상"
+    ],
+    "advanced": [
+      "gapyeong_parking_가평 주차장",
+      "nunseop_rock_눈썹바위",
+      "miruk_rock_미륵바위",
+      "byeongpung_rock_병풍바위",
+      "mangyeongdae_망경대",
+      "dongbong_summit_동봉 정상"
+    ]
+  },
+  "colors": {
+    "beginner": "#437a22",
+    "intermediate": "#da7101",
+    "advanced": "#a12c7b"
+  }
+}

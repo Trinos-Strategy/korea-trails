@@ -1,0 +1,72 @@
+{
+  "mountain_id": "soyosan",
+  "default_layer": "satellite",
+  "points": {
+    "soyosan_station": {"lat": 37.9472, "lng": 127.0612, "alt_m": 80, "type": "subway"},
+    "iljuman": {"lat": 37.9458, "lng": 127.0763, "alt_m": 95, "type": "gate"},
+    "wonhyo_waterfall": {"lat": 37.9452, "lng": 127.0782, "alt_m": 130, "type": "waterfall"},
+    "baegunam": {"lat": 37.9452, "lng": 127.0792, "alt_m": 130, "type": "temple"},
+    "jajaeam": {"lat": 37.9442, "lng": 127.0818, "alt_m": 180, "type": "temple"},
+    "stairs108": {"lat": 37.9448, "lng": 127.0815, "alt_m": 220, "type": "landmark"},
+    "habaegundae": {"lat": 37.9468, "lng": 127.0872, "alt_m": 350, "type": "summit"},
+    "jungbaegundae": {"lat": 37.9492, "lng": 127.0888, "alt_m": 430, "type": "summit"},
+    "sangbaegundae": {"lat": 37.9515, "lng": 127.0898, "alt_m": 500, "type": "summit"},
+    "kalbawi": {"lat": 37.9512, "lng": 127.0945, "alt_m": 490, "type": "warning"},
+    "seonnyeotang_junction": {"lat": 37.9462, "lng": 127.0858, "alt_m": 300, "type": "junction"},
+    "seonnyeotang": {"lat": 37.9452, "lng": 127.0845, "alt_m": 250, "type": "waterfall"},
+    "nahandae": {"lat": 37.9475, "lng": 127.0955, "alt_m": 550, "type": "summit"},
+    "uisangdae": {"lat": 37.9463, "lng": 127.0948, "alt_m": 587, "type": "summit"},
+    "gongjubong": {"lat": 37.9412, "lng": 127.0908, "alt_m": 526, "type": "summit"},
+    "gujeolteo": {"lat": 37.9422, "lng": 127.0825, "alt_m": 200, "type": "monument"},
+    "songrigyo": {"lat": 37.9432, "lng": 127.0788, "alt_m": 120, "type": "bridge"}
+  },
+  "routes": {
+    "beginner": [
+      "soyosan_station",
+      "iljuman",
+      "baegunam",
+      "jajaeam",
+      "habaegundae",
+      "jungbaegundae",
+      "seonnyeotang",
+      "jajaeam",
+      "iljuman",
+      "soyosan_station"
+    ],
+    "intermediate": [
+      "soyosan_station",
+      "iljuman",
+      "jajaeam",
+      "habaegundae",
+      "jungbaegundae",
+      "sangbaegundae",
+      "kalbawi",
+      "seonnyeotang_junction",
+      "iljuman",
+      "soyosan_station"
+    ],
+    "advanced": [
+      "soyosan_station",
+      "iljuman",
+      "wonhyo_waterfall",
+      "jajaeam",
+      "stairs108",
+      "habaegundae",
+      "jungbaegundae",
+      "sangbaegundae",
+      "kalbawi",
+      "nahandae",
+      "uisangdae",
+      "gongjubong",
+      "gujeolteo",
+      "songrigyo",
+      "iljuman",
+      "soyosan_station"
+    ]
+  },
+  "colors": {
+    "beginner": "#437a22",
+    "intermediate": "#da7101",
+    "advanced": "#a12c7b"
+  }
+}

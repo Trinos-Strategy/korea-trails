@@ -106,6 +106,179 @@
 .map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
+/* Leaflet map styles */
+.leaflet-map {
+  border: 1px solid var(--color-border);
+  background: var(--color-surface-2);
+  box-shadow: var(--shadow-sm);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+.map-tooltip {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  color: var(--color-text) !important;
+  font-weight: 700;
+  font-size: var(--text-xs);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-2);
+  box-shadow: var(--shadow-md);
+}
+.map-popup-content {
+  font-family: inherit;
+  line-height: 1.5;
+}
+.leaflet-popup-content-wrapper {
+  background: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+.leaflet-popup-tip {
+  background: var(--color-surface) !important;
+  border: 1px solid var(--color-border);
+}
+.leaflet-popup-close-button {
+  color: var(--color-text-muted) !important;
+}
+.leaflet-control-layers {
+  background-color: var(--color-surface) !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: var(--radius-md) !important;
+  color: var(--color-text) !important;
+  box-shadow: var(--shadow-md) !important;
+  font-size: var(--text-xs);
+  font-weight: 700;
+}
+.leaflet-bar {
+  border: 1px solid var(--color-border) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+.leaflet-bar a {
+  background-color: var(--color-surface) !important;
+  color: var(--color-text) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+}
+.leaflet-bar a:hover {
+  background-color: var(--color-surface-2) !important;
+}
+.leaflet-container .leaflet-control-attribution {
+  background: rgba(var(--color-bg), 0.7) !important;
+  color: var(--color-text-muted) !important;
+  font-size: 9px;
+  backdrop-filter: blur(4px);
+}
+[data-theme="dark"] .terrain-layer-dark-filter {
+  filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
+}
+
+/* YouTube Shorts Grid */
+.video-section {
+  padding: var(--space-10) var(--space-6);
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-6);
+}
+@media(max-width:640px){
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+}
+.video-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.video-facade-btn {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 9/16;
+  background: #000;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+.video-thumbnail {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition);
+}
+.video-facade-btn:hover .video-thumbnail {
+  transform: scale(1.05);
+}
+.video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.7);
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  transition: background var(--transition), transform var(--transition);
+  pointer-events: none;
+}
+.video-facade-btn:hover .video-play-btn {
+  background: rgba(220, 50, 50, 0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+}
+.video-play-icon {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 8px 0 8px 14px;
+  border-color: transparent transparent transparent #ffffff;
+  margin-left: 4px;
+}
+.video-iframe {
+  width: 100%;
+  aspect-ratio: 9/16;
+  border: none;
+}
+.video-info {
+  padding: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+.video-label {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.video-link {
+  font-size: var(--text-xs);
+  color: var(--color-primary);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.video-link:hover {
+  text-decoration: underline;
+}
+
 /* TIPS GRID */
 .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
 .tip-card{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-lg);padding:var(--space-5);}
@@ -613,13 +786,11 @@
 </section>
 <!-- DIFFICULTY SELECTOR -->
 <!-- MAIN CONTENT -->
-<main class="main-content">
+<main class="wrap" id="mainContent">
 <div class="container">
 <!-- ============================================================ -->
 <!-- 초급 PANEL -->
 <!-- ============================================================ -->
-<main class="wrap" id="mainContent">
-<main class="wrap" id="mainContent">
 <div class="course-panel beginner active" id="panel-beginner">
 <div class="course-header">
 <div class="course-header-top">
@@ -849,7 +1020,7 @@
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-beginner-map">
 <div class="map-wrap">
 <div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 코스 개념도 — 비봉 능선</div>
-<svg class="map-svg" style="height:380px;background:var(--color-surface-2);border-radius:var(--radius-lg)" viewbox="0 0 680 380">
+<svg class="map-fallback map-svg" style="height:380px;background:var(--color-surface-2);border-radius:var(--radius-lg)" viewbox="0 0 680 380">
 <!-- background terrain -->
 <ellipse cx="340" cy="200" fill="var(--color-beginner-bg)" opacity="0.5" rx="260" ry="150"></ellipse>
 <!-- paths -->
@@ -903,6 +1074,7 @@
 <div class="legend-item"><span>🏛</span>사찰</div>
 <div class="legend-item"><span><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></span>교통</div>
 </div>
+<div class="leaflet-map" id="map-beginner" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="북한산 초급 비봉 능선 코스 실사 지도"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
 <div class="table-wrap">
@@ -1148,7 +1320,7 @@
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-intermediate-map">
 <div class="map-wrap">
 <div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 코스 개념도 — 백운대 정상</div>
-<svg class="map-svg" style="height:400px;background:var(--color-surface-2);border-radius:var(--radius-lg)" viewbox="0 0 680 400">
+<svg class="map-fallback map-svg" style="height:400px;background:var(--color-surface-2);border-radius:var(--radius-lg)" viewbox="0 0 680 400">
 <ellipse cx="340" cy="200" fill="var(--color-intermediate-bg)" opacity="0.4" rx="270" ry="160"></ellipse>
 <!-- 산성 계곡 표현 -->
 <path d="M90,340 Q180,280 260,220 Q310,185 360,160 Q400,140 420,120" fill="none" stroke="#c06000" stroke-linecap="round" stroke-width="3"></path>
@@ -1201,6 +1373,7 @@
 <line stroke="#c06000" stroke-dasharray="6,3" stroke-width="2" x1="20" x2="70" y1="55" y2="55"></line>
 <text fill="var(--color-text-faint)" font-size="8" x="75" y="59">하산로</text>
 </svg>
+<div class="leaflet-map" id="map-intermediate" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="북한산 중급 백운대 코스 실사 지도"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
 <div class="table-wrap">
@@ -1458,7 +1631,7 @@
 </div></div><div class="playbook-sidebar-col"><div class="tab-pane" id="tab-advanced-map">
 <div class="map-wrap">
 <div class="chart-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> 코스 개념도 — 만경대 능선 종주</div>
-<svg class="map-svg" style="height:420px;background:var(--color-surface-2);border-radius:var(--radius-lg)" viewbox="0 0 700 420">
+<svg class="map-fallback map-svg" style="height:420px;background:var(--color-surface-2);border-radius:var(--radius-lg)" viewbox="0 0 700 420">
 <ellipse cx="350" cy="210" fill="var(--color-advanced-bg)" opacity="0.35" rx="290" ry="170"></ellipse>
 <!-- 주 종주 경로 -->
 <path d="M80,370 Q130,330 200,295 Q250,270 300,240 Q340,218 380,185 Q400,165 415,148 Q430,155 445,148 Q468,138 490,140 Q530,148 560,165 Q590,185 610,210 Q635,235 660,290 Q665,310 670,360" fill="none" stroke="#a01830" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5"></path>
@@ -1517,6 +1690,7 @@
 <line stroke="#a01830" stroke-width="2.5" x1="20" x2="70" y1="40" y2="40"></line>
 <text fill="var(--color-text-faint)" font-size="8" x="75" y="44">종주 경로</text>
 </svg>
+<div class="leaflet-map" id="map-advanced" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;" role="application" aria-label="북한산 고급 만경대 능선 종주 코스 실사 지도"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
 <div class="table-wrap">
@@ -1550,8 +1724,7 @@
 <!-- 지도 -->
 <!-- 팁 -->
 </div><!-- /advanced panel -->
-</main></main></div><!-- /container -->
-</main>
+</main></div><!-- /container -->
 </div><!-- /app-wrapper -->
 <!-- Photo Gallery Grid -->
 <section class="photo-gallery-section">
@@ -1858,6 +2031,120 @@
 </button>
 </div>
 </section>
+
+<section class="video-section">
+  <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+    <span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 내 트래킹 영상
+  </h2>
+  <div class="video-grid">
+    <!-- Video Card 1 -->
+    <div class="video-card">
+      <div id="shorts-Vk7J8vaG3Y0" class="video-container">
+        <button class="video-facade-btn" onclick="playShortsVideo('shorts-Vk7J8vaG3Y0', 'Vk7J8vaG3Y0', '칼바위')" aria-label="칼바위 유튜브 쇼츠 재생">
+          <img class="video-thumbnail" src="https://i.ytimg.com/vi/Vk7J8vaG3Y0/hqdefault.jpg" alt="칼바위 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </button>
+      </div>
+      <div class="video-info">
+        <span class="video-label">칼바위</span>
+        <a class="video-link" href="https://youtube.com/shorts/Vk7J8vaG3Y0" target="_blank" rel="noopener noreferrer">
+          원본 쇼츠 보기 ↗
+        </a>
+      </div>
+    </div>
+    <!-- Video Card 2 -->
+    <div class="video-card">
+      <div id="shorts-IFi9TguP7f0" class="video-container">
+        <button class="video-facade-btn" onclick="playShortsVideo('shorts-IFi9TguP7f0', 'IFi9TguP7f0', '대동문·조국문')" aria-label="대동문·조국문 유튜브 쇼츠 재생">
+          <img class="video-thumbnail" src="https://i.ytimg.com/vi/IFi9TguP7f0/hqdefault.jpg" alt="대동문·조국문 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </button>
+      </div>
+      <div class="video-info">
+        <span class="video-label">대동문·조국문</span>
+        <a class="video-link" href="https://youtube.com/shorts/IFi9TguP7f0" target="_blank" rel="noopener noreferrer">
+          원본 쇼츠 보기 ↗
+        </a>
+      </div>
+    </div>
+    <!-- Video Card 3 -->
+    <div class="video-card">
+      <div id="shorts-ZPHm7E6kvrA" class="video-container">
+        <button class="video-facade-btn" onclick="playShortsVideo('shorts-ZPHm7E6kvrA', 'ZPHm7E6kvrA', '능선 구간')" aria-label="능선 구간 유튜브 쇼츠 재생">
+          <img class="video-thumbnail" src="https://i.ytimg.com/vi/ZPHm7E6kvrA/hqdefault.jpg" alt="능선 구간 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </button>
+      </div>
+      <div class="video-info">
+        <span class="video-label">능선 구간</span>
+        <a class="video-link" href="https://youtube.com/shorts/ZPHm7E6kvrA" target="_blank" rel="noopener noreferrer">
+          원본 쇼츠 보기 ↗
+        </a>
+      </div>
+    </div>
+    <!-- Video Card 4 -->
+    <div class="video-card">
+      <div id="shorts-vaKLvPNpVdw" class="video-container">
+        <button class="video-facade-btn" onclick="playShortsVideo('shorts-vaKLvPNpVdw', 'vaKLvPNpVdw', '중흥사 고양이')" aria-label="중흥사 고양이 유튜브 쇼츠 재생">
+          <img class="video-thumbnail" src="https://i.ytimg.com/vi/vaKLvPNpVdw/hqdefault.jpg" alt="중흥사 고양이 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </button>
+      </div>
+      <div class="video-info">
+        <span class="video-label">중흥사 고양이</span>
+        <a class="video-link" href="https://youtube.com/shorts/vaKLvPNpVdw" target="_blank" rel="noopener noreferrer">
+          원본 쇼츠 보기 ↗
+        </a>
+      </div>
+    </div>
+    <!-- Video Card 5 -->
+    <div class="video-card">
+      <div id="shorts-b5vbksD_0OE" class="video-container">
+        <button class="video-facade-btn" onclick="playShortsVideo('shorts-b5vbksD_0OE', 'b5vbksD_0OE', '고양이 2')" aria-label="고양이 2 유튜브 쇼츠 재생">
+          <img class="video-thumbnail" src="https://i.ytimg.com/vi/b5vbksD_0OE/hqdefault.jpg" alt="고양이 2 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </button>
+      </div>
+      <div class="video-info">
+        <span class="video-label">고양이 2</span>
+        <a class="video-link" href="https://youtube.com/shorts/b5vbksD_0OE" target="_blank" rel="noopener noreferrer">
+          원본 쇼츠 보기 ↗
+        </a>
+      </div>
+    </div>
+    <!-- Video Card 6 -->
+    <div class="video-card">
+      <div id="shorts-zKM1r8udgDY" class="video-container">
+        <button class="video-facade-btn" onclick="playShortsVideo('shorts-zKM1r8udgDY', 'zKM1r8udgDY', '고양이 3')" aria-label="고양이 3 유튜브 쇼츠 재생">
+          <img class="video-thumbnail" src="https://i.ytimg.com/vi/zKM1r8udgDY/hqdefault.jpg" alt="고양이 3 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </button>
+      </div>
+      <div class="video-info">
+        <span class="video-label">고양이 3</span>
+        <a class="video-link" href="https://youtube.com/shorts/zKM1r8udgDY" target="_blank" rel="noopener noreferrer">
+          원본 쇼츠 보기 ↗
+        </a>
+      </div>
+    </div>
+    <!-- Video Card 7 -->
+    <div class="video-card">
+      <div id="shorts-pJksnZhdD1A" class="video-container">
+        <button class="video-facade-btn" onclick="playShortsVideo('shorts-pJksnZhdD1A', 'pJksnZhdD1A', '백운대 말벌')" aria-label="백운대 말벌 유튜브 쇼츠 재생">
+          <img class="video-thumbnail" src="https://i.ytimg.com/vi/pJksnZhdD1A/hqdefault.jpg" alt="백운대 말벌 유튜브 쇼츠 썸네일" loading="lazy" decoding="async">
+          <div class="video-play-btn"><div class="video-play-icon"></div></div>
+        </button>
+      </div>
+      <div class="video-info">
+        <span class="video-label">백운대 말벌</span>
+        <a class="video-link" href="https://youtube.com/shorts/pJksnZhdD1A" target="_blank" rel="noopener noreferrer">
+          원본 쇼츠 보기 ↗
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <script>
 // Theme toggle
 (function(){
@@ -1895,6 +2182,12 @@ function switchTab(btn,difficulty,tab){
   btn.classList.add('active');
   panel.querySelectorAll('.tab-pane').forEach(p=>p.classList.remove('active'));
   document.getElementById('tab-'+difficulty+'-'+tab).classList.add('active');
+  
+  if(tab === 'map' && window.mapInstances && window.mapInstances[difficulty]) {
+    setTimeout(function() {
+      window.mapInstances[difficulty].invalidateSize();
+    }, 180);
+  }
 }
 
 // Toggle accordion card
@@ -2084,6 +2377,233 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.1 });
     observer.observe(document.querySelector('.hero-bleed'));
   }
+});
+</script>
+<!-- Leaflet & Video Facade Logic -->
+<script>
+function playShortsVideo(containerId, videoId, label) {
+  const container = document.getElementById(containerId);
+  if (!container) return;
+  const iframe = document.createElement('iframe');
+  iframe.className = 'video-iframe';
+  iframe.src = 'https://www.youtube-nocookie.com/embed/' + videoId + '?autoplay=1';
+  iframe.title = label + ' 유튜브 쇼츠';
+  iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+  iframe.allowFullscreen = true;
+  container.innerHTML = '';
+  container.appendChild(iframe);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const mapConfig = {
+    points: {
+      "bulgwang_exit9_불광역": {"lat": 37.6105, "lng": 126.9295, "alt_m": 110},
+      "daeho_apt_대호아파트진입로": {"lat": 37.6120, "lng": 126.9348, "alt_m": 130},
+      "jokduribong_족두리봉": {"lat": 37.6146, "lng": 126.9412, "alt_m": 370},
+      "hyangrobong_향로봉": {"lat": 37.6186, "lng": 126.9442, "alt_m": 535},
+      "bibong_비봉": {"lat": 37.6195, "lng": 126.9507, "alt_m": 560},
+      "samobawi_사모바위": {"lat": 37.6205, "lng": 126.9538, "alt_m": 500},
+      "seunggasa_승가사": {"lat": 37.6203, "lng": 126.9592, "alt_m": 300},
+      "gugi_center_구기탐방지원센터": {"lat": 37.6131, "lng": 126.9676, "alt_m": 150},
+      "bukhansanseong_center_북한산성탐방지원센터": {"lat": 37.6496, "lng": 126.9427, "alt_m": 230},
+      "daeseomun_대서문": {"lat": 37.6525, "lng": 126.9490, "alt_m": 250},
+      "jungseomun_중성문": {"lat": 37.6538, "lng": 126.9580, "alt_m": 350},
+      "borisa_보리사": {"lat": 37.6568, "lng": 126.9635, "alt_m": 480},
+      "wimun_위문": {"lat": 37.6575, "lng": 126.9740, "alt_m": 780},
+      "baegundae_백운대": {"lat": 37.6586, "lng": 126.9778, "alt_m": 836},
+      "harujae_하루재": {"lat": 37.6620, "lng": 126.9855, "alt_m": 580},
+      "baegundae_center_백운대탐방지원센터": {"lat": 37.6631, "lng": 127.0125, "alt_m": 330},
+      "bukhansanui_station_북한산우이역": {"lat": 37.6631, "lng": 127.0125, "alt_m": 160},
+      "doseonsa_도선사": {"lat": 37.6635, "lng": 126.9945, "alt_m": 300},
+      "mangyeongdae_만경대": {"lat": 37.6565, "lng": 126.9785, "alt_m": 799},
+      "nojeokbong_노적봉": {"lat": 37.6515, "lng": 126.9705, "alt_m": 715},
+      "yongammun_용암문": {"lat": 37.6480, "lng": 126.9755, "alt_m": 580},
+      "daenammun_대남문": {"lat": 37.6322, "lng": 126.9658, "alt_m": 650}
+    },
+    routes: {
+      "beginner": [
+        "bulgwang_exit9_불광역",
+        "daeho_apt_대호아파트진입로",
+        "jokduribong_족두리봉",
+        "hyangrobong_향로봉",
+        "bibong_비봉",
+        "samobawi_사모바위",
+        "seunggasa_승가사",
+        "gugi_center_구기탐방지원센터"
+      ],
+      "intermediate": [
+        "bukhansanseong_center_북한산성탐방지원센터",
+        "daeseomun_대서문",
+        "jungseomun_중성문",
+        "borisa_보리사",
+        "wimun_위문",
+        "baegundae_백운대",
+        "harujae_하루재",
+        "baegundae_center_백운대탐방지원센터"
+      ],
+      "advanced": [
+        "bukhansanui_station_북한산우이역",
+        "doseonsa_도선사",
+        "harujae_하루재",
+        "wimun_위문",
+        "baegundae_백운대",
+        "mangyeongdae_만경대",
+        "nojeokbong_노적봉",
+        "yongammun_용암문",
+        "daenammun_대남문",
+        "gugi_center_구기탐방지원센터"
+      ]
+    },
+    colors: {
+      "beginner": "#3a7d2e",
+      "intermediate": "#c06000",
+      "advanced": "#a01830"
+    }
+  };
+
+  window.mapInstances = window.mapInstances || {};
+  window.initializedMaps = window.initializedMaps || {};
+
+  function loadLeafletAssets(callback) {
+    if (window.L) {
+      callback();
+      return;
+    }
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
+    link.integrity = 'sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=';
+    link.crossOrigin = '';
+    document.head.appendChild(link);
+
+    const script = document.createElement('script');
+    script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
+    script.crossOrigin = '';
+    script.onload = callback;
+    script.onerror = () => console.warn("Leaflet CDN 로드 실패. 개념도가 유지됩니다.");
+    document.head.appendChild(script);
+  }
+
+  function initCourseMap(courseId) {
+    const mapEl = document.getElementById(`map-${courseId}`);
+    if (!mapEl || window.initializedMaps[courseId]) return;
+
+    const fallbackSvg = mapEl.parentElement.querySelector('.map-fallback');
+    if (fallbackSvg) fallbackSvg.style.display = 'none';
+    mapEl.style.display = 'block';
+
+    const map = L.map(mapEl, { scrollWheelZoom: false, zoomControl: true });
+    
+    const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+      attribution: 'Tiles &copy; Esri &mdash; Source: Esri, Maxar, Earthstar Geographics',
+      maxZoom: 19
+    });
+
+    const terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+      attribution: 'Map data: &copy; OpenStreetMap contributors, OpenTopoMap',
+      maxZoom: 17,
+      className: 'terrain-layer-dark-filter'
+    });
+
+    satellite.addTo(map);
+
+    L.control.layers({
+      "🛰️ 위성 레이어": satellite,
+      "🏔️ 지형 레이어": terrain
+    }, null, { collapsed: false }).addTo(map);
+
+    const route = mapConfig.routes[courseId];
+    const color = mapConfig.colors[courseId];
+    const latlngs = [];
+    const markers = L.featureGroup();
+
+    route.forEach((ptKey) => {
+      const pt = mapConfig.points[ptKey];
+      if (!pt) return;
+
+      const latlng = [pt.lat, pt.lng];
+      latlngs.push(latlng);
+
+      let isDuplicate = false;
+      markers.eachLayer(layer => {
+        if (layer.getLatLng().lat === pt.lat && layer.getLatLng().lng === pt.lng) {
+          isDuplicate = true;
+        }
+      });
+
+      if (!isDuplicate) {
+        const nameKo = ptKey.split('_')[2] || ptKey.split('_')[1] || ptKey;
+        const marker = L.circleMarker(latlng, {
+          radius: 6,
+          fillColor: color,
+          color: '#ffffff',
+          weight: 1.5,
+          opacity: 1,
+          fillOpacity: 0.9
+        });
+
+        marker.bindTooltip(nameKo, {
+          permanent: true,
+          direction: 'top',
+          offset: [0, -6],
+          className: 'map-tooltip'
+        });
+
+        marker.addTo(markers);
+      }
+    });
+
+    const polyline = L.polyline(latlngs, {
+      color: color,
+      weight: 4,
+      opacity: 0.85,
+      lineCap: 'round',
+      lineJoin: 'round'
+    });
+
+    if (latlngs.length > 0) {
+      try {
+        map.fitBounds(polyline.getBounds(), { padding: [30, 30] });
+      } catch (e) {
+        console.warn("fitBounds failed:", e.message);
+        map.setView(latlngs[0], 13);
+      }
+    } else {
+      map.setView([37.6586, 126.9778], 13);
+    }
+
+    polyline.addTo(map);
+    markers.addTo(map);
+
+    map.on('focus', () => { map.scrollWheelZoom.enable(); });
+    map.on('blur', () => { map.scrollWheelZoom.disable(); });
+
+    window.mapInstances[courseId] = map;
+    window.initializedMaps[courseId] = true;
+  }
+
+  const mapObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const mapEl = entry.target.querySelector('.leaflet-map');
+        if (!mapEl) return;
+        const courseId = mapEl.id.replace('map-', '');
+        loadLeafletAssets(() => {
+          initCourseMap(courseId);
+          setTimeout(() => {
+            if (window.mapInstances[courseId]) {
+              window.mapInstances[courseId].invalidateSize();
+            }
+          }, 150);
+        });
+      }
+    });
+  }, { rootMargin: '100px', threshold: 0.01 });
+
+  document.querySelectorAll('.map-wrap').forEach(mapContainer => {
+    mapObserver.observe(mapContainer);
+  });
 });
 </script>
 </body>

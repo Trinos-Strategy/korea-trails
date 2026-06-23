@@ -1,0 +1,111 @@
+{
+  "id": "unaksan",
+  "name_ko": "운악산",
+  "name_en": "Unaksan",
+  "region": "경기",
+  "park": "운악산",
+  "summit": {
+    "name": "동봉",
+    "alt_m": 937.5,
+    "source": [
+      "https://ko.wikipedia.org/wiki/%EC%9A%B4%EC%95%85%EC%82%B0",
+      "https://www.gapyeong.go.kr"
+    ]
+  },
+  "courses": [
+    {
+      "level": "beginner",
+      "name": "현등사 코스 (가평 주차장~현등사~절고개~동봉)",
+      "distance_km": 4.0,
+      "time": "2h30m",
+      "difficulty": "초급",
+      "checkpoints": [
+        {"name": "가평 주차장", "alt_m": 170, "cum_km": 0.0, "note": "산행 기점"},
+        {"name": "현등사", "alt_m": 370, "cum_km": 2.0, "note": "천년고찰"},
+        {"name": "절고개", "alt_m": 820, "cum_km": 3.2, "note": "가평/포천 주능선 갈림길"},
+        {"name": "동봉 정상", "alt_m": 937.5, "cum_km": 4.0, "note": "최고봉 정상"}
+      ],
+      "elevation_profile": "가평 주차장에서 현등사까지는 포장된 완만한 오르막이며, 현등사 이후 절고개를 지나 정상까지는 숲길과 계단이 이어집니다. 암릉 구간을 피하는 비교적 안전한 코스입니다.",
+      "hazards": [
+        "절고개 직전 돌계단 경사구간 체력 조절 필요"
+      ],
+      "source": [
+        "https://www.gapyeong.go.kr",
+        "https://www.durunubi.kr"
+      ]
+    },
+    {
+      "level": "intermediate",
+      "name": "포천 무지치폭포 코스 (포천 주차장~무지치폭포~신선대~서봉~동봉)",
+      "distance_km": 2.9,
+      "time": "3h00m",
+      "difficulty": "중급",
+      "checkpoints": [
+        {"name": "포천 주차장", "alt_m": 230, "cum_km": 0.0, "note": "포천 화현리 기점"},
+        {"name": "무지치폭포", "alt_m": 400, "cum_km": 1.5, "note": "홍폭, 궁예 전설의 대형폭포"},
+        {"name": "신선대", "alt_m": 680, "cum_km": 2.2, "note": "망경대 조망 포인트"},
+        {"name": "서봉 정상", "alt_m": 935.5, "cum_km": 2.7, "note": "포천 주봉 정상"},
+        {"name": "동봉 정상", "alt_m": 937.5, "cum_km": 2.9, "note": "정상 도착"}
+      ],
+      "elevation_profile": "포천 주차장 출발 후 무지치폭포 전망대까지는 비교적 부드러운 산길이나, 폭포 이후 서봉으로 오르는 구간은 가파른 경사와 철계단, 암릉 구간이 나타나 주의가 필요합니다.",
+      "hazards": [
+        "폭포 이후 급경사 바위 및 철계단 미끄럼 주의"
+      ],
+      "source": [
+        "https://www.pocheon.go.kr",
+        "https://www.durunubi.kr"
+      ]
+    },
+    {
+      "level": "advanced",
+      "name": "암릉 만경대 코스 (가평 주차장~눈썹바위~미륵바위~병풍바위~망경대~동봉)",
+      "distance_km": 3.2,
+      "time": "3h30m",
+      "difficulty": "고급",
+      "checkpoints": [
+        {"name": "가평 주차장", "alt_m": 170, "cum_km": 0.0, "note": "가평 운악리 기점"},
+        {"name": "눈썹바위", "alt_m": 360, "cum_km": 1.2, "note": "기암괴석, 눈썹 모양 바위"},
+        {"name": "미륵바위", "alt_m": 680, "cum_km": 2.2, "note": "미륵불 형상 바위"},
+        {"name": "병풍바위", "alt_m": 750, "cum_km": 2.5, "note": "거대한 수직 암벽 지대"},
+        {"name": "망경대", "alt_m": 920, "cum_km": 3.0, "note": "가평8경 중 하나, 우수한 조망"},
+        {"name": "동봉 정상", "alt_m": 937.5, "cum_km": 3.2, "note": "최고봉 정상 도착"}
+      ],
+      "elevation_profile": "눈썹바위 이후 본격적인 암릉 지대가 시작되며 미륵바위와 병풍바위 조망대 구간은 쇠말뚝과 로프, 급경사 철계단이 설치된 험준한 바위 능선길입니다. 강한 체력과 고소공포증 극복이 요구됩니다.",
+      "hazards": [
+        "로프 및 호치키스 발판 구간 실족 주의",
+        "강풍 및 우천 시 암릉구간 미끄럼 매우 위험"
+      ],
+      "source": [
+        "https://www.gapyeong.go.kr",
+        "https://www.durunubi.kr"
+      ]
+    }
+  ],
+  "transport": {
+    "by_transit": "청량리역 환승센터에서 1330-44번 버스 탑승 후 가평 운악산/현등사 종점 하차 (배차간격 긴 편, 시간표 사전 확인 필수). 또는 청평역에서 하차 후 청평터미널에서 가평 시내버스 30-4번 등 환승. 포천 방면은 동서울터미널에서 와수리/사창리행 시외버스 탑승 후 운악산휴게소 하차.",
+    "trailhead_access": "가평 방면: 경기도 가평군 조종면 운악리 451-1 (가평 하판리 주차장) / 포천 방면: 경기도 포천시 화현면 화현리 251-1 (운악광장 주차장)",
+    "source": [
+      "https://www.gapyeong.go.kr",
+      "https://www.pocheon.go.kr"
+    ]
+  },
+  "season": {
+    "highlights": "가을철 단풍이 수려한 절경을 이루며, 겨울철 무지치폭포의 거대한 빙벽 조망과 상고대가 아름답습니다.",
+    "cautions": "겨울철 암릉 구간은 폭설 및 상습 결빙으로 낙상 사고 위험이 매우 높으므로 아이젠과 등산스틱 필참.",
+    "source": [
+      "https://www.gapyeong.go.kr"
+    ]
+  },
+  "tips": [
+    "접지력이 우수한 릿지창 등산화와 보호용 장갑 지참 필수.",
+    "초보자는 현등사 코스(1코스) 왕복을 추천하며, 가평 능선코스(2코스)는 오르막으로, 계곡코스는 내리막으로 이용하는 순환 코스가 선호됩니다."
+  ],
+  "uncertainties": [
+    "대중교통 버스 노선 및 배차 시간은 유동적이므로 산행 전 가평/포천 교통정보 포털을 통한 실시간 교차 검증 필요."
+  ],
+  "all_sources": [
+    "가평군 문화관광 포털",
+    "포천시 문화관광 포털",
+    "두루누비 (대한민국 걷기여행 길잡이)"
+  ]
+}

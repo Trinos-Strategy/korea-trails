@@ -1,0 +1,65 @@
+{
+  "mountain_id": "dobongsan",
+  "default_layer": "satellite",
+  "points": {
+    "songchu_parking_송추주차장": {"lat": 37.7126, "lng": 126.9744, "alt_m": 160, "type": "parking"},
+    "obong_center_오봉지원센터": {"lat": 37.7135, "lng": 126.9785, "alt_m": 165, "type": "office"},
+    "uldae_wetland_울대습지": {"lat": 37.7188, "lng": 126.9850, "alt_m": 230, "type": "wetland"},
+    "yeoseongbong_junction_여성봉분기점": {"lat": 37.7210, "lng": 126.9930, "alt_m": 420, "type": "junction"},
+    "yeoseongbong_여성봉": {"lat": 37.7225, "lng": 126.9972, "alt_m": 504, "type": "summit"},
+    "obong_오봉": {"lat": 37.7183, "lng": 127.0055, "alt_m": 660, "type": "summit"},
+    "songchu_waterfall_송추폭포": {"lat": 37.7181, "lng": 126.9912, "alt_m": 260, "type": "waterfall"},
+    "dobongsan_exit1_도봉산역": {"lat": 37.6896, "lng": 127.0427, "alt_m": 75, "type": "subway"},
+    "dobong_center_도봉지원센터": {"lat": 37.6905, "lng": 127.0325, "alt_m": 90, "type": "office"},
+    "dobong_seowon_도봉서원터": {"lat": 37.6946, "lng": 127.0255, "alt_m": 210, "type": "monument"},
+    "cheonchuksa_천축사": {"lat": 37.6980, "lng": 127.0230, "alt_m": 320, "type": "temple"},
+    "madangbawi_마당바위": {"lat": 37.6983, "lng": 127.0202, "alt_m": 450, "type": "viewpoint"},
+    "jaunbong_junction_자운봉분기점": {"lat": 37.6992, "lng": 127.0175, "alt_m": 620, "type": "junction"},
+    "sinseondae_신선대": {"lat": 37.6998, "lng": 127.0165, "alt_m": 714, "type": "summit"},
+    "mangwolsa_station_망월사역": {"lat": 37.7303, "lng": 127.0469, "alt_m": 85, "type": "subway"},
+    "simwonsa_입구_심원사입구": {"lat": 37.7225, "lng": 127.0395, "alt_m": 150, "type": "temple"},
+    "darak_ridge_다락능선진입": {"lat": 37.7165, "lng": 127.0315, "alt_m": 320, "type": "trail"},
+    "podae_observatory_포대전망대": {"lat": 37.7015, "lng": 127.0195, "alt_m": 600, "type": "viewpoint"},
+    "y_valley_entry_Y계곡입구": {"lat": 37.7008, "lng": 127.0175, "alt_m": 630, "type": "warning"},
+    "y_valley_exit_Y계곡통과": {"lat": 37.6999, "lng": 127.0168, "alt_m": 680, "type": "warning"}
+  },
+  "routes": {
+    "beginner": [
+      "songchu_parking_송추주차장",
+      "obong_center_오봉지원센터",
+      "uldae_wetland_울대습지",
+      "yeoseongbong_junction_여성봉분기점",
+      "yeoseongbong_여성봉",
+      "obong_오봉",
+      "songchu_waterfall_송추폭포",
+      "obong_center_오봉지원센터",
+      "songchu_parking_송추주차장"
+    ],
+    "intermediate": [
+      "dobongsan_exit1_도봉산역",
+      "dobong_center_도봉지원센터",
+      "dobong_seowon_도봉서원터",
+      "cheonchuksa_천축사",
+      "madangbawi_마당바위",
+      "jaunbong_junction_자운봉분기점",
+      "sinseondae_신선대",
+      "jaunbong_junction_자운봉분기점",
+      "madangbawi_마당바위",
+      "dobong_center_도봉지원센터",
+      "dobongsan_exit1_도봉산역"
+    ],
+    "advanced": [
+      "mangwolsa_station_망월사역",
+      "simwonsa_입구_심원사입구",
+      "darak_ridge_다락능선진입",
+      "podae_observatory_포대전망대",
+      "y_valley_entry_Y계곡입구",
+      "y_valley_exit_Y계곡통과",
+      "sinseondae_신선대",
+      "madangbawi_마당바위",
+      "cheonchuksa_천축사",
+      "dobong_center_도봉지원센터",
+      "dobongsan_exit1_도봉산역"
+    ]
+  }
+}

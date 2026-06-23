@@ -1,0 +1,62 @@
+{
+  "mountain_id": "bukhansan",
+  "default_layer": "satellite",
+  "points": {
+    "bulgwang_exit9_불광역": {"lat": 37.6105, "lng": 126.9295, "alt_m": 110},
+    "daeho_apt_대호아파트진입로": {"lat": 37.6120, "lng": 126.9348, "alt_m": 130},
+    "jokduribong_족두리봉": {"lat": 37.6146, "lng": 126.9412, "alt_m": 370},
+    "hyangrobong_향로봉": {"lat": 37.6186, "lng": 126.9442, "alt_m": 535},
+    "bibong_비봉": {"lat": 37.6195, "lng": 126.9507, "alt_m": 560},
+    "samobawi_사모바위": {"lat": 37.6205, "lng": 126.9538, "alt_m": 500},
+    "seunggasa_승가사": {"lat": 37.6203, "lng": 126.9592, "alt_m": 300},
+    "gugi_center_구기탐방지원센터": {"lat": 37.6131, "lng": 126.9676, "alt_m": 150},
+    "bukhansanseong_center_북한산성탐방지원센터": {"lat": 37.6496, "lng": 126.9427, "alt_m": 230},
+    "daeseomun_대서문": {"lat": 37.6525, "lng": 126.9490, "alt_m": 250},
+    "jungseomun_중성문": {"lat": 37.6538, "lng": 126.9580, "alt_m": 350},
+    "borisa_보리사": {"lat": 37.6568, "lng": 126.9635, "alt_m": 480},
+    "wimun_위문": {"lat": 37.6575, "lng": 126.9740, "alt_m": 780},
+    "baegundae_백운대": {"lat": 37.6586, "lng": 126.9778, "alt_m": 836},
+    "harujae_하루재": {"lat": 37.6620, "lng": 126.9855, "alt_m": 580},
+    "baegundae_center_백운대탐방지원센터": {"lat": 37.6631, "lng": 127.0125, "alt_m": 330},
+    "bukhansanui_station_북한산우이역": {"lat": 37.6631, "lng": 127.0125, "alt_m": 160},
+    "doseonsa_도선사": {"lat": 37.6635, "lng": 126.9945, "alt_m": 300},
+    "mangyeongdae_만경대": {"lat": 37.6565, "lng": 126.9785, "alt_m": 799},
+    "nojeokbong_노적봉": {"lat": 37.6515, "lng": 126.9705, "alt_m": 715},
+    "yongammun_용암문": {"lat": 37.6480, "lng": 126.9755, "alt_m": 580},
+    "daenammun_대남문": {"lat": 37.6322, "lng": 126.9658, "alt_m": 650}
+  },
+  "routes": {
+    "beginner": [
+      "bulgwang_exit9_불광역",
+      "daeho_apt_대호아파트진입로",
+      "jokduribong_족두리봉",
+      "hyangrobong_향로봉",
+      "bibong_비봉",
+      "samobawi_사모바위",
+      "seunggasa_승가사",
+      "gugi_center_구기탐방지원센터"
+    ],
+    "intermediate": [
+      "bukhansanseong_center_북한산성탐방지원센터",
+      "daeseomun_대서문",
+      "jungseomun_중성문",
+      "borisa_보리사",
+      "wimun_위문",
+      "baegundae_백운대",
+      "harujae_하루재",
+      "baegundae_center_백운대탐방지원센터"
+    ],
+    "advanced": [
+      "bukhansanui_station_북한산우이역",
+      "doseonsa_도선사",
+      "harujae_하루재",
+      "wimun_위문",
+      "baegundae_백운대",
+      "mangyeongdae_만경대",
+      "nojeokbong_노적봉",
+      "yongammun_용암문",
+      "daenammun_대남문",
+      "gugi_center_구기탐방지원센터"
+    ]
+  }
+}

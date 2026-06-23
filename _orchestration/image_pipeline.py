@@ -216,6 +216,7 @@ def process_single_photo(photo_data):
     
     m = mountains_map[m_id]
     m_dir = f"assets/img/{m_id}"
+    os.makedirs(m_dir, exist_ok=True)
     
     # Check if files already exist and we have manifest entry
     key = (m_id, role)
@@ -483,9 +484,9 @@ def process_local_mountain(m_id):
     return results
 
 def main():
-    # Filter selected_photos to exclude local mountains
+    # Filter selected_photos to exclude local mountains and ensure mountain exists in inventory
     local_mountains = {"dobongsan", "bukhansan", "soyosan"}
-    remote_selected_photos = [p for p in selected_photos if p["mountain_id"] not in local_mountains]
+    remote_selected_photos = [p for p in selected_photos if p["mountain_id"] not in local_mountains and p["mountain_id"] in mountains_map]
     
     print(f"Starting image processing pipeline for {len(remote_selected_photos)} remote photos...")
     

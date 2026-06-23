@@ -475,6 +475,35 @@
       "ai_generated": false
     },
     {
+      "id": "og-unaksan",
+      "path": "assets/img/unaksan/og.png",
+      "type": "image/png",
+      "dimensions": "1200x630",
+      "purpose": "Social sharing open-graph card for Unaksan Playbook",
+      "source": "Composite of actual hero photo with branding and text overlay",
+      "ai_generated": false
+    },
+    {
+      "id": "hero-video-unaksan",
+      "path": "assets/video/unaksan/hero.mp4",
+      "type": "video/mp4",
+      "duration": "12s",
+      "dimensions": "1280x720",
+      "purpose": "Desktop cinematic ambient background loop on Unaksan playbook hero",
+      "source": "Ken Burns slow zoom/pan effect on actual hero photo",
+      "ai_generated": false,
+      "size_bytes": 541144
+    },
+    {
+      "id": "hero-poster-unaksan",
+      "path": "assets/video/unaksan/hero-poster.jpg",
+      "type": "image/jpeg",
+      "dimensions": "1280x720",
+      "purpose": "Fallback poster and mobile background image for Unaksan playbook hero",
+      "source": "Copy of actual hero photo",
+      "ai_generated": false
+    },
+    {
       "id": "og-wolchulsan",
       "path": "assets/img/wolchulsan/og.png",
       "type": "image/png",
