@@ -103,181 +103,8 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
-
-/* Leaflet map styles */
-.leaflet-map {
-  border: 1px solid var(--color-border);
-  background: var(--color-surface-2);
-  box-shadow: var(--shadow-sm);
-  transition: background 0.3s ease, border-color 0.3s ease;
-}
-.map-tooltip {
-  background-color: var(--color-surface) !important;
-  border: 1px solid var(--color-border) !important;
-  color: var(--color-text) !important;
-  font-weight: 700;
-  font-size: var(--text-xs);
-  border-radius: var(--radius-sm);
-  padding: var(--space-1) var(--space-2);
-  box-shadow: var(--shadow-md);
-}
-.map-popup-content {
-  font-family: inherit;
-  line-height: 1.5;
-}
-.leaflet-popup-content-wrapper {
-  background: var(--color-surface) !important;
-  color: var(--color-text) !important;
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-md) !important;
-  box-shadow: var(--shadow-lg) !important;
-}
-.leaflet-popup-tip {
-  background: var(--color-surface) !important;
-  border: 1px solid var(--color-border);
-}
-.leaflet-popup-close-button {
-  color: var(--color-text-muted) !important;
-}
-.leaflet-control-layers {
-  background-color: var(--color-surface) !important;
-  border: 1px solid var(--color-border) !important;
-  border-radius: var(--radius-md) !important;
-  color: var(--color-text) !important;
-  box-shadow: var(--shadow-md) !important;
-  font-size: var(--text-xs);
-  font-weight: 700;
-}
-.leaflet-bar {
-  border: 1px solid var(--color-border) !important;
-  box-shadow: var(--shadow-sm) !important;
-}
-.leaflet-bar a {
-  background-color: var(--color-surface) !important;
-  color: var(--color-text) !important;
-  border-bottom: 1px solid var(--color-border) !important;
-}
-.leaflet-bar a:hover {
-  background-color: var(--color-surface-2) !important;
-}
-.leaflet-container .leaflet-control-attribution {
-  background: rgba(var(--color-bg), 0.7) !important;
-  color: var(--color-text-muted) !important;
-  font-size: 9px;
-  backdrop-filter: blur(4px);
-}
-[data-theme="dark"] .terrain-layer-dark-filter {
-  filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
-}
-
-/* YouTube Shorts Grid */
-.video-section {
-  padding: var(--space-10) var(--space-6);
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-  border-bottom: 1px solid var(--color-border);
-}
-.video-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-  gap: var(--space-4);
-  margin-top: var(--space-6);
-}
-@media(max-width:640px){
-  .video-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-3);
-  }
-}
-.video-card {
-  background: var(--color-surface-2);
-  border: 1px solid var(--color-border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-}
-.video-facade-btn {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 9/16;
-  background: #000;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  overflow: hidden;
-  display: block;
-}
-.video-thumbnail {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform var(--transition);
-}
-.video-facade-btn:hover .video-thumbnail {
-  transform: scale(1.05);
-}
-.video-play-btn {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 48px;
-  height: 48px;
-  background: rgba(0, 0, 0, 0.7);
-  border: 2px solid #ffffff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #ffffff;
-  transition: background var(--transition), transform var(--transition);
-  pointer-events: none;
-}
-.video-facade-btn:hover .video-play-btn {
-  background: rgba(220, 50, 50, 0.9);
-  transform: translate(-50%, -50%) scale(1.1);
-}
-.video-play-icon {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 8px 0 8px 14px;
-  border-color: transparent transparent transparent #ffffff;
-  margin-left: 4px;
-}
-.video-iframe {
-  width: 100%;
-  aspect-ratio: 9/16;
-  border: none;
-}
-.video-info {
-  padding: var(--space-3);
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-}
-.video-label {
-  font-size: var(--text-sm);
-  font-weight: 700;
-  color: var(--color-text);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.video-link {
-  font-size: var(--text-xs);
-  color: var(--color-primary);
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-}
-.video-link:hover {
-  text-decoration: underline;
-}
 
 /* TIPS GRID */
 .tips-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--space-4);margin-bottom:var(--space-8);}
@@ -734,29 +561,13 @@
 <!-- HEADER -->
 <header class="header">
 <div class="header-logo">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <div>
 <div class="logo-text">북한산</div>
@@ -1097,20 +908,135 @@
 <div aria-label="북한산 초급 비봉 능선 코스 실사 지도" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>#</th><th>지점</th><th>고도</th><th>누적 거리</th><th>구분</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>불광역 9번 출구</td><td>110m</td><td>0km</td><td><span class="badge-sm badge-start">출발</span></td><td>편의점·화장실·지하철</td></tr>
-<tr><td>2</td><td>대호아파트 진입로</td><td>130m</td><td>0.5km</td><td><span class="badge-sm badge-rest">경유</span></td><td>이정표</td></tr>
-<tr><td>3</td><td>족두리봉</td><td>370m</td><td>1.8km</td><td><span class="badge-sm badge-peak">봉우리</span></td><td>조망대</td></tr>
-<tr><td>4</td><td>향로봉</td><td>535m</td><td>2.8km</td><td><span class="badge-sm badge-peak">봉우리</span></td><td>이정표</td></tr>
-<tr><td>5</td><td>비봉 ★</td><td>560m</td><td>3.3km</td><td><span class="badge-sm badge-peak">최고봉</span></td><td>진흥왕순수비 복제비</td></tr>
-<tr><td>6</td><td>사모바위</td><td>500m</td><td>4.1km</td><td><span class="badge-sm badge-rest">쉼터</span></td><td>조망·휴식</td></tr>
-<tr><td>7</td><td>승가사</td><td>300m</td><td>5.5km</td><td><span class="badge-sm badge-rest">사찰</span></td><td>약수·화장실</td></tr>
-<tr><td>8</td><td>구기탐방지원센터</td><td>150m</td><td>8.0km</td><td><span class="badge-sm badge-end">도착</span></td><td>화장실·버스정류장</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">불광역 9번 출구</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 110m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 편의점·화장실·지하철
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대호아파트 진입로</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 130m</span>
+<span class="meta-item">📏 누적 0.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">족두리봉</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 370m</span>
+<span class="meta-item">📏 누적 1.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망대
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">향로봉</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 535m</span>
+<span class="meta-item">📏 누적 2.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">비봉 ★</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 560m</span>
+<span class="meta-item">📏 누적 3.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 진흥왕순수비 복제비
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사모바위</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 500m</span>
+<span class="meta-item">📏 누적 4.1km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망·휴식
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">승가사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 300m</span>
+<span class="meta-item">📏 누적 5.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 약수·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구기탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 150m</span>
+<span class="meta-item">📏 누적 8.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·버스정류장
+      </div>
+</div>
+</div>
 </div>
 </div><div class="table-wrap">
 <table>
@@ -1396,20 +1322,135 @@
 <div aria-label="북한산 중급 백운대 코스 실사 지도" class="leaflet-map" id="map-intermediate" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>#</th><th>지점</th><th>고도</th><th>누적 거리</th><th>구분</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>북한산성탐방지원센터</td><td>230m</td><td>0km</td><td><span class="badge-sm badge-start">출발</span></td><td>주차장·화장실·매점</td></tr>
-<tr><td>2</td><td>대서문</td><td>250m</td><td>0.5km</td><td><span class="badge-sm badge-gate">성문</span></td><td>화장실</td></tr>
-<tr><td>3</td><td>중성문</td><td>350m</td><td>1.2km</td><td><span class="badge-sm badge-gate">성문</span></td><td>이정표</td></tr>
-<tr><td>4</td><td>보리사</td><td>480m</td><td>1.9km</td><td><span class="badge-sm badge-rest">사찰</span></td><td>화장실·약수</td></tr>
-<tr><td>5</td><td>위문(백운봉암문)</td><td>780m</td><td>3.3km</td><td><span class="badge-sm badge-gate">성문</span></td><td>이정표 삼거리</td></tr>
-<tr><td>6</td><td>백운대 ★</td><td>836.5m</td><td>3.6km</td><td><span class="badge-sm badge-peak">최고봉</span></td><td>정상석·조망대</td></tr>
-<tr><td>7</td><td>하루재</td><td>580m</td><td>5.0km</td><td><span class="badge-sm badge-rest">쉼터</span></td><td>이정표·벤치</td></tr>
-<tr><td>8</td><td>백운대탐방지원센터</td><td>330m</td><td>9.4km</td><td><span class="badge-sm badge-end">도착</span></td><td>화장실·버스정류장</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">북한산성탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 230m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차장·화장실·매점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대서문</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 250m</span>
+<span class="meta-item">📏 누적 0.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">중성문</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 350m</span>
+<span class="meta-item">📏 누적 1.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">보리사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 480m</span>
+<span class="meta-item">📏 누적 1.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·약수
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">위문(백운봉암문)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 780m</span>
+<span class="meta-item">📏 누적 3.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표 삼거리
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백운대 ★</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 836.5m</span>
+<span class="meta-item">📏 누적 3.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·조망대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">하루재</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 580m</span>
+<span class="meta-item">📏 누적 5.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표·벤치
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백운대탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 330m</span>
+<span class="meta-item">📏 누적 9.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·버스정류장
+      </div>
+</div>
+</div>
 </div>
 </div><div class="table-wrap">
 <table>
@@ -1713,22 +1754,167 @@
 <div aria-label="북한산 고급 만경대 능선 종주 코스 실사 지도" class="leaflet-map" id="map-advanced" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 전체 체크포인트</div>
-<div class="table-wrap">
-<table>
-<thead><tr><th>#</th><th>지점</th><th>고도</th><th>누적 거리</th><th>구분</th><th>편의시설</th></tr></thead>
-<tbody>
-<tr><td>1</td><td>우이동(북한산우이역)</td><td>160m</td><td>0km</td><td><span class="badge-sm badge-start">출발</span></td><td>편의점·화장실</td></tr>
-<tr><td>2</td><td>도선사</td><td>300m</td><td>1.8km</td><td><span class="badge-sm badge-rest">사찰</span></td><td>약수·화장실·매점</td></tr>
-<tr><td>3</td><td>하루재</td><td>540m</td><td>3.0km</td><td><span class="badge-sm badge-rest">쉼터</span></td><td>벤치·이정표</td></tr>
-<tr><td>4</td><td>백운봉암문(위문)</td><td>780m</td><td>4.2km</td><td><span class="badge-sm badge-gate">성문</span></td><td>이정표</td></tr>
-<tr><td>5</td><td>백운대 ★</td><td>836.5m</td><td>4.5km</td><td><span class="badge-sm badge-peak">최고봉</span></td><td>정상석·조망대</td></tr>
-<tr><td>6</td><td>만경대 ★</td><td>799.5m</td><td>5.3km</td><td><span class="badge-sm badge-peak">거봉</span></td><td>조망·암릉</td></tr>
-<tr><td>7</td><td>노적봉</td><td>715m</td><td>7.3km</td><td><span class="badge-sm badge-peak">봉우리</span></td><td>삼각봉 조망 명소</td></tr>
-<tr><td>8</td><td>용암문</td><td>580m</td><td>8.0km</td><td><span class="badge-sm badge-gate">성문</span></td><td>이정표</td></tr>
-<tr><td>9</td><td>대남문</td><td>650m</td><td>9.0km</td><td><span class="badge-sm badge-gate">성문</span></td><td>화장실·이정표</td></tr>
-<tr><td>10</td><td>구기탐방지원센터</td><td>150m</td><td>12.0km</td><td><span class="badge-sm badge-end">도착</span></td><td>화장실·버스정류장</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">우이동(북한산우이역)</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 160m</span>
+<span class="meta-item">📏 누적 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 편의점·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">도선사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 300m</span>
+<span class="meta-item">📏 누적 1.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 약수·화장실·매점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">하루재</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 540m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 벤치·이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백운봉암문(위문)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 780m</span>
+<span class="meta-item">📏 누적 4.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">백운대 ★</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 836.5m</span>
+<span class="meta-item">📏 누적 4.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·조망대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">만경대 ★</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 799.5m</span>
+<span class="meta-item">📏 누적 5.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 조망·암릉
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">노적봉</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 715m</span>
+<span class="meta-item">📏 누적 7.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 삼각봉 조망 명소
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">용암문</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 580m</span>
+<span class="meta-item">📏 누적 8.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대남문</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 650m</span>
+<span class="meta-item">📏 누적 9.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구기탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 150m</span>
+<span class="meta-item">📏 누적 12.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실·버스정류장
+      </div>
+</div>
+</div>
 </div>
 </div><div class="table-wrap">
 <table>
