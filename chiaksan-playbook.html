@@ -100,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -556,29 +556,13 @@
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
 <header class="hdr">
 <div class="logo">
-<svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
 <span class="logo-txt">치악산 플레이북</span>
 </div>
@@ -632,13 +616,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="beginner-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><span>초급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">6.0km</div><div class="sl">코스 길이</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">2h00m</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">450m</div><div class="sl">최고 고도</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±170m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~480</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★☆☆☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">코스 길이</span>
+<span class="pill-value">6.0km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">2h00m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고 고도</span>
+<span class="pill-value">450m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±170m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~480</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 1단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-easy"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 구룡사~세렴폭포 코스 (구룡사 주차장~세렴폭포 원점회귀)</h2>
@@ -661,7 +677,7 @@
 <div class="ic"><h2>코스 특징</h2><ul><li>구룡사 주차장(280m)에서 대곡안전센터(350m)를 지나 세렴폭포(450m)까지 황장목 숲길과 계곡길을 따라 계단이 거의 없는 완만하고 평탄한 길이 이어집니다.</li><li>⚠️ 일부 구간 낙석 주의</li><li>⚠️ 겨울철 계곡 인접로 빙판 결빙 주의</li></ul></div>
 </div><div class="tc" id="beginner-rt">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
-<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">구룡사 주차장 → 구룡사</div><div class="acc-m">약 1.0km · 25분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">구룡사 주차장에서 출발하여 구룡사(해발 300m)로 향합니다. 천년고찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">구룡사 → 대곡안전센터</div><div class="acc-m">약 0.9km · 22분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">구룡사에서 출발하여 대곡안전센터(해발 350m)로 향합니다. 화장실 및 쉼터. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 대곡안전센터 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">대곡안전센터 → 세렴폭포</div><div class="acc-m">약 1.1km · 27분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">대곡안전센터에서 출발하여 세렴폭포(해발 450m)로 향합니다. 회귀점, 높이 6.7m 2단 폭포. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 세렴폭포 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">세렴폭포 → 대곡안전센터 복귀</div><div class="acc-m">약 1.1km · 16분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">세렴폭포에서 출발하여 대곡안전센터 복귀(해발 350m)로 향합니다. 하산길 경유. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 대곡안전센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">대곡안전센터 복귀 → 구룡사 주차장 복귀</div><div class="acc-m">약 1.9km · 28분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">대곡안전센터 복귀에서 출발하여 구룡사 주차장 복귀(해발 280m)로 향합니다. 종점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 주차장 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">구룡사 주차장 → 구룡사</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.0km</span><span class="meta-chip">⏱ 25분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">구룡사 주차장에서 출발하여 구룡사(해발 300m)로 향합니다. 천년고찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">구룡사 → 대곡안전센터</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.9km</span><span class="meta-chip">⏱ 22분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">구룡사에서 출발하여 대곡안전센터(해발 350m)로 향합니다. 화장실 및 쉼터. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 대곡안전센터 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">대곡안전센터 → 세렴폭포</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.1km</span><span class="meta-chip">⏱ 27분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">대곡안전센터에서 출발하여 세렴폭포(해발 450m)로 향합니다. 회귀점, 높이 6.7m 2단 폭포. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 세렴폭포 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">세렴폭포 → 대곡안전센터 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.1km</span><span class="meta-chip">⏱ 16분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">세렴폭포에서 출발하여 대곡안전센터 복귀(해발 350m)로 향합니다. 하산길 경유. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 대곡안전센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">대곡안전센터 복귀 → 구룡사 주차장 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.9km</span><span class="meta-chip">⏱ 28분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg easy"><div class="df" style="width:15%"></div></div></div><p class="acc-desc">대곡안전센터 복귀에서 출발하여 구룡사 주차장 복귀(해발 280m)로 향합니다. 종점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 주차장 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
 </div><div class="tc" id="beginner-tp">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
 <div class="tg">
@@ -714,11 +730,103 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody><tr><td>1</td><td>구룡사 주차장</td><td>280m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>산행 기점</td></tr><tr><td>2</td><td>구룡사</td><td>300m</td><td>1.0km</td><td><span class="bdg b-te">사찰</span></td><td>천년고찰</td></tr><tr><td>3</td><td>대곡안전센터</td><td>350m</td><td>1.9km</td><td><span class="bdg b-sk">일반</span></td><td>화장실 및 쉼터</td></tr><tr><td>4</td><td>세렴폭포</td><td>450m</td><td>3.0km</td><td><span class="bdg b-am">정상</span></td><td>회귀점, 높이 6.7m 2단 폭포</td></tr><tr><td>5</td><td>대곡안전센터 복귀</td><td>350m</td><td>4.1km</td><td><span class="bdg b-sk">일반</span></td><td>하산길 경유</td></tr><tr><td>6</td><td>구룡사 주차장 복귀</td><td>280m</td><td>6.0km</td><td><span class="bdg b-st">도착</span></td><td>종점</td></tr></tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구룡사 주차장</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 280m</span>
+<span class="meta-item">📏 누적 0.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 산행 기점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구룡사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 300m</span>
+<span class="meta-item">📏 누적 1.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 천년고찰
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대곡안전센터</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 350m</span>
+<span class="meta-item">📏 누적 1.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 화장실 및 쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">세렴폭포</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 450m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 회귀점, 높이 6.7m 2단 폭포
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">대곡안전센터 복귀</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 350m</span>
+<span class="meta-item">📏 누적 4.1km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 하산길 경유
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구룡사 주차장 복귀</span>
+<span class="badge badge-trailhead">도착</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 280m</span>
+<span class="meta-item">📏 누적 6.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 종점
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div></div></main>
@@ -733,13 +841,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="intermediate-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-chart"></use></svg></div><span>중급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">8.2km</div><div class="sl">코스 길이</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">4h30m</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1288m</div><div class="sl">최고 고도</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±888m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~656</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★☆☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">코스 길이</span>
+<span class="pill-value">8.2km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">4h30m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고 고도</span>
+<span class="pill-value">1288m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±888m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~656</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 황골 코스 (황골탐방지원센터~입석사~비로봉 원점회귀)</h2>
@@ -763,7 +903,7 @@
 <div class="ic"><h2>코스 특징</h2><ul><li>황골탐방지원센터(400m)에서 입석사(720m)까지는 가파른 시멘트 임도이며, 입석사에서 황골삼거리(1040m)까지는 급경사 너덜 및 돌계단 깔딱고개입니다. 이후 비로봉 정상(1288m)까지는 완만한 주능선입니다.</li><li>⚠️ 입석사 이후 황골삼거리까지 급경사 깔딱고개 체력 소모 심함</li><li>⚠️ 입석사 구간 하산 시 무릎 부상 주의</li></ul></div>
 </div><div class="tc" id="intermediate-rt">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
-<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">황골탐방지원센터 → 입석사</div><div class="acc-m">약 1.6km · 40분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">황골탐방지원센터에서 출발하여 입석사(해발 720m)로 향합니다. 신라 시대 고찰, 입석대 조망. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 입석사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">입석사 → 황골삼거리</div><div class="acc-m">약 1.2km · 30분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">입석사에서 출발하여 황골삼거리(해발 1040m)로 향합니다. 주능선 합류점, 깔딱고개 끝. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 황골삼거리 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">황골삼거리 → 쥐너미재 전망대</div><div class="acc-m">약 0.5km · 7분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">황골삼거리에서 출발하여 쥐너미재 전망대(해발 1000m)로 향합니다. 원주시내 조망 포인트. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 쥐너미재 전망대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">쥐너미재 전망대 → 비로봉</div><div class="acc-m">약 0.8km · 20분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">쥐너미재 전망대에서 출발하여 비로봉(해발 1288m)로 향합니다. 치악산 최고봉 정상, 돌탑 3기. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 비로봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">비로봉 → 쥐너미재 전망대 복귀</div><div class="acc-m">약 0.8km · 12분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">비로봉에서 출발하여 쥐너미재 전망대 복귀(해발 1000m)로 향합니다. 하산길 능선. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 쥐너미재 전망대 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">쥐너미재 전망대 복귀 → 황골삼거리 복귀</div><div class="acc-m">약 0.5km · 12분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">쥐너미재 전망대 복귀에서 출발하여 황골삼거리 복귀(해발 1040m)로 향합니다. 하산 갈림길. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 황골삼거리 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">황골삼거리 복귀 → 입석사 복귀</div><div class="acc-m">약 1.2km · 18분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">황골삼거리 복귀에서 출발하여 입석사 복귀(해발 720m)로 향합니다. 급경사 하산 주의. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 입석사 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">8</span><div class="acc-tw"><div class="acc-t">입석사 복귀 → 황골탐방지원센터 복귀</div><div class="acc-m">약 1.6km · 24분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">입석사 복귀에서 출발하여 황골탐방지원센터 복귀(해발 400m)로 향합니다. 원점회귀 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 황골탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">황골탐방지원센터 → 입석사</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.6km</span><span class="meta-chip">⏱ 40분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">황골탐방지원센터에서 출발하여 입석사(해발 720m)로 향합니다. 신라 시대 고찰, 입석대 조망. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 입석사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">입석사 → 황골삼거리</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.2km</span><span class="meta-chip">⏱ 30분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">입석사에서 출발하여 황골삼거리(해발 1040m)로 향합니다. 주능선 합류점, 깔딱고개 끝. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 황골삼거리 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">황골삼거리 → 쥐너미재 전망대</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.5km</span><span class="meta-chip">⏱ 7분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">황골삼거리에서 출발하여 쥐너미재 전망대(해발 1000m)로 향합니다. 원주시내 조망 포인트. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 쥐너미재 전망대 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">쥐너미재 전망대 → 비로봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.8km</span><span class="meta-chip">⏱ 20분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">쥐너미재 전망대에서 출발하여 비로봉(해발 1288m)로 향합니다. 치악산 최고봉 정상, 돌탑 3기. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 비로봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">비로봉 → 쥐너미재 전망대 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.8km</span><span class="meta-chip">⏱ 12분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">비로봉에서 출발하여 쥐너미재 전망대 복귀(해발 1000m)로 향합니다. 하산길 능선. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 쥐너미재 전망대 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">쥐너미재 전망대 복귀 → 황골삼거리 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 0.5km</span><span class="meta-chip">⏱ 12분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">쥐너미재 전망대 복귀에서 출발하여 황골삼거리 복귀(해발 1040m)로 향합니다. 하산 갈림길. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 황골삼거리 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">황골삼거리 복귀 → 입석사 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.2km</span><span class="meta-chip">⏱ 18분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">황골삼거리 복귀에서 출발하여 입석사 복귀(해발 720m)로 향합니다. 급경사 하산 주의. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 입석사 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">8</span><div class="acc-tw"><div class="acc-t">입석사 복귀 → 황골탐방지원센터 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.6km</span><span class="meta-chip">⏱ 24분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg medium"><div class="df" style="width:40%"></div></div></div><p class="acc-desc">입석사 복귀에서 출발하여 황골탐방지원센터 복귀(해발 400m)로 향합니다. 원점회귀 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 황골탐방지원센터 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
 </div><div class="tc" id="intermediate-tp">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
 <div class="tg">
@@ -813,11 +953,151 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody><tr><td>1</td><td>황골탐방지원센터</td><td>400m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>황골 지구 산행 기점</td></tr><tr><td>2</td><td>입석사</td><td>720m</td><td>1.6km</td><td><span class="bdg b-te">사찰</span></td><td>신라 시대 고찰, 입석대 조망</td></tr><tr><td>3</td><td>황골삼거리</td><td>1040m</td><td>2.8km</td><td><span class="bdg b-sk">일반</span></td><td>주능선 합류점, 깔딱고개 끝</td></tr><tr><td>4</td><td>쥐너미재 전망대</td><td>1000m</td><td>3.3km</td><td><span class="bdg b-sk">쉼터</span></td><td>원주시내 조망 포인트</td></tr><tr><td>5</td><td>비로봉</td><td>1288m</td><td>4.1km</td><td><span class="bdg b-am">정상</span></td><td>치악산 최고봉 정상, 돌탑 3기</td></tr><tr><td>6</td><td>쥐너미재 전망대 복귀</td><td>1000m</td><td>4.9km</td><td><span class="bdg b-sk">쉼터</span></td><td>하산길 능선</td></tr><tr><td>7</td><td>황골삼거리 복귀</td><td>1040m</td><td>5.4km</td><td><span class="bdg b-sk">일반</span></td><td>하산 갈림길</td></tr><tr><td>8</td><td>입석사 복귀</td><td>720m</td><td>6.6km</td><td><span class="bdg b-te">사찰</span></td><td>급경사 하산 주의</td></tr><tr><td>9</td><td>황골탐방지원센터 복귀</td><td>400m</td><td>8.2km</td><td><span class="bdg b-st">도착</span></td><td>원점회귀 완료</td></tr></tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">황골탐방지원센터</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 400m</span>
+<span class="meta-item">📏 누적 0.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 황골 지구 산행 기점
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">입석사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 720m</span>
+<span class="meta-item">📏 누적 1.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 신라 시대 고찰, 입석대 조망
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">황골삼거리</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1040m</span>
+<span class="meta-item">📏 누적 2.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주능선 합류점, 깔딱고개 끝
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">쥐너미재 전망대</span>
+<span class="badge badge-shelter">쉼터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1000m</span>
+<span class="meta-item">📏 누적 3.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 원주시내 조망 포인트
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">비로봉</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1288m</span>
+<span class="meta-item">📏 누적 4.1km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 치악산 최고봉 정상, 돌탑 3기
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">쥐너미재 전망대 복귀</span>
+<span class="badge badge-shelter">쉼터</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1000m</span>
+<span class="meta-item">📏 누적 4.9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 하산길 능선
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">황골삼거리 복귀</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1040m</span>
+<span class="meta-item">📏 누적 5.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 하산 갈림길
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">입석사 복귀</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 720m</span>
+<span class="meta-item">📏 누적 6.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 급경사 하산 주의
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">황골탐방지원센터 복귀</span>
+<span class="badge badge-trailhead">도착</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 400m</span>
+<span class="meta-item">📏 누적 8.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 원점회귀 완료
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
@@ -833,13 +1113,45 @@
 <div class="main">
 <div class="playbook-split-container"><div class="playbook-main-col"><div class="tc active" id="advanced-ov">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><span>고급 코스 개요</span></div>
-<div class="stat-grid">
-<div class="stat-card"><div class="si">📏</div><div class="sv">11.5km</div><div class="sl">코스 길이</div></div>
-<div class="stat-card"><div class="si">⏱</div><div class="sv">6h00m</div><div class="sl">소요 시간</div></div>
-<div class="stat-card"><div class="si"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="sv">1288m</div><div class="sl">최고 고도</div></div>
-<div class="stat-card"><div class="si">📈</div><div class="sv">±1008m</div><div class="sl">누적 고도차</div></div>
-<div class="stat-card"><div class="si">🔥</div><div class="sv">~920</div><div class="sl">예상 칼로리</div></div>
-<div class="stat-card"><div class="si">⭐</div><div class="sv">★★★★☆</div><div class="sl">난이도</div></div>
+<div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon">📏</span>
+<span class="pill-label">코스 길이</span>
+<span class="pill-value">11.5km</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⏱</span>
+<span class="pill-label">소요 시간</span>
+<span class="pill-value">6h00m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></span>
+<span class="pill-label">최고 고도</span>
+<span class="pill-value">1288m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">📈</span>
+<span class="pill-label">누적 고도차</span>
+<span class="pill-value">±1008m</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">🔥</span>
+<span class="pill-label">예상 칼로리</span>
+<span class="pill-value">~920</span>
+</div>
+<div class="stat-pill">
+<span class="pill-icon">⭐</span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 4단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+</div>
+</div>
+</div>
 </div>
 <div class="elev-wrap">
 <h2>📊 고도 프로파일 — 사다리병창 코스 (구룡사~세렴폭포~사다리병창~비로봉 원점회귀)</h2>
@@ -869,7 +1181,7 @@
 <div class="ic"><h2>코스 특징</h2><ul><li>세렴폭포(450m)에서 사다리병창(900m)을 거쳐 비로봉(1288m)까지 가파른 바위 능선과 끊임없는 철계단이 이어져 강한 체력을 요구합니다. 하산은 다소 완만한 계곡길(칠석폭포 경유)을 통해 복귀합니다.</li><li>⚠️ 사다리병창길의 매우 가파른 경사와 바위 절벽 실족 주의</li><li>⚠️ 비로봉 인근 겨울철 극심한 강풍 및 상습 결빙 낙상 우려</li></ul></div>
 </div><div class="tc" id="advanced-rt">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></div><span>구간별 상세 경로</span></div>
-<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">구룡사 주차장 → 구룡사</div><div class="acc-m">약 1.0km · 25분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">구룡사 주차장에서 출발하여 구룡사(해발 300m)로 향합니다. 천년고찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">구룡사 → 세렴폭포</div><div class="acc-m">약 2.0km · 50분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">구룡사에서 출발하여 세렴폭포(해발 450m)로 향합니다. 본격 등산로 시점, 사다리병창/계곡길 갈림길. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 세렴폭포 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">세렴폭포 → 사다리병창</div><div class="acc-m">약 1.4km · 35분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">세렴폭포에서 출발하여 사다리병창(해발 900m)로 향합니다. 가파른 암릉 및 계단 지대. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 사다리병창 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">사다리병창 → 비로봉</div><div class="acc-m">약 1.3km · 32분 · 오르막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">사다리병창에서 출발하여 비로봉(해발 1288m)로 향합니다. 치악산 최고봉 정상, 돌탑 3기. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 비로봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">비로봉 → 칠석폭포</div><div class="acc-m">약 1.5km · 22분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">비로봉에서 출발하여 칠석폭포(해발 700m)로 향합니다. 계곡길 하산 경로 쉼터. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 칠석폭포 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">칠석폭포 → 세렴폭포 복귀</div><div class="acc-m">약 1.3km · 19분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">칠석폭포에서 출발하여 세렴폭포 복귀(해발 450m)로 향합니다. 계곡길/사다리병창 합류점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 세렴폭포 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">세렴폭포 복귀 → 구룡사 주차장 복귀</div><div class="acc-m">약 3.0km · 45분 · 내리막</div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">세렴폭포 복귀에서 출발하여 구룡사 주차장 복귀(해발 280m)로 향합니다. 원점회귀 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 주차장 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
+<div class="acc-wrap"><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">출</span><div class="acc-tw"><div class="acc-t">구룡사 주차장 → 구룡사</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.0km</span><span class="meta-chip">⏱ 25분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><p class="acc-desc">구룡사 주차장에서 출발하여 구룡사(해발 300m)로 향합니다. 천년고찰. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">2</span><div class="acc-tw"><div class="acc-t">구룡사 → 세렴폭포</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 2.0km</span><span class="meta-chip">⏱ 50분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">구룡사에서 출발하여 세렴폭포(해발 450m)로 향합니다. 본격 등산로 시점, 사다리병창/계곡길 갈림길. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 세렴폭포 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">3</span><div class="acc-tw"><div class="acc-t">세렴폭포 → 사다리병창</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.4km</span><span class="meta-chip">⏱ 35분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">세렴폭포에서 출발하여 사다리병창(해발 900m)로 향합니다. 가파른 암릉 및 계단 지대. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 사다리병창 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">4</span><div class="acc-tw"><div class="acc-t">사다리병창 → 비로봉</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.3km</span><span class="meta-chip">⏱ 32분</span><span class="meta-chip">📈 오르막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">사다리병창에서 출발하여 비로봉(해발 1288m)로 향합니다. 치악산 최고봉 정상, 돌탑 3기. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 비로봉 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">5</span><div class="acc-tw"><div class="acc-t">비로봉 → 칠석폭포</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.5km</span><span class="meta-chip">⏱ 22분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">비로봉에서 출발하여 칠석폭포(해발 700m)로 향합니다. 계곡길 하산 경로 쉼터. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 칠석폭포 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">6</span><div class="acc-tw"><div class="acc-t">칠석폭포 → 세렴폭포 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 1.3km</span><span class="meta-chip">⏱ 19분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">칠석폭포에서 출발하여 세렴폭포 복귀(해발 450m)로 향합니다. 계곡길/사다리병창 합류점. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 세렴폭포 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div><div class="acc-item"><div class="acc-hdr" onclick="togAcc(this)"><span class="acc-num">7</span><div class="acc-tw"><div class="acc-t">세렴폭포 복귀 → 구룡사 주차장 복귀</div><div class="acc-meta-chips"><span class="meta-chip">📏 약 3.0km</span><span class="meta-chip">⏱ 45분</span><span class="meta-chip">📉 내리막</span></div></div><svg class="acc-chev" fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div class="acc-body"><div class="dw"><div class="dlb">난이도</div><div class="dbg hard"><div class="df" style="width:75%"></div></div></div><p class="acc-desc">세렴폭포 복귀에서 출발하여 구룡사 주차장 복귀(해발 280m)로 향합니다. 원점회귀 완료. 안전에 주의하여 이동하시기 바랍니다.</p><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 구룡사 주차장 복귀 인근구간은 경사가 변할 수 있으니 무리하지 말고 본인의 페이스를 유지하세요.</div></div></div></div>
 </div><div class="tc" id="advanced-tp">
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg></div><span>팁 &amp; 주의사항</span></div>
 <div class="tg">
@@ -941,11 +1253,135 @@
 </svg>
 </div>
 <div class="stitle"><div class="sico"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg></div><span>전체 체크포인트 (환종주)</span></div>
-<div class="cp-wrap">
-<table class="cpt">
-<thead><tr><th>#</th><th>지점명</th><th>해발</th><th>누적거리</th><th>종류</th><th>편의시설</th></tr></thead>
-<tbody><tr><td>1</td><td>구룡사 주차장</td><td>280m</td><td>0.0km</td><td><span class="bdg b-st">출발</span></td><td>기점 출발</td></tr><tr><td>2</td><td>구룡사</td><td>300m</td><td>1.0km</td><td><span class="bdg b-te">사찰</span></td><td>천년고찰</td></tr><tr><td>3</td><td>세렴폭포</td><td>450m</td><td>3.0km</td><td><span class="bdg b-sk">일반</span></td><td>본격 등산로 시점, 사다리병창/계곡길 갈림길</td></tr><tr><td>4</td><td>사다리병창</td><td>900m</td><td>4.4km</td><td><span class="bdg b-te">사찰</span></td><td>가파른 암릉 및 계단 지대</td></tr><tr><td>5</td><td>비로봉</td><td>1288m</td><td>5.7km</td><td><span class="bdg b-am">정상</span></td><td>치악산 최고봉 정상, 돌탑 3기</td></tr><tr><td>6</td><td>칠석폭포</td><td>700m</td><td>7.2km</td><td><span class="bdg b-sk">일반</span></td><td>계곡길 하산 경로 쉼터</td></tr><tr><td>7</td><td>세렴폭포 복귀</td><td>450m</td><td>8.5km</td><td><span class="bdg b-sk">일반</span></td><td>계곡길/사다리병창 합류점</td></tr><tr><td>8</td><td>구룡사 주차장 복귀</td><td>280m</td><td>11.5km</td><td><span class="bdg b-st">도착</span></td><td>원점회귀 완료</td></tr></tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구룡사 주차장</span>
+<span class="badge badge-trailhead">출발</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 280m</span>
+<span class="meta-item">📏 누적 0.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 기점 출발
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구룡사</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 300m</span>
+<span class="meta-item">📏 누적 1.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 천년고찰
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">세렴폭포</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 450m</span>
+<span class="meta-item">📏 누적 3.0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 본격 등산로 시점, 사다리병창/계곡길 갈림길
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">사다리병창</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 900m</span>
+<span class="meta-item">📏 누적 4.4km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 가파른 암릉 및 계단 지대
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">비로봉</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1288m</span>
+<span class="meta-item">📏 누적 5.7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 치악산 최고봉 정상, 돌탑 3기
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">칠석폭포</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 7.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 계곡길 하산 경로 쉼터
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">세렴폭포 복귀</span>
+<span class="badge badge-shelter">일반</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 450m</span>
+<span class="meta-item">📏 누적 8.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 계곡길/사다리병창 합류점
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">구룡사 주차장 복귀</span>
+<span class="badge badge-trailhead">도착</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 280m</span>
+<span class="meta-item">📏 누적 11.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 원점회귀 완료
+      </div>
+</div>
+</div>
 </div>
 </div></div></div>
 </div>
