@@ -9,12 +9,6 @@
 <link href="assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,900&amp;f[]=cabinet-grotesk@400,500,700,800&amp;display=swap" rel="stylesheet"/>
 <link href="assets/css/design-system.css" rel="stylesheet"/>
 <style>
-:root {
-  --c1: var(--color-success);
-  --c2: var(--color-gold);
-  --c3: var(--color-warning);
-}
-
 /* COURSE SELECTOR */
 .course-selector {
   display: flex;
@@ -106,7 +100,7 @@
 
 /* MAP SVG */
 .map-wrap{background:var(--color-surface);border:1px solid var(--color-border);border-radius:var(--radius-xl);padding:var(--space-6);margin-bottom:var(--space-8);}
-.map-wrap h2{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
+.map-wrap h3{font-family:var(--font-display);font-weight:700;font-size:var(--text-lg);margin-bottom:var(--space-4);}
 .map-svg{width:100%;height:auto;max-height:520px;}
 
 /* TIPS GRID */
@@ -573,29 +567,13 @@
 </video>
 <div class="hero-overlay"></div>
 <div class="hero-content">
-<div class="hero-badge"><svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
+<div class="hero-badge"><svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg> 지리산 플레이북</div>
 <h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">지리산 등산 플레이북</h1>
 <p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
@@ -826,19 +804,136 @@
 </div>
 <div class="sec-title">체크포인트 표</div>
 <div class="tbl-wrap">
-<table>
-<thead><tr><th>체크포인트</th><th>고도</th><th>누적거리</th><th>주요 시설</th><th>주의</th></tr></thead>
-<tbody>
-<tr class="pk"><td>🅿 성삼재 주차장</td><td>1,100m</td><td>0 km</td><td>주차·휴게소·화장실</td><td>주말 차량 통제 가능</td></tr>
-<tr><td>성삼재 전망대</td><td>1,130m</td><td>0.3 km</td><td>전망대</td><td>—</td></tr>
-<tr><td>무넹기 전망대</td><td>1,250m</td><td>2.0 km</td><td>벤치·안내판</td><td>갈림길 확인</td></tr>
-<tr><td>노고단 대피소</td><td>1,440m</td><td>2.7 km</td><td>음료·화장실·예약확인</td><td>QR 입장 확인</td></tr>
-<tr><td>노고단 고개</td><td>1,438m</td><td>3.0 km</td><td>이정표</td><td>—</td></tr>
-<tr class="pk"><td>★ 노고단 정상</td><td>1,507m</td><td>3.3 km</td><td>정상석·전망</td><td>사전예약 필수</td></tr>
-<tr><td>↩ 하산 (동일 경로)</td><td>—</td><td>—</td><td>임도 우회 가능</td><td>낙엽 미끄럼 주의</td></tr>
-<tr class="pk"><td>🅿 성삼재 귀환</td><td>1,100m</td><td>~9.4 km</td><td>휴게소·식당</td><td>—</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🅿 성삼재 주차장</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,100m</span>
+<span class="meta-item">📏 누적 0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 주차·휴게소·화장실
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">성삼재 전망대</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,130m</span>
+<span class="meta-item">📏 누적 0.3 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 전망대
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">무넹기 전망대</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,250m</span>
+<span class="meta-item">📏 누적 2.0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 벤치·안내판
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">노고단 대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,440m</span>
+<span class="meta-item">📏 누적 2.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 음료·화장실·예약확인
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">노고단 고개</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,438m</span>
+<span class="meta-item">📏 누적 3.0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 이정표
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">★ 노고단 정상</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,507m</span>
+<span class="meta-item">📏 누적 3.3 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 정상석·전망
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">↩ 하산 (동일 경로)</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 —</span>
+<span class="meta-item">📏 누적 —</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 임도 우회 가능
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🅿 성삼재 귀환</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,100m</span>
+<span class="meta-item">📏 누적 ~9.4 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 휴게소·식당
+      </div>
+</div>
+</div>
+</div>
 </div>
 </div></div></div>
 <!-- 초급 경로 -->
@@ -1020,20 +1115,152 @@
 </div>
 <div class="sec-title">체크포인트 표</div>
 <div class="tbl-wrap">
-<table>
-<thead><tr><th>체크포인트</th><th>고도</th><th>누적거리</th><th>시설</th><th>비고</th></tr></thead>
-<tbody>
-<tr class="pk"><td>🅿 백무동 탐방지원센터</td><td>700m</td><td>0 km</td><td>주차·화장실</td><td>04:00~05:00 출발 권장</td></tr>
-<tr><td>참샘</td><td>1,050m</td><td>2.0 km</td><td>식수 가능</td><td>—</td></tr>
-<tr><td>하봉</td><td>1,400m</td><td>3.5 km</td><td>주능선 합류</td><td>돌계단 시작</td></tr>
-<tr class="pk"><td>장터목 대피소</td><td>1,655m</td><td>5.8 km</td><td>식수·음식·화장실</td><td>충분한 휴식</td></tr>
-<tr><td>개선문 (석문)</td><td>1,820m</td><td>7.0 km</td><td>조망 지점</td><td>최대 급경사</td></tr>
-<tr class="pk"><td>★ 천왕봉 (정상)</td><td>1,915m</td><td>7.5 km</td><td>정상석</td><td>남한 최고봉</td></tr>
-<tr><td>세석대피소 (하산 경유)</td><td>1,580m</td><td>9.7 km</td><td>식수·벤치</td><td>한신계곡 분기</td></tr>
-<tr><td>한신폭포</td><td>1,100m</td><td>12.5 km</td><td>—</td><td>가을 절경</td></tr>
-<tr class="pk"><td>🅿 백무동 귀환</td><td>700m</td><td>~15 km</td><td>주차장</td><td>산행 종료</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🅿 백무동 탐방지원센터</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 04:00~05:00 출발 권장
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">참샘</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,050m</span>
+<span class="meta-item">📏 누적 2.0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">하봉</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,400m</span>
+<span class="meta-item">📏 누적 3.5 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 돌계단 시작
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">장터목 대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,655m</span>
+<span class="meta-item">📏 누적 5.8 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 충분한 휴식
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">개선문 (석문)</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,820m</span>
+<span class="meta-item">📏 누적 7.0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 최대 급경사
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">★ 천왕봉 (정상)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,915m</span>
+<span class="meta-item">📏 누적 7.5 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 남한 최고봉
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">세석대피소 (하산 경유)</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,580m</span>
+<span class="meta-item">📏 누적 9.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 한신계곡 분기
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">한신폭포</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,100m</span>
+<span class="meta-item">📏 누적 12.5 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 가을 절경
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🅿 백무동 귀환</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 700m</span>
+<span class="meta-item">📏 누적 ~15 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 산행 종료
+      </div>
+</div>
+</div>
+</div>
 </div>
 </div></div></div>
 <!-- 중급 경로 -->
@@ -1224,27 +1451,264 @@
 </div>
 <div class="sec-title">전체 체크포인트 표</div>
 <div class="tbl-wrap">
-<table>
-<thead><tr><th>체크포인트</th><th>고도</th><th>누적</th><th>시설</th><th>비고</th></tr></thead>
-<tbody>
-<tr class="pk"><td>🚩 성삼재 (시작)</td><td>1,100m</td><td>0 km</td><td>주차·화장실</td><td>1일차 03:00 출발</td></tr>
-<tr><td>노고단 (1일차)</td><td>1,507m</td><td>4.7 km</td><td>대피소·음료</td><td>예약 필요</td></tr>
-<tr><td>임걸령 샘터</td><td>1,320m</td><td>7.7 km</td><td>식수 (물맛 최고)</td><td>반드시 보충</td></tr>
-<tr><td>삼도봉 (전남·전북·경남)</td><td>1,499m</td><td>9.5 km</td><td>—</td><td>3개도 경계</td></tr>
-<tr><td>반야봉 (1,731m)</td><td>1,731m</td><td>11.2 km</td><td>—</td><td>지리 2위봉</td></tr>
-<tr><td>화개재 (뱀사골 삼거리)</td><td>1,320m</td><td>13.2 km</td><td>화장실</td><td>비상 하산 가능</td></tr>
-<tr><td>연하천 대피소</td><td>1,470m</td><td>15.7 km</td><td>식수·식사·숙박</td><td>대안 숙박지</td></tr>
-<tr class="pk"><td>🏕 벽소령 대피소 (1박)</td><td>1,320m</td><td>18.7 km</td><td>숙박·화장실</td><td>13,000원/인</td></tr>
-<tr><td>선비샘</td><td>1,550m</td><td>22.7 km</td><td>식수</td><td>2일차 필수 보충</td></tr>
-<tr><td>세석 대피소</td><td>1,580m</td><td>24.7 km</td><td>식수·식사</td><td>철쭉 군락 명소</td></tr>
-<tr><td>장터목 대피소</td><td>1,655m</td><td>28.1 km</td><td>식수·식사</td><td>천왕봉 전 휴식</td></tr>
-<tr><td>개선문 (석문)</td><td>1,820m</td><td>29.3 km</td><td>—</td><td>최고 급경사</td></tr>
-<tr class="pk"><td>★ 천왕봉 (1,915m)</td><td>1,915m</td><td>29.8 km</td><td>정상석</td><td>남한 최고봉</td></tr>
-<tr><td>법계사 (1,450m)</td><td>1,450m</td><td>31.0 km</td><td>샘터</td><td>하산 경유</td></tr>
-<tr><td>로타리 대피소</td><td>1,360m</td><td>32.0 km</td><td>화장실</td><td>—</td></tr>
-<tr class="pk"><td>🏁 중산리 탐방안내소 (종착)</td><td>600m</td><td>~32.5 km</td><td>주차·버스</td><td>종주 완료</td></tr>
-</tbody>
-</table>
+<div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🚩 성삼재 (시작)</span>
+<span class="badge badge-trailhead">출발점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,100m</span>
+<span class="meta-item">📏 누적 0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 1일차 03:00 출발
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">노고단 (1일차)</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,507m</span>
+<span class="meta-item">📏 누적 4.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 예약 필요
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">임걸령 샘터</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,320m</span>
+<span class="meta-item">📏 누적 7.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 반드시 보충
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼도봉 (전남·전북·경남)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,499m</span>
+<span class="meta-item">📏 누적 9.5 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 3개도 경계
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">반야봉 (1,731m)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,731m</span>
+<span class="meta-item">📏 누적 11.2 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 지리 2위봉
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">6</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">화개재 (뱀사골 삼거리)</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,320m</span>
+<span class="meta-item">📏 누적 13.2 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 비상 하산 가능
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">7</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">연하천 대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,470m</span>
+<span class="meta-item">📏 누적 15.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 대안 숙박지
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">8</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🏕 벽소령 대피소 (1박)</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,320m</span>
+<span class="meta-item">📏 누적 18.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 13,000원/인
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">9</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">선비샘</span>
+<span class="badge badge-landmark">명소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,550m</span>
+<span class="meta-item">📏 누적 22.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 2일차 필수 보충
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">10</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">세석 대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,580m</span>
+<span class="meta-item">📏 누적 24.7 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 철쭉 군락 명소
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">11</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">장터목 대피소</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,655m</span>
+<span class="meta-item">📏 누적 28.1 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 천왕봉 전 휴식
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">12</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">개선문 (석문)</span>
+<span class="badge badge-temple">사찰</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,820m</span>
+<span class="meta-item">📏 누적 29.3 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 최고 급경사
+      </div>
+</div>
+</div>
+<div class="timeline-item summit">
+<div class="timeline-marker">13</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">★ 천왕봉 (1,915m)</span>
+<span class="badge badge-summit">정상</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,915m</span>
+<span class="meta-item">📏 누적 29.8 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 남한 최고봉
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">14</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">법계사 (1,450m)</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,450m</span>
+<span class="meta-item">📏 누적 31.0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 하산 경유
+      </div>
+</div>
+</div>
+<div class="timeline-item">
+<div class="timeline-marker">15</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">로타리 대피소</span>
+<span class="badge badge-shelter">대피소</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 1,360m</span>
+<span class="meta-item">📏 누적 32.0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> —
+      </div>
+</div>
+</div>
+<div class="timeline-item end">
+<div class="timeline-marker">16</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">🏁 중산리 탐방안내소 (종착)</span>
+<span class="badge badge-trailhead">종점</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item">⛰ 해발 600m</span>
+<span class="meta-item">📏 누적 ~32.5 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">편의시설:</span> 종주 완료
+      </div>
+</div>
+</div>
+</div>
 </div>
 </div></div></div>
 <!-- 고급 경로 -->
