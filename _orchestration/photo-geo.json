@@ -1,0 +1,762 @@
+[
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/2.jpeg",
+  "lat": 37.65875,
+  "lng": 126.978,
+  "taken_at": "2023:03:31 14:50:28",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/3.jpeg",
+  "lat": 37.66044,
+  "lng": 126.98863,
+  "taken_at": "2022:10:21 14:06:16",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1394.jpeg",
+  "lat": 37.63198,
+  "lng": 126.99202,
+  "taken_at": "2026:05:16 06:54:19",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1396.jpeg",
+  "lat": 37.63199,
+  "lng": 126.99201,
+  "taken_at": "2026:05:16 06:54:26",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1450.jpeg",
+  "lat": 37.63373,
+  "lng": 126.98802,
+  "taken_at": "2026:05:23 08:37:57",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1452.jpeg",
+  "lat": 37.63373,
+  "lng": 126.98802,
+  "taken_at": "2026:05:23 08:38:02",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1458.jpeg",
+  "lat": 37.63503,
+  "lng": 126.98656,
+  "taken_at": "2026:05:23 08:46:14",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1459.jpeg",
+  "lat": 37.63503,
+  "lng": 126.98656,
+  "taken_at": "2026:05:23 08:46:22",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1475.jpeg",
+  "lat": 37.63503,
+  "lng": 126.98656,
+  "taken_at": "2026:05:23 08:48:25",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1485.jpeg",
+  "lat": 37.63532,
+  "lng": 126.98589,
+  "taken_at": "2026:05:23 08:52:31",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_1492.jpeg",
+  "lat": 37.63531,
+  "lng": 126.98589,
+  "taken_at": "2026:05:23 08:53:05",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_3857.jpeg",
+  "lat": 37.65563,
+  "lng": 126.99043,
+  "taken_at": "2022:10:28 11:26:25",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_3860.jpeg",
+  "lat": 37.65616,
+  "lng": 126.98984,
+  "taken_at": "2022:10:28 11:32:23",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_4196.jpeg",
+  "lat": 37.65876,
+  "lng": 126.97799,
+  "taken_at": "2023:03:31 14:49:58",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_5633.jpeg",
+  "lat": 37.65862,
+  "lng": 126.97801,
+  "taken_at": "2025:05:30 09:08:02",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_5832.jpeg",
+  "lat": 37.65539,
+  "lng": 126.98949,
+  "taken_at": "2025:06:09 16:50:38",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_5933.jpeg",
+  "lat": 37.65877,
+  "lng": 126.97807,
+  "taken_at": "2025:06:13 10:10:47",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_5940.jpeg",
+  "lat": 37.65866,
+  "lng": 126.97804,
+  "taken_at": "2025:06:13 10:15:54",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7561.jpeg",
+  "lat": 37.65794,
+  "lng": 126.97938,
+  "taken_at": "2025:07:26 07:46:14",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7562.jpeg",
+  "lat": 37.65836,
+  "lng": 126.98167,
+  "taken_at": "2025:07:26 07:57:40",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7889.jpeg",
+  "lat": 37.65796,
+  "lng": 126.97914,
+  "taken_at": "2025:08:10 07:59:56",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7892.jpeg",
+  "lat": 37.65801,
+  "lng": 126.97897,
+  "taken_at": "2025:08:10 08:09:24",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7896.jpeg",
+  "lat": 37.65802,
+  "lng": 126.97897,
+  "taken_at": "2025:08:10 08:09:44",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7897.jpeg",
+  "lat": 37.65802,
+  "lng": 126.97897,
+  "taken_at": "2025:08:10 08:09:53",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7898.jpeg",
+  "lat": 37.65802,
+  "lng": 126.97897,
+  "taken_at": "2025:08:10 08:09:57",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_7903.jpeg",
+  "lat": 37.65877,
+  "lng": 126.97813,
+  "taken_at": "2025:08:10 08:19:41",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_9020.jpeg",
+  "lat": 37.64607,
+  "lng": 126.97674,
+  "taken_at": "2025:10:05 08:39:25",
+  "source": "exif"
+ },
+ {
+  "mountain": "bukhansan",
+  "original": "assets/img/bukhansan/IMG_9393.jpeg",
+  "lat": 37.65564,
+  "lng": 126.99046,
+  "taken_at": "2025:11:01 17:04:22",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/2.jpeg",
+  "lat": 37.69744,
+  "lng": 127.03364,
+  "taken_at": "2022:09:13 13:12:54",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/E67FFF59-97DA-4886-96E2-A64152852583.jpg",
+  "lat": 37.69588,
+  "lng": 127.02342,
+  "taken_at": "2025:09:27 15:58:45",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0745.jpeg",
+  "lat": 37.67839,
+  "lng": 127.03733,
+  "taken_at": "2026:03:07 07:19:38",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0746.jpeg",
+  "lat": 37.67381,
+  "lng": 127.02925,
+  "taken_at": "2026:03:07 07:37:34",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0749.jpeg",
+  "lat": 37.67384,
+  "lng": 127.02924,
+  "taken_at": "2026:03:07 07:37:53",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0751.jpeg",
+  "lat": 37.67393,
+  "lng": 127.02928,
+  "taken_at": "2026:03:07 07:38:33",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0757.jpeg",
+  "lat": 37.67653,
+  "lng": 127.03184,
+  "taken_at": "2026:03:07 08:16:31",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0759.jpeg",
+  "lat": 37.67385,
+  "lng": 127.02936,
+  "taken_at": "2026:03:08 07:32:03",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0760.jpeg",
+  "lat": 37.67393,
+  "lng": 127.02925,
+  "taken_at": "2026:03:08 07:32:30",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0786.jpeg",
+  "lat": 37.68295,
+  "lng": 127.01094,
+  "taken_at": "2026:03:14 08:07:29",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0808.jpeg",
+  "lat": 37.68383,
+  "lng": 127.00838,
+  "taken_at": "2026:03:20 07:15:50",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0810.jpeg",
+  "lat": 37.68399,
+  "lng": 127.00843,
+  "taken_at": "2026:03:20 07:17:38",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0811.jpeg",
+  "lat": 37.68398,
+  "lng": 127.00843,
+  "taken_at": "2026:03:20 07:17:46",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0925.jpeg",
+  "lat": 37.69663,
+  "lng": 127.01903,
+  "taken_at": "2026:03:28 08:35:18",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0936.jpeg",
+  "lat": 37.69664,
+  "lng": 127.01788,
+  "taken_at": "2026:03:28 08:47:51",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0940.jpeg",
+  "lat": 37.69701,
+  "lng": 127.01827,
+  "taken_at": "2026:03:28 08:59:45",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0969.jpeg",
+  "lat": 37.69412,
+  "lng": 127.0227,
+  "taken_at": "2026:04:04 07:01:14",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0978.jpeg",
+  "lat": 37.69937,
+  "lng": 127.01913,
+  "taken_at": "2026:04:04 07:22:54",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_0983.jpeg",
+  "lat": 37.69939,
+  "lng": 127.01887,
+  "taken_at": "2026:04:04 07:29:52",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1080.jpeg",
+  "lat": 37.6571,
+  "lng": 126.99197,
+  "taken_at": "2026:04:15 15:08:55",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1121.jpeg",
+  "lat": 37.6941,
+  "lng": 127.01708,
+  "taken_at": "2026:04:18 07:50:44",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1124.jpeg",
+  "lat": 37.69875,
+  "lng": 127.01533,
+  "taken_at": "2026:04:18 08:17:27",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1127.jpeg",
+  "lat": 37.69874,
+  "lng": 127.01534,
+  "taken_at": "2026:04:18 08:17:42",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1129.jpeg",
+  "lat": 37.69874,
+  "lng": 127.01538,
+  "taken_at": "2026:04:18 08:18:22",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1136.jpeg",
+  "lat": 37.69864,
+  "lng": 127.01504,
+  "taken_at": "2026:04:18 08:23:02",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1139.jpeg",
+  "lat": 37.69865,
+  "lng": 127.01503,
+  "taken_at": "2026:04:18 08:23:28",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1142.jpeg",
+  "lat": 37.69865,
+  "lng": 127.01503,
+  "taken_at": "2026:04:18 08:23:36",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1143.jpeg",
+  "lat": 37.69864,
+  "lng": 127.01502,
+  "taken_at": "2026:04:18 08:23:41",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1205.jpeg",
+  "lat": 37.68403,
+  "lng": 127.00844,
+  "taken_at": "2026:04:25 09:14:51",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1207.jpeg",
+  "lat": 37.68402,
+  "lng": 127.00844,
+  "taken_at": "2026:04:25 09:15:09",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1550.jpeg",
+  "lat": 37.68566,
+  "lng": 126.9958,
+  "taken_at": "2026:05:30 06:50:11",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1551.jpeg",
+  "lat": 37.68566,
+  "lng": 126.9958,
+  "taken_at": "2026:05:30 06:50:17",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1565.jpeg",
+  "lat": 37.69556,
+  "lng": 126.99465,
+  "taken_at": "2026:05:30 07:02:51",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1602.jpeg",
+  "lat": 37.69556,
+  "lng": 126.99372,
+  "taken_at": "2026:05:30 07:14:04",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1608.jpeg",
+  "lat": 37.69037,
+  "lng": 126.98972,
+  "taken_at": "2026:05:30 08:03:10",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1620.jpeg",
+  "lat": 37.68297,
+  "lng": 127.01096,
+  "taken_at": "2026:05:31 05:59:06",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1676.jpeg",
+  "lat": 37.69404,
+  "lng": 127.01712,
+  "taken_at": "2026:06:07 07:22:05",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1677.jpeg",
+  "lat": 37.69409,
+  "lng": 127.01714,
+  "taken_at": "2026:06:07 07:22:16",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1679.jpeg",
+  "lat": 37.69822,
+  "lng": 127.01344,
+  "taken_at": "2026:06:07 07:54:34",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1682.jpeg",
+  "lat": 37.69827,
+  "lng": 127.01341,
+  "taken_at": "2026:06:07 07:54:56",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1687.jpeg",
+  "lat": 37.69906,
+  "lng": 127.01502,
+  "taken_at": "2026:06:07 08:04:14",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1691.jpeg",
+  "lat": 37.69609,
+  "lng": 127.01726,
+  "taken_at": "2026:06:07 08:31:45",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1718.jpeg",
+  "lat": 37.69543,
+  "lng": 127.01231,
+  "taken_at": "2026:06:14 07:42:30",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_1724.jpeg",
+  "lat": 37.69499,
+  "lng": 127.01157,
+  "taken_at": "2026:06:14 07:52:50",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_3613.jpeg",
+  "lat": 37.6989,
+  "lng": 127.02896,
+  "taken_at": "2022:09:13 13:34:21",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_7885.jpeg",
+  "lat": 37.66163,
+  "lng": 126.98506,
+  "taken_at": "2025:08:10 07:18:18",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_8264.jpeg",
+  "lat": 37.67264,
+  "lng": 127.06624,
+  "taken_at": "2025:08:31 09:03:28",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_8600.jpeg",
+  "lat": 37.69266,
+  "lng": 127.05023,
+  "taken_at": "2025:09:21 06:16:03",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_8813.jpeg",
+  "lat": 37.69588,
+  "lng": 127.02341,
+  "taken_at": "2025:09:27 15:57:55",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_8818.jpeg",
+  "lat": 37.69588,
+  "lng": 127.02341,
+  "taken_at": "2025:09:27 15:58:41",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_9521.jpeg",
+  "lat": 37.68827,
+  "lng": 127.05053,
+  "taken_at": "2025:11:19 07:48:02",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_9523.jpeg",
+  "lat": 37.68828,
+  "lng": 127.0505,
+  "taken_at": "2025:11:19 07:48:30",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_9707.jpeg",
+  "lat": 37.68799,
+  "lng": 127.05057,
+  "taken_at": "2025:11:29 08:05:10",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_9777.jpeg",
+  "lat": 37.67716,
+  "lng": 127.05061,
+  "taken_at": "2025:12:04 07:57:52",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_9788.jpeg",
+  "lat": 37.6884,
+  "lng": 127.05047,
+  "taken_at": "2025:12:07 08:16:22",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_9818.jpeg",
+  "lat": 37.67633,
+  "lng": 127.05047,
+  "taken_at": "2025:12:14 08:12:21",
+  "source": "exif"
+ },
+ {
+  "mountain": "dobongsan",
+  "original": "assets/img/dobongsan/IMG_9824.jpeg",
+  "lat": 37.68835,
+  "lng": 127.0505,
+  "taken_at": "2025:12:15 08:04:12",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/1.jpeg",
+  "lat": 37.93817,
+  "lng": 127.07931,
+  "taken_at": "2025:04:03 13:47:22",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/2.jpeg",
+  "lat": 37.94532,
+  "lng": 127.08383,
+  "taken_at": "2025:05:20 09:45:37",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/3.jpeg",
+  "lat": 37.94584,
+  "lng": 127.09009,
+  "taken_at": "2025:05:06 10:17:15",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/IMG_4971.jpeg",
+  "lat": 37.93813,
+  "lng": 127.07933,
+  "taken_at": "2025:04:03 13:47:07",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/IMG_5005.jpeg",
+  "lat": 37.94665,
+  "lng": 127.08898,
+  "taken_at": "2025:04:08 16:36:18",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/IMG_5037.jpeg",
+  "lat": 37.94554,
+  "lng": 127.08656,
+  "taken_at": "2025:04:15 15:13:49",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/IMG_5041.jpeg",
+  "lat": 37.94844,
+  "lng": 127.08005,
+  "taken_at": "2025:04:15 16:40:20",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/IMG_5121.jpeg",
+  "lat": 37.94556,
+  "lng": 127.08662,
+  "taken_at": "2025:04:23 11:00:04",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/IMG_5246.jpeg",
+  "lat": 37.94872,
+  "lng": 127.08772,
+  "taken_at": "2025:04:29 15:53:43",
+  "source": "exif"
+ },
+ {
+  "mountain": "soyosan",
+  "original": "assets/img/soyosan/IMG_5274.jpeg",
+  "lat": 37.94837,
+  "lng": 127.09497,
+  "taken_at": "2025:05:06 09:35:52",
+  "source": "exif"
+ }
+]
