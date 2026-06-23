@@ -1,15 +1,6 @@
 <!DOCTYPE html>
-
-<html data-theme="light" lang="en">
-<head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Guide to Yangmingshan National Park's 3 Core Hiking Courses (Beginner Xiaoyoukeng Round Trip, Intermediate Xiaoyoukeng-Lengshuikeng Traverse, Advanced Qingtiangang Traverse) with Live Maps and Detailed Public Transportation Playbook" name="description"/>
-<title>Yangmingshan National Park Hiking Playbook</title>
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/>
-<link href="../assets/css/design-system.css" rel="stylesheet"/>
-<style>
-  /* Course Color Tokens for Yangmingshan */
+<html data-theme="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="Guide to Yangmingshan National Park's 3 core hiking courses (Beginner Xiaoyoukeng Round Trip, Intermediate Xiaoyoukeng-Lengshuikeng Traverse, Advanced Qingtiangang Traverse) with real-world maps and detailed public transportation playbook" name="description"/><title>Yangmingshan National Park Hiking Playbook</title><link href="../assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/><link href="../assets/css/design-system.css" rel="stylesheet"/><style>
+  
   :root {
     --green: #4f7d4a;
     --greenbg: #dfeadf;
@@ -40,7 +31,7 @@
   [data-theme="dark"] .red .tab.active,
   [data-theme="dark"] .red .level { color: #3b0f03 !important; background: var(--red) !important; }
 
-  /* Header & Navigation */
+  
   .header {
     position: sticky;
     top: 0;
@@ -104,7 +95,7 @@
     color: var(--text);
   }
 
-  /* Selector & Course Buttons */
+  
   .selector {
     display: flex;
     flex-wrap: wrap;
@@ -132,7 +123,7 @@
   .course-btn.active.blue { background: var(--blue); border-color: var(--blue); color: #fff; }
   .course-btn.active.red { background: var(--red); border-color: var(--red); color: #fff; }
 
-  /* Panels & Course Info */
+  
   .panel {
     display: none;
     padding: var(--space-4) 0 var(--space-10);
@@ -173,7 +164,7 @@
     color: var(--muted);
   }
 
-  /* Tabs Customizations (Keep Pill Style matching original design) */
+  
   .tabs {
     display: flex;
     gap: var(--space-2);
@@ -204,7 +195,7 @@
   .blue .tab.active { background: var(--blue); color: #fff; }
   .red .tab.active { background: var(--red); color: #fff; }
 
-  /* Grid & KPI Cards Layout */
+  
   .grid6 {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
@@ -226,7 +217,7 @@
     color: var(--muted);
   }
 
-  /* Section Titles */
+  
   .section-title {
     display: flex;
     align-items: center;
@@ -246,7 +237,7 @@
     flex: 1;
   }
 
-  /* Course Flow */
+  
   .flow {
     display: flex;
     flex-wrap: wrap;
@@ -266,7 +257,7 @@
     color: var(--faint);
   }
 
-  /* Elevation Profile */
+  
   .elev svg {
     width: 100%;
     height: 220px;
@@ -278,7 +269,7 @@
     font-size: var(--text-sm);
   }
 
-  /* Segments (Route Accordions) */
+  
   .segments {
     display: grid;
     gap: var(--space-3);
@@ -384,7 +375,7 @@
     color: var(--red);
   }
 
-  /* Tips Grid */
+  
   .tips-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -407,14 +398,14 @@
     font-size: var(--text-xs);
   }
   
-  /* Footer Override */
+  
   footer {
     padding: var(--space-8) 0 var(--space-12);
     color: var(--muted);
     font-size: var(--text-xs);
   }
 
-  /* Responsive Adjustments */
+  
   @media (max-width: 960px) {
     .grid6 { grid-template-columns: repeat(3, 1fr); }
     .tips-grid { grid-template-columns: 1fr 1fr; }
@@ -425,9 +416,8 @@
     .tips-grid { grid-template-columns: 1fr; }
     .stats { grid-template-columns: 1fr; }
   }
-</style>
-<style>
-/* --- UPGRADE: HERO BLEED, GALLERY, LIGHTBOX, CREDITS --- */
+</style><style>
+
 .hero-bleed {
   position: relative;
   width: 100%;
@@ -855,7 +845,7 @@
   color: var(--color-primary, var(--primary, #4f98a3));
 }
 
-  /* Leaflet base style adjustment */
+  
   .leaflet-map {
     border: 1px solid var(--border);
     background: var(--surface2);
@@ -863,7 +853,7 @@
     transition: background 0.3s ease, border-color 0.3s ease;
   }
   
-  /* Marker tooltip customization */
+  
   .map-tooltip {
     background-color: var(--surface) !important;
     border: 1px solid var(--border) !important;
@@ -875,7 +865,7 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
   }
   
-  /* Popup window customization */
+  
   .map-popup-content {
     font-family: inherit;
     line-height: 1.5;
@@ -896,7 +886,7 @@
     padding: 8px 8px 0 0 !important;
   }
   
-  /* Layer control customization */
+  
   .leaflet-control-layers {
     background-color: var(--surface) !important;
     border: 1px solid var(--border) !important;
@@ -907,7 +897,7 @@
     font-weight: 700;
   }
   
-  /* Zoom control customization */
+  
   .leaflet-bar {
     border: 1px solid var(--border) !important;
     box-shadow: var(--shadow) !important;
@@ -926,7 +916,7 @@
     color: var(--faint) !important;
   }
   
-  /* Attribution bar dark mode readability */
+  
   .leaflet-container .leaflet-control-attribution {
     background: rgba(var(--bg), 0.7) !important;
     color: var(--muted) !important;
@@ -938,423 +928,20 @@
     color: var(--blue) !important;
   }
 
-  /* [Dark mode specific styles] */
+  
   [data-theme="dark"] .leaflet-map {
     border-color: var(--border);
   }
-  /* OpenTopoMap dark mode invert filter to prevent glare */
+  
   [data-theme="dark"] .terrain-layer-dark-filter {
     filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(90%);
   }
-</style>
-<meta content="../assets/img/yangmingshan/og.png" property="og:image"/>
-<meta content="../assets/img/yangmingshan/og.png" name="twitter:image"/>
-<script src="../assets/js/i18n.js"></script><link href="../yangmingshan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/yangmingshan-playbook.html" hreflang="en" rel="alternate"/><link href="../yangmingshan-playbook.html" hreflang="x-default" rel="alternate"/></head>
-<body>
-<a class="skip-link" href="#mainContent">Skip to main content</a>
-<header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg aria-label="Korea Trails" class="logo-svg" fill="none" viewbox="0 0 36 36">
-<defs>
-<lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1">
-<stop offset="0%" stop-color="#f43f5e"></stop>
-<stop offset="100%" stop-color="#be123c"></stop>
-</lineargradient>
-<lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0">
-<stop offset="0%" stop-color="#0f172a"></stop>
-<stop offset="100%" stop-color="#0d9488"></stop>
-</lineargradient>
-<lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0">
-<stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-<stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop>
-<stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop>
-</lineargradient>
-</defs>
-<circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle>
-<circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle>
-<circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle>
-<path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path>
-<path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path>
-<path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path>
-<path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path>
-</svg></div><div><h1><a href="index.html" style="color: var(--text); text-decoration: none;">Yangmingshan Playbook</a></h1><p>Taipei Suburbs · Qixingshan 1,120m · Volcanic Terrain · Sulfur · Grassland · Hot Springs</p></div></div><div class="lang-toggle">
-<button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button>
-<button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button>
-</div><button aria-label="Toggle Dark Mode" class="theme-btn" id="themeBtn">◐</button></div></header>
-<section class="hero hero-bleed">
-<!-- Background Picture -->
-<picture class="hero-picture" id="heroFallbackImage">
-<source sizes="100vw" srcset="../assets/img/yangmingshan/hero-640.avif 640w, assets/img/yangmingshan/hero-1024.avif 1024w, assets/img/yangmingshan/hero-1600.avif 1600w, assets/img/yangmingshan/hero-2400.avif 2400w" type="image/avif"/>
-<source sizes="100vw" srcset="../assets/img/yangmingshan/hero-640.webp 640w, assets/img/yangmingshan/hero-1024.webp 1024w, assets/img/yangmingshan/hero-1600.webp 1600w, assets/img/yangmingshan/hero-2400.webp 2400w" type="image/webp"/>
-<img alt="Yangmingshan, a representative attraction of Yangmingshan National Park, and its beautiful mountain scenery / Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park" class="hero-img" sizes="100vw" src="../assets/img/yangmingshan/hero-1600.jpg" srcset="../assets/img/yangmingshan/hero-640.jpg 640w, assets/img/yangmingshan/hero-1024.jpg 1024w, assets/img/yangmingshan/hero-1600.jpg 1600w, assets/img/yangmingshan/hero-2400.jpg 2400w"/>
-</picture>
-<!-- Desktop Video Ambient Loop (lazy-loaded via JS) -->
-<video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="../assets/video/yangmingshan/hero-poster.jpg" preload="none" style="display: none;">
-<source src="../assets/video/yangmingshan/hero.mp4" type="video/mp4"/>
-</video>
-<div class="hero-overlay"></div>
-<div class="hero-content">
-<div class="wrap">
-<span class="hero-badge">Yangmingshan National Park · Qixingshan</span>
-<h2>Yangmingshan National Park Course 3 Hiking Playbook</h2>
-<p>This is an interactive guide divided into Beginner, Intermediate, and Advanced levels for day-trip courses to Yangmingshan National Park and Qixingshan that are good to visit from Taipei. It is structured based on the most frequently walked representative routes, centered around Xiaoyoukeng, Lengshuikeng, and Qingtiangang.</p>
-<!-- Stats KPIs -->
-<div class="stats">
-<div class="stat">
-<div class="l">Highest Altitude</div>
-<div class="v">1,120m</div>
-</div>
-<div class="stat">
-<div class="l">Total Distance</div>
-<div class="v">8km</div>
-</div>
-<div class="stat">
-<div class="l">Duration</div>
-<div class="v">4.5 hours</div>
-</div>
-<div class="stat">
-<div class="l">Country</div>
-<div class="v">Taiwan 🇹🇼</div>
-</div>
-<div class="stat">
-<div class="l">Course Type</div>
-<div class="v">Day Hike</div>
-</div>
-</div>
-<!-- Course Selector Buttons -->
-<div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);">
-<button class="course-btn active green" data-course="beginner"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner: Xiaoyoukeng Round Trip</button>
-<button class="course-btn blue" data-course="intermediate"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate: Xiaoyoukeng-Lengshuikeng Traverse</button>
-<button class="course-btn red" data-course="advanced">Advanced: Qingtiangang Traverse</button>
-</div>
-</div>
-</div>
-<!-- Hero Credit Overlay -->
-<div class="photo-credit hero-credit">
-<span class="credit-author">Photo by <a href="https://unsplash.com/@roberthsu1054" rel="noopener" target="_blank">CHIA-HAO HSU</a></span>
-<span class="credit-divider">/</span>
-<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
-</div>
-</section>
-<main class="wrap" id="mainContent">
-<section class="panel green active" id="beginner"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner</span><div><div class="panel-name">Xiaoyoukeng Round Trip Course</div><div class="panel-sub">Xiaoyoukeng → Qixingshan Main Peak → Xiaoyoukeng Roundtrip · approx. 3.2km · 1h 40min</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button></div>
-<div class="playbook-split-container">
-<div class="playbook-main-col">
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.2km</div><div class="txt">Round Trip Distance</div></div><div class="card kpi"><div class="num">1h 40m</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">1,120m</div><div class="txt">Qixingshan Main Peak</div></div><div class="card kpi"><div class="num">Lower Intermediate</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Stair Path</div><div class="txt">Key Terrain Features</div></div><div class="card kpi"><div class="num">Possible in one day</div><div class="txt">Accessibility</div></div></div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Xiaoyoukeng</span><span class="arr">→</span><span class="chip">Qixingshan Main Peak</span><span class="arr">→</span><span class="chip">Out and Back</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4f7d4a" stop-opacity=".34"></stop><stop offset="100%" stop-color="#4f7d4a" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="4"></path><circle cx="382" cy="60" fill="#4f7d4a" r="6"></circle><text fill="#4f7d4a" font-size="12" x="396" y="54">Qixingshan 1,120m</text></svg></div><p class="desc">The shortest and most representative course, which goes from Xiaoyoukeng to the summit of Qixingshan and back, is often guided as approximately 1.6km to the summit and 3.2km round trip, with actual reviews frequently showing times around 1 hour 40 minutes. This is the least strenuous introductory course for day-trippers in Taipei.</p></div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Departure</div><div><div class="seg-title">Depart from Xiaoyoukeng</div><div class="seg-meta">0km · Sulfur Fumarole Observation Deck</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Pass the bus stop and observatory, then enter the stairs towards Qixingshan. Since there are many stairs from the beginning, it's best to find your rhythm slowly.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Before starting, it's recommended to first see the Xiaoyoukeng fumaroles and sulfur terrain to fully experience the unique characteristics of Yangmingshan National Park.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Xiaoyoukeng → Qixingshan Main Peak</div><div class="seg-meta">1.6km · 50~60 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The main sections consist of stone and wooden stairs, and on clear days, views towards downtown Taipei are also open. Although the elevation is not high, the continuous stairs can be quite breathless.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>If the wind is strong, the perceived temperature at the summit will be lower, so it's a good idea to prepare a thin windbreaker.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Lower</div><div><div class="seg-title">Descend to the starting point after enjoying the summit</div><div class="seg-meta">1.6km · 40~50 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Descend the same way you came up. After rain, stairs and rocks can be slippery, so shorten your stride when descending.</p><div class="bar"><div class="fill" style="width:36%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After descending, you can immediately return to the city by bus, making it suitable for a half-day trip.</div></div></div></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Preparation &amp; Gear</h2><ul><li>Trekking shoes with good grip are recommended over sneakers.</li><li>Water 500mL-1L</li><li>Windbreaker x1</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Points</h2><ul><li>Xiaoyoukeng Sulfur Fumaroles</li><li>Summit View</li><li>Short and intense hike near Taipei</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Transportation</h2><ul><li>Access by bus from Taipei city center</li><li>Many hikers on weekends</li><li>Morning departure is advantageous for securing views.</li></ul></div></div></div>
-</div>
-<div class="playbook-sidebar-col">
-<div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map">
-Fallback SVG (Displayed if JS is offline/fails)
-<svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420">
-<rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-<path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path>
-<circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle>
-<circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle>
-<circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle>
-<text font-size="12" x="112" y="302">Xiaoyoukeng</text>
-<text font-size="12" x="398" y="80">Qixingshan Main Peak</text>
-<text font-size="12" x="612" y="330">Out and Back</text>
-<text fill="var(--muted)" font-size="12" x="34" y="44">Shortest introductory summit course</text>
-</svg>
-Leaflet Map Container (Displayed if JS loads successfully)
-<div aria-label="Yangmingshan National Park Beginner Xiaoyoukeng Round Trip Course Live Map" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
-</div><div class="section-title"><h2>Checkpoint Table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Elevation</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Xiaoyoukeng</td><td>approx. 800m</td><td>0km</td><td>Bus · Sulfur Fumarole</td></tr><tr><td>Ridge Stair Section</td><td>approx. 980m</td><td>1.0km</td><td>View starts</td></tr><tr><td>Qixingshan Main Peak</td><td>1,120m</td><td>1.6km</td><td>Yangmingshan National Park Highest Point</td></tr><tr><td>Return to Xiaoyoukeng</td><td>approx. 800m</td><td>3.2km</td><td>Out and Back</td></tr></tbody></table></div></div>
-</div>
-</div></section>
-<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate</span><div><div class="panel-name">Xiaoyoukeng → Lengshuikeng Traverse Course</div><div class="panel-sub">Xiaoyoukeng → Qixingshan Main Peak → Qixingshan East Peak → Lengshuikeng · approx. 3.5~4.0km · 2h 30min~3h 30min</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button></div>
-<div class="playbook-split-container">
-<div class="playbook-main-col">
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.5~4km</div><div class="txt">Total Distance</div></div><div class="card kpi"><div class="num">2.5~3.5h</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">Jubong Peak + Dongbong Peak</div><div class="txt">2 Peaks</div></div><div class="card kpi"><div class="num">Medium</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Lengshuikeng</div><div class="txt">Descent Point</div></div><div class="card kpi"><div class="num">Optimal for a day trip</div><div class="txt">Representative Route</div></div></div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">Xiaoyoukeng</span><span class="arr">→</span><span class="chip">Qixingshan Main Peak</span><span class="arr">→</span><span class="chip">Qixingshan East Peak</span><span class="arr">→</span><span class="chip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-food"></use></svg>Lengshuikeng</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#326f95" stop-opacity=".34"></stop><stop offset="100%" stop-color="#326f95" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="4"></path><circle cx="364" cy="66" fill="#326f95" r="6"></circle><circle cx="468" cy="72" fill="#326f95" r="6"></circle><text fill="#326f95" font-size="12" x="378" y="60">Jubong Peak</text><text fill="#326f95" font-size="12" x="482" y="66">Dongbong</text></svg></div><p class="desc">The most common Qixingshan traverse route leading to Lengshuikeng is introduced as approximately 4km, taking an average of 2.5-3.5 hours. The most balanced configuration is to ascend from Xiaoyoukeng, connect the Main Peak and East Peak, and descend to the Lengshuikeng hot spring area.</p></div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Departure</div><div><div class="seg-title">Xiaoyoukeng → Main Peak</div><div class="seg-meta">1.6km · 50~60 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>You ascend via the same path as the beginner course, but the descent route changes after the summit. The long stair section makes it advisable not to overexert yourself from the start.</p><div class="bar"><div class="fill" style="width:54%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Even when fog reduces visibility, the signposts are relatively well-maintained.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Jubong Peak → Dongbong Peak</div><div class="seg-meta">0.5km · 15~20 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Follow the ridge to Dongbong. The ascents and descents are short, but it can be slippery depending on the wind and humidity.</p><div class="bar"><div class="fill" style="width:40%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>The ridge view from Dongbong Peak is often more open and refreshing than from Jubong Peak.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Lower</div><div><div class="seg-title">Dongbong → Naengsugang</div><div class="seg-meta">1.5~1.9km · Around 1 hour</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The Lengshuikeng route mixes stairs and dirt paths, and after descending, it's convenient to use the hot spring area and bus stop. The strain on the knees is slightly greater than a round trip to Xiaoyoukeng.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After descending, it's great to enjoy the cold water foot bath and hot spring atmosphere together.</div></div></div></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Gear</h2><ul><li>Trekking shoes recommended</li><li>Water 1L</li><li>Light outer layer for fog</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-food"></use></svg>Highlights</h2><ul><li>Connect 2 Peaks</li><li>Lengshuikeng Hot Spring Atmosphere</li><li>Convenient public transport connections</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Caution</h2><ul><li>Stairs are slippery on rainy days</li><li>Strong winds at the summit</li><li>Need to check descent bus schedule</li></ul></div></div></div>
-</div>
-<div class="playbook-sidebar-col">
-<div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map">
-Fallback SVG (Displayed if JS is offline/fails)
-<svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420">
-<rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-<path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path>
-<circle cx="90" cy="314" fill="#326f95" r="10"></circle>
-<circle cx="360" cy="92" fill="#326f95" r="11"></circle>
-<circle cx="472" cy="100" fill="#326f95" r="10"></circle>
-<circle cx="710" cy="290" fill="#326f95" r="10"></circle>
-<text font-size="12" x="104" y="308">Xiaoyoukeng</text>
-<text font-size="12" x="374" y="86">Jubong Peak</text>
-<text font-size="12" x="486" y="94">Dongbong</text>
-<text font-size="12" x="670" y="308">Lengshuikeng</text>
-</svg>
-Leaflet Map Container (Displayed if JS loads successfully)
-<div aria-label="Yangmingshan National Park Intermediate Xiaoyoukeng-Lengshuikeng Traverse Course Live Map" class="leaflet-map" id="map-intermediate" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
-</div><div class="section-title"><h2>Checkpoint Table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Elevation</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Xiaoyoukeng</td><td>approx. 800m</td><td>0km</td><td>Trailhead</td></tr><tr><td>Qixingshan Main Peak</td><td>1,120m</td><td>1.6km</td><td>Highest Point</td></tr><tr><td>Qixingshan East Peak</td><td>Approx. 1,107m</td><td>2.1km</td><td>Ridge View</td></tr><tr><td>Lengshuikeng</td><td>Approx. 740m</td><td>3.5~4.0km</td><td>Bus · Hot Spring Area</td></tr></tbody></table></div></div>
-</div>
-</div></section>
-<section class="panel red" id="advanced"><div class="panel-top"><span class="level">Advanced</span><div><div class="panel-name">Long-distance course connected to Qingtiangang</div><div class="panel-sub">Xiaoyoukeng → Qixingshan Main Peak → Qixingshan East Peak → Menghuan Pond → Lengshuikeng → Qingtiangang · approx. 5.5km · 3h~3h 30min</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button></div>
-<div class="playbook-split-container">
-<div class="playbook-main-col">
-<div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">5.5km</div><div class="txt">Total Distance</div></div><div class="card kpi"><div class="num">3~3.5h</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">Menghuanhu Lake</div><div class="txt">Additional Points</div></div><div class="card kpi"><div class="num">Meadow</div><div class="txt">Qingtiangang</div></div><div class="card kpi"><div class="num">Upper Intermediate</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Full Course</div><div class="txt">Day-long traverse type</div></div></div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">Xiaoyoukeng</span><span class="arr">→</span><span class="chip">Jubong Peak</span><span class="arr">→</span><span class="chip">Dongbong</span><span class="arr">→</span><span class="chip">Menghuanhu Lake</span><span class="arr">→</span><span class="chip">Lengshuikeng</span><span class="arr">→</span><span class="chip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Qingtiangang</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9d4f36" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9d4f36" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="4"></path><circle cx="360" cy="70" fill="#9d4f36" r="6"></circle><circle cx="540" cy="92" fill="#9d4f36" r="6"></circle><circle cx="738" cy="146" fill="#9d4f36" r="6"></circle><text fill="#9d4f36" font-size="12" x="374" y="64">Jubong Peak</text><text fill="#9d4f36" font-size="12" x="554" y="86">Menghuanhu Lake</text><text fill="#9d4f36" font-size="12" x="650" y="164">Qingtiangang</text></svg></div><p class="desc">The route from Xiaoyoukeng, passing through Qixingshan Main Peak and East Peak, then connecting to Menghuanhu, Lengshuikeng, and Qingtiangang, is widely recommended at approximately 5.5km and takes around 3 to 3 hours 30 minutes. This route strongly resembles a full Yangmingshan course, as it combines a summit hike with grassland scenery and hot spring areas.</p></div>
-<div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Departure</div><div><div class="seg-title">Xiaoyoukeng → Qixingshan Main Peak</div><div class="seg-meta">1.6km · 50~60 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The core ascent to the summit is the same. On crowded days, the initial stairs may slow you down.</p><div class="bar"><div class="fill" style="width:56%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Departing early in the morning is good for reducing both fog and crowds.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Jubong Peak → Dongbong Peak → Monghwanho Lake</div><div class="seg-meta">1.2km · 35~45 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Past the ridge, the trail continues towards Menghuan Pond. If the weather is clear, it's great to enjoy both the grassland and crater-like terrain.</p><div class="bar"><div class="fill" style="width:48%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>The atmosphere of Menghuanhu Lake changes significantly depending on the season and water level.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Menghuanhu Lake → Lengshuikeng</div><div class="seg-meta">1.0km · 25~35 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Descending towards Lengshuikeng, you can experience the geothermal area and hot spring atmosphere. After the descent, there's a resting point, making it feel more relaxed.</p><div class="bar"><div class="fill" style="width:42%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>It's good to take a short break at Lengshuikeng and then continue to Qingtiangang.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Lower</div><div><div class="seg-title">Lengshuikeng → Qingtiangang</div><div class="seg-meta">1.7km · 40~50 min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is the final section that connects to meadow terrain. Unlike Qixingshan, which is mainly forest and ridges, this area features expansive pasture scenery.</p><div class="bar"><div class="fill" style="width:46%"></div></div><div class="warn"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>On rainy or foggy days, visibility in the grassland section can decrease rapidly, so consider bus schedules and sunset times.</div></div></div></div></div>
-<div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Gear</h2><ul><li>Trekking shoes and windbreaker</li><li>Water 1-1.5L</li><li>Snacks and power bank</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Attractions</h2><ul><li>Volcanic Terrain + Summit</li><li>Menghuanhu Wetland</li><li>Qingtiangang Grassland</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Operating Tips</h2><ul><li>Different termini, check return bus routes</li><li>Bus congestion possible on weekends</li><li>Allow extra time during fog season</li></ul></div></div></div>
-</div>
-<div class="playbook-sidebar-col">
-<div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map">
-Fallback SVG (Displayed if JS is offline/fails)
-<svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420">
-<rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect>
-<path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path>
-<circle cx="90" cy="318" fill="#9d4f36" r="10"></circle>
-<circle cx="360" cy="94" fill="#9d4f36" r="10"></circle>
-<circle cx="474" cy="100" fill="#9d4f36" r="10"></circle>
-<circle cx="606" cy="168" fill="#9d4f36" r="10"></circle>
-<circle cx="728" cy="284" fill="#9d4f36" r="10"></circle>
-<text font-size="12" x="104" y="312">Xiaoyoukeng</text>
-<text font-size="12" x="374" y="88">Jubong Peak</text>
-<text font-size="12" x="488" y="94">Dongbong</text>
-<text font-size="12" x="620" y="162">Lengshuikeng</text>
-<text font-size="12" x="672" y="302">Qingtiangang</text>
-</svg>
-Leaflet Map Container (Displayed if JS loads successfully)
-<div aria-label="Yangmingshan National Park Advanced Qingtiangang Loop Course Live Map" class="leaflet-map" id="map-advanced" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div>
-</div><div class="section-title"><h2>Checkpoint Table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Elevation</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Xiaoyoukeng</td><td>approx. 800m</td><td>0km</td><td>Bus · Fumarole</td></tr><tr><td>Qixingshan Main Peak</td><td>1,120m</td><td>1.6km</td><td>Highest Point</td></tr><tr><td>Qixingshan East Peak</td><td>Approx. 1,107m</td><td>2.1km</td><td>Ridge View</td></tr><tr><td>Menghuanhu Lake</td><td>approx. 880m</td><td>3.1km</td><td>Lake/Wetland atmosphere</td></tr><tr><td>Lengshuikeng</td><td>Approx. 740m</td><td>3.8km</td><td>Hot Spring Area</td></tr><tr><td>Qingtiangang</td><td>Approx. 760m</td><td>5.5km</td><td>Meadow Scenery &amp; Bus Connection</td></tr></tbody></table></div></div>
-</div>
-</div></section>
-Detailed Public Transportation Guide Section (Yangmingshan Public Transit Guide)
-<section class="transit-section" style="margin-top: 40px; padding: 20px 0;">
-<div class="section-title">
-<h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Detailed Public Transportation Guide</h2>
-<div class="line"></div>
-</div>
-Public Transportation Basic Summary KPI Card
-<div class="stats" style="margin-bottom: 24px;">
-<div class="stat">
-<div class="l">Park Shuttle Bus</div>
-<div class="v" style="color: var(--teal);">Bus No. 108</div>
-<div class="l" style="margin-top: 4px;">Interval: Weekdays 30-40 minutes / Weekends 10-20 minutes</div>
-</div>
-<div class="stat">
-<div class="l">Last Park Shuttle Bus Time</div>
-<div class="v" style="color: var(--red);">Depart at 17:30</div>
-<div class="l" style="margin-top: 4px;">Departure from Terminal / Sannae Bus Stop 16:30 recommended</div>
-</div>
-<div class="stat">
-<div class="l">Major MRT Stations Connected to the City</div>
-<div class="v" style="color: var(--blue);">Jiantan Station / Shilin Station</div>
-<div class="l" style="margin-top: 4px;">MRT Tamsui-Xinyi Line (Red Line) Transfer</div>
-</div>
-<div class="stat">
-<div class="l">Recommended Payment Methods</div>
-<div class="v" style="color: var(--green);">EasyCard (悠遊卡)</div>
-<div class="l" style="margin-top: 4px;">Taiwanese transit card (prepare sufficient balance)</div>
-</div>
-</div>
-6-Layer Movement Guide (Step-by-step instructions for movement)
-<div class="card" style="margin-bottom: 24px; padding: 20px;">
-<h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: var(--sm); font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;">
-<span style="background: var(--teal); color: #fff; width: 24px; height: 24px; border-radius: 999px; display: inline-grid; place-items: center; font-size: 10px;">6</span>6-Tier Public Transportation Guide from Taipei Departure to Return</h2>
-<div class="flow" style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;">
-<div style="display: flex; gap: 12px; font-size: var(--xs);">
-<span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 1: Airport ➔ City Center</span>
-<span style="color: var(--text);">From Taoyuan International Airport (TPE)<strong>Airport MRT (Express 36 min / Commuter 50 min, NT$150)</strong>or<strong>Kuo-Kuang Motor Transport Bus No. 1819 (55 min, NT$140)</strong>to Taipei Main Station.</span>
-</div>
-<div style="display: flex; gap: 12px; font-size: var(--xs);">
-<span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 2: City Center ➔ Park Entrance</span>
-<span style="color: var(--text);">At Taipei Main Station<strong>Bus No. 260 (60 min, NT$30)</strong>, and from Jiantan Station/Shilin Station,<strong>Red 5 Bus (45 min, NT$15)</strong>to enter the Yangmingshan Bus Terminal. (※ For direct routes to Soyugaeng/Naengsugang, from Jiantan Station<strong>Small 15 Bus (50 min, NT$15)</strong>boarding available)</span>
-</div>
-<div style="display: flex; gap: 12px; font-size: var(--xs);">
-<span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 3: Movement within the Park</span>
-<span style="color: var(--text);">Circulating major points within the park from Yangmingshan National Park Bus Terminal<strong>Bus No. 108 Shuttle Bus (1 ride NT$15, 1-day pass NT$60)</strong>transfer to reach the trailhead of each course.</span>
-</div>
-<div style="display: flex; gap: 12px; font-size: var(--xs);">
-<span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 4: Accessing the Trailhead for Each Course</span>
-<span style="color: var(--text);">All 3 hiking courses in this playbook are<strong>Xiaoyoukeng Bus Stop</strong>Start from . Take shuttle bus No. 108 and get off at Xiaoyoukeng.</span>
-</div>
-<div style="display: flex; gap: 12px; font-size: var(--xs);">
-<span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 5: Trail Exit ➔ Transfer for Return Home</span>
-<span style="color: var(--text);">From the hiking completion point (Beginner: Soyugaeng, Intermediate: Naengsugang, Advanced: Qingtiangang), transfer again<strong>Bus No. 108</strong>to return to the terminal, or for Lengshuikeng/Qingtiangang,<strong>Small 15 Bus</strong>you can take it directly to the city center (Jiantan Station).</span>
-</div>
-<div style="display: flex; gap: 12px; font-size: var(--xs);">
-<span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 6: Payment and Safe Return Home</span>
-<span style="color: var(--text);">Tap your EasyCard to board and alight,<strong>Last bus schedule descending the mountain</strong>It is safe to complete the hike by strictly calculating backwards from the last bus times (Small 15 weekdays 16:20 / weekends 17:30, 108 shuttle 17:30).</span>
-</div>
-</div>
-</div>
-Bus Route Details Table
-<div class="section-title">
-<h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: var(--sm); font-weight: 800;"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Bus Routes and Operation Details</h2>
-</div>
-<div class="table-wrap" style="margin-bottom: 24px;">
-<table>
-<thead>
-<tr>
-<th>Route</th>
-<th>Starting Point (Boarding) ➔ End Point (Alighting)</th>
-<th>Duration</th>
-<th>One-way fare</th>
-<th>Service Interval</th>
-<th>Operating Hours (First/Last Bus)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="font-weight: bold; color: var(--teal);">108 (Shuttle)</td>
-<td>Yangmingshan Terminal ➔ (Loop) ➔ Xiaoyoukeng/Lengshuikeng/Qingtiangang</td>
-<td>Approx. 30-45 minutes (loop)</td>
-<td>NT$ 15 <br/><small style="color: var(--muted);">(1-day pass NT$60)</small></td>
-<td>Weekdays: 30-40 minutes<br/>Weekends: 10-20 minutes</td>
-<td>07:00 ~ 17:30 (Based on terminal departure)</td>
-</tr>
-<tr>
-<td style="font-weight: bold; color: var(--blue);">紅5 (Red 5)</td>
-<td>MRT Jiantan Station (Exit 1) / Shilin Station ➔ Yangmingshan Terminal</td>
-<td>Approx. 45 minutes</td>
-<td>NT$ 15 <br/><small style="color: var(--muted);">(Section 1)</small></td>
-<td>Weekdays: 4-8 minutes (during peak hours)<br/>Weekends: 12-15 minutes</td>
-<td>05:30 ~ 00:10 (Daily operation)</td>
-</tr>
-<tr>
-<td style="font-weight: bold; color: var(--blue);">260</td>
-<td>Taipei Main Station (Ground Bus Stop) ➔ Yangmingshan Terminal</td>
-<td>Approx. 60 minutes</td>
-<td>NT$ 30 <br/><small style="color: var(--muted);">(Section 2)</small></td>
-<td>Daily: 10-15 minutes</td>
-<td>05:40 ~ 22:30</td>
-</tr>
-<tr>
-<td style="font-weight: bold; color: var(--green);">小15 (S15)</td>
-<td>MRT Jiantan Station (Exit 1) ➔ Lengshuikeng ➔ Qingtiangang</td>
-<td>Approx. 50-60 minutes</td>
-<td>NT$ 15 <br/><small style="color: var(--muted);">(Section 1)</small></td>
-<td>Weekdays: 30-40 minutes<br/>Weekends: 20-30 minutes</td>
-<td>From Jiantan Station: 05:40 ~ 17:30<br/>Qingtiangang Departure: 16:20 (weekdays) / 17:30 (weekends)</td>
-</tr>
-</tbody>
-</table>
-</div>
-Safe Return Timeline and Last Bus Guide by Course
-<div class="section-title">
-<h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: var(--sm); font-weight: 800;"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Last Bus Reverse Calculation Guide for Descent by Course</h2>
-</div>
-<div class="tips-grid" style="margin-bottom: 24px;">
-Beginner Course
-<div class="card tipcard" style="border-left: 4px solid var(--green);">
-<h2 style="font-weight: 800; color: var(--green);"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner: Xiaoyoukeng Out and Back</h2>
-<div style="font-size: var(--xs); color: var(--muted); line-height: 1.6;">
-<ul style="padding-left: 16px; margin: 0;">
-<li><strong>Trailhead Exit Point:</strong>Xiaoyoukeng Bus Stop</li>
-<li><strong>Recommended Return Route:</strong>Xiaoyoukeng ➔ 108 Shuttle Bus ➔ Yangmingshan Terminal ➔ Red 5 or 260 Bus ➔ Downtown</li>
-<li><strong>Descent completion deadline:</strong> <span style="color: var(--red); font-weight: bold;">Before 16:30</span></li>
-<li style="margin-top: 6px; list-style-type: none; font-style: italic;">※ The 108 shuttle bus departs the terminal at 17:30 to complete its circuit. Therefore, to avoid missing the last bus, it is recommended to safely board at the mountain stop, Xiaoyoukeng, around 16:30.</li>
-</ul>
-</div>
-</div>
-Intermediate Course
-<div class="card tipcard" style="border-left: 4px solid var(--blue);">
-<h2 style="font-weight: 800; color: var(--blue);"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate: Xiaoyoukeng ➔ Lengshuikeng Traverse</h2>
-<div style="font-size: var(--xs); color: var(--muted); line-height: 1.6;">
-<ul style="padding-left: 16px; margin: 0;">
-<li><strong>Trailhead Exit Point:</strong>Lengshuikeng Bus Stop</li>
-<li><strong>Recommended Return Route:</strong>Lengshuikeng ➔ Small 15 bus (direct to Jiantan Station) or 108 shuttle ➔ Terminal transfer</li>
-<li><strong>Descent completion deadline:</strong> <br/><strong>Weekdays:</strong> <span style="color: var(--red); font-weight: bold;">Before 16:00</span> / <strong>Weekends:</strong> <span style="color: var(--red); font-weight: bold;">Before 17:00</span></li>
-<li style="margin-top: 6px; list-style-type: none; font-style: italic;">※ From Lengshuikeng, you can go directly to Jiantan Station via the Small 15 microbus. However, if the bus departing from Qingtiangang is full, there is a high possibility it will pass Lengshuikeng without stopping. If it is full, you must take bus 108 to the terminal and transfer.</li>
-</ul>
-</div>
-</div>
-Advanced Course
-<div class="card tipcard" style="border-left: 4px solid var(--red);">
-<h2 style="font-weight: 800; color: var(--red);">Advanced: Xiaoyoukeng ➔ Qingtiangang Traverse</h2>
-<div style="font-size: var(--xs); color: var(--muted); line-height: 1.6;">
-<ul style="padding-left: 16px; margin: 0;">
-<li><strong>Trailhead Exit Point:</strong>Qingtiangang Bus Stop (Terminal)</li>
-<li><strong>Recommended Return Route:</strong>Qingtiangang ➔ Small 15 bus (board at the terminal, can sit) or 108 shuttle ➔ Transfer at the terminal</li>
-<li><strong>Descent completion deadline:</strong> <br/><strong>Weekdays:</strong> <span style="color: var(--red); font-weight: bold;">Before 16:00</span> / <strong>Weekends:</strong> <span style="color: var(--red); font-weight: bold;">Before 17:00</span></li>
-<li style="margin-top: 6px; list-style-type: none; font-style: italic;">※ The last Small 15 bus from Qingtiangang departs punctually at 16:20 on weekdays and 17:30 on weekends. If the waiting line is long, you will have to take the next bus, so it is strongly recommended to wait at the bus stop at least 30 minutes before the last bus.</li>
-</ul>
-</div>
-</div>
-</div>
-Useful Tips and Precautions
-<div class="card tip" style="background: var(--surface2); color: var(--muted); padding: 16px; border-radius: var(--r2); font-size: var(--xs);">
-<h5 style="font-weight: 800; margin: 0 0 8px 0; color: var(--text);"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Essential Public Transportation Tips</h5>
-<ul style="margin: 0; padding-left: 16px; line-height: 1.7;">
-<li><strong>Check EasyCard balance:</strong>There are no card charging stations in the mountainous areas of Yangmingshan National Park. Please check and charge your card with a sufficient balance of at least NT$ 200 at an MRT station in the city beforehand.</li>
-<li><strong>Two-way tag when boarding/alighting:</strong>For Taipei City buses, you must tap your card both when boarding and alighting for the fare to be correctly charged and for transfer discounts to apply.</li>
-<li><strong>Weekend Crowds:</strong>On pleasant weather weekends between 2 PM and 5 PM, there can be a large crowd of hikers waiting for the downhill bus, potentially leading to queues of 30 minutes or more. If possible, it is more comfortable to start your hike before 8 AM and descend before 2-3 PM.</li>
-<li><strong>Weather Deterioration Fallback:</strong>The summit of Yangmingshan National Park experiences rapid temperature changes and often has dense fog or strong winds. Buses may operate on a reduced schedule or be suspended due to heavy rain or typhoon warnings, so please reconfirm real-time bus information on the official website before departure.</li>
-</ul>
-<div style="margin-top: 10px; font-size: 11px; text-align: right; color: var(--muted);">Official Sources: Yangmingshan National Park (ymsnp.gov.tw) and Taipei City Public Transportation Office | Last Updated: June 22, 2026</div>
-</div>
-</section>
-</main>
-<!-- Photo Gallery Grid -->
-<section class="photo-gallery-section">
-<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
-<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span>Yangmingshan's Four Seasons &amp; Attractions</h2>
-<div class="gallery-grid">
-<!-- Gallery Image Button 1 -->
-<button aria-haspopup="dialog" aria-label="View Yangmingshan National Park Hiking Courses Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/' target='_blank' rel='noopener'&gt;Timo Volz&lt;/a&gt; on Pexels" data-index="0">
-<picture class="gallery-picture">
-<source srcset="../assets/img/yangmingshan/g1.avif" type="image/avif"/>
-<source srcset="../assets/img/yangmingshan/g1.webp" type="image/webp"/>
-<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g1.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">Yangmingshan National Park Hiking Courses</span>
-</div>
-</button>
-<!-- Gallery Image Button 2 -->
-<button aria-haspopup="dialog" aria-label="View Yangmingshan National Park Scenic Views Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="1">
-<picture class="gallery-picture">
-<source srcset="../assets/img/yangmingshan/g2.avif" type="image/avif"/>
-<source srcset="../assets/img/yangmingshan/g2.webp" type="image/webp"/>
-<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g2.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">Yangmingshan National Park Scenic Views</span>
-</div>
-</button>
-<!-- Gallery Image Button 3 -->
-<button aria-haspopup="dialog" aria-label="View Yangmingshan Scenery Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="2">
-<picture class="gallery-picture">
-<source srcset="../assets/img/yangmingshan/g3.avif" type="image/avif"/>
-<source srcset="../assets/img/yangmingshan/g3.webp" type="image/webp"/>
-<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g3.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">Yangmingshan Scenery</span>
-</div>
-</button>
-<!-- Gallery Image Button 4 -->
-<button aria-haspopup="dialog" aria-label="View Yangmingshan National Park Trails Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@waterfay' target='_blank' rel='noopener'&gt;Chen Wen-Yu&lt;/a&gt; on Unsplash" data-index="3">
-<picture class="gallery-picture">
-<source srcset="../assets/img/yangmingshan/g4.avif" type="image/avif"/>
-<source srcset="../assets/img/yangmingshan/g4.webp" type="image/webp"/>
-<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g4.jpg"/>
-</picture>
-<div class="gallery-caption-overlay">
-<span class="gallery-caption-text">Yangmingshan National Park Trails</span>
-</div>
-</button>
-</div>
-</section>
-<footer><div class="wrap">Before your actual hike, reconfirm Yangmingshan National Park visitor information, bus schedules, weather, and the presence of fog or strong winds at the summit.</div></footer>
-<script>
+</style><meta content="../assets/img/yangmingshan/og.png" property="og:image"/><meta content="../assets/img/yangmingshan/og.png" name="twitter:image"/><script src="../assets/js/i18n.js"></script><link href="../yangmingshan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/yangmingshan-playbook.html" hreflang="en" rel="alternate"/><link href="../yangmingshan-playbook.html" hreflang="x-default" rel="alternate"/></head><body><a class="skip-link" href="#mainContent">Skip to main content</a><header class="header"><div class="wrap header-inner"><div class="brand"><div class="logo"><svg aria-label="Korea Trails" class="logo-svg" fill="none" role="img" viewbox="0 0 36 36"><defs><lineargradient id="grad36_sun" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#f43f5e"></stop><stop offset="100%" stop-color="#be123c"></stop></lineargradient><lineargradient id="grad36_mt" x1="0" x2="0" y1="1" y2="0"><stop offset="0%" stop-color="#0f172a"></stop><stop offset="100%" stop-color="#0d9488"></stop></lineargradient><lineargradient id="grad36_wind" x1="0" x2="1" y1="0" y2="0"><stop offset="0%" stop-color="#38bdf8" stop-opacity="0.2"></stop><stop offset="50%" stop-color="#22d3ee" stop-opacity="0.9"></stop><stop offset="100%" stop-color="#38bdf8" stop-opacity="0.2"></stop></lineargradient></defs><circle cx="18" cy="18" opacity="0.4" r="16" stroke="#ca8a04" stroke-dasharray="1 2" stroke-width="0.5"></circle><circle cx="27" cy="10" fill="url(#grad36_sun)" r="2.2"></circle><circle cx="9" cy="10" fill="#fbbf24" r="2.2"></circle><path d="M4 26 L10 16 L15 23 L20 12 L25 21 L32 26 Z" fill="url(#grad36_mt)" stroke="#ca8a04" stroke-linejoin="round" stroke-width="0.8"></path><path d="M2 22 Q12 14 18 20 T34 16" fill="none" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1.8"></path><path d="M4 18 Q14 24 20 16 T32 22" fill="none" opacity="0.6" stroke="url(#grad36_wind)" stroke-linecap="round" stroke-width="1"></path><path d="M4 27 C8 25 12 29 18 27 C24 25 28 29 32 27" fill="none" stroke="#0284c7" stroke-linecap="round" stroke-width="1.2"></path></svg></div><div><h1><a href="index.html" style="color: var(--text); text-decoration: none;">Yangmingshan National Park Playbook</a></h1><p>Taipei Vicinity · Qixingshan (Seven Star Mountain) 1,120m · Volcanic Terrain · Sulfur · Grasslands · Hot Springs</p></div></div><div class="lang-toggle"><button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button><button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button></div><button aria-label="Toggle Dark Mode" class="theme-btn" id="themeBtn">◐</button></div></header><section class="hero hero-bleed"><picture class="hero-picture" id="heroFallbackImage"><source sizes="100vw" srcset="../assets/img/yangmingshan/hero-640.avif 640w, ../assets/img/yangmingshan/hero-1024.avif 1024w, ../assets/img/yangmingshan/hero-1600.avif 1600w, ../assets/img/yangmingshan/hero-2400.avif 2400w" type="image/avif"/><source sizes="100vw" srcset="../assets/img/yangmingshan/hero-640.webp 640w, ../assets/img/yangmingshan/hero-1024.webp 1024w, ../assets/img/yangmingshan/hero-1600.webp 1600w, ../assets/img/yangmingshan/hero-2400.webp 2400w" type="image/webp"/><img alt="Beautiful landscape of Yangmingshan and majestic mountain ridges in Yangmingshan National Park, a representative attraction of Yangmingshan National Park" class="hero-img" sizes="100vw" src="../assets/img/yangmingshan/hero-1600.jpg" srcset="../assets/img/yangmingshan/hero-640.jpg 640w, ../assets/img/yangmingshan/hero-1024.jpg 1024w, ../assets/img/yangmingshan/hero-1600.jpg 1600w, ../assets/img/yangmingshan/hero-2400.jpg 2400w"/></picture><video class="hero-bg-video" id="heroVideo" loop="" muted="" playsinline="" poster="../assets/video/yangmingshan/hero-poster.jpg" preload="none" style="display: none;"><source src="../assets/video/yangmingshan/hero.mp4" type="video/mp4"/></video><div class="hero-overlay"></div><div class="hero-content"><div class="wrap"><span class="hero-badge">Yangmingshan National Park · Qixingshan</span><h2>Yangmingshan National Park 3-Course Hiking Playbook</h2><p>This is an interactive guide for Yangmingshan National Park and Qixingshan (Seven Star Mountain) courses, perfect for a day trip from Taipei, divided into Beginner, Intermediate, and Advanced levels. It is structured around the most popular routes, focusing on Xiaoyoukeng, Lengshuikeng, and Qingtiangang.</p><div class="stats"><div class="stat"><div class="l">Highest Elevation</div><div class="v">1,120m</div></div><div class="stat"><div class="l">Total Distance</div><div class="v">8km</div></div><div class="stat"><div class="l">Duration</div><div class="v">4.5 hours</div></div><div class="stat"><div class="l">Country</div><div class="v">Taiwan 🇹🇼</div></div><div class="stat"><div class="l">Course Type</div><div class="v">Day Hike</div></div></div><div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);"><button class="course-btn active green" data-course="beginner"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner: Xiaoyoukeng Round Trip</button><button class="course-btn blue" data-course="intermediate"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate: Xiaoyoukeng-Lengshuikeng Traverse</button><button class="course-btn red" data-course="advanced">Advanced: Qingtiangang Traverse</button></div></div></div><div class="photo-credit hero-credit"><span class="credit-author">Photo by<a href="https://unsplash.com/@roberthsu1054" rel="noopener" target="_blank">CHIA-HAO HSU</a></span><span class="credit-divider">/</span><span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span></div></section><main class="wrap" id="mainContent"><section class="panel green active" id="beginner"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner</span><div><div class="panel-name">Xiaoyoukeng Round Trip Course</div><div class="panel-sub">Xiaoyoukeng → Qixingshan Main Peak → Xiaoyoukeng Round Trip · Approx. 3.2km · 1h 40m</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button></div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.2km</div><div class="txt">Round trip distance</div></div><div class="card kpi"><div class="num">1h 40m</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">1,120m</div><div class="txt">Qixingshan Main Peak</div></div><div class="card kpi"><div class="num">Medium-Low</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Stair Path</div><div class="txt">Key Terrain</div></div><div class="card kpi"><div class="num">Same-day Possible</div><div class="txt">Accessibility</div></div></div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Xiaoyoukeng</span><span class="arr">→</span><span class="chip">Qixingshan Main Peak</span><span class="arr">→</span><span class="chip">Out and back</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g1" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#4f7d4a" stop-opacity=".34"></stop><stop offset="100%" stop-color="#4f7d4a" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176 L740 210 L20 210 Z" fill="url(#g1)"></path><path d="M20 176 C150 138, 260 96, 380 60 S560 72, 740 176" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="4"></path><circle cx="382" cy="60" fill="#4f7d4a" r="6"></circle><text fill="#4f7d4a" font-size="12" x="396" y="54">Qixingshan 1,120m</text></svg></div><p class="desc">The shortest and most popular course, going from Xiaoyoukeng to Qixingshan Peak and back, is often guided as approximately 1.6km to the summit and 3.2km round trip, with actual reviews frequently showing around 1 hour 40 minutes. This is the least strenuous introductory course for day-trippers in Taipei.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Departure</div><div><div class="seg-title">Depart from Xiaoyoukeng</div><div class="seg-meta">0km · Sulfur Fumarole Observation Deck</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Pass the bus stop and observatory, then enter the staircase path towards Qixingshan. Since there are many stairs from the beginning, it's best to find a slow rhythm.</p><div class="bar"><div class="fill" style="width:28%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Before starting, it's recommended to first see Xiaoyoukeng's fumaroles and sulfur terrain to fully appreciate the unique characteristics of Yangmingshan National Park.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Xiaoyoukeng → Qixingshan Main Peak</div><div class="seg-meta">1.6km · 50~60min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The main sections consist of stone and wooden stairs, and on clear days, views towards downtown Taipei are visible. Although the elevation is not high, the continuous stairs can be quite breathless.</p><div class="bar"><div class="fill" style="width:62%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>If the wind is strong, the perceived temperature at the summit will be lower, so it's advisable to prepare a thin windbreaker.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Down</div><div><div class="seg-title">Descend to starting point after enjoying the summit</div><div class="seg-meta">1.6km · 40~50min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Descend the same way you came up. After rain, stairs and rocks can become slippery, so shorten your stride when descending.</p><div class="bar"><div class="fill" style="width:36%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After descending, you can immediately return to the city by bus, making it suitable for a half-day trip.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Preparation &amp; Gear</h2><ul><li>Trekking shoes with good grip are recommended over sneakers</li><li>Water 500mL-1L</li><li>Windbreaker x1</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg>Points</h2><ul><li>Xiaoyoukeng Sulfur Fumarole</li><li>Summit View</li><li>A Short and Intense Hike in the Taipei Suburbs</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Transportation</h2><ul><li>Accessible by bus from downtown Taipei</li><li>Many hikers on weekends</li><li>Morning departure is advantageous for securing views</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map"><svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M98 308 C190 244, 280 162, 384 86 C450 104, 560 180, 660 312" fill="none" stroke="#4f7d4a" stroke-linecap="round" stroke-width="6"></path><circle cx="98" cy="308" fill="#4f7d4a" r="10"></circle><circle cx="384" cy="86" fill="#4f7d4a" r="12"></circle><circle cx="660" cy="312" fill="#4f7d4a" r="10"></circle><text font-size="12" x="112" y="302">Xiaoyoukeng</text><text font-size="12" x="398" y="80">Qixingshan Main Peak</text><text font-size="12" x="612" y="330">Out and back</text><text fill="var(--muted)" font-size="12" x="34" y="44">Shortest Introductory Summit Course</text></svg><div aria-label="Yangmingshan National Park Beginner Xiaoyoukeng Round Trip Course Actual Map" class="leaflet-map" id="map-beginner" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div></div><div class="section-title"><h2>Checkpoint Table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Altitude</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Xiaoyoukeng</td><td>Approx. 800m</td><td>0km</td><td>Bus · Sulfur Fumarole</td></tr><tr><td>Ridge Stair Section</td><td>Approx. 980m</td><td>1.0km</td><td>View begins</td></tr><tr><td>Qixingshan Main Peak</td><td>1,120m</td><td>1.6km</td><td>Yangmingshan National Park Highest Point</td></tr><tr><td>Return to Xiaoyoukeng</td><td>Approx. 800m</td><td>3.2km</td><td>Out and back</td></tr></tbody></table></div></div></div></div></section><section class="panel blue" id="intermediate"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate</span><div><div class="panel-name">Xiaoyoukeng → Lengshuikeng Traverse Course</div><div class="panel-sub">Xiaoyoukeng → Qixingshan Main Peak → Qixingshan East Peak → Lengshuikeng · Approx. 3.5~4.0km · 2h 30m~3h 30m</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button></div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">3.5~4km</div><div class="txt">Total Distance</div></div><div class="card kpi"><div class="num">2.5~3.5h</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">Jubong Peak + Dongbong Peak</div><div class="txt">2 Peaks</div></div><div class="card kpi"><div class="num">Medium</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Lengshuikeng</div><div class="txt">Descent Point</div></div><div class="card kpi"><div class="num">Optimal for Day Trip</div><div class="txt">Representative Routes</div></div></div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">Xiaoyoukeng</span><span class="arr">→</span><span class="chip">Qixingshan Main Peak</span><span class="arr">→</span><span class="chip">Qixingshan East Peak</span><span class="arr">→</span><span class="chip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-food"></use></svg>Lengshuikeng</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g2" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#326f95" stop-opacity=".34"></stop><stop offset="100%" stop-color="#326f95" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178 L740 210 L20 210 Z" fill="url(#g2)"></path><path d="M20 184 C150 150, 250 106, 364 66 S470 70, 548 88 S620 108, 740 178" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="4"></path><circle cx="364" cy="66" fill="#326f95" r="6"></circle><circle cx="468" cy="72" fill="#326f95" r="6"></circle><text fill="#326f95" font-size="12" x="378" y="60">Jubong Peak</text><text fill="#326f95" font-size="12" x="482" y="66">Dongbong</text></svg></div><p class="desc">The most common Qixingshan traverse route leading to Lengshuikeng is approximately 4km, taking an average of 2.5-3.5 hours. The most balanced configuration involves ascending from Xiaoyoukeng, connecting the main peak and east peak, and descending to the Lengshuikeng hot spring area.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Departure</div><div><div class="seg-title">Xiaoyoukeng → Main Peak</div><div class="seg-meta">1.6km · 50~60min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>You ascend via the same path as the beginner course, but the descent route changes after the summit. The stairs section is long, so it's best not to overexert yourself from the start.</p><div class="bar"><div class="fill" style="width:54%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Even when visibility is reduced by fog, trail markers are relatively well-maintained.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Jubong Peak → Dongbong Peak</div><div class="seg-meta">0.5km · 15~20min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Follow the ridge to the East Peak. The ascents and descents are short, but it can be slippery depending on wind and humidity.</p><div class="bar"><div class="fill" style="width:40%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>The ridge view is often more open and refreshing towards Dongbong Peak than Jubong Peak.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Down</div><div><div class="seg-title">Dongbong → Naengsugaeng</div><div class="seg-meta">1.5~1.9km · Around 1 hour</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The Lengshuikeng route has a mix of stairs and dirt paths, and after descending, it's convenient to use the hot spring area and bus stop. The strain on the knees is slightly greater than the round trip to Xiaoyoukeng.</p><div class="bar"><div class="fill" style="width:58%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>After descending, it's great to enjoy a cold water foot bath and hot spring atmosphere.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Equipment</h2><ul><li>Trekking shoes recommended</li><li>Water 1L</li><li>Thin outer layer for fog</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-food"></use></svg>Attraction Points</h2><ul><li>2 Peaks Linked</li><li>Lengshuikeng Hot Spring Atmosphere</li><li>Convenient Public Transportation Connections</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>Caution</h2><ul><li>Slippery stairs on rainy days</li><li>Strong winds at the summit</li><li>Need to check descent bus times</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map"><svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M90 314 C170 246, 252 168, 360 92 S472 98, 548 118 S650 174, 710 290" fill="none" stroke="#326f95" stroke-linecap="round" stroke-width="6"></path><circle cx="90" cy="314" fill="#326f95" r="10"></circle><circle cx="360" cy="92" fill="#326f95" r="11"></circle><circle cx="472" cy="100" fill="#326f95" r="10"></circle><circle cx="710" cy="290" fill="#326f95" r="10"></circle><text font-size="12" x="104" y="308">Xiaoyoukeng</text><text font-size="12" x="374" y="86">Jubong Peak</text><text font-size="12" x="486" y="94">Dongbong</text><text font-size="12" x="670" y="308">Lengshuikeng</text></svg><div aria-label="Yangmingshan National Park Intermediate Xiaoyoukeng-Lengshuikeng Traverse Course Actual Map" class="leaflet-map" id="map-intermediate" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div></div><div class="section-title"><h2>Checkpoint Table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Altitude</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Xiaoyoukeng</td><td>Approx. 800m</td><td>0km</td><td>Trailhead</td></tr><tr><td>Qixingshan Main Peak</td><td>1,120m</td><td>1.6km</td><td>Highest Point</td></tr><tr><td>Qixingshan East Peak</td><td>Approx. 1,107m</td><td>2.1km</td><td>Ridge View</td></tr><tr><td>Lengshuikeng</td><td>Approx. 740m</td><td>3.5~4.0km</td><td>Bus · Hot Spring Area</td></tr></tbody></table></div></div></div></div></section><section class="panel red" id="advanced"><div class="panel-top"><span class="level">Advanced</span><div><div class="panel-name">Qingtiangang Connected Long-Distance Course</div><div class="panel-sub">Xiaoyoukeng → Qixingshan Main Peak → Qixingshan East Peak → Menghuanhu → Lengshuikeng → Qingtiangang · Approx. 5.5km · 3h~3h 30m</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-prep"></use></svg>Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-book"></use></svg>Route Guide</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-location"></use></svg>Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Tips &amp; Cautions</button></div><div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="grid6"><div class="card kpi"><div class="num">5.5km</div><div class="txt">Total Distance</div></div><div class="card kpi"><div class="num">3~3.5h</div><div class="txt">Estimated Time</div></div><div class="card kpi"><div class="num">Menghuanhu</div><div class="txt">Additional Points</div></div><div class="card kpi"><div class="num">Grassland</div><div class="txt">Qingtiangang</div></div><div class="card kpi"><div class="num">Medium-High</div><div class="txt">Difficulty</div></div><div class="card kpi"><div class="num">Full Course</div><div class="txt">Same-day Traverse Type</div></div></div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">Xiaoyoukeng</span><span class="arr">→</span><span class="chip">Jubong Peak</span><span class="arr">→</span><span class="chip">Dongbong</span><span class="arr">→</span><span class="chip">Menghuanhu</span><span class="arr">→</span><span class="chip">Lengshuikeng</span><span class="arr">→</span><span class="chip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Qingtiangang</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="g3" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9d4f36" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9d4f36" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146 L740 210 L20 210 Z" fill="url(#g3)"></path><path d="M20 186 C140 154, 246 114, 360 70 S466 72, 542 92 S608 128, 648 150 S698 156, 740 146" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="4"></path><circle cx="360" cy="70" fill="#9d4f36" r="6"></circle><circle cx="540" cy="92" fill="#9d4f36" r="6"></circle><circle cx="738" cy="146" fill="#9d4f36" r="6"></circle><text fill="#9d4f36" font-size="12" x="374" y="64">Jubong Peak</text><text fill="#9d4f36" font-size="12" x="554" y="86">Menghuanhu</text><text fill="#9d4f36" font-size="12" x="650" y="164">Qingtiangang</text></svg></div><p class="desc">The route from Xiaoyoukeng, passing through Qixingshan Main Peak and East Peak, then to Menghuanhu, Lengshuikeng, and Qingtiangang, is widely recommended, covering approximately 5.5km and taking around 3 to 3 hours 30 minutes. This route allows you to connect the summit hike with grassland scenery and hot spring areas all at once, making it characteristic of a full Yangmingshan course.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Sectional Route Guide</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Departure</div><div><div class="seg-title">Xiaoyoukeng → Qixingshan Main Peak</div><div class="seg-meta">1.6km · 50~60min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The main ascent to the summit is the same. On crowded days, your pace may slow down on the initial stairs.</p><div class="bar"><div class="fill" style="width:56%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Departing early in the morning is good for reducing both fog and crowds.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Jubong Peak → Dongbong Peak → Monghwanho Lake</div><div class="seg-meta">1.2km · 35~45min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Past the ridge, the trail continues towards Menghuanhu. If the weather is clear, it's great to enjoy both the grassland and crater landscape.</p><div class="bar"><div class="fill" style="width:48%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Menghuan Pond's atmosphere changes significantly depending on the season and water level.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Menghuanhu → Naengsugaeng</div><div class="seg-meta">1.0km · 25~35min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Descending towards Lengshuikeng, you can experience geothermal areas and hot springs. There's a rest point after descending, which makes the experience feel more relaxed.</p><div class="bar"><div class="fill" style="width:42%"></div></div><div class="tip"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>It's good to take a short break at Lengshuikeng and then continue to Qingtiangang.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Down</div><div><div class="seg-title">Lengshuikeng → Qingtiangang</div><div class="seg-meta">1.7km · 40~50min</div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>This is the final section that connects to grassland terrain. Unlike Qixingshan, which is mainly composed of forests and ridges, this area features open pasture landscapes.</p><div class="bar"><div class="fill" style="width:46%"></div></div><div class="warn"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-warning"></use></svg>On days with heavy rain or fog, visibility in the grassland section can decrease sharply, so consider bus schedules and sunset times.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-backpack"></use></svg>Equipment</h2><ul><li>Trekking shoes and windbreaker</li><li>Water 1-1.5L</li><li>Snacks and Power Bank</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Attractions</h2><ul><li>Volcanic Terrain + Summit</li><li>Menghuan Pond Wetland</li><li>Qingtiangang Grassland</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Operating Tips</h2><ul><li>Different termini, check return bus routes</li><li>Buses may be crowded on weekends</li><li>Allow ample time during fog season</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Course Map</h2><div class="line"></div></div><div class="card map"><svg aria-hidden="true" class="map-fallback" viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M90 318 C162 246, 246 166, 360 94 S474 100, 548 124 S618 170, 658 214 S696 256, 728 284" fill="none" stroke="#9d4f36" stroke-linecap="round" stroke-width="6"></path><circle cx="90" cy="318" fill="#9d4f36" r="10"></circle><circle cx="360" cy="94" fill="#9d4f36" r="10"></circle><circle cx="474" cy="100" fill="#9d4f36" r="10"></circle><circle cx="606" cy="168" fill="#9d4f36" r="10"></circle><circle cx="728" cy="284" fill="#9d4f36" r="10"></circle><text font-size="12" x="104" y="312">Xiaoyoukeng</text><text font-size="12" x="374" y="88">Jubong Peak</text><text font-size="12" x="488" y="94">Dongbong</text><text font-size="12" x="620" y="162">Lengshuikeng</text><text font-size="12" x="672" y="302">Qingtiangang</text></svg><div aria-label="Yangmingshan National Park Advanced Qingtiangang Loop Course Real-World Map" class="leaflet-map" id="map-advanced" role="application" style="display: none; width: 100%; height: clamp(280px, 50vh, 460px); border-radius: 18px; overflow: hidden;"></div></div><div class="section-title"><h2>Checkpoint Table</h2><div class="line"></div></div><div class="table-wrap"><table><thead><tr><th>Point</th><th>Altitude</th><th>Cumulative Distance</th><th>Features</th></tr></thead><tbody><tr><td>Xiaoyoukeng</td><td>Approx. 800m</td><td>0km</td><td>Bus · Fumarole</td></tr><tr><td>Qixingshan Main Peak</td><td>1,120m</td><td>1.6km</td><td>Highest Point</td></tr><tr><td>Qixingshan East Peak</td><td>Approx. 1,107m</td><td>2.1km</td><td>Ridge View</td></tr><tr><td>Menghuanhu</td><td>Approx. 880m</td><td>3.1km</td><td>Lake/Wetland Atmosphere</td></tr><tr><td>Lengshuikeng</td><td>Approx. 740m</td><td>3.8km</td><td>Hot Spring Area</td></tr><tr><td>Qingtiangang</td><td>Approx. 760m</td><td>5.5km</td><td>Grassland Scenery &amp; Bus Connection</td></tr></tbody></table></div></div></div></div></section><section class="transit-section" style="margin-top: 40px; padding: 20px 0;"><div class="section-title"><h2><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Detailed Public Transportation Guide</h2><div class="line"></div></div><div class="stats" style="margin-bottom: 24px;"><div class="stat"><div class="l">Park internal shuttle</div><div class="v" style="color: var(--teal);">Bus No. 108</div><div class="l" style="margin-top: 4px;">Service: Weekdays 30-40 min / Weekends 10-20 min</div></div><div class="stat"><div class="l">Last park shuttle departure time</div><div class="v" style="color: var(--red);">Depart at 17:30</div><div class="l" style="margin-top: 4px;">Departing from Terminal / Recommended 16:30 from mountain stops</div></div><div class="stat"><div class="l">Major connecting MRT stations in the city</div><div class="v" style="color: var(--blue);">Jiantan Station / Shilin Station</div><div class="l" style="margin-top: 4px;">Connected to MRT Tamsui-Xinyi Line (Red Line)</div></div><div class="stat"><div class="l">Recommended Payment Methods</div><div class="v" style="color: var(--green);">EasyCard (悠遊卡)</div><div class="l" style="margin-top: 4px;">Taiwan EasyCard (prepare sufficient balance)</div></div></div><div class="card" style="margin-bottom: 24px; padding: 20px;"><h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: var(--sm); font-weight: 800; margin-bottom: 14px; display: flex; align-items: center; gap: 8px;"><span style="background: var(--teal); color: #fff; width: 24px; height: 24px; border-radius: 999px; display: inline-grid; place-items: center; font-size: 10px;">6</span>6-Tier Public Transportation Guide from Taipei Departure to Return</h2><div class="flow" style="display: flex; flex-direction: column; gap: 12px; align-items: flex-start;"><div style="display: flex; gap: 12px; font-size: var(--xs);"><span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 1: Airport ➔ City Center</span><span style="color: var(--text);">From Taoyuan International Airport (TPE)<strong>Airport MRT (Express 36 min / Commuter 50 min, NT$150)</strong>or<strong>Kuo-Kuang Motor Transport Bus No. 1819 (55 min, NT$140)</strong>take a bus to Taipei Main Station.</span></div><div style="display: flex; gap: 12px; font-size: var(--xs);"><span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 2: City Center ➔ Park Entrance</span><span style="color: var(--text);">From Taipei Main Station<strong>Bus No. 260 (60 min, NT$30)</strong>and from Jiantan Station/Shilin Station,<strong>Red 5 Bus (45 min, NT$15)</strong>Take a bus to Yangmingshan Bus Terminal. (※ For direct routes to Soyugaeng/Naengsugaeng, from Jiantan Station,<strong>Small 15 Bus (50 min, NT$15)</strong>available for boarding)</span></div><div style="display: flex; gap: 12px; font-size: var(--xs);"><span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 3: Movement within the Park</span><span style="color: var(--text);">Circulating major points within Yangmingshan National Park from the Yangmingshan National Park Bus Terminal<strong>Bus No. 108 Shuttle (1 ride NT$15, 1-day pass NT$60)</strong>and transfer to reach the trailhead of each course.</span></div><div style="display: flex; gap: 12px; font-size: var(--xs);"><span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 4: Accessing Trailheads for Each Course</span><span style="color: var(--text);">All 3 hiking courses in this playbook are<strong>Xiaoyoukeng Bus Stop</strong>starts from. Take shuttle bus No. 108 and get off at Xiaoyoukeng.</span></div><div style="display: flex; gap: 12px; font-size: var(--xs);"><span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 5: Exit Point ➔ Transfer for Return Home</span><span style="color: var(--text);">From the hiking completion point (Beginner: Soyugaeng, Intermediate: Naengsugaeng, Advanced: Qingtiankang), transfer again<strong>Bus No. 108</strong>take a bus back to the terminal, or in the case of Naengsugaeng/Qingtiankang,<strong>Small 15 Bus</strong>You can take a bus directly to the city (Jiantan Station).</span></div><div style="display: flex; gap: 12px; font-size: var(--xs);"><span class="chip" style="background: var(--surface2); color: var(--muted); flex-shrink: 0; width: 140px; text-align: center;">Step 6: Payment and Safe Return Home</span><span style="color: var(--text);">Tap your EasyCard to board and alight,<strong>Last bus departure time from the mountain</strong>It is safe to strictly calculate backwards from the last bus/shuttle times (Small 15 weekdays 16:20 / weekends 17:30, 108 shuttle 17:30) to ensure you finish your hike.</span></div></div></div><div class="section-title"><h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: var(--sm); font-weight: 800;"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-bus"></use></svg>Bus routes and detailed operation information</h2></div><div class="table-wrap" style="margin-bottom: 24px;"><table><thead><tr><th>Route</th><th>Starting Point (Boarding) ➔ End Point (Alighting)</th><th>Duration</th><th>One-way fare</th><th>Service interval</th><th>Operating Hours (First/Last Bus)</th></tr></thead><tbody><tr><td style="font-weight: bold; color: var(--teal);">108 (Shuttle)</td><td>Yangmingshan National Park Terminal ➔ (Loop) ➔ Xiaoyoukeng/Lengshuikeng/Qingtiangang</td><td>Approx. 30-45 min (loop)</td><td>NT$ 15<br/><small style="color: var(--muted);">(1-day pass NT$60)</small></td><td>Weekdays: 30-40 minutes<br/>Weekends: 10-20 min</td><td>07:00 ~ 17:30 (Based on terminal departure)</td></tr><tr><td style="font-weight: bold; color: var(--blue);">紅5 (Red 5)</td><td>MRT Jiantan Station (Exit 1) / Shilin Station ➔ Yangmingshan Terminal</td><td>Approx. 45 min</td><td>NT$ 15<br/><small style="color: var(--muted);">(Section 1)</small></td><td>Weekdays: 4-8 minutes (during peak hours)<br/>Weekends: 12-15 min</td><td>05:30 ~ 00:10 (Daily operation)</td></tr><tr><td style="font-weight: bold; color: var(--blue);">260</td><td>Taipei Main Station (Ground Bus Stop) ➔ Yangmingshan Terminal</td><td>Approx. 60 min</td><td>NT$ 30<br/><small style="color: var(--muted);">(Section 2)</small></td><td>Daily: 10-15 minutes</td><td>05:40 ~ 22:30</td></tr><tr><td style="font-weight: bold; color: var(--green);">小15 (S15)</td><td>MRT Jiantan Station (Exit 1) ➔ Lengshuikeng ➔ Qingtiangang</td><td>Approx. 50-60 min</td><td>NT$ 15<br/><small style="color: var(--muted);">(Section 1)</small></td><td>Weekdays: 30-40 minutes<br/>Weekends: 20-30 min</td><td>From Jiantan Station: 05:40 ~ 17:30<br/>Qingtiangang Departure: 16:20 (weekdays) / 17:30 (weekends)</td></tr></tbody></table></div><div class="section-title"><h2 style="font-family: 'Cabinet Grotesk', sans-serif; font-size: var(--sm); font-weight: 800;"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Last Descent Bus Reverse Calculation Guide by Course</h2></div><div class="tips-grid" style="margin-bottom: 24px;"><div class="card tipcard" style="border-left: 4px solid var(--green);"><h2 style="font-weight: 800; color: var(--green);"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg>Beginner: Xiaoyoukeng Out and Back</h2><div style="font-size: var(--xs); color: var(--muted); line-height: 1.6;"><ul style="padding-left: 16px; margin: 0;"><li><strong>Trailhead Exit Point:</strong>Xiaoyoukeng Bus Stop</li><li><strong>Recommended Return Route:</strong>Xiaoyoukeng ➔ 108 Shuttle Bus ➔ Yangmingshan Terminal ➔ Red 5 or 260 Bus ➔ City Center</li><li><strong>Descent completion deadline:</strong><span style="color: var(--red); font-weight: bold;">Before 16:30</span></li><li style="margin-top: 6px; list-style-type: none; font-style: italic;">※ The 108 shuttle bus departs the terminal at 17:30 to complete its circuit. To avoid missing the last bus, it is advisable to board safely at Xiaoyoukeng, a mountain stop, around 16:30.</li></ul></div></div><div class="card tipcard" style="border-left: 4px solid var(--blue);"><h2 style="font-weight: 800; color: var(--blue);"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg>Intermediate: Xiaoyoukeng ➔ Lengshuikeng Traverse</h2><div style="font-size: var(--xs); color: var(--muted); line-height: 1.6;"><ul style="padding-left: 16px; margin: 0;"><li><strong>Trailhead Exit Point:</strong>Lengshuikeng Bus Stop</li><li><strong>Recommended Return Route:</strong>Lengshuikeng ➔ Bus S15 (direct to Jiantan Station) or Shuttle 108 ➔ Transfer at terminal</li><li><strong>Descent completion deadline:</strong><br/><strong>Weekdays:</strong><span style="color: var(--red); font-weight: bold;">Before 16:00</span>/<strong>Weekends:</strong><span style="color: var(--red); font-weight: bold;">Before 17:00</span></li><li style="margin-top: 6px; list-style-type: none; font-style: italic;">※ From Lengshuikeng, you can take the Small 15 microbus directly to Jiantan Station. However, if the bus departing from Qingtiangang is full, it is highly likely to pass through Lengshuikeng without stopping. If it's full, you should take bus 108 back to the terminal and transfer.</li></ul></div></div><div class="card tipcard" style="border-left: 4px solid var(--red);"><h2 style="font-weight: 800; color: var(--red);">Advanced: Xiaoyoukeng ➔ Qingtiangang Traverse</h2><div style="font-size: var(--xs); color: var(--muted); line-height: 1.6;"><ul style="padding-left: 16px; margin: 0;"><li><strong>Trailhead Exit Point:</strong>Qingtiangang Bus Stop (Terminal)</li><li><strong>Recommended Return Route:</strong>Qingtiangang ➔ Bus No. S15 (board at the terminal, can get a seat) or Bus No. 108 shuttle ➔ Transfer at the terminal</li><li><strong>Descent completion deadline:</strong><br/><strong>Weekdays:</strong><span style="color: var(--red); font-weight: bold;">Before 16:00</span>/<strong>Weekends:</strong><span style="color: var(--red); font-weight: bold;">Before 17:00</span></li><li style="margin-top: 6px; list-style-type: none; font-style: italic;">※ The last Small 15 bus from Qingtiangang departs punctually at 16:20 on weekdays and 17:30 on weekends. If the waiting line is long, you will have to take the next bus, so it is strongly recommended to wait at the bus stop at least 30 minutes before the last bus.</li></ul></div></div></div><div class="card tip" style="background: var(--surface2); color: var(--muted); padding: 16px; border-radius: var(--r2); font-size: var(--xs);"><h5 style="font-weight: 800; margin: 0 0 8px 0; color: var(--text);"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-tip"></use></svg>Essential Public Transportation Tips</h5><ul style="margin: 0; padding-left: 16px; line-height: 1.7;"><li><strong>Check EasyCard balance:</strong>There are no card charging stations in the mountainous areas of Yangmingshan National Park. Please check and top up your card with a sufficient balance of at least NT$200 at an MRT station in the city before coming.</li><li><strong>Two-way tag for boarding/alighting:</strong>On Taipei City buses, you must tap your card both when boarding and alighting for the fare to be correctly charged and for transfer discounts to apply.</li><li><strong>Weekend congestion:</strong>On weekends with good weather, between 2 PM and 5 PM, there can be a large crowd of hikers waiting for the downhill bus, potentially requiring a wait of 30 minutes or more. If possible, it is more comfortable to start hiking before 8 AM and descend before 2-3 PM.</li><li><strong>Weather deterioration fallback:</strong>The summit area of Yangmingshan National Park experiences rapid temperature changes and often has dense fog or strong winds. Buses may operate on a reduced schedule or be suspended due to heavy rain or typhoon warnings, so please reconfirm real-time bus information on the official website before departing.</li></ul><div style="margin-top: 10px; font-size: 11px; text-align: right; color: var(--muted);">Official sources: Yangmingshan National Park (ymsnp.gov.tw) and Taipei City Public Transportation Office | Last updated: 2026-06-22</div></div></section></main><section class="photo-gallery-section"><h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;"><span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span>Yangmingshan National Park's Four Seasons &amp; Attractions</h2><div class="gallery-grid"><button aria-haspopup="dialog" aria-label="View Yangmingshan National Park Hiking Courses Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://www.pexels.com/photo/photo-of-a-green-mountain-6502832/' target='_blank' rel='noopener'&gt;Timo Volz&lt;/a&gt; on Pexels" data-index="0"><picture class="gallery-picture"><source srcset="../assets/img/yangmingshan/g1.avif" type="image/avif"/><source srcset="../assets/img/yangmingshan/g1.webp" type="image/webp"/><img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g1.jpg"/></picture><div class="gallery-caption-overlay"><span class="gallery-caption-text">Yangmingshan National Park Hiking Courses</span></div></button><button aria-haspopup="dialog" aria-label="View Yangmingshan National Park Scenic Views Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="1"><picture class="gallery-picture"><source srcset="../assets/img/yangmingshan/g2.avif" type="image/avif"/><source srcset="../assets/img/yangmingshan/g2.webp" type="image/webp"/><img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g2.jpg"/></picture><div class="gallery-caption-overlay"><span class="gallery-caption-text">Yangmingshan National Park Scenic Views</span></div></button><button aria-haspopup="dialog" aria-label="View Yangmingshan National Park Scenery Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@chyi826' target='_blank' rel='noopener'&gt;Andy Kuo&lt;/a&gt; on Unsplash" data-index="2"><picture class="gallery-picture"><source srcset="../assets/img/yangmingshan/g3.avif" type="image/avif"/><source srcset="../assets/img/yangmingshan/g3.webp" type="image/webp"/><img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g3.jpg"/></picture><div class="gallery-caption-overlay"><span class="gallery-caption-text">Yangmingshan National Park Scenery</span></div></button><button aria-haspopup="dialog" aria-label="View Yangmingshan National Park Trails Larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/@waterfay' target='_blank' rel='noopener'&gt;Chen Wen-Yu&lt;/a&gt; on Unsplash" data-index="3"><picture class="gallery-picture"><source srcset="../assets/img/yangmingshan/g4.avif" type="image/avif"/><source srcset="../assets/img/yangmingshan/g4.webp" type="image/webp"/><img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/yangmingshan/g4.jpg"/></picture><div class="gallery-caption-overlay"><span class="gallery-caption-text">Yangmingshan National Park Trails</span></div></button></div></section><footer><div class="wrap">Before your actual hike, please reconfirm Yangmingshan National Park visitor information, bus schedules, weather conditions, and the presence of fog or strong winds at the summit.</div></footer><script>
 const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
 const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
 document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
 document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
-</script>
-<!-- Lightbox Dialog Overlay -->
-<div aria-hidden="true" aria-label="View Image Larger" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1">
-<button aria-label="Close Gallery" class="lightbox-close">×</button>
-<button aria-label="Previous Image" class="lightbox-prev">❮</button>
-<button aria-label="Next Image" class="lightbox-next">❯</button>
-<div class="lightbox-content">
-<figure class="lightbox-figure">
-<figcaption class="lightbox-caption"></figcaption>
-</figure>
-<div class="photo-credit lightbox-credit"></div>
-</div>
-</div>
-<script>
+</script><div aria-hidden="true" aria-label="View larger image" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1"><button aria-label="Close Gallery" class="lightbox-close">×</button><button aria-label="Previous image" class="lightbox-prev">❮</button><button aria-label="Next Image" class="lightbox-next">❯</button><div class="lightbox-content"><figure class="lightbox-figure"><figcaption class="lightbox-caption"></figcaption></figure><div class="photo-credit lightbox-credit"></div></div></div><script>
 document.addEventListener('DOMContentLoaded', () => {
   const galleryItems = document.querySelectorAll('.gallery-item');
   const lightbox = document.getElementById('lightbox');
@@ -1463,11 +1050,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
-</script>
-Leaflet Map Configuration Script (A-MAP)
-<script>
+</script><script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Define Yangmingshan Map configuration data
+  
   const mapConfig = {
     points: {
       "Xiaoyoukeng":   {"lat": 25.1764, "lng": 121.5478, "alt_m": 805, "type": "trailhead/bus"},
@@ -1478,28 +1063,28 @@ document.addEventListener('DOMContentLoaded', () => {
       "Qingtiangang":{"lat": 25.1672, "lng": 121.5742, "alt_m": 760, "type": "grassland/bus"}
     },
     routes: {
-      "Beginner":     ["Xiaoyoukeng","Qixing Main Peak","Xiaoyoukeng"],
-      "Intermediate": ["Xiaoyoukeng","Qixing Main Peak","Qixing East Peak","Lengshuikeng"],
-      "advanced":     ["xiaoyoukeng_Xiaoyoukeng","Qixing Main Peak","Qixing East Peak","Menghuanchi","Lengshuikeng","Qingtiangang"]
+      "beginner":     ["Xiaoyoukeng","Qixing Main Peak","Xiaoyoukeng"],
+      "intermediate": ["Xiaoyoukeng","Qixing Main Peak","Qixing East Peak","Lengshuikeng"],
+      "advanced":     ["Xiaoyoukeng","Qixing Main Peak","Qixing East Peak","Menghuanchi","Lengshuikeng","Qingtiangang"]
     },
     colors: {
-      "beginner": "#4f7d4a",     // Beginner existing SVG inherited color
-      "intermediate": "#326f95", // Intermediate existing SVG inherited color
-      "advanced": "#9d4f36"      // Advanced existing SVG inherited color
+      "beginner": "#4f7d4a",     
+      "intermediate": "#326f95", 
+      "advanced": "#9d4f36"      
     }
   };
 
   window.mapInstances = window.mapInstances || {};
   window.initializedMaps = window.initializedMaps || {};
 
-  // Leaflet CDN dynamic loader (for offline fallback and buildless integration)
+  
   function loadLeafletAssets(callback) {
     if (window.L) {
       callback();
       return;
     }
 
-    // 1. Load Leaflet CSS
+    
     const link = document.createElement('link');
     link.rel = 'stylesheet';
     link.href = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css';
@@ -1507,7 +1092,7 @@ document.addEventListener('DOMContentLoaded', () => {
     link.crossOrigin = '';
     document.head.appendChild(link);
 
-    // 2. Load Leaflet JS
+    
     const script = document.createElement('script');
     script.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
     script.integrity = 'sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=';
@@ -1516,51 +1101,51 @@ document.addEventListener('DOMContentLoaded', () => {
       callback();
     };
     script.onerror = () => {
-      console.warn("Leaflet CDN failed to load. The conceptual map (SVG) fallback will remain.");
+      console.warn("Leaflet CDN failed to load. The conceptual map (SVG) fallback will be maintained.");
     };
     document.head.appendChild(script);
   }
 
-  // Single course Map initialization logic
+  
   function initCourseMap(courseId) {
     const mapEl = document.getElementById(`map-${courseId}`);
     if (!mapEl || window.initializedMaps[courseId]) return;
 
-    // Hide fallback SVG and show Map element
+    
     const fallbackSvg = mapEl.parentElement.querySelector('.map-fallback');
     if (fallbackSvg) fallbackSvg.style.display = 'none';
     mapEl.style.display = 'block';
 
-    // Create Map instance
+    
     const map = L.map(mapEl, {
-      scrollWheelZoom: false, // Prevent unintentional zoom from mouse scroll
+      scrollWheelZoom: false, 
       zoomControl: true
     });
 
-    // Base layer 1: Esri World Imagery (Satellite - default)
+    
     const satellite = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
       attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community',
       maxZoom: 19
     });
 
-    // Base layer 2: OpenTopoMap (Terrain - optional)
+    
     const terrain = L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)',
       maxZoom: 17,
-      className: 'terrain-layer-dark-filter' // Bind CSS filter class for dark mode
+      className: 'terrain-layer-dark-filter' 
     });
 
-    // Load satellite by default
+    
     satellite.addTo(map);
 
     const baseLayers = {
       "Satellite Layer": satellite,
-      " Topographic Layer": terrain
+      "Terrain Layer": terrain
     };
 
     L.control.layers(baseLayers, null, { collapsed: false }).addTo(map);
 
-    // Collect route nodes and create markers
+    
     const route = mapConfig.routes[courseId];
     const color = mapConfig.colors[courseId];
     const latlngs = [];
@@ -1573,7 +1158,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const latlng = [pt.lat, pt.lng];
       latlngs.push(latlng);
 
-      // Prevent duplicate markers at same position
+      
       let isDuplicate = false;
       markers.eachLayer(layer => {
         if (layer.getLatLng().lat === pt.lat && layer.getLatLng().lng === pt.lng) {
@@ -1582,33 +1167,33 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
       if (!isDuplicate) {
-        // Name parsing
+        
         const nameKo = ptKey.split('_')[1] || ptKey;
         
-        // Detailed features per point
+        
         let detailDesc = "";
         switch (ptKey) {
           case "Xiaoyoukeng":
             detailDesc = "Trailhead · Sulfur Fumarole · 108 Shuttle Bus Stop";
             break;
           case "Qixing Main Peak":
-            detailDesc = "Qixingshan Main Peak (1,120m above sea level, highest point) · Summit Marker";
+            detailDesc = "Qixingshan Main Peak (1,120m above sea level, highest point) · Summit marker";
             break;
           case "Qixing East Peak":
-            detailDesc = "Qixingshan East Peak (1,107m above sea level) · Scenic Viewpoint in all directions";
+            detailDesc = "Qixingshan East Peak (1,107m above sea level) · Scenic spot with 360-degree views";
             break;
           case "Menghuanchi":
-            detailDesc = "Taiwanese Rhynchospora Reserve · Alpine Wetlands";
+            detailDesc = "Taiwan Rhynchospora Reserve · Alpine Wetland";
             break;
           case "Lengshuikeng":
             detailDesc = "Free hot spring/foot bath · Lengshuikeng Visitor Center · Bus transfer";
             break;
           case "Qingtiangang":
-            detailDesc = "Expansive lava plateau grassland · Grazing cattle viewing · Exit bus";
+            detailDesc = "Expansive Lava Plateau Grassland · Grazing Cattle Viewing · Exit Bus";
             break;
         }
 
-        // Clean and modern checkpoint markers
+        
         const marker = L.circleMarker(latlng, {
           radius: 8,
           fillColor: color,
@@ -1618,7 +1203,7 @@ document.addEventListener('DOMContentLoaded', () => {
           fillOpacity: 0.95
         });
 
-        // Attach tooltips
+        
         marker.bindTooltip(nameKo, {
           permanent: true,
           direction: 'top',
@@ -1626,11 +1211,11 @@ document.addEventListener('DOMContentLoaded', () => {
           className: 'map-tooltip'
         });
 
-        // Configure popups
+        
         const popupContent = `
           <div class="map-popup-content">
             <h2 style="margin: 0 0 6px 0; font-size: 13px; font-weight:800; color: var(--text);">${nameKo}</h2>
-            <div style="font-size: 11px; margin-bottom: 4px;"><svg class="icon-svg" style="width:12px;height:12px;"><use href="assets/icons/icons.svg#icon-mountain"/></svg> Elevation: <strong>${pt.alt_m}m</strong></div>
+            <div style="font-size: 11px; margin-bottom: 4px;"><svg class="icon-svg" style="width:12px;height:12px;"><use href="../assets/icons/icons.svg#icon-mountain"/></svg> Altitude: <strong>${pt.alt_m}m</strong></div>
             <div style="font-size: 11px; color: var(--muted); max-width: 180px; word-break: keep-all;">ℹ ${detailDesc}</div>
           </div>
         `;
@@ -1639,7 +1224,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // Draw route polylines
+    
     const polyline = L.polyline(latlngs, {
       color: color,
       weight: 5,
@@ -1648,7 +1233,7 @@ document.addEventListener('DOMContentLoaded', () => {
       lineJoin: 'round'
     });
 
-    // Fit Map bounds before adding layers to avoid Leaflet projection errors
+    
     if (latlngs.length > 0) {
       try {
         map.fitBounds(polyline.getBounds(), { padding: [40, 40] });
@@ -1659,20 +1244,20 @@ document.addEventListener('DOMContentLoaded', () => {
       map.setView([25.17, 121.56], 13);
     }
 
-    // Add layers to Map safely
+    
     polyline.addTo(map);
     markers.addTo(map);
 
-    // Accessibility: keyboard gestures and tab focus handling
+    
     map.on('focus', () => { map.scrollWheelZoom.enable(); });
     map.on('blur', () => { map.scrollWheelZoom.disable(); });
 
-    // Bind global management variables
+    
     window.mapInstances[courseId] = map;
     window.initializedMaps[courseId] = true;
   }
 
-  // Lazy loading and tab transition stabilization
+  
   const mapObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -1681,10 +1266,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const courseId = mapEl.id.replace('map-', '');
 
         loadLeafletAssets(() => {
-          // Initialize Map
+          
           initCourseMap(courseId);
 
-          // Correct resize for tab context recovery
+          
           setTimeout(() => {
             if (window.mapInstances[courseId]) {
               window.mapInstances[courseId].invalidateSize();
@@ -1694,30 +1279,30 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }, {
-    rootMargin: '100px', // Preload 100px before scroll
+    rootMargin: '100px', 
     threshold: 0.01
   });
 
-  // Observe card container instead of display:none leaflet-map
+  
   document.querySelectorAll('.card.map').forEach(mapContainer => {
     mapObserver.observe(mapContainer);
   });
 
-  // Extend tab switcher event handler
+  
   document.querySelectorAll('.tab').forEach(tab => {
     tab.addEventListener('click', () => {
       const panel = tab.closest('.panel');
       if (!panel) return;
       const courseId = panel.id;
       
-      // Correct render size and trigger initialization on tab click
+      
       if (tab.dataset.tab === 'map') {
         loadLeafletAssets(() => {
           initCourseMap(courseId);
           setTimeout(() => {
             if (window.mapInstances[courseId]) {
               window.mapInstances[courseId].invalidateSize();
-              // Reset camera view by fitting bounds
+              
               const route = mapConfig.routes[courseId];
               const latlngs = [];
               route.forEach(ptKey => {
@@ -1732,15 +1317,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
               }
             }
-          }, 180); // Wait for browser display block transition
+          }, 180); 
         });
       }
     });
   });
 });
-</script>
-<!-- Desktop Cinematic Video Lazy Loader -->
-<script>
+</script><script>
 document.addEventListener('DOMContentLoaded', () => {
   const video = document.getElementById('heroVideo');
   const fallback = document.getElementById('heroFallbackImage');
@@ -1762,6 +1345,4 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(document.querySelector('.hero-bleed'));
   }
 });
-</script>
-</body>
-</html>
+</script></body></html>
