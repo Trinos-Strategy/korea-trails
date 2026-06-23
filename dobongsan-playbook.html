@@ -646,10 +646,19 @@
 <span class="pill-label">최고점(오봉)</span>
 <span class="pill-value">660m</span>
 </div>
+
 <div class="stat-pill">
-<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
-<span class="pill-label">체력 소모</span>
-<span class="pill-value">중하</span>
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 2단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-easy"></span>
+<span class="segment active-easy"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
 </div>
 <div class="stat-pill">
 <span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
@@ -658,7 +667,7 @@
 </div>
 </div>
 <div class="elev-wrap beginner">
-<h2>📈 고도 프로파일</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg> 고도 프로파일</h2>
 <svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
 <defs><lineargradient id="gb" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#2d7a3a" stop-opacity=".3"></stop><stop offset="100%" stop-color="#2d7a3a" stop-opacity=".03"></stop></lineargradient></defs>
 <path d="M0,135 L100,95 L160,80 L200,95 L350,30 L450,50 L500,80 L580,95 L700,135Z" fill="url(#gb)"></path>
@@ -675,7 +684,7 @@
 </svg>
 </div>
 <div class="diff-wrap beginner">
-<h2>⚡ 구간별 난이도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-lightning"></use></svg> 구간별 난이도</h2>
 <div class="diff-row"><span class="diff-label">탐방센터→울대습지</span><div class="diff-bar"><div class="diff-fill" style="width:20%"></div></div><span class="diff-pct">20%</span></div>
 <div class="diff-row"><span class="diff-label">울대습지→여성봉</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
 <div class="diff-row"><span class="diff-label">여성봉→오봉</span><div class="diff-bar"><div class="diff-fill" style="width:65%"></div></div><span class="diff-pct">65%</span></div>
@@ -683,18 +692,18 @@
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 주요 포인트</div>
 <div class="peak-grid">
-<div class="peak-card"><div class="peak-icon">🌸</div><div class="peak-elev" style="color:var(--color-beginner)">504m</div><div class="peak-name">여성봉</div><div class="peak-desc">부드러운 암봉. 오봉 조망 최적지. 봄 철쭉 명소</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg></div><div class="peak-elev" style="color:var(--color-beginner)">504m</div><div class="peak-name">여성봉</div><div class="peak-desc">부드러운 암봉. 오봉 조망 최적지. 봄 철쭉 명소</div></div>
 <div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-beginner)">660m</div><div class="peak-name">오봉</div><div class="peak-desc">5개 바위봉 도봉산 랜드마크. 서울 북서부 파노라마</div></div>
-<div class="peak-card"><div class="peak-icon">💧</div><div class="peak-elev" style="color:var(--color-beginner)">—</div><div class="peak-name">송추폭포</div><div class="peak-desc">여름 피서 명소. 하산 후 계곡 휴식 최적</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></div><div class="peak-elev" style="color:var(--color-beginner)">—</div><div class="peak-name">송추폭포</div><div class="peak-desc">여름 피서 명소. 하산 후 계곡 휴식 최적</div></div>
 </div>
 </div><div class="tab-content" id="tab-beginner-route">
 <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">총 왕복 약 9.5km · 4~5시간 · 송추계곡 원점회귀</p>
 <div class="accordion beginner">
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">송추제2주차장 출발</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 고도 160m</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 버스 하차 도보 5분</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">3호선 구파발역 → 34번 버스 → 송추계곡 하차(약 30분). 오봉탐방지원센터까지 도보 5분. 탐방센터에서 화장실·안내도 확인.</p><div class="tip-box">🅿 주말 오전 8시 전 도착 권장. 자가 이용 시 송추 1·2주차장</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">오봉탐방센터 → 울대습지</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.2km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 25분</span><span class="meta-chip">📍 ★☆☆☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">완만한 계곡길. 울대습지 나무데크 경유. 이정표 잘 정비되어 있어 안전.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 울대습지에서 스트레칭·준비운동 권장. 여름 매우 시원함</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">울대습지 → 여성봉(504m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="meta-chip">📍 ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">경사 점차 증가. 암릉 전 로프 구간. 정상에서 오봉 5개 봉우리 파노라마 최고.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg> 여성봉 = 오봉 전경 촬영 명소. 충분한 휴식 후 출발 권장</div><div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 암릉 구간 미끄럼 주의. 어린이는 손잡고 통과</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">여성봉 → 오봉(660m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.8km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 40분</span><span class="meta-chip">📍 ★★★★☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">능선 따라 5개 오봉 이동. 밧줄 등반 구간. 각 봉우리 서울·북한산 파노라마.</p><div class="tip-box">🪨 오봉: 안전 로프 잡고 천천히 이동. 제3봉이 가장 높음</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">오봉 → 송추폭포 → 원점</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 3.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 70분</span><span class="meta-chip">📍 ★★☆☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">급경사 내리막 후 송추폭포 경유. 계곡 따라 원점 귀환.</p><div class="tip-box">💧 하산 후 송추계곡 식당가 파전·막걸리 강추!</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">송추제2주차장 출발</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 고도 160m</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 버스 하차 도보 5분</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">3호선 구파발역 → 34번 버스 → 송추계곡 하차(약 30분). 오봉탐방지원센터까지 도보 5분. 탐방센터에서 화장실·안내도 확인.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-parking"></use></svg> 주말 오전 8시 전 도착 권장. 자가 이용 시 송추 1·2주차장</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">오봉탐방센터 → 울대습지</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.2km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 25분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★☆☆☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">완만한 계곡길. 울대습지 나무데크 경유. 이정표 잘 정비되어 있어 안전.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> 울대습지에서 스트레칭·준비운동 권장. 여름 매우 시원함</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">울대습지 → 여성봉(504m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">경사 점차 증가. 암릉 전 로프 구간. 정상에서 오봉 5개 봉우리 파노라마 최고.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg> 여성봉 = 오봉 전경 촬영 명소. 충분한 휴식 후 출발 권장</div><div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 암릉 구간 미끄럼 주의. 어린이는 손잡고 통과</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">여성봉 → 오봉(660m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.8km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 40분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★★☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">능선 따라 5개 오봉 이동. 밧줄 등반 구간. 각 봉우리 서울·북한산 파노라마.</p><div class="tip-box">🪨 오봉: 안전 로프 잡고 천천히 이동. 제3봉이 가장 높음</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">오봉 → 송추폭포 → 원점</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 3.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 70분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★☆☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">급경사 내리막 후 송추폭포 경유. 계곡 따라 원점 귀환.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 하산 후 송추계곡 식당가 파전·막걸리 강추!</div></div></div></div>
 </div>
 </div><div class="tab-content" id="tab-beginner-tips">
 <div class="tips-grid">
@@ -729,7 +738,7 @@
 <circle cx="345" cy="107" fill="#2d7a3a" r="6"></circle><text fill="white" font-size="7" text-anchor="middle" x="345" y="111">5</text>
 <text fill="var(--color-text)" font-size="13" font-weight="700" text-anchor="middle" x="313" y="86">오봉</text>
 <text fill="#2d7a3a" font-size="10" text-anchor="middle" x="313" y="75">660m</text>
-<text fill="#5a9ac8" font-size="10" x="385" y="208">💧 송추폭포</text>
+<text fill="#5a9ac8" font-size="10" x="385" y="208"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 송추폭포</text>
 <circle cx="329" cy="345" fill="none" r="8" stroke="#2d7a3a" stroke-dasharray="3,2" stroke-width="2"></circle>
 <text fill="var(--color-text-muted)" font-size="9" x="342" y="347">원점회귀</text>
 <text fill="var(--color-text-muted)" font-size="13" x="474" y="22">N↑</text>
@@ -912,10 +921,19 @@
 <span class="pill-label">최고점(신선대)</span>
 <span class="pill-value">714m</span>
 </div>
+
 <div class="stat-pill">
-<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
-<span class="pill-label">체력 소모</span>
-<span class="pill-value">중</span>
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment active-medium"></span>
+<span class="segment"></span>
+<span class="segment"></span>
+</div>
+</div>
 </div>
 <div class="stat-pill">
 <span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
@@ -924,7 +942,7 @@
 </div>
 </div>
 <div class="elev-wrap inter">
-<h2>📈 고도 프로파일</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg> 고도 프로파일</h2>
 <svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
 <defs><lineargradient id="gi" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#b87000" stop-opacity=".3"></stop><stop offset="100%" stop-color="#b87000" stop-opacity=".03"></stop></lineargradient></defs>
 <path d="M0,135 L80,118 L140,100 L190,85 L240,70 L285,56 L320,44 L348,28 L400,45 L450,60 L500,75 L560,95 L630,116 L700,135Z" fill="url(#gi)"></path>
@@ -941,7 +959,7 @@
 </svg>
 </div>
 <div class="diff-wrap inter">
-<h2>⚡ 구간별 난이도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-lightning"></use></svg> 구간별 난이도</h2>
 <div class="diff-row"><span class="diff-label">도봉산역→도봉서원</span><div class="diff-bar"><div class="diff-fill" style="width:25%"></div></div><span class="diff-pct">25%</span></div>
 <div class="diff-row"><span class="diff-label">도봉서원→마당바위</span><div class="diff-bar"><div class="diff-fill" style="width:55%"></div></div><span class="diff-pct">55%</span></div>
 <div class="diff-row"><span class="diff-label">마당바위→분기점</span><div class="diff-bar"><div class="diff-fill" style="width:75%"></div></div><span class="diff-pct">75%</span></div>
@@ -950,20 +968,20 @@
 </div>
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 주요 포인트</div>
 <div class="peak-grid">
-<div class="peak-card"><div class="peak-icon">⛪</div><div class="peak-elev" style="color:var(--color-inter)">320m</div><div class="peak-name">천축사</div><div class="peak-desc">도봉산 중턱 천년 고찰. 약수터 보급 가능</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></div><div class="peak-elev" style="color:var(--color-inter)">320m</div><div class="peak-name">천축사</div><div class="peak-desc">도봉산 중턱 천년 고찰. 약수터 보급 가능</div></div>
 <div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-inter)">450m</div><div class="peak-name">마당바위</div><div class="peak-desc">수십 명 쉴 수 있는 평탄 암반. 서울 도심 조망</div></div>
 <div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="peak-elev" style="color:var(--color-inter)">714m</div><div class="peak-name">신선대</div><div class="peak-desc">도봉산 정상석. 360도 조망. 삼봉 파노라마</div></div>
-<div class="peak-card"><div class="peak-icon">🌫</div><div class="peak-elev" style="color:var(--color-inter)">740m</div><div class="peak-name">자운봉(조망)</div><div class="peak-desc">도봉산 최고봉. 등반 금지. 신선대에서 절경</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="peak-elev" style="color:var(--color-inter)">740m</div><div class="peak-name">자운봉(조망)</div><div class="peak-desc">도봉산 최고봉. 등반 금지. 신선대에서 절경</div></div>
 </div>
 </div><div class="tab-content" id="tab-inter-route">
 <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:1rem;">총 왕복 약 7km · 3~4시간 · 도봉산역 원점회귀</p>
 <div class="accordion inter">
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">도봉산역 출발</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 고도 75m</span><span class="meta-chip">📍 1</span><span class="meta-chip">📍 7호선 1번 출구</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1·7호선 도봉산역 1번 출구 → 아웃도어 특화거리 통과 → 도봉탐방지원센터 도보 15분.</p><div class="tip-box">🛒 출발 전 특화거리 편의점에서 물·간식 최종 구비</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">탐방센터 → 도봉서원 터</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.8km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 20분</span><span class="meta-chip">📍 ★☆☆☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">계곡 따라 완만. 도봉서원 터는 조선 성리학자 조광조 배향 서원 흔적.</p><div class="tip-box">📜 바위 암각화 남아있어 역사 명소. 잠깐 감상 권장</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">도봉서원 → 천축사 → 마당바위</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="meta-chip">📍 ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">천축사 경유. 화강암 노출 구간 시작. 마당바위 서울 도심 조망 탁월.</p><div class="tip-box">⛪ 천축사 약수터 물 보충 가능. 마당바위에서 점심 최적</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">마당바위 → 자운봉 분기점</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.6km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 30분</span><span class="meta-chip">📍 ★★★★☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">철제 계단·난간 급경사. 자운봉·만장봉 눈앞. 분기점에서 신선대 방향 선택.</p><div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 주말 철계단 정체. 내려오는 등산객 양보 후 통과</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">분기점 → 신선대(714m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.3km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 15분</span><span class="meta-chip">📍 ★★★★☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">최후 암릉. 정상석에서 360도 조망. 자운봉·만장봉·선인봉 삼봉 파노라마.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg> 신선대에서 자운봉 바라보는 사진 = 도봉산 최고 포토 스팟</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">신선대 → 도봉산역 원점</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 3.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 80분</span><span class="meta-chip">📍 ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">올라온 길 하산. 도봉계곡 따라 탐방센터 귀환.</p><div class="tip-box">🍺 도봉산역 특화거리 막걸리·도토리묵·파전 강추!</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">도봉산역 출발</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 고도 75m</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 1</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 7호선 1번 출구</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1·7호선 도봉산역 1번 출구 → 아웃도어 특화거리 통과 → 도봉탐방지원센터 도보 15분.</p><div class="tip-box"> 출발 전 특화거리 편의점에서 물·간식 최종 구비</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">탐방센터 → 도봉서원 터</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.8km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 20분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★☆☆☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">계곡 따라 완만. 도봉서원 터는 조선 성리학자 조광조 배향 서원 흔적.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> 바위 암각화 남아있어 역사 명소. 잠깐 감상 권장</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">도봉서원 → 천축사 → 마당바위</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 50분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">천축사 경유. 화강암 노출 구간 시작. 마당바위 서울 도심 조망 탁월.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 천축사 약수터 물 보충 가능. 마당바위에서 점심 최적</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">마당바위 → 자운봉 분기점</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.6km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 30분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★★☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">철제 계단·난간 급경사. 자운봉·만장봉 눈앞. 분기점에서 신선대 방향 선택.</p><div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 주말 철계단 정체. 내려오는 등산객 양보 후 통과</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">분기점 → 신선대(714m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.3km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 15분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★★☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">최후 암릉. 정상석에서 360도 조망. 자운봉·만장봉·선인봉 삼봉 파노라마.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg> 신선대에서 자운봉 바라보는 사진 = 도봉산 최고 포토 스팟</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">신선대 → 도봉산역 원점</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 3.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 80분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">올라온 길 하산. 도봉계곡 따라 탐방센터 귀환.</p><div class="tip-box"> 도봉산역 특화거리 막걸리·도토리묵·파전 강추!</div></div></div></div>
 </div>
 </div><div class="tab-content" id="tab-inter-tips">
 <div class="tips-grid">
@@ -1183,10 +1201,19 @@
 <span class="pill-label">최고점(신선대)</span>
 <span class="pill-value">714m</span>
 </div>
+
 <div class="stat-pill">
-<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
-<span class="pill-label">체력 소모</span>
-<span class="pill-value">상</span>
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">난이도</span>
+<div aria-label="난이도: 5단계" class="difficulty-meter">
+<div class="meter-segments">
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+<span class="segment active-hard"></span>
+</div>
+</div>
 </div>
 <div class="stat-pill">
 <span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
@@ -1195,7 +1222,7 @@
 </div>
 </div>
 <div class="elev-wrap adv">
-<h2>📈 고도 프로파일</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-trend-up"></use></svg> 고도 프로파일</h2>
 <svg class="elev-svg" preserveaspectratio="none" viewbox="0 0 700 145">
 <defs><lineargradient id="ga" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#c0392b" stop-opacity=".3"></stop><stop offset="100%" stop-color="#c0392b" stop-opacity=".03"></stop></lineargradient></defs>
 <path d="M0,133 L60,115 L110,97 L150,82 L178,69 L208,57 L238,49 L258,45 L278,52 L298,37 L328,29 L353,25 L378,35 L400,45 L428,52 L458,65 L498,87 L558,112 L618,127 L700,135Z" fill="url(#ga)"></path>
@@ -1214,7 +1241,7 @@
 </svg>
 </div>
 <div class="diff-wrap adv">
-<h2>⚡ 구간별 난이도</h2>
+<h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-lightning"></use></svg> 구간별 난이도</h2>
 <div class="diff-row"><span class="diff-label">망월사역→다락능선</span><div class="diff-bar"><div class="diff-fill" style="width:60%"></div></div><span class="diff-pct">60%</span></div>
 <div class="diff-row"><span class="diff-label">다락능선 암릉</span><div class="diff-bar"><div class="diff-fill" style="width:85%"></div></div><span class="diff-pct">85%</span></div>
 <div class="diff-row"><span class="diff-label">포대전망대</span><div class="diff-bar"><div class="diff-fill" style="width:70%"></div></div><span class="diff-pct">70%</span></div>
@@ -1224,27 +1251,27 @@
 <div class="section-title"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-fire"></use></svg> 핵심 포인트</div>
 <div class="peak-grid">
 <div class="peak-card"><div class="peak-icon">🪨</div><div class="peak-elev" style="color:var(--color-adv)">다락능선</div><div class="peak-name">도봉 최고 암릉</div><div class="peak-desc">연속 화강암 스크램블링. 서울 360도 조망</div></div>
-<div class="peak-card"><div class="peak-icon">🗼</div><div class="peak-elev" style="color:var(--color-adv)">600m</div><div class="peak-name">포대전망대</div><div class="peak-desc">구 군사시설 포대 자리. 의정부·사패산 조망</div></div>
-<div class="peak-card"><div class="peak-icon">🆘</div><div class="peak-elev" style="color:var(--color-adv)">핵심</div><div class="peak-name">Y계곡</div><div class="peak-desc">도봉산 최고 난이도. Y자 바위 틈 통과. 초보 금지</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></div><div class="peak-elev" style="color:var(--color-adv)">600m</div><div class="peak-name">포대전망대</div><div class="peak-desc">구 군사시설 포대 자리. 의정부·사패산 조망</div></div>
+<div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg></div><div class="peak-elev" style="color:var(--color-adv)">핵심</div><div class="peak-name">Y계곡</div><div class="peak-desc">도봉산 최고 난이도. Y자 바위 틈 통과. 초보 금지</div></div>
 <div class="peak-card"><div class="peak-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg></div><div class="peak-elev" style="color:var(--color-adv)">714m</div><div class="peak-name">신선대</div><div class="peak-desc">종주 종착점. Y계곡 통과 후 성취감 최고조</div></div>
 </div>
 </div><div class="tab-content" id="tab-adv-route">
 <p style="font-size:.86rem;color:var(--color-text-muted);margin-bottom:.75rem;">총 편도 약 7.2km · 4~5시간 · 망월사역 → 도봉산역 종주</p>
-<div class="warn-box" style="margin-bottom:1rem;"><strong>🚨 고급 코스 주의:</strong> Y계곡 초보자·어린이·고소공포증 절대 금지. 암릉 경험 필수. 우천·결빙 시 운행 중단.</div>
+<div class="warn-box" style="margin-bottom:1rem;"><strong><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 고급 코스 주의:</strong> Y계곡 초보자·어린이·고소공포증 절대 금지. 암릉 경험 필수. 우천·결빙 시 운행 중단.</div>
 <div class="accordion adv">
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">망월사역 출발</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 고도 85m</span><span class="meta-chip">📍 1호선 망월사역</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1호선 망월사역 → 심원사 방향 도보 15분. 편의점 최종 보급. 장비 점검 철저히.</p><div class="tip-box">🎯 출발 체크: 등산화·물 2L·장갑·무릎보호대·헤드램프(지연 대비)</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">망월사역 → 다락능선 진입</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 45분</span><span class="meta-chip">📍 ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">심원사 입구 지나 다락능선 급사면. 능선 올라서면 화강암 바위 연속. 처음부터 경사 상당.</p><div class="tip-box">💪 초반이 가장 힘듦. 천천히 페이스 유지 필수</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">다락능선 암릉 구간</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 60분</span><span class="meta-chip">📍 ★★★★★</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 최고 암릉. 연속 화강암 손발 스크램블링. 서울 전역 조망 연속 펼쳐짐.</p><div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 배낭 바위 걸림 주의. 앞사람 충분한 거리. 미끄러운 날 우회 필수</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">포대전망대(600m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 20분</span><span class="meta-chip">📍 ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">포대능선 전망대. 의정부·사패산 한눈에. Y계곡 또는 우회로 선택 지점.</p><div class="tip-box">🔋 충분한 휴식·행동식 보충 후 Y계곡 진입. 우회로 선택도 가능</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">Y계곡 통과 🔥</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 30~40분</span><span class="meta-chip">📍 ★★★★★</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 하이라이트. Y자 형태 좁은 바위 틈 배낭 벗고 통과 구간 포함.</p><p class="acc-desc">로프·철봉 이용. 한 명씩 순서 통과.</p><div class="warn-box">🚨 초보자 절대 금지. 배낭 먼저 분리 후 통과. 젖은 날씨 우회 필수. 우회로: 신선대 방향 좌측</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">Y계곡 → 신선대(714m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.4km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 15분</span><span class="meta-chip">📍 ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Y계곡 통과 후 능선 따라 신선대 200m. 성취감 최고조. 360도 파노라마.</p><div class="tip-box">🏆 신선대 = 도봉산 고급 배지 완성! 정상 인증샷 필수</div></div></div></div>
-<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">6</div><div><div class="acc-title">신선대 → 도봉산역 하산</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 3.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 75분</span><span class="meta-chip">📍 ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">마당바위·천축사·도봉서원터 경유 하산. 도봉산역까지 도보. 종주 완성!</p><div class="tip-box">🍺 도봉산역 특화거리 종주 뒷풀이 강추!</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">P</div><div><div class="acc-title">망월사역 출발</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 고도 85m</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> 1호선 망월사역</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">1호선 망월사역 → 심원사 방향 도보 15분. 편의점 최종 보급. 장비 점검 철저히.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> 출발 체크: 등산화·물 2L·장갑·무릎보호대·헤드램프(지연 대비)</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">1</div><div><div class="acc-title">망월사역 → 다락능선 진입</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 45분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">심원사 입구 지나 다락능선 급사면. 능선 올라서면 화강암 바위 연속. 처음부터 경사 상당.</p><div class="tip-box"> 초반이 가장 힘듦. 천천히 페이스 유지 필수</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">2</div><div><div class="acc-title">다락능선 암릉 구간</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 60분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★★★</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 최고 암릉. 연속 화강암 손발 스크램블링. 서울 전역 조망 연속 펼쳐짐.</p><div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 배낭 바위 걸림 주의. 앞사람 충분한 거리. 미끄러운 날 우회 필수</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">3</div><div><div class="acc-title">포대전망대(600m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 20분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">포대능선 전망대. 의정부·사패산 한눈에. Y계곡 또는 우회로 선택 지점.</p><div class="tip-box"> 충분한 휴식·행동식 보충 후 Y계곡 진입. 우회로 선택도 가능</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">4</div><div><div class="acc-title">Y계곡 통과 <svg class="icon-svg"><use href="assets/icons/icons.svg#icon-fire"></use></svg></div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 30~40분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★★★</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">도봉산 하이라이트. Y자 형태 좁은 바위 틈 배낭 벗고 통과 구간 포함.</p><p class="acc-desc">로프·철봉 이용. 한 명씩 순서 통과.</p><div class="warn-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 초보자 절대 금지. 배낭 먼저 분리 후 통과. 젖은 날씨 우회 필수. 우회로: 신선대 방향 좌측</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">5</div><div><div class="acc-title">Y계곡 → 신선대(714m)</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0.4km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 15분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">Y계곡 통과 후 능선 따라 신선대 200m. 성취감 최고조. 360도 파노라마.</p><div class="tip-box"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg> 신선대 = 도봉산 고급 배지 완성! 정상 인증샷 필수</div></div></div></div>
+<div class="acc-item" onclick="toggleAcc(this)"><div class="acc-header"><div class="acc-num">6</div><div><div class="acc-title">신선대 → 도봉산역 하산</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 3.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 75분</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> ★★★☆☆</span></div></div><svg class="acc-chevron" fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><path d="M6 9l6 6 6-6"></path></svg></div><div class="acc-body"><div class="acc-inner"><p class="acc-desc">마당바위·천축사·도봉서원터 경유 하산. 도봉산역까지 도보. 종주 완성!</p><div class="tip-box"> 도봉산역 특화거리 종주 뒷풀이 강추!</div></div></div></div>
 </div>
 </div><div class="tab-content" id="tab-adv-tips">
-<div class="warn-box" style="margin-bottom:1.25rem;"><strong>🚨 고급 코스 필수 안전:</strong> Y계곡 초보자·어린이 절대 금지. 암릉 경험자 동행 필수. 우천·결빙 시 중단. 단독 산행 지양.</div>
+<div class="warn-box" style="margin-bottom:1.25rem;"><strong><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> 고급 코스 필수 안전:</strong> Y계곡 초보자·어린이 절대 금지. 암릉 경험자 동행 필수. 우천·결빙 시 중단. 단독 산행 지양.</div>
 <div class="tips-grid">
 <div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg></div><div class="tip-card-title">필수 장비</div><ul><li>암릉용 등산화(고마찰)</li><li>장갑 필수</li><li>물 2L 이상</li><li>무릎·발목 보호대</li><li>헤드램프(지연 대비)</li><li>긴 바지(무릎 보호)</li></ul></div>
-<div class="tip-card"><div class="tip-card-icon">⛑</div><div class="tip-card-title">Y계곡 통과법</div><ul><li>배낭 먼저 분리 후 통과</li><li>앞사람 충분한 거리</li><li>발 디딤 확인 후 이동</li><li>한 명씩 순서 준수</li><li>우회로: 좌측 선택 가능</li></ul></div>
+<div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-shield"></use></svg></div><div class="tip-card-title">Y계곡 통과법</div><ul><li>배낭 먼저 분리 후 통과</li><li>앞사람 충분한 거리</li><li>발 디딤 확인 후 이동</li><li>한 명씩 순서 준수</li><li>우회로: 좌측 선택 가능</li></ul></div>
 <div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-bus"></use></svg></div><div class="tip-card-title">종주 교통</div><ul><li>출발: 1호선 망월사역</li><li>도착: 1·7호선 도봉산역</li><li>두 역 사이 1호선 환승</li><li>종주형 — 대중교통 추천</li></ul></div>
 <div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> </div><div class="tip-card-title">최적 시즌</div><ul><li>봄·가을(4~5월,10월)</li><li>여름 장마 기간 금지</li><li>겨울: 아이젠·스패츠 필수</li><li>우천 다음날 암릉 매우 미끄러움</li></ul></div>
 <div class="tip-card"><div class="tip-card-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg></div><div class="tip-card-title">안전 주의</div><ul><li>Y계곡 초보자 절대 금지</li><li>암릉 배낭 걸림 주의</li><li>겨울 결빙 매우 위험</li><li>도봉사무소 02-954-2566</li></ul></div>
@@ -1370,7 +1397,7 @@
 <span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 누적 3.5km</span>
 </div>
 <div class="timeline-features">
-<span class="feature-label">편의시설:</span> 🔥 초보금지
+<span class="feature-label">편의시설:</span> <svg class="icon-svg"><use href="assets/icons/icons.svg#icon-fire"></use></svg> 초보금지
       </div>
 </div>
 </div>
@@ -2836,8 +2863,8 @@ document.addEventListener('DOMContentLoaded', () => {
     satellite.addTo(map);
 
     L.control.layers({
-      "🛰️ 위성 레이어": satellite,
-      "🏔️ 지형 레이어": terrain
+      "위성 레이어": satellite,
+      "지형 레이어": terrain
     }, null, { collapsed: false }).addTo(map);
 
     const route = mapConfig.routes[courseId];
