@@ -1,50 +1,64 @@
-# 🏔 한국의 산 — Korea Trail Playbooks
+# 🏔 MT Trails — 한국·아시아 명산 탐방 플레이북
 
-전국 명산 코스를 탐색하고, 상세 플레이북을 확인하는 **오픈소스 등산 아카이브**입니다.  
-인터랙티브 전국 지도에서 산을 클릭하면 체크포인트·고도 프로필·팁이 담긴 플레이북으로 바로 이동합니다.
+한국과 아시아의 명산 코스를 탐색하고, 실전 플레이북으로 산행을 계획하는 **오픈소스 등산 아카이브**입니다.
+인터랙티브 지도에서 산을 선택하면 체크포인트·고도 프로필·입산 예약·교통·안전 정보가 담긴 플레이북으로 이동합니다.
 
-🌐 **라이브 사이트** → [https://Dokyung KimK.github.io/korea-trails](https://Dokyung KimK.github.io/korea-trails)
+🌐 **라이브 사이트** → [https://mttrails.trinos.group](https://mttrails.trinos.group)
+
+> 2026-09 리브랜딩: 기존 "Korea Trails"에서 커스텀 도메인과 일치하는 **MT Trails**로 명칭을 변경했습니다.
+> 저장소명(`korea-trails`)은 배포 경로 안정성을 위해 유지합니다. 리브랜딩·심화 표준 전문: [`STANDARD-DEEP-INFO.md`](./STANDARD-DEEP-INFO.md)
 
 ---
 
 ## ✨ 주요 기능
 
-- 🗺 **인터랙티브 전국 지도** — 산 마커 클릭 시 정보 패널 표시
-- 📖 **등산 플레이북** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 교통 정보
-- 🔍 **산 이름 검색** 및 **지역별 필터**
-- 🌙 **라이트/다크 모드** 지원
-- 📱 **모바일 반응형** 디자인
+- 🗺 **인터랙티브 월드 맵** — Leaflet 기반, 한국·대만 명산 마커와 플레이북 바로가기
+- 📖 **등산 플레이북 26종** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 실사 지도
+- 🧭 **심화 탐방 정보** — 입산·예약(국내 탐방로 예약제/해외 입산허가), 교통, 숙박, 안전·비상연락 (`STANDARD-DEEP-INFO.md` 표준)
+- 🔍 **검색·필터·정렬** — 지역/난이도/플레이북 상태 필터와 고도·이름 정렬
+- 🌐 **한국어/영어 이중 제공** — 모든 페이지의 `en/` 미러
+- 🌙 **라이트/다크 모드** · 📱 모바일 반응형 · ⚡ 빌드리스 정적 사이트
 
 ---
 
-## 📂 플레이북 목록
+## 📂 플레이북 현황 (26산)
 
-| 산 | 지역 | 고도 | 상태 |
-|---|---|---|---|
-| [식장산 4봉 환종주](./sikjangsan-playbook.html) | 대전광역시 | 598m | ✅ 완성 |
-| 한라산 | 제주 | 1950m | 🔜 준비 중 |
-| 설악산 | 강원 | 1708m | 🔜 준비 중 |
-| 지리산 | 경남·전남·전북 | 1915m | 🔜 준비 중 |
-| 북한산 | 서울·경기 | 836m | 🔜 준비 중 |
+| 지역 | 산 |
+|---|---|
+| 강원 | [설악산](./seoraksan-playbook.html) · [치악산](./chiaksan-playbook.html) · [오대산](./odaesan-playbook.html) · [태백산](./taebaeksan-playbook.html) |
+| 경기/서울 | [북한산](./bukhansan-playbook.html) · [도봉산](./dobongsan-playbook.html) · [명성산](./myeongseongsan-playbook.html) · [소요산](./soyosan-playbook.html) · [운악산](./unaksan-playbook.html) |
+| 충청 | [소백산](./sobaeksan-playbook.html) · [계룡산](./gyeryongsan-playbook.html) · [민주지산](./minjusan-playbook.html) · [식장산](./sikjangsan-playbook.html) · [월악산](./woraksan-playbook.html) |
+| 전라 | [지리산](./jirisan-playbook.html) · [내장산](./naejangsan-playbook.html) · [덕유산](./deogyusan-playbook.html) · [월출산](./wolchulsan-playbook.html) · [무등산](./mudeungsan-playbook.html) · [두륜산](./duryunsan-playbook.html) |
+| 경상/제주 | [가야산](./gayasan-playbook.html) · [주왕산](./juwangsan-playbook.html) · [한라산](./hallasan-playbook.html) |
+| 대만 | [위산(玉山, 3,952m)](./yushan-playbook.html) · [설산(雪山, 3,886m)](./xueshan-playbook.html) · [양명산(陽明山)](./yangmingshan-playbook.html) |
+
+테마 페이지: [사이클링 코스](./cycling.html) · [인터랙티브 지도](./map.html) · [사이트맵](./sitemap.html)
+
+**로드맵** — 심화 표준 확정 후 일본(후지산·타테야마), 대만 추가 산, 동남아·네팔 트레킹으로 확장 예정. 표준·확장 절차는 [`STANDARD-DEEP-INFO.md`](./STANDARD-DEEP-INFO.md) §4를 따릅니다.
 
 ---
 
 ## 🤝 기여 방법
 
 1. 이 저장소를 **Fork**합니다.
-2. `your-mountain-playbook.html` 파일을 루트 디렉토리에 추가합니다.
-3. `index.html`의 `mountains` 배열에 산 데이터를 추가합니다.
-4. **Pull Request**를 보냅니다.
+2. `your-mountain-playbook.html`을 추가하고(기존 플레이북 구조를 템플릿으로 사용), `index.html`의 `MOUNTAINS` 배열에 데이터를 등록합니다.
+3. 사실 기반 정보(거리·고도·교통·허가)는 **2개 이상의 권위 소스로 교차검증**하고, 출처를 `CREDITS.md` 또는 플레이북 심화 정보 출처 목록에 남깁니다.
+4. **Pull Request**를 보냅니다. (main 직접 푸시 금지, 산 1개 = 1 PR 권장)
 
 ---
 
 ## 🛠 기술 스택
 
-- **순수 HTML/CSS/JavaScript** (빌드 도구 없음)
-- **Lucide Icons**, **Noto Serif/Sans KR**
-- **GitHub Pages** (배포)
-- SVG 인터랙티브 지도
+- **순수 HTML/CSS/JavaScript** — 빌드 도구 없음, GitHub Pages + 커스텀 도메인 배포
+- **Leaflet + Esri 위성 타일** (인터랙티브 맵), Lucide 아이콘
+- **Noto Serif/Sans KR** · Satoshi/Cabinet Grotesk (Fontshare)
+- 공유 디자인 시스템: `assets/css/design-system.css` + `assets/js/*`
+
+## 📄 라이선스
+
+- 본 사이트의 일부 등산 사진·트래킹 영상은 김도경(Dokyung Kim) 촬영·제작 저작물(CC BY-NC 4.0 준용)
+- 스톡 사진·영상 출처는 [CREDITS.md](./CREDITS.md)에 기록
 
 ---
 
-Made with ❤️ by [Dokyung Kim](https://youtube.com/@DK2560 KimK)
+Made with ❤️ by [Dokyung Kim](https://youtube.com/@DK2560) · © 2026 MT Trails

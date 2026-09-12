@@ -1,8 +1,8 @@
-<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Korea Trails">
+<svg viewBox="0 0 220 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="MT Trails">
   <defs><linearGradient id="kt-gold" x1="0" y1="0" x2="0" y2="1">
     <stop offset="0" stop-color="#f1d98a"/><stop offset=".5" stop-color="#c9a24b"/><stop offset="1" stop-color="#9c7a2e"/>
   </linearGradient></defs>
   <path d="M110 26 L160 116 L60 116 Z" fill="none" stroke="url(#kt-gold)" stroke-width="4.5" stroke-linejoin="round"/>
   <polyline points="74,109 92,84 102,95 122,69 146,109" fill="none" stroke="url(#kt-gold)" stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round"/>
-  <text x="110" y="140" text-anchor="middle" fill="#d9be78" font-size="15" font-weight="500" letter-spacing="6" font-family="Georgia,serif">KOREA TRAILS</text>
+  <text x="110" y="140" text-anchor="middle" fill="#d9be78" font-size="15" font-weight="500" letter-spacing="6" font-family="Georgia,serif">MT TRAILS</text>
 </svg>
