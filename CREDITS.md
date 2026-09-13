@@ -223,3 +223,14 @@ Some of the hiking photos and tracking videos on this site are original works ph
 - **모든 명산 플레이북**: 유튜브 쇼츠 트래킹 영상.
 
 
+
+## 후지산 (Fuji) — Unsplash (Unsplash License)
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Wren Chai | https://unsplash.com/photos/YKQKSpKpVZI |
+| g1 | Alison Pang | https://unsplash.com/photos/xt5xG-fEj0M |
+| g2 | Brian Chen | https://unsplash.com/photos/6aV2WKzGJ_4 |
+| g3 | Filiz Elaerts | https://unsplash.com/photos/C62Tb_iodQE |
+| g4 | Zeke Tucker | https://unsplash.com/photos/rFX5FfVGeWE |
+
