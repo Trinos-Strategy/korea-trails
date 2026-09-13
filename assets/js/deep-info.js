@@ -1,6 +1,8 @@
 /* MT Trails — Deep Info Band 공유 렌더러 (STANDARD-DEEP-INFO.md §3)
  * 마운트: <div id="deep-info-root" data-mountain="<id>"></div>
- * 데이터: window.DEEP_INFO[<id>] (assets/js/deep-info-data.js)
+ * 데이터: <html lang="ko"> → window.DEEP_INFO[<id>] (assets/js/deep-info-data.js)
+ *         <html lang="en"> → window.DEEP_INFO_EN[<id>] (assets/js/deep-info-data-en.js)
+ *         해당 언어 표가 비어 있으면 반대 언어 표로 폴백한다.
  * 템플릿 패밀리(seoraksan류/양명산류) 무관하게 자체 스코프 스타일로 렌더링한다.
  * JS가 로드되지 않으면 마운트 div가 비어 본문 코스 정보는 무손상이다.
  */
@@ -11,10 +13,31 @@
   if (!mount) return;
 
   var id = mount.getAttribute('data-mountain');
-  var data = (window.DEEP_INFO || {})[id];
+  var lang = document.documentElement.getAttribute('lang') === 'en' ? 'en' : 'ko';
+  function tableFor(l) { return l === 'en' ? window.DEEP_INFO_EN : window.DEEP_INFO; }
+  var data = (tableFor(lang) || {})[id];
+  if (!data) {
+    lang = lang === 'en' ? 'ko' : 'en';
+    data = (tableFor(lang) || {})[id];
+  }
   if (!data || !data.sections || !data.sections.length) return;
 
-  var TAG_CLASS = { '필수': 'dib-tag-required', '권장': 'dib-tag-warn', '참고': 'dib-tag-neutral' };
+  var L10N = {
+    ko: {
+      title: '심화 탐방 정보',
+      aria: '심화 탐방 정보',
+      footer: '노선·요금·예약 창구는 변동될 수 있습니다.',
+      tags: { '필수': 'dib-tag-required', '권장': 'dib-tag-warn', '참고': 'dib-tag-neutral' },
+    },
+    en: {
+      title: 'Deep-Dive Trail Info',
+      aria: 'Deep-dive trail information',
+      footer: 'Schedules, fares, and reservation channels may change.',
+      tags: { 'Required': 'dib-tag-required', 'Recommended': 'dib-tag-warn', 'Note': 'dib-tag-neutral' },
+    },
+  };
+  var T = L10N[lang];
+  var TAG_CLASS = T.tags;
   var ICONS = { book: 'icon-book', bus: 'icon-bus', tent: 'icon-tent', shield: 'icon-shield',
                 phone: 'icon-phone', tip: 'icon-tip', season: 'icon-season',
                 mountain: 'icon-mountain', location: 'icon-location' };
@@ -58,16 +81,16 @@
     if (links) parts.push('<span class="dib-sources">' + links + '</span>');
     if (!parts.length) return '';
     return '<footer class="dib-footer"><svg class="dib-icon dib-icon-sm" aria-hidden="true"><use href="assets/icons/icons.svg#icon-tip"></use></svg>' +
-           ' 노선·요금·예약 창구는 변동될 수 있습니다. ' + parts.join(' — ') + '</footer>';
+           ' ' + esc(T.footer) + ' ' + parts.join(' — ') + '</footer>';
   }
 
   var root = document.createElement('section');
   root.className = 'deep-info-band';
-  root.setAttribute('aria-label', '심화 탐방 정보');
+  root.setAttribute('aria-label', T.aria);
   root.innerHTML =
     '<div class="dib-head">' +
       '<svg class="dib-icon dib-icon-lg" aria-hidden="true"><use href="assets/icons/icons.svg#icon-book"></use></svg>' +
-      '<h2 class="dib-title">심화 탐방 정보</h2>' +
+      '<h2 class="dib-title">' + esc(T.title) + '</h2>' +
       (data.note ? '<span class="dib-note">' + esc(data.note) + '</span>' : '') +
     '</div>' +
     '<div class="dib-grid">' + data.sections.map(cardHtml).join('') + '</div>' +

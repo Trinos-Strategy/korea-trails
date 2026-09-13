@@ -28,10 +28,12 @@
 ## 3. 기술 구조 (빌드리스 유지)
 
 ```
-assets/js/deep-info-data.js   ← 산별 데이터 (window.DEEP_INFO[id], 출처 주석 포함)
-assets/js/deep-info.js        ← 공유 렌더러 (마운트 div를 찾아 섹션 생성, 템플릿 패밀리 무관 자체 스타일)
-<플레이북>.html               ← ① 사진 갤러리 앞에 <div id="deep-info-root" data-mountain="<id>"></div>
-                                ② </body> 앞에 deep-info-data.js + deep-info.js 스크립트 2줄
+assets/js/deep-info-data.js     ← 산별 데이터·한국어 (window.DEEP_INFO[id], 출처 주석 포함)
+assets/js/deep-info-data-en.js  ← 산별 데이터·영문 (window.DEEP_INFO_EN[id]) — 한국어 항목 갱신 시 같은 라운드에서 함께 갱신
+assets/js/deep-info.js          ← 공유 렌더러 (<html lang>을 읽어 KO/EN 표를 자동 선택, 미보유 언어는 반대 표로 폴백)
+<플레이북>.html                 ← ① 사진 갤러리 앞에 <div id="deep-info-root" data-mountain="<id>"></div>
+                                ② </body> 앞에 deep-info(-data|-data-en).js + deep-info.js 스크립트 2줄
+                                   (en/ 페이지는 ../assets/js/ 경로 + -data-en.js)
 ```
 
 - 렌더러는 다크/라이트·반응형·a11y(figcaption/aria)를 자체 토큰(공용 토큰 없을 시 폴백색)으로 처리한다.
@@ -62,7 +64,7 @@ window.DEEP_INFO['seoraksan'] = {
 2. 승인 후 산 1개 = 1커밋/PR. 리서치 데이터 먼저(`_orchestration/deep-<id>.json` 권장), 게이트 통과 후 `deep-info-data.js`에 데이터 추가 → 마운트 div 삽입.
 3. 국내 23산은 예약제 대상 구간 유무(예: 지리산·한라산·북한산 등)에 따라 ①블록 내용만 달라지고 구조는 동일.
 4. 대만 2산(설산·양명산)은 위산 패턴(허가·산장·국제동선)을 복제.
-5. en/ 30페이지: 확정된 데이터 번역 라운드로 일괄 동기화.
+5. en/ 30페이지: ~~확정된 데이터 번역 라운드로 일괄 동기화~~ **완료 (2026-09)** — 26산 영문 데이터(`deep-info-data-en.js`)를 추가하고 렌더러가 `<html lang>`으로 KO/EN을 자동 선택한다. **운영 규칙: 한국어 항목을 고치면 같은 커밋에서 영문 항목도 고친다.**
 
 ## 5. 브랜딩 규칙 (2026-09 리브랜딩)
 
