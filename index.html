@@ -206,6 +206,36 @@
   .leaflet-popup-tip {
     background: var(--surface) !important;
   }
+
+  /* Country quick-nav chips (hero) */
+  .hero-quicknav {
+    display: flex;
+    justify-content: center;
+    gap: var(--space-3);
+    flex-wrap: wrap;
+    margin: 0 auto var(--space-8);
+  }
+  .hero-quicknav button {
+    background-color: rgba(24, 24, 27, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: rgba(255, 255, 255, 0.9);
+    padding: var(--space-2) var(--space-5);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 700;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: border-color var(--transition), background-color var(--transition), transform var(--transition);
+  }
+  .hero-quicknav button:hover {
+    border-color: var(--primary);
+    background-color: rgba(24, 24, 27, 0.85);
+    transform: translateY(-1px);
+  }
+  .hero-quicknav button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+  }
 </style>
 </head>
 <body>
@@ -260,17 +290,26 @@
 <div class="wrap">
 <div class="hero-badge">
 <svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg>
-          Premium Outdoor Guide
+          한국·아시아 명산 플레이북
         </div>
 <h1 class="hero-title-giant">한국과 아시아의 명산을<br/>정복하세요</h1>
 <p class="hero-desc-large">
-          한눈에 비교하는 거리와 고도 정보, 다크모드 대응 실사 지도, 그리고 대중교통 정보까지 탑재된 완성형 명산 가이드북.
+          거리·고도 비교부터 입산 예약, 대중교통, 숙박, 안전 정보까지 — 한국과 아시아의 명산 산행을 완성하는 플레이북 가이드.
         </p>
 <!-- Integrated Search Input in Hero -->
 <div class="search-hero-container">
 <input aria-label="명산 검색" class="search-hero-input" id="searchInput" placeholder="산 이름, 고도, 지역 또는 설명 검색..." type="search"/>
 </div>
+<div aria-label="국가별 빠른 탐색" class="hero-quicknav">
+<button data-country="all" type="button">전체 26산</button>
+<button data-country="KR" type="button">한국 23산</button>
+<button data-country="TW" type="button">대만 3산</button>
+</div>
 <div class="hero-stats">
+<div class="hero-stat">
+<div class="hero-stat-value">2</div>
+<div class="hero-stat-label">탐방 국가</div>
+</div>
 <div class="hero-stat">
 <div class="hero-stat-value">26</div>
 <div class="hero-stat-label">등록 명산</div>
@@ -278,10 +317,6 @@
 <div class="hero-stat">
 <div class="hero-stat-value">26</div>
 <div class="hero-stat-label">플레이북 완성</div>
-</div>
-<div class="hero-stat">
-<div class="hero-stat-value">4단계</div>
-<div class="hero-stat-label">난이도별 가이드</div>
 </div>
 </div>
 <div style="position: absolute; bottom: 12px; right: var(--space-6); font-size: 10px; opacity: 0.6; color: #ffffff; pointer-events: none; text-shadow: 0 1px 2px rgba(0,0,0,0.8);">
@@ -477,6 +512,45 @@ window.MOUNTAINS = [
 <!-- Leaflet CDN Lazy Initer for Landing Map -->
 <script>
 document.addEventListener('DOMContentLoaded', () => {
+  // Hero rotation — feature one peak per visit across countries (KO/EN alt는 각 플레이북 게재 문구 재사용)
+  const HERO_ROTATION = [
+    { base: 'assets/img/seoraksan', video: 'assets/video/seoraksan', alt: '설악산 정상과 웅장한 산세가 어우러진 대자연 풍경' },
+    { base: 'assets/img/hallasan', video: 'assets/video/hallasan', alt: '한라산 정상과 웅장한 산세가 어우러진 대자연 풍경' },
+    { base: 'assets/img/yushan', video: 'assets/video/yushan', alt: '위산 국립공원의 대표 명소인 위산 주봉과 아름다운 산세 풍경' },
+  ];
+  const heroPick = HERO_ROTATION[Math.floor(Math.random() * HERO_ROTATION.length)];
+  const heroPicture = document.getElementById('heroFallbackImage');
+  if (heroPicture) {
+    const heroSizes = [640, 1024, 1600];
+    const heroWebp = heroPicture.querySelector('source[type="image/webp"]');
+    const heroImg = heroPicture.querySelector('img');
+    if (heroWebp) heroWebp.setAttribute('srcset', heroSizes.map(s => `${heroPick.base}/hero-${s}.webp ${s}w`).join(', '));
+    if (heroImg) {
+      heroImg.setAttribute('src', `${heroPick.base}/hero-1600.jpg`);
+      heroImg.setAttribute('srcset', heroSizes.map(s => `${heroPick.base}/hero-${s}.jpg ${s}w`).join(', '));
+      heroImg.setAttribute('alt', heroPick.alt);
+    }
+  }
+  const heroVideoEl = document.getElementById('heroVideo');
+  if (heroVideoEl && heroPick.video) {
+    heroVideoEl.setAttribute('poster', `${heroPick.video}/hero-poster.jpg`);
+    const heroVideoSrc = heroVideoEl.querySelector('source');
+    if (heroVideoSrc) heroVideoSrc.setAttribute('src', `${heroPick.video}/hero.mp4`);
+  }
+
+  // Country quick-nav chips → country filter + grid scroll
+  document.querySelectorAll('.hero-quicknav button[data-country]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const countrySel = document.getElementById('countrySelect');
+      if (countrySel) {
+        countrySel.value = btn.getAttribute('data-country');
+        countrySel.dispatchEvent(new Event('change'));
+      }
+      const grid = document.getElementById('mountainGrid');
+      if (grid) grid.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
   const mapToggleBtn = document.getElementById('mapToggleBtn');
   let mapInstance = null;
 
