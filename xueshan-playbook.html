@@ -878,7 +878,7 @@
 <meta content="assets/img/xueshan/og.png" property="og:image"/><meta content="assets/img/xueshan/og.png" name="twitter:image"/><script src="assets/js/i18n.js"></script><link href="xueshan-playbook.html" hreflang="ko" rel="alternate"/><link href="en/xueshan-playbook.html" hreflang="en" rel="alternate"/><link href="xueshan-playbook.html" hreflang="x-default" rel="alternate"/></head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
-<header class="header"><div class="wrap header-inner"><a class="brand" href="index.html"><div class="logo"><svg aria-label="Korea Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<header class="header"><div class="wrap header-inner"><a class="brand" href="index.html"><div class="logo"><svg aria-label="MT Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
 <defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
 <stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
 </lineargradient></defs>
@@ -1301,6 +1301,7 @@
 </section>
 </main>
 <!-- Photo Gallery Grid -->
+<div id="deep-info-root" data-mountain="xueshan"></div>
 <section class="photo-gallery-section">
 <h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
 <span class="section-title-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-camera"></use></svg></span> 설산의 사계 &amp; 명소
@@ -1421,9 +1422,9 @@
 </div>
 </div>
 <p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
-    Korea Trails — 전국 등산 플레이북 · 국립공원 탐방 예약: <a href="https://reservation.knps.or.kr" rel="noopener" style="color: var(--primary); text-decoration: underline;" target="_blank">knps.or.kr</a><br/>
+    MT Trails — 전국 등산 플레이북 · 국립공원 탐방 예약: <a href="https://reservation.knps.or.kr" rel="noopener" style="color: var(--primary); text-decoration: underline;" target="_blank">knps.or.kr</a><br/>
     본 사이트의 일부 등산 사진과 트래킹 영상은 Dokyung Kim(김도경)이 직접 촬영·제작한 저작물이며, 영상은 유튜브 채널 Dokyung Kim (@DK2560)에 게시되어 있습니다. 비상업적 목적에 한해 이용할 수 있으며, 이용 시 반드시 출처와 저작자(Dokyung Kim(김도경))를 표시해야 합니다. (CC BY-NC 4.0 준용)<br/>
-    © 2026 Korea Trails. All Rights Reserved.
+    © 2026 MT Trails. All Rights Reserved.
   </p>
 </div>
 </footer>
@@ -1622,7 +1623,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="nav-drawer-content">
 <div class="nav-drawer-header">
 <div class="nav-drawer-logo">
-<svg aria-label="Korea Trails" class="logo-svg" height="30" role="img" viewbox="0 0 40 40" width="30">
+<svg aria-label="MT Trails" class="logo-svg" height="30" role="img" viewbox="0 0 40 40" width="30">
 <defs><lineargradient id="kt-gold-drawer" x1="0" x2="0" y1="0" y2="1">
 <stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
 </lineargradient></defs>
@@ -1630,7 +1631,7 @@ document.addEventListener('DOMContentLoaded', () => {
 <path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold-drawer)" stroke-linejoin="round" stroke-width="2.2"></path>
 <polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold-drawer)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
 </svg>
-<span class="nav-drawer-logo-text">Korea Trails</span>
+<span class="nav-drawer-logo-text">MT Trails</span>
 </div>
 <button aria-label="메뉴 닫기" class="nav-drawer-close-btn" id="navDrawerCloseBtn">
 <svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
@@ -1677,6 +1678,8 @@ document.addEventListener('DOMContentLoaded', () => {
 </div>
 </div>
 </div>
+<script src="assets/js/deep-info-data.js"></script>
+<script src="assets/js/deep-info.js"></script>
 <script src="assets/js/nav-drawer.js"></script>
 </body>
 </html>
