@@ -82,6 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const gridContainer = document.getElementById('mountainGrid');
   if (gridContainer && window.MOUNTAINS) {
     const searchInput = document.getElementById('searchInput');
+    const countrySelect = document.getElementById('countrySelect');
     const regionSelect = document.getElementById('regionSelect');
     const diffSelect = document.getElementById('diffSelect');
     const doneSelect = document.getElementById('doneSelect');
@@ -104,24 +105,33 @@ document.addEventListener('DOMContentLoaded', () => {
       return weights[diff] || 0;
     }
 
+    let lastFiltered = [];
+
     function renderFilteredGrid() {
       const query = (searchInput?.value || '').toLowerCase().trim();
+      const country = countrySelect?.value || 'all';
       const region = regionSelect?.value || 'all';
       const difficulty = diffSelect?.value || 'all';
       const status = doneSelect?.value || 'all';
       const sort = sortSelect?.value || 'elevation-desc';
 
+      // Country derived from explicit field; falls back to region for legacy data
+      const twRegion = isEnglish ? 'taiwan' : '대만';
+      const countryOf = m => m.country || (m.region.toLowerCase() === twRegion ? 'TW' : 'KR');
+
       // Apply Filters
       let filtered = window.MOUNTAINS.filter(m => {
         // Search query match
-        const matchesQuery = m.name.toLowerCase().includes(query) || 
-                             m.alt.toLowerCase().includes(query) || 
-                             m.region.toLowerCase().includes(query) || 
+        const matchesQuery = m.name.toLowerCase().includes(query) ||
+                             m.alt.toLowerCase().includes(query) ||
+                             m.region.toLowerCase().includes(query) ||
                              m.desc.toLowerCase().includes(query);
-        
-        // Region filter
-        const taiwanName = isEnglish ? 'taiwan' : '대만';
-        const matchesRegion = region === 'all' || m.region.toLowerCase() === region.toLowerCase() || (region === 'korea' && m.region.toLowerCase() !== taiwanName);
+
+        // Country filter
+        const matchesCountry = country === 'all' || countryOf(m) === country;
+
+        // Region filter — region options are Korean-only, so skip it when Taiwan is selected
+        const matchesRegion = country === 'TW' || region === 'all' || m.region.toLowerCase() === region.toLowerCase();
         
         // Difficulty filter
         const matchesDiff = difficulty === 'all' || m.diff === difficulty;
@@ -131,8 +141,10 @@ document.addEventListener('DOMContentLoaded', () => {
                               (status === 'done' && m.done) || 
                               (status === 'pending' && !m.done);
 
-        return matchesQuery && matchesRegion && matchesDiff && matchesStatus;
+        return matchesQuery && matchesCountry && matchesRegion && matchesDiff && matchesStatus;
       });
+
+      lastFiltered = filtered;
 
       // Apply Sorting
       filtered.sort((a, b) => {
@@ -229,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Bind event listeners
-    [searchInput, regionSelect, diffSelect, doneSelect, sortSelect].forEach(element => {
+    [searchInput, countrySelect, regionSelect, diffSelect, doneSelect, sortSelect].forEach(element => {
       if (!element) return;
       element.addEventListener('change', () => {
         saveStateToUrl();
@@ -253,11 +265,12 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveStateToUrl() {
       const params = new URLSearchParams();
       if (searchInput?.value) params.set('q', searchInput.value);
+      if (countrySelect?.value && countrySelect.value !== 'all') params.set('c', countrySelect.value);
       if (regionSelect?.value && regionSelect.value !== 'all') params.set('r', regionSelect.value);
       if (diffSelect?.value && diffSelect.value !== 'all') params.set('d', diffSelect.value);
       if (doneSelect?.value && doneSelect.value !== 'all') params.set('s', doneSelect.value);
       if (sortSelect?.value && sortSelect.value !== 'elevation-desc') params.set('sort', sortSelect.value);
-      
+
       const newUrl = window.location.pathname + (params.toString() ? '?' + params.toString() : '');
       window.history.replaceState({}, '', newUrl);
     }
@@ -265,6 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function loadStateFromUrl() {
       const params = new URLSearchParams(window.location.search);
       if (params.has('q') && searchInput) searchInput.value = params.get('q');
+      if (params.has('c') && countrySelect) countrySelect.value = params.get('c');
       if (params.has('r') && regionSelect) regionSelect.value = params.get('r');
       if (params.has('d') && diffSelect) diffSelect.value = params.get('d');
       if (params.has('s') && doneSelect) doneSelect.value = params.get('s');
@@ -274,5 +288,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initial render
     loadStateFromUrl();
     renderFilteredGrid();
+
+    // Broadcast the current filter result so the landing map can sync its markers
+    function broadcastFiltered() {
+      document.dispatchEvent(new CustomEvent('mt:filtered', { detail: { ids: lastFiltered.map(m => m.id) } }));
+    }
+    broadcastFiltered();
+    [countrySelect, regionSelect, diffSelect, doneSelect].forEach(el => {
+      if (el) el.addEventListener('change', broadcastFiltered);
+    });
+    if (searchInput) searchInput.addEventListener('input', broadcastFiltered);
   }
 });
