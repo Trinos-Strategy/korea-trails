@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const matchesCountry = country === 'all' || countryOf(m) === country;
 
         // Region filter — region options are Korean-only, so skip it when Taiwan is selected
-        const matchesRegion = country === 'TW' || region === 'all' || m.region.toLowerCase() === region.toLowerCase();
+        const matchesRegion = (country !== 'all' && country !== 'KR') || region === 'all' || m.region.toLowerCase() === region.toLowerCase();
         
         // Difficulty filter
         const matchesDiff = difficulty === 'all' || m.diff === difficulty;

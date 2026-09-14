@@ -13,7 +13,7 @@
 ## ✨ 주요 기능
 
 - 🗺 **인터랙티브 월드 맵** — Leaflet 기반, 한국·대만 명산 마커와 플레이북 바로가기
-- 📖 **등산 플레이북 26종** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 실사 지도
+- 📖 **등산 플레이북 27종** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 실사 지도
 - 🧭 **심화 탐방 정보** — 입산·예약(국내 탐방로 예약제/해외 입산허가), 교통, 숙박, 안전·비상연락 (`STANDARD-DEEP-INFO.md` 표준)
 - 🔍 **검색·필터·정렬** — 지역/난이도/플레이북 상태 필터와 고도·이름 정렬
 - 🌐 **한국어/영어 이중 제공** — 모든 페이지의 `en/` 미러
@@ -21,7 +21,7 @@
 
 ---
 
-## 📂 플레이북 현황 (26산)
+## 📂 플레이북 현황 (27산)
 
 | 지역 | 산 |
 |---|---|
@@ -31,10 +31,11 @@
 | 전라 | [지리산](./jirisan-playbook.html) · [내장산](./naejangsan-playbook.html) · [덕유산](./deogyusan-playbook.html) · [월출산](./wolchulsan-playbook.html) · [무등산](./mudeungsan-playbook.html) · [두륜산](./duryunsan-playbook.html) |
 | 경상/제주 | [가야산](./gayasan-playbook.html) · [주왕산](./juwangsan-playbook.html) · [한라산](./hallasan-playbook.html) |
 | 대만 | [위산(玉山, 3,952m)](./yushan-playbook.html) · [설산(雪山, 3,886m)](./xueshan-playbook.html) · [양명산(陽明山)](./yangmingshan-playbook.html) |
+| 일본 🇯🇵 | [후지산(富士山, 3,776m)](./fuji-playbook.html) |
 
 테마 페이지: [사이클링 코스](./cycling.html) · [인터랙티브 지도](./map.html) · [사이트맵](./sitemap.html)
 
-**로드맵** — 심화 표준 확정 후 일본(후지산·타테야마), 대만 추가 산, 동남아·네팔 트레킹으로 확장 예정. 표준·확장 절차는 [`STANDARD-DEEP-INFO.md`](./STANDARD-DEEP-INFO.md) §4를 따릅니다.
+**로드맵** — 다음 확장 대상: 타테야마·아리산, 황산·타이산, 동남아·네팔 트레킹. 표준·확장 절차는 [`STANDARD-DEEP-INFO.md`](./STANDARD-DEEP-INFO.md) §4를 따릅니다.
 
 ---
 

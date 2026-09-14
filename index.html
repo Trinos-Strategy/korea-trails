@@ -301,21 +301,21 @@
 <input aria-label="명산 검색" class="search-hero-input" id="searchInput" placeholder="산 이름, 고도, 지역 또는 설명 검색..." type="search"/>
 </div>
 <div aria-label="국가별 빠른 탐색" class="hero-quicknav">
-<button data-country="all" type="button">전체 26산</button>
+<button data-country="all" type="button">전체 27산</button>
 <button data-country="KR" type="button">한국 23산</button>
 <button data-country="TW" type="button">대만 3산</button>
 </div>
 <div class="hero-stats">
 <div class="hero-stat">
-<div class="hero-stat-value">2</div>
+<div class="hero-stat-value">3</div>
 <div class="hero-stat-label">탐방 국가</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">26</div>
+<div class="hero-stat-value">27</div>
 <div class="hero-stat-label">등록 명산</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">26</div>
+<div class="hero-stat-value">27</div>
 <div class="hero-stat-label">플레이북 완성</div>
 </div>
 </div>
@@ -337,6 +337,7 @@
 <option value="all">국가: 전체</option>
 <option value="KR">대한민국</option>
 <option value="TW">대만</option>
+<option value="JP">일본</option>
 </select>
 </div>
 <div class="filter-select-wrapper">
@@ -455,7 +456,13 @@
         <a href="yushan-playbook.html" style="color: var(--muted); text-decoration: none;">위산</a>
         <a href="xueshan-playbook.html" style="color: var(--muted); text-decoration: none;">설산</a>
         <a href="yangmingshan-playbook.html" style="color: var(--muted); text-decoration: none;">양명산</a>
+      
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">일본</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="fuji-playbook.html" style="color: var(--muted); text-decoration: none;">후지산</a>
       </div>
+    </div></div>
     </div>
     <div class="sitemap-col">
       <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">테마별</div>
@@ -505,6 +512,8 @@ window.MOUNTAINS = [
   {id:'yushan',        name:'위산(玉山)', alt:'3,952m', region:'대만', dist:'11km', time:'1박2일',   country:'TW', diff:'expert', done:true,  url:'yushan-playbook.html',        desc:'대만 최고봉·동북아 최고점. 배운산장 숙박 후 일출 정상 도전. 사전 허가 필수.', lat: 23.4700, lng: 120.9575},
   {id:'xueshan',       name:'설산(雪山)', alt:'3,886m', region:'대만', dist:'11km', time:'1박2일',   country:'TW', diff:'expert', done:true,  url:'xueshan-playbook.html',       desc:'대만 제2봉. 칠성담(七星潭) 빙하 지형과 고산 식물대. 타이중·리산 접근.', lat: 24.3850, lng: 121.2319},
   {id:'yangmingshan',  name:'양명산(陽明山)',alt:'1,120m',region:'대만',dist:'8km', time:'4-5시간',  country:'TW', diff:'easy',   done:true,  url:'yangmingshan-playbook.html',  desc:'타이베이 근교 화산 국립공원. 치싱산 정상 분화구 조망. 연중 진달래·유황 온천.', lat: 25.1672, lng: 121.5742},
+  // ── 일본 명산 ──
+  {id:'fuji',         name:'후지산(富士山)', alt:'3,776m', region:'일본', dist:'13.6km', time:'1박2일',   diff:'expert', done:true,  url:'fuji-playbook.html',         country:'JP', desc:'일본 최고봉. 8합 산장 1박 후 새벽 등정이 표준. 요시다 루트 예약제·통행료 4,000엔(2025~).', lat: 35.3606, lng: 138.7274},
 ];
 </script>
 <!-- Combined design-system styles & custom client script -->
@@ -517,6 +526,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { base: 'assets/img/seoraksan', video: 'assets/video/seoraksan', alt: '설악산 정상과 웅장한 산세가 어우러진 대자연 풍경' },
     { base: 'assets/img/hallasan', video: 'assets/video/hallasan', alt: '한라산 정상과 웅장한 산세가 어우러진 대자연 풍경' },
     { base: 'assets/img/yushan', video: 'assets/video/yushan', alt: '위산 국립공원의 대표 명소인 위산 주봉과 아름다운 산세 풍경' },
+    { base: 'assets/img/fuji', video: null, alt: '새벽 하늘 아래 분홍빛으로 물든 후지산의 웅장한 산세' },
   ];
   const heroPick = HERO_ROTATION[Math.floor(Math.random() * HERO_ROTATION.length)];
   const heroPicture = document.getElementById('heroFallbackImage');
@@ -532,6 +542,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
   const heroVideoEl = document.getElementById('heroVideo');
+  if (heroVideoEl && !heroPick.video) {
+    heroVideoEl.remove();
+  }
   if (heroVideoEl && heroPick.video) {
     heroVideoEl.setAttribute('poster', `${heroPick.video}/hero-poster.jpg`);
     const heroVideoSrc = heroVideoEl.querySelector('source');

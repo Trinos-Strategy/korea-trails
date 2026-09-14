@@ -708,3 +708,63 @@ window.DEEP_INFO_EN['yangmingshan'] = {
     { label: 'Details published in this site\'s Yangmingshan playbook', href: 'yangmingshan-playbook.html' },
   ],
 };
+
+// ── Mount Fuji (Japan — first mountain on the expansion standard) ──
+// English mirror of the Korean entry — same facts, same sources.
+
+window.DEEP_INFO_EN['fuji'] = {
+  updated: 'As of 2026-09',
+  note: 'First mountain on the Japan expansion',
+  sections: [
+    {
+      icon: 'book', title: 'Permits & Reservations',
+      items: [
+        { h: 'Toll & reservation', tag: 'Required',
+          body: 'Since May 9, 2025, all trails charge a one-time toll of 4,000 yen per person. The Yoshida Trail requires an online reservation with prepayment on the official site; the Shizuoka-side trails collect the toll on the trail.',
+          links: [{ label: 'Official Mt. Fuji climbing site', href: 'https://www.fujisan-climb.jp/en/' }] },
+        { h: 'Daily cap & gate', tag: 'Required',
+          body: 'The Yoshida Trail caps climbers at 4,000 per day, and its gate closes from 2 p.m. to 3 a.m. to deter "bullet climbs". Hut guests with a confirmed booking may pass during the closure.' },
+        { h: 'Climbing season', tag: 'Required',
+          body: 'The Yoshida Trail is open July 1 – September 10; the three Shizuoka-side trails (Subashiri, Gotemba, Fujinomiya) run July 10 – September 10. Openings can shift with weather and lingering snow.' },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → Tokyo', tag: 'Note',
+          body: 'Direct flights from Incheon reach Tokyo (Haneda or Narita) in roughly two and a half hours; schedules vary by season.' },
+        { h: 'Tokyo → 5th Station', tag: 'Recommended',
+          body: 'A direct bus from Shinjuku to the Fuji-Subaru Line 5th Station takes about 2 h 25 m (4,800 yen). It runs only in summer and books out early in peak season.',
+          links: [{ label: 'highway-buses.jp', href: 'https://highway-buses.jp/course/fuji-5th.php' }] },
+        { h: 'Via Kawaguchiko', tag: 'Note',
+          body: 'Alternatively, take the Shinjuku → Kawaguchiko bus (about 1 h 45 m – 2 h, around 2,200 yen), then a local bus to the 5th Station (about 50 minutes, 3,400 yen round trip).' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: '8th-station huts', tag: 'Required',
+          body: 'The standard 2-day itinerary overnights at a hut near the 8th station. Huts fill early in peak season — secure them before the toll reservation. No cooking; meals follow the hut\'s booking terms.' },
+        { h: 'Nearby lodging', tag: 'Note',
+          body: 'Plenty of hotels around Kawaguchiko and Fujisan Station. A night at each end of the climb is a comfortable rhythm.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'Japan-wide: police 110, ambulance/fire 119. At 3,776 m prepare for sudden alpine weather and hypothermia risk.' },
+        { h: 'Weather & gear', tag: 'Recommended',
+          body: 'Even in summer the summit is cold and windy. Carry windproof, insulated clothing and a headlamp, and postpone the climb in bad-weather forecasts.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance and connectivity (eSIM/roaming) are recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Official Mt. Fuji climbing site', href: 'https://www.fujisan-climb.jp/en/' },
+    { label: 'highway-buses.jp (Shinjuku ↔ 5th Station)', href: 'https://highway-buses.jp/course/fuji-5th.php' },
+    { label: 'japan-guide.com — Mt. Fuji', href: 'https://www.japan-guide.com/e/e6901.html' },
+    { label: 'Details published in this site\'s Fuji playbook', href: 'fuji-playbook.html' },
+  ],
+};
