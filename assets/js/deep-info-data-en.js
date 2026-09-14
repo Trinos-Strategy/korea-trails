@@ -828,3 +828,122 @@ window.DEEP_INFO_EN['alishan'] = {
     { label: 'Details published in this site\'s Alishan playbook', href: 'alishan-playbook.html' },
   ],
 };
+
+// ── Tateyama (Japan — 2nd Japan mountain) ──
+// English mirror of the Korean entry — same facts, same sources.
+
+window.DEEP_INFO_EN['tateyama'] = {
+  updated: 'As of 2026-09',
+  sections: [
+    {
+      icon: 'book', title: 'Permits & Reservations',
+      items: [
+        { h: 'Alpine Route season', tag: 'Required',
+          body: 'The Tateyama–Kurobe Alpine Route operates only April 15 – November 30. It closes entirely in winter, and snow lingers on Oyama\'s summit until mid-June.',
+          links: [{ label: 'Alpine Route official site', href: 'https://www.alpen-route.com/en/' }] },
+        { h: 'Hut reservations', tag: 'Required',
+          body: 'Murodo Sanso is the main lodging at Murodo. Book via the official site or the Yamaten booking service; the snow-wall season and autumn weekends sell out months ahead.',
+          links: [{ label: 'Murodo Sanso', href: 'https://www.murodo-sanso.jp/' }] },
+        { h: 'Climbing permits', tag: 'Note',
+          body: 'No permit is needed for the Oyama climb. Tsurugi-dake is a genuine alpine scramble for experienced mountaineers only.' },
+      ],
+      links: [{ label: 'Yamaten booking site', href: 'https://yamaten-oyama.com/' }],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → Tokyo/Osaka', tag: 'Note',
+          body: 'Fly Incheon to Tokyo or Osaka, then take the shinkansen toward Toyama or Nagano.' },
+        { h: 'Toyama → Murodo', tag: 'Recommended',
+          body: 'From Toyama Station: Toyama Chiho railway to Tateyama Station, then cable car → bus → ropeway → Murodo. From the Nagano side, enter via Shinano-Omachi. Segment fares are complex — check the official fare table.' },
+        { h: 'Alpine Route passes', tag: 'Note',
+          body: 'The route uses six or more transport modes. Round-trip passes and discount tickets are worth comparing on the official site.' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'Murodo Sanso', tag: 'Required',
+          body: 'The standard base for a 2-day climb. Half-board rates are typical — confirm hut rules (slippers, bedding) when booking.' },
+        { h: 'Raichozawa Onsen hut', tag: 'Note',
+          body: 'An onsen hut about 20 minutes on foot from Murodo; its open-air bath makes it a popular alternative.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'Japan-wide: police 110, ambulance/fire 119. At 2,450 m, Murodo is cold with rapidly changing weather.' },
+        { h: 'Season & snow', tag: 'Recommended',
+          body: 'Crampons may be needed on Oyama until mid-June. Afternoon storms and wind are common — climb in the morning.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance and connectivity (eSIM/roaming) are recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Tateyama–Kurobe Alpine Route (official)', href: 'https://www.alpen-route.com/en/' },
+    { label: 'Murodo Sanso (official)', href: 'https://www.murodo-sanso.jp/' },
+    { label: 'Japan Alps Adventures — Murodo Sanso', href: 'https://jaa.travel/en/mountain-hut/tateyamamurodosanso/' },
+    { label: 'Details published in this site\'s Tateyama playbook', href: 'tateyama-playbook.html' },
+  ],
+};
+
+// ── Huangshan (China — first China mountain) ──
+// English mirror of the Korean entry — same facts, same sources.
+
+window.DEEP_INFO_EN['huangshan'] = {
+  updated: 'As of 2026-09',
+  note: 'First mountain in China',
+  sections: [
+    {
+      icon: 'book', title: 'Entry & Reservations',
+      items: [
+        { h: 'Entrance fee', tag: 'Required',
+          body: 'Entry is 190 RMB in peak season and 150 RMB in winter, with re-entry allowed on 3 consecutive days. It is a real-name system — carry your passport.',
+          links: [{ label: 'Huangshan scenic area (official)', href: 'https://www.huangshan.com.cn/' }] },
+        { h: 'Rotating peak closures', tag: 'Required',
+          body: 'For ecological rest, Lotus Peak (1,864 m) and Tiandu Feng (1,829 m) alternate multi-year closures. Check which summit is open at your travel time; Tiandu Feng requires a real-name reservation.' },
+        { h: 'Winter closures', tag: 'Recommended',
+          body: 'Sections including the West Sea Grand Canyon close in winter (roughly December–March). Verify open sections before a winter visit.' },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → China entry', tag: 'Required',
+          body: 'Fly Incheon to Shanghai, Hangzhou, or similar. China entry policy (visa or visa-free) changes over time — check the latest rules before departure.' },
+        { h: 'Huangshan North Station → Tangkou', tag: 'Recommended',
+          body: 'By high-speed rail reach Huangshan North Station (Tunxi), then about 1 hour by bus to Tangkou town (South Gate transfer center). Shuttles continue to Ciguang Pavilion (Yuping ropeway) or Yungu Temple (Yungu ropeway).' },
+        { h: 'Shuttle & cable cars', tag: 'Note',
+          body: 'The Tangkou→station shuttle is charged separately. Cable cars are 80 RMB (Yungu) and 90 RMB (Yuping) one way in peak season.' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'Summit hotels', tag: 'Required',
+          body: 'For sunrise, the standard is one night at a summit hotel (Beihai, Xihai, Baiyun…). Book weeks ahead in peak season; prices are high — budget accordingly.' },
+        { h: 'Tangkou lodging', tag: 'Note',
+          body: 'Plenty of hotels in Tangkou town. A same-day round trip is possible, but an overnight on the summit is recommended for both sunset and sunrise.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'China: police 110, ambulance 120, fire 119. Summit stairways become extremely slippery in rain.' },
+        { h: 'Weather & crowds', tag: 'Recommended',
+          body: 'Summit weather changes fast, and Chinese holiday periods bring extreme crowds. Move early and keep a flexible schedule.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance and connectivity (eSIM/roaming or a local SIM) are recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Huangshan scenic area (official)', href: 'https://www.huangshan.com.cn/' },
+    { label: 'China Discovery — Huangshan Cable Car', href: 'https://www.chinadiscovery.com/huangshan-tours/transportation/huangshan-cable-car.html' },
+    { label: 'People\'s Daily — Lotus/Tiandu rotation', href: 'http://paper.people.com.cn/rmrbhwb/html/2023-12/18/content_26032392.htm' },
+    { label: 'Details published in this site\'s Huangshan playbook', href: 'huangshan-playbook.html' },
+  ],
+};

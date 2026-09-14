@@ -245,3 +245,24 @@ Some of the hiking photos and tracking videos on this site are original works ph
 | g3 | Y S | https://unsplash.com/photos/Fv_QUy1KRC0 |
 | g4 | Suzi Kim | https://unsplash.com/photos/rfmkZRHk6Qw |
 
+
+## 타테야마 (Tateyama) — Unsplash (Unsplash License)
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Zion C | https://unsplash.com/photos/mIUWj_1zKUM |
+| g1 | Zion C | https://unsplash.com/photos/pm7eXo5vB6o |
+| g2 | Zhixin LIU | https://unsplash.com/photos/C-ndB1hDD0M |
+| g3 | Zion C | https://unsplash.com/photos/zP1gZG-B0lU |
+| g4 | Shigeki Hasegawa | https://unsplash.com/photos/bTF3D36H-1w |
+
+## 황산 (Huangshan) — Unsplash (Unsplash License)
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Eric xu | https://unsplash.com/photos/Pw2cEiZamVM |
+| g1 | Eric xu | https://unsplash.com/photos/qjtfK5Mp9vk |
+| g2 | Wei Pan | https://unsplash.com/photos/R6mcsVqh1P8 |
+| g3 | David Magalhães | https://unsplash.com/photos/dH4QBMugdjE |
+| g4 | Joshua Earle | https://unsplash.com/photos/UKBkp-ubSws |
+
