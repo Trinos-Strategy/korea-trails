@@ -768,3 +768,63 @@ window.DEEP_INFO_EN['fuji'] = {
     { label: 'Details published in this site\'s Fuji playbook', href: 'fuji-playbook.html' },
   ],
 };
+
+// ── Alishan (Taiwan — 4th Taiwan mountain) ──
+// English mirror of the Korean entry — same facts, same sources.
+
+window.DEEP_INFO_EN['alishan'] = {
+  updated: 'As of 2026-09',
+  sections: [
+    {
+      icon: 'book', title: 'Entry & Fees',
+      items: [
+        { h: 'Entrance fee', tag: 'Required',
+          body: 'Admission to Alishan National Forest Recreation Area is NT$300. A half fare of NT$150 applies to visitors arriving by public bus (show your ticket) and eligible students.',
+          links: [{ label: 'Taiwan Forest Recreation (official)', href: 'https://recreation.forest.gov.tw/en/Forest/RA?typ_id=0500001' }] },
+        { h: 'Zhushan sunrise train', tag: 'Required',
+          body: 'The Zhushan line costs NT$150 one way (about 25 minutes); departure times shift daily with sunrise. It sells out early in peak season — book ahead or arrive early.',
+          links: [{ label: 'Alishan Forest Railway (official)', href: 'https://afrch.forest.gov.tw' }] },
+        { h: 'Climbing permit', tag: 'Note',
+          body: 'No separate hiking permit is needed for trails inside the recreation area (Giant Tree Trail, Datashan, etc.).' },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → Taipei', tag: 'Note',
+          body: 'Fly Incheon to Taipei, then take the high-speed rail (THSR) to Chiayi.' },
+        { h: 'Chiayi → Alishan', tag: 'Recommended',
+          body: 'From HSR Chiayi Station, the Taiwan Trip shuttle Route A (7329) takes about 2.5 hours; from TRA Chiayi Station, take Route B (7322). Departures are limited — book ahead.',
+          links: [{ label: 'Taiwan Trip shuttle info', href: 'https://www.taiwantrip.com.tw' }] },
+        { h: 'Forest Railway main line', tag: 'Note',
+          body: 'The Alishan Forest Railway main line also runs from Chiayi to Alishan — check the official timetable for operating days and duration.' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'Inside the recreation area', tag: 'Note',
+          body: 'Staying at hotels or guesthouses inside the area makes the sunrise train easy. Book early in peak season.' },
+        { h: 'Chiayi city', tag: 'Note',
+          body: 'A same-day round trip by bus from Chiayi is possible, but overnighting inside the area is recommended for sunrise.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'Taiwan-wide: police 110, ambulance/fire 119. Temperatures drop before dawn — dress warmly for the sunrise train.' },
+        { h: 'Weather & sunrise times', tag: 'Recommended',
+          body: 'Sea of clouds is most likely on mornings after rain. Sunrise and train times change daily — confirm the day before.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance and connectivity (eSIM/roaming) are recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Alishan Forest Railway (official)', href: 'https://afrch.forest.gov.tw' },
+    { label: 'Taiwan Forest Recreation (official)', href: 'https://recreation.forest.gov.tw/en/Forest/RA?typ_id=0500001' },
+    { label: 'Taiwan Trip shuttle info', href: 'https://www.taiwantrip.com.tw' },
+    { label: 'Details published in this site\'s Alishan playbook', href: 'alishan-playbook.html' },
+  ],
+};
