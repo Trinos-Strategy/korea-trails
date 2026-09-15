@@ -1,0 +1,26 @@
+[
+ {
+  "hero": {
+   "photographer": "Eric xu",
+   "url": "https://unsplash.com/photos/jagged-granite-peaks-with-pine-trees-Pw2cEiZamVM"
+  },
+  "gallery": {
+   "g1": {
+    "photographer": "Eric xu",
+    "url": "https://unsplash.com/photos/jagged-granite-peaks-and-pine-forest-qjtfK5Mp9vk"
+   },
+   "g2": {
+    "photographer": "Wei Pan",
+    "url": "https://unsplash.com/photos/mountains-covered-with-fog-R6mcsVqh1P8"
+   },
+   "g3": {
+    "photographer": "David Magalhães",
+    "url": "https://unsplash.com/photos/a-lone-tree-on-top-of-a-mountain-dH4QBMugdjE"
+   },
+   "g4": {
+    "photographer": "Joshua Earle",
+    "url": "https://unsplash.com/photos/person-in-red-hooded-jacket-on-a-staircase-UKBkp-ubSws"
+   }
+  }
+ }
+]

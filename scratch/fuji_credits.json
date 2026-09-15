@@ -1,0 +1,27 @@
+[
+ {
+  "hero": "Wren Chai",
+  "gallery": {
+   "g1": {
+    "photographer": "Alison Pang",
+    "url": "https://unsplash.com/photos/a-very-tall-mountain-covered-in-snow-under-a-blue-sky-xt5xG-fEj0M",
+    "alt": "a very tall mountain covered in snow under a blue sky"
+   },
+   "g2": {
+    "photographer": "Brian Chen",
+    "url": "https://unsplash.com/photos/a-mountain-is-reflected-in-the-still-water-of-a-lake-6aV2WKzGJ_4",
+    "alt": "a mountain is reflected in the still water of a lake"
+   },
+   "g3": {
+    "photographer": "Filiz Elaerts",
+    "url": "https://unsplash.com/photos/a-view-of-a-mountain-with-pagodas-in-front-of-it-C62Tb_iodQE",
+    "alt": "a view of a mountain with pagodas in front of it"
+   },
+   "g4": {
+    "photographer": "Zeke Tucker",
+    "url": "https://unsplash.com/photos/a-snow-covered-mountain-with-low-clouds-in-the-foreground-rFX5FfVGeWE",
+    "alt": "a snow covered mountain with low clouds in the foreground"
+   }
+  }
+ }
+]
