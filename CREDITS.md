@@ -319,3 +319,20 @@ Some of the hiking photos and tracking videos on this site are original works ph
 | g3 | Shrish Shrestha | https://unsplash.com/photos/HLi1PjkCEdQ |
 | g4 | Sudip Shrestha | https://unsplash.com/photos/C3YrTbvNcho |
 
+
+## 한국 100대 명산 1차(10산) — Unsplash (Unsplash License)
+※ 실제 산별 사진이 아닌 한국 산악 경험 중심 일반 사진임을 명시합니다.
+
+| 산 | 사진작가들 |
+|---|---|
+| 관악산·수락산·청계산·아차산·금정산·팔공산·운문산·속리산·대둔산·마이산 | Soyoung HAN, Zeynep S., Hengfei Yang, DaVith, Chanho Park 등 (개별 출처는 각 페이지 gallery 참조) |
+
+## 히말라야 3트레킹 — Unsplash (Unsplash License)
+
+| 산 | 사진작가들 |
+|---|---|
+| 에베레스트 BC | Geetangey, Dylan Shaw, Bibek KC, Nepal Visuals 등 |
+| 안나푸르나 서킷 | Martin Skřivánek, Sylwia Bartyzel, Nirajan Dhakal 등 |
+| 랑탕 밸리 | Sergey Pesterev, Balaram Thapa, Anmol Adhikari 등 |
+
+(개별 사진 출처는 각 페이지 gallery credit 참조)
