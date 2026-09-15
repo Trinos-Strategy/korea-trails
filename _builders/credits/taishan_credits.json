@@ -1,0 +1,26 @@
+[
+ {
+  "hero": {
+   "photographer": "Leona Lee",
+   "url": "https://unsplash.com/photos/hikers-ascend-a-mountain-toward-the-clouds-lBmf-p8QbcM"
+  },
+  "gallery": {
+   "g1": {
+    "photographer": "Jun Weng",
+    "url": "https://unsplash.com/photos/a-foggy-staircase-leading-up-to-the-top-of-a-hill-Ken8B9aKbBI"
+   },
+   "g2": {
+    "photographer": "Yolanda Suen",
+    "url": "https://unsplash.com/photos/low-angle-photo-of-tree-beside-pagoda-temple-zIIlPb5zrVw"
+   },
+   "g3": {
+    "photographer": "Stefan Wagener",
+    "url": "https://unsplash.com/photos/empty-mountain-bridge-QM8nxL1X8mE"
+   },
+   "g4": {
+    "photographer": "Jane Wu",
+    "url": "https://unsplash.com/photos/the-sun-is-setting-over-the-mountains-and-valleys-lEf5rkknW_Y"
+   }
+  }
+ }
+]

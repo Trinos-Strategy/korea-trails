@@ -1,0 +1,26 @@
+[
+ {
+  "hero": {
+   "photographer": "Daniel Leone",
+   "url": "https://unsplash.com/photos/annapurna-mountain-peaks-in-nepal-g30P1zcOzXo"
+  },
+  "gallery": {
+   "g1": {
+    "photographer": "titas gurung",
+    "url": "https://unsplash.com/photos/rocky-snow-capped-mountain-under-clear-blue-sky-during-daytime-8NOpqulKiQw"
+   },
+   "g2": {
+    "photographer": "Anja Lee Ming Becker",
+    "url": "https://unsplash.com/photos/a-couple-of-people-standing-on-top-of-a-lush-green-hillside-tPfOcBOx2wI"
+   },
+   "g3": {
+    "photographer": "Shrish Shrestha",
+    "url": "https://unsplash.com/photos/a-house-with-a-mountain-in-the-background-HLi1PjkCEdQ"
+   },
+   "g4": {
+    "photographer": "Sudip Shrestha",
+    "url": "https://unsplash.com/photos/the-top-of-a-mountain-with-clouds-in-the-sky-C3YrTbvNcho"
+   }
+  }
+ }
+]

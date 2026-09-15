@@ -1,0 +1,26 @@
+[
+ {
+  "hero": {
+   "photographer": "Ong Cheng Zheng",
+   "url": "https://unsplash.com/photos/mount-kinabalu-with-a-large-peak-juFTPN6uv3w"
+  },
+  "gallery": {
+   "g1": {
+    "photographer": "Ling Tang",
+    "url": "https://unsplash.com/photos/people-climbing-mountain-XjUhALD9HO4"
+   },
+   "g2": {
+    "photographer": "Bryan Heng",
+    "url": "https://unsplash.com/photos/a-view-of-the-top-of-a-mountain-with-clouds-below-QyBVb0zw6Vw"
+   },
+   "g3": {
+    "photographer": "Ong Cheng Zheng",
+    "url": "https://unsplash.com/photos/a-rocky-mountain-top-rZAxaU6Cp2I"
+   },
+   "g4": {
+    "photographer": "Bryan Heng",
+    "url": "https://unsplash.com/photos/a-view-of-a-mountain-range-with-clouds-in-the-foreground-vk2gTv6Qd80"
+   }
+  }
+ }
+]
