@@ -266,3 +266,35 @@ Some of the hiking photos and tracking videos on this site are original works ph
 | g3 | David Magalhães | https://unsplash.com/photos/dH4QBMugdjE |
 | g4 | Joshua Earle | https://unsplash.com/photos/UKBkp-ubSws |
 
+
+## 판시판 (Fansipan) — Unsplash (Unsplash License)
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Dang Cong | https://unsplash.com/photos/EAhm0Uoq0Y8 |
+| g1 | Vu Thang | https://unsplash.com/photos/HsdhP8O6GU0 |
+| g2 | Vivu Vietnam | https://unsplash.com/photos/HobTanxdqMI |
+| g3 | siamak djamei | https://unsplash.com/photos/BTv0K50c_4M |
+| g4 | Jean-Baptiste NORE | https://unsplash.com/photos/NI-nrcVHXvE |
+
+## 타이산 (Mount Tai) — Unsplash (Unsplash License)
+※ 실제 태산 사진이 아닌 경험 중심 일반 산악 사진임을 명시합니다.
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Leona Lee | https://unsplash.com/photos/lBmf-p8QbcM |
+| g1 | Jun Weng | https://unsplash.com/photos/Ken8B9aKbBI |
+| g2 | Yolanda Suen | https://unsplash.com/photos/zIIlPb5zrVw |
+| g3 | Stefan Wagener | https://unsplash.com/photos/QM8nxL1X8mE |
+| g4 | Jane Wu | https://unsplash.com/photos/lEf5rkknW_Y |
+
+## 킨리산 (Mount Kinabalu) — Unsplash (Unsplash License)
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Ong Cheng Zheng | https://unsplash.com/photos/juFTPN6uv3w |
+| g1 | Ling Tang | https://unsplash.com/photos/XjUhALD9HO4 |
+| g2 | Bryan Heng | https://unsplash.com/photos/QyBVb0zw6Vw |
+| g3 | Ong Cheng Zheng | https://unsplash.com/photos/rZAxaU6Cp2I |
+| g4 | Bryan Heng | https://unsplash.com/photos/vk2gTv6Qd80 |
+

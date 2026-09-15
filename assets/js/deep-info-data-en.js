@@ -947,3 +947,165 @@ window.DEEP_INFO_EN['huangshan'] = {
     { label: 'Details published in this site\'s Huangshan playbook', href: 'huangshan-playbook.html' },
   ],
 };
+
+// ── Fansipan (Vietnam — first Vietnam mountain) ──
+window.DEEP_INFO_EN['fansipan'] = {
+  updated: 'As of 2026-09',
+  note: 'First mountain in Vietnam',
+  sections: [
+    {
+      icon: 'book', title: 'Permits & Fees',
+      items: [
+        { h: 'Park entry & climbing permit', tag: 'Required',
+          body: 'Hoang Lien National Park entry is ~70,000 VND and the Fansipan climbing permit ~300,000 VND. A licensed guide is mandatory for trekking routes and is usually included in tours.',
+          links: [{ label: 'Hoang Lien NP information', href: 'https://vinpearl.com/en/hoang-lien-national-park-sapa' }] },
+        { h: 'Cable car fare', tag: 'Note',
+          body: 'The Sun World Fansipan Legend cable car costs about 700–900k VND round trip (adult). Peak weekends sell out — pay online in advance.' },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → Hanoi', tag: 'Note',
+          body: 'Direct flights from Incheon reach Hanoi in roughly four and a half hours.' },
+        { h: 'Hanoi → Sapa', tag: 'Recommended',
+          body: 'Overnight sleeper train (depart Hanoi ~22:00, arrive Lao Cai ~06:00, ~400–450k VND) or an express sleeper bus. Shuttles cover Lao Cai → Sapa in ~30 minutes (~30k VND).' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'Sapa town', tag: 'Note',
+          body: 'Plenty of hotels and guesthouses in Sapa — sufficient for the 1-day trek; the 2-day traverse includes a camp night.' },
+        { h: 'Mountain camp (traverse)', tag: 'Recommended',
+          body: 'The 2-day tour includes one camp night near the summit; porters prepare tents and meals. Check your sleeping bag — nights are cold.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'Vietnam: police 113, fire 114, ambulance 115. The summit is cold year-round and ices over in winter.' },
+        { h: 'Rainy season', tag: 'Recommended',
+          body: 'Leeches and slippery mud appear May–September. Wear long pants and socks, and plan mornings-first days against afternoon fog.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance and connectivity (eSIM/roaming) are recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Sun World cable-car information', href: 'https://sunparadiseland.com/SunParadiseLandSaPa/tin-tuc/fansipan-cable-car-2025-a-guide-to-ticket-prices-and-schedules-for-newbies-6908' },
+    { label: 'Hoang Lien NP fee information', href: 'https://vinpearl.com/en/hoang-lien-national-park-sapa' },
+    { label: 'Hanoi–Sapa train information', href: 'https://vietnam-railway.com/train/touristtrainstosapa' },
+    { label: 'Details published in this site\'s Fansipan playbook', href: 'fansipan-playbook.html' },
+  ],
+};
+
+// ── Taishan (China — 2nd China mountain) ──
+window.DEEP_INFO_EN['taishan'] = {
+  updated: 'As of 2026-09',
+  sections: [
+    {
+      icon: 'book', title: 'Entry & Fees',
+      items: [
+        { h: 'Entrance fee', tag: 'Required',
+          body: '115 RMB in peak season (Apr–Oct), 100 RMB off-season. Re-entry is allowed for 3 days after first check-in and the ticket includes Dai Temple. Real-name system — carry your passport.',
+          links: [{ label: 'Tai\'an official ticket page', href: 'https://tsgw.taian.gov.cn/art/2025/4/7/art_366039_10321175.html' }] },
+        { h: 'Cable car & shuttle', tag: 'Note',
+          body: 'The Zhongtianmen–Nantianmen cable car costs 100 RMB one way; the Tianwaicun shuttle is 30 RMB. Combining the cable car on descent protects your knees.' },
+        { h: '24-hour access', tag: 'Note',
+          body: 'Taishan is open 24 hours year-round, which is why the night-climb-for-sunrise culture thrives. Headlamp and warm layers are mandatory at night.' },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → China entry', tag: 'Required',
+          body: 'Fly Incheon to Beijing, Shanghai, or similar, then take the Beijing–Shanghai high-speed rail to Tai\'an Station (about 2 hours from Beijing). Check the latest China entry policy before departure.' },
+        { h: 'Tai\'an Station → Hongmen', tag: 'Note',
+          body: 'A short taxi or bus ride connects Tai\'an Station to the Hongmen trailhead — access is very easy from town.' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'Summit lodging', tag: 'Note',
+          body: 'Overnighting at a summit hotel lets you catch both sunset and sunrise. Peak-season prices are high — book in advance.' },
+        { h: 'Tai\'an city', tag: 'Note',
+          body: 'For night climbs, the usual pattern is leaving your luggage at a city hotel and climbing light.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'China: police 110, ambulance 120, fire 119. Steps ice over in winter — bring crampons.' },
+        { h: 'Crowds & weather', tag: 'Recommended',
+          body: 'Weekend holiday stairs become extremely crowded, and the pre-dawn summit is cold — full insulation is essential on night climbs.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance and connectivity (eSIM/roaming or local SIM) are recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Tai\'an official ticket page', href: 'https://tsgw.taian.gov.cn/art/2025/4/7/art_366039_10321175.html' },
+    { label: 'TravelChinaGuide — Mount Tai', href: 'https://www.travelchinaguide.com/attraction/shandong/taian/mt_taishan.htm' },
+    { label: 'Details published in this site\'s Taishan playbook', href: 'taishan-playbook.html' },
+  ],
+};
+
+// ── Kinabalu (Malaysia — first Malaysia mountain) ──
+window.DEEP_INFO_EN['kinabalu'] = {
+  updated: 'As of 2026-09',
+  note: 'First mountain in Malaysia',
+  sections: [
+    {
+      icon: 'book', title: 'Permits & Booking',
+      items: [
+        { h: 'Summit climb booking', tag: 'Required',
+          body: 'Summit climbs are booked only through Sabah Parks and capped at 135 climbers per day. Bookings open about a year ahead and sell out quickly — fix your travel dates first.',
+          links: [{ label: 'Sabah Parks (official)', href: 'https://sabahparks.org.my/' }] },
+        { h: 'Mandatory guide', tag: 'Required',
+          body: 'A licensed guide must accompany all summit climbers (RM 350 per guide, up to 5 climbers). Guides are assigned at Timpohon Gate on climb morning.' },
+        { h: 'Permits & fees', tag: 'Required',
+          body: 'The climbing permit for foreigners is now RM 400 (raised). The permit lanyard must be worn throughout. Laban Rata lodging and meals are charged separately — packages run RM 1,740–2,180.',
+          links: [{ label: 'Summit package information', href: 'https://www.mountkinabalu.com/packages' }] },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → Kota Kinabalu', tag: 'Note',
+          body: 'Direct flights from Incheon reach Kota Kinabalu (Sabah, Borneo) in about five hours.' },
+        { h: 'Kota Kinabalu → Park', tag: 'Recommended',
+          body: 'About 2 hours by road to Kinabalu Park. An overnight near the park (Kundasang area) the night before makes the early gate start easier.' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'Laban Rata', tag: 'Required',
+          body: 'The hut at 3,270 m is the de-facto mandatory overnight for the summit push. Bed capacity is tied to the daily quota; meals are included in bookings.' },
+        { h: 'Near-park lodging', tag: 'Note',
+          body: 'Use park lodges or Kota Kinabalu hotels before and after the climb. The night-before stay near the park suits the early gate start.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'Malaysia unified emergency number is 999. If altitude symptoms appear (headache, nausea), stop ascending and tell your guide immediately.' },
+        { h: 'Descent deadline', tag: 'Required',
+          body: 'The descent deadline is usually 10:30–11:00. Overrunning it triggers rescue procedures — keep summit time short.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance (check alpine-climb coverage) and connectivity are recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Sabah Parks (official)', href: 'https://sabahparks.org.my/' },
+    { label: 'Mount Kinabalu package information', href: 'https://www.mountkinabalu.com/packages' },
+    { label: 'Borneo Dream — cost details', href: 'https://borneodream.com/' },
+    { label: 'Details published in this site\'s Kinabalu playbook', href: 'kinabalu-playbook.html' },
+  ],
+};
