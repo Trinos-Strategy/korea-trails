@@ -298,3 +298,24 @@ Some of the hiking photos and tracking videos on this site are original works ph
 | g3 | Ong Cheng Zheng | https://unsplash.com/photos/rZAxaU6Cp2I |
 | g4 | Bryan Heng | https://unsplash.com/photos/vk2gTv6Qd80 |
 
+
+## 라위니 (Mount Rinjani) — Unsplash (Unsplash License)
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Fahrul Razi | https://unsplash.com/photos/OYDPdqZdJY4 |
+| g1 | Aaron Thomas | https://unsplash.com/photos/4CHdH9cMr0E |
+| g2 | Al ghazali | https://unsplash.com/photos/1mFzrUgTic8 |
+| g3 | Fahrul Razi | https://unsplash.com/photos/pFBtd8_ynTY |
+| g4 | Maximus Beaumont | https://unsplash.com/photos/Qq0Coemj0Ng |
+
+## 푼힐 (Poon Hill) — Unsplash (Unsplash License)
+
+| 파일 | 사진작가 | 출처 |
+|---|---|---|
+| hero-* | Daniel Leone | https://unsplash.com/photos/g30P1zcOzXo |
+| g1 | titas gurung | https://unsplash.com/photos/8NOpqulKiQw |
+| g2 | Anja Lee Ming Becker | https://unsplash.com/photos/tPfOcBOx2wI |
+| g3 | Shrish Shrestha | https://unsplash.com/photos/HLi1PjkCEdQ |
+| g4 | Sudip Shrestha | https://unsplash.com/photos/C3YrTbvNcho |
+
