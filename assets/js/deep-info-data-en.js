@@ -1109,3 +1109,111 @@ window.DEEP_INFO_EN['kinabalu'] = {
     { label: 'Details published in this site\'s Kinabalu playbook', href: 'kinabalu-playbook.html' },
   ],
 };
+
+// ── Rinjani (Indonesia — first Indonesia mountain) ──
+window.DEEP_INFO_EN['rinjani'] = {
+  updated: 'As of 2026-09',
+  note: 'First mountain in Indonesia',
+  sections: [
+    {
+      icon: 'book', title: 'Permits & Fees',
+      items: [
+        { h: 'Entry fee restructure', tag: 'Required',
+          body: 'From November 3, 2025 the foreign entry fee is about IDR 200–250k per person per day (varies by route class). A 2-day summit trek costs IDR 400–500k in park fees alone.',
+          links: [{ label: 'Entry fee update', href: 'https://rinjanitrekkingplanner.com/rinjani-entrance-ticket-fees-2026-update/' }] },
+        { h: 'Guide mandatory', tag: 'Required',
+          body: 'A licensed guide is mandatory and solo trekking is banned. Guides ~IDR 400–500k/day, porters ~250–350k/day; 2-day summit packages run $130–285.' },
+        { h: 'Daily quota & insurance', tag: 'Required',
+          body: 'A cap of 240 international trekkers per day sells out in season. The 2025 SOP also requires official registration and trekking insurance.' },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → Bali/Lombok', tag: 'Note',
+          body: 'Fly to Bali (Denpasar) or Lombok (LOP). From Bali, ferries and fast boats connect to Lombok.' },
+        { h: 'Airport → gate', tag: 'Recommended',
+          body: 'From Lombok airport, Senaru is about 2.5–3 hours by road and Sembalun about 3–3.5 hours. Tour pickups are standard.' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'On-mountain camping', tag: 'Required',
+          body: 'There are no huts on Rinjani — camping only. Tours include tents, cooking gear, and meals; porters carry the load.' },
+        { h: 'Senaru/Sembalun villages', tag: 'Note',
+          body: 'Use guesthouses before and after the climb. The night before at a gate-side guesthouse helps the early start.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'Indonesia unified emergency number is 112. Strong winds and rapid temperature drops hit the rim and summit.' },
+        { h: 'Season rules', tag: 'Required',
+          body: 'Trekking is allowed roughly April–December; the park closes in the rainy season (Jan–Mar). Unauthorized entry during closure carries legal penalties.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Trekking insurance is required by the SOP. Prepare proof of coverage and share your itinerary with family at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Rinjani entry fee update', href: 'https://rinjanitrekkingplanner.com/rinjani-entrance-ticket-fees-2026-update/' },
+    { label: 'Rinjani trekking info (guide/porter)', href: 'https://rinjaniindonesia.com/en/guide/rinjani-trekking-info' },
+    { label: 'Rinjani 2025 SOP', href: 'https://rinjanidawnadventures.com/mount-rinjani-national-park-sop-2025/' },
+    { label: 'Details published in this site\'s Rinjani playbook', href: 'rinjani-playbook.html' },
+  ],
+};
+
+// ── Poon Hill (Nepal — first Nepal mountain) ──
+window.DEEP_INFO_EN['poonhill'] = {
+  updated: 'As of 2026-09',
+  note: 'First mountain in Nepal',
+  sections: [
+    {
+      icon: 'book', title: 'Permits',
+      items: [
+        { h: 'ACAP permit', tag: 'Required',
+          body: 'The Annapurna Conservation Area Permit (ACAP) is mandatory — about NPR 3,000 (~$25–30) for foreigners. Issue it at offices in Kathmandu or Pokhara.' },
+        { h: 'Guide mandatory', tag: 'Required',
+          body: 'Since April 2023 a licensed guide is required for treks in protected areas (~$25–35/day). Solo trekking is officially not permitted.' },
+        { h: 'Teahouse booking', tag: 'Note',
+          body: 'Teahouse lodging runs $5–10/night with on-site allocation possible, but reserving ahead is safer in peak season (Oct–Nov, Mar–May).' },
+      ],
+    },
+    {
+      icon: 'bus', title: 'International Transit',
+      items: [
+        { h: 'Incheon → Kathmandu', tag: 'Note',
+          body: 'Fly Incheon to Kathmandu (about 8–9 hours including connections). Issue the ACAP permit there, then move to Pokhara.' },
+        { h: 'Pokhara → Nayapul', tag: 'Recommended',
+          body: 'About 1.5–2 hours by road from Pokhara to Nayapul. Local buses, taxis, and shuttles are available; the same transport retrieves you at the trek end.' },
+      ],
+    },
+    {
+      icon: 'tent', title: 'Lodging',
+      items: [
+        { h: 'Teahouses', tag: 'Required',
+          body: 'Sleep in teahouses throughout the trek ($5–10/night). Rooms and bathrooms are often shared; early allocation in Ghorepani helps in peak season.' },
+        { h: 'Pokhara lodging', tag: 'Note',
+          body: 'The standard pattern is staying at Pokhara Lakeside before and after the trek.' },
+      ],
+    },
+    {
+      icon: 'shield', title: 'Safety & Emergency',
+      items: [
+        { h: 'Local emergency numbers', tag: 'Required',
+          body: 'Nepal: police 100, ambulance 102, unified 112. Poon Hill sits at 3,210 m with low altitude-sickness risk, but pre-dawn cold is real.' },
+        { h: 'Season & flights', tag: 'Recommended',
+          body: 'Seasons are March–May and October–November. Monsoon (Jun–Sep) brings flight delays and leeches — keep spare days.' },
+        { h: 'Travel preparation', tag: 'Note',
+          body: 'Travel insurance (confirm trekking altitude coverage) is recommended. Share your itinerary with family or companions at home.' },
+      ],
+    },
+  ],
+  sources: [
+    { label: 'Poon Hill cost & itinerary information', href: 'https://www.havenholidaysnepal.com/trips/3-days-poonhill-trek' },
+    { label: 'ACAP permit information', href: 'https://ntb.gov.np/' },
+    { label: 'Details published in this site\'s Poon Hill playbook', href: 'poonhill-playbook.html' },
+  ],
+};

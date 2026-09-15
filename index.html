@@ -301,25 +301,27 @@
 <input aria-label="명산 검색" class="search-hero-input" id="searchInput" placeholder="산 이름, 고도, 지역 또는 설명 검색..." type="search"/>
 </div>
 <div aria-label="국가별 빠른 탐색" class="hero-quicknav">
-<button data-country="all" type="button">전체 33산</button>
+<button data-country="all" type="button">전체 35산</button>
 <button data-country="KR" type="button">한국 23산</button>
 <button data-country="TW" type="button">대만 4산</button>
 <button data-country="JP" type="button">일본 2산</button>
 <button data-country="CN" type="button">중국 2산</button>
 <button data-country="VN" type="button">베트남 1산</button>
 <button data-country="MY" type="button">말레이시아 1산</button>
+<button data-country="ID" type="button">인도네시아 1산</button>
+<button data-country="NP" type="button">네팔 1산</button>
 </div>
 <div class="hero-stats">
 <div class="hero-stat">
-<div class="hero-stat-value">6</div>
+<div class="hero-stat-value">8</div>
 <div class="hero-stat-label">탐방 국가</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">33</div>
+<div class="hero-stat-value">35</div>
 <div class="hero-stat-label">등록 명산</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">33</div>
+<div class="hero-stat-value">35</div>
 <div class="hero-stat-label">플레이북 완성</div>
 </div>
 </div>
@@ -345,6 +347,8 @@
 <option value="CN">중국</option>
 <option value="VN">베트남</option>
 <option value="MY">말레이시아</option>
+<option value="ID">인도네시아</option>
+<option value="NP">네팔</option>
 </select>
 </div>
 <div class="filter-select-wrapper">
@@ -487,7 +491,19 @@
       <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">말레이시아</div>
       <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
         <a href="kinabalu-playbook.html" style="color: var(--muted); text-decoration: none;">킨리산</a>
+      
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">인도네시아</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="rinjani-playbook.html" style="color: var(--muted); text-decoration: none;">라위니</a>
       </div>
+    </div>
+    <div class="sitemap-col">
+      <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">네팔</div>
+      <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+        <a href="poonhill-playbook.html" style="color: var(--muted); text-decoration: none;">푼힐</a>
+      </div>
+    </div></div>
     </div></div>
     </div></div>
     </div></div>
@@ -547,6 +563,9 @@ window.MOUNTAINS = [
   {id:'fansipan',      name:'판시판',      alt:'3,143m', region:'베트남', dist:'10km',   time:'1박2일',   country:'VN', diff:'hard',   done:true,  url:'fansipan-playbook.html',      desc:'인도차이나의 지붕 3,143m. 케이블카 또는 가이드 트레킹으로 정상 도달. 사파 계곡의 절경.', lat: 22.3094, lng: 103.7652},
   {id:'taishan',       name:'타이산(泰山)',   alt:'1,545m', region:'중국', dist:'12km',   time:'6-8시간',  country:'CN', diff:'medium', done:true,  url:'taishan-playbook.html',       desc:'중국 오악의 동악. 7,000계단 홍문 루트와 야간 등반 일출. 2,000년 순례의 산.', lat: 36.2544, lng: 117.1011},
   {id:'kinabalu',      name:'킨리산',      alt:'4,095m', region:'말레이시아', dist:'17km',   time:'2일1박',   country:'MY', diff:'expert', done:true,  url:'kinabalu-playbook.html',      desc:'보르네오의 지붕 4,095m. 일 135명 한정 세계유산 정상 등반. 라반라타 1박 필수.', lat: 6.0752, lng: 116.5583},
+  // ── 인도네시아·네팔 ──
+  {id:'rinjani',       name:'라위니',      alt:'3,726m', region:'인도네시아', dist:'22km',   time:'2일1박',   country:'ID', diff:'hard',   done:true,  url:'rinjani-playbook.html',       desc:'롬복의 화산 신 3,726m. 새벽 정상 등반과 세가라아나크 화산호수. 일 240명 한정.', lat: 8.4114, lng: 116.4570},
+  {id:'poonhill',      name:'푼힐',       alt:'3,210m', region:'네팔', dist:'40km',   time:'4-5일',    country:'NP', diff:'medium', done:true,  url:'poonhill-playbook.html',      desc:'네팔 트레킹 입문 정석. 티하우스 4~5일로 아나푸르나 일출 전망대 3,210m.', lat: 28.3950, lng: 83.6867},
   // ── 일본 명산 ──
   {id:'fuji',         name:'후지산(富士山)', alt:'3,776m', region:'일본', dist:'13.6km', time:'1박2일',   diff:'expert', done:true,  url:'fuji-playbook.html',         country:'JP', desc:'일본 최고봉. 8합 산장 1박 후 새벽 등정이 표준. 요시다 루트 예약제·통행료 4,000엔(2025~).', lat: 35.3606, lng: 138.7274},
 ];
@@ -568,6 +587,8 @@ document.addEventListener('DOMContentLoaded', () => {
     { base: 'assets/img/fansipan', video: null, alt: '사파 계곡의 녹색 산맥과 구름이 어우러진 베트남 고원 풍경' },
     { base: 'assets/img/taishan', video: null, alt: '구름을 뚫고 오르는 산중 계단과 등반객의 실루엣' },
     { base: 'assets/img/kinabalu', video: null, alt: '구름 위로 솟은 킨리산의 웅장한 화강암 봉우리' },
+    { base: 'assets/img/rinjani', video: null, alt: '라위니 화산의 크레이터 호수와 웅장한 산맥' },
+    { base: 'assets/img/poonhill', video: null, alt: '구름 위로 솟은 아나푸르나 산맥의 눈 덮인 봉우리들' },
   ];
   const heroPick = HERO_ROTATION[Math.floor(Math.random() * HERO_ROTATION.length)];
   const heroPicture = document.getElementById('heroFallbackImage');

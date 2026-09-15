@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Mount Rinjani Playbook</title><meta content="Guide to Mount Rinjani (3,726 m) on Lombok, Indonesia. Detailed routes, real maps and tips for the Senaru crater-rim trek, the 2-day summit climb, and the lake traverse." name="description"/><link href="../assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/><link href="../assets/css/design-system.css" rel="stylesheet"/><style>
+  :root {
+    --green: #6a7d4c;
+    --greenbg: #e5eadc;
+    --blue: #456e96;
+    --bluebg: #dce8f4;
+    --red: #9f5845;
+    --redbg: #f2e1db;
+    --gold: #a8863a;
+  }
+
+  [data-theme="dark"] {
+    --green: #93ab73;
+    --greenbg: #2a3222;
+    --blue: #7eafd8;
+    --bluebg: #1f2f3b;
+    --red: #d28d78;
+    --redbg: #3e251f;
+    --gold: #d0b26d;
+  }
+
+  
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-3) var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--teal, var(--primary)), var(--primary));
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .brand h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .brand p {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition), color var(--transition);
+  }
+  
+  .theme-btn:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+
+  
+  .selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-5) 0 var(--space-3);
+  }
+  
+  .course-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    transition: all var(--transition);
+  }
+  
+  .course-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: #273e16; }
+  .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: #1e3a5f; }
+  .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: #6a2a18; }
+
+  [data-theme="dark"] .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: var(--green); }
+  [data-theme="dark"] .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: var(--blue); }
+  [data-theme="dark"] .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: var(--red); }
+
+  
+  .panel {
+    display: none;
+    padding: var(--space-4) 0 var(--space-10);
+  }
+  
+  .panel.active {
+    display: block;
+  }
+  
+  .panel-top {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+  }
+  
+  .level {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 800;
+  }
+  
+  .green .level { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .level { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .level { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .level { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .level { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .level { background: var(--redbg); color: var(--red); }
+  
+  .panel-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+  }
+  
+  .panel-sub {
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  
+  .tabs {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    margin: var(--space-4) 0 var(--space-6);
+    border-bottom: none;
+  }
+  
+  .tab {
+    border: none;
+    background: var(--surface2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--muted);
+    font-weight: 700;
+    transition: all var(--transition);
+  }
+  
+  .tab:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+  
+  .green .tab.active { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .tab.active { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .tab.active { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .tab.active { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .tab.active { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .tab.active { background: var(--redbg); color: var(--red); }
+
+  
+  .grid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .kpi .num {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .green .kpi .num { color: var(--green); }
+  .blue .kpi .num { color: var(--blue); }
+  .red .kpi .num { color: var(--red); }
+  
+  .kpi .txt {
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 var(--space-4);
+  }
+  
+  .section-title h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .line {
+    height: 1px;
+    background: var(--border);
+    flex: 1;
+  }
+
+  
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .chip {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    background: var(--surface2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+  
+  .arr {
+    align-self: center;
+    color: var(--faint);
+  }
+  
+  .elev svg {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .desc {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  
+  .segments {
+    display: grid;
+    gap: var(--space-3);
+  }
+  
+  .seg {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+  
+  .seg-head {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-4) var(--space-5);
+    cursor: pointer;
+  }
+  
+  .seg-no {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    display: grid;
+    place-items: center;
+    font-size: var(--text-xs);
+    font-weight: 800;
+  }
+  
+  .green .seg-no { background: var(--greenbg); color: var(--green); }
+  .blue .seg-no { background: var(--bluebg); color: var(--blue); }
+  .red .seg-no { background: var(--redbg); color: var(--red); }
+  
+  .seg-title {
+    font-weight: 800;
+    font-size: var(--text-base);
+  }
+  
+  .seg-meta {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .seg-arrow {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.85rem;
+    transition: transform var(--transition);
+  }
+  
+  .seg-body {
+    display: none;
+    padding: 0 var(--space-5) var(--space-5);
+    border-top: 1px solid var(--border);
+  }
+  
+  .seg.open .seg-body {
+    display: block;
+  }
+  
+  .seg.open .seg-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .seg-body p {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+  
+  .bar {
+    height: 7px;
+    background: var(--surface2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: var(--space-3) 0;
+  }
+  
+  .fill {
+    height: 100%;
+  }
+  
+  .green .fill { background: var(--green); }
+  .blue .fill { background: var(--blue); }
+  .red .fill { background: var(--red); }
+  
+  .tip, .warn {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    margin-top: var(--space-3);
+    line-height: 1.5;
+  }
+  
+  .tip {
+    background: var(--surface2);
+    color: var(--muted);
+  }
+  
+  .warn {
+    background: var(--redbg);
+    color: var(--red);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  th, td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--text-xs);
+    text-align: left;
+  }
+  
+  th {
+    background: var(--surface2);
+    color: var(--muted);
+    font-weight: 800;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .tipcard h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+  }
+  
+  .tipcard ul {
+    padding-left: var(--space-4);
+    margin: 0;
+  }
+  
+  .tipcard li {
+    margin: var(--space-2) 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+  
+  @media (max-width: 960px) {
+    .grid6 { grid-template-columns: repeat(3, 1fr); }
+    .tips-grid { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 640px) {
+    .grid6 { grid-template-columns: repeat(2, 1fr); }
+    .tips-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .selector { gap: var(--space-2); }
+    .course-btn { padding: var(--space-2) var(--space-4); font-size: var(--text-xs); }
+  }
+
+
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style><meta content="../assets/img/rinjani/og.png" property="og:image"/><meta content="../assets/img/rinjani/og.png" name="twitter:image"/><script src="../assets/js/i18n.js"></script><link href="../rinjani-playbook.html" hreflang="ko" rel="alternate"/><link href="rinjani-playbook.html" hreflang="en" rel="alternate"/><link href="../rinjani-playbook.html" hreflang="x-default" rel="alternate"/></head><body><a class="skip-link" href="#mainContent">Skip to main content</a><header class="header"><div class="wrap header-inner"><a class="brand" href="../index.html"><div class="logo"><svg aria-label="MT Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
+</svg></div><div><h1>Mount Rinjani</h1><p>Rinjani · Volcano god of Lombok 3,726 m · Segara Anak lake</p></div></a><div class="lang-toggle"><button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button><button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button></div><button class="theme-btn" id="themeBtn">◐</button> <button aria-controls="navDrawer" aria-expanded="false" aria-label="Open Navigation Menu" class="menu-toggle-btn" id="menuToggleBtn">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+</div></header><section class="hero hero-bleed">
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="../assets/img/rinjani/hero-640.avif 640w, ../assets/img/rinjani/hero-1024.avif 1024w, ../assets/img/rinjani/hero-1600.avif 1600w, ../assets/img/rinjani/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="../assets/img/rinjani/hero-640.webp 640w, ../assets/img/rinjani/hero-1024.webp 1024w, ../assets/img/rinjani/hero-1600.webp 1600w, ../assets/img/rinjani/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="Rinjani's crater lake and mighty ridgelines" class="hero-img" sizes="100vw" src="../assets/img/rinjani/hero-1600.jpg" srcset="../assets/img/rinjani/hero-640.jpg 640w, ../assets/img/rinjani/hero-1024.jpg 1024w, ../assets/img/rinjani/hero-1600.jpg 1600w, ../assets/img/rinjani/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg> Mount Rinjani Playbook</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">Mount Rinjani Playbook</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+      A guide to Indonesia's second-highest volcano, Rinjani (3,726 m) — the Segara Anak crater lake, a pre-dawn summit push, and the permits and guide rules that shape the trek.
+    </p>
+<div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);">
+<button class="course-btn active green" data-course="beginner"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg> Beginner: Senaru Rim Trek</button>
+<button class="course-btn blue" data-course="intermediate"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg> Intermediate: 2-Day Summit Climb</button>
+<button class="course-btn red" data-course="advanced"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg> Advanced: Lake Traverse</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://unsplash.com/photos/OYDPdqZdJY4" rel="noopener" target="_blank">Fahrul Razi</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
+</div>
+</section>
+<main class="wrap"><main class="wrap" id="mainContent"><section class="panel green active" id="beginner"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> Beginner</span><div><div class="panel-name">Senaru Crater Rim Trek</div><div class="panel-sub">Senaru → rim 2,641 m round trip · 2 days · about 12 km · 1 camp night</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Route</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Tips</button></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">Round trip</span>
+<span class="pill-value">~12 km</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">Duration</span>
+<span class="pill-value">2 days 1 night</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Rim</span>
+<span class="pill-value">2,641 m</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Difficulty</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter"><div class="meter-segments"><span class="segment active-medium"></span><span class="segment active-medium"></span><span class="segment active-medium"></span><span class="segment"></span><span class="segment"></span></div></div>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Guide</span>
+<span class="pill-value">Mandatory</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Base</span>
+<span class="pill-value">Senaru</span>
+</div>
+</div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">Senaru gate</span><span class="arr">→</span><span class="chip">Jungle climb</span><span class="arr">→</span><span class="chip">Rim 2,641 m camp</span><span class="arr">→</span><span class="chip">Descend</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="gbeginnergr" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#6a7d4c" stop-opacity=".34"></stop><stop offset="100%" stop-color="#6a7d4c" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 178 C170 170, 320 142, 470 108 S640 70, 700 56 L740 210 L20 210 Z" fill="url(#gbeginnergr)"></path><path d="M20 178 C170 170, 320 142, 470 108 S640 70, 700 56" fill="none" stroke="#6a7d4c" stroke-linecap="round" stroke-width="4"></path><circle cx="700" cy="56" fill="#6a7d4c" r="6"></circle><text fill="#6a7d4c" font-size="12" x="550" y="46">Rim 2,641 m</text></svg></div><p class="desc">A 2-day trek to the crater rim (2,641 m) overlooking Segara Anak lake and the summit. Gentler than the summit push but with concentrated altitude gain — a mandatory guide applies.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Route by Section</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Day 1</div><div><div class="seg-title">Senaru gate → Pos 3</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~6 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 5–6 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Climb rainforest stairs past rest points Pos 1–3; camp is set just below the rim.</p><div class="bar"><div class="fill" style="width:60%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Start in the morning to avoid afternoon rain. Outside the rainy season is safest.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 1 night</div><div><div class="seg-title">Rim camp</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> —</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> —</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Watch the lake and summit under the stars. Nights are cold.</p><div class="bar"><div class="fill" style="width:—%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Wind is strong on the rim — stake tents firmly and insulate well.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 2</div><div><div class="seg-title">Rim → Senaru descent</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~6 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 4–5 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Descend the same way; many stairs make knee braces useful.</p><div class="bar"><div class="fill" style="width:30%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Recover in the hot springs at Senaru village afterwards.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> Gear</h2><ul><li>Sleeping bag</li><li>Windproof layer</li><li>Headlamp</li><li>Rain shell</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Permits & guide</h2><ul><li>Entry ~IDR 200–250k/day (foreigners)</li><li>Guide mandatory (no solo)</li><li>Tours ~$130–285</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Cautions</h2><ul><li>Closed Jan–Mar (rainy season)</li><li>Rim winds</li><li>Leeches & slippery trails</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Concept Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M110 335 C240 318, 350 270, 460 215 S620 100, 695 58" fill="none" stroke="#6a7d4c" stroke-linecap="round" stroke-width="6"></path><circle cx="110" cy="335" fill="#6a7d4c" r="10"></circle><circle cx="460" cy="215" fill="#6a7d4c" r="8"></circle><circle cx="695" cy="58" fill="#6a7d4c" r="12"></circle><text font-size="12" x="50" y="363">Senaru gate</text><text font-size="12" x="535" y="40">Rim 2,641 m</text><text fill="var(--muted)" font-size="12" x="34" y="44">Senaru rim entry trek</text></svg></div><div class="section-title"><h2>Checkpoints</h2><div class="line"></div></div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Senaru gate</span>
+<span class="badge badge-trailhead">Starting Point</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~600 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 1 · 0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Permit check
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Pos 1–3</span>
+<span class="badge badge-shelter">Rest</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~1,500 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Mid Day 1</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Shelters
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Rim 2,641 m</span>
+<span class="badge badge-summit">Camp</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 2,641 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~6 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Camp · views
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Descent start</span>
+<span class="badge badge-trailhead">Descent</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 2,641 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 2 · 0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> —
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Back at Senaru</span>
+<span class="badge badge-trailhead">End</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~600 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~6 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Village · hot springs
+      </div>
+</div>
+</div>
+</div></div></div></div>
+</section>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> Intermediate</span><div><div class="panel-name">2-Day Summit Climb</div><div class="panel-sub">Sembalun → rim overnight → dawn summit 3,726 m → descend · about 22 km</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Route</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Tips</button></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">Total distance</span>
+<span class="pill-value">~22 km</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">Duration</span>
+<span class="pill-value">2 days 1 night</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Summit</span>
+<span class="pill-value">3,726 m</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Difficulty</span>
+<div aria-label="난이도: 4단계" class="difficulty-meter"><div class="meter-segments"><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment"></span></div></div>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Guide</span>
+<span class="pill-value">Mandatory</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Base</span>
+<span class="pill-value">Sembalun</span>
+</div>
+</div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">Sembalun gate</span><span class="arr">→</span><span class="chip">Rim overnight</span><span class="arr">→</span><span class="chip">Dawn summit 3,726 m</span><span class="arr">→</span><span class="chip">Descend</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="gintermediatebl" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#456e96" stop-opacity=".34"></stop><stop offset="100%" stop-color="#456e96" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 190 C170 182, 320 155, 470 118 S640 60, 740 40 L740 210 L20 210 Z" fill="url(#gintermediatebl)"></path><path d="M20 190 C170 182, 320 155, 470 118 S640 60, 740 40" fill="none" stroke="#456e96" stroke-linecap="round" stroke-width="4"></path><circle cx="740" cy="40" fill="#456e96" r="6"></circle><text fill="#456e96" font-size="12" x="590" y="30">Summit 3,726 m</text></svg></div><p class="desc">Rinjani's standard summit course. Day 1 climbs from Sembalun (east) to the rim for the night; Day 2 sets off at 03:00 up the volcanic scree to the summit (3,726 m) for sunrise over Segara Anak. The steep scree makes the descent treacherous.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Route by Section</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Day 1</div><div><div class="seg-title">Sembalun gate → rim</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~8 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 6–8 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Climb savanna and volcanic scree to the rim (~2,800 m) for the night.</p><div class="bar"><div class="fill" style="width:60%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Afternoon winds are strong — pitch tents sheltered from crosswind.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 1 night</div><div><div class="seg-title">Rim overnight</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> —</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> —</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The standard is lights-out at 19:00–20:00 before the dawn push.</p><div class="bar"><div class="fill" style="width:—%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Repack a light pack for the summit push.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 2</div><div><div class="seg-title">Dawn summit push</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~3 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 2.5–3.5 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>From 03:00 climb the scree ("two steps up, one slide back") to the summit — sunrise over Segara Anak is spectacular.</p><div class="bar"><div class="fill" style="width:92%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> The descent is riskier — step toe-first and control the scree.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 2</div><div><div class="seg-title">Sembalun descent</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~8 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 4–5 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Return the same way; knee braces are practically mandatory.</p><div class="bar"><div class="fill" style="width:30%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Many tours include a post-trek meal at Sembalun village.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> Gear</h2><ul><li>Sleeping bag (sub-5°C)</li><li>Insulated jacket & gloves</li><li>Headlamp</li><li>Dust mask (volcanic ash)</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Permits & booking</h2><ul><li>240 international trekkers/day cap</li><li>Guide mandatory · tours $130–285</li><li>Book weeks ahead in season</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Cautions</h2><ul><li>Closed Jan–Mar</li><li>Scree descent hazard</li><li>Rim winds</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Concept Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M95 345 C210 332, 320 300, 430 255 S630 90, 705 50" fill="none" stroke="#456e96" stroke-linecap="round" stroke-width="6"></path><circle cx="95" cy="345" fill="#456e96" r="10"></circle><circle cx="430" cy="255" fill="#456e96" r="8"></circle><circle cx="705" cy="50" fill="#456e96" r="12"></circle><text font-size="12" x="35" y="373">Sembalun gate</text><text font-size="12" x="545" y="32">Summit 3,726 m</text><text fill="var(--muted)" font-size="12" x="34" y="44">Standard Sembalun summit course</text></svg></div><div class="section-title"><h2>Checkpoints</h2><div class="line"></div></div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Sembalun gate</span>
+<span class="badge badge-trailhead">Starting Point</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~1,150 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 1 · 0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Permit check
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Pos rest points</span>
+<span class="badge badge-shelter">Rest</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~2,000 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Mid Day 1</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Shelters
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Rim camp</span>
+<span class="badge badge-summit">Camp</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~2,800 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~8 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Camp · views
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Summit 3,726 m</span>
+<span class="badge badge-summit">Summit</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 3,726 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 2 dawn</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Lake sunrise
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Back at Sembalun</span>
+<span class="badge badge-trailhead">End</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~1,150 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 2 descent</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Village
+      </div>
+</div>
+</div>
+</div></div></div></div>
+</section>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> Advanced</span><div><div class="panel-name">Lake Traverse Course</div><div class="panel-sub">Senaru → rim → Segara Anak lake → summit → Sembalun · 3–4 days</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Route</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Tips</button></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">Total distance</span>
+<span class="pill-value">~30 km+</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">Duration</span>
+<span class="pill-value">3–4 days</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Summit</span>
+<span class="pill-value">3,726 m</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Difficulty</span>
+<div aria-label="난이도: 5단계" class="difficulty-meter"><div class="meter-segments"><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment active-hard"></span></div></div>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Format</span>
+<span class="pill-value">Lake + summit</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Support</span>
+<span class="pill-value">Guide + porter</span>
+</div>
+</div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">Senaru → rim</span><span class="arr">→</span><span class="chip">Descend to lake</span><span class="arr">→</span><span class="chip">Summit climb</span><span class="arr">→</span><span class="chip">Sembalun descent</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="gadvancedre" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9f5845" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9f5845" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 192 C170 185, 300 165, 440 130 S620 66, 740 42 L740 210 L20 210 Z" fill="url(#gadvancedre)"></path><path d="M20 192 C170 185, 300 165, 440 130 S620 66, 740 42" fill="none" stroke="#9f5845" stroke-linecap="round" stroke-width="4"></path><circle cx="740" cy="42" fill="#9f5845" r="6"></circle><text fill="#9f5845" font-size="12" x="590" y="32">Summit 3,726 m</text></svg></div><p class="desc">The complete Rinjani experience: descend from the Senaru rim to the Segara Anak crater lake and its hot springs, then climb the Sembalun side for a dawn summit before traversing out. 3–4 days with guide and porter mandatory.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Route by Section</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">Day 1</div><div><div class="seg-title">Senaru → rim</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~6 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 5–6 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Climb to the rim as on the beginner course; camp overnight.</p><div class="bar"><div class="fill" style="width:25%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Arrive with time to spare — the lake descent is steep.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 2</div><div><div class="seg-title">Rim → Segara Anak lake</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~2 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 2–3 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Descend the steep slope to the crater lake and hot springs; camp by the lake.</p><div class="bar"><div class="fill" style="width:50%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> The descent is steep and slippery — take it slowly.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 3</div><div><div class="seg-title">Lake → Sembalun rim</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~5 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 5–6 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Big climb out of the lake to the Sembalun-side rim — the hardest section of the traverse.</p><div class="bar"><div class="fill" style="width:75%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Concentrated altitude gain — hydrate and replace electrolytes.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">Day 4</div><div><div class="seg-title">Dawn summit → Sembalun descent</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> ~11 km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 7–9 h</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Dawn summit push followed by the long descent to Sembalun.</p><div class="bar"><div class="fill" style="width:95%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Energy management is everything on the final day — respect start times.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> Gear</h2><ul><li>Sleeping bag</li><li>4 days of clothing & trail food</li><li>First-aid kit</li><li>Dust mask (volcanic ash)</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Tour</h2><ul><li>3–4 day packages recommended</li><li>Guide, porter, meals included</li><li>Book early in the season</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Cautions</h2><ul><li>Continuous altitude swings</li><li>Lake descent slope</li><li>Check volcanic gas notices</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Concept Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M85 350 C200 340, 310 310, 420 262 S620 100, 700 52" fill="none" stroke="#9f5845" stroke-linecap="round" stroke-width="6"></path><circle cx="85" cy="350" fill="#9f5845" r="10"></circle><circle cx="430" cy="260" fill="#9f5845" r="8"></circle><circle cx="700" cy="52" fill="#9f5845" r="12"></circle><text font-size="12" x="25" y="378">Senaru</text><text font-size="12" x="540" y="34">Sembalun</text><text fill="var(--muted)" font-size="12" x="34" y="44">Full lake & summit traverse</text></svg></div><div class="section-title"><h2>Checkpoints</h2><div class="line"></div></div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Senaru gate</span>
+<span class="badge badge-trailhead">Starting Point</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~600 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 1 · 0 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Permit check
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Senaru rim</span>
+<span class="badge badge-summit">Camp</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 2,641 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 1 · ~6 km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Camp
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Segara Anak lake</span>
+<span class="badge badge-landmark">Attraction</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~2,000 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 2</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Hot springs · camp
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Summit 3,726 m</span>
+<span class="badge badge-summit">Summit</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 3,726 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 4 dawn</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Lake sunrise
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">Sembalun gate</span>
+<span class="badge badge-trailhead">End</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> ~1,150 m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> Day 4 descent</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Village
+      </div>
+</div>
+</div>
+</div></div></div></div>
+</section>
+</main><div id="deep-info-root" data-mountain="rinjani"></div>
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span> Rinjani Four Seasons &amp; Attractions
+  </h2>
+<div class="gallery-grid">
+<button aria-haspopup="dialog" aria-label="Rinjani range panorama View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/4CHdH9cMr0E' target='_blank' rel='noopener'&gt;Aaron Thomas&lt;/a&gt; on Unsplash" data-index="0">
+<picture class="gallery-picture">
+<source srcset="../assets/img/rinjani/g1.avif" type="image/avif"/>
+<source srcset="../assets/img/rinjani/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/rinjani/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Rinjani range panorama</span>
+</div>
+</button>
+<button aria-haspopup="dialog" aria-label="Rocky ridge scramble View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/1mFzrUgTic8' target='_blank' rel='noopener'&gt;Al ghazali&lt;/a&gt; on Unsplash" data-index="1">
+<picture class="gallery-picture">
+<source srcset="../assets/img/rinjani/g2.avif" type="image/avif"/>
+<source srcset="../assets/img/rinjani/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/rinjani/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Rocky ridge scramble</span>
+</div>
+</button>
+<button aria-haspopup="dialog" aria-label="Volcano in the clouds View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/pFBtd8_ynTY' target='_blank' rel='noopener'&gt;Fahrul Razi&lt;/a&gt; on Unsplash" data-index="2">
+<picture class="gallery-picture">
+<source srcset="../assets/img/rinjani/g3.avif" type="image/avif"/>
+<source srcset="../assets/img/rinjani/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/rinjani/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Volcano in the clouds</span>
+</div>
+</button>
+<button aria-haspopup="dialog" aria-label="Lombok rice fields & volcano View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/Qq0Coemj0Ng' target='_blank' rel='noopener'&gt;Maximus Beaumont&lt;/a&gt; on Unsplash" data-index="3">
+<picture class="gallery-picture">
+<source srcset="../assets/img/rinjani/g4.avif" type="image/avif"/>
+<source srcset="../assets/img/rinjani/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/rinjani/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Lombok rice fields & volcano</span>
+</div>
+</button>
+</div>
+</section></main><footer style="border-top:1px solid var(--border); padding: var(--space-8) var(--space-6); background-color: var(--surface); margin-top: var(--space-12);">
+<div class="wrap">
+<div class="footer-sitemap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-6); text-align: left; margin-bottom: var(--space-8); border-bottom: 1px solid var(--border); padding-bottom: var(--space-8);">
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Gyeonggi/Seoul</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="bukhansan-playbook.html" style="color: var(--muted); text-decoration: none;">Bukhansan</a>
+<a href="dobongsan-playbook.html" style="color: var(--muted); text-decoration: none;">Dobongsan</a>
+<a href="myeongseongsan-playbook.html" style="color: var(--muted); text-decoration: none;">Myeongseongsan</a>
+<a href="soyosan-playbook.html" style="color: var(--muted); text-decoration: none;">Soyosan</a>
+<a href="unaksan-playbook.html" style="color: var(--muted); text-decoration: none;">Unaksan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Gangwon</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="seoraksan-playbook.html" style="color: var(--muted); text-decoration: none;">Seoraksan</a>
+<a href="chiaksan-playbook.html" style="color: var(--muted); text-decoration: none;">Chiaksan</a>
+<a href="odaesan-playbook.html" style="color: var(--muted); text-decoration: none;">Odaesan</a>
+<a href="taebaeksan-playbook.html" style="color: var(--muted); text-decoration: none;">Taebaeksan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Chungcheong</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="sobaeksan-playbook.html" style="color: var(--muted); text-decoration: none;">Sobaeksan</a>
+<a href="gyeryongsan-playbook.html" style="color: var(--muted); text-decoration: none;">Gyeryongsan</a>
+<a href="minjusan-playbook.html" style="color: var(--muted); text-decoration: none;">Minjujisan</a>
+<a href="sikjangsan-playbook.html" style="color: var(--muted); text-decoration: none;">Sikjangsan</a>
+<a href="woraksan-playbook.html" style="color: var(--muted); text-decoration: none;">Woraksan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Jeolla</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="jirisan-playbook.html" style="color: var(--muted); text-decoration: none;">Jirisan</a>
+<a href="naejangsan-playbook.html" style="color: var(--muted); text-decoration: none;">Naejangsan</a>
+<a href="deogyusan-playbook.html" style="color: var(--muted); text-decoration: none;">Deogyusan</a>
+<a href="wolchulsan-playbook.html" style="color: var(--muted); text-decoration: none;">Wolchulsan</a>
+<a href="mudeungsan-playbook.html" style="color: var(--muted); text-decoration: none;">Mudeungsan</a>
+<a href="duryunsan-playbook.html" style="color: var(--muted); text-decoration: none;">Duryunsan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Gyeongsang / Jeju</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="gayasan-playbook.html" style="color: var(--muted); text-decoration: none;">Gayasan</a>
+<a href="juwangsan-playbook.html" style="color: var(--muted); text-decoration: none;">Juwangsan</a>
+<a href="hallasan-playbook.html" style="color: var(--muted); text-decoration: none;">Hallasan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Taiwan</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="yushan-playbook.html" style="color: var(--muted); text-decoration: none;">Yushan</a>
+<a href="xueshan-playbook.html" style="color: var(--muted); text-decoration: none;">Xueshan</a>
+<a href="yangmingshan-playbook.html" style="color: var(--muted); text-decoration: none;">Yangmingshan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Themes</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="cycling.html" style="color: var(--muted); text-decoration: none;">Cycling Routes</a>
+<a href="map.html" style="color: var(--muted); text-decoration: none;">Interactive Map</a>
+</div>
+</div>
+</div>
+<p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
+    MT Trails — National Hiking Playbook · National Park Reservation: <a href="https://reservation.knps.or.kr" rel="noopener" style="color: var(--primary); text-decoration: underline;" target="_blank">knps.or.kr</a><br/>
+    Some of the hiking photos and tracking videos on this site are original works photographed and produced by Dokyung Kim, with the videos published on the YouTube channel Dokyung Kim (@DK2560). They may be used for non-commercial purposes only, and credit must be given to the source and author (Dokyung Kim) upon use. (CC BY-NC 4.0 standard applied)<br/>
+    © 2026 MT Trails. All Rights Reserved.
+  </p>
+</div>
+</footer>
+<script>
+const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
+const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
+document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
+document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+</script><div aria-hidden="true" aria-label="View Image Larger" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1"><button aria-label="Close Gallery" class="lightbox-close">×</button><button aria-label="Previous Image" class="lightbox-prev">❮</button><button aria-label="Next Image" class="lightbox-next">❯</button><div class="lightbox-content"><figure class="lightbox-figure"><figcaption class="lightbox-caption"></figcaption></figure><div class="photo-credit lightbox-credit"></div></div></div><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script><script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+<!-- Navigation Drawer (Hamburger Menu) -->
+<div aria-hidden="true" aria-label="Navigation Menu" aria-modal="true" class="nav-drawer" id="navDrawer" role="dialog">
+<div class="nav-drawer-overlay" tabindex="-1"></div>
+<div class="nav-drawer-content">
+<div class="nav-drawer-header">
+<div class="nav-drawer-logo">
+<svg aria-label="MT Trails" class="logo-svg" height="30" role="img" viewbox="0 0 40 40" width="30">
+<defs><lineargradient id="kt-gold-drawer" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold-drawer)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold-drawer)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
+</svg>
+<span class="nav-drawer-logo-text">MT Trails</span>
+</div>
+<button aria-label="Close Menu" class="nav-drawer-close-btn" id="navDrawerCloseBtn">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</button>
+</div>
+<nav aria-label="Drawer Navigation" class="nav-drawer-menu">
+<a class="nav-drawer-link" href="../index.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Home
+      </a>
+<a class="nav-drawer-link" href="../index.html#mountainGrid">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="m8 3-7 18h22L16 7l-4 7-4-11Z"></path></svg>
+        Mountain List
+      </a>
+<a class="nav-drawer-link" href="cycling.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg>
+        Cycling
+      </a>
+<a class="nav-drawer-link" href="map.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Interactive Map
+      </a>
+<a class="nav-drawer-link" href="sitemap.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        Sitemap
+      </a>
+</nav>
+<div class="nav-drawer-divider"></div>
+<div class="nav-drawer-footer">
+<div class="nav-drawer-section-title">Settings</div>
+<div class="nav-drawer-settings">
+<button aria-label="Toggle Theme" class="drawer-theme-toggle" id="drawerThemeBtn">
+<span class="theme-icon"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+<span class="theme-label">Dark/Light Mode</span>
+</button>
+<div class="drawer-lang-toggle">
+<span class="lang-label">Language</span>
+<div class="lang-toggle">
+<button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="../assets/js/deep-info-data-en.js"></script>
+<script src="../assets/js/deep-info.js"></script>
+<script src="../assets/js/nav-drawer.js"></script>
+</body></html>

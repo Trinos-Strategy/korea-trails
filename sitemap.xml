@@ -666,4 +666,40 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://mttrails.trinos.group/rinjani-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/rinjani-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/rinjani-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/rinjani-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/poonhill-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/poonhill-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/poonhill-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/poonhill-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-06-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
