@@ -301,8 +301,8 @@
 <input aria-label="명산 검색" class="search-hero-input" id="searchInput" placeholder="산 이름, 고도, 지역 또는 설명 검색..." type="search"/>
 </div>
 <div aria-label="국가별 빠른 탐색" class="hero-quicknav">
-<button data-country="all" type="button">전체 35산</button>
-<button data-country="KR" type="button">한국 23산</button>
+<button data-country="all" type="button">전체 48산</button>
+<button data-country="KR" type="button">한국 33산</button>
 <button data-country="TW" type="button">대만 4산</button>
 <button data-country="JP" type="button">일본 2산</button>
 <button data-country="CN" type="button">중국 2산</button>
@@ -317,11 +317,11 @@
 <div class="hero-stat-label">탐방 국가</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">35</div>
+<div class="hero-stat-value">48</div>
 <div class="hero-stat-label">등록 명산</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">35</div>
+<div class="hero-stat-value">48</div>
 <div class="hero-stat-label">플레이북 완성</div>
 </div>
 </div>
@@ -421,6 +421,10 @@
         <a href="myeongseongsan-playbook.html" style="color: var(--muted); text-decoration: none;">명성산</a>
         <a href="soyosan-playbook.html" style="color: var(--muted); text-decoration: none;">소요산</a>
         <a href="unaksan-playbook.html" style="color: var(--muted); text-decoration: none;">운악산</a>
+        <a href="gwanaksan-playbook.html" style="color: var(--muted); text-decoration: none;">관악산</a>
+        <a href="suraksan-playbook.html" style="color: var(--muted); text-decoration: none;">수락산</a>
+        <a href="cheonggyesan-playbook.html" style="color: var(--muted); text-decoration: none;">청계산</a>
+        <a href="achasan-playbook.html" style="color: var(--muted); text-decoration: none;">아차산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -430,6 +434,9 @@
         <a href="chiaksan-playbook.html" style="color: var(--muted); text-decoration: none;">치악산</a>
         <a href="odaesan-playbook.html" style="color: var(--muted); text-decoration: none;">오대산</a>
         <a href="taebaeksan-playbook.html" style="color: var(--muted); text-decoration: none;">태백산</a>
+        <a href="geumjeongsan-playbook.html" style="color: var(--muted); text-decoration: none;">금정산</a>
+        <a href="palgongsan-playbook.html" style="color: var(--muted); text-decoration: none;">팔공산</a>
+        <a href="unmunsan-playbook.html" style="color: var(--muted); text-decoration: none;">운문산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -440,6 +447,7 @@
         <a href="minjusan-playbook.html" style="color: var(--muted); text-decoration: none;">민주지산</a>
         <a href="sikjangsan-playbook.html" style="color: var(--muted); text-decoration: none;">식장산</a>
         <a href="woraksan-playbook.html" style="color: var(--muted); text-decoration: none;">월악산</a>
+        <a href="songnisan-playbook.html" style="color: var(--muted); text-decoration: none;">속리산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -451,6 +459,8 @@
         <a href="wolchulsan-playbook.html" style="color: var(--muted); text-decoration: none;">월출산</a>
         <a href="mudeungsan-playbook.html" style="color: var(--muted); text-decoration: none;">무등산</a>
         <a href="duryunsan-playbook.html" style="color: var(--muted); text-decoration: none;">두륜산</a>
+        <a href="daedunsan-playbook.html" style="color: var(--muted); text-decoration: none;">대둔산</a>
+        <a href="maisan-playbook.html" style="color: var(--muted); text-decoration: none;">마이산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -502,6 +512,9 @@
       <div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">네팔</div>
       <div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
         <a href="poonhill-playbook.html" style="color: var(--muted); text-decoration: none;">푼힐</a>
+        <a href="ebc-playbook.html" style="color: var(--muted); text-decoration: none;">에베레스트 BC</a>
+        <a href="act-playbook.html" style="color: var(--muted); text-decoration: none;">안나푸르나 서킷</a>
+        <a href="langtang-playbook.html" style="color: var(--muted); text-decoration: none;">랑탕 밸리</a>
       </div>
     </div></div>
     </div></div>
@@ -566,6 +579,19 @@ window.MOUNTAINS = [
   // ── 인도네시아·네팔 ──
   {id:'rinjani',       name:'라위니',      alt:'3,726m', region:'인도네시아', dist:'22km',   time:'2일1박',   country:'ID', diff:'hard',   done:true,  url:'rinjani-playbook.html',       desc:'롬복의 화산 신 3,726m. 새벽 정상 등반과 세가라아나크 화산호수. 일 240명 한정.', lat: 8.4114, lng: 116.4570},
   {id:'poonhill',      name:'푼힐',       alt:'3,210m', region:'네팔', dist:'40km',   time:'4-5일',    country:'NP', diff:'medium', done:true,  url:'poonhill-playbook.html',      desc:'네팔 트레킹 입문 정석. 티하우스 4~5일로 아나푸르나 일출 전망대 3,210m.', lat: 28.3950, lng: 83.6867},
+  {id:'gwanaksan', name:'관악산', alt:'629m', region:'경기', dist:'6km', time:'2.5-3시간', country:'KR', diff:'medium', done:true, url:'gwanaksan-playbook.html', desc:'서울 남쪽의 진산. 연주대 계곡과 관악사·영봉 암릉..', lat: 37.4449, lng: 126.9797},
+  {id:'suraksan', name:'수락산', alt:'638m', region:'경기', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'suraksan-playbook.html', desc:'노원의 진산. 방아머리 계곡과 수락중앙 능선 암릉..', lat: 37.6872, lng: 127.0322},
+  {id:'cheonggyesan', name:'청계산', alt:'618m', region:'경기', dist:'6km', time:'3-4시간', country:'KR', diff:'medium', done:true, url:'cheonggyesan-playbook.html', desc:'성남·과천 도심 명산. 대교봉 전망과 매탄 능선..', lat: 37.4347, lng: 127.0567},
+  {id:'achasan', name:'아차산', alt:'296m', region:'경기', dist:'3km', time:'2시간', country:'KR', diff:'easy', done:true, url:'achasan-playbook.html', desc:'한강 위 저산. 아차산성 유적과 서울 스카이라인..', lat: 37.5656, lng: 127.1025},
+  {id:'geumjeongsan', name:'금정산', alt:'742m', region:'경상', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'geumjeongsan-playbook.html', desc:'부산의 진산. 금정산성·범어사·고당봉 742m..', lat: 35.2733, lng: 129.05},
+  {id:'palgongsan', name:'팔공산', alt:'1,192m', region:'경상', dist:'9km', time:'5-6시간', country:'KR', diff:'medium', done:true, url:'palgongsan-playbook.html', desc:'대구의 진산. 동화사·갓바위·비로봉 1,192m..', lat: 35.9869, lng: 128.5769},
+  {id:'unmunsan', name:'운문산', alt:'1,188m', region:'경상', dist:'8km', time:'5시간', country:'KR', diff:'medium', done:true, url:'unmunsan-playbook.html', desc:'울산·경남 명산. 태고사·운문사·대운문 능선..', lat: 35.45, lng: 129.03},
+  {id:'songnisan', name:'속리산', alt:'1,058m', region:'충청', dist:'12km', time:'6-7시간', country:'KR', diff:'medium', done:true, url:'songnisan-playbook.html', desc:'국립공원 속리산. 법주사·문장대·천황봉 1,058m..', lat: 36.5364, lng: 127.7517},
+  {id:'daedunsan', name:'대둔산', alt:'878m', region:'전라', dist:'7km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'daedunsan-playbook.html', desc:'구름다리·만천하 전망대·낙차 절벽의 극적 지형..', lat: 35.8636, lng: 127.3733},
+  {id:'maisan', name:'마이산', alt:'683m', region:'전라', dist:'8km', time:'4시간', country:'KR', diff:'medium', done:true, url:'maisan-playbook.html', desc:'타조바위 쌍봉과 길상사·금당사의 기이한 암봉..', lat: 35.8086, lng: 127.42},
+  {id:'ebc', name:'에베레스트 BC', alt:'5,364m', region:'네팔', dist:'130km', time:'12일', country:'NP', diff:'expert', done:true, url:'ebc-playbook.html', desc:'세계 최고의 트레킹. 남체·딩보체 적응 후 EBC 5,364m 도달..', lat: 27.9881, lng: 86.925},
+  {id:'act', name:'안나푸르나 서킷', alt:'5,416m', region:'네팔', dist:'160km', time:'14일', country:'NP', diff:'expert', done:true, url:'act-playbook.html', desc:'토롱라 고개 5,416m를 넘는 세계적 장거리 서킷..', lat: 28.5983, lng: 83.9186},
+  {id:'langtang', name:'랑탕 밸리', alt:'4,984m', region:'네팔', dist:'34km', time:'9-10일', country:'NP', diff:'hard', done:true, url:'langtang-playbook.html', desc:'카트만두 근교 히말라야 계곡 트레킹. 체르코리 4,984m 전망..', lat: 28.2372, lng: 85.6855},
   // ── 일본 명산 ──
   {id:'fuji',         name:'후지산(富士山)', alt:'3,776m', region:'일본', dist:'13.6km', time:'1박2일',   diff:'expert', done:true,  url:'fuji-playbook.html',         country:'JP', desc:'일본 최고봉. 8합 산장 1박 후 새벽 등정이 표준. 요시다 루트 예약제·통행료 4,000엔(2025~).', lat: 35.3606, lng: 138.7274},
 ];
@@ -589,6 +615,19 @@ document.addEventListener('DOMContentLoaded', () => {
     { base: 'assets/img/kinabalu', video: null, alt: '구름 위로 솟은 킨리산의 웅장한 화강암 봉우리' },
     { base: 'assets/img/rinjani', video: null, alt: '라위니 화산의 크레이터 호수와 웅장한 산맥' },
     { base: 'assets/img/poonhill', video: null, alt: '구름 위로 솟은 아나푸르나 산맥의 눈 덮인 봉우리들' },
+     { base: 'assets/img/gwanaksan', video: null, alt: '한국 관악산의 계곡과 암릉' },
+    { base: 'assets/img/suraksan', video: null, alt: '한국 수락산의 능선과 숲' },
+    { base: 'assets/img/cheonggyesan', video: null, alt: '한국 청계산의 대교봉 전망' },
+    { base: 'assets/img/achasan', video: null, alt: '한국 아차산성과 한강 전망' },
+    { base: 'assets/img/geumjeongsan', video: null, alt: '한국 금정산성과 부산 전경' },
+    { base: 'assets/img/palgongsan', video: null, alt: '한국 팔공산의 동화사와 비로봉' },
+    { base: 'assets/img/unmunsan', video: null, alt: '한국 운문산의 대운문 능선' },
+    { base: 'assets/img/songnisan', video: null, alt: '한국 속리산의 법주사와 천황봉' },
+    { base: 'assets/img/daedunsan', video: null, alt: '한국 대둔산의 구름다리와 만천하' },
+    { base: 'assets/img/maisan', video: null, alt: '한국 마이산의 타조바위 쌍봉' },
+    { base: 'assets/img/ebc', video: null, alt: '에베레스트 베이스캠프의 기도 깃발과 설산' },
+    { base: 'assets/img/act', video: null, alt: '안나푸르나 서킷의 마을과 설산' },
+    { base: 'assets/img/langtang', video: null, alt: '랑탕 밸리의 기도 깃발과 설산 호수' },
   ];
   const heroPick = HERO_ROTATION[Math.floor(Math.random() * HERO_ROTATION.length)];
   const heroPicture = document.getElementById('heroFallbackImage');

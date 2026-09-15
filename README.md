@@ -13,7 +13,7 @@
 ## ✨ 주요 기능
 
 - 🗺 **인터랙티브 월드 맵** — Leaflet 기반, 한국·대만 명산 마커와 플레이북 바로가기
-- 📖 **등산 플레이북 35종** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 실사 지도
+- 📖 **등산 플레이북 48종** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 실사 지도
 - 🧭 **심화 탐방 정보** — 입산·예약(국내 탐방로 예약제/해외 입산허가), 교통, 숙박, 안전·비상연락 (`STANDARD-DEEP-INFO.md` 표준)
 - 🔍 **검색·필터·정렬** — 지역/난이도/플레이북 상태 필터와 고도·이름 정렬
 - 🌐 **한국어/영어 이중 제공** — 모든 페이지의 `en/` 미러
@@ -21,14 +21,14 @@
 
 ---
 
-## 📂 플레이북 현황 (35산)
+## 📂 플레이북 현황 (48산)
 
 | 지역 | 산 |
 |---|---|
 | 강원 | [설악산](./seoraksan-playbook.html) · [치악산](./chiaksan-playbook.html) · [오대산](./odaesan-playbook.html) · [태백산](./taebaeksan-playbook.html) |
-| 경기/서울 | [북한산](./bukhansan-playbook.html) · [도봉산](./dobongsan-playbook.html) · [명성산](./myeongseongsan-playbook.html) · [소요산](./soyosan-playbook.html) · [운악산](./unaksan-playbook.html) |
-| 충청 | [소백산](./sobaeksan-playbook.html) · [계룡산](./gyeryongsan-playbook.html) · [민주지산](./minjusan-playbook.html) · [식장산](./sikjangsan-playbook.html) · [월악산](./woraksan-playbook.html) |
-| 전라 | [지리산](./jirisan-playbook.html) · [내장산](./naejangsan-playbook.html) · [덕유산](./deogyusan-playbook.html) · [월출산](./wolchulsan-playbook.html) · [무등산](./mudeungsan-playbook.html) · [두륜산](./duryunsan-playbook.html) |
+| 경기/서울 | [북한산](./bukhansan-playbook.html) · [도봉산](./dobongsan-playbook.html) · [명성산](./myeongseongsan-playbook.html) · [소요산](./soyosan-playbook.html) · [운악산](./unaksan-playbook.html) | · [관악산](./gwanaksan-playbook.html) · [수락산](./suraksan-playbook.html) · [청계산](./cheonggyesan-playbook.html) · [아차산](./achasan-playbook.html)
+| 충청 | [소백산](./sobaeksan-playbook.html) · [계룡산](./gyeryongsan-playbook.html) · [민주지산](./minjusan-playbook.html) · [식장산](./sikjangsan-playbook.html) · [월악산](./woraksan-playbook.html) | · [속리산](./songnisan-playbook.html)
+| 전라 | [지리산](./jirisan-playbook.html) · [내장산](./naejangsan-playbook.html) · [덕유산](./deogyusan-playbook.html) · [월출산](./wolchulsan-playbook.html) · [무등산](./mudeungsan-playbook.html) · [두륜산](./duryunsan-playbook.html) | · [대둔산](./daedunsan-playbook.html) · [마이산](./maisan-playbook.html)
 | 경상/제주 | [가야산](./gayasan-playbook.html) · [주왕산](./juwangsan-playbook.html) · [한라산](./hallasan-playbook.html) |
 | 대만 | [위산(玉山, 3,952m)](./yushan-playbook.html) · [설산(雪山, 3,886m)](./xueshan-playbook.html) · [양명산(陽明山)](./yangmingshan-playbook.html) · [아리산(阿里山, 2,663m)](./alishan-playbook.html) |
 | 일본 | [후지산(富士山, 3,776m)](./fuji-playbook.html) · [타테야마(立山, 3,003m)](./tateyama-playbook.html) |
@@ -36,9 +36,11 @@
 | 베트남 | [판시판(3,143m)](./fansipan-playbook.html) |
 | 말레이시아 | [킨리산(4,095m)](./kinabalu-playbook.html) |
 | 인도네시아 | [라위니(3,726m)](./rinjani-playbook.html) |
-| 네팔 | [푼힐(3,210m)](./poonhill-playbook.html) |
+| 네팔 | [푼힐(3,210m)](./poonhill-playbook.html) | · [에베레스트 BC](./ebc-playbook.html) · [안나푸르나 서킷](./act-playbook.html) · [랑탕 밸리](./langtang-playbook.html)
 
 테마 페이지: [사이클링 코스](./cycling.html) · [인터랙티브 지도](./map.html) · [사이트맵](./sitemap.html)
+
+**히말라야 카테고리** — 일반인이 도전할 수 있는 히말라야 트레킹(EBC·안나푸르나 서킷·랑탕 밸리)을 추가했습니다.
 
 **로드맵** — 다음 확장 대상: 타테야마·아리산, 황산·타이산, 동남아·네팔 트레킹. 표준·확장 절차는 [`STANDARD-DEEP-INFO.md`](./STANDARD-DEEP-INFO.md) §4를 따릅니다.
 

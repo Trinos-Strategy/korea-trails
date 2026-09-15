@@ -1217,3 +1217,241 @@ window.DEEP_INFO_EN['poonhill'] = {
     { label: 'Details published in this site\'s Poon Hill playbook', href: 'poonhill-playbook.html' },
   ],
 };
+
+// ── Korea 100 Famous Mountains (10 mountains) ──
+
+window.DEEP_INFO_EN['gwanaksan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Gwanaksan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Gwanaksan playbook', href: 'gwanaksan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['suraksan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Suraksan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Suraksan playbook', href: 'suraksan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['cheonggyesan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Cheonggyesan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Cheonggyesan playbook', href: 'cheonggyesan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['achasan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Achasan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Achasan playbook', href: 'achasan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['geumjeongsan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Geumjeongsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Geumjeongsan playbook', href: 'geumjeongsan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['palgongsan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Palgongsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Palgongsan playbook', href: 'palgongsan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['unmunsan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Unmunsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Unmunsan playbook', href: 'unmunsan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['songnisan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Songnisan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Songnisan playbook', href: 'songnisan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['daedunsan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Daedunsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Daedunsan playbook', href: 'daedunsan-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['maisan'] = {
+  updated: 'As of 2026-09',
+  note: 'Korea 100 Famous Mountains expansion',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Maisan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
+      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
+      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s Maisan playbook', href: 'maisan-playbook.html' },
+  ],
+};
+
+// ── Himalaya category 3 treks ──
+
+window.DEEP_INFO_EN['ebc'] = {
+  updated: 'As of 2026-09',
+  note: 'Himalaya category',
+  sections: [
+    { icon: 'book', title: 'Permits', items: [
+      { h: 'Trekking permits', tag: 'Required', body: 'Everest Base Camp trekking requires national park entry and municipality permits (~NPR 6,000 total). A guide has been mandatory since 2023.' },
+      { h: 'Insurance', tag: 'Required', body: 'Trekking insurance (including helicopter evacuation) is de-facto mandatory — the route includes sections above 5,000 m.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Local emergency numbers', tag: 'Required', body: 'Nepal: police 100, ambulance 102, unified 112. Descend immediately if altitude symptoms appear.' },
+      { h: 'Season', tag: 'Recommended', body: 'March–May (spring) and October–November (autumn) are optimal. Winter high-altitude camping is for experts only.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s playbook', href: 'ebc-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['act'] = {
+  updated: 'As of 2026-09',
+  note: 'Himalaya category',
+  sections: [
+    { icon: 'book', title: 'Permits', items: [
+      { h: 'Trekking permits', tag: 'Required', body: 'Annapurna Circuit trekking requires national park entry and municipality permits (~NPR 6,000 total). A guide has been mandatory since 2023.' },
+      { h: 'Insurance', tag: 'Required', body: 'Trekking insurance (including helicopter evacuation) is de-facto mandatory — the route includes sections above 5,000 m.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Local emergency numbers', tag: 'Required', body: 'Nepal: police 100, ambulance 102, unified 112. Descend immediately if altitude symptoms appear.' },
+      { h: 'Season', tag: 'Recommended', body: 'March–May (spring) and October–November (autumn) are optimal. Winter high-altitude camping is for experts only.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s playbook', href: 'act-playbook.html' },
+  ],
+};
+
+window.DEEP_INFO_EN['langtang'] = {
+  updated: 'As of 2026-09',
+  note: 'Himalaya category',
+  sections: [
+    { icon: 'book', title: 'Permits', items: [
+      { h: 'Trekking permits', tag: 'Required', body: 'Langtang Valley trekking requires national park entry and municipality permits (~NPR 6,000 total). A guide has been mandatory since 2023.' },
+      { h: 'Insurance', tag: 'Required', body: 'Trekking insurance (including helicopter evacuation) is de-facto mandatory — the route includes sections above 5,000 m.' },
+    ]},
+    { icon: 'shield', title: 'Safety & Emergency', items: [
+      { h: 'Local emergency numbers', tag: 'Required', body: 'Nepal: police 100, ambulance 102, unified 112. Descend immediately if altitude symptoms appear.' },
+      { h: 'Season', tag: 'Recommended', body: 'March–May (spring) and October–November (autumn) are optimal. Winter high-altitude camping is for experts only.' },
+    ]},
+  ],
+  sources: [
+    { label: 'Details published in this site\'s playbook', href: 'langtang-playbook.html' },
+  ],
+};
