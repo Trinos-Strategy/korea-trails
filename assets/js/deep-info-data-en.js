@@ -1455,3 +1455,96 @@ window.DEEP_INFO_EN['langtang'] = {
     { label: 'Details published in this site\'s playbook', href: 'langtang-playbook.html' },
   ],
 };
+
+// ── Korea 100 Famous Mountains 2nd batch (7 mountains) ──
+
+window.DEEP_INFO_EN['inwangsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 2nd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Inwangsan is one of Korea\'s 100 Famous Mountains. No separate permit needed. Check trail hours before visiting.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue. Descend two hours before sunset.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in this site\'s playbook', href: 'inwangsan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['gajisan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 2nd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Gajisan is one of Korea\'s 100 Famous Mountains. No separate permit needed. Check trail hours before visiting.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue. Descend two hours before sunset.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in this site\'s playbook', href: 'gajisan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['hwawangsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 2nd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Hwawangsan is one of Korea\'s 100 Famous Mountains. No separate permit needed. Check trail hours before visiting.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue. Descend two hours before sunset.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in this site\'s playbook', href: 'hwawangsan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['unjangsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 2nd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Unjangsan is one of Korea\'s 100 Famous Mountains. No separate permit needed. Check trail hours before visiting.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue. Descend two hours before sunset.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in this site\'s playbook', href: 'unjangsan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['yeongchwisan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 2nd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Yeongchwisan is one of Korea\'s 100 Famous Mountains. No separate permit needed. Check trail hours before visiting.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue. Descend two hours before sunset.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in this site\'s playbook', href: 'yeongchwisan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['biseulsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 2nd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Biseulsan is one of Korea\'s 100 Famous Mountains. No separate permit needed. Check trail hours before visiting.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue. Descend two hours before sunset.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in this site\'s playbook', href: 'biseulsan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['cheongnyangsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 2nd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Cheongnyangsan is one of Korea\'s 100 Famous Mountains. No separate permit needed. Check trail hours before visiting.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue. Descend two hours before sunset.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in this site\'s playbook', href: 'cheongnyangsan-playbook.html' }],
+};

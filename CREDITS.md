@@ -336,3 +336,10 @@ Some of the hiking photos and tracking videos on this site are original works ph
 | 랑탕 밸리 | Sergey Pesterev, Balaram Thapa, Anmol Adhikari 등 |
 
 (개별 사진 출처는 각 페이지 gallery credit 참조)
+
+## 한국 100대 명산 2차(7산) — Unsplash (Unsplash License)
+※ 실제 산별 사진이 아닌 한국 산악 경험 중심 일반 사진임을 명시합니다.
+
+| 산 | 사진작가들 |
+|---|---|
+| 인왕산·가지산·화왕산·운장산·영취산·비슬산·청량산 | (개별 출처는 각 페이지 gallery 참조) |
