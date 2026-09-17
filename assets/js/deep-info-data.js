@@ -1545,3 +1545,96 @@ window.DEEP_INFO['langtang'] = {
     { label: '본 사이트 플레이북 게재 정보', href: 'langtang-playbook.html' },
   ],
 };
+
+// ── 한국 100대 명산 2차(7산) ──
+
+window.DEEP_INFO['inwangsan'] = {
+  updated: '2026-09 기준', note: '한국 100대 명산 2차',
+  sections: [
+    { icon: 'book', title: '입산·기본', items: [
+      { h: '탐방 기본', tag: '참고', body: '인왕산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
+    ]},
+    { icon: 'shield', title: '안전', items: [
+      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
+    ]},
+  ],
+  sources: [{ label: '본 사이트 인왕산 플레이북', href: 'inwangsan-playbook.html' }],
+};
+
+window.DEEP_INFO['gajisan'] = {
+  updated: '2026-09 기준', note: '한국 100대 명산 2차',
+  sections: [
+    { icon: 'book', title: '입산·기본', items: [
+      { h: '탐방 기본', tag: '참고', body: '가지산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
+    ]},
+    { icon: 'shield', title: '안전', items: [
+      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
+    ]},
+  ],
+  sources: [{ label: '본 사이트 가지산 플레이북', href: 'gajisan-playbook.html' }],
+};
+
+window.DEEP_INFO['hwawangsan'] = {
+  updated: '2026-09 기준', note: '한국 100대 명산 2차',
+  sections: [
+    { icon: 'book', title: '입산·기본', items: [
+      { h: '탐방 기본', tag: '참고', body: '화왕산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
+    ]},
+    { icon: 'shield', title: '안전', items: [
+      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
+    ]},
+  ],
+  sources: [{ label: '본 사이트 화왕산 플레이북', href: 'hwawangsan-playbook.html' }],
+};
+
+window.DEEP_INFO['unjangsan'] = {
+  updated: '2026-09 기준', note: '한국 100대 명산 2차',
+  sections: [
+    { icon: 'book', title: '입산·기본', items: [
+      { h: '탐방 기본', tag: '참고', body: '운장산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
+    ]},
+    { icon: 'shield', title: '안전', items: [
+      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
+    ]},
+  ],
+  sources: [{ label: '본 사이트 운장산 플레이북', href: 'unjangsan-playbook.html' }],
+};
+
+window.DEEP_INFO['yeongchwisan'] = {
+  updated: '2026-09 기준', note: '한국 100대 명산 2차',
+  sections: [
+    { icon: 'book', title: '입산·기본', items: [
+      { h: '탐방 기본', tag: '참고', body: '영취산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
+    ]},
+    { icon: 'shield', title: '안전', items: [
+      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
+    ]},
+  ],
+  sources: [{ label: '본 사이트 영취산 플레이북', href: 'yeongchwisan-playbook.html' }],
+};
+
+window.DEEP_INFO['biseulsan'] = {
+  updated: '2026-09 기준', note: '한국 100대 명산 2차',
+  sections: [
+    { icon: 'book', title: '입산·기본', items: [
+      { h: '탐방 기본', tag: '참고', body: '비슬산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
+    ]},
+    { icon: 'shield', title: '안전', items: [
+      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
+    ]},
+  ],
+  sources: [{ label: '본 사이트 비슬산 플레이북', href: 'biseulsan-playbook.html' }],
+};
+
+window.DEEP_INFO['cheongnyangsan'] = {
+  updated: '2026-09 기준', note: '한국 100대 명산 2차',
+  sections: [
+    { icon: 'book', title: '입산·기본', items: [
+      { h: '탐방 기본', tag: '참고', body: '청량산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
+    ]},
+    { icon: 'shield', title: '안전', items: [
+      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
+    ]},
+  ],
+  sources: [{ label: '본 사이트 청량산 플레이북', href: 'cheongnyangsan-playbook.html' }],
+};
