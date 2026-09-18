@@ -1732,3 +1732,11 @@ window.DEEP_INFO['heuiyangsan'] = {updated:'2026-09 기준',note:'한국 100대 
 window.DEEP_INFO['cheongtaesan'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'청태산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 청태산 플레이북',href:'cheongtaesan-playbook.html'}]};
 
 window.DEEP_INFO['baekamsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'백암산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 백암산 플레이북',href:'baekamsan-playbook.html'}]};
+
+// ── 한국 100대 명산 4차(3산) ──
+
+window.DEEP_INFO['yongmunsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 4차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'용문산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 용문산 플레이북',href:'yongmunsan-playbook.html'}]};
+
+window.DEEP_INFO['wanggwan'] = {updated:'2026-09 기준',note:'한국 100대 명산 4차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'왕관산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 왕관산 플레이북',href:'wanggwan-playbook.html'}]};
+
+window.DEEP_INFO['yumyeongsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 4차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'유명산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 유명산 플레이북',href:'yumyeongsan-playbook.html'}]};
