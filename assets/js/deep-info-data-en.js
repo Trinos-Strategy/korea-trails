@@ -1548,3 +1548,97 @@ window.DEEP_INFO_EN['cheongnyangsan'] = {
   ],
   sources: [{ label: 'Details in this site\'s playbook', href: 'cheongnyangsan-playbook.html' }],
 };
+
+// ── Korea 100 Famous Mountains 3rd batch (6 mountains) ──
+
+window.DEEP_INFO_EN['ansan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Ansan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in playbook', href: 'ansan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['bulsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Bulsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in playbook', href: 'bulsan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['sogeumgang'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Sogeumgang is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in playbook', href: 'sogeumgang-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['heuiyangsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Heuiyangsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in playbook', href: 'heuiyangsan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['cheongtaesan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Cheongtaesan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in playbook', href: 'cheongtaesan-playbook.html' }],
+};
+
+window.DEEP_INFO_EN['baekamsan'] = {
+  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
+  sections: [
+    { icon: 'book', title: 'Trail Basics', items: [
+      { h: 'Trail basics', tag: 'Note', body: 'Baekamsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
+    ]},
+    { icon: 'shield', title: 'Safety', items: [
+      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
+    ]},
+  ],
+  sources: [{ label: 'Details in playbook', href: 'baekamsan-playbook.html' }],
+};
+
+// ── Korea 100 Famous Mountains 3rd batch ──
+
+window.DEEP_INFO_EN['ansan'] = {updated:'As of 2026-09',note:'Korea 100 Famous Mountains 3rd batch',sections:[{icon:'book',title:'Trail Basics',items:[{h:'Trail basics',tag:'Note',body:'Ansan is one of Korea\'s 100 Famous Mountains. No separate permit needed.'}]},{icon:'shield',title:'Safety',items:[{h:'Emergency',tag:'Required',body:'Call 119 for mountain rescue.'}]}],sources:[{label:'Details in playbook',href:'ansan-playbook.html'}]};
+
+window.DEEP_INFO_EN['bulsan'] = {updated:'As of 2026-09',note:'Korea 100 Famous Mountains 3rd batch',sections:[{icon:'book',title:'Trail Basics',items:[{h:'Trail basics',tag:'Note',body:'Bulsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.'}]},{icon:'shield',title:'Safety',items:[{h:'Emergency',tag:'Required',body:'Call 119 for mountain rescue.'}]}],sources:[{label:'Details in playbook',href:'bulsan-playbook.html'}]};
+
+window.DEEP_INFO_EN['sogeumgang'] = {updated:'As of 2026-09',note:'Korea 100 Famous Mountains 3rd batch',sections:[{icon:'book',title:'Trail Basics',items:[{h:'Trail basics',tag:'Note',body:'Sogeumgang is one of Korea\'s 100 Famous Mountains. No separate permit needed.'}]},{icon:'shield',title:'Safety',items:[{h:'Emergency',tag:'Required',body:'Call 119 for mountain rescue.'}]}],sources:[{label:'Details in playbook',href:'sogeumgang-playbook.html'}]};
+
+window.DEEP_INFO_EN['heuiyangsan'] = {updated:'As of 2026-09',note:'Korea 100 Famous Mountains 3rd batch',sections:[{icon:'book',title:'Trail Basics',items:[{h:'Trail basics',tag:'Note',body:'Heuiyangsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.'}]},{icon:'shield',title:'Safety',items:[{h:'Emergency',tag:'Required',body:'Call 119 for mountain rescue.'}]}],sources:[{label:'Details in playbook',href:'heuiyangsan-playbook.html'}]};
+
+window.DEEP_INFO_EN['cheongtaesan'] = {updated:'As of 2026-09',note:'Korea 100 Famous Mountains 3rd batch',sections:[{icon:'book',title:'Trail Basics',items:[{h:'Trail basics',tag:'Note',body:'Cheongtaesan is one of Korea\'s 100 Famous Mountains. No separate permit needed.'}]},{icon:'shield',title:'Safety',items:[{h:'Emergency',tag:'Required',body:'Call 119 for mountain rescue.'}]}],sources:[{label:'Details in playbook',href:'cheongtaesan-playbook.html'}]};
+
+window.DEEP_INFO_EN['baekamsan'] = {updated:'As of 2026-09',note:'Korea 100 Famous Mountains 3rd batch',sections:[{icon:'book',title:'Trail Basics',items:[{h:'Trail basics',tag:'Note',body:'Baekamsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.'}]},{icon:'shield',title:'Safety',items:[{h:'Emergency',tag:'Required',body:'Call 119 for mountain rescue.'}]}],sources:[{label:'Details in playbook',href:'baekamsan-playbook.html'}]};

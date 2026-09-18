@@ -1062,4 +1062,112 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://mttrails.trinos.group/ansan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/ansan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/ansan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/ansan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/bulsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/bulsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/bulsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/bulsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/sogeumgang-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/sogeumgang-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/sogeumgang-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/sogeumgang-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/heuiyangsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/heuiyangsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/heuiyangsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/heuiyangsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/cheongtaesan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/cheongtaesan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/cheongtaesan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/cheongtaesan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/baekamsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/baekamsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/baekamsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/baekamsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/yushan-playbook.html"/>
+    <lastmod>2026-09-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
