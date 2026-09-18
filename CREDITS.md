@@ -343,3 +343,10 @@ Some of the hiking photos and tracking videos on this site are original works ph
 | 산 | 사진작가들 |
 |---|---|
 | 인왕산·가지산·화왕산·운장산·영취산·비슬산·청량산 | (개별 출처는 각 페이지 gallery 참조) |
+
+## 한국 100대 명산 3차(6산) — Unsplash (Unsplash License)
+※ 일반 사진 대체
+
+| 산 | 사진작가들 |
+|---|---|
+| 안산·불알산·소금강·희양산·청태산·백암산 | (개별 출처는 각 페이지 gallery 참조) |
