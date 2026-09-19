@@ -13,7 +13,7 @@
 ## ✨ 주요 기능
 
 - 🗺 **인터랙티브 월드 맵** — Leaflet 기반, 한국·대만 명산 마커와 플레이북 바로가기
-- 📖 **등산 플레이북 68종** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 실사 지도
+- 📖 **등산 플레이북 72종** — 코스별 체크포인트, 고도 프로필, 구간 난이도, 실사 지도
 - 🧭 **심화 탐방 정보** — 입산·예약(국내 탐방로 예약제/해외 입산허가), 교통, 숙박, 안전·비상연락 (`STANDARD-DEEP-INFO.md` 표준)
 - 🔍 **검색·필터·정렬** — 지역/난이도/플레이북 상태 필터와 고도·이름 정렬
 - 🌐 **한국어/영어 이중 제공** — 모든 페이지의 `en/` 미러
@@ -21,15 +21,15 @@
 
 ---
 
-## 📂 플레이북 현황 (68산)
+## 📂 플레이북 현황 (72산)
 
 | 지역 | 산 |
 |---|---|
-| 강원 | [설악산](./seoraksan-playbook.html) · [치악산](./chiaksan-playbook.html) · [오대산](./odaesan-playbook.html) · [태백산](./taebaeksan-playbook.html) · [소금강](./sogeumgang-playbook.html) · [계방산](./gyebangsan-playbook.html) · [두타산](./dutasan-playbook.html) |
-| 경기/서울 | [북한산](./bukhansan-playbook.html) · [도봉산](./dobongsan-playbook.html) · [명성산](./myeongseongsan-playbook.html) · [소요산](./soyosan-playbook.html) · [운악산](./unaksan-playbook.html) · [관악산](./gwanaksan-playbook.html) · [수락산](./suraksan-playbook.html) · [청계산](./cheonggyesan-playbook.html) · [아차산](./achasan-playbook.html) · [인왕산](./inwangsan-playbook.html) · [안산](./ansan-playbook.html) · [불알산](./bulsan-playbook.html) · [용문산](./yongmunsan-playbook.html) · [왕관산](./wanggwan-playbook.html) · [유명산](./yumyeongsan-playbook.html) |
+| 강원 | [설악산](./seoraksan-playbook.html) · [치악산](./chiaksan-playbook.html) · [오대산](./odaesan-playbook.html) · [태백산](./taebaeksan-playbook.html) · [소금강](./sogeumgang-playbook.html) · [계방산](./gyebangsan-playbook.html) · [두타산](./dutasan-playbook.html) | · [대암산](./daeamsan-playbook.html)
+| 경기/서울 | [북한산](./bukhansan-playbook.html) · [도봉산](./dobongsan-playbook.html) · [명성산](./myeongseongsan-playbook.html) · [소요산](./soyosan-playbook.html) · [운악산](./unaksan-playbook.html) · [관악산](./gwanaksan-playbook.html) · [수락산](./suraksan-playbook.html) · [청계산](./cheonggyesan-playbook.html) · [아차산](./achasan-playbook.html) · [인왕산](./inwangsan-playbook.html) · [안산](./ansan-playbook.html) · [불알산](./bulsan-playbook.html) · [용문산](./yongmunsan-playbook.html) · [왕관산](./wanggwan-playbook.html) · [유명산](./yumyeongsan-playbook.html) | · [감악산](./gamaksan-playbook.html)
 | 충청 | [소백산](./sobaeksan-playbook.html) · [계룡산](./gyeryongsan-playbook.html) · [민주지산](./minjusan-playbook.html) · [식장산](./sikjangsan-playbook.html) · [월악산](./woraksan-playbook.html) · [속리산](./songnisan-playbook.html) · [희양산](./heuiyangsan-playbook.html) · [청태산](./cheongtaesan-playbook.html) |
-| 전라 | [지리산](./jirisan-playbook.html) · [내장산](./naejangsan-playbook.html) · [덕유산](./deogyusan-playbook.html) · [월출산](./wolchulsan-playbook.html) · [무등산](./mudeungsan-playbook.html) · [두륜산](./duryunsan-playbook.html) · [대둔산](./daedunsan-playbook.html) · [마이산](./maisan-playbook.html) · [운장산](./unjangsan-playbook.html) · [영취산](./yeongchwisan-playbook.html) · [백암산](./baekamsan-playbook.html) |
-| 경상/제주 | [가야산](./gayasan-playbook.html) · [주왕산](./juwangsan-playbook.html) · [한라산](./hallasan-playbook.html) · [금정산](./geumjeongsan-playbook.html) · [팔공산](./palgongsan-playbook.html) · [운문산](./unmunsan-playbook.html) · [가지산](./gajisan-playbook.html) · [화왕산](./hwawangsan-playbook.html) · [비슬산](./biseulsan-playbook.html) · [청량산](./cheongnyangsan-playbook.html) · [남산(경주)](./namsan-playbook.html) |
+| 전라 | [지리산](./jirisan-playbook.html) · [내장산](./naejangsan-playbook.html) · [덕유산](./deogyusan-playbook.html) · [월출산](./wolchulsan-playbook.html) · [무등산](./mudeungsan-playbook.html) · [두륜산](./duryunsan-playbook.html) · [대둔산](./daedunsan-playbook.html) · [마이산](./maisan-playbook.html) · [운장산](./unjangsan-playbook.html) · [영취산](./yeongchwisan-playbook.html) · [백암산](./baekamsan-playbook.html) | · [백운산](./baegunsan-playbook.html)
+| 경상/제주 | [가야산](./gayasan-playbook.html) · [주왕산](./juwangsan-playbook.html) · [한라산](./hallasan-playbook.html) · [금정산](./geumjeongsan-playbook.html) · [팔공산](./palgongsan-playbook.html) · [운문산](./unmunsan-playbook.html) · [가지산](./gajisan-playbook.html) · [화왕산](./hwawangsan-playbook.html) · [비슬산](./biseulsan-playbook.html) · [청량산](./cheongnyangsan-playbook.html) · [남산(경주)](./namsan-playbook.html) | · [신불산](./sinbulsan-playbook.html)
 | 인천 | [마니산](./manisan-playbook.html) |
 | 대만 | [위산(玉山, 3,952m)](./yushan-playbook.html) · [설산(雪山, 3,886m)](./xueshan-playbook.html) · [양명산(陽明山)](./yangmingshan-playbook.html) · [아리산(阿里山, 2,663m)](./alishan-playbook.html) |
 | 일본 | [후지산(富士山, 3,776m)](./fuji-playbook.html) · [타테야마(立山, 3,003m)](./tateyama-playbook.html) |

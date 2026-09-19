@@ -1296,4 +1296,76 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
+  <url>
+    <loc>https://mttrails.trinos.group/daeamsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/daeamsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/daeamsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/daeamsan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/daeamsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/daeamsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/daeamsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/daeamsan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/baegunsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/baegunsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/baegunsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/baegunsan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/baegunsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/baegunsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/baegunsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/baegunsan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/sinbulsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/sinbulsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/sinbulsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/sinbulsan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/sinbulsan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/sinbulsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/sinbulsan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/sinbulsan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/gamaksan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/gamaksan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/gamaksan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/gamaksan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mttrails.trinos.group/en/gamaksan-playbook.html</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://mttrails.trinos.group/gamaksan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mttrails.trinos.group/en/gamaksan-playbook.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mttrails.trinos.group/gamaksan-playbook.html"/>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
 </urlset>
