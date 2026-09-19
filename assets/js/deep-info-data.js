@@ -1548,111 +1548,23 @@ window.DEEP_INFO['langtang'] = {
 
 // ── 한국 100대 명산 2차(7산) ──
 
-window.DEEP_INFO['inwangsan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 2차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '인왕산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 인왕산 플레이북', href: 'inwangsan-playbook.html' }],
-};
+window.DEEP_INFO['inwangsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 한양도성 인왕구간',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약 없이 등산할 수 있습니다.'}, {h:'성곽 구간 통제',tag:'권장',body:'한양도성 일부 구간은 보호·통제될 수 있습니다 — 방문 전 공식 안내를 확인하세요.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'3호선 무악재역·독립문역, 5호선 광화문역 등 여러 역에서 도보 접근이 가능합니다.'}, {h:'자가용',tag:'참고',body:'홍지문·사직공원·와룡공원 인근 주차가 협소합니다 — 대중교통을 권장합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'서울 도심 어디서나 당일 산행이 가능합니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'결빙 주의',tag:'권장',body:'탕춘대성 급경사 구간은 겨울 결빙이 잦습니다.'}]}],sources:[{label:'공식 안내',href:'https://www.seoulcitywall.go.kr'}]};
 
-window.DEEP_INFO['gajisan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 2차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '가지산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 가지산 플레이북', href: 'gajisan-playbook.html' }],
-};
+window.DEEP_INFO['gajisan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 영남알프스 최고봉',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'석남터널 들머리',tag:'참고',body:'울산 쪽 최단 들머리는 석남터널 주차장입니다.'}, {h:'통도사 권역',tag:'참고',body:'양산 내원계곡 코스는 통도사 관광단지에서 접근합니다 — 주차 요금은 이용 전 확인.'}]}, {icon:'tent',title:'숙박',items:[{h:'양산·울산',tag:'참고',body:'통도사 관광단지 숙박시설과 울산 시내가 산행 거점입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'우천 주의',tag:'권장',body:'정상부 암반 구간은 우천 시 매우 미끄럽습니다.'}]}],sources:[{label:'공식 안내',href:'https://tour.ulsan.go.kr'}]};
 
-window.DEEP_INFO['hwawangsan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 2차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '화왕산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 화왕산 플레이북', href: 'hwawangsan-playbook.html' }],
-};
+window.DEEP_INFO['hwawangsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 창녕 진달래 명산',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약 없이 등산할 수 있습니다 — 매표소 운영 여부는 이용 전 확인.'}]}, {icon:'bus',title:'교통',items:[{h:'창녕 접근',tag:'참고',body:'부산·대구에서 창녕행 버스로 접근 후 부곡온천·자하곡 방면 로컬 교통을 이용합니다.'}, {h:'축제기 혼잡',tag:'권장',body:'4월 진달래 축제기에는 셔틀·임시 주차가 운영될 수 있습니다 — 군 안내 확인.'}]}, {icon:'tent',title:'숙박',items:[{h:'부곡온천',tag:'참고',body:'산 자락의 부곡온천 관광지에 호텔·모텔이 있습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'군락 보호',tag:'필수',body:'진달래 군락지는 지정 탐방로 외 출입이 금지됩니다.'}]}],sources:[{label:'공식 안내',href:'https://www.changnyeong.go.kr'}]};
 
-window.DEEP_INFO['unjangsan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 2차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '운장산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 운장산 플레이북', href: 'unjangsan-playbook.html' }],
-};
+window.DEEP_INFO['unjangsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 진안·완주 운장대',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'들머리 3종',tag:'참고',body:'피암목재(최단)·내처사·독자동 들머리가 있습니다. 대중교통 접근이 어려워 자가용이 일반적입니다.'}, {h:'고개 주차',tag:'참고',body:'피암목재 주차 공간이 협소합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'진안·완주',tag:'참고',body:'진안읍·완주 회덕 일대 숙박이 가깝습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'겨울 결빙',tag:'권장',body:'1,100m대 능선은 겨울 결빙이 빠릅니다.'}]}],sources:[{label:'공식 안내',href:'https://www.jinan.go.kr'}]};
 
-window.DEEP_INFO['yeongchwisan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 2차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '영취산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 영취산 플레이북', href: 'yeongchwisan-playbook.html' }],
-};
+window.DEEP_INFO['yeongchwisan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 여수 진달래 명산',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'들머리 3종',tag:'참고',body:'돌고개·상암초교·중흥동(GS칼텍스 후문) 코스가 여수시 공식 안내됩니다.'}, {h:'축제기 교통',tag:'권장',body:'4월 진달래 축제 기간 차량 진입이 통제될 수 있습니다 — 시 안내 확인.'}]}, {icon:'tent',title:'숙박',items:[{h:'여수',tag:'참고',body:'여수 시내·돌산 관광 숙박이 가깝습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'군락 보호',tag:'필수',body:'진달래 군락지는 포장 능선길에서 벗어나지 마세요.'}]}],sources:[{label:'공식 안내',href:'https://www.yeosu.go.kr'}]};
 
-window.DEEP_INFO['biseulsan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 2차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '비슬산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 비슬산 플레이북', href: 'biseulsan-playbook.html' }],
-};
+window.DEEP_INFO['biseulsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 대구 달성 천왕봉',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'유가사 들머리',tag:'참고',body:'대표 들머리는 유가사 주차장입니다 — 대구 시내버스 접근 후 도보.'}, {h:'주말 혼잡',tag:'권장',body:'봄 철쭉·가을 억새철 주말 주차가 혼잡합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'대구·달성',tag:'참고',body:'대구 도심 및 온천 인근 숙박이 가깝습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'암반 하산',tag:'권장',body:'월광봉~대견봉 암반 하산로는 우천 시 위험합니다.'}]}],sources:[{label:'공식 안내',href:'https://www.daegu.go.kr'}]};
 
-window.DEEP_INFO['cheongnyangsan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 2차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '청량산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다. 등산로 개방 시간을 확인하세요.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요. 일몰 2시간 전 하산을 원칙으로 합니다.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 청량산 플레이북', href: 'cheongnyangsan-playbook.html' }],
-};
+window.DEEP_INFO['cheongnyangsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 봉화·안동 기암 명산',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'봉화 접근',tag:'참고',body:'태강선·중앙선 철도로 봉화역 접근 후 로컬 교통 — 배차는 이용 전 확인.'}, {h:'청량사 주차',tag:'참고',body:'청량사 주차장이 대표 들머리입니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'봉화·안동',tag:'참고',body:'봉화읍·안동 시내 숙박이 거점입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'기암 낙석',tag:'권장',body:'하늘다리·암반 능선은 낙석·추락 위험이 있습니다.'}]}],sources:[{label:'공식 안내',href:'https://www.bonghwa.go.kr'}]};
 
 // ── 한국 100대 명산 3차(6산) ──
 
-window.DEEP_INFO['ansan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 3차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '안산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 안산 플레이북', href: 'ansan-playbook.html' }],
-};
+window.DEEP_INFO['ansan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 서대문 봉수대',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'무료·예약 없이 이용할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 최적',tag:'참고',body:'3호선 독립문역·무악재역에서 도보 접근이 가장 편합니다.'}, {h:'무장애 자락길',tag:'참고',body:'안산자락길 7km는 전국 최초 순환형 무장애 설계입니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'서울 도심 어디서나 당일 산행입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'야간 조명',tag:'권장',body:'일부 구간 야간 조명이 부족합니다 — 야경 산행 시 랜턴 필수.'}]}],sources:[{label:'공식 안내',href:'https://parks.seoul.go.kr'}]};
 
 window.DEEP_INFO['bulsan'] = {
   updated: '2026-09 기준', note: '한국 100대 명산 3차',
@@ -1706,40 +1618,29 @@ window.DEEP_INFO['cheongtaesan'] = {
   sources: [{ label: '본 사이트 청태산 플레이북', href: 'cheongtaesan-playbook.html' }],
 };
 
-window.DEEP_INFO['baekamsan'] = {
-  updated: '2026-09 기준', note: '한국 100대 명산 3차',
-  sections: [
-    { icon: 'book', title: '입산·기본', items: [
-      { h: '탐방 기본', tag: '참고', body: '백암산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.' },
-    ]},
-    { icon: 'shield', title: '안전', items: [
-      { h: '비상 연락', tag: '필수', body: '산악 사고 시 119로 신고하세요.' },
-    ]},
-  ],
-  sources: [{ label: '본 사이트 백암산 플레이북', href: 'baekamsan-playbook.html' }],
-};
+window.DEEP_INFO['baekamsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 장성·순창 상왕봉',sections:[{icon:'book',title:'입산·예약',items:[{h:'국립공원 구역',tag:'권장',body:'내장산국립공원 권역 — 공단 탐방 안내를 준수하세요.'}]}, {icon:'bus',title:'교통',items:[{h:'백양사·구암사',tag:'참고',body:'양 들머리 모두 사찰 주차장을 이용합니다 — 요금은 이용 전 확인.'}, {h:'대중교통',tag:'참고',body:'광주·정읍 방면 교통으로 접근 후 로컬 버스 이용.'}]}, {icon:'tent',title:'숙박',items:[{h:'백양사·내장산',tag:'참고',body:'백양사 일원과 내장산 관광단지 숙박이 가깝습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'단풍철 혼잡',tag:'권장',body:'가을 내장산 단풍철 주차 혼잡이 극심합니다.'}]}],sources:[{label:'공식 안내',href:'https://www.knps.or.kr'}]};
 
 // ── 한국 100대 명산 3차(6산) ──
 
-window.DEEP_INFO['ansan'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'안산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 안산 플레이북',href:'ansan-playbook.html'}]};
 
-window.DEEP_INFO['bulsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'불알산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 불알산 플레이북',href:'bulsan-playbook.html'}]};
 
-window.DEEP_INFO['sogeumgang'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'소금강은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 소금강 플레이북',href:'sogeumgang-playbook.html'}]};
 
-window.DEEP_INFO['heuiyangsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'희양산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 희양산 플레이북',href:'heuiyangsan-playbook.html'}]};
 
-window.DEEP_INFO['cheongtaesan'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'청태산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 청태산 플레이북',href:'cheongtaesan-playbook.html'}]};
 
-window.DEEP_INFO['baekamsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 3차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'백암산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 백암산 플레이북',href:'baekamsan-playbook.html'}]};
+
+
+
+
+
+
 
 // ── 한국 100대 명산 4차(3산) ──
 
-window.DEEP_INFO['yongmunsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 4차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'용문산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 용문산 플레이북',href:'yongmunsan-playbook.html'}]};
+window.DEEP_INFO['yongmunsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 양평 가섭봉',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'용문사 관광단지',tag:'참고',body:'대표 들머리는 관광단지 주차장(유료)입니다.'}, {h:'대중교통',tag:'참고',body:'용문역(중앙선)에서 택시·버스 접근 — 배차 확인.'}]}, {icon:'tent',title:'숙박',items:[{h:'용문·양평',tag:'참고',body:'용문면·양평읍의 펜션·모텔이 거점입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'암능 주의',tag:'권장',body:'마당바위~가섭봉 암능은 우천 시 통행을 피하세요.'}]}],sources:[{label:'공식 안내',href:'https://www.yangpyeong.go.kr'}]};
 
-window.DEEP_INFO['wanggwan'] = {updated:'2026-09 기준',note:'한국 100대 명산 4차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'왕관산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 왕관산 플레이북',href:'wanggwan-playbook.html'}]};
 
-window.DEEP_INFO['yumyeongsan'] = {updated:'2026-09 기준',note:'한국 100대 명산 4차',sections:[{icon:'book',title:'입산·기본',items:[{h:'탐방 기본',tag:'참고',body:'유명산은 100대 명산으로 별도 허가 없이 등산할 수 있습니다.'}]},{icon:'shield',title:'안전',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}]}],sources:[{label:'본 사이트 유명산 플레이북',href:'yumyeongsan-playbook.html'}]};
+
+window.DEEP_INFO['yumyeongsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 가평 휴양림',sections:[{icon:'book',title:'입산·예약',items:[{h:'휴양림 요금',tag:'권장',body:'국립 유명산자연휴양림 경유 시 주차·입장 요금이 있습니다 — 산림청 안내 확인.'}]}, {icon:'bus',title:'교통',items:[{h:'휴양림 들머리',tag:'참고',body:'주 등반로는 휴양림 주차장에서 시작합니다.'}, {h:'대중교통',tag:'참고',body:'가평·청평 방면 교통 후 로컬 접근 — 자가용이 편리합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'휴양림·가평',tag:'참고',body:'휴양림 숙박시설과 가평 펜션촌이 가깝습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'계곡 수위',tag:'권장',body:'장마철 계곡코스 횡동 수위 상승에 주의하세요.'}]}],sources:[{label:'공식 안내',href:'https://www.forest.go.kr'}]};
 
 /* ── 한국 100대 명산 5차: 남산(경주)·계방산·두타산·마니산 (2026-09 세션 검증) ──
  * 사실 근거: 100대 명산 목록 포함(위키백과 × 산림청 2002 목록), 코스·표고는 공개 산행 기록

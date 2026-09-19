@@ -237,6 +237,9 @@
     outline-offset: 2px;
   }
 </style>
+  <link href="https://mttrails.trinos.group/index.html" rel="canonical"/>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "name": "MT Trails", "url": "https://mttrails.trinos.group/index.html", "inLanguage": "ko"}</script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "MT Trails", "url": "https://mttrails.trinos.group", "logo": "https://mttrails.trinos.group/assets/brand/logo.svg"}</script>
 </head>
 <body>
 <a class="skip-link" href="#mainContent">본문 바로가기</a>
@@ -301,8 +304,8 @@
 <input aria-label="명산 검색" class="search-hero-input" id="searchInput" placeholder="산 이름, 고도, 지역 또는 설명 검색..." type="search"/>
 </div>
 <div aria-label="국가별 빠른 탐색" class="hero-quicknav">
-<button data-country="all" type="button">전체 72산</button>
-<button data-country="KR" type="button">한국 57산</button>
+<button data-country="all" type="button">전체 71산</button>
+<button data-country="KR" type="button">한국 56산</button>
 <button data-country="TW" type="button">대만 4산</button>
 <button data-country="JP" type="button">일본 2산</button>
 <button data-country="CN" type="button">중국 2산</button>
@@ -317,11 +320,11 @@
 <div class="hero-stat-label">탐방 국가</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">72</div>
+<div class="hero-stat-value">71</div>
 <div class="hero-stat-label">등록 명산</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">72</div>
+<div class="hero-stat-value">71</div>
 <div class="hero-stat-label">플레이북 완성</div>
 </div>
 </div>
@@ -378,7 +381,7 @@
 <svg class="filter-icon"><use href="assets/icons/icons.svg#icon-book"></use></svg>
 <select aria-label="플레이북 상태 필터" class="filter-select" id="doneSelect">
 <option value="all">플레이북: 전체</option>
-<option value="done">완성됨 (72)</option>
+<option value="done">완성됨 (71)</option>
 <option value="pending">준비 중 (0)</option>
 </select>
 </div>
@@ -443,7 +446,6 @@
         <a href="ansan-playbook.html" style="color: var(--muted); text-decoration: none;">안산</a>
         <a href="bulsan-playbook.html" style="color: var(--muted); text-decoration: none;">불알산</a>
         <a href="yongmunsan-playbook.html" style="color: var(--muted); text-decoration: none;">용문산</a>
-        <a href="wanggwan-playbook.html" style="color: var(--muted); text-decoration: none;">왕관산</a>
         <a href="yumyeongsan-playbook.html" style="color: var(--muted); text-decoration: none;">유명산</a>
         <a href="gamaksan-playbook.html" style="color: var(--muted); text-decoration: none;">감악산</a>
       </div>
@@ -619,21 +621,20 @@ window.MOUNTAINS = [
   {id:'songnisan', name:'속리산', alt:'1,058m', region:'충청', dist:'12km', time:'6-7시간', country:'KR', diff:'medium', done:true, url:'songnisan-playbook.html', desc:'국립공원 속리산. 법주사·문장대·천황봉 1,058m..', lat: 36.5364, lng: 127.7517},
   {id:'daedunsan', name:'대둔산', alt:'878m', region:'전라', dist:'7km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'daedunsan-playbook.html', desc:'구름다리·만천하 전망대·낙차 절벽의 극적 지형..', lat: 35.8636, lng: 127.3733},
   {id:'maisan', name:'마이산', alt:'683m', region:'전라', dist:'8km', time:'4시간', country:'KR', diff:'medium', done:true, url:'maisan-playbook.html', desc:'타조바위 쌍봉과 길상사·금당사의 기이한 암봉..', lat: 35.8086, lng: 127.42},
-  {id:'inwangsan', name:'인왕산', alt:'338m', region:'경기', dist:'5km', time:'2-3시간', country:'KR', diff:'medium', done:true, url:'inwangsan-playbook.html', desc:'도성과 맞닿은 서울의 상징적 산. 성곽길과 도심 전망..', lat: 37.5839, lng: 126.9659},
-  {id:'gajisan', name:'가지산', alt:'1,240m', region:'경상', dist:'10km', time:'5-6시간', country:'KR', diff:'medium', done:true, url:'gajisan-playbook.html', desc:'울산 최고봉. 통도사와 간월산 능선..', lat: 35.3686, lng: 129.0758},
-  {id:'hwawangsan', name:'화왕산', alt:'928m', region:'경상', dist:'7km', time:'4시간', country:'KR', diff:'medium', done:true, url:'hwawangsan-playbook.html', desc:'영주의 진산. 봄철 진달래 군락..', lat: 35.5983, lng: 128.4233},
-  {id:'unjangsan', name:'운장산', alt:'1,126m', region:'전라', dist:'9km', time:'5시간', country:'KR', diff:'medium', done:true, url:'unjangsan-playbook.html', desc:'백두대간의 중요 산. 천황봉 능선..', lat: 35.6483, lng: 127.2833},
-  {id:'yeongchwisan', name:'영취산', alt:'1,090m', region:'전라', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'yeongchwisan-playbook.html', desc:'화순의 진산. 사자봉·일출봉 능선..', lat: 35.235, lng: 126.95},
-  {id:'biseulsan', name:'비슬산', alt:'1,084m', region:'경상', dist:'8km', time:'4시간', country:'KR', diff:'medium', done:true, url:'biseulsan-playbook.html', desc:'대구 남서쪽의 원시림 명산..', lat: 35.7167, lng: 128.5},
-  {id:'cheongnyangsan', name:'청량산', alt:'1,093m', region:'경상', dist:'9km', time:'5시간', country:'KR', diff:'medium', done:true, url:'cheongnyangsan-playbook.html', desc:'울산·경주 경계의 명산. 청량사..', lat: 35.6333, lng: 129.1167},  {id:'ansan', name:'안산', alt:'500m', region:'경기', dist:'4km', time:'2-3시간', country:'KR', diff:'medium', done:true, url:'ansan-playbook.html', desc:'서울 남서쪽. 서울대공원 인근 일출봉 전망..', lat: 37.3928, lng: 126.9483},
+  {id:'inwangsan', name:'인왕산', alt:'338m', region:'경기', dist:'5km', time:'2-3시간', country:'KR', diff:'medium', done:true, url:'inwangsan-playbook.html', desc:'서울 도심의 성곽 산. 한양도성 인왕구간과 서울 전경 조망..', lat: 37.5839, lng: 126.9659},
+  {id:'gajisan', name:'가지산', alt:'1,240m', region:'경상', dist:'10km', time:'5-6시간', country:'KR', diff:'medium', done:true, url:'gajisan-playbook.html', desc:'영남알프스 최고봉. 석남터널 최단 코스와 통도사 내원계곡..', lat: 35.3686, lng: 129.0758},
+  {id:'hwawangsan', name:'화왕산', alt:'928m', region:'경상', dist:'7km', time:'4시간', country:'KR', diff:'medium', done:true, url:'hwawangsan-playbook.html', desc:'창녕의 진달래 명산. 3대 군락지와 화왕산성·허준 세트장..', lat: 35.55, lng: 128.49},
+  {id:'unjangsan', name:'운장산', alt:'1,126m', region:'전라', dist:'9km', time:'5시간', country:'KR', diff:'medium', done:true, url:'unjangsan-playbook.html', desc:'진안·완주의 명산. 운장대 1,126m와 칠성대·삼장봉 능선..', lat: 35.66, lng: 127.34},
+  {id:'yeongchwisan', name:'영취산', alt:'510m', region:'전라', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'yeongchwisan-playbook.html', desc:'여수의 진달래 명산. 진례봉 510m 능선 군락과 4월 진달래 축제..', lat: 34.77, lng: 127.66},
+  {id:'biseulsan', name:'비슬산', alt:'1,084m', region:'경상', dist:'8km', time:'4시간', country:'KR', diff:'medium', done:true, url:'biseulsan-playbook.html', desc:'대구 달성·청도의 천왕봉. 유가사 들머리와 악견 능선·억새밭..', lat: 35.7167, lng: 128.5},
+  {id:'cheongnyangsan', name:'청량산', alt:'869.7m', region:'경상', dist:'9km', time:'5시간', country:'KR', diff:'medium', done:true, url:'cheongnyangsan-playbook.html', desc:'봉화·안동의 기암 명산. 의상봉 869.7m와 청량사·하늘다리..', lat: 36.88, lng: 128.86},  {id:'ansan', name:'안산', alt:'296m', region:'경기', dist:'4km', time:'2-3시간', country:'KR', diff:'medium', done:true, url:'ansan-playbook.html', desc:'서울 서대문의 낮은 산. 봉수대(기념물)와 무장애 안산자락길 7km..', lat: 37.574, lng: 126.952},
   {id:'bulsan', name:'불알산', alt:'497m', region:'경기', dist:'5km', time:'3시간', country:'KR', diff:'medium', done:true, url:'bulsan-playbook.html', desc:'도봉산 서쪽 연봉. 독바위 전망..', lat: 37.6908, lng: 127.0211},
   {id:'sogeumgang', name:'소금강', alt:'701m', region:'강원', dist:'6km', time:'3-4시간', country:'KR', diff:'medium', done:true, url:'sogeumgang-playbook.html', desc:'설악산 서쪽. 기암괴석과 계곡..', lat: 38.25, lng: 127.25},
   {id:'heuiyangsan', name:'희양산', alt:'607m', region:'충청', dist:'5km', time:'3시간', country:'KR', diff:'medium', done:true, url:'heuiyangsan-playbook.html', desc:'문경새재 인근. 희양산성..', lat: 36.7033, lng: 127.9},
   {id:'cheongtaesan', name:'청태산', alt:'1,166m', region:'충청', dist:'10km', time:'5-6시간', country:'KR', diff:'medium', done:true, url:'cheongtaesan-playbook.html', desc:'백두대간 소백산맥. 활엽수림 능선..', lat: 36.9333, lng: 128.05},
-  {id:'baekamsan', name:'백암산', alt:'1,042m', region:'전라', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'baekamsan-playbook.html', desc:'전남 화순·순천 경계. 백암사..', lat: 35.1, lng: 126.85},
-  {id:'yongmunsan', name:'용문산', alt:'1,157m', region:'경기', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'yongmunsan-playbook.html', desc:'양평의 진산. 용문사와 주능선..', lat: 37.4833, lng: 127.2833},
-  {id:'wanggwan', name:'왕관산', alt:'808m', region:'경기', dist:'6km', time:'3-4시간', country:'KR', diff:'medium', done:true, url:'wanggwan-playbook.html', desc:'의왕의 진산. 백운호수 전망..', lat: 37.3483, lng: 126.95},
-  {id:'yumyeongsan', name:'유명산', alt:'608m', region:'경기', dist:'6km', time:'3-4시간', country:'KR', diff:'medium', done:true, url:'yumyeongsan-playbook.html', desc:'가평의 진산. 유명사와 계곡..', lat: 37.65, lng: 127.3333},
+  {id:'baekamsan', name:'백암산', alt:'741.2m', region:'전라', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'baekamsan-playbook.html', desc:'장성·순창 경계. 상왕봉 741.2m와 백양사·구암사 능선..', lat: 35.6, lng: 126.88},
+  {id:'yongmunsan', name:'용문산', alt:'1,157m', region:'경기', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'yongmunsan-playbook.html', desc:'양평의 진산. 용문사·사미기봉·마당바위를 지나 가섭봉 1,157m..', lat: 37.4833, lng: 127.2833},,
+  {id:'yumyeongsan', name:'유명산', alt:'862m', region:'경기', dist:'6km', time:'3-4시간', country:'KR', diff:'medium', done:true, url:'yumyeongsan-playbook.html', desc:'가평 설악면의 산. 국립자연휴양림 들머리와 계곡코스, 용문산 종주..', lat: 37.82, lng: 127.53},
   {id:'namsan', name:'남산(경주)', alt:'468m', region:'경상', dist:'5.6km', time:'3-4시간', country:'KR', diff:'easy', done:true, url:'namsan-playbook.html', desc:'유네스코 남산 불국토. 금오봉 468m와 사지·석불 유적의 산..', lat: 35.8292, lng: 129.221},
   {id:'gyebangsan', name:'계방산', alt:'1,577m', region:'강원', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'gyebangsan-playbook.html', desc:'오대산국립공원 최고봉 1,577m. 초원 능선과 겨울 설경..', lat: 37.533, lng: 128.372},
   {id:'dutasan', name:'두타산', alt:'1,357m', region:'강원', dist:'8km', time:'5시간', country:'KR', diff:'medium', done:true, url:'dutasan-playbook.html', desc:'동해·삼척 경계 1,357m. 베틀바위·마천루 암릉과 무릉계..', lat: 37.191, lng: 129.042},
