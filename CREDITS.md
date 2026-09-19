@@ -364,3 +364,10 @@ Some of the hiking photos and tracking videos on this site are original works ph
 | 산 | 사진작가들 |
 |---|---|
 | 남산(경주)·계방산·두타산·마니산 | (개별 출처는 각 페이지 gallery 참조) |
+
+## 한국 100대 명산 6차(4산) — Unsplash (Unsplash License)
+※ 일반 사진 대체
+
+| 산 | 사진작가들 |
+|---|---|
+| 대암산·백운산·신불산·감악산 | (개별 출처는 각 페이지 gallery 참조) |

@@ -301,8 +301,8 @@
 <input aria-label="명산 검색" class="search-hero-input" id="searchInput" placeholder="산 이름, 고도, 지역 또는 설명 검색..." type="search"/>
 </div>
 <div aria-label="국가별 빠른 탐색" class="hero-quicknav">
-<button data-country="all" type="button">전체 68산</button>
-<button data-country="KR" type="button">한국 53산</button>
+<button data-country="all" type="button">전체 72산</button>
+<button data-country="KR" type="button">한국 57산</button>
 <button data-country="TW" type="button">대만 4산</button>
 <button data-country="JP" type="button">일본 2산</button>
 <button data-country="CN" type="button">중국 2산</button>
@@ -317,11 +317,11 @@
 <div class="hero-stat-label">탐방 국가</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">68</div>
+<div class="hero-stat-value">72</div>
 <div class="hero-stat-label">등록 명산</div>
 </div>
 <div class="hero-stat">
-<div class="hero-stat-value">68</div>
+<div class="hero-stat-value">72</div>
 <div class="hero-stat-label">플레이북 완성</div>
 </div>
 </div>
@@ -378,7 +378,7 @@
 <svg class="filter-icon"><use href="assets/icons/icons.svg#icon-book"></use></svg>
 <select aria-label="플레이북 상태 필터" class="filter-select" id="doneSelect">
 <option value="all">플레이북: 전체</option>
-<option value="done">완성됨 (68)</option>
+<option value="done">완성됨 (72)</option>
 <option value="pending">준비 중 (0)</option>
 </select>
 </div>
@@ -424,6 +424,7 @@
         <a href="sogeumgang-playbook.html" style="color: var(--muted); text-decoration: none;">소금강</a>
         <a href="gyebangsan-playbook.html" style="color: var(--muted); text-decoration: none;">계방산</a>
         <a href="dutasan-playbook.html" style="color: var(--muted); text-decoration: none;">두타산</a>
+        <a href="daeamsan-playbook.html" style="color: var(--muted); text-decoration: none;">대암산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -444,6 +445,7 @@
         <a href="yongmunsan-playbook.html" style="color: var(--muted); text-decoration: none;">용문산</a>
         <a href="wanggwan-playbook.html" style="color: var(--muted); text-decoration: none;">왕관산</a>
         <a href="yumyeongsan-playbook.html" style="color: var(--muted); text-decoration: none;">유명산</a>
+        <a href="gamaksan-playbook.html" style="color: var(--muted); text-decoration: none;">감악산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -473,6 +475,7 @@
         <a href="unjangsan-playbook.html" style="color: var(--muted); text-decoration: none;">운장산</a>
         <a href="yeongchwisan-playbook.html" style="color: var(--muted); text-decoration: none;">영취산</a>
         <a href="baekamsan-playbook.html" style="color: var(--muted); text-decoration: none;">백암산</a>
+        <a href="baegunsan-playbook.html" style="color: var(--muted); text-decoration: none;">백운산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -489,6 +492,7 @@
         <a href="biseulsan-playbook.html" style="color: var(--muted); text-decoration: none;">비슬산</a>
         <a href="cheongnyangsan-playbook.html" style="color: var(--muted); text-decoration: none;">청량산</a>
         <a href="namsan-playbook.html" style="color: var(--muted); text-decoration: none;">남산(경주)</a>
+        <a href="sinbulsan-playbook.html" style="color: var(--muted); text-decoration: none;">신불산</a>
       </div>
     </div>
     <div class="sitemap-col">
@@ -634,6 +638,10 @@ window.MOUNTAINS = [
   {id:'gyebangsan', name:'계방산', alt:'1,577m', region:'강원', dist:'8km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'gyebangsan-playbook.html', desc:'오대산국립공원 최고봉 1,577m. 초원 능선과 겨울 설경..', lat: 37.533, lng: 128.372},
   {id:'dutasan', name:'두타산', alt:'1,357m', region:'강원', dist:'8km', time:'5시간', country:'KR', diff:'medium', done:true, url:'dutasan-playbook.html', desc:'동해·삼척 경계 1,357m. 베틀바위·마천루 암릉과 무릉계..', lat: 37.191, lng: 129.042},
   {id:'manisan', name:'마니산', alt:'469m', region:'인천', dist:'5km', time:'3시간', country:'KR', diff:'easy', done:true, url:'manisan-playbook.html', desc:'강화도 최고봉. 참성단 단군제천 전설과 삼랑성..', lat: 37.597, lng: 126.475},
+  {id:'daeamsan', name:'대암산', alt:'1,304m', region:'강원', dist:'7km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'daeamsan-playbook.html', desc:'양구·인제의 바위산. 용늪 천연기념물(제246호) 예약 탐방과 백두대간 조망..', lat: 38.098, lng: 127.998},
+  {id:'baegunsan', name:'백운산', alt:'1,222m', region:'전라', dist:'7km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'baegunsan-playbook.html', desc:'광양의 철쭉 명산. 철쭉제 능선과 섬진강 조망..', lat: 35.265, lng: 127.621},
+  {id:'sinbulsan', name:'신불산', alt:'1,159m', region:'경상', dist:'11km', time:'5시간', country:'KR', diff:'medium', done:true, url:'sinbulsan-playbook.html', desc:'영남알프스 주봉. 간월재 억새평원과 배내골 능선..', lat: 35.541, lng: 129.061},
+  {id:'gamaksan', name:'감악산', alt:'674.9m', region:'경기', dist:'7km', time:'4-5시간', country:'KR', diff:'medium', done:true, url:'gamaksan-playbook.html', desc:'파주의 진산. 감악사·장흥계곡·출렁다리와 한북정맥 능선..', lat: 37.859, lng: 126.926},
 
 
   {id:'ebc', name:'에베레스트 BC', alt:'5,364m', region:'네팔', dist:'130km', time:'12일', country:'NP', diff:'expert', done:true, url:'ebc-playbook.html', desc:'세계 최고의 트레킹. 남체·딩보체 적응 후 EBC 5,364m 도달..', lat: 27.9881, lng: 86.925},
@@ -679,6 +687,10 @@ document.addEventListener('DOMContentLoaded', () => {
     { base: 'assets/img/gyebangsan', video: null, alt: '한국 계방산의 초원 정상 능선과 산맥 전망' },
     { base: 'assets/img/dutasan', video: null, alt: '한국 두타산의 암릉 능선' },
     { base: 'assets/img/manisan', video: null, alt: '한국 강화 마니산의 능선과 서해 전망' },
+    { base: 'assets/img/daeamsan', video: null, alt: '한국 대암산의 안개 낀 바위 능선' },
+    { base: 'assets/img/baegunsan', video: null, alt: '한국 백운산의 철쭉 능선' },
+    { base: 'assets/img/sinbulsan', video: null, alt: '한국 신불산의 억새평원 능선' },
+    { base: 'assets/img/gamaksan', video: null, alt: '한국 감악산의 사찰과 계곡' },
   ];
   const heroPick = HERO_ROTATION[Math.floor(Math.random() * HERO_ROTATION.length)];
   const heroPicture = document.getElementById('heroFallbackImage');
