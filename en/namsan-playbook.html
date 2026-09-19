@@ -1,0 +1,1565 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><title>Namsan (Gyeongju) Hiking Playbook</title><meta content="Guide to Namsan (Gyeongju) (468m). UNESCO World Heritage — the Namsan Buddhist Mountain Monastery of Gyeongju, an open-air museum of temple sites, stone Buddhas and pagodas gathered around Geumobong 468 m." name="description"/><link href="../assets/brand/favicon.svg" rel="icon" type="image/svg+xml"/><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&amp;f[]=cabinet-grotesk@700,800&amp;display=swap" rel="stylesheet"/><link href="../assets/css/design-system.css" rel="stylesheet"/><style>
+  :root {
+    --green: #6a7d4c;
+    --greenbg: #e5eadc;
+    --blue: #456e96;
+    --bluebg: #dce8f4;
+    --red: #9f5845;
+    --redbg: #f2e1db;
+    --gold: #a8863a;
+  }
+
+  [data-theme="dark"] {
+    --green: #93ab73;
+    --greenbg: #2a3222;
+    --blue: #7eafd8;
+    --bluebg: #1f2f3b;
+    --red: #d28d78;
+    --redbg: #3e251f;
+    --gold: #d0b26d;
+  }
+
+  
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: var(--space-3) var(--space-6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+  
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+  }
+  
+  .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-md);
+    background: linear-gradient(135deg, var(--teal, var(--primary)), var(--primary));
+    display: grid;
+    place-items: center;
+    box-shadow: var(--shadow-sm);
+  }
+  
+  .brand h1 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+    line-height: 1;
+  }
+  
+  .brand p {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .theme-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--surface2);
+    color: var(--muted);
+    cursor: pointer;
+    border: none;
+    transition: background-color var(--transition), color var(--transition);
+  }
+  
+  .theme-btn:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+
+  
+  .selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    padding: var(--space-5) 0 var(--space-3);
+  }
+  
+  .course-btn {
+    border: 1px solid var(--border);
+    background: var(--surface);
+    padding: var(--space-3) var(--space-5);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    font-weight: 700;
+    color: var(--text);
+    transition: all var(--transition);
+  }
+  
+  .course-btn:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+  
+  .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: #273e16; }
+  .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: #1e3a5f; }
+  .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: #6a2a18; }
+
+  [data-theme="dark"] .course-btn.active.green { background: var(--greenbg); border-color: var(--green); color: var(--green); }
+  [data-theme="dark"] .course-btn.active.blue { background: var(--bluebg); border-color: var(--blue); color: var(--blue); }
+  [data-theme="dark"] .course-btn.active.red { background: var(--redbg); border-color: var(--red); color: var(--red); }
+
+  
+  .panel {
+    display: none;
+    padding: var(--space-4) 0 var(--space-10);
+  }
+  
+  .panel.active {
+    display: block;
+  }
+  
+  .panel-top {
+    display: flex;
+    gap: var(--space-3);
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: var(--space-5);
+  }
+  
+  .level {
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 800;
+  }
+  
+  .green .level { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .level { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .level { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .level { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .level { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .level { background: var(--redbg); color: var(--red); }
+  
+  .panel-name {
+    font-family: var(--font-display);
+    font-size: var(--text-xl);
+    font-weight: 800;
+  }
+  
+  .panel-sub {
+    font-size: var(--text-sm);
+    color: var(--muted);
+  }
+
+  
+  .tabs {
+    display: flex;
+    gap: var(--space-2);
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+    margin: var(--space-4) 0 var(--space-6);
+    border-bottom: none;
+  }
+  
+  .tab {
+    border: none;
+    background: var(--surface2);
+    padding: var(--space-2) var(--space-4);
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    white-space: nowrap;
+    color: var(--muted);
+    font-weight: 700;
+    transition: all var(--transition);
+  }
+  
+  .tab:hover {
+    background: var(--border);
+    color: var(--text);
+  }
+  
+  .green .tab.active { background: var(--greenbg); color: #273e16; border: 1px solid var(--green); }
+  .blue .tab.active { background: var(--bluebg); color: #1e3a5f; border: 1px solid var(--blue); }
+  .red .tab.active { background: var(--redbg); color: #6a2a18; border: 1px solid var(--red); }
+
+  [data-theme="dark"] .green .tab.active { background: var(--greenbg); color: var(--green); }
+  [data-theme="dark"] .blue .tab.active { background: var(--bluebg); color: var(--blue); }
+  [data-theme="dark"] .red .tab.active { background: var(--redbg); color: var(--red); }
+
+  
+  .grid6 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .kpi .num {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .green .kpi .num { color: var(--green); }
+  .blue .kpi .num { color: var(--blue); }
+  .red .kpi .num { color: var(--red); }
+  
+  .kpi .txt {
+    font-size: var(--text-xs);
+    color: var(--muted);
+  }
+
+  
+  .section-title {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    margin: var(--space-4) 0 var(--space-4);
+  }
+  
+  .section-title h3 {
+    font-family: var(--font-display);
+    font-size: var(--text-lg);
+    font-weight: 800;
+  }
+  
+  .line {
+    height: 1px;
+    background: var(--border);
+    flex: 1;
+  }
+
+  
+  .flow {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+  }
+  
+  .chip {
+    padding: var(--space-2) var(--space-3);
+    border-radius: var(--radius-full);
+    background: var(--surface2);
+    font-size: var(--text-xs);
+    font-weight: 700;
+  }
+  
+  .arr {
+    align-self: center;
+    color: var(--faint);
+  }
+  
+  .elev svg {
+    width: 100%;
+    height: 220px;
+  }
+  
+  .desc {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+
+  
+  .segments {
+    display: grid;
+    gap: var(--space-3);
+  }
+  
+  .seg {
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+    overflow: hidden;
+    transition: all var(--transition);
+  }
+  
+  .seg-head {
+    display: flex;
+    gap: var(--space-4);
+    align-items: center;
+    padding: var(--space-4) var(--space-5);
+    cursor: pointer;
+  }
+  
+  .seg-no {
+    width: 34px;
+    height: 34px;
+    border-radius: var(--radius-full);
+    display: grid;
+    place-items: center;
+    font-size: var(--text-xs);
+    font-weight: 800;
+  }
+  
+  .green .seg-no { background: var(--greenbg); color: var(--green); }
+  .blue .seg-no { background: var(--bluebg); color: var(--blue); }
+  .red .seg-no { background: var(--redbg); color: var(--red); }
+  
+  .seg-title {
+    font-weight: 800;
+    font-size: var(--text-base);
+  }
+  
+  .seg-meta {
+    font-size: var(--text-xs);
+    color: var(--muted);
+    margin-top: 2px;
+  }
+  
+  .seg-arrow {
+    margin-left: auto;
+    color: var(--muted);
+    font-size: 0.85rem;
+    transition: transform var(--transition);
+  }
+  
+  .seg-body {
+    display: none;
+    padding: 0 var(--space-5) var(--space-5);
+    border-top: 1px solid var(--border);
+  }
+  
+  .seg.open .seg-body {
+    display: block;
+  }
+  
+  .seg.open .seg-arrow {
+    transform: rotate(180deg);
+  }
+  
+  .seg-body p {
+    margin-top: var(--space-4);
+    color: var(--muted);
+    font-size: var(--text-sm);
+  }
+  
+  .bar {
+    height: 7px;
+    background: var(--surface2);
+    border-radius: var(--radius-full);
+    overflow: hidden;
+    margin: var(--space-3) 0;
+  }
+  
+  .fill {
+    height: 100%;
+  }
+  
+  .green .fill { background: var(--green); }
+  .blue .fill { background: var(--blue); }
+  .red .fill { background: var(--red); }
+  
+  .tip, .warn {
+    padding: var(--space-3);
+    border-radius: var(--radius-md);
+    font-size: var(--text-xs);
+    margin-top: var(--space-3);
+    line-height: 1.5;
+  }
+  
+  .tip {
+    background: var(--surface2);
+    color: var(--muted);
+  }
+  
+  .warn {
+    background: var(--redbg);
+    color: var(--red);
+  }
+
+  .table-wrap {
+    overflow-x: auto;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    background: var(--surface);
+    box-shadow: var(--shadow-sm);
+  }
+  
+  th, td {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--border);
+    font-size: var(--text-xs);
+    text-align: left;
+  }
+  
+  th {
+    background: var(--surface2);
+    color: var(--muted);
+    font-weight: 800;
+  }
+  
+  tr:last-child td {
+    border-bottom: none;
+  }
+
+  .tips-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+  
+  .tipcard h4 {
+    font-size: var(--text-sm);
+    margin-bottom: var(--space-2);
+  }
+  
+  .tipcard ul {
+    padding-left: var(--space-4);
+    margin: 0;
+  }
+  
+  .tipcard li {
+    margin: var(--space-2) 0;
+    color: var(--muted);
+    font-size: var(--text-xs);
+  }
+  
+  @media (max-width: 960px) {
+    .grid6 { grid-template-columns: repeat(3, 1fr); }
+    .tips-grid { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+  
+  @media (max-width: 640px) {
+    .grid6 { grid-template-columns: repeat(2, 1fr); }
+    .tips-grid { grid-template-columns: 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    .selector { gap: var(--space-2); }
+    .course-btn { padding: var(--space-2) var(--space-4); font-size: var(--text-xs); }
+  }
+
+
+.hero-bleed {
+  position: relative;
+  width: 100%;
+  min-height: clamp(340px, 45vh, 520px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: var(--space-12, 3rem) var(--space-6, 1.5rem);
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-divider, var(--divider, var(--div, #dcd9d5)));
+  background-color: var(--color-bg, var(--bg, #f7f6f2));
+  
+  --hero-overlay-top: rgba(247, 246, 242, 0.35);
+  --hero-overlay-bottom: rgba(247, 246, 242, 0.90);
+  --hero-text: var(--color-text, var(--text, var(--txt, #28251d)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #7a7974));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #cedcd8));
+  --hero-badge-color: var(--color-primary, var(--primary, #01696f));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #f7f6f2)) 90%, transparent);
+  }
+}
+
+[data-theme="dark"] .hero-bleed {
+  --hero-overlay-top: rgba(15, 14, 13, 0.35);
+  --hero-overlay-bottom: rgba(15, 14, 13, 0.96);
+  --hero-text: var(--color-text, var(--text, var(--txt, #cdccca)));
+  --hero-text-muted: var(--color-text-muted, var(--muted, #797876));
+  --hero-badge-bg: var(--color-primary-highlight, var(--primary-highlight, #1e3234));
+  --hero-badge-color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+@supports (background-color: color-mix(in srgb, red, blue)) {
+  [data-theme="dark"] .hero-bleed {
+    --hero-overlay-top: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 35%, transparent);
+    --hero-overlay-bottom: color-mix(in srgb, var(--color-bg, var(--bg, #0f0e0d)) 96%, transparent);
+  }
+}
+
+.hero-bleed .hero-picture {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero-bleed .hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.hero-bleed .hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: linear-gradient(180deg, var(--hero-overlay-top) 0%, var(--hero-overlay-bottom) 100%);
+  pointer-events: none;
+}
+
+.hero-bleed .hero-content {
+  position: relative;
+  z-index: 3;
+  max-width: 65ch;
+  margin: 0 auto;
+  pointer-events: auto;
+}
+
+.hero-bleed h1 {
+  color: var(--hero-text);
+  font-family: var(--font-display, sans-serif);
+  font-size: var(--text-2xl, 2.5rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: var(--space-4, 1rem);
+  text-shadow: 0 1px 2px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed h1 {
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero-bleed p {
+  color: var(--hero-text-muted);
+  font-size: var(--text-base, 1.1rem);
+  line-height: 1.6;
+  max-width: 56ch;
+  margin: 0 auto var(--space-8, 2rem);
+  text-shadow: 0 1px 1px var(--color-bg, var(--bg, #f7f6f2));
+}
+
+[data-theme="dark"] .hero-bleed p {
+  text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+}
+
+.hero-bleed .hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2, 0.5rem);
+  background-color: var(--hero-badge-bg);
+  color: var(--hero-badge-color);
+  padding: var(--space-1, 0.25rem) var(--space-3, 0.75rem);
+  border-radius: var(--radius-full, 9999px);
+  font-size: var(--text-xs, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: var(--space-4, 1rem);
+}
+
+.photo-gallery-section {
+  max-width: 1100px;
+  margin: var(--space-12, 3rem) auto;
+  padding: 0 var(--space-6, 1.5rem);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-4, 1rem);
+  margin-top: var(--space-4, 1rem);
+}
+
+.gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .gallery-grid:has(.gallery-item:nth-child(3):last-child) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
+.gallery-item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  border-radius: var(--radius-lg, 0.75rem);
+  border: 1px solid var(--color-border, var(--border, var(--bor, #d4d1ca)));
+  background-color: var(--color-surface, var(--surface, #f9f8f5));
+  padding: 0;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm, 0 1px 2px rgba(0,0,0,0.06));
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #01696f));
+  outline-offset: 2px;
+}
+
+.gallery-picture, 
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition, 180ms ease);
+}
+
+.gallery-item:hover .gallery-img {
+  transform: scale(1.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gallery-item:hover .gallery-img {
+    transform: none;
+  }
+  .gallery-picture, 
+  .gallery-img {
+    transition: none;
+  }
+}
+
+.gallery-caption-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: var(--space-4, 1rem) var(--space-4, 1rem) var(--space-3, 0.75rem);
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.75) 100%);
+  color: #ffffff;
+  text-align: left;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+  pointer-events: none;
+}
+
+.gallery-item:hover .gallery-caption-overlay,
+.gallery-item:focus-within .gallery-caption-overlay {
+  opacity: 1;
+}
+
+.gallery-caption-text {
+  font-size: var(--text-sm, 0.95rem);
+  font-weight: 700;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.8);
+}
+
+@media (hover: none) {
+  .gallery-caption-overlay {
+    opacity: 1;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
+  }
+}
+
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 14, 13, 0.96);
+  z-index: 999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity var(--transition, 180ms ease);
+}
+
+.lightbox[aria-hidden="false"] {
+  display: flex;
+  opacity: 1;
+}
+
+.lightbox-content {
+  position: relative;
+  max-width: 86vw;
+  max-height: 82vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.lightbox-figure {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lightbox-figure picture {
+  display: flex;
+  justify-content: center;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: var(--radius-md, 0.5rem);
+  box-shadow: var(--shadow-lg, 0 12px 32px rgba(0,0,0,0.5));
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.lightbox-caption {
+  margin-top: var(--space-4, 1rem);
+  color: #cdccca;
+  font-size: var(--text-base, 1.05rem);
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+.lightbox-close, 
+.lightbox-prev, 
+.lightbox-next {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-full, 9999px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+  z-index: 1005;
+  transition: background-color var(--transition, 180ms ease), transform var(--transition, 180ms ease);
+}
+
+.lightbox-close:hover, 
+.lightbox-prev:hover, 
+.lightbox-next:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.lightbox-close:focus-visible, 
+.lightbox-prev:focus-visible, 
+.lightbox-next:focus-visible {
+  outline: 3px solid var(--color-primary, var(--primary, #4f98a3));
+  outline-offset: 2px;
+}
+
+.lightbox-close {
+  top: var(--space-6, 1.5rem);
+  right: var(--space-6, 1.5rem);
+  width: 44px;
+  height: 44px;
+  font-size: 2rem;
+  line-height: 1;
+}
+
+.lightbox-prev {
+  left: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+.lightbox-next {
+  right: var(--space-6, 1.5rem);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .lightbox-close {
+    top: var(--space-4, 1rem);
+    right: var(--space-4, 1rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-prev {
+    left: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+  .lightbox-next {
+    right: var(--space-3, 0.75rem);
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.photo-credit {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1, 0.25rem);
+  font-family: var(--font-body, sans-serif);
+  font-size: clamp(10px, 0.7rem, var(--text-xs));
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm, 0.25rem);
+  color: rgba(255, 255, 255, 0.8);
+  background-color: rgba(15, 14, 13, 0.65);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 10;
+  pointer-events: auto;
+}
+
+.photo-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color var(--transition, 180ms ease);
+}
+
+.photo-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+
+.photo-credit .credit-divider {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.hero-credit {
+  position: absolute;
+  bottom: var(--space-4, 1rem);
+  right: var(--space-4, 1rem);
+}
+
+@media (max-width: 640px) {
+  .hero-credit {
+    bottom: var(--space-2, 0.5rem);
+    right: var(--space-2, 0.5rem);
+    padding: 3px 6px;
+  }
+}
+
+.lightbox-credit {
+  position: relative;
+  margin-top: var(--space-3, 0.75rem);
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  color: #bab9b4;
+  font-size: var(--text-xs, 0.85rem);
+  justify-content: center;
+}
+
+.lightbox-credit a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+.lightbox-credit a:hover {
+  color: var(--color-primary, var(--primary, #4f98a3));
+}
+</style><meta content="../assets/img/namsan/og.png" property="og:image"/><meta content="../assets/img/namsan/og.png" name="twitter:image"/><script src="../assets/js/i18n.js"></script><link href="../namsan-playbook.html" hreflang="ko" rel="alternate"/><link href="namsan-playbook.html" hreflang="en" rel="alternate"/><link href="../namsan-playbook.html" hreflang="x-default" rel="alternate"/></head><body><a class="skip-link" href="#mainContent">Skip to main content</a><header class="header"><div class="wrap header-inner"><a class="brand" href="../index.html"><div class="logo"><svg aria-label="MT Trails" class="logo-svg" height="36" role="img" viewbox="0 0 40 40" width="36">
+<defs><lineargradient id="kt-gold" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
+</svg></div><div><h1>Namsan (Gyeongju)</h1><p>Namsan (Gyeongju) · 100 Mt. 468m</p></div></a><div class="lang-toggle"><button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button><button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button></div><button class="theme-btn" id="themeBtn">◐</button> <button aria-controls="navDrawer" aria-expanded="false" aria-label="Open Navigation Menu" class="menu-toggle-btn" id="menuToggleBtn">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="3" x2="21" y1="12" y2="12"></line><line x1="3" x2="21" y1="6" y2="6"></line><line x1="3" x2="21" y1="18" y2="18"></line></svg>
+</button>
+</div></header><section class="hero hero-bleed">
+<picture class="hero-picture" id="heroFallbackImage">
+<source sizes="100vw" srcset="../assets/img/namsan/hero-640.avif 640w, ../assets/img/namsan/hero-1024.avif 1024w, ../assets/img/namsan/hero-1600.avif 1600w, ../assets/img/namsan/hero-2400.avif 2400w" type="image/avif"/>
+<source sizes="100vw" srcset="../assets/img/namsan/hero-640.webp 640w, ../assets/img/namsan/hero-1024.webp 1024w, ../assets/img/namsan/hero-1600.webp 1600w, ../assets/img/namsan/hero-2400.webp 2400w" type="image/webp"/>
+<img alt="UNESCO World Heritage — the Namsan Buddhist Mountain Monastery of Gyeongju, an open-air museum of temple sites, stone Buddhas and pagodas gathered around Geumobong 468 m." class="hero-img" sizes="100vw" src="../assets/img/namsan/hero-1600.jpg" srcset="../assets/img/namsan/hero-640.jpg 640w, ../assets/img/namsan/hero-1024.jpg 1024w, ../assets/img/namsan/hero-1600.jpg 1600w, ../assets/img/namsan/hero-2400.jpg 2400w"/>
+</picture>
+<div class="hero-overlay"></div>
+<div class="hero-content">
+<div class="hero-badge"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg> Namsan (Gyeongju) Playbook</div>
+<h1 style="color: var(--hero-text); font-family: var(--font-display); font-size: var(--text-2xl); font-weight: 800; line-height: 1.15; margin-bottom: var(--space-4);">Namsan (Gyeongju) Hiking Playbook</h1>
+<p style="color: var(--hero-text-muted); font-size: var(--text-base); line-height: 1.6; max-width: 56ch; margin: 0 auto var(--space-8);">
+      UNESCO World Heritage — the Namsan Buddhist Mountain Monastery of Gyeongju, an open-air museum of temple sites, stone Buddhas and pagodas gathered around Geumobong 468 m.
+    </p>
+<div class="selector" style="justify-content: center; margin-top: var(--space-6); margin-bottom: var(--space-4);">
+<button class="course-btn active green" data-course="beginner"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-season"></use></svg> Samneung–Geumobong Round Trip</button>
+<button class="course-btn blue" data-course="intermediate"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-chart"></use></svg> Sambulsa–Geumobong–Poseokjeong Circuit</button>
+<button class="course-btn red" data-course="advanced"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-mountain"></use></svg> Dongnam Ridge Traverse: Dongnamsan–Geumobong–Gowibong</button>
+</div>
+</div>
+<div class="photo-credit hero-credit">
+<span class="credit-author">Photo by <a href="https://unsplash.com/photos/traditional-korean-pagoda-and-rooftops-with-misty-mountains-xmDqlEC_PVg" rel="noopener" target="_blank">Stefan Szankowski</a></span>
+<span class="credit-divider">/</span>
+<span class="credit-source"><a href="https://unsplash.com" rel="noopener" target="_blank">Unsplash</a></span>
+</div>
+</section>
+<main class="wrap"><main class="wrap" id="mainContent"><section class="panel green active" id="beginner"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> Beginner</span><div><div class="panel-name">Samneung–Geumobong Round Trip</div><div class="panel-sub">~5.6 km · 3–4 h</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Route</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Tips</button></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">Distance</span>
+<span class="pill-value">~5.6 km</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">Time</span>
+<span class="pill-value">3–4 h</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Summit</span>
+<span class="pill-value">468m</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Difficulty</span>
+<div aria-label="난이도: 2단계" class="difficulty-meter"><div class="meter-segments"><span class="segment active-medium"></span><span class="segment active-medium"></span><span class="segment"></span><span class="segment"></span><span class="segment"></span></div></div>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">100 Mt.</span>
+<span class="pill-value">✓</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></span>
+<span class="pill-label">Permit</span>
+<span class="pill-value">N/A</span>
+</div>
+</div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">삼릉 탐방지원센터</span><span class="arr">→</span><span class="chip">상선암</span><span class="arr">→</span><span class="chip">금오봉 468m</span><span class="arr">→</span><span class="chip">삼릉</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="gbeginnergr" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#6a7d4c" stop-opacity=".34"></stop><stop offset="100%" stop-color="#6a7d4c" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 190 C150 185, 260 160, 380 120 S560 70, 700 50 L740 210 L20 210 Z" fill="url(#gbeginnergr)"></path><path d="M20 190 C150 185, 260 160, 380 120 S560 70, 700 50" fill="none" stroke="#6a7d4c" stroke-linecap="round" stroke-width="4"></path><circle cx="700" cy="50" fill="#6a7d4c" r="6"></circle><text fill="#6a7d4c" font-size="12" x="550" y="40">468m</text></svg></div><p class="desc">The classic intro route on Gyeongju Namsan. From Samneung Trail Center past Sangseonam and Baduk Rock to the symbolic summit Geumobong (468 m), with open views over the Gyeongju basin.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Route by Section</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Trail Center → Sangseonam</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 2.2km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 1~1.5시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>A gentle forest climb behind Samneung Trail Center leads to Sangseonam, the main approach on the southern slope.</p><div class="bar"><div class="fill" style="width:35%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Restrooms and parking are at the trail center — use them before starting.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Sangseonam → Baduk Rock → Geumobong</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 0.6km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 30~40분</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The trail steepens over rock steps. Past Baduk Rock stands Geumobong (468 m), the symbolic peak of Namsan. Steps and ropes are in place — watch your footing.</p><div class="bar"><div class="fill" style="width:65%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Avoid slipping on wet rock, and stay on marked paths to protect the archaeological remains.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">Geumobong summit</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> —</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 20~30분</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The summit opens views over downtown Gyeongju, Wolseong and the Poseok ridge — the classic viewpoint of Namsan.</p><div class="bar"><div class="fill" style="width:100%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Stone remains lie near the summit — look around carefully.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">4</div><div><div class="seg-title">Geumobong → Samneung descent</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 2.8km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 1.5~2시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Return the way you came. Temple-site traces continue along the descent — worth a slow look.</p><div class="bar"><div class="fill" style="width:80%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> After the hike, add the Samneung–Poseokjeong heritage walk for a full day.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> Gear</h2><ul><li>Hiking shoes, 1 L water, sun protection. Gloves help on the rock steps.</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Entry</h2><ul><li>No reservation or permit required. Ask at the trail center for guidance.</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-shield"></use></svg> Cautions</h2><ul><li>The whole mountain is a heritage zone — never touch or mark the remains.</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Concept Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M110 330 C230 310, 330 270, 450 210 S620 110, 690 70" fill="none" stroke="#6a7d4c" stroke-linecap="round" stroke-width="6"></path><circle cx="110" cy="330" fill="#6a7d4c" r="10"></circle><circle cx="450" cy="210" fill="#6a7d4c" r="8"></circle><circle cx="690" cy="70" fill="#6a7d4c" r="12"></circle><text font-size="12" x="50" y="358">릉</text><text font-size="12" x="530" y="52">오</text><text fill="var(--muted)" font-size="12" x="34" y="44">산</text></svg></div><div class="section-title"><h2>Checkpoints</h2><div class="line"></div></div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼릉 탐방지원센터</span>
+<span class="badge badge-trailhead">Trailhead</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 200m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Parking, restrooms, info desk
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">상선암</span>
+<span class="badge badge-landmark">Waypoint</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 360m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 2.2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> No facilities
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">금오봉</span>
+<span class="badge badge-summit">Summit</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 468m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 2.8km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Viewpoint, simple restroom below
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼릉</span>
+<span class="badge badge-trailhead">Finish</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 200m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 5.6km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Parking, nearby restaurants
+      </div>
+</div>
+</div>
+</div></div></div></div>
+</section>
+<section class="panel blue" id="intermediate"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> Intermediate</span><div><div class="panel-name">Sambulsa–Geumobong–Poseokjeong Circuit</div><div class="panel-sub">~9 km · 5–6 h</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Route</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Tips</button></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">Distance</span>
+<span class="pill-value">~9 km</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">Time</span>
+<span class="pill-value">5–6 h</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Summit</span>
+<span class="pill-value">468m</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Difficulty</span>
+<div aria-label="난이도: 3단계" class="difficulty-meter"><div class="meter-segments"><span class="segment active-medium"></span><span class="segment active-medium"></span><span class="segment active-medium"></span><span class="segment"></span><span class="segment"></span></div></div>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">100 Mt.</span>
+<span class="pill-value">✓</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></span>
+<span class="pill-label">Permit</span>
+<span class="pill-value">N/A</span>
+</div>
+</div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">삼불사</span><span class="arr">→</span><span class="chip">삼릉</span><span class="arr">→</span><span class="chip">금오봉 468m</span><span class="arr">→</span><span class="chip">포석정</span><span class="arr">→</span><span class="chip">삼불사</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="gintermediatebl" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#456e96" stop-opacity=".34"></stop><stop offset="100%" stop-color="#456e96" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 190 C160 180, 300 120, 460 90 S640 150, 740 170 L740 210 L20 210 Z" fill="url(#gintermediatebl)"></path><path d="M20 190 C160 180, 300 120, 460 90 S640 150, 740 170" fill="none" stroke="#456e96" stroke-linecap="round" stroke-width="4"></path><circle cx="460" cy="90" fill="#456e96" r="6"></circle><text fill="#456e96" font-size="12" x="310" y="80">468m</text></svg></div><p class="desc">The signature circuit of Namsan's northern heritage. From the Sambulsa three-story pagoda past Samneung and Geumobong down to Poseokjeong, the Silla banquet pavilion — half hike, half open-air museum.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Route by Section</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Sambulsa → Samneung</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 2.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 1~1.5시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Climb the northern ridge from Sambulsa with its stone pagoda, following the forested north ridge toward Samneung.</p><div class="bar"><div class="fill" style="width:30%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Sambulsa parking may charge a fee — check before you go.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Samneung → Geumobong</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 2.8km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 1.5~2시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>A steady climb and short rock section to Geumobong 468 m, with longer ridge views than the Sangseonam approach.</p><div class="bar"><div class="fill" style="width:65%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> The ridge is exposed — secure your hat on windy days.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">Geumobong → Poseokjeong</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 3km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 1.5~2시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>Descend the north ridge to the Poseokjeong site, where the Silla banquet pavilion's curved water channel still remains.</p><div class="bar"><div class="fill" style="width:90%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Follow the visitor paths through the site — do not stray off-trail.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">4</div><div><div class="seg-title">Poseokjeong → Sambulsa</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 30~40분</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>An easy flat path returns to the trailhead — a light finish to the circuit.</p><div class="bar"><div class="fill" style="width:100%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> With time to spare, see Namsan stone pieces at the Gyeongju National Museum.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> Gear</h2><ul><li>Hiking shoes, 1.5 L water, snacks. Save an offline map of the heritage sites.</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Entry</h2><ul><li>No permit required. Follow visitor guidance at Poseokjeong and Samneung.</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-shield"></use></svg> Cautions</h2><ul><li>Many side trails branch off the ridge — check the signs at every junction.</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Concept Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M120 320 C220 300, 300 250, 420 200 S600 120, 660 90 S560 250, 400 300 S220 350, 120 320" fill="none" stroke="#456e96" stroke-linecap="round" stroke-width="6"></path><circle cx="120" cy="320" fill="#456e96" r="10"></circle><circle cx="420" cy="200" fill="#456e96" r="8"></circle><circle cx="660" cy="90" fill="#456e96" r="12"></circle><circle cx="120" cy="320" fill="#456e96" r="10"></circle><text font-size="12" x="60" y="348">불</text><text font-size="12" x="-40" y="302">석</text><text fill="var(--muted)" font-size="12" x="34" y="44">산</text></svg></div><div class="section-title"><h2>Checkpoints</h2><div class="line"></div></div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼불사</span>
+<span class="badge badge-trailhead">Trailhead</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 100m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Parking, three-story pagoda
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼릉</span>
+<span class="badge badge-landmark">Waypoint</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 250m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 2.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Trail center, restrooms
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">금오봉</span>
+<span class="badge badge-summit">Summit</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 468m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 5.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Viewpoint
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">포석정</span>
+<span class="badge badge-landmark">Waypoint</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 80m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 8.3km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Site interpretation boards
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼불사</span>
+<span class="badge badge-trailhead">Finish</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 100m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 9km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Parking
+      </div>
+</div>
+</div>
+</div></div></div></div>
+</section>
+<section class="panel red" id="advanced"><div class="panel-top"><span class="level"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-season"></use></svg> Advanced</span><div><div class="panel-name">Dongnam Ridge Traverse: Dongnamsan–Geumobong–Gowibong</div><div class="panel-sub">~11 km · 6–7 h</div></div></div><div class="tabs"><button class="tab active" data-tab="overview"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-prep"></use></svg> Overview</button><button class="tab" data-tab="route"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Route</button><button class="tab" data-tab="map"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg> Map</button><button class="tab" data-tab="tips"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Tips</button></div>
+<div class="playbook-split-container"><div class="playbook-main-col"><div class="tabpane active" data-pane="overview"><div class="course-stats-summary">
+<div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg></span>
+<span class="pill-label">Distance</span>
+<span class="pill-value">~11 km</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg></span>
+<span class="pill-label">Time</span>
+<span class="pill-value">6–7 h</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-location"></use></svg></span>
+<span class="pill-label">Summit</span>
+<span class="pill-value">468m</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">Difficulty</span>
+<div aria-label="난이도: 4단계" class="difficulty-meter"><div class="meter-segments"><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment active-hard"></span><span class="segment"></span></div></div>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-star"></use></svg></span>
+<span class="pill-label">100 Mt.</span>
+<span class="pill-value">✓</span>
+</div><div class="stat-pill">
+<span class="pill-icon"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg></span>
+<span class="pill-label">Permit</span>
+<span class="pill-value">N/A</span>
+</div>
+</div><div class="section-title"><h2>Course Flow</h2><div class="line"></div></div><div class="card"><div class="flow"><span class="chip">동남산 입구</span><span class="arr">→</span><span class="chip">칠불암</span><span class="arr">→</span><span class="chip">금오봉 468m</span><span class="arr">→</span><span class="chip">고위봉 495m</span><span class="arr">→</span><span class="chip">삼릉</span></div></div><div class="section-title"><h2>Elevation Profile</h2><div class="line"></div></div><div class="card elev"><svg viewbox="0 0 760 220"><defs><lineargradient id="gadvancedre" x1="0" x2="0" y1="0" y2="1"><stop offset="0%" stop-color="#9f5845" stop-opacity=".34"></stop><stop offset="100%" stop-color="#9f5845" stop-opacity=".05"></stop></lineargradient></defs><path d="M20 195 C140 170, 260 130, 400 95 S540 85, 600 60 S680 100, 740 130 L740 210 L20 210 Z" fill="url(#gadvancedre)"></path><path d="M20 195 C140 170, 260 130, 400 95 S540 85, 600 60 S680 100, 740 130" fill="none" stroke="#9f5845" stroke-linecap="round" stroke-width="4"></path><circle cx="600" cy="60" fill="#9f5845" r="6"></circle><text fill="#9f5845" font-size="12" x="450" y="50">495m</text></svg></div><p class="desc">A ridge traverse to Gowibong (~495 m), the highest point of Namsan. From Dongnamsan and Chibulam along the ridge over Geumobong to Gowibong, then down to Samneung — a heritage-dense ridgeline.</p></div><div class="tabpane" data-pane="route"><div class="section-title"><h2>Route by Section</h2><div class="line"></div></div><div class="segments"><div class="seg"><div class="seg-head"><div class="seg-no">1</div><div><div class="seg-title">Dongnamsan entrance → Chibulam</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 2km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 1~1.5시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>A forested climb on the southeast slope reaches Chibulam, passing temple sites and stone remains.</p><div class="bar"><div class="fill" style="width:30%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> The trail near Chibulam is steep and slippery after rain.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">2</div><div><div class="seg-title">Chibulam → Geumobong</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 3.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 2~2.5시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>The ridge proper: repeated rock steps lead to Geumobong 468 m.</p><div class="bar"><div class="fill" style="width:65%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Gloves are essential on the rock; expect slippery leaves in autumn.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">3</div><div><div class="seg-title">Geumobong → Gowibong</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 1.5km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 40~60분</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>A short but substantial ridge to Gowibong (~495 m), the true high point behind the 100-mountains elevation figure.</p><div class="bar"><div class="fill" style="width:85%"></div></div><div class="tip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-tip"></use></svg> Trail conditions around Gowibong vary — check recent trip reports.</div></div></div><div class="seg"><div class="seg-head"><div class="seg-no">4</div><div><div class="seg-title">Gowibong → Samneung descent</div><div class="acc-meta-chips"><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 약 4km</span><span class="meta-chip"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-clock"></use></svg> 2~2.5시간</span></div></div><div class="seg-arrow">⌄</div></div><div class="seg-body"><p>A forested descent of the north slope to Samneung — legs will be tired; leave slack in your timing.</p><div class="bar"><div class="fill" style="width:100%"></div></div><div class="warn"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-warning"></use></svg> Near dusk, leave the ridge for a descent trail — do not stay out after dark.</div></div></div></div></div><div class="tabpane" data-pane="tips"><div class="tips-grid"><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-backpack"></use></svg> Gear</h2><ul><li>Hiking shoes, gloves, poles, 1.5 L water. Pace yourself — it is a full ridge day.</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-book"></use></svg> Entry</h2><ul><li>No permit required, but be restrained with photography inside shrine sites.</li></ul></div><div class="card tipcard"><h2><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-shield"></use></svg> Cautions</h2><ul><li>The traverse runs long — carry a headlamp in case of a late descent.</li></ul></div></div></div></div><div class="playbook-sidebar-col"><div class="tabpane" data-pane="map"><div class="section-title"><h2>Concept Map</h2><div class="line"></div></div><div class="card map"><svg viewbox="0 0 760 420"><rect fill="var(--surface2)" height="400" rx="22" width="740" x="10" y="10"></rect><path d="M130 340 C230 310, 310 260, 430 210 S600 90, 660 60 S600 200, 440 250 S220 300, 130 340" fill="none" stroke="#9f5845" stroke-linecap="round" stroke-width="6"></path><circle cx="130" cy="340" fill="#9f5845" r="10"></circle><circle cx="430" cy="210" fill="#9f5845" r="8"></circle><circle cx="660" cy="60" fill="#9f5845" r="12"></circle><circle cx="130" cy="340" fill="#9f5845" r="10"></circle><text font-size="12" x="70" y="368">남</text><text font-size="12" x="-30" y="322">릉</text><text fill="var(--muted)" font-size="12" x="34" y="44">산</text></svg></div><div class="section-title"><h2>Checkpoints</h2><div class="line"></div></div><div class="checkpoint-timeline">
+<div class="timeline-item start">
+<div class="timeline-marker">1</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">동남산 입구</span>
+<span class="badge badge-trailhead">Trailhead</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 90m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 0km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Limited parking
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">2</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">칠불암</span>
+<span class="badge badge-landmark">Waypoint</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 300m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 2km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Temple
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">3</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">금오봉</span>
+<span class="badge badge-summit">Summit</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 468m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 5.5km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Viewpoint
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">4</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">고위봉</span>
+<span class="badge badge-summit">High point</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 약 495m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 7km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Forested, no view
+      </div>
+</div>
+</div><div class="timeline-item">
+<div class="timeline-marker">5</div>
+<div class="timeline-content">
+<div class="timeline-header">
+<span class="checkpoint-name">삼릉</span>
+<span class="badge badge-trailhead">Finish</span>
+</div>
+<div class="timeline-meta">
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-mountain"></use></svg> 해발 약 200m</span>
+<span class="meta-item"><svg class="icon-svg"><use href="assets/icons/icons.svg#icon-ruler"></use></svg> 11km</span>
+</div>
+<div class="timeline-features">
+<span class="feature-label">Amenities:</span> Parking, restrooms
+      </div>
+</div>
+</div>
+</div></div></div></div>
+</section>
+</main><div id="deep-info-root" data-mountain="namsan"></div>
+<section class="photo-gallery-section">
+<h2 class="section-title" style="margin-bottom:var(--space-4);font-family:var(--font-display);font-size:var(--text-lg);font-weight:800;">
+<span class="section-title-icon"><svg class="icon-svg"><use href="../assets/icons/icons.svg#icon-camera"></use></svg></span> Namsan (Gyeongju) Seasons
+  </h2>
+<div class="gallery-grid">
+<button aria-haspopup="dialog" aria-label="Namsan (Gyeongju) scenery 1 View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/a-traditional-pagoda-building-stands-against-a-hazy-mountain-backdrop-7mlu7gS0zbM' target='_blank' rel='noopener'&gt;Stefan Szankowski&lt;/a&gt; on Unsplash" data-index="0">
+<picture class="gallery-picture">
+<source srcset="../assets/img/namsan/g1.avif" type="image/avif"/>
+<source srcset="../assets/img/namsan/g1.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/namsan/g1.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Namsan (Gyeongju) scenery 1</span>
+</div>
+</button>
+<button aria-haspopup="dialog" aria-label="Namsan (Gyeongju) scenery 2 View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/traditional-korean-buildings-with-a-mountain-backdrop-JnN-vhAFx6U' target='_blank' rel='noopener'&gt;Seval Torun&lt;/a&gt; on Unsplash" data-index="1">
+<picture class="gallery-picture">
+<source srcset="../assets/img/namsan/g2.avif" type="image/avif"/>
+<source srcset="../assets/img/namsan/g2.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/namsan/g2.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Namsan (Gyeongju) scenery 2</span>
+</div>
+</button>
+<button aria-haspopup="dialog" aria-label="Namsan (Gyeongju) scenery 3 View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/historic-korean-palace-with-stone-wall-buildings-and-distant-pagoda-8rUHaQiemto' target='_blank' rel='noopener'&gt;Stefan Szankowski&lt;/a&gt; on Unsplash" data-index="2">
+<picture class="gallery-picture">
+<source srcset="../assets/img/namsan/g3.avif" type="image/avif"/>
+<source srcset="../assets/img/namsan/g3.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/namsan/g3.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Namsan (Gyeongju) scenery 3</span>
+</div>
+</button>
+<button aria-haspopup="dialog" aria-label="Namsan (Gyeongju) scenery 4 View larger" class="gallery-item" data-credit="Photo by &lt;a href='https://unsplash.com/photos/traditional-korean-palace-architecture-against-cloudy-sky-ObXyOdR3lvw' target='_blank' rel='noopener'&gt;Ilias Gainutdinov&lt;/a&gt; on Unsplash" data-index="3">
+<picture class="gallery-picture">
+<source srcset="../assets/img/namsan/g4.avif" type="image/avif"/>
+<source srcset="../assets/img/namsan/g4.webp" type="image/webp"/>
+<img alt="" class="gallery-img" decoding="async" loading="lazy" src="../assets/img/namsan/g4.jpg"/>
+</picture>
+<div class="gallery-caption-overlay">
+<span class="gallery-caption-text">Namsan (Gyeongju) scenery 4</span>
+</div>
+</button>
+</div>
+</section></main><footer style="border-top:1px solid var(--border); padding: var(--space-8) var(--space-6); background-color: var(--surface); margin-top: var(--space-12);">
+<div class="wrap">
+<div class="footer-sitemap" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: var(--space-6); text-align: left; margin-bottom: var(--space-8); border-bottom: 1px solid var(--border); padding-bottom: var(--space-8);">
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Gyeonggi/Seoul</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="bukhansan-playbook.html" style="color: var(--muted); text-decoration: none;">Bukhansan</a>
+<a href="dobongsan-playbook.html" style="color: var(--muted); text-decoration: none;">Dobongsan</a>
+<a href="myeongseongsan-playbook.html" style="color: var(--muted); text-decoration: none;">Myeongseongsan</a>
+<a href="soyosan-playbook.html" style="color: var(--muted); text-decoration: none;">Soyosan</a>
+<a href="unaksan-playbook.html" style="color: var(--muted); text-decoration: none;">Unaksan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Gangwon</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="seoraksan-playbook.html" style="color: var(--muted); text-decoration: none;">Seoraksan</a>
+<a href="chiaksan-playbook.html" style="color: var(--muted); text-decoration: none;">Chiaksan</a>
+<a href="odaesan-playbook.html" style="color: var(--muted); text-decoration: none;">Odaesan</a>
+<a href="taebaeksan-playbook.html" style="color: var(--muted); text-decoration: none;">Taebaeksan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Chungcheong</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="sobaeksan-playbook.html" style="color: var(--muted); text-decoration: none;">Sobaeksan</a>
+<a href="gyeryongsan-playbook.html" style="color: var(--muted); text-decoration: none;">Gyeryongsan</a>
+<a href="minjusan-playbook.html" style="color: var(--muted); text-decoration: none;">Minjujisan</a>
+<a href="sikjangsan-playbook.html" style="color: var(--muted); text-decoration: none;">Sikjangsan</a>
+<a href="woraksan-playbook.html" style="color: var(--muted); text-decoration: none;">Woraksan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Jeolla</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="jirisan-playbook.html" style="color: var(--muted); text-decoration: none;">Jirisan</a>
+<a href="naejangsan-playbook.html" style="color: var(--muted); text-decoration: none;">Naejangsan</a>
+<a href="deogyusan-playbook.html" style="color: var(--muted); text-decoration: none;">Deogyusan</a>
+<a href="wolchulsan-playbook.html" style="color: var(--muted); text-decoration: none;">Wolchulsan</a>
+<a href="mudeungsan-playbook.html" style="color: var(--muted); text-decoration: none;">Mudeungsan</a>
+<a href="duryunsan-playbook.html" style="color: var(--muted); text-decoration: none;">Duryunsan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Gyeongsang / Jeju</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="gayasan-playbook.html" style="color: var(--muted); text-decoration: none;">Gayasan</a>
+<a href="juwangsan-playbook.html" style="color: var(--muted); text-decoration: none;">Juwangsan</a>
+<a href="hallasan-playbook.html" style="color: var(--muted); text-decoration: none;">Hallasan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Taiwan</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="yushan-playbook.html" style="color: var(--muted); text-decoration: none;">Yushan</a>
+<a href="xueshan-playbook.html" style="color: var(--muted); text-decoration: none;">Xueshan</a>
+<a href="yangmingshan-playbook.html" style="color: var(--muted); text-decoration: none;">Yangmingshan</a>
+</div>
+</div>
+<div class="sitemap-col">
+<div style="font-weight: 800; font-size: var(--text-xs); color: var(--text); text-transform: uppercase; margin-bottom: var(--space-3);">Themes</div>
+<div style="display: flex; flex-direction: column; gap: var(--space-2); font-size: var(--text-xs);">
+<a href="cycling.html" style="color: var(--muted); text-decoration: none;">Cycling Routes</a>
+<a href="map.html" style="color: var(--muted); text-decoration: none;">Interactive Map</a>
+</div>
+</div>
+</div>
+<p style="font-size: var(--text-xs); color: var(--muted); line-height: 1.8; text-align: center; max-width: 800px; margin: 0 auto;">
+    MT Trails — National Hiking Playbook · National Park Reservation: <a href="https://reservation.knps.or.kr" rel="noopener" style="color: var(--primary); text-decoration: underline;" target="_blank">knps.or.kr</a><br/>
+    Some of the hiking photos and tracking videos on this site are original works photographed and produced by Dokyung Kim, with the videos published on the YouTube channel Dokyung Kim (@DK2560). They may be used for non-commercial purposes only, and credit must be given to the source and author (Dokyung Kim) upon use. (CC BY-NC 4.0 standard applied)<br/>
+    © 2026 MT Trails. All Rights Reserved.
+  </p>
+</div>
+</footer>
+<script>
+const themeBtn=document.getElementById('themeBtn');let mode=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.setAttribute('data-theme',mode);themeBtn.addEventListener('click',()=>{mode=mode==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',mode)});
+const courseBtns=[...document.querySelectorAll('.course-btn')],panels=[...document.querySelectorAll('.panel')];courseBtns.forEach(btn=>btn.addEventListener('click',()=>{courseBtns.forEach(b=>b.classList.remove('active'));btn.classList.add('active');panels.forEach(p=>p.classList.remove('active'));document.getElementById(btn.dataset.course).classList.add('active')}));
+document.querySelectorAll('.panel').forEach(panel=>{const tabs=[...panel.querySelectorAll('.tab')],panes=[...panel.querySelectorAll('.tabpane')];tabs.forEach(tab=>tab.addEventListener('click',()=>{tabs.forEach(t=>t.classList.remove('active'));panes.forEach(p=>p.classList.remove('active'));tab.classList.add('active');panel.querySelector(`.tabpane[data-pane="${tab.dataset.tab}"]`).classList.add('active')}))});
+document.querySelectorAll('.seg-head').forEach(head=>head.addEventListener('click',()=>head.parentElement.classList.toggle('open')));
+</script><div aria-hidden="true" aria-label="View Image Larger" aria-modal="true" class="lightbox" id="lightbox" role="dialog" tabindex="-1"><button aria-label="Close Gallery" class="lightbox-close">×</button><button aria-label="Previous Image" class="lightbox-prev">❮</button><button aria-label="Next Image" class="lightbox-next">❯</button><div class="lightbox-content"><figure class="lightbox-figure"><figcaption class="lightbox-caption"></figcaption></figure><div class="photo-credit lightbox-credit"></div></div></div><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const galleryItems = document.querySelectorAll('.gallery-item');
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || galleryItems.length === 0) return;
+  
+  const closeBtn = lightbox.querySelector('.lightbox-close');
+  const prevBtn = lightbox.querySelector('.lightbox-prev');
+  const nextBtn = lightbox.querySelector('.lightbox-next');
+  const figureContainer = lightbox.querySelector('.lightbox-figure');
+  const captionEl = lightbox.querySelector('.lightbox-caption');
+  const creditEl = lightbox.querySelector('.lightbox-credit');
+  
+  let currentIndex = -1;
+  let lastActiveElement = null;
+  
+  const openLightbox = (index) => {
+    currentIndex = index;
+    lastActiveElement = document.activeElement;
+    
+    const item = galleryItems[currentIndex];
+    const sourcePicture = item.querySelector('picture');
+    const captionText = item.querySelector('.gallery-caption-text')?.textContent || '';
+    
+    const existingPic = figureContainer.querySelector('picture');
+    if (existingPic) existingPic.remove();
+    
+    const clonedPic = sourcePicture.cloneNode(true);
+    const img = clonedPic.querySelector('img');
+    img.className = 'lightbox-img';
+    img.removeAttribute('loading');
+    img.removeAttribute('decoding');
+    
+    figureContainer.insertBefore(clonedPic, captionEl);
+    captionEl.textContent = captionText;
+    
+    const creditData = item.getAttribute('data-credit') || '';
+    if (creditData && creditEl) {
+      creditEl.innerHTML = creditData;
+      creditEl.style.display = 'block';
+    } else if (creditEl) {
+      creditEl.style.display = 'none';
+    }
+    
+    lightbox.setAttribute('aria-hidden', 'false');
+    lightbox.focus();
+    document.body.style.overflow = 'hidden';
+  };
+  
+  const closeLightbox = () => {
+    lightbox.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastActiveElement) lastActiveElement.focus();
+  };
+  
+  const showNext = () => {
+    let nextIndex = currentIndex + 1;
+    if (nextIndex >= galleryItems.length) nextIndex = 0;
+    openLightbox(nextIndex);
+  };
+  
+  const showPrev = () => {
+    let prevIndex = currentIndex - 1;
+    if (prevIndex < 0) prevIndex = galleryItems.length - 1;
+    openLightbox(prevIndex);
+  };
+  
+  galleryItems.forEach((item, idx) => {
+    item.addEventListener('click', () => openLightbox(idx));
+  });
+  
+  closeBtn.addEventListener('click', closeLightbox);
+  nextBtn.addEventListener('click', showNext);
+  prevBtn.addEventListener('click', showPrev);
+  
+  lightbox.addEventListener('click', (e) => {
+    if (e.target === lightbox || e.target.classList.contains('lightbox-content')) {
+      closeLightbox();
+    }
+  });
+  
+  lightbox.addEventListener('keydown', (e) => {
+    if (lightbox.getAttribute('aria-hidden') === 'true') return;
+    
+    if (e.key === 'Escape') {
+      closeLightbox();
+    } else if (e.key === 'ArrowRight') {
+      showNext();
+    } else if (e.key === 'ArrowLeft') {
+      showPrev();
+    } else if (e.key === 'Tab') {
+      const focusableElements = lightbox.querySelectorAll('button');
+      const firstFocus = focusableElements[0];
+      const lastFocus = focusableElements[focusableElements.length - 1];
+      
+      if (e.shiftKey) {
+        if (document.activeElement === firstFocus) {
+          lastFocus.focus();
+          e.preventDefault();
+        }
+      } else {
+        if (document.activeElement === lastFocus) {
+          firstFocus.focus();
+          e.preventDefault();
+        }
+      }
+    }
+  });
+});
+</script><script>
+// Unified course switcher override for rebranding compatibility
+(function() {
+  const switcher = function(lv, btn) {
+    document.querySelectorAll('.course-btn').forEach(b => {
+      b.classList.remove('active');
+    });
+    if (btn) {
+      btn.classList.add('active');
+    } else {
+      const targetBtn = document.querySelector('.course-btn.' + lv) || document.querySelector('.course-btn[onclick*="' + lv + '"]');
+      if (targetBtn) targetBtn.classList.add('active');
+    }
+    document.querySelectorAll('.course-panel, .panel').forEach(p => {
+      p.classList.remove('active');
+    });
+    const panel = document.getElementById('panel-' + lv) || 
+                  document.getElementById('course-' + lv) || 
+                  document.getElementById(lv) ||
+                  document.querySelector('.course-panel.' + lv) ||
+                  document.querySelector('.panel.' + lv);
+    if (panel) {
+      panel.classList.add('active');
+      setTimeout(() => {
+        panel.querySelectorAll('.diff-bar-fill').forEach(b => {
+          const w = b.style.width;
+          if (w && w !== '0%') {
+            b.style.width = '0%';
+            requestAnimationFrame(() => requestAnimationFrame(() => { b.style.width = w; }));
+          }
+        });
+      }, 50);
+    }
+  };
+  window.selectDifficulty = window.switchLevel = window.selectLevel = window.selectCourse = window.selC = switcher;
+})();
+</script><script>
+document.addEventListener('DOMContentLoaded', () => {
+  const video = document.getElementById('heroVideo');
+  const fallback = document.getElementById('heroFallbackImage');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = window.matchMedia('(max-width: 1023px)').matches;
+
+  if (!prefersReducedMotion && !isMobile && video) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          video.style.display = 'block';
+          if (fallback) fallback.style.display = 'none';
+          video.load();
+          video.play().catch(err => console.log("Video auto-play blocked: ", err));
+          observer.disconnect();
+        }
+      });
+    }, { threshold: 0.1 });
+    observer.observe(document.querySelector('.hero-bleed'));
+  }
+});
+</script>
+<!-- Navigation Drawer (Hamburger Menu) -->
+<div aria-hidden="true" aria-label="Navigation Menu" aria-modal="true" class="nav-drawer" id="navDrawer" role="dialog">
+<div class="nav-drawer-overlay" tabindex="-1"></div>
+<div class="nav-drawer-content">
+<div class="nav-drawer-header">
+<div class="nav-drawer-logo">
+<svg aria-label="MT Trails" class="logo-svg" height="30" role="img" viewbox="0 0 40 40" width="30">
+<defs><lineargradient id="kt-gold-drawer" x1="0" x2="0" y1="0" y2="1">
+<stop offset="0" stop-color="#f1d98a"></stop><stop offset=".5" stop-color="#c9a24b"></stop><stop offset="1" stop-color="#9c7a2e"></stop>
+</lineargradient></defs>
+<rect fill="#0e1c34" height="40" rx="9" width="40"></rect>
+<path d="M20 8 L33 31 L7 31 Z" fill="none" stroke="url(#kt-gold-drawer)" stroke-linejoin="round" stroke-width="2.2"></path>
+<polyline fill="none" points="11,28 16,21.5 19,24.5 24.5,17 29,28" stroke="url(#kt-gold-drawer)" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8"></polyline>
+</svg>
+<span class="nav-drawer-logo-text">MT Trails</span>
+</div>
+<button aria-label="Close Menu" class="nav-drawer-close-btn" id="navDrawerCloseBtn">
+<svg fill="none" height="20" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="20"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
+</button>
+</div>
+<nav aria-label="Drawer Navigation" class="nav-drawer-menu">
+<a class="nav-drawer-link" href="../index.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+        Home
+      </a>
+<a class="nav-drawer-link" href="../index.html#mountainGrid">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="m8 3-7 18h22L16 7l-4 7-4-11Z"></path></svg>
+        Mountain List
+      </a>
+<a class="nav-drawer-link" href="cycling.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path></svg>
+        Cycling
+      </a>
+<a class="nav-drawer-link" href="map.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+        Interactive Map
+      </a>
+<a class="nav-drawer-link" href="sitemap.html">
+<svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path></svg>
+        Sitemap
+      </a>
+</nav>
+<div class="nav-drawer-divider"></div>
+<div class="nav-drawer-footer">
+<div class="nav-drawer-section-title">Settings</div>
+<div class="nav-drawer-settings">
+<button aria-label="Toggle Theme" class="drawer-theme-toggle" id="drawerThemeBtn">
+<span class="theme-icon"><svg fill="none" height="18" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" width="18"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg></span>
+<span class="theme-label">Dark/Light Mode</span>
+</button>
+<div class="drawer-lang-toggle">
+<span class="lang-label">Language</span>
+<div class="lang-toggle">
+<button aria-label="Korean" aria-pressed="false" class="lang-btn" onclick="changeLanguage('ko')">KO</button>
+<button aria-label="English" aria-pressed="true" class="lang-btn active" onclick="changeLanguage('en')">EN</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script src="../assets/js/deep-info-data-en.js"></script>
+<script src="../assets/js/deep-info.js"></script>
+<script src="../assets/js/nav-drawer.js"></script>
+</body></html>
