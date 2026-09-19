@@ -155,6 +155,11 @@ def build(mountain, lang):
 
     t = t.replace('data-mountain="yushan"', f'data-mountain="{mountain}"', 1)
     t = t.replace('../../assets/img/', '../assets/img/')
+    # EN 페이지: IC 상수가 무프리픽스로 삽입하는 아이콘 참조에 ../ 부여 (v2~v6 4,775곳 사고의 근본 수선)
+    if lang == 'en':
+        t = t.replace(f'href="{IC}#', f'href="../{IC}#')
+    # og 이미지는 jpg로 통일 (경량화)
+    t = t.replace(f'{pfx}assets/img/{mountain}/og.png', f'{pfx}assets/img/{mountain}/og.jpg')
     return t
 
 if __name__ == '__main__':
