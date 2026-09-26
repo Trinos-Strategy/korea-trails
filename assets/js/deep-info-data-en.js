@@ -1220,241 +1220,33 @@ window.DEEP_INFO_EN['poonhill'] = {
 
 // ── Korea 100 Famous Mountains (10 mountains) ──
 
-window.DEEP_INFO_EN['gwanaksan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Gwanaksan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Gwanaksan playbook', href: 'gwanaksan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['gwanaksan'] = {updated:'2026-09 기준',note:'관악산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A Seoul city park — Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Subway access',tag:'Note',body:'Reach via line 2 Seoul National Univ. or Nakseongdae, or line 4 Sadang. Parking near Gwanaksa is tight.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Urban mountain',tag:'Note',body:'A capital-area city hill — day trips are the norm.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Yeongbong crags',tag:'Required',body:'The Yeongbong ledges see frequent falls — stay behind safety lines on marked trails.'}]}],sources:[{label:'Seoul parks',href:'https://parks.seoul.go.kr'}]};
 
-window.DEEP_INFO_EN['suraksan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Suraksan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Suraksan playbook', href: 'suraksan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['suraksan'] = {updated:'2026-09 기준',note:'수락산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A Seoul city park — Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Subway access',tag:'Note',body:'Reach via line 4 Suraksan, Sanggye or Jangam stations; arrive early for Nowongol parking.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Urban mountain',tag:'Note',body:'A capital-area city hill — day trips are the norm.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Surak-jungang ledges',tag:'Required',body:'The central ridge ledges carry fall risk — use other trails in rain or ice.'}]}],sources:[{label:'Seoul parks',href:'https://parks.seoul.go.kr'}]};
 
-window.DEEP_INFO_EN['cheonggyesan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Cheonggyesan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Cheonggyesan playbook', href: 'cheonggyesan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['cheonggyesan'] = {updated:'2026-09 기준',note:'청계산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A city park — Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Subway access',tag:'Note',body:'Reach via Sinbundang Cheonggyesan station or line 4 Seonbawi/Grand Park; weekend lots are busy.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Urban mountain',tag:'Note',body:'A capital-area city hill — day trips are the norm.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Daegyo Peak rocks',tag:'Recommended',body:'The Daegyo Peak lookout rocks are exposed — take care in wind or rain.'}]}],sources:[{label:'Seoul-area city parks',href:'https://parks.seoul.go.kr'}]};
 
-window.DEEP_INFO_EN['achasan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Achasan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Achasan playbook', href: 'achasan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['achasan'] = {updated:'2026-09 기준',note:'아차산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'An urban park — Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Subway access',tag:'Note',body:'Direct access from line 5 Achasan or Gwangnaru stations, with riverside park walks nearby.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Urban hill',tag:'Note',body:'A capital-area city hill — day trips are the norm.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Night hikes',tag:'Recommended',body:'Popular for night views — carry a light for unlit stretches.'}]}],sources:[{label:'Seoul parks',href:'https://parks.seoul.go.kr'}]};
 
-window.DEEP_INFO_EN['geumjeongsan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Geumjeongsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Geumjeongsan playbook', href: 'geumjeongsan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['geumjeongsan'] = {updated:'2026-09 기준',note:'금정산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A Busan city park — Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Subway access',tag:'Note',body:'Reach via line 1 Beomeosa, Dusil or Nopo stations; trailhead lots are congested.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Busan city',tag:'Note',body:'Hot-spring district and Seomyeon lodging make convenient bases.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Ridge rocks',tag:'Recommended',body:'Fortress-ridge rock steps are slick in rain — gloves recommended.'}]}],sources:[{label:'Busan parks',href:'https://www.busan.go.kr'}]};
 
-window.DEEP_INFO_EN['palgongsan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Palgongsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Palgongsan playbook', href: 'palgongsan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['palgongsan'] = {updated:'2026-09 기준',note:'팔공산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A Daegu city park — Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Donghwasa trailhead',tag:'Note',body:'Donghwasa is the main trailhead — city bus then on foot; weekend parking is busy.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Daegu city',tag:'Note',body:'Day trips from Daegu city lodging are the norm.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Gatbawi rocks',tag:'Recommended',body:'The Gatbawi rock steps are crowded and slippery — stay behind safety lines.'}]}],sources:[{label:'Daegu parks',href:'https://www.daegu.go.kr'}]};
 
-window.DEEP_INFO_EN['unmunsan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Unmunsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Unmunsan playbook', href: 'unmunsan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['unmunsan'] = {updated:'2026-09 기준',note:'운문산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A county park across Ulsan and Gyeongnam — Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Taegosa trailhead',tag:'Note',body:'Taegosa is the main trailhead — reach via Ulsan or Yangsan then local transport.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Ulsan and Eonyang',tag:'Note',body:'Stay in Ulsan city or Eonyang town.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Daeunmun ridge',tag:'Recommended',body:'The Daeunmun ridge is exposed — bring a wind shell.'}]}],sources:[{label:'Ulsan facilities corp',href:'https://www.uclec.go.kr'}]};
 
-window.DEEP_INFO_EN['songnisan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Songnisan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Songnisan playbook', href: 'songnisan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['songnisan'] = {updated:'2026-09 기준',note:'속리산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'National park',tag:'Recommended',body:'Inside Songnisan National Park — follow KNPS guidance.'}, {h:'Beopjusa trailhead',tag:'Note',body:'Beopjusa is the main trailhead — check parking and temple-visit guidance.'}]}, {icon:'bus',title:'Transport',items:[{h:'Public transport',tag:'Note',body:'Buses run from Boeun toward the park but are infrequent — check timetables.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Park tourist area',tag:'Note',body:'Lodging near Beopjusa or in Boeun town is available.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Munjangdae ledges',tag:'Required',body:'The Munjangdae ledges carry lightning and fall risk — descend at the first storm.'}]}],sources:[{label:'KNPS — Songnisan',href:'https://www.knps.or.kr'}]};
 
-window.DEEP_INFO_EN['daedunsan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Daedunsan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Daedunsan playbook', href: 'daedunsan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['daedunsan'] = {updated:'2026-09 기준',note:'대둔산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A Chungnam provincial park — Open hiking with no reservation or permit required.'}, {h:'Cable car',tag:'Note',body:'Cable-car operation varies with weather and maintenance — check before you go.'}]}, {icon:'bus',title:'Transport',items:[{h:'Public transport',tag:'Note',body:'Buses reach the park from Daejeon or Gyeryong — check schedules.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Park tourist area',tag:'Note',body:'Guesthouses near the park or lodging in Geumsan town are available.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Cloud Bridge and deck',tag:'Required',body:'The Cloud Bridge and Mancheonha deck may close in strong wind — follow on-site notices.'}]}],sources:[{label:'Chungnam provincial park',href:'https://www.chungnam.go.kr'}]};
 
-window.DEEP_INFO_EN['maisan'] = {
-  updated: 'As of 2026-09',
-  note: 'Korea 100 Famous Mountains expansion',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Maisan is one of Korea\'s 100 Famous Mountains and requires no separate climbing permit. Check trail opening hours and weather before visiting.' },
-      { h: 'Transit', tag: 'Recommended', body: 'Public transit is available but schedules may be limited — verify the latest timetable before departure.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Emergency contact', tag: 'Required', body: 'Call 119 for mountain rescue. Aim to descend two hours before sunset.' },
-      { h: 'Wildfire alert', tag: 'Required', body: 'Smoking and cooking are prohibited during wildfire alert periods. Check forest service notices.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s Maisan playbook', href: 'maisan-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['maisan'] = {updated:'2026-09 기준',note:'마이산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'A Jeonbuk provincial park — Open hiking with no reservation or permit required.'}, {h:'Ostrich-rock protection',tag:'Required',body:'Climbing the twin Ostrich Rocks is prohibited — stay on the marked paths.'}]}, {icon:'bus',title:'Transport',items:[{h:'Public transport',tag:'Note',body:'Buses run from Jeonju toward Jinan — check schedules.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Jinan town',tag:'Note',body:'Stay in Jinan town or near the park.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}]}],sources:[{label:'Jeonbuk provincial park',href:'https://www.jbculture.go.kr'}]};
 
 // ── Himalaya category 3 treks ──
 
-window.DEEP_INFO_EN['ebc'] = {
-  updated: 'As of 2026-09',
-  note: 'Himalaya category',
-  sections: [
-    { icon: 'book', title: 'Permits', items: [
-      { h: 'Trekking permits', tag: 'Required', body: 'Everest Base Camp trekking requires national park entry and municipality permits (~NPR 6,000 total). A guide has been mandatory since 2023.' },
-      { h: 'Insurance', tag: 'Required', body: 'Trekking insurance (including helicopter evacuation) is de-facto mandatory — the route includes sections above 5,000 m.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Local emergency numbers', tag: 'Required', body: 'Nepal: police 100, ambulance 102, unified 112. Descend immediately if altitude symptoms appear.' },
-      { h: 'Season', tag: 'Recommended', body: 'March–May (spring) and October–November (autumn) are optimal. Winter high-altitude camping is for experts only.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s playbook', href: 'ebc-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['ebc'] = {updated:'2026-09 기준',note:'에베레스트 BC — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Sagarmatha NP entry',tag:'Required',body:'Foreign visitors pay NPR 3,000 (about USD 30) entry (as of 2025).'}, {h:'Guide mandatory',tag:'Required',body:'Since April 2023 foreign trekkers must travel with a registered guide.'}, {h:'TIMS card',tag:'Required',body:'TIMS registration is required — about USD 20 for independent trekkers.'}]}, {icon:'bus',title:'Transport',items:[{h:'Lukla flight',tag:'Note',body:'The Kathmandu–Lukla flight is the standard approach — book well ahead in season.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Teahouses',tag:'Note',body:'Teahouse lodging runs the whole route — book ahead in peak season.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Altitude safety',tag:'Required',body:'Build acclimatization days and descend immediately if symptoms appear.'}, {h:'Insurance and rescue',tag:'Required',body:'Confirm travel insurance covering high-altitude helicopter rescue.'}]}],sources:[{label:'Nepal trekking official info',href:'https://ntb.gov.np'}]};
 
-window.DEEP_INFO_EN['act'] = {
-  updated: 'As of 2026-09',
-  note: 'Himalaya category',
-  sections: [
-    { icon: 'book', title: 'Permits', items: [
-      { h: 'Trekking permits', tag: 'Required', body: 'Annapurna Circuit trekking requires national park entry and municipality permits (~NPR 6,000 total). A guide has been mandatory since 2023.' },
-      { h: 'Insurance', tag: 'Required', body: 'Trekking insurance (including helicopter evacuation) is de-facto mandatory — the route includes sections above 5,000 m.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Local emergency numbers', tag: 'Required', body: 'Nepal: police 100, ambulance 102, unified 112. Descend immediately if altitude symptoms appear.' },
-      { h: 'Season', tag: 'Recommended', body: 'March–May (spring) and October–November (autumn) are optimal. Winter high-altitude camping is for experts only.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s playbook', href: 'act-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['act'] = {updated:'2026-09 기준',note:'안나푸르나 서킷 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'ACAP permit',tag:'Required',body:'An Annapurna Conservation Area Permit is required — check fees and issuance points.'}, {h:'Guide mandatory',tag:'Required',body:'Since April 2023 foreign trekkers must travel with a registered guide.'}, {h:'TIMS card',tag:'Required',body:'TIMS registration is required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Getting to Besisahar',tag:'Note',body:'Overland from Pokhara to Besisahar (the circuit start) is standard; road conditions vary.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Teahouses',tag:'Note',body:'Teahouse lodging runs the whole circuit.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Thorong La altitude',tag:'Required',body:'Acclimatize before the 5,416 m Thorong La and watch weather windows.'}, {h:'Insurance and rescue',tag:'Required',body:'Confirm insurance covering high-altitude rescue.'}]}],sources:[{label:'Nepal trekking official info',href:'https://ntb.gov.np'}]};
 
-window.DEEP_INFO_EN['langtang'] = {
-  updated: 'As of 2026-09',
-  note: 'Himalaya category',
-  sections: [
-    { icon: 'book', title: 'Permits', items: [
-      { h: 'Trekking permits', tag: 'Required', body: 'Langtang Valley trekking requires national park entry and municipality permits (~NPR 6,000 total). A guide has been mandatory since 2023.' },
-      { h: 'Insurance', tag: 'Required', body: 'Trekking insurance (including helicopter evacuation) is de-facto mandatory — the route includes sections above 5,000 m.' },
-    ]},
-    { icon: 'shield', title: 'Safety & Emergency', items: [
-      { h: 'Local emergency numbers', tag: 'Required', body: 'Nepal: police 100, ambulance 102, unified 112. Descend immediately if altitude symptoms appear.' },
-      { h: 'Season', tag: 'Recommended', body: 'March–May (spring) and October–November (autumn) are optimal. Winter high-altitude camping is for experts only.' },
-    ]},
-  ],
-  sources: [
-    { label: 'Details published in this site\'s playbook', href: 'langtang-playbook.html' },
-  ],
-};
+window.DEEP_INFO_EN['langtang'] = {updated:'2026-09 기준',note:'랑탕 밸리 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Langtang NP entry',tag:'Required',body:'Langtang National Park entry (about NPR 3,000 for foreigners) is required.'}, {h:'Guide mandatory',tag:'Required',body:'Since April 2023 foreign trekkers must travel with a registered guide.'}, {h:'TIMS card',tag:'Required',body:'TIMS registration is required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Getting to Syabrubesi',tag:'Note',body:'Overland from Kathmandu to Syabrubesi is standard — road conditions vary widely.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Teahouses',tag:'Note',body:'Valley teahouse lodging is standard.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency and insurance',tag:'Required',body:'Confirm high-altitude rescue insurance and avoid landslide-prone sections in monsoon.'}]}],sources:[{label:'Nepal trekking official info',href:'https://ntb.gov.np'}]};
 
 // ── Korea 100 Famous Mountains 2nd batch (7 mountains) ──
 
@@ -1476,57 +1268,13 @@ window.DEEP_INFO_EN['cheongnyangsan'] = {updated:'2026-09 기준',note:'Quality 
 
 window.DEEP_INFO_EN['ansan'] = {updated:'2026-09 기준',note:'Quality upgrade — 안산',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'입산 자유',tag:'Note',body:'Free and open, no reservation.'}]}, {icon:'bus',title:'Transport',items:[{h:'지하철 최적',tag:'Note',body:'Lines 3 Dongnimmun or Muakjae stations offer the easiest foot access.'}, {h:'무장애 자락길',tag:'Note',body:'The 7 km jarak-gil is Korea first barrier-free circular trail.'}]}, {icon:'tent',title:'Lodging',items:[{h:'도심 산행',tag:'Note',body:'서울 도심 어디서나 당일 산행입니다.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'비상 연락',tag:'Required',body:'For mountain accidents call 119.'}, {h:'야간 조명',tag:'Recommended',body:'Some stretches lack night lighting — carry a light for night views.'}]}],sources:[{label:'Official guide',href:'https://parks.seoul.go.kr'}]};
 
-window.DEEP_INFO_EN['bulsan'] = {
-  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Bulsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
-    ]},
-    { icon: 'shield', title: 'Safety', items: [
-      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
-    ]},
-  ],
-  sources: [{ label: 'Details in playbook', href: 'bulsan-playbook.html' }],
-};
+window.DEEP_INFO_EN['bulsan'] = {updated:'2026-09 기준',note:'불암산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'Open hiking with no reservation or permit required.'}, {h:'Public lot',tag:'Note',body:'The public lot on Deungnyeong-ro, Nowon is the main trailhead — it fills on weekend mornings.'}]}, {icon:'bus',title:'Transport',items:[{h:'Subway access',tag:'Note',body:'Reach via line 7 Madul, line 4 Sanggye or line 6 Hwarangdae, then bus and foot.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Urban hill',tag:'Note',body:'A capital-area city hill — day trips are the norm.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Rock steps',tag:'Recommended',body:'Wear gloves for the Turtle Rock steps; they are slick after rain.'}]}],sources:[{label:'Nowon-gu facilities',href:'https://www.nowon.go.kr'}]};
 
-window.DEEP_INFO_EN['sogeumgang'] = {
-  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Sogeumgang is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
-    ]},
-    { icon: 'shield', title: 'Safety', items: [
-      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
-    ]},
-  ],
-  sources: [{ label: 'Details in playbook', href: 'sogeumgang-playbook.html' }],
-};
+window.DEEP_INFO_EN['sogeumgang'] = {updated:'2026-09 기준',note:'소금강 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Odaesan san National Park section',tag:'Note',body:'Inside Odaesan National Park (Sogeumgang district) — open without reservation; follow KNPS guidance.'}, {h:'Scenic-site protection',tag:'Required',body:'Korea Scenic Site No. 1 — climbing, carving and leaving the trail are prohibited.'}]}, {icon:'bus',title:'Transport',items:[{h:'Jingogae Trail Center',tag:'Note',body:'The Noinbong route starts at Jingogae Trail Center. Driving is the norm; local transit is infrequent — check ahead.'}, {h:'Valley access',tag:'Note',body:'The Sogeumgang valley (Yeon-gok side) is reached from Yeongok-myeon, Gangneung.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Jinbu, Yeongok or Dunnae',tag:'Note',body:'Pensions and guesthouses in Jinbu, Yeongok or Dunnae make good bases.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Stream levels',tag:'Recommended',body:'Monsoon streams rise fast — keep to lower sections in rain.'}]}],sources:[{label:'KNPS — Odaesan',href:'https://www.knps.or.kr'}]};
 
-window.DEEP_INFO_EN['heuiyangsan'] = {
-  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Heuiyangsan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
-    ]},
-    { icon: 'shield', title: 'Safety', items: [
-      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
-    ]},
-  ],
-  sources: [{ label: 'Details in playbook', href: 'heuiyangsan-playbook.html' }],
-};
+window.DEEP_INFO_EN['heuiyangsan'] = {updated:'2026-09 기준',note:'희양산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'Open access',tag:'Note',body:'Open hiking with no reservation or permit required.'}]}, {icon:'bus',title:'Transport',items:[{h:'Eunti village',tag:'Note',body:'Eunti village in Gaeun-eup, Mungyeong is the main trailhead; local transit from Gaeun Station is infrequent — check ahead.'}, {h:'Public transport',tag:'Note',body:'Approach via Yeonpung-myeon, Goesan is possible but transit is limited.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Gaeun and Mungyeong',tag:'Note',body:'Stay in Gaeun or Mungyeong town. The Bongamsa area is a monastic zone — keep quiet.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Granite crags',tag:'Required',body:'The black-mica granite ledges turn treacherous in rain or ice — wear gloves and abandon the plan in bad weather.'}]}],sources:[{label:'Mungyeong City tourism',href:'https://www.mg21.go.kr'}]};
 
-window.DEEP_INFO_EN['cheongtaesan'] = {
-  updated: 'As of 2026-09', note: 'Korea 100 Famous Mountains 3rd batch',
-  sections: [
-    { icon: 'book', title: 'Trail Basics', items: [
-      { h: 'Trail basics', tag: 'Note', body: 'Cheongtaesan is one of Korea\'s 100 Famous Mountains. No separate permit needed.' },
-    ]},
-    { icon: 'shield', title: 'Safety', items: [
-      { h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain rescue.' },
-    ]},
-  ],
-  sources: [{ label: 'Details in playbook', href: 'cheongtaesan-playbook.html' }],
-};
+window.DEEP_INFO_EN['cheongtaesan'] = {updated:'2026-09 기준',note:'청태산 — 4-block standard (2026-09)',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'National recreation forest',tag:'Recommended',body:'Inside the national recreation forest — parking and facility fees may apply; see foresttrip.go.kr before visiting.'}, {h:'Six trails',tag:'Note',body:'The six trails differ in status and grade — check with the forest office before setting out.'}]}, {icon:'bus',title:'Transport',items:[{h:'Dunnae IC',tag:'Note',body:'About 15 minutes (10 km) from Dunnae IC — easy via the Yeongdong Expressway.'}, {h:'Public transport',tag:'Note',body:'Buses reach the Dunnae area but local connections are rare — driving is the norm.'}]}, {icon:'tent',title:'Lodging',items:[{h:'Forest lodging',tag:'Note',body:'Forest cabins and guesthouses in Dunnae or Bangrim are available.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'Emergency',tag:'Required',body:'For mountain accidents call 119.'}, {h:'Winter ice',tag:'Recommended',body:'Above 1,100 m the trails ice and snow early — carry spikes.'}]}],sources:[{label:'KFS foresttrip — recreation forest',href:'https://www.foresttrip.go.kr'}]};
 
 window.DEEP_INFO_EN['baekamsan'] = {updated:'2026-09 기준',note:'Quality upgrade — 백암산',sections:[{icon:'book',title:'Entry & Booking',items:[{h:'국립공원 구역',tag:'Recommended',body:'Within Naejangsan National Park — follow KNPS guidance.'}]}, {icon:'bus',title:'Transport',items:[{h:'백양사·구암사',tag:'Note',body:'Both trailheads use temple parking — check fees.'}, {h:'대중교통',tag:'Note',body:'Reach via Gwangju or Jeongeup, then local buses.'}]}, {icon:'tent',title:'Lodging',items:[{h:'백양사·내장산',tag:'Note',body:'Stays near Baekyangsa or the Naejangsan tourist area.'}]}, {icon:'shield',title:'Safety & Emergency',items:[{h:'비상 연락',tag:'Required',body:'For mountain accidents call 119.'}, {h:'단풍철 혼잡',tag:'Recommended',body:'Autumn foliage parking is severely congested.'}]}],sources:[{label:'Official guide',href:'https://www.knps.or.kr'}]};
 
@@ -1566,4 +1314,3 @@ window.DEEP_INFO_EN['baegunsan'] = {updated:'2026-09 기준',note:'Korea 100 Fam
 window.DEEP_INFO_EN['sinbulsan'] = {updated:'2026-09 기준',note:'Korea 100 Famous Mountains round 6',sections:[{ icon: 'book', title: 'Entry & Booking', items: [{ h: 'No permit needed', tag: 'Note', body: 'Sinbulsan is open without reservation or permit (not a national park).' }] }, { icon: 'bus', title: 'Transport', items: [{ h: 'Baenae parking', tag: 'Note', body: 'Baenae Lot 2 in Icheon-ri, Sangbuk-myeon, Ulju is the main trailhead lot; use Lot 1 when full.' }, { h: 'Public transport', tag: 'Note', body: 'City buses from Ulsan reach the Baenaegol area but run infrequently — check timetables.' }] }, { icon: 'tent', title: 'Lodging', items: [{ h: 'Ulsan & Eonyang', tag: 'Note', body: 'Town lodging in Ulsan or Eonyang is the practical base.' }] }, { icon: 'shield', title: 'Safety & Emergency', items: [{ h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain accidents.' }, { h: 'Silver-grass season & crags', tag: 'Recommended', body: 'Autumn weekends crowd the trails; the Ganwolsan crags are dangerous in rain.' }] }],sources:[{ label: 'Ulsan Tourism — Yeongnam Alps', href: 'https://tour.ulsan.go.kr' }, { label: 'Ulju County Tourism', href: 'https://www.ulju.go.kr' }]};
 
 window.DEEP_INFO_EN['gamaksan'] = {updated:'2026-09 기준',note:'Korea 100 Famous Mountains round 6',sections:[{ icon: 'book', title: 'Entry & Booking', items: [{ h: 'No permit needed', tag: 'Note', body: 'Gamaksan is open without reservation or permit.' }, { h: 'Bridge hours', tag: 'Recommended', body: 'The suspension bridge has set opening hours — check Paju City notices before you go.' }] }, { icon: 'bus', title: 'Transport', items: [{ h: 'Public transport', tag: 'Note', body: 'Inter-city buses from Seoul/Ilsan reach Paju, then local transport toward Gamaksa or the valley — verify schedules.' }, { h: 'By car', tag: 'Note', body: 'Gamaksa and valley lots; crowded on weekend mornings.' }] }, { icon: 'tent', title: 'Lodging', items: [{ h: 'Paju & Ilsan', tag: 'Note', body: 'A capital-area day trip is standard; overnight options in Paju or Ilsan.' }] }, { icon: 'shield', title: 'Safety & Emergency', items: [{ h: 'Emergency', tag: 'Required', body: 'Call 119 for mountain accidents.' }, { h: 'Crags & bridge', tag: 'Recommended', body: 'Crags around Imkkeokjeongbong are accident-prone when wet; the bridge sways in strong wind.' }] }],sources:[{ label: 'Paju City — Gamaksan', href: 'https://www.paju.go.kr' }, { label: 'Valley & bridge info', href: 'https://www.paju.go.kr' }]};
-
