@@ -34,7 +34,7 @@ window.DEEP_INFO['seoraksan'] = {
       ],
       links: [{ label: '탐방로 예약제 안내', href: 'https://res.knps.or.kr' }],
     },
-    {
+     {icon:'tip',title:'코스 실측',items:[{h:'울산바위',tag:'참고',body:'8km · 8시간 · 쉬움 — 울산바위 탐방로를 도는 대표 코스. 입구: 38.1727, 128.4949.'}, {h:'소공원-공룡능선',tag:'참고',body:'11.3km · 6시간 30분 · 약간 어려움 — 공룡능선을 넘는 대표 능선 코스. 입구: 38.1727, 128.4948.'}, {h:'귀때기청봉',tag:'참고',body:'7.6km · 5시간 · 어려움 — 설악 서북능선의 바윗길. 입구: 38.0974, 128.4063.'}]},{
       icon: 'bus', title: '교통',
       items: [
         { h: '서울 → 속초', tag: '권장',
@@ -72,7 +72,7 @@ window.DEEP_INFO['seoraksan'] = {
     { label: '국립공원공단 예약시스템', href: 'https://res.knps.or.kr' },
     { label: 'korea.kr — 흘림골 탐방로 예약제 현장 방문기', href: 'https://www.korea.kr/news/reporterView.do?newsId=148906341' },
     { label: '본 사이트 설악산 플레이북 게재 정보', href: 'seoraksan-playbook.html' },
-  ],
+  ,{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=11'}],
 };
 
 /* ── 위산 (해외 표준 파일럿) ────────────────────────────────
@@ -190,7 +190,7 @@ window.DEEP_INFO['odaesan'] = {
       { h: '월정사 탐방료', tag: '참고', body: '월정사 일주문 앞 주차장에서 출발하며 월정사 탐방료(성인 4,000원)를 납부합니다. 탐방 안내소에서 지도를 받고 입산하세요.' },
       { h: '국립공원 예약', tag: '권장', body: '오대산국립공원의 대피소·탐방 프로그램은 공단 예약시스템에서 신청합니다.', links: [{ label: '국립공원공단 예약시스템', href: 'https://reservation.knps.or.kr' }] },
     ]},
-    { icon: 'bus', title: '교통', items: [
+     {icon:'tip',title:'코스 실측',items:[{h:'선재길',tag:'참고',body:'10.7km · 3시간 · 쉬움 — 사계절 편하게 걷는 산림욕장형 코스.'}, {h:'노인봉',tag:'참고',body:'7.7km · 3시간 30분 · 보통 — 진고개 기점 노인봉 왕복 — 소금강 연계 최단 코스.'}, {h:'비로봉',tag:'참고',body:'11.6km · 5시간 30분 · 보통 — 사찰을 지나 오대산 최고봉 비로봉까지.'}]},{ icon: 'bus', title: '교통', items: [
       { h: '상원사 셔틀버스', tag: '참고', body: '월정사↔상원사 구간은 셔틀버스 이용이 가능해 편도 종주 시 유용합니다. 차량을 한쪽에 주차한 경우 회수 계획을 세우세요.' },
       { h: '환종주 접근', tag: '권장', body: '오대 5봉 환종주(26km)는 오전 5~6시 새벽 출발이 필수이며, 차량 주차 위치(상원사 또는 월정사)를 미리 정합니다.' },
     ]},
@@ -205,7 +205,7 @@ window.DEEP_INFO['odaesan'] = {
   sources: [
     { label: '본 사이트 오대산 플레이북 게재 정보', href: 'odaesan-playbook.html' },
     { label: '국립공원공단 예약시스템', href: 'https://res.knps.or.kr' },
-  ],
+  ,{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=14'}],
 };
 
 window.DEEP_INFO['taebaeksan'] = {
@@ -239,7 +239,7 @@ window.DEEP_INFO['bukhansan'] = {
       { h: '국립공원 예약', tag: '권장', body: '북한산국립공원의 대피소·탐방 프로그램은 공단 예약시스템에서 신청합니다. 탐방로 예약제 대상 구간은 수시 변동되므로 방문 전 확인하세요.', links: [{ label: '국립공원공단 예약시스템', href: 'https://reservation.knps.or.kr' }] },
       { h: '탐방로 준수', tag: '필수', body: '만경대 주변에는 비탐방로 구간이 있습니다. 이정표와 공식 탐방로를 반드시 준수하고 일탈하지 않습니다.' },
     ]},
-    { icon: 'bus', title: '교통', items: [
+     {icon:'tip',title:'코스 실측',items:[{h:'백운대',tag:'참고',body:'4.5km · 2시간 30분 · 보통 — 북한산 최고봉 백운대로 가는 최단 코스. 입구: 37.6582, 126.9911.'}, {h:'우이령길',tag:'참고',body:'8.1km · 3시간 30분 · 쉬움 — 한적하고 완만한 둘레길형 코스. 입구: 37.6631, 127.0124.'}, {h:'의상능선',tag:'참고',body:'9.5km · 5시간 30분 · 어려움 — 암릉이 이어지는 대표 난코스. 입구: 37.6551, 126.9493.'}]},{ icon: 'bus', title: '교통', items: [
       { h: '접근', tag: '참고', body: '서울 도심 접근성이 뛰어나 대중교통 이동이 용이합니다. 코스별 들머리 접근 경로는 플레이북 코스 탭 안내를 참조하세요.' },
     ]},
     { icon: 'tent', title: '숙박', items: [
@@ -253,7 +253,7 @@ window.DEEP_INFO['bukhansan'] = {
   sources: [
     { label: '본 사이트 북한산 플레이북 게재 정보', href: 'bukhansan-playbook.html' },
     { label: '국립공원공단 예약시스템', href: 'https://res.knps.or.kr' },
-  ],
+  ,{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=7'}],
 };
 
 window.DEEP_INFO['dobongsan'] = {
@@ -263,7 +263,7 @@ window.DEEP_INFO['dobongsan'] = {
       { h: '국립공원', tag: '참고', body: '북한산국립공원 도봉 지구에 속합니다. 대피소·탐방 프로그램은 공단 예약시스템에서 확인할 수 있습니다.', links: [{ label: '국립공원공단 예약시스템', href: 'https://reservation.knps.or.kr' }] },
       { h: '탐방지원센터', tag: '참고', body: '오봉탐방지원센터에서 안내도를 확인하고 화장실을 이용한 뒤 입산합니다.' },
     ]},
-    { icon: 'bus', title: '교통', items: [
+     {icon:'tip',title:'코스 실측',items:[{h:'신선대',tag:'참고',body:'6.1km · 3시간 · 보통 — 도봉산 대표 코스로 정상까지 가장 무난한 루트. 입구: 37.6861, 127.0362.'}, {h:'우이암',tag:'참고',body:'5.4km · 2시간 40분 · 보통 — 우이암 바위를 지나는 짧은 코스. 입구: 37.6753, 127.0252.'}, {h:'종주',tag:'참고',body:'9.3km · 5시간 · 약간 어려움 — 도봉팔봉을 도는 대표 종주 코스. 입구: 37.7232, 127.0362.'}]},{ icon: 'bus', title: '교통', items: [
       { h: '지하철·버스', tag: '권장', body: '지하철 3호선 구파발역에서 34번 버스로 송추계곡까지 약 30분입니다. 도착 후 오봉탐방지원센터까지 도보 5분입니다.' },
       { h: '주차', tag: '참고', body: '송추 1·2주차장을 이용하며, 주말은 오전 8시 이전 도착을 권장합니다.' },
     ]},
@@ -278,7 +278,7 @@ window.DEEP_INFO['dobongsan'] = {
   sources: [
     { label: '본 사이트 도봉산 플레이북 게재 정보', href: 'dobongsan-playbook.html' },
     { label: '국립공원공단 예약시스템', href: 'https://res.knps.or.kr' },
-  ],
+  ,{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=6'}],
 };
 
 window.DEEP_INFO['myeongseongsan'] = {
@@ -357,7 +357,7 @@ window.DEEP_INFO['sobaeksan'] = {
       { h: '입산 통제', tag: '필수', body: '죽령 코스는 오전 6~7시 출발이 필요하며(14시 입산통제) 통제 시간을 엄수합니다.' },
       { h: '국립공원 예약', tag: '권장', body: '소백산국립공원의 대피소·탐방 프로그램은 공단 예약시스템에서 신청합니다.', links: [{ label: '국립공원공단 예약시스템', href: 'https://reservation.knps.or.kr' }] },
     ]},
-    { icon: 'bus', title: '교통', items: [
+     {icon:'tip',title:'코스 실측',items:[{h:'어의곡-천동',tag:'참고',body:'12km · 6시간 · 어려움 — 어의곡에서 천동으로 이어지는 대표 코스.'}, {h:'초암사-국망봉',tag:'참고',body:'14.6km · 7시간 30분 · 어려움 — 비로봉·국망봉을 잇는 코스.'}, {h:'희방사-어의곡 종주',tag:'참고',body:'17.8km · 9시간 30분 · 어려움 — 희방사에서 어의곡으로 이어지는 종주.'}]},{ icon: 'bus', title: '교통', items: [
       { h: '주차·회수', tag: '권장', body: '죽령 출발 종주 시 어의곡·천동에 차량을 따로 두거나 차량 탁송 서비스를 이용합니다. 천동 주차장 방향 하산은 차량이 필요합니다.' },
     ]},
     { icon: 'tent', title: '숙박', items: [
@@ -371,7 +371,7 @@ window.DEEP_INFO['sobaeksan'] = {
   sources: [
     { label: '본 사이트 소백산 플레이북 게재 정보', href: 'sobaeksan-playbook.html' },
     { label: '국립공원공단 예약시스템', href: 'https://res.knps.or.kr' },
-  ],
+  ,{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=12'}],
 };
 
 window.DEEP_INFO['gyeryongsan'] = {
@@ -473,7 +473,7 @@ window.DEEP_INFO['jirisan'] = {
       { h: '대피소 예약', tag: '필수', body: '대피소는 사전 예약제입니다. 매달 1일 10:00에 다음 달 예약이 열리며 주말은 수초 내 마감됩니다. 침낭은 개인 지참입니다(담요 미지급).' },
       { h: '차량 통제', tag: '권장', body: '주말·성수기에는 성삼재까지 차량 통제가 있습니다. 하부 주차 후 셔틀 이용 여부를 확인하세요.' },
     ]},
-    { icon: 'bus', title: '교통', items: [
+     {icon:'tip',title:'코스 실측',items:[{h:'바래봉',tag:'참고',body:'13.7km · 6시간 · 보통 — 천왕봉 서쪽 바래봉 방면 산행. 입구: 35.4329, 127.5449.'}, {h:'성삼재-노고단-반야봉',tag:'참고',body:'16.8km · 8시간 30분 · 약간 어려움 — 노고단에서 반야봉까지 이어지는 능선 코스.'}, {h:'화엄사-대원사 종주',tag:'참고',body:'17.8km · 9시간 · 어려움 — 화엄사에서 대원사로 이어지는 남부 종주(화대종주).'}]},{ icon: 'bus', title: '교통', items: [
       { h: '회수 동선', tag: '필수', body: '성중종주는 중산리 하산 후 산청 시외버스·택시로 이동하며 성삼재 차량 회수가 필요합니다(셔틀 서비스 활용 권장).' },
     ]},
     { icon: 'tent', title: '숙박', items: [
@@ -488,7 +488,7 @@ window.DEEP_INFO['jirisan'] = {
   sources: [
     { label: '본 사이트 지리산 플레이북 게재 정보', href: 'jirisan-playbook.html' },
     { label: '국립공원공단 예약시스템', href: 'https://reservation.knps.or.kr' },
-  ],
+  ,{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=10'}],
 };
 
 window.DEEP_INFO['naejangsan'] = {
@@ -571,7 +571,7 @@ window.DEEP_INFO['mudeungsan'] = {
     { icon: 'book', title: '입산·예약', items: [
       { h: '국립공원 예약', tag: '권장', body: '무등산국립공원의 대피소·탐방 프로그램은 공단 예약시스템에서 신청합니다.', links: [{ label: '국립공원공단 예약시스템', href: 'https://reservation.knps.or.kr' }] },
     ]},
-    { icon: 'bus', title: '교통', items: [
+     {icon:'tip',title:'코스 실측',items:[{h:'무등산옛길-증심사',tag:'참고',body:'9.8km · 5시간 30분 · 보통 — 옛길 정취를 걷는 코스.'}, {h:'증심사-중봉',tag:'참고',body:'11.4km · 6시간 · 약간 어려움 — 증심사에서 중봉 방면 대표 코스.'}, {h:'안양산-백마능선',tag:'참고',body:'12.7km · 7시간 · 어려움 — 백마능선을 타는 도전형 코스.'}]},{ icon: 'bus', title: '교통', items: [
       { h: '지하철·버스', tag: '권장', body: '광주 도시철도 1호선 학동·증심사입구역에서 버스(09·50·51·54번 등)로 환승해 증심사지구 종점까지 약 10분입니다.' },
       { h: '원효사 접근', tag: '참고', body: '원효사 지구는 광주역 또는 종합버스터미널에서 1187번 버스로 원효사 종점까지 이동합니다.' },
     ]},
@@ -586,7 +586,7 @@ window.DEEP_INFO['mudeungsan'] = {
   sources: [
     { label: '본 사이트 무등산 플레이북 게재 정보', href: 'mudeungsan-playbook.html' },
     { label: '국립공원공단 예약시스템', href: 'https://res.knps.or.kr' },
-  ],
+  ,{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=15'}],
 };
 
 window.DEEP_INFO['duryunsan'] = {
@@ -1310,13 +1310,13 @@ window.DEEP_INFO['poonhill'] = {
 
 // ── 한국 100대 명산 1차 확장(10산) ──
 
-window.DEEP_INFO['gwanaksan'] = {updated:'2026-09 기준',note:'관악산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'서울 도립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'2호선 서울대입전역·낙성대역, 4호선 사당역에서 접근합니다. 관악사·연주대 방면 주차는 협소합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'영봉 암릉',tag:'필수',body:'영봉 암릉 구간은 추락 사고가 잦은 구간입니다 — 안전선과 지정 등산로를 지키세요.'}]}],sources:[{label:'서울시 공원',href:'https://parks.seoul.go.kr'}]};
+window.DEEP_INFO['gwanaksan'] = {updated:'2026-09 기준',note:'관악산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'서울 도립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}]},  {icon:'tip',title:'코스 실측',items:[{h:'사당역 사당능선',tag:'참고',body:'6.6km · 3시간 20분 · 보통 — 사당역에서 연주대로 이어지는 시티뷰 능선 종주 — 초입 암릉 구간 주의, 주말 혼잡. 입구: 37.4749, 126.9815.'}, {h:'과천향교',tag:'참고',body:'7.1km · 3시간 30분 · 보통 — 과천향교에서 계곡을 따라 오르는 한적한 코스. 입구: 37.4282, 126.9907.'}]},{icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'2호선 서울대입전역·낙성대역, 4호선 사당역에서 접근합니다. 관악사·연주대 방면 주차는 협소합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'영봉 암릉',tag:'필수',body:'영봉 암릉 구간은 추락 사고가 잦은 구간입니다 — 안전선과 지정 등산로를 지키세요.'}]}],sources:[{label:'서울시 공원',href:'https://parks.seoul.go.kr'},{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=2'}]};
 
-window.DEEP_INFO['suraksan'] = {updated:'2026-09 기준',note:'수락산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'서울 도립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'4호선 수락산역·상계역·장암역에서 접근합니다. 노원골·웅봉 들머리 주차는 이른 아침 확보가 좋습니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'수락중앙 능선 암릉',tag:'필수',body:'수락중앙 능선 암릉은 추락 위험 구간입니다 — 우천·결빙 시 다른 등산로를 이용하세요.'}]}],sources:[{label:'서울시 공원',href:'https://parks.seoul.go.kr'}]};
+window.DEEP_INFO['suraksan'] = {updated:'2026-09 기준',note:'수락산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'서울 도립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}]},  {icon:'tip',title:'코스 실측',items:[{h:'수락산역',tag:'참고',body:'8km · 4시간 · 보통 — 수락산역에서 바로 시작하는 접근성 최고 코스. 입구: 37.7005, 127.0551.'}, {h:'불암산역',tag:'참고',body:'7.6km · 4시간 · 보통 — 4호선 불암산역에서 시작하는 코스. 입구: 37.6712, 127.0798.'}]},{icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'4호선 수락산역·상계역·장암역에서 접근합니다. 노원골·웅봉 들머리 주차는 이른 아침 확보가 좋습니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'수락중앙 능선 암릉',tag:'필수',body:'수락중앙 능선 암릉은 추락 위험 구간입니다 — 우천·결빙 시 다른 등산로를 이용하세요.'}]}],sources:[{label:'서울시 공원',href:'https://parks.seoul.go.kr'},{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=5'}]};
 
 window.DEEP_INFO['cheonggyesan'] = {updated:'2026-09 기준',note:'청계산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'도립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'신분당선 청계산입구역, 4호선 선바위역·대공원역 방면에서 접근합니다. 주말 들머리 주차가 혼잡합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'대교봉 바위',tag:'권장',body:'대교봉 전망 바위 구간은 노출되어 있습니다 — 강풍·우천 시 주의하세요.'}]}],sources:[{label:'국립공원공단? 아님 — 과천·성남 도립',href:'https://parks.seoul.go.kr'}]};
 
-window.DEEP_INFO['achasan'] = {updated:'2026-09 기준',note:'아차산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'생활권 도시공원 — 별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'5호선 아차산역·광나루역에서 바로 접근하며 한강 공원과 연계 산책이 가능합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'야간 산행',tag:'권장',body:'야경 명소로 야간 산행객이 많습니다 — 조명이 없는 구간에는 랜턴을 지참하세요.'}]}],sources:[{label:'서울시 공원',href:'https://parks.seoul.go.kr'}]};
+window.DEEP_INFO['achasan'] = {updated:'2026-09 기준',note:'아차산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'생활권 도시공원 — 별도 예약·허가 없이 등산할 수 있습니다.'}]},  {icon:'tip',title:'코스 실측',items:[{h:'광나루역',tag:'참고',body:'6.5km · 3시간 · 쉬움 — 하단·광나루 방면에서 오르는 입문 코스. 입구: 37.5456, 127.1034.'}, {h:'용마산-아차산 종주',tag:'참고',body:'5.7km · 3시간 · 보통 — 용마산을 거쳐 아차산으로 이어지는 도시뷰 종주. 입구: 37.5738, 127.0868.'}]},{icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'5호선 아차산역·광나루역에서 바로 접근하며 한강 공원과 연계 산책이 가능합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'야간 산행',tag:'권장',body:'야경 명소로 야간 산행객이 많습니다 — 조명이 없는 구간에는 랜턴을 지참하세요.'}]}],sources:[{label:'서울시 공원',href:'https://parks.seoul.go.kr'},{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=8'}]};
 
 window.DEEP_INFO['geumjeongsan'] = {updated:'2026-09 기준',note:'금정산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'부산 도립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'1호선 범어사역·두실역·노포역에서 접근합니다. 범어사·세계로 들머리 주차는 혼잡합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'부산 시내',tag:'참고',body:'온천장·서면 등 부산 시내 숙박이 산행 거점으로 편리합니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'능선 바위',tag:'권장',body:'산성 능선의 바위 구간은 우천 시 미끄럽습니다 — 장갑을 권장합니다.'}]}],sources:[{label:'부산시 공원',href:'https://www.busan.go.kr'}]};
 
@@ -1324,7 +1324,7 @@ window.DEEP_INFO['palgongsan'] = {updated:'2026-09 기준',note:'팔공산 — 4
 
 window.DEEP_INFO['unmunsan'] = {updated:'2026-09 기준',note:'운문산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'울산·경남 군립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'태고사 들머리',tag:'참고',body:'태고사 관광지가 대표 들머리입니다 — 울산·양산 방면 교통 후 로컬 접근이 필요합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'울산·언양',tag:'참고',body:'울산 시내·언양읍 숙박이 산행 거점입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'대운문 능선',tag:'권장',body:'대운문 능선은 바람에 노출되어 있습니다 — 방풍을 준비하세요.'}]}],sources:[{label:'울산 시설관리공단',href:'https://www.uclec.go.kr'}]};
 
-window.DEEP_INFO['songnisan'] = {updated:'2026-09 기준',note:'속리산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'국립공원 구역',tag:'권장',body:'속리산국립공원 구역 — 국립공원공단 탐방 안내를 준수하세요.'}, {h:'법주사 들머리',tag:'참고',body:'법주사 관광지가 대표 들머리입니다 — 주차·문화재 관람 안내를 확인하세요.'}]}, {icon:'bus',title:'교통',items:[{h:'대중교통',tag:'참고',body:'보은읍에서 속리산 방면 버스가 운행합니다 — 배차가 드물어 시간표 확인이 필요합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'속리산 관광단지',tag:'참고',body:'법주사 인근 관광단지 숙박과 보은읍 숙박을 이용할 수 있습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'문장대 암릉',tag:'필수',body:'문장대 암릉은 낙뢰·추락 위험 구간입니다 — 뇌우 시 즉시 하산하세요.'}]}],sources:[{label:'국립공원공단 — 속리산',href:'https://www.knps.or.kr'}]};
+window.DEEP_INFO['songnisan'] = {updated:'2026-09 기준',note:'속리산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'국립공원 구역',tag:'권장',body:'속리산국립공원 구역 — 국립공원공단 탐방 안내를 준수하세요.'}, {h:'법주사 들머리',tag:'참고',body:'법주사 관광지가 대표 들머리입니다 — 주차·문화재 관람 안내를 확인하세요.'}]},  {icon:'tip',title:'코스 실측',items:[{h:'세조길',tag:'참고',body:'8km · 3시간 · 쉬움 — 세조가 걸었다는 치유의 숲길.'}, {h:'법주사-문장대',tag:'참고',body:'13.3km · 6시간 · 보통 — 법주사에서 문장대로 오르는 대표 코스.'}, {h:'화북-천왕봉',tag:'참고',body:'13km · 7시간 · 어려움 — 천왕봉까지 이어지는 능선 산행.'}]},{icon:'bus',title:'교통',items:[{h:'대중교통',tag:'참고',body:'보은읍에서 속리산 방면 버스가 운행합니다 — 배차가 드물어 시간표 확인이 필요합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'속리산 관광단지',tag:'참고',body:'법주사 인근 관광단지 숙박과 보은읍 숙박을 이용할 수 있습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'문장대 암릉',tag:'필수',body:'문장대 암릉은 낙뢰·추락 위험 구간입니다 — 뇌우 시 즉시 하산하세요.'}]}],sources:[{label:'국립공원공단 — 속리산',href:'https://www.knps.or.kr'},{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=13'}]};
 
 window.DEEP_INFO['daedunsan'] = {updated:'2026-09 기준',note:'대둔산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'충남 도립공원 구역 — 별도 예약·허가 없이 등산할 수 있습니다.'}, {h:'케이블카',tag:'참고',body:'케이블카 운행 여부·요금은 기상·정비에 따라 변동됩니다 — 이용 전 확인하세요.'}]}, {icon:'bus',title:'교통',items:[{h:'대중교통',tag:'참고',body:'대전·계룡시에서 대둔산 방면 버스로 접근합니다 — 배차는 이용 전 확인하세요.'}]}, {icon:'tent',title:'숙박',items:[{h:'대둔산 관광지',tag:'참고',body:'도립공원 관광지 인근 민박·펜션과 금산읍 숙박을 이용할 수 있습니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'구름다리·전망대',tag:'필수',body:'구름다리·만천하 전망대는 강풍 시 통제될 수 있습니다 — 현장 안내를 따르세요.'}]}],sources:[{label:'충남 도립공원',href:'https://www.chungnam.go.kr'}]};
 
@@ -1340,7 +1340,7 @@ window.DEEP_INFO['langtang'] = {updated:'2026-09 기준',note:'랑탕 밸리 —
 
 // ── 한국 100대 명산 2차(7산) ──
 
-window.DEEP_INFO['inwangsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 한양도성 인왕구간',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약 없이 등산할 수 있습니다.'}, {h:'성곽 구간 통제',tag:'권장',body:'한양도성 일부 구간은 보호·통제될 수 있습니다 — 방문 전 공식 안내를 확인하세요.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'3호선 무악재역·독립문역, 5호선 광화문역 등 여러 역에서 도보 접근이 가능합니다.'}, {h:'자가용',tag:'참고',body:'홍지문·사직공원·와룡공원 인근 주차가 협소합니다 — 대중교통을 권장합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'서울 도심 어디서나 당일 산행이 가능합니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'결빙 주의',tag:'권장',body:'탕춘대성 급경사 구간은 겨울 결빙이 잦습니다.'}]}],sources:[{label:'공식 안내',href:'https://www.seoulcitywall.go.kr'}]};
+window.DEEP_INFO['inwangsan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 한양도성 인왕구간',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약 없이 등산할 수 있습니다.'}, {h:'성곽 구간 통제',tag:'권장',body:'한양도성 일부 구간은 보호·통제될 수 있습니다 — 방문 전 공식 안내를 확인하세요.'}]},  {icon:'tip',title:'코스 실측',items:[{h:'기차바위',tag:'참고',body:'3.7km · 1시간 40분 · 보통 — 인왕산 북쪽 기차바위를 도는 짧은 코스. 입구: 37.5756, 126.9656.'}, {h:'경복궁역',tag:'참고',body:'4.2km · 2시간 · 보통 — 야경으로 유명한 인왕산 대표 코스. 입구: 37.5762, 126.9721.'}, {h:'인왕-북악 종주',tag:'참고',body:'8km · 3시간 · 약간 어려움 — 인왕산에서 북악산으로 이어지는 능선 종주. 입구: 37.5776, 126.9612.'}]},{icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'3호선 무악재역·독립문역, 5호선 광화문역 등 여러 역에서 도보 접근이 가능합니다.'}, {h:'자가용',tag:'참고',body:'홍지문·사직공원·와룡공원 인근 주차가 협소합니다 — 대중교통을 권장합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'서울 도심 어디서나 당일 산행이 가능합니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'결빙 주의',tag:'권장',body:'탕춘대성 급경사 구간은 겨울 결빙이 잦습니다.'}]}],sources:[{label:'공식 안내',href:'https://www.seoulcitywall.go.kr'},{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=9'}]};
 
 window.DEEP_INFO['gajisan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 영남알프스 최고봉',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약·허가 없이 등산할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'석남터널 들머리',tag:'참고',body:'울산 쪽 최단 들머리는 석남터널 주차장입니다.'}, {h:'통도사 권역',tag:'참고',body:'양산 내원계곡 코스는 통도사 관광단지에서 접근합니다 — 주차 요금은 이용 전 확인.'}]}, {icon:'tent',title:'숙박',items:[{h:'양산·울산',tag:'참고',body:'통도사 관광단지 숙박시설과 울산 시내가 산행 거점입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'우천 주의',tag:'권장',body:'정상부 암반 구간은 우천 시 매우 미끄럽습니다.'}]}],sources:[{label:'공식 안내',href:'https://tour.ulsan.go.kr'}]};
 
@@ -1358,7 +1358,7 @@ window.DEEP_INFO['cheongnyangsan'] = {updated:'2026-09 기준',note:'품질 업�
 
 window.DEEP_INFO['ansan'] = {updated:'2026-09 기준',note:'품질 업그레이드 — 서대문 봉수대',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'무료·예약 없이 이용할 수 있습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 최적',tag:'참고',body:'3호선 독립문역·무악재역에서 도보 접근이 가장 편합니다.'}, {h:'무장애 자락길',tag:'참고',body:'안산자락길 7km는 전국 최초 순환형 무장애 설계입니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'서울 도심 어디서나 당일 산행입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'야간 조명',tag:'권장',body:'일부 구간 야간 조명이 부족합니다 — 야경 산행 시 랜턴 필수.'}]}],sources:[{label:'공식 안내',href:'https://parks.seoul.go.kr'}]};
 
-window.DEEP_INFO['bulsan'] = {updated:'2026-09 기준',note:'불암산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약·허가 없이 등산할 수 있습니다.'}, {h:'불암산 공영주차장',tag:'참고',body:'노원구 덕릉로의 공영주차장이 대표 들머리입니다. 주말 오전 만차가 잦습니다.'}]}, {icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'7호선 마들역·4호선 상계역·6호선 화랑대역 등에서 버스·도보 조합으로 접근합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'바위 구간',tag:'권장',body:'거북바위 등 바위 구간은 장갑을 권장하고 비 온후 미끄러움에 주의하세요.'}]}],sources:[{label:'노원구 시설관리',href:'https://www.nowon.go.kr'}]};
+window.DEEP_INFO['bulsan'] = {updated:'2026-09 기준',note:'불암산 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'입산 자유',tag:'참고',body:'별도 예약·허가 없이 등산할 수 있습니다.'}, {h:'불암산 공영주차장',tag:'참고',body:'노원구 덕릉로의 공영주차장이 대표 들머리입니다. 주말 오전 만차가 잦습니다.'}]},  {icon:'tip',title:'코스 실측',items:[{h:'상계역',tag:'참고',body:'4.4km · 2시간 20분 · 보통 — 상계역에서 바로 시작하는 지하철 접근 코스. 입구: 37.6609, 127.0738.'}, {h:'공릉동',tag:'참고',body:'6.3km · 3시간 · 보통 — 한적한 둘레길을 걸어 정상을 도는 코스. 입구: 37.6609, 127.0738.'}, {h:'불암사',tag:'참고',body:'4.3km · 2시간 10분 · 보통 — 불암사에서 정상까지 가장 빠른 최단 코스. 입구: 37.6495, 127.1071.'}]},{icon:'bus',title:'교통',items:[{h:'지하철 접근',tag:'참고',body:'7호선 마들역·4호선 상계역·6호선 화랑대역 등에서 버스·도보 조합으로 접근합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'도심 산행',tag:'참고',body:'수도권 접근 도시 산이라 당일 산행이 일반적입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'바위 구간',tag:'권장',body:'거북바위 등 바위 구간은 장갑을 권장하고 비 온후 미끄러움에 주의하세요.'}]}],sources:[{label:'노원구 시설관리',href:'https://www.nowon.go.kr'},{label:'알레 코스 실측',href:'https://www.alle.co.kr/mb/content/mount_view?seq=4'}]};
 
 window.DEEP_INFO['sogeumgang'] = {updated:'2026-09 기준',note:'소금강 — 4블록 표준(2026-09)',sections:[{icon:'book',title:'입산·예약',items:[{h:'오대산국립공원 구역',tag:'참고',body:'오대산국립공원 소금강지구 — 별도 예약 없이 이용할 수 있습니다. 공단 탐방 안내를 준수하세요.'}, {h:'명승 보호',tag:'필수',body:'대한민국 명승 제1호 구역 — 바위 오르기·낙서·탐방로 이탈이 금지됩니다.'}]}, {icon:'bus',title:'교통',items:[{h:'진고개 탐방지원센터',tag:'참고',body:'노인봉 코스는 진고개 탐방지원센터에서 시작합니다. 자가용 접근이 일반적이며 대중교통 배차는 이용 전 확인이 필요합니다.'}, {h:'계곡 접근',tag:'참고',body:'소금강계곡(연곡 방면) 입구는 강릉 연곡면 방면에서 접근합니다.'}]}, {icon:'tent',title:'숙박',items:[{h:'진부·연곡·둔내',tag:'참고',body:'평창 진부면·강릉 연곡면·횡성 둔내면의 펜션·민박이 산행 거점입니다.'}]}, {icon:'shield',title:'안전·비상연락',items:[{h:'비상 연락',tag:'필수',body:'산악 사고 시 119로 신고하세요.'}, {h:'계곡 수위',tag:'권장',body:'장마철 계곡 수위가 빠르게 오릅니다 — 우천 시에는 하류 구간만 이용하세요.'}]}],sources:[{label:'국립공원공단 — 오대산',href:'https://www.knps.or.kr'}]};
 
