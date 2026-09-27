@@ -1,0 +1,1374 @@
+{
+ "seoraksan": {
+  "name": "설악산",
+  "page": "ko:설악산",
+  "wiki": [
+   38.119444,
+   128.465556
+  ],
+  "wikidata": [
+   38.119444,
+   128.465556
+  ],
+  "cur": [
+   38.1189,
+   128.465
+  ],
+  "wiki_en": [
+   38.119444,
+   128.465556
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.06,
+  "d_wd_cur": 0.06
+ },
+ "hallasan": {
+  "name": "한라산",
+  "page": "ko:한라산",
+  "wiki": [
+   33.361667,
+   126.529167
+  ],
+  "wikidata": [
+   33.35,
+   126.516667
+  ],
+  "cur": [
+   33.3617,
+   126.5292
+  ],
+  "d_wiki_wd": 1.34,
+  "d_wiki_cur": 0.0,
+  "d_wd_cur": 1.34
+ },
+ "jirisan": {
+  "name": "지리산",
+  "page": "ko:지리산",
+  "wiki": [
+   35.336944,
+   127.730556
+  ],
+  "wikidata": [
+   35.336944,
+   127.730556
+  ],
+  "cur": [
+   35.3369,
+   127.7306
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.01,
+  "d_wd_cur": 0.01
+ },
+ "bukhansan": {
+  "name": "북한산",
+  "page": "ko:북한산",
+  "wiki": [
+   37.6608,
+   126.9933
+  ],
+  "wikidata": [
+   37.660833,
+   126.993333
+  ],
+  "cur": [
+   37.6586,
+   126.9778
+  ],
+  "wiki_en": [
+   37.6608,
+   126.9933
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 1.13,
+  "d_wd_cur": 1.13
+ },
+ "sobaeksan": {
+  "name": "소백산",
+  "page": "ko:소백산",
+  "wiki": [
+   36.96,
+   128.484722
+  ],
+  "wikidata": [
+   36.96,
+   128.484722
+  ],
+  "cur": [
+   36.9427,
+   128.4722
+  ],
+  "wiki_en": [
+   36.96,
+   128.484722
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 1.7,
+  "d_wd_cur": 1.7
+ },
+ "gayasan": {
+  "name": "가야산",
+  "page": "ko:가야산 (대한민국)",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   35.8236,
+   128.1219
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "odaesan": {
+  "name": "오대산",
+  "page": "ko:오대산",
+  "wiki": null,
+  "wikidata": [
+   37.798056,
+   128.543056
+  ],
+  "cur": [
+   37.7989,
+   128.5639
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 1.58
+ },
+ "naejangsan": {
+  "name": "내장산",
+  "page": "ko:내장산",
+  "wiki": [
+   35.483333,
+   126.883333
+  ],
+  "wikidata": [
+   35.483333,
+   126.883333
+  ],
+  "cur": [
+   35.4336,
+   126.8856
+  ],
+  "wiki_en": [
+   35.483333,
+   126.883333
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 5.25,
+  "d_wd_cur": 5.25
+ },
+ "chiaksan": {
+  "name": "치악산",
+  "page": "ko:치악산",
+  "wiki": [
+   37.371667,
+   128.050556
+  ],
+  "wikidata": [
+   37.365,
+   128.055278
+  ],
+  "cur": [
+   37.3686,
+   128.0531
+  ],
+  "wiki_en": [
+   37.371667,
+   128.050556
+  ],
+  "d_wiki_wd": 0.89,
+  "d_wiki_cur": 0.43,
+  "d_wd_cur": 0.46
+ },
+ "deogyusan": {
+  "name": "덕유산",
+  "page": "ko:덕유산",
+  "wiki": [
+   35.860556,
+   127.746389
+  ],
+  "wikidata": [
+   35.860556,
+   127.746389
+  ],
+  "cur": [
+   35.8617,
+   127.7472
+  ],
+  "wiki_en": [
+   35.860556,
+   127.746389
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.11,
+  "d_wd_cur": 0.11
+ },
+ "gyeryongsan": {
+  "name": "계룡산",
+  "page": "ko:계룡산",
+  "wiki": [
+   36.343333,
+   127.206111
+  ],
+  "wikidata": [
+   36.343333,
+   127.206111
+  ],
+  "cur": [
+   36.3533,
+   127.2081
+  ],
+  "wiki_en": [
+   36.343333,
+   127.206111
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.99,
+  "d_wd_cur": 0.99
+ },
+ "wolchulsan": {
+  "name": "월출산",
+  "page": "ko:월출산",
+  "wiki": [
+   34.767778,
+   126.704444
+  ],
+  "wikidata": [
+   34.767778,
+   126.704444
+  ],
+  "cur": [
+   34.7892,
+   126.6975
+  ],
+  "wiki_en": [
+   34.767778,
+   126.704444
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 2.48,
+  "d_wd_cur": 2.48
+ },
+ "mudeungsan": {
+  "name": "무등산",
+  "page": "ko:무등산",
+  "wiki": [
+   35.1392,
+   126.9925
+  ],
+  "wikidata": [
+   35.134167,
+   126.988889
+  ],
+  "cur": [
+   35.1336,
+   127.0089
+  ],
+  "wiki_en": [
+   35.1392,
+   126.9925
+  ],
+  "d_wiki_wd": 0.51,
+  "d_wiki_cur": 1.62,
+  "d_wd_cur": 1.64
+ },
+ "duryunsan": {
+  "name": "두륜산",
+  "page": "ko:두륜산",
+  "wiki": [
+   34.472778,
+   126.637778
+  ],
+  "wikidata": [
+   34.472778,
+   126.637778
+  ],
+  "cur": [
+   34.4817,
+   126.6231
+  ],
+  "wiki_en": [
+   34.472778,
+   126.637778
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 1.74,
+  "d_wd_cur": 1.74
+ },
+ "minjusan": {
+  "name": "민주지산",
+  "page": "ko:민주지산",
+  "wiki": null,
+  "wikidata": [
+   36.04,
+   127.849167
+  ],
+  "cur": [
+   36.0356,
+   127.8719
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 2.01
+ },
+ "sikjangsan": {
+  "name": "식장산",
+  "page": "ko:식장산",
+  "wiki": [
+   36.295,
+   127.48
+  ],
+  "wikidata": [
+   36.295,
+   127.48
+  ],
+  "cur": [
+   36.3117,
+   127.4819
+  ],
+  "wiki_en": [
+   36.295,
+   127.48
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 1.69,
+  "d_wd_cur": 1.69
+ },
+ "woraksan": {
+  "name": "월악산",
+  "page": "ko:월악산",
+  "wiki": [
+   36.8858,
+   128.106
+  ],
+  "wikidata": [
+   36.883333,
+   128.083333
+  ],
+  "cur": [
+   36.8833,
+   128.0931
+  ],
+  "wiki_en": [
+   36.8858,
+   128.106
+  ],
+  "d_wiki_wd": 1.7,
+  "d_wiki_cur": 0.95,
+  "d_wd_cur": 0.77
+ },
+ "dobongsan": {
+  "name": "도봉산",
+  "page": "ko:도봉산",
+  "wiki": [
+   37.698536,
+   127.014967
+  ],
+  "wikidata": [
+   37.700556,
+   127.015556
+  ],
+  "cur": [
+   37.6992,
+   127.0156
+  ],
+  "wiki_en": [
+   37.698536,
+   127.014967
+  ],
+  "d_wiki_wd": 0.2,
+  "d_wiki_cur": 0.07,
+  "d_wd_cur": 0.14
+ },
+ "soyosan": {
+  "name": "소요산",
+  "page": "ko:소요산",
+  "wiki": [
+   37.941944,
+   127.088889
+  ],
+  "wikidata": [
+   37.941944,
+   127.088889
+  ],
+  "cur": [
+   37.9436,
+   127.0789
+  ],
+  "wiki_en": [
+   37.941944,
+   127.088889
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.84,
+  "d_wd_cur": 0.84
+ },
+ "juwangsan": {
+  "name": "주왕산",
+  "page": "ko:주왕산",
+  "wiki": [
+   36.38922,
+   127.162589
+  ],
+  "wikidata": [
+   36.38922,
+   129.162589
+  ],
+  "cur": [
+   36.4022,
+   129.0628
+  ],
+  "wiki_en": [
+   36.38922,
+   127.162589
+  ],
+  "d_wiki_wd": 158.35,
+  "d_wiki_cur": 149.94,
+  "d_wd_cur": 8.49
+ },
+ "myeongseongsan": {
+  "name": "명성산",
+  "page": "ko:명성산",
+  "wiki": [
+   38.106944,
+   127.337778
+  ],
+  "wikidata": [
+   38.106944,
+   127.337778
+  ],
+  "cur": [
+   38.1067,
+   127.3117
+  ],
+  "wiki_en": [
+   38.106944,
+   127.337778
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 1.98,
+  "d_wd_cur": 1.98
+ },
+ "unaksan": {
+  "name": "운악산",
+  "page": "ko:운악산",
+  "wiki": [
+   37.878056,
+   127.325
+  ],
+  "wikidata": [
+   37.878056,
+   127.325
+  ],
+  "cur": [
+   37.9163,
+   127.3188
+  ],
+  "wiki_en": [
+   37.878056,
+   127.325
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 4.14,
+  "d_wd_cur": 4.14
+ },
+ "taebaeksan": {
+  "name": "태백산",
+  "page": "ko:태백산",
+  "wiki": [
+   37.095833,
+   128.915278
+  ],
+  "wikidata": [
+   37.095731,
+   128.915239
+  ],
+  "cur": [
+   37.0983,
+   128.9136
+  ],
+  "wiki_en": [
+   37.095833,
+   128.915278
+  ],
+  "d_wiki_wd": 0.01,
+  "d_wiki_cur": 0.33,
+  "d_wd_cur": 0.33
+ },
+ "yushan": {
+  "name": "위산(玉山)",
+  "page": "en:Yushan",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   23.47,
+   120.9575
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "xueshan": {
+  "name": "설산(雪山)",
+  "page": "en:Xueshan",
+  "wiki": [
+   24.383333,
+   121.23
+  ],
+  "wikidata": [
+   24.383333,
+   121.23
+  ],
+  "cur": [
+   24.385,
+   121.2319
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.23,
+  "d_wd_cur": 0.23
+ },
+ "yangmingshan": {
+  "name": "양명산(陽明山)",
+  "page": "en:Yangmingshan",
+  "wiki": [
+   25.1775,
+   121.5475
+  ],
+  "wikidata": [
+   25.1775,
+   121.5475
+  ],
+  "cur": [
+   25.1672,
+   121.5742
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 2.95,
+  "d_wd_cur": 2.95
+ },
+ "alishan": {
+  "name": "아리산(阿里山)",
+  "page": "en:Alishan",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   23.5133,
+   120.8014
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "huangshan": {
+  "name": "황산(黃山)",
+  "page": "en:Huangshan",
+  "wiki": [
+   30.125,
+   118.166667
+  ],
+  "wikidata": [
+   30.125,
+   118.166667
+  ],
+  "cur": [
+   30.131,
+   118.1635
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.76,
+  "d_wd_cur": 0.76
+ },
+ "tateyama": {
+  "name": "타테야마(立山)",
+  "page": "en:Mount Tate",
+  "wiki": [
+   36.575833,
+   137.619722
+  ],
+  "wikidata": [
+   36.575833,
+   137.619722
+  ],
+  "cur": [
+   36.5742,
+   137.5937
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 2.07,
+  "d_wd_cur": 2.07
+ },
+ "fansipan": {
+  "name": "판시판",
+  "page": "en:Fansipan",
+  "wiki": [
+   22.303333,
+   103.775
+  ],
+  "wikidata": [
+   22.303332,
+   103.775315
+  ],
+  "cur": [
+   22.3094,
+   103.7652
+  ],
+  "d_wiki_wd": 0.03,
+  "d_wiki_cur": 1.2,
+  "d_wd_cur": 1.23
+ },
+ "taishan": {
+  "name": "타이산(泰山)",
+  "page": "en:Mount Tai",
+  "wiki": [
+   36.255833,
+   117.1075
+  ],
+  "wikidata": [
+   36.266667,
+   117.1
+  ],
+  "cur": [
+   36.2544,
+   117.1011
+  ],
+  "d_wiki_wd": 1.44,
+  "d_wiki_cur": 0.47,
+  "d_wd_cur": 1.34
+ },
+ "kinabalu": {
+  "name": "킨리산",
+  "page": "en:Mount Kinabalu",
+  "wiki": [
+   6.075,
+   116.558611
+  ],
+  "wikidata": [
+   6.075,
+   116.558611
+  ],
+  "cur": [
+   6.0752,
+   116.5583
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.04,
+  "d_wd_cur": 0.04
+ },
+ "rinjani": {
+  "name": "라위니",
+  "page": "en:Mount Rinjani",
+  "wiki": [
+   -8.414414,
+   116.459767
+  ],
+  "wikidata": [
+   -8.416667,
+   116.466667
+  ],
+  "cur": [
+   8.4114,
+   116.457
+  ],
+  "d_wiki_wd": 0.78,
+  "d_wiki_cur": 1870.95,
+  "d_wd_cur": 1871.2
+ },
+ "poonhill": {
+  "name": "푼힐",
+  "page": "en:Poon Hill",
+  "wiki": [
+   28.400043,
+   83.68954
+  ],
+  "wikidata": [
+   28.400043,
+   83.68954
+  ],
+  "cur": [
+   28.395,
+   83.6867
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.62,
+  "d_wd_cur": 0.62
+ },
+ "gwanaksan": {
+  "name": "관악산",
+  "page": "ko:관악산",
+  "wiki": [
+   37.445556,
+   126.963611
+  ],
+  "wikidata": [
+   37.445556,
+   126.963611
+  ],
+  "cur": [
+   37.4449,
+   126.9797
+  ],
+  "wiki_en": [
+   37.445556,
+   126.963611
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 1.27,
+  "d_wd_cur": 1.27
+ },
+ "suraksan": {
+  "name": "수락산",
+  "page": "ko:수락산",
+  "wiki": null,
+  "wikidata": [
+   37.6961,
+   127.082
+  ],
+  "cur": [
+   37.6872,
+   127.0322
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 3.6
+ },
+ "cheonggyesan": {
+  "name": "청계산",
+  "page": "ko:청계산",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   37.4347,
+   127.0567
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "achasan": {
+  "name": "아차산",
+  "page": "ko:아차산",
+  "wiki": [
+   37.566111,
+   127.1025
+  ],
+  "wikidata": [
+   37,
+   127
+  ],
+  "cur": [
+   37.5656,
+   127.1025
+  ],
+  "wiki_en": [
+   37.566111,
+   127.1025
+  ],
+  "d_wiki_wd": 56.26,
+  "d_wiki_cur": 0.05,
+  "d_wd_cur": 56.21
+ },
+ "geumjeongsan": {
+  "name": "금정산",
+  "page": "ko:금정산 (부산)",
+  "wiki": [
+   35.283056,
+   129.055556
+  ],
+  "wikidata": null,
+  "cur": [
+   35.2733,
+   129.05
+  ],
+  "wiki_en": [
+   35.283056,
+   129.055556
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": 0.96,
+  "d_wd_cur": null
+ },
+ "palgongsan": {
+  "name": "팔공산",
+  "page": "ko:팔공산",
+  "wiki": [
+   36.016944,
+   128.695
+  ],
+  "wikidata": [
+   36.0151,
+   128.69977
+  ],
+  "cur": [
+   35.9869,
+   128.5769
+  ],
+  "wiki_en": [
+   36.016944,
+   128.695
+  ],
+  "d_wiki_wd": 0.48,
+  "d_wiki_cur": 8.85,
+  "d_wd_cur": 9.22
+ },
+ "unmunsan": {
+  "name": "운문산",
+  "page": "ko:운문산",
+  "wiki": [
+   35.676389,
+   129.034167
+  ],
+  "wikidata": [
+   35.6161,
+   128.9589
+  ],
+  "cur": [
+   35.45,
+   129.03
+  ],
+  "wiki_en": [
+   35.676389,
+   129.034167
+  ],
+  "d_wiki_wd": 7.05,
+  "d_wiki_cur": 23.31,
+  "d_wd_cur": 19.9
+ },
+ "songnisan": {
+  "name": "속리산",
+  "page": "ko:속리산",
+  "wiki": null,
+  "wikidata": [
+   36.533333,
+   127.9
+  ],
+  "cur": [
+   36.5364,
+   127.7517
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 11.81
+ },
+ "daedunsan": {
+  "name": "대둔산",
+  "page": "ko:대둔산",
+  "wiki": [
+   36.12,
+   127.323333
+  ],
+  "wikidata": null,
+  "cur": [
+   35.8636,
+   127.3733
+  ],
+  "wiki_en": [
+   36.12,
+   127.323333
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": 28.25,
+  "d_wd_cur": null
+ },
+ "maisan": {
+  "name": "마이산",
+  "page": "ko:마이산",
+  "wiki": [
+   35.762222,
+   127.404722
+  ],
+  "wikidata": [
+   35.761111,
+   127.412222
+  ],
+  "cur": [
+   35.8086,
+   127.42
+  ],
+  "wiki_en": [
+   35.762222,
+   127.404722
+  ],
+  "d_wiki_wd": 0.65,
+  "d_wiki_cur": 4.55,
+  "d_wd_cur": 4.76
+ },
+ "inwangsan": {
+  "name": "인왕산",
+  "page": "ko:인왕산",
+  "wiki": null,
+  "wikidata": [
+   37.584722,
+   126.958611
+  ],
+  "cur": [
+   37.5839,
+   126.9659
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 0.6
+ },
+ "gajisan": {
+  "name": "가지산",
+  "page": "ko:가지산",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   35.3686,
+   129.0758
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "hwawangsan": {
+  "name": "화왕산",
+  "page": "ko:화왕산",
+  "wiki": [
+   35.547778,
+   128.532778
+  ],
+  "wikidata": [
+   35.547778,
+   128.532778
+  ],
+  "cur": [
+   35.55,
+   128.49
+  ],
+  "wiki_en": [
+   35.547778,
+   128.532778
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 3.53,
+  "d_wd_cur": 3.53
+ },
+ "unjangsan": {
+  "name": "운장산",
+  "page": "ko:운장산",
+  "wiki": [
+   35.910833,
+   127.357222
+  ],
+  "wikidata": [
+   35.9108,
+   127.357
+  ],
+  "cur": [
+   35.66,
+   127.34
+  ],
+  "wiki_en": [
+   35.910833,
+   127.357222
+  ],
+  "d_wiki_wd": 0.02,
+  "d_wiki_cur": 25.64,
+  "d_wd_cur": 25.64
+ },
+ "yeongchwisan": {
+  "name": "영취산",
+  "page": "ko:영취산 (여수)",
+  "wiki": [
+   35.933333,
+   128.333333
+  ],
+  "wikidata": null,
+  "cur": [
+   34.77,
+   127.66
+  ],
+  "wiki_en": [
+   35.933333,
+   128.333333
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": 114.58,
+  "d_wd_cur": null
+ },
+ "biseulsan": {
+  "name": "비슬산",
+  "page": "ko:비슬산",
+  "wiki": [
+   35.716667,
+   128.524444
+  ],
+  "wikidata": [
+   35.716667,
+   128.524444
+  ],
+  "cur": [
+   35.7167,
+   128.5
+  ],
+  "wiki_en": [
+   35.716667,
+   128.524444
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 1.96,
+  "d_wd_cur": 1.96
+ },
+ "cheongnyangsan": {
+  "name": "청량산",
+  "page": "ko:청량산 (봉화)",
+  "wiki": [
+   36.791389,
+   128.926944
+  ],
+  "wikidata": null,
+  "cur": [
+   36.88,
+   128.86
+  ],
+  "wiki_en": [
+   36.791389,
+   128.926944
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": 12.06,
+  "d_wd_cur": null
+ },
+ "ansan": {
+  "name": "안산",
+  "page": "ko:안산 (서울)",
+  "wiki": [
+   37.576667,
+   126.945
+  ],
+  "wikidata": [
+   37.5768,
+   126.9451
+  ],
+  "cur": [
+   37.574,
+   126.952
+  ],
+  "d_wiki_wd": 0.01,
+  "d_wiki_cur": 0.69,
+  "d_wd_cur": 0.69
+ },
+ "bulsan": {
+  "name": "불암산",
+  "page": "ko:불암산",
+  "wiki": null,
+  "wikidata": [
+   37.5661,
+   127.103
+  ],
+  "cur": [
+   37.687,
+   127.08
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 13.24
+ },
+ "sogeumgang": {
+  "name": "소금강",
+  "page": "ko:소금강",
+  "wiki": [
+   37.767639,
+   128.610639
+  ],
+  "wikidata": [
+   37.814186,
+   128.706184
+  ],
+  "cur": [
+   37.4,
+   128.52
+  ],
+  "d_wiki_wd": 7.16,
+  "d_wiki_cur": 35.84,
+  "d_wd_cur": 39.65
+ },
+ "heuiyangsan": {
+  "name": "희양산",
+  "page": "ko:희양산",
+  "wiki": null,
+  "wikidata": [
+   36.716,
+   128.005
+  ],
+  "cur": [
+   36.65,
+   127.95
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 6.67
+ },
+ "cheongtaesan": {
+  "name": "청태산",
+  "page": "ko:청태산 (횡성)",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   37.44,
+   128.44
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "baekamsan": {
+  "name": "백암산",
+  "page": "ko:백암산 (장성·순창)",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   35.6,
+   126.88
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "yongmunsan": {
+  "name": "용문산",
+  "page": "ko:용문산",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   37.4833,
+   127.2833
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "yumyeongsan": {
+  "name": "유명산",
+  "page": "ko:유명산",
+  "wiki": [
+   37.576389,
+   127.4875
+  ],
+  "wikidata": [
+   37.576389,
+   127.4875
+  ],
+  "cur": [
+   37.82,
+   127.53
+  ],
+  "wiki_en": [
+   37.576389,
+   127.4875
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 24.14,
+  "d_wd_cur": 24.14
+ },
+ "namsan": {
+  "name": "남산(경주)",
+  "page": "ko:남산 (경주)",
+  "wiki": [
+   35.768056,
+   129.225556
+  ],
+  "wikidata": [
+   35.768056,
+   129.225556
+  ],
+  "cur": [
+   35.8292,
+   129.221
+  ],
+  "wiki_en": [
+   35.768056,
+   129.225556
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 6.45,
+  "d_wd_cur": 6.45
+ },
+ "gyebangsan": {
+  "name": "계방산",
+  "page": "ko:계방산",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   37.533,
+   128.372
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "dutasan": {
+  "name": "두타산",
+  "page": "ko:두타산",
+  "wiki": [
+   37.26,
+   129.1
+  ],
+  "wikidata": null,
+  "cur": [
+   37.191,
+   129.042
+  ],
+  "wiki_en": [
+   37.26,
+   129.1
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": 6.89,
+  "d_wd_cur": null
+ },
+ "manisan": {
+  "name": "마니산",
+  "page": "ko:마니산",
+  "wiki": null,
+  "wikidata": [
+   37.616667,
+   126.433333
+  ],
+  "cur": [
+   37.597,
+   126.475
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 4.37
+ },
+ "daeamsan": {
+  "name": "대암산",
+  "page": "ko:대암산",
+  "wiki": [
+   38.211111,
+   128.135
+  ],
+  "wikidata": null,
+  "cur": [
+   38.098,
+   127.998
+  ],
+  "wiki_en": [
+   38.211111,
+   128.135
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": 12.43,
+  "d_wd_cur": null
+ },
+ "baegunsan": {
+  "name": "백운산",
+  "page": "ko:백운산 (정선)",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   35.265,
+   127.621
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "sinbulsan": {
+  "name": "신불산",
+  "page": "ko:신불산",
+  "wiki": [
+   35.54,
+   129.056
+  ],
+  "wikidata": [
+   35.54,
+   129.056
+  ],
+  "cur": [
+   35.541,
+   129.061
+  ],
+  "wiki_en": [
+   35.54,
+   129.056
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 0.38,
+  "d_wd_cur": 0.38
+ },
+ "gamaksan": {
+  "name": "감악산",
+  "page": "ko:감악산",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   37.859,
+   126.926
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "ebc": {
+  "name": "에베레스트 BC",
+  "page": "en:Everest Base Camp",
+  "wiki": null,
+  "wikidata": null,
+  "cur": [
+   27.9881,
+   86.925
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": null
+ },
+ "act": {
+  "name": "안나푸르나 서킷",
+  "page": "en:Annapurna Circuit",
+  "wiki": null,
+  "wikidata": [
+   28.794671,
+   83.937368
+  ],
+  "cur": [
+   28.5983,
+   83.9186
+  ],
+  "d_wiki_wd": null,
+  "d_wiki_cur": null,
+  "d_wd_cur": 21.96
+ },
+ "langtang": {
+  "name": "랑탕 밸리",
+  "page": "en:Langtang National Park",
+  "wiki": [
+   28.1738,
+   85.5531
+  ],
+  "wikidata": [
+   28.1738,
+   85.5531
+  ],
+  "cur": [
+   28.2372,
+   85.6855
+  ],
+  "d_wiki_wd": 0.0,
+  "d_wiki_cur": 13.68,
+  "d_wd_cur": 13.68
+ },
+ "fuji": {
+  "name": "후지산(富士山)",
+  "page": "en:Mount Fuji",
+  "wiki": [
+   35.360833,
+   138.7275
+  ],
+  "wikidata": [
+   35.360556,
+   138.7275
+  ],
+  "cur": [
+   35.3606,
+   138.7274
+  ],
+  "d_wiki_wd": 0.03,
+  "d_wiki_cur": 0.02,
+  "d_wd_cur": 0.01
+ }
+}
