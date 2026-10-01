@@ -1,0 +1,52 @@
+{
+ "yongmunsan": {
+  "name": "예봉산",
+  "ele": 683.0,
+  "lat": 37.5591522,
+  "lng": 127.2611318,
+  "our": 1157.0,
+  "cands": 107
+ },
+ "gyebangsan": null,
+ "dutasan": null,
+ "baegunsan": null,
+ "mudeungsan": null,
+ "baekamsan": {
+  "name": "연지봉",
+  "ele": 669.3,
+  "lat": 35.4934381,
+  "lng": 126.878741,
+  "our": 741.2,
+  "cands": 67
+ },
+ "cheongtaesan": {
+  "name": "금당산",
+  "ele": 1174.1,
+  "lat": 37.541073,
+  "lng": 128.414746,
+  "our": 1190.0,
+  "cands": 58
+ },
+ "odaesan": null,
+ "songnisan": null,
+ "woraksan": null,
+ "alishan": null,
+ "sobaeksan": null,
+ "gamaksan": {
+  "name": "감악산",
+  "ele": 674.0,
+  "lat": 37.941156,
+  "lng": 126.9700763,
+  "our": 674.9,
+  "cands": 51
+ },
+ "yeongchwisan": null,
+ "cheonggyesan": null,
+ "rinjani": null,
+ "hwawangsan": null,
+ "daedunsan": null,
+ "yangmingshan": null,
+ "chiaksan": null,
+ "sogeumgang": null,
+ "maisan": null
+}

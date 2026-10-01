@@ -1,0 +1,112 @@
+PEAK batch query...
+peak nodes: 1202
+PEAK yongmunsan     → none
+PEAK gyebangsan     → none
+PEAK dutasan        → none
+PEAK baegunsan      → 왕시리봉 ele=1212 (35.24090,127.55767)
+PEAK mudeungsan     → 무등산(천왕봉) ele=1187 (35.12504,127.00857)
+PEAK baekamsan      → none
+PEAK cheongtaesan   → 남병산 ele=1151 (37.42730,128.37219)
+PEAK odaesan        → 비로봉 ele=1566 (37.79375,128.54265)
+PEAK songnisan      → none
+PEAK woraksan       → 월악산 영봉 ele=1097 (36.88608,128.10584)
+PEAK alishan        → 大塔山 ele=2663 (23.53573,120.80853)
+PEAK sobaeksan      → 제1연화봉 ele=1394 (36.94743,128.46279)
+PEAK gamaksan       → none
+PEAK yeongchwisan   → 봉화산 ele=424 (34.78723,127.72218)
+PEAK cheonggyesan   → 국사봉 ele=540 (37.40409,127.04377)
+PEAK rinjani        → none
+PEAK hwawangsan     → 화왕산 ele=758 (35.54715,128.53169)
+PEAK daedunsan      → 대둔산 ele=879 (36.12459,127.32048)
+PEAK yangmingshan   → 竹子山 ele=1094 (25.21411,121.56340)
+PEAK chiaksan       → 치악산(비로봉) ele=1228 (37.36515,128.05563)
+PEAK sogeumgang     → 두로봉 ele=1423 (37.82128,128.58271)
+PEAK maisan         → 암마이봉 ele=687 (35.76054,127.41150)
+REL batch 1/3...
+  rels: 121
+REL batch 2/3...
+  rels: 218
+REL batch 3/3...
+  rels: 75
+relations to fetch: 90
+geom 1/9 → 10
+geom 2/9 → 10
+geom 3/9 → 0
+geom 4/9 → 10
+geom 5/9 → 10
+geom 6/9 → 0
+geom 7/9 → 0
+geom 8/9 → 8
+geom 9/9 → 10
+TRACK seoraksan      설악산        picked=0 []
+TRACK hallasan       한라산        picked=3 [15.7, 14.9, 2.4]
+TRACK jirisan        지리산        picked=0 []
+TRACK bukhansan      북한산        picked=3 [11.9, 120.8, 9.7]
+TRACK sobaeksan      소백산        picked=0 []
+TRACK gayasan        가야산        picked=0 []
+TRACK odaesan        오대산        picked=1 [50.4]
+TRACK naejangsan     내장산        picked=0 []
+TRACK chiaksan       치악산        picked=0 []
+TRACK deogyusan      덕유산        picked=0 []
+TRACK gyeryongsan    계룡산        picked=3 [11.1, 31.6, 9.7]
+TRACK wolchulsan     월출산        picked=0 []
+TRACK mudeungsan     무등산        picked=0 []
+TRACK duryunsan      두륜산        picked=0 []
+TRACK minjusan       민주지산       picked=0 []
+TRACK sikjangsan     식장산        picked=0 []
+TRACK woraksan       월악산        picked=0 []
+TRACK dobongsan      도봉산        picked=3 [11.9, 120.8, 10.5]
+TRACK soyosan        소요산        picked=0 []
+TRACK juwangsan      주왕산        picked=0 []
+TRACK myeongseongsan 명성산        picked=0 []
+TRACK unaksan        운악산        picked=0 []
+TRACK taebaeksan     태백산        picked=0 []
+TRACK yushan         위산(玉山)     picked=0 []
+TRACK xueshan        설산(雪山)     picked=3 [47.6, 19.1, 73.0]
+TRACK yangmingshan   양명산(陽明山)   picked=3 [3.3, 1.2, 5.8]
+TRACK alishan        아리산(阿里山)   picked=3 [24.5, 7.3, 10.4]
+TRACK huangshan      황산(黃山)     picked=1 [74.4]
+TRACK tateyama       타테야마(立山)   picked=2 [11.8, 90.0]
+TRACK fansipan       판시판        picked=0 []
+TRACK taishan        타이산(泰山)    picked=0 []
+TRACK kinabalu       킨리산        picked=0 []
+TRACK rinjani        라위니        picked=0 []
+TRACK poonhill       푼힐         picked=0 []
+TRACK gwanaksan      관악산        picked=0 []
+TRACK suraksan       수락산        picked=3 [11.9, 10.5, 9.7]
+TRACK cheonggyesan   청계산        picked=0 []
+TRACK achasan        아차산        picked=0 []
+TRACK geumjeongsan   금정산        picked=0 []
+TRACK palgongsan     팔공산        picked=0 []
+TRACK unmunsan       운문산        picked=0 []
+TRACK songnisan      속리산        picked=0 []
+TRACK daedunsan      대둔산        picked=0 []
+TRACK maisan         마이산        picked=0 []
+TRACK inwangsan      인왕산        picked=3 [58.4, 5.6, 12.1]
+TRACK gajisan        가지산        picked=0 []
+TRACK hwawangsan     화왕산        picked=0 []
+TRACK unjangsan      운장산        picked=0 []
+TRACK yeongchwisan   영취산        picked=0 []
+TRACK biseulsan      비슬산        picked=0 []
+TRACK cheongnyangsan 청량산        picked=0 []
+TRACK ansan          안산         picked=3 [58.4, 9.0, 11.9]
+TRACK bulsan         불암산        picked=1 [46.6]
+TRACK sogeumgang     소금강        picked=1 [50.4]
+TRACK heuiyangsan    희양산        picked=0 []
+TRACK cheongtaesan   청태산        picked=0 []
+TRACK baekamsan      백암산        picked=0 []
+TRACK yongmunsan     용문산        picked=0 []
+TRACK yumyeongsan    유명산        picked=0 []
+TRACK namsan         남산(경주)     picked=0 []
+TRACK gyebangsan     계방산        picked=0 []
+TRACK dutasan        두타산        picked=0 []
+TRACK manisan        마니산        picked=0 []
+TRACK daeamsan       대암산        picked=0 []
+TRACK baegunsan      백운산        picked=0 []
+TRACK sinbulsan      신불산        picked=0 []
+TRACK gamaksan       감악산        picked=0 []
+TRACK ebc            에베레스트 BC   picked=1 [38.0]
+TRACK act            안나푸르나 서킷   picked=0 []
+TRACK langtang       랑탕 밸리      picked=1 [63.5]
+TRACK fuji           후지산(富士山)   picked=3 [14.3, 15.4, 15.5]
+ALL DONE

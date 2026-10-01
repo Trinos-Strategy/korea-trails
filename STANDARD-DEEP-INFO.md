@@ -72,3 +72,26 @@ window.DEEP_INFO['seoraksan'] = {
 - 정본 도메인: `https://mttrails.trinos.group` (CNAME). `og:url`·sitemap·README에 정본 도메인 사용.
 - 저장소명 `korea-trails`는 유지(링크·배포 경로 무변경). 로고 워드마크만 `MT TRAILS`로 교체.
 - 이력 문서(`ORCHESTRATION-UPGRADE.md` 등)는 과거 기록이므로 소급 수정하지 않는다.
+
+## 6. 동적 강화 섹션 (2026-09-27, PR #37)
+
+공유 렌더러(`assets/js/deep-info.js`)가 밴드 삽입 후 두 카드를 **동적으로** 추가한다.
+둘 다 실패 시 조용히 생략된다(오프라인·API 장애 무관 동작). 데이터 출처·라이선스는
+`DATA-SOURCES.md`가 정본이다.
+
+### 6.1 산악 날씨 카드 (전 플레이북)
+- 브라우저가 Open-Meteo에 정상 좌표+고도(`window.DEEP_COORDS`)로 직접 조회(키 불필요, CC BY 4.0).
+- 현재 기온·풍속·강수 + 3일 최저/최고/강수 + 일출·일몰. 카드 하단 속성 필수.
+- KO/EN 라벨은 렌더러 L10N2가 `<html lang>`으로 선택.
+
+### 6.2 실측 등산로 지도 카드 (트랙 보유 산만)
+- `assets/data/tracks/<id>.json`이 존재하면 표출. OSM `route=hiking` relation의 실측
+  geometry(≤260점 단순화, 하버사인 거리) + Leaflet 1.9.4 **지연 로드**(unpkg).
+- 경로별 실측 km 범례 + 입구 마커 + OSM 타일 + `© OpenStreetMap contributors (ODbL)` 속성.
+- 트랙 JSON에 `profile`(Open-Meteo Elevation 샘플 배열)이 있으면 SVG 고도 프로파일 병기.
+- 파일 구성: `scratch/ov_batch.py`(수집) → `scratch/wk_d_profiles.py`(프로파일 첨부).
+
+### 6.3 좌표 QA 게이트 (데이터 신규 반영 시)
+게시 좌표 지점의 DEM 표고가 게시 표고와 ±250m 이상 차이 나면 좌표 오류 후보다.
+OSM `natural=peak` 노드(표고 ±100m 일치)로 확정한다. 2026-09-27 기준 22산 적발·처리 이력은
+QUALITY-UPGRADE.md §8 참조.

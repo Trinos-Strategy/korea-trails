@@ -1,0 +1,428 @@
+{
+ "seoraksan": {
+  "name": "설악산",
+  "qid": "Q482644",
+  "wd_elev": 1708.0,
+  "cur_alt": "1,708m"
+ },
+ "hallasan": {
+  "name": "한라산",
+  "qid": "Q494645",
+  "wd_elev": 1947.1,
+  "cur_alt": "1,950m"
+ },
+ "jirisan": {
+  "name": "지리산",
+  "qid": "Q483204",
+  "wd_elev": 1915.0,
+  "cur_alt": "1,915m"
+ },
+ "bukhansan": {
+  "name": "북한산",
+  "qid": "Q494652",
+  "wd_elev": 836.0,
+  "cur_alt": "836m"
+ },
+ "sobaeksan": {
+  "name": "소백산",
+  "qid": "Q625589",
+  "wd_elev": 1439.0,
+  "cur_alt": "1,440m"
+ },
+ "gayasan": {
+  "name": "가야산",
+  "qid": null,
+  "wd_elev": null,
+  "cur_alt": "1,433m"
+ },
+ "odaesan": {
+  "name": "오대산",
+  "qid": "Q491028",
+  "wd_elev": 1563.0,
+  "cur_alt": "1,563m"
+ },
+ "naejangsan": {
+  "name": "내장산",
+  "qid": "Q626648",
+  "wd_elev": 763.0,
+  "cur_alt": "763m"
+ },
+ "chiaksan": {
+  "name": "치악산",
+  "qid": "Q5095160",
+  "wd_elev": 1288.0,
+  "cur_alt": "1,288m"
+ },
+ "deogyusan": {
+  "name": "덕유산",
+  "qid": "Q130821",
+  "wd_elev": 1614.0,
+  "cur_alt": "1,614m"
+ },
+ "gyeryongsan": {
+  "name": "계룡산",
+  "qid": "Q496427",
+  "wd_elev": 845.0,
+  "cur_alt": "845m"
+ },
+ "wolchulsan": {
+  "name": "월출산",
+  "qid": "Q482741",
+  "wd_elev": 809.0,
+  "cur_alt": "809m"
+ },
+ "mudeungsan": {
+  "name": "무등산",
+  "qid": "Q6931712",
+  "wd_elev": 1187.0,
+  "cur_alt": "1,187m"
+ },
+ "duryunsan": {
+  "name": "두륜산",
+  "qid": "Q5316834",
+  "wd_elev": 700.0,
+  "cur_alt": "703m"
+ },
+ "minjusan": {
+  "name": "민주지산",
+  "qid": "Q8533668",
+  "wd_elev": 1242.0,
+  "cur_alt": "1,242m"
+ },
+ "sikjangsan": {
+  "name": "식장산",
+  "qid": "Q12604057",
+  "wd_elev": 596.0,
+  "cur_alt": "598m"
+ },
+ "woraksan": {
+  "name": "월악산",
+  "qid": "Q482709",
+  "wd_elev": 1093.0,
+  "cur_alt": "1,097m"
+ },
+ "dobongsan": {
+  "name": "도봉산",
+  "qid": "Q626000",
+  "wd_elev": 739.5,
+  "cur_alt": "740m"
+ },
+ "soyosan": {
+  "name": "소요산",
+  "qid": "Q623938",
+  "wd_elev": 587.0,
+  "cur_alt": "587m"
+ },
+ "juwangsan": {
+  "name": "주왕산",
+  "qid": "Q6319107",
+  "wd_elev": 721.0,
+  "cur_alt": "721m"
+ },
+ "myeongseongsan": {
+  "name": "명성산",
+  "qid": "Q6947377",
+  "wd_elev": 922.6,
+  "cur_alt": "922m"
+ },
+ "unaksan": {
+  "name": "운악산",
+  "qid": "Q8528375",
+  "wd_elev": 935.5,
+  "cur_alt": "937.5m"
+ },
+ "taebaeksan": {
+  "name": "태백산",
+  "qid": "Q625254",
+  "wd_elev": 1566.7,
+  "cur_alt": "1,567m"
+ },
+ "yushan": {
+  "name": "위산(玉山)",
+  "qid": "Q340120",
+  "wd_elev": null,
+  "cur_alt": "3,952m"
+ },
+ "xueshan": {
+  "name": "설산(雪山)",
+  "qid": "Q707720",
+  "wd_elev": 3886.0,
+  "cur_alt": "3,886m"
+ },
+ "yangmingshan": {
+  "name": "양명산(陽明山)",
+  "qid": "Q709029",
+  "wd_elev": null,
+  "cur_alt": "1,120m"
+ },
+ "alishan": {
+  "name": "아리산(阿里山)",
+  "qid": "Q4726972",
+  "wd_elev": null,
+  "cur_alt": "2,663m"
+ },
+ "huangshan": {
+  "name": "황산(黃山)",
+  "qid": "Q36034",
+  "wd_elev": 1864.0,
+  "cur_alt": "1,864m"
+ },
+ "tateyama": {
+  "name": "타테야마(立山)",
+  "qid": "Q2977103",
+  "wd_elev": 3015.0,
+  "cur_alt": "3,003m"
+ },
+ "fansipan": {
+  "name": "판시판",
+  "qid": "Q123782",
+  "wd_elev": 3143.0,
+  "cur_alt": "3,143m"
+ },
+ "taishan": {
+  "name": "타이산(泰山)",
+  "qid": "Q216059",
+  "wd_elev": 1545.0,
+  "cur_alt": "1,545m"
+ },
+ "kinabalu": {
+  "name": "킨리산",
+  "qid": "Q60967",
+  "wd_elev": 4095.0,
+  "cur_alt": "4,095m"
+ },
+ "rinjani": {
+  "name": "라위니",
+  "qid": "Q847323",
+  "wd_elev": 3726.0,
+  "cur_alt": "3,726m"
+ },
+ "poonhill": {
+  "name": "푼힐",
+  "qid": "Q29015634",
+  "wd_elev": 3210.0,
+  "cur_alt": "3,210m"
+ },
+ "gwanaksan": {
+  "name": "관악산",
+  "qid": "Q626275",
+  "wd_elev": 632.0,
+  "cur_alt": "629m"
+ },
+ "suraksan": {
+  "name": "수락산",
+  "qid": "Q626151",
+  "wd_elev": 637.7,
+  "cur_alt": "638m"
+ },
+ "cheonggyesan": {
+  "name": "청계산",
+  "qid": "Q5091635",
+  "wd_elev": null,
+  "cur_alt": "618m"
+ },
+ "achasan": {
+  "name": "아차산",
+  "qid": "Q4673558",
+  "wd_elev": 287.0,
+  "cur_alt": "296m"
+ },
+ "geumjeongsan": {
+  "name": "금정산",
+  "qid": null,
+  "wd_elev": null,
+  "cur_alt": "742m"
+ },
+ "palgongsan": {
+  "name": "팔공산",
+  "qid": "Q624313",
+  "wd_elev": 1193.0,
+  "cur_alt": "1,192m"
+ },
+ "unmunsan": {
+  "name": "운문산",
+  "qid": "Q7897128",
+  "wd_elev": 1195.0,
+  "cur_alt": "1,188m"
+ },
+ "songnisan": {
+  "name": "속리산",
+  "qid": "Q482720",
+  "wd_elev": 1058.0,
+  "cur_alt": "1,058m"
+ },
+ "daedunsan": {
+  "name": "대둔산",
+  "qid": "Q20652220",
+  "wd_elev": null,
+  "cur_alt": "878m"
+ },
+ "maisan": {
+  "name": "마이산",
+  "qid": "Q562938",
+  "wd_elev": 673.0,
+  "cur_alt": "683m"
+ },
+ "inwangsan": {
+  "name": "인왕산",
+  "qid": "Q625942",
+  "wd_elev": 338.0,
+  "cur_alt": "338m"
+ },
+ "gajisan": {
+  "name": "가지산",
+  "qid": "Q16071481",
+  "wd_elev": null,
+  "cur_alt": "1,240m"
+ },
+ "hwawangsan": {
+  "name": "화왕산",
+  "qid": "Q5952091",
+  "wd_elev": 757.0,
+  "cur_alt": "928m"
+ },
+ "unjangsan": {
+  "name": "운장산",
+  "qid": "Q7896931",
+  "wd_elev": 1126.0,
+  "cur_alt": "1,126m"
+ },
+ "yeongchwisan": {
+  "name": "영취산",
+  "qid": null,
+  "wd_elev": null,
+  "cur_alt": "510m"
+ },
+ "biseulsan": {
+  "name": "비슬산",
+  "qid": "Q4917297",
+  "wd_elev": 1084.0,
+  "cur_alt": "1,084m"
+ },
+ "cheongnyangsan": {
+  "name": "청량산",
+  "qid": null,
+  "wd_elev": null,
+  "cur_alt": "869.7m"
+ },
+ "ansan": {
+  "name": "안산",
+  "qid": "Q12605668",
+  "wd_elev": 295.9,
+  "cur_alt": "296m"
+ },
+ "bulsan": {
+  "name": "불암산",
+  "qid": "Q4998105",
+  "wd_elev": 507.0,
+  "cur_alt": "507m"
+ },
+ "sogeumgang": {
+  "name": "소금강",
+  "qid": "Q12602407",
+  "wd_elev": null,
+  "cur_alt": "1,338m(노인봉)"
+ },
+ "heuiyangsan": {
+  "name": "희양산",
+  "qid": "Q5701198",
+  "wd_elev": 998.0,
+  "cur_alt": "999.1m"
+ },
+ "cheongtaesan": {
+  "name": "청태산",
+  "qid": null,
+  "wd_elev": null,
+  "cur_alt": "1,190m"
+ },
+ "baekamsan": {
+  "name": "백암산",
+  "qid": null,
+  "wd_elev": null,
+  "cur_alt": "741.2m"
+ },
+ "yongmunsan": {
+  "name": "용문산",
+  "qid": "Q12608681",
+  "wd_elev": null,
+  "cur_alt": "1,157m"
+ },
+ "yumyeongsan": {
+  "name": "유명산",
+  "qid": "Q626674",
+  "wd_elev": 862.0,
+  "cur_alt": "862m"
+ },
+ "namsan": {
+  "name": "남산(경주)",
+  "qid": "Q489229",
+  "wd_elev": 494.0,
+  "cur_alt": "468m"
+ },
+ "gyebangsan": {
+  "name": "계방산",
+  "qid": "Q16072491",
+  "wd_elev": null,
+  "cur_alt": "1,577m"
+ },
+ "dutasan": {
+  "name": "두타산",
+  "qid": "Q16075182",
+  "wd_elev": null,
+  "cur_alt": "1,357m"
+ },
+ "manisan": {
+  "name": "마니산",
+  "qid": "Q624003",
+  "wd_elev": 469.0,
+  "cur_alt": "469m"
+ },
+ "daeamsan": {
+  "name": "대암산",
+  "qid": "Q12591620",
+  "wd_elev": null,
+  "cur_alt": "1,304m"
+ },
+ "baegunsan": {
+  "name": "백운산",
+  "qid": null,
+  "wd_elev": null,
+  "cur_alt": "1,222m"
+ },
+ "sinbulsan": {
+  "name": "신불산",
+  "qid": "Q7521890",
+  "wd_elev": 1209.0,
+  "cur_alt": "1,159m"
+ },
+ "gamaksan": {
+  "name": "감악산",
+  "qid": "Q5519549",
+  "wd_elev": null,
+  "cur_alt": "674.9m"
+ },
+ "ebc": {
+  "name": "에베레스트 BC",
+  "qid": "Q1785940",
+  "wd_elev": null,
+  "cur_alt": "5,364m"
+ },
+ "act": {
+  "name": "안나푸르나 서킷",
+  "qid": "Q381683",
+  "wd_elev": null,
+  "cur_alt": "5,416m"
+ },
+ "langtang": {
+  "name": "랑탕 밸리",
+  "qid": "Q4351267",
+  "wd_elev": null,
+  "cur_alt": "4,984m"
+ },
+ "fuji": {
+  "name": "후지산(富士山)",
+  "qid": "Q39231",
+  "wd_elev": 3777.2,
+  "cur_alt": "3,776m"
+ }
+}
