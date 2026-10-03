@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """워커 D — 트랙 JSON에 실측 고도 프로파일 첨부 (Open-Meteo Elevation, 50점/호출)."""
-import json, subprocess, time, pathlib
+import json, math, subprocess, time, pathlib
 
 ROOT = pathlib.Path('/Users/mac/korea-trails')
 TD = ROOT / 'assets/data/tracks'
@@ -31,7 +31,7 @@ for f in files:
         if rt.get('profile'):
             continue
         pts = rt['points']
-        step = max(1, len(pts) // 80)
+        step = max(1, math.ceil(len(pts) / 100))
         sample = pts[::step]
         el = elev_batch(sample)
         if el and len(el) == len(sample):
